@@ -1,0 +1,129 @@
+// 主色
+$blue: rgb(50, 100, 200);
+$orange: rgb(255, 100, 20);
+$blue-light: rgb(80, 120, 240);
+$orange-light: rgb(255, 115, 40);
+
+// 其他色
+$green: rgb(50, 205, 50);
+$blue-sky: rgb(20, 200, 255);
+$green-dark: rgb(30, 180, 160);
+$yellow: rgb(250, 180, 40);
+$red: rgb(255, 65, 65);
+
+// 黑色
+$black: rgb(0, 0, 0);
+
+// 灰色
+$black-1: rgb(50, 50, 50);
+$black-2: rgb(100, 100, 100);
+$black-3: rgb(150, 150, 150);
+$black-4: rgb(200, 200, 200);
+$black-5: rgb(230, 230, 230);
+
+// 白色
+$white-1: rgb(255, 255, 255);
+$white-2: rgba(255, 255, 255, 0.5);
+$white-3: rgba(255, 255, 255, 0.3);
+$white-4: rgba(255, 255, 255, 0.1);
+
+// 渐变色
+$gradient-blue: linear-gradient(to right, rgb(80, 135, 245), $blue);
+$gradient-orange: linear-gradient(to right, rgb(255, 135, 35), $orange);
+$gradient-blue-disable: linear-gradient(
+    to right,
+    rgb(185, 205, 250),
+    rgb(150, 185, 245)
+);
+$gradient-orange-disable: linear-gradient(
+    to right,
+    rgb(240, 210, 185),
+    rgb(250, 200, 175)
+);
+
+// 背景色
+$bg: rgb(245, 245, 245);
+$bg-white: rgb(255, 255, 255);
+$bg-orange: rgb(253, 244, 237);
+
+// 字体大小
+$font-size-xxxs: 0.5rem;
+$font-size-xxs: 0.6rem;
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-l: 1rem;
+$font-size-xl: 1.125rem;
+$font-size-xxl: 1.25rem;
+$font-size-xxxl: 1.5rem;
+$font-size-xxxxl: 2rem;
+$font-size-lg: 3rem;
+
+// 竖向间距
+$vertical-gap: 1rem;
+// 横向间距
+$horizontal-gap: 0.75rem;
+
+// Padding
+$padding-base: 4px;
+$padding-xs: $padding-base * 2;
+$padding-sm: $padding-base * 3;
+$padding-l: $padding-base * 4;
+$padding-lg: $padding-base * 6;
+$padding-xl: $padding-base * 8;
+
+// 在安卓手机设置数字是无效的，700默认威bold，600视为正常
+$font-weight-bold: bold;
+
+// 默认字体
+$base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+    Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft Yahei', sans-serif;
+
+// 默认价格字体
+$price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial,
+    sans-serif;
+
+// 行高
+$height-l: 1rem;
+$line-height-l: 1rem;
+$line-height-sm: $font-size-sm;
+
+// 动画
+$animation-duration-base: 0.3s;
+$animation-duration-fast: 0.3s;
+
+// Border
+$border-color: $black-5;
+$border-width-base: 1px;
+$border-radius-sm: 2px;
+$border-radius-l: 4px;
+$border-radius-lg: 8px;
+$border-radius-max: 999px;
+
+// Divider
+$divider-margin: $padding-l 0;
+$divider-text-color: $black-4;
+$divider-font-size: $font-size-l;
+$divider-line-height: 24px;
+$divider-border-color: $border-color;
+$divider-content-padding: $padding-l;
+$divider-content-left-width: 10%;
+$divider-content-right-width: 10%;
+
+// Placeholder
+$placeholder-color: $black-4;
+
+// icon
+$icon-grey-color: rgb(222, 222, 222);
+$icon-blue-color: $blue;
+$icon-white-color: $white-1;
+$icon-black-color: $black;
+$icon-red-color: $red;
+$icon-orange-color: $orange;
+$icon-green-color: $green;
+
+$icon-fill-color: $black-4;
+$icon-size-lg: 1.375rem;
+$icon-size-md: 1.05rem;
+$icon-size-sm: 0.68rem;
+$icon-size-auto: 100%;

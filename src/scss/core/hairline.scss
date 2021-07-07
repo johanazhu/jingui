@@ -1,0 +1,30 @@
+@import './var.scss';
+@import './mixin.scss';
+
+[class*='jqb-hairline'] {
+    &::after {
+        @include hairline();
+    }
+}
+
+.jqb-hairline {
+    &,
+    &__top,
+    &__bottom,
+    &__left,
+    &__right {
+        position: relative;
+    }
+    &__top::after {
+        border-top-width: $border-width-base;
+    }
+    &__bottom::after {
+        border-bottom-width: $border-width-base;
+    }
+    &__left::after {
+        border-left-width: $border-width-base;
+    }
+    &__right::after {
+        border-right-width: $border-width-base;
+    }
+}

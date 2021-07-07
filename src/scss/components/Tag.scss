@@ -1,0 +1,28 @@
+.jing-tag {
+    display: inline-block;
+    height: $height-l;
+    line-height: $line-height-l;
+    margin-right: 0.25rem;
+    padding: 0 $padding-base;
+    border-radius: 0.25rem;
+    font-size: $font-size-xxs;
+    background-color: $bg-orange;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    &__orange {
+        color: $orange;
+        background-color: $bg-orange;
+    }
+    &__highOrange {
+        color: $white-1;
+        background: $gradient-orange;
+    }
+    &__white {
+        color: $white-1;
+        background-color: $white-3;
+    }
+    &__highWhite {
+        color: $blue;
+        background-color: $bg-white;
+    }
+}

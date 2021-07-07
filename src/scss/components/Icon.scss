@@ -1,0 +1,62 @@
+.jing-icon {
+    display: inline-block;
+    color: inherit;
+    font-style: normal;
+    line-height: 0;
+    text-align: center;
+    text-transform: none;
+    vertical-align: -0.125em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    //   display: inline-block;
+    //   line-height: 0;
+    //   position: relative;
+    //   & > * {
+    //     display: inline-block;
+    //     @extend .am-pos-cc;
+    //     @include transform-origin(50% 50%);
+    //   }
+    svg {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+    }
+    &--grey svg {
+        @include iconColorFn($icon-grey-color);
+    }
+    &--blue svg {
+        @include iconColorFn($icon-blue-color);
+    }
+    &--white svg {
+        @include iconColorFn($icon-white-color);
+    }
+    &--green svg {
+        @include iconColorFn($icon-green-color);
+    }
+    &--black svg {
+        @include iconColorFn($icon-black-color);
+    }
+    &--red svg {
+        @include iconColorFn($icon-red-color);
+    }
+    &--orange svg {
+        @include iconColorFn($icon-orange-color);
+    }
+    &--lg {
+        width: $icon-size-lg;
+        height: $icon-size-lg;
+    }
+    &--md {
+        width: $icon-size-md;
+        height: $icon-size-md;
+    }
+    &--sm {
+        width: $icon-size-sm;
+        height: $icon-size-sm;
+    }
+    &--auto {
+        width: $icon-size-auto;
+        height: $icon-size-auto;
+    }
+}
