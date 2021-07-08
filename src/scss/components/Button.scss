@@ -1,10 +1,11 @@
 .jing-button {
-    display: block;
-    width: 100%;
+    // display: block;
+    // width: 100%;
     height: 2.75rem;
     line-height: 2.75rem;
     margin-left: 3%;
-    padding: 0 0.5rem;
+    padding: 0 1rem;
+    // padding: 0 16px;
     position: relative;
     border: 1px solid transparent;
     float: left;
@@ -14,46 +15,127 @@
     cursor: pointer;
     overflow: hidden;
     text-align: center;
-    @extend .text-center;
+    // @extend .text-center;
     outline: none;
     &:first-child {
         margin-left: 0 !important;
     }
-    &__type_circular {
-        border-radius: 128px !important;
-    }
-    &__state_disable,
-    &__state_disable:active {
+    &--disable,
+    &--disable:active {
         border: 0 !important;
         background: rgb(220, 220, 220) !important;
         color: #fff !important;
         cursor: not-allowed !important;
     }
-    &__type_primary {
-        border: none !important;
-    }
-    &__type_small {
+    &--sm {
         height: 1.25rem;
         line-height: 1.25rem;
         margin-left: 3%;
         font-size: $am-xs;
     }
-    &__type_block {
-        width: 1rem;
-        height: 1rem;
-        border: 0;
-        background-color: transparent;
-        border-radius: 0;
-        margin: 0;
-        padding: 0;
+    &--block {
+        border: none !important;
     }
-    &__type_block {
-        &.Button__state_active {
-            background-color: transparent;
-            opacity: 0.75;
+    &--sm {
+        &.jing-button--loading:before {
+            width: 1.07rem;
+            height: 1.07rem;
+            margin-left: -0.535rem;
         }
     }
-    &__state_loading {
+    &--blue {
+        border-color: $globalColorBlue;
+        color: $globalColorBlue;
+        &:after,
+        &:before {
+            background-color: $globalColorBlue;
+        }
+    }
+    &--blue {
+        &.jing-button--block {
+            background-color: $globalColorBlue;
+            color: #fff !important;
+        }
+    }
+    &--blue {
+        &.jing-button--active {
+            background-color: lighten($globalColorBlue, 42%);
+        }
+    }
+    &--blue {
+        &.jing-button--block {
+            &.jing-button--active {
+                background-color: darken($globalColorBlue, 5%);
+                color: #fff;
+                &:after,
+                &:before {
+                    background-color: darken($globalColorBlue, 5%);
+                }
+            }
+        }
+    }
+    &--orange {
+        border-color: $globalColorOrange;
+        color: $globalColorOrange;
+        &:after,
+        &:before {
+            background-color: $globalColorOrange;
+        }
+    }
+    &--orange {
+        &.jing-button--block {
+            background: $globalColorOrangeGradient;
+            color: #fff !important;
+        }
+    }
+    &--orange {
+        &.jing-button--active {
+            background-color: lighten($globalColorOrange, 37%);
+        }
+    }
+    &--orange {
+        &.jing-button--block {
+            &.jing-button--active {
+                background: darken($globalColorOrange, 10%);
+                &:after,
+                &:before {
+                    background-color: darken($globalColorOrange, 5%);
+                }
+            }
+        }
+    }
+    &--green {
+        border-color: $globalColorGreen;
+        color: $globalColorGreen;
+        &:after,
+        &:before {
+            background-color: $globalColorGreen;
+        }
+    }
+    &--green {
+        &.jing-button--block {
+            background-color: $globalColorGreen;
+            color: #fff !important;
+        }
+    }
+    &--green {
+        &.jing-button--active {
+            background-color: lighten($globalColorGreen, 50%);
+        }
+    }
+    &--green {
+        &.jing-button--block {
+            &.jing-button--active {
+                background-color: darken($globalColorGreen, 5%);
+                color: #fff;
+                &:after,
+                &:before {
+                    background-color: darken($globalColorGreen, 5%);
+                }
+            }
+        }
+    }
+    &--loading {
         position: relative;
         opacity: 0.75;
         cursor: wait !important;
@@ -67,196 +149,6 @@
             right: 0.125rem;
             top: 0.125rem;
             margin-top: -1px;
-        }
-    }
-    &__type_small {
-        &.Button__state_loading:before {
-            width: 1.07rem;
-            height: 1.07rem;
-            margin-left: -0.535rem;
-        }
-    }
-    &__color_red {
-        border-color: $globalColorRed;
-        color: $globalColorRed;
-        &:after,
-        &:before {
-            background-color: $globalColorRed;
-        }
-    }
-    &__color_red {
-        &.Button__type_primary {
-            background-color: $globalColorRed;
-            color: #fff !important;
-        }
-    }
-    &__color_red {
-        &.Button__state_active {
-            background-color: lighten($globalColorRed, 35%);
-        }
-    }
-    &__color_red {
-        &.Button__type_primary {
-            &.Button__state_active {
-                background-color: darken($globalColorRed, 5%);
-                color: #fff;
-                &:after,
-                &:before {
-                    background-color: darken($globalColorRed, 5%);
-                }
-            }
-        }
-    }
-    &__color_green {
-        border-color: $globalColorGreen;
-        color: $globalColorGreen;
-        &:after,
-        &:before {
-            background-color: $globalColorGreen;
-        }
-    }
-    &__color_green {
-        &.Button__type_primary {
-            background-color: $globalColorGreen;
-            color: #fff !important;
-        }
-    }
-    &__color_green {
-        &.Button__state_active {
-            background-color: lighten($globalColorGreen, 50%);
-        }
-    }
-    &__color_green {
-        &.Button__type_primary {
-            &.Button__state_active {
-                background-color: darken($globalColorGreen, 5%);
-                color: #fff;
-                &:after,
-                &:before {
-                    background-color: darken($globalColorGreen, 5%);
-                }
-            }
-        }
-    }
-    &__color_blue {
-        border-color: $globalColorBlue;
-        color: $globalColorBlue;
-        &:after,
-        &:before {
-            background-color: $globalColorBlue;
-        }
-    }
-    &__color_blue {
-        &.Button__type_primary {
-            background-color: $globalColorBlue;
-            color: #fff !important;
-        }
-    }
-    &__color_blue {
-        &.Button__state_active {
-            background-color: lighten($globalColorBlue, 42%);
-        }
-    }
-    &__color_blue {
-        &.Button__type_primary {
-            &.Button__state_active {
-                background-color: darken($globalColorBlue, 5%);
-                color: #fff;
-                &:after,
-                &:before {
-                    background-color: darken($globalColorBlue, 5%);
-                }
-            }
-        }
-    }
-    &__color_orange {
-        border-color: $globalColorOrange;
-        color: $globalColorOrange;
-        &:after,
-        &:before {
-            background-color: $globalColorOrange;
-        }
-    }
-    &__color_orange {
-        &.Button__type_primary {
-            background: $globalColorOrangeGradient;
-            color: #fff !important;
-        }
-    }
-    &__color_orange {
-        &.Button__state_active {
-            background-color: lighten($globalColorOrange, 37%);
-        }
-    }
-    &__color_orange {
-        &.Button__type_primary {
-            &.Button__state_active {
-                background: darken($globalColorOrange, 10%);
-                &:after,
-                &:before {
-                    background-color: darken($globalColorOrange, 5%);
-                }
-            }
-        }
-    }
-    &__color_yellow {
-        border-color: $globalColorYellow;
-        color: $globalColorYellow;
-        &:after,
-        &:before {
-            background-color: $globalColorYellow;
-        }
-    }
-    &__color_yellow {
-        &.Button__type_primary {
-            background: $globalColorYellow;
-            color: #fff !important;
-        }
-    }
-    &__color_yellow {
-        &.Button__state_active {
-            background-color: lighten($globalColorYellow, 37%);
-        }
-    }
-    &__color_yellow {
-        &.Button__type_primary {
-            &.Button__state_active {
-                background: darken($globalColorYellow, 10%);
-                &:after,
-                &:before {
-                    background-color: darken($globalColorYellow, 5%);
-                }
-            }
-        }
-    }
-    &__color_purple {
-        color: $globalColorPurple;
-        &:after,
-        &:before {
-            background-color: $globalColorPurple;
-        }
-    }
-    &__color_purple {
-        &.Button__type_primary {
-            background: $globalColorPurpleGradient;
-            color: #fff !important;
-        }
-    }
-    &__color_purple {
-        &.Button__state_active {
-            background-color: lighten($globalColorPurple, 42%);
-        }
-    }
-    &__color_purple {
-        &.Button__type_primary {
-            &.Button__state_active {
-                background-color: darken($globalColorPurple, 5%);
-                color: #fff;
-                &:after,
-                &:before {
-                    background-color: darken($globalColorPurple, 5%);
-                }
-            }
         }
     }
 }

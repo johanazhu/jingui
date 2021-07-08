@@ -8,9 +8,9 @@ nav:
 
 Demo:
 
-```tsx
+<!-- ```tsx
 import React from 'react';
 import { Foo } from 'jing-ui';
 
 export default () => <Foo title="First Demo" />;
-```
+``` -->

@@ -13,6 +13,7 @@ import { Button } from 'jing-ui';
 export default () => (
     <div>
         <Button>按钮</Button>
+        <Button block>按钮</Button>
     </div>
 );
 ```
@@ -21,11 +22,8 @@ export default () => (
 
 API
 
-| 参数    | 说明                       | 类型           | 默认值 |
-| ------- | -------------------------- | -------------- | ------ |
-| header  | 头部、标题                 | string or node | -      |
-| href    | 跳转路由                   | string         | -      |
-| img     | 头部大图                   | string         | -      |
-| icon    | 顶部小图标                 | string         | -      |
-| iconset | 顶部小图标数组，可循环播放 | string[]       | -      |
-| size    | 大小                       | 'lg \| md'     | -      |
+| 参数  | 说明                                         | 类型    | 默认值 |
+| ----- | -------------------------------------------- | ------- | ------ |
+| color | 设置主题，可选值为 'blue'、'orange'、'green' | string  | 'blue' |
+| size  | 设置大小，可选值为 lg、md、sm、xs            | string  | 'md'   |
+| block | 是否块级元素                                 | boolean | false  |
