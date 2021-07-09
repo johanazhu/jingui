@@ -9,11 +9,10 @@ export interface ChartProps {
     height?: string;
 }
 
-const ColumnChart: React.FC<ChartProps> = props => {
-
+const ColumnChart: React.FC<ChartProps> = (props) => {
     const { data, padding, width, height } = props;
 
-    let canvasRef = useRef<HTMLCanvasElement>(null)
+    let canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
         let chart = new F2.Chart({
@@ -21,19 +20,19 @@ const ColumnChart: React.FC<ChartProps> = props => {
             pixelRatio: window.devicePixelRatio,
             padding,
             width,
-            height
+            height,
         });
 
         chart.source(data, {
             y: {
                 tickCount: 5,
-                min: 0
+                min: 0,
             },
             x: {
                 type: 'timeCat',
                 range: [0, 1],
-                tickCount: 3
-            }
+                tickCount: 3,
+            },
         });
         chart.tooltip({
             custom: true,
@@ -42,8 +41,8 @@ const ColumnChart: React.FC<ChartProps> = props => {
             snap: true,
             crosshairsType: 'xy',
             crosshairsStyle: {
-                lineDash: [2]
-            }
+                lineDash: [2],
+            },
         });
         chart.axis('x', {
             label: function label(text: string, index: number, total: any) {
@@ -54,23 +53,19 @@ const ColumnChart: React.FC<ChartProps> = props => {
                     textCfg.textAlign = 'right';
                 }
                 return textCfg;
-            }
+            },
         });
         chart.line().position('x*y');
         chart.render();
 
-
         return () => {
-            chart.clear()
+            chart.clear();
             chart.destroy();
             chart = null;
-        }
-    }, [])
+        };
+    }, []);
 
-
-    return (
-        <canvas ref={canvasRef}></canvas>
-    )
-}
+    return <canvas ref={canvasRef}></canvas>;
+};
 
 export default React.memo(ColumnChart);

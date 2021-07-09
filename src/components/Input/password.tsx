@@ -13,8 +13,8 @@ const Password = (props: InputProps) => {
     useEffect(() => {
         return () => {
             timer = null;
-        }
-    }, [])
+        };
+    }, []);
 
     const [visible, setIsVisible] = useState(false);
     const [isFocus, setIsFocus] = useState(false);
@@ -22,27 +22,29 @@ const Password = (props: InputProps) => {
     const passwordRender = () => {
         return (
             <>
-                {
-                    isFocus && (
-                        <div
-                            className="eye-btn"
-                            onClick={() => {
-                                // isShowClear = true;
-                                // clearTimeout(timer);
-                                // if (inputRef.current) {
-                                //     inputRef.current.focus();
-                                // }
-                                if (visible) {
-                                    setIsVisible(false);
-                                } else {
-                                    setIsVisible(true);
-                                }
-                            }}
-                        >
-                            {visible ? <IconEyeOpen size="small" /> : <IconEyeClose size="small" />}
-                        </div>
-                    )
-                }
+                {isFocus && (
+                    <div
+                        className="eye-btn"
+                        onClick={() => {
+                            // isShowClear = true;
+                            // clearTimeout(timer);
+                            // if (inputRef.current) {
+                            //     inputRef.current.focus();
+                            // }
+                            if (visible) {
+                                setIsVisible(false);
+                            } else {
+                                setIsVisible(true);
+                            }
+                        }}
+                    >
+                        {visible ? (
+                            <IconEyeOpen size="small" />
+                        ) : (
+                            <IconEyeClose size="small" />
+                        )}
+                    </div>
+                )}
             </>
         );
     };
@@ -52,11 +54,11 @@ const Password = (props: InputProps) => {
             {...props}
             groupClassName="jqb-input__group-password"
             type={visible ? 'text' : 'password'}
-            onFocus={e => {
-                setIsFocus(true)
+            onFocus={(e) => {
+                setIsFocus(true);
                 onFocus && onFocus(e);
             }}
-            onBlur={e => {
+            onBlur={(e) => {
                 // timer = setTimeout(() => {
                 //     setIsFocus(false)
                 // }, 100)

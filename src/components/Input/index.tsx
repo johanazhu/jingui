@@ -26,5 +26,4 @@ Input.Clear = Clear;
 Input.Captcha = Captcha;
 Input.KeyBoard = KeyBoard;
 
-
-export default Input
+export default Input;

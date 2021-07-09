@@ -1,8 +1,8 @@
 ---
-title: jingui - 一套移动端组件库
+title: Jing-ui - 一套移动端组件库
 order: 10
 hero:
-  title: jing-ui
+  title: Jing-ui
   desc: 鲸钱包前端团队自研移动端组件库
   actions:
     - text: 开始

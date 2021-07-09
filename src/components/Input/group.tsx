@@ -11,7 +11,10 @@ export interface GroupProps {
 const Group = (props: GroupProps) => {
     const { className, children, style } = props;
     return (
-        <div className={classnames('jqb-input__group', className)} style={style}>
+        <div
+            className={classnames('jqb-input__group', className)}
+            style={style}
+        >
             {children}
         </div>
     );

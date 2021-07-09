@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Input, Divider } from 'components';
 
-
 // 不同的类型
 export interface ListInputProps {
     value: string;
@@ -12,15 +11,12 @@ export interface ListInputProps {
     isFocus?: boolean;
 }
 
-
 const ListInput = (props: ListInputProps) => {
     const { value, type, placeholder, renderIcon, isFocus } = props;
 
     return (
         <div className="ListInput1">
-            <div className="ListInput1__icon">
-                {renderIcon}
-            </div>
+            <div className="ListInput1__icon">{renderIcon}</div>
             <Input.Group>
                 {/* {type === 'password' &&
                     <Input.Password value={value} placeholder={placeholder} />
@@ -64,8 +60,7 @@ const ListInput = (props: ListInputProps) => {
                 /> */}
             </Input.Group>
         </div>
-    )
-}
+    );
+};
 
 export default React.memo(ListInput);
-

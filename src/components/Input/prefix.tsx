@@ -9,7 +9,9 @@ import { InputProps } from './input';
 function Inner(props: InputProps) {
     return (
         <>
-            <div className="jqb-input__group-prefix-left">{props.icon && <Icon kind={props.icon} />}</div>
+            <div className="jqb-input__group-prefix-left">
+                {props.icon && <Icon kind={props.icon} />}
+            </div>
             {props.children}
         </>
     );
@@ -18,7 +20,10 @@ function Inner(props: InputProps) {
 export default (props: InputProps) => {
     const { className, style } = props;
     return (
-        <Group className={classnames('jqb-input__group-prefix', className)} style={style}>
+        <Group
+            className={classnames('jqb-input__group-prefix', className)}
+            style={style}
+        >
             <Inner {...props} />
         </Group>
     );

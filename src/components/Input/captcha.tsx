@@ -4,21 +4,18 @@ import { InputProps } from './input';
 import Clear from './clear';
 import Group from './group';
 
-
 export interface VerifyProps extends InputProps {
     captcha: any;
     onHandleChangeCaptcha: () => void;
 }
 
 const Captcha = (props: VerifyProps) => {
-
     const { captcha, onHandleChangeCaptcha } = props;
-
 
     const captchaRender = () => {
         return (
             <div
-                className={classnames("jqb-input__captcha")}
+                className={classnames('jqb-input__captcha')}
                 onClick={() => {
                     onHandleChangeCaptcha();
                 }}
@@ -30,9 +27,7 @@ const Captcha = (props: VerifyProps) => {
 
     return (
         <Group className="jqb-input__group-captcha">
-            <Clear
-                {...props}
-            />
+            <Clear {...props} />
             {captchaRender()}
         </Group>
     );

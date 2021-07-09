@@ -76,7 +76,6 @@
 //         }
 //     }, [show, groupStyle]);
 
-
 //     useEffect(() => {
 //         if (show && isShow === 'false') {
 //             if (model === 'input') {
@@ -106,7 +105,6 @@
 //             document.body.style = '';
 //         };
 //     }, [show]);
-
 
 //     if (isActionSheet) {
 //         return (

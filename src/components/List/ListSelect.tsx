@@ -50,19 +50,22 @@ const ListSelect = (props: ListSelectProps) => {
 
     return (
         <div className="ListSelect">
-            {
-                icon && (
-                    <span className="ListSelect__icon">
-                        <Icon kind={icon} />
-                    </span>
-                )
-            }
+            {icon && (
+                <span className="ListSelect__icon">
+                    <Icon kind={icon} />
+                </span>
+            )}
             <span className={classes}>
                 <select
                     className="ListSelect__content-select"
-                    onChange={e => {
+                    onChange={(e) => {
                         // console.log('e.target', e.target.value)
-                        onSelect(setIsSelect, onSelected, e.target.value, e.target.selectedIndex - 1);
+                        onSelect(
+                            setIsSelect,
+                            onSelected,
+                            e.target.value,
+                            e.target.selectedIndex - 1,
+                        );
                     }}
                     defaultValue={defaultValue}
                 >
@@ -73,31 +76,32 @@ const ListSelect = (props: ListSelectProps) => {
                     >
                         {title}
                     </option>
-                    {
-                        list.map((item: ListSelectItemProps, key: any) => {
-                            if (Object.prototype.toString.call(item.value) === "[object Object]") {
-                                // console.log('item', item.value)
-                                return (
-                                    <option
-                                        key={item.value + key}
-                                        className="ListSelect__content-select-option"
-                                        value={JSON.stringify(item.value)}
-                                    >
-                                        {item.title}
-                                    </option>
-                                )
-                            }
+                    {list.map((item: ListSelectItemProps, key: any) => {
+                        if (
+                            Object.prototype.toString.call(item.value) ===
+                            '[object Object]'
+                        ) {
+                            // console.log('item', item.value)
                             return (
                                 <option
                                     key={item.value + key}
                                     className="ListSelect__content-select-option"
-                                    value={item.value}
+                                    value={JSON.stringify(item.value)}
                                 >
                                     {item.title}
                                 </option>
-                            )
-                        })
-                    }
+                            );
+                        }
+                        return (
+                            <option
+                                key={item.value + key}
+                                className="ListSelect__content-select-option"
+                                value={item.value}
+                            >
+                                {item.title}
+                            </option>
+                        );
+                    })}
                 </select>
             </span>
             <span className="ListSelect__link">

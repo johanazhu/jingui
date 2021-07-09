@@ -32,13 +32,23 @@ const ListButton = (props: ListButtonProps) => {
                     <Icon kind={icon} />
                 </span>
             ) : (
+                ''
+            )}
+            <span
+                className={classes1}
+                style={{ marginRight: 3.2 * buttonArray.length + 0.5 + 'rem' }}
+            >
+                <span className="ListButton__content-title">{title}</span>
+                {!!desc ? (
+                    <span className="ListButton__content-desc">{desc}</span>
+                ) : (
                     ''
                 )}
-            <span className={classes1} style={{ marginRight: 3.2 * buttonArray.length + 0.5 + 'rem' }}>
-                <span className="ListButton__content-title">{title}</span>
-                {!!desc ? <span className="ListButton__content-desc">{desc}</span> : ''}
             </span>
-            <span className="ListButton__btn" style={{ width: 3.2 * buttonArray.length + 'rem' }}>
+            <span
+                className="ListButton__btn"
+                style={{ width: 3.2 * buttonArray.length + 'rem' }}
+            >
                 <Button.Group type="group">
                     {buttonArray.map((item: ButtonItemProps) => (
                         <Button.Self

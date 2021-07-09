@@ -55,11 +55,19 @@ const CardSelect = (props: CardSelectProps) => {
                 <span className="ListCardSelect__content-lt">
                     {lt}{' '}
                     <span className="ListCardSelect__content-lt-desc">
-                        {online === true ? '在线支付' : online === false ? '线下汇款' : ''}
+                        {online === true
+                            ? '在线支付'
+                            : online === false
+                            ? '线下汇款'
+                            : ''}
                     </span>
                 </span>
                 <span className="ListCardSelect__content-lb">{lb}</span>
-                <span className={`ListCardSelect__content-rc ${rc === '超出单笔限额' && 'am-color-red'}`}>
+                <span
+                    className={`ListCardSelect__content-rc ${
+                        rc === '超出单笔限额' && 'am-color-red'
+                    }`}
+                >
                     {rc}
                 </span>
             </span>
@@ -69,7 +77,11 @@ const CardSelect = (props: CardSelectProps) => {
     let tempJSX;
     if (onClick || href) {
         tempJSX = (
-            <a className="ListCardSelect ListCardSelect__type_link" href={href} onClick={onClick}>
+            <a
+                className="ListCardSelect ListCardSelect__type_link"
+                href={href}
+                onClick={onClick}
+            >
                 {tempJSXInner}
             </a>
         );

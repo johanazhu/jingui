@@ -1,10 +1,10 @@
 .jing-mask,
 .jing-mask__transparent {
-  z-index: $zindex-mask;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, $opacity-mask);
+    z-index: $zindex-mask;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, $opacity-mask);
 }

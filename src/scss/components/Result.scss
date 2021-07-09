@@ -1,5 +1,8 @@
-.jqb-result {
-  padding: 4rem 0 2rem;
+.jing-result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   &__icon {
     height: 8rem;
@@ -12,29 +15,29 @@
   }
   &__title {
     display: block;
-    font-size: $am-l;
-    font-weight: bold;
-    color: $globalColorBlack0;
+    font-size: $font-size-l;
+    font-weight: $font-weight-bold;
+    color: $black-1;
     margin: $vertical-gap $vertical-gap 0;
   }
   &__subTitle {
     line-height: 1.5em;
     margin: $vertical-gap $vertical-gap 0;
     font-size: $am-sm;
-    color: $globalColorBlack1;
+    color: $black-1;
     text-align: center;
   }
   &__content {
-    margin-top: 2rem;
+    margin-top: $result-margin-md;
   }
   &__extra {
-    margin-top: 2rem;
+    margin-top: $result-margin-md;
   }
 }
 
 @media screen and (max-width: 320px) and (max-height: 480px) {
-  .am-result {
-    margin-bottom: 1rem;
-    padding-top: 1rem;
+  .jing-result {
+    margin-bottom: $result-margin-sm;
+    padding-top: $result-margin-sm;
   }
 }

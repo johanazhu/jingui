@@ -67,15 +67,12 @@ export interface InputProps {
     style?: React.CSSProperties;
     size?: typeof InputSizes[number];
     children?: any;
-    Group?: React.ReactNode,
+    Group?: React.ReactNode;
     autofocus?: any;
 }
 
-
 const Input = (props: any) => {
-    return (
-        <Base {...props} />
-    );
+    return <Base {...props} />;
 };
 
 Input.Group = Group;
@@ -90,6 +87,4 @@ Input.Clear = Clear;
 Input.Captcha = Captcha;
 Input.KeyBoard = KeyBoard;
 
-
-
-export default Input
+export default Input;

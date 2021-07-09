@@ -22,7 +22,11 @@ const ListDatetime = (props: ListDatetimeProps) => {
                         : 'ListDatetime__content'
                 }
             >
-                <input type="date" className="ListDatetime__content-input" placeholder={title} />
+                <input
+                    type="date"
+                    className="ListDatetime__content-input"
+                    placeholder={title}
+                />
             </span>
         </div>
     );

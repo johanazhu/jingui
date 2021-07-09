@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import F2 from '@antv/f2';
 import PieLabel from '@antv/f2/lib/plugin/pie-label';
 
-
 // 饼图
 export interface ChartProps {
     data: any;
@@ -11,11 +10,10 @@ export interface ChartProps {
     height?: string;
 }
 
-const PieChart: React.FC<ChartProps> = props => {
-
+const PieChart: React.FC<ChartProps> = (props) => {
     const { data, padding, width, height } = props;
 
-    let canvasRef = useRef<HTMLCanvasElement>(null)
+    let canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
         let chart = new F2.Chart({
@@ -24,7 +22,7 @@ const PieChart: React.FC<ChartProps> = props => {
             pixelRatio: window.devicePixelRatio,
             padding,
             width,
-            height
+            height,
         });
 
         chart.source(data);
@@ -33,7 +31,7 @@ const PieChart: React.FC<ChartProps> = props => {
             endAngle: 0,
             transposed: true,
             radius: 0.9,
-            innerRadius: 0.5
+            innerRadius: 0.5,
         });
         chart.axis(false);
         chart.legend(false);
@@ -75,12 +73,13 @@ const PieChart: React.FC<ChartProps> = props => {
         //     .html({
         //         position: ['50%', '50%'],
         //         html: `
-        //                 <div style="text-align: center;width:150px;height: 50px;">\n     
-        //                     <p style="font-size: 12px;color: #999;margin: 0" id="title"></p>\n    
-        //                     <p style="font-size: 18px;color: #343434;margin: 0;font-weight: bold;" id="money"></p>\n   
+        //                 <div style="text-align: center;width:150px;height: 50px;">\n
+        //                     <p style="font-size: 12px;color: #999;margin: 0" id="title"></p>\n
+        //                     <p style="font-size: 18px;color: #343434;margin: 0;font-weight: bold;" id="money"></p>\n
         //                 </div>`
         //     });
-        chart.interval()
+        chart
+            .interval()
             .position('const*money')
             .adjust('stack')
             .color('type', ['#1890FF', '#13C2C2', '#2FC25B', '#FACC14']);
@@ -91,39 +90,35 @@ const PieChart: React.FC<ChartProps> = props => {
                 return {
                     text: '￥' + data.money,
                     fill: '#343434',
-                    fontWeight: 'bold'
+                    fontWeight: 'bold',
                 };
             },
             label2: function label2(data: any) {
                 return {
                     text: data.type,
-                    fill: '#999'
+                    fill: '#999',
                 };
             },
             onClick: function onClick(ev: any) {
                 const data = ev.data;
                 if (data) {
-                    console.log('点击事件')
+                    console.log('点击事件');
                     // document.getElementById('money').innerHTML(data.money)
                     // $('#title').text(data.type);
                     // $('#money').text(data.money);
                 }
-            }
+            },
         });
         chart.render();
 
-
         return () => {
-            chart.clear()
+            chart.clear();
             chart.destroy();
             chart = null;
-        }
-    }, [])
+        };
+    }, []);
 
-
-    return (
-        <canvas ref={canvasRef}></canvas>
-    )
-}
+    return <canvas ref={canvasRef}></canvas>;
+};
 
 export default React.memo(PieChart);

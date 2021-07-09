@@ -16,7 +16,7 @@ const descColorKind = tuple(
     'white0',
     'white1',
     'white2',
-    'whiteA50'
+    'whiteA50',
 );
 
 export interface ListRowProps {
@@ -32,44 +32,60 @@ export interface ListRowProps {
 }
 
 const ListRow = (props: ListRowProps) => {
-    const { icon, title, descColor, desc, onClick, onDescClick, href, autoBreak, classNameTitle } = props;
+    const {
+        icon,
+        title,
+        descColor,
+        desc,
+        onClick,
+        onDescClick,
+        href,
+        autoBreak,
+        classNameTitle,
+    } = props;
 
     const classes = classnames('ListRow', {
         [`ListRow__type_link`]: href || onClick,
-        [`ListRow__type_break`]: autoBreak === true
+        [`ListRow__type_break`]: autoBreak === true,
     });
 
     let tempJSX;
 
     const tempJSXInner = (
         <>
-            {
-                icon && (
-                    <span className="ListRow__icon">
-                        {icon}
-                    </span>
-                )
-            }
+            {icon && <span className="ListRow__icon">{icon}</span>}
             <span
-                className={icon ? 'ListRow__content ListRow__content_state_hasicon' : 'ListRow__content'}
+                className={
+                    icon
+                        ? 'ListRow__content ListRow__content_state_hasicon'
+                        : 'ListRow__content'
+                }
             >
-                <span className={classnames("ListRow__content-title", classNameTitle)}>{title}</span>
+                <span
+                    className={classnames(
+                        'ListRow__content-title',
+                        classNameTitle,
+                    )}
+                >
+                    {title}
+                </span>
                 <span
                     onClick={onDescClick}
                     className={
-                        descColor ? `ListRow__content-desc am-color-${descColor}` : 'ListRow__content-desc'
+                        descColor
+                            ? `ListRow__content-desc am-color-${descColor}`
+                            : 'ListRow__content-desc'
                     }
                 >
                     {desc}
                 </span>
             </span>
-            {
-                href || onClick && (
+            {href ||
+                (onClick && (
                     <span className="ListRow__link">
                         <IconArrow size="mini" />
                     </span>
-                )
-            }
+                ))}
         </>
     );
 

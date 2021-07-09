@@ -9,11 +9,10 @@ export interface ChartProps {
     height?: string;
 }
 
-const ColumnChart: React.FC<ChartProps> = props => {
-
+const ColumnChart: React.FC<ChartProps> = (props) => {
     const { data, padding, width, height } = props;
 
-    let canvasRef = useRef<HTMLCanvasElement>(null)
+    let canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
         let chart = new F2.Chart({
@@ -21,13 +20,13 @@ const ColumnChart: React.FC<ChartProps> = props => {
             pixelRatio: window.devicePixelRatio,
             padding,
             width,
-            height
+            height,
         });
 
         chart.source(data, {
             sales: {
-                tickCount: 5
-            }
+                tickCount: 5,
+            },
         });
         chart.tooltip({
             showItemMarker: false,
@@ -36,22 +35,19 @@ const ColumnChart: React.FC<ChartProps> = props => {
                 items[0].name = null;
                 items[0].name = items[0].title;
                 items[0].value = '¥ ' + items[0].value;
-            }
+            },
         });
         chart.interval().position('x*y');
         chart.render();
 
         return () => {
-            chart.clear()
+            chart.clear();
             chart.destroy();
             chart = null;
-        }
-    }, [])
+        };
+    }, []);
 
-
-    return (
-        <canvas ref={canvasRef}></canvas>
-    )
-}
+    return <canvas ref={canvasRef}></canvas>;
+};
 
 export default React.memo(ColumnChart);

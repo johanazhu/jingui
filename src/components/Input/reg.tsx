@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
 
 import { InputProps } from './input';
-import Input from './base'
+import Input from './base';
 
 /**
  * Input 正则Input
@@ -37,8 +37,11 @@ const RegInput = (props: RegProps) => {
             {...props}
             type="text"
             value={value}
-            className={classnames({ 'jqb-input-error': !_isValid && _value }, className)}
-            onChange={res => {
+            className={classnames(
+                { 'jqb-input-error': !_isValid && _value },
+                className,
+            )}
+            onChange={(res) => {
                 setValue(res);
                 onChange(res, _isValid);
             }}

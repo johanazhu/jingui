@@ -34,7 +34,14 @@ function useInputValue(initialValue: string) {
         setCacheValue('');
     };
 
-    return { value, cacheValue, updateValue, updateCacheValue, clearValue, clearCacheValue };
+    return {
+        value,
+        cacheValue,
+        updateValue,
+        updateCacheValue,
+        clearValue,
+        clearCacheValue,
+    };
 }
 
 function changeValue(value: string) {
@@ -46,7 +53,14 @@ function changeValue(value: string) {
 }
 
 const KeyboardInput = (props: KeyboardProps) => {
-    const { value, placeholder, isActive, maxLength, onClearValue, onHandleFocus } = props;
+    const {
+        value,
+        placeholder,
+        isActive,
+        maxLength,
+        onClearValue,
+        onHandleFocus,
+    } = props;
 
     const [isShowClear, setIsShowClear] = useState(false);
     const [isFocus, setIsFocus] = useState(isActive);
@@ -70,7 +84,9 @@ const KeyboardInput = (props: KeyboardProps) => {
             if (maxLength) {
                 if (value.length >= maxLength) {
                     oInput.updateCacheValue(value.substring(0, maxLength));
-                    oInput.updateValue(changeValue(value.substring(0, maxLength)));
+                    oInput.updateValue(
+                        changeValue(value.substring(0, maxLength)),
+                    );
                 } else {
                     oInput.updateCacheValue(value);
                     oInput.updateValue(changeValue(value));
@@ -144,8 +160,8 @@ const KeyboardInput = (props: KeyboardProps) => {
                     {visible ? (
                         <IconEyeOpenTwo size="small" className="eyeOpen" />
                     ) : (
-                            <IconEyeCloseTwo size="small" className="eyeClose" />
-                        )}
+                        <IconEyeCloseTwo size="small" className="eyeClose" />
+                    )}
                 </div>
             )}
             {isShowClear && (

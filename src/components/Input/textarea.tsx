@@ -7,14 +7,12 @@ import Group, { GroupProps } from './group';
 import { InputProps } from './input';
 import Icon from '../Icon';
 
-interface TextareaProps extends InputProps {
-
-}
+interface TextareaProps extends InputProps {}
 
 function useInputValue(initialValue: string) {
     const [value, setValue] = useState(initialValue);
 
-    const onChange = useCallback(e => {
+    const onChange = useCallback((e) => {
         setValue(e.currentTarget.value);
     }, []);
 
@@ -61,12 +59,14 @@ function Textarea(props: TextareaProps) {
         <textarea
             value={oInput.value}
             style={style}
-            className={classnames('jqb-input jqb-textarea', className, { 'jqb-input-error': isError })}
+            className={classnames('jqb-input jqb-textarea', className, {
+                'jqb-input-error': isError,
+            })}
             disabled={isBan}
             placeholder={placeholder}
             maxLength={maxLength}
             minLength={minLength}
-            onChange={e => {
+            onChange={(e) => {
                 oInput.onChange(e);
                 onChange && onChange(e.target.value);
             }}

@@ -22,7 +22,7 @@ function onSelect(
     value: any,
     index: number,
 ) {
-    console.log('选择')
+    console.log('选择');
     setIsSelect(true);
     if (typeof onSelected === 'function') {
         onSelected(value, index);
@@ -38,15 +38,15 @@ const ListSelect = (props: ListSelectProps) => {
         if (list[i].selected === true) {
             defaultValue = list[i].value;
             listHasSelected = true;
-            console.log('list[i].selected', list[i].selected)
-            console.log('defaultValue', defaultValue)
-            console.log('listHasSelected', listHasSelected)
+            console.log('list[i].selected', list[i].selected);
+            console.log('defaultValue', defaultValue);
+            console.log('listHasSelected', listHasSelected);
         }
     }
 
     const [isSelect, setIsSelect] = useState(listHasSelected);
 
-    console.log('isSelect', isSelect)
+    console.log('isSelect', isSelect);
 
     const classes = classNames('ListSelect__content', {
         [`ListSelect__content_state_hasicon`]: icon !== undefined,
@@ -55,18 +55,21 @@ const ListSelect = (props: ListSelectProps) => {
 
     return (
         <div className="ListSelect">
-            {
-                icon && (
-                    <span className="ListSelect__icon">
-                        <Icon kind={icon} />
-                    </span>
-                )
-            }
+            {icon && (
+                <span className="ListSelect__icon">
+                    <Icon kind={icon} />
+                </span>
+            )}
             <span className={classes}>
                 <select
                     className="ListSelect__content-select"
-                    onChange={e => {
-                        onSelect(setIsSelect, onSelected, e.target.value, e.target.selectedIndex - 1);
+                    onChange={(e) => {
+                        onSelect(
+                            setIsSelect,
+                            onSelected,
+                            e.target.value,
+                            e.target.selectedIndex - 1,
+                        );
                     }}
                     defaultValue={defaultValue}
                 >

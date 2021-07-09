@@ -6,7 +6,15 @@ import util from '../_util';
 import { Toast } from '../index';
 import { IconCircleDelete, IconEyeCloseTwo, IconEyeOpenTwo } from 'icons';
 
-const typeKind = tuple('price', 'number', 'mobile', 'password', 'verifycode', 'text', 'captcha');
+const typeKind = tuple(
+    'price',
+    'number',
+    'mobile',
+    'password',
+    'verifycode',
+    'text',
+    'captcha',
+);
 
 const typeAutoComplete = tuple('on', 'off');
 
@@ -188,7 +196,11 @@ const ListInput = (props: ListInputProps) => {
                     }
                 }}
             >
-                {isEyeOn ? <IconEyeOpenTwo size="small" /> : <IconEyeCloseTwo size="small" />}
+                {isEyeOn ? (
+                    <IconEyeOpenTwo size="small" />
+                ) : (
+                    <IconEyeCloseTwo size="small" />
+                )}
             </div>
         );
     } else if (type === 'verifycode') {
@@ -247,7 +259,12 @@ const ListInput = (props: ListInputProps) => {
         placeholder = title ? title : '请输入';
     }
 
-    function bindValue(e: HTMLInputEvent, type: string, minVal: any, maxVal: any) {
+    function bindValue(
+        e: HTMLInputEvent,
+        type: string,
+        minVal: any,
+        maxVal: any,
+    ) {
         let val = '';
         // 格式化value
         if (type === 'price') {

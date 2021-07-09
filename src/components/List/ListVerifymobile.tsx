@@ -71,13 +71,19 @@ const ListVerifymobile = (props: ListVerifymobileProps) => {
     if (bankName) {
         desc = (
             <p className="am-align-right">
-                您将收到来自<span className="am-color-orange">【{bankName}】</span>的验证短信
+                您将收到来自
+                <span className="am-color-orange">【{bankName}】</span>
+                的验证短信
             </p>
         );
     } else {
         if (pkid) {
             if (phoneCallShow) {
-                desc = <p className="am-align-right">您将收到我们的验证电话，请接听</p>;
+                desc = (
+                    <p className="am-align-right">
+                        您将收到我们的验证电话，请接听
+                    </p>
+                );
             } else {
                 desc = (
                     <p className="am-align-right">
@@ -88,14 +94,16 @@ const ListVerifymobile = (props: ListVerifymobileProps) => {
                             }}
                         >
                             请点此语音验证
-            </a>
+                        </a>
                     </p>
                 );
             }
         } else {
             desc = (
                 <p className="am-align-right">
-                    您将收到来自<span className="am-color-orange">【翼支付】</span>的验证短信
+                    您将收到来自
+                    <span className="am-color-orange">【翼支付】</span>
+                    的验证短信
                 </p>
             );
         }

@@ -18,7 +18,15 @@ export interface DashboardProps {
 }
 
 const Dashboard = (props: DashboardProps) => {
-    const { icon, href, leftTitle, rightTitle, leftValue, rightValue, onClick } = props;
+    const {
+        icon,
+        href,
+        leftTitle,
+        rightTitle,
+        leftValue,
+        rightValue,
+        onClick,
+    } = props;
 
     const rbClasses = classNames('ListDashboard__content-rb', {
         [`am-color-orange`]: rightValue > 0,
@@ -48,7 +56,11 @@ const Dashboard = (props: DashboardProps) => {
     );
     if (href || onClick) {
         tempJSX = (
-            <a className="ListDashboard ListDashboard__type_link" href={href} onClick={onClick}>
+            <a
+                className="ListDashboard ListDashboard__type_link"
+                href={href}
+                onClick={onClick}
+            >
                 {tempJSXInner}
             </a>
         );

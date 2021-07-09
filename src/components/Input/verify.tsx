@@ -4,19 +4,16 @@ import { InputProps } from './input';
 import Clear from './clear';
 import Group from './group';
 
-
 export interface VerifyProps extends InputProps {
     onHandleSendMessage: () => void;
 }
 
 const Verify = (props: VerifyProps) => {
-
     const { onHandleSendMessage } = props;
 
     const [text, setText] = useState('获取验证码');
     const [sleepTime, setSleepTime] = useState(60);
     const [isActive, setIsActive] = useState(false);
-
 
     const timer = 60;
 
@@ -27,22 +24,22 @@ const Verify = (props: VerifyProps) => {
             let countDown = setInterval(() => {
                 if (sleepTime < 1) {
                     clearInterval(countDown);
-                    setIsActive(false)
+                    setIsActive(false);
                     setText('获取验证码');
                 } else {
                     setSleepTime(sleepTime - 1);
                     setText(() => `重新获取(${sleepTime})`);
                 }
-            }, 1000)
-            return () => clearInterval(countDown)
+            }, 1000);
+            return () => clearInterval(countDown);
         }
-    }, [isActive, sleepTime])
+    }, [isActive, sleepTime]);
 
     const verifyRender = () => {
         return (
             <div
-                className={classnames("jqb-input__verify", {
-                    'jqb-input__verify_active': isActive
+                className={classnames('jqb-input__verify', {
+                    'jqb-input__verify_active': isActive,
                 })}
                 onClick={() => {
                     onHandleSendMessage();
@@ -57,9 +54,7 @@ const Verify = (props: VerifyProps) => {
 
     return (
         <Group className="jqb-input__group-verify">
-            <Clear
-                {...props}
-            />
+            <Clear {...props} />
             {verifyRender()}
         </Group>
     );

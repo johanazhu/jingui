@@ -12,7 +12,7 @@ export type ButtonColor = 'blue' | 'orange' | 'green';
 export type ButtonSize = 'lg' | 'md' | 'sm' | 'xs';
 export type ButtonState = 'loading' | 'disable' | 'active';
 
-interface ButtonProps {
+export interface ButtonProps {
     className?: string;
     color?: ButtonColor;
     size?: ButtonSize;
@@ -20,6 +20,7 @@ interface ButtonProps {
     block?: boolean;
     style?: React.CSSProperties;
     onClick?: (e: MouseEvent) => void;
+    children?: React.ReactNode;
 }
 
 const Button: FC<ButtonProps> = (props) => {

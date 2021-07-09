@@ -106,11 +106,15 @@ const ListSwitch = (props: ListSwitchProps) => {
                     <Icon kind={icon} />
                 </span>
             ) : (
-                    ''
-                )}
+                ''
+            )}
             <span className={classes1}>
                 <span className="ListSwitch__content-title">{title}</span>
-                {!!desc ? <span className="ListSwitch__content-desc">{desc}</span> : ''}
+                {!!desc ? (
+                    <span className="ListSwitch__content-desc">{desc}</span>
+                ) : (
+                    ''
+                )}
             </span>
             <span
                 className={classes2}

@@ -13,7 +13,15 @@ export interface ListKeyBoardProps {
 }
 
 const ListKeyBoard = (props: ListKeyBoardProps) => {
-    const { value, placeholder, renderIcon, isFocus, maxLength, onHandleFocus, onClearValue } = props;
+    const {
+        value,
+        placeholder,
+        renderIcon,
+        isFocus,
+        maxLength,
+        onHandleFocus,
+        onClearValue,
+    } = props;
     return (
         <div className="ListKeyBoard">
             <div className="ListKeyBoard__icon">{renderIcon}</div>

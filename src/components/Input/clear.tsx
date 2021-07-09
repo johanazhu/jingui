@@ -73,9 +73,8 @@ const Clear = (props: ClearProps) => {
     useEffect(() => {
         return () => {
             timer = null;
-        }
-    }, [])
-
+        };
+    }, []);
 
     function onHandleFocus(e: any) {
         setIsFocus(true);
@@ -102,29 +101,27 @@ const Clear = (props: ClearProps) => {
                     onChange && onChange(res, e);
                 }}
                 onFocus={onHandleFocus}
-                onBlur={e => {
+                onBlur={(e) => {
                     // changeStatus(false);
                     timer = setTimeout(() => {
                         setIsShowClear(false);
-                    }, 100)
+                    }, 100);
                     onBlur && onBlur(e);
                 }}
             />
             {render}
-            {
-                isShowClear && (
-                    <div
-                        className="clear-btn"
-                        onClick={() => {
-                            inputRef.current?.focus();
-                            oInput.clearValue();
-                            onChange && onChange('');
-                        }}
-                    >
-                        <IconCircleDelete size="small" />
-                    </div>
-                )
-            }
+            {isShowClear && (
+                <div
+                    className="clear-btn"
+                    onClick={() => {
+                        inputRef.current?.focus();
+                        oInput.clearValue();
+                        onChange && onChange('');
+                    }}
+                >
+                    <IconCircleDelete size="small" />
+                </div>
+            )}
         </Group>
     );
 };
@@ -136,11 +133,11 @@ Clear.defaultProps = {
     error: false,
     style: null,
     groupStyle: null,
-    onChange: function () { },
-    onFocus: function () { },
-    onBlur: function () { },
-    onEnter: function () { },
-    onClear: function () { },
+    onChange: function () {},
+    onFocus: function () {},
+    onBlur: function () {},
+    onEnter: function () {},
+    onClear: function () {},
 };
 
 Clear.propTypes = {

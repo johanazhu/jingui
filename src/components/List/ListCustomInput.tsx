@@ -11,7 +11,6 @@ export interface ListInputProps {
     placeholder?: string;
 }
 
-
 function eyeClicked(isEyeOn: any, setIsEyeOn: any) {
     if (isEyeOn === true) {
         setIsEyeOn(false);
@@ -36,14 +35,8 @@ function inputOnFocus(setIsFocus: any) {
     setIsFocus(true);
 }
 
-
 const ListCustomInput = (props: ListInputProps) => {
-    const {
-        value,
-        onHandleFocus,
-        onHandleBlur,
-        placeholder,
-    } = props;
+    const { value, onHandleFocus, onHandleBlur, placeholder } = props;
 
     const [isFocus, setIsFocus] = React.useState(false);
     const [isEyeOn, setIsEyeOn] = React.useState(props.isEyeOn || false);
@@ -62,26 +55,22 @@ const ListCustomInput = (props: ListInputProps) => {
             className="ListCustomInput__content-eye"
             onClick={() => {
                 eyeClicked(isEyeOn, setIsEyeOn);
-            }}>
-            {
-                isEyeOn ? <IconEyeOpen /> : <IconEyeClose />
-            }
+            }}
+        >
+            {isEyeOn ? <IconEyeOpen /> : <IconEyeClose />}
         </div>
-    )
+    );
 
     const clearJSX = (
         <div
             className="ListCustomInput__content-clear"
             onClick={() => {
-                console.log('清')
-            }}>
-            {
-                isShowClear ? (
-                    <IconCircleDelete />
-                ) : <IconCircleDelete />
-            }
+                console.log('清');
+            }}
+        >
+            {isShowClear ? <IconCircleDelete /> : <IconCircleDelete />}
         </div>
-    )
+    );
 
     return (
         <div className={classes}>
@@ -92,17 +81,18 @@ const ListCustomInput = (props: ListInputProps) => {
                     onBlur={() => {
                         inputOnBlur(setIsFocus);
                         if (typeof onHandleBlur === 'function') {
-                            onHandleBlur()
+                            onHandleBlur();
                         }
                     }}
                     onFocus={(e) => {
                         inputOnFocus(setIsFocus);
                         if (typeof onHandleFocus === 'function') {
-                            onHandleFocus(e)
+                            onHandleFocus(e);
                         }
                     }}
                     className="ListCustomInput__content-input"
-                    placeholder={placeholder}>
+                    placeholder={placeholder}
+                >
                     {value}
                 </div>
             </div>
@@ -115,7 +105,7 @@ ListCustomInput.propTypes = {
     isEyeOn: PropTypes.bool,
     placeholder: PropTypes.string,
     onHandleFocus: PropTypes.func,
-    onHandleBlur: PropTypes.func
+    onHandleBlur: PropTypes.func,
 };
 
 export default React.memo(ListCustomInput);

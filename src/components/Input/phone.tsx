@@ -32,7 +32,12 @@ const Phone = (props: PhoneProps) => {
 
     return (
         <Prefix icon={icon} className={className}>
-            <RegInput {...props} type="text" reg={reg || /^[1]([3-9])[0-9]{9}$/} value={_value} />
+            <RegInput
+                {...props}
+                type="text"
+                reg={reg || /^[1]([3-9])[0-9]{9}$/}
+                value={_value}
+            />
         </Prefix>
     );
 };

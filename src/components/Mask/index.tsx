@@ -2,7 +2,6 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-
 export interface MaskProps {
     className?: string;
     transparent?: boolean;
@@ -10,7 +9,7 @@ export interface MaskProps {
     onClick?: () => void;
 }
 
-const Mask = (props: MaskProps, { }) => {
+const Mask = (props: MaskProps, {}) => {
     const { className, transparent, style, onClick, ...others } = props;
 
     const classes = classnames(
@@ -27,7 +26,14 @@ const Mask = (props: MaskProps, { }) => {
         }
     }
 
-    return <div className={classes} style={style} {...others} onClick={handleClick} />;
+    return (
+        <div
+            className={classes}
+            style={style}
+            {...others}
+            onClick={handleClick}
+        />
+    );
 };
 
 Mask.defaultProps = {

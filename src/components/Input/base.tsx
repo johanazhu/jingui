@@ -1,4 +1,10 @@
-import React, { useState, useEffect, useCallback, forwardRef, useRef } from 'react';
+import React, {
+    useState,
+    useEffect,
+    useCallback,
+    forwardRef,
+    useRef,
+} from 'react';
 import * as PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -7,11 +13,10 @@ import { InputProps } from './input';
 import { tuple } from '../_util/type';
 export const InputSizes = tuple('small', 'default', 'large');
 
-
 function useInputValue(initialValue: string | undefined) {
     const [value, setValue] = useState(initialValue);
 
-    const onChange = useCallback(e => {
+    const onChange = useCallback((e) => {
         setValue(e.currentTarget.value);
     }, []);
 
@@ -62,30 +67,31 @@ const Input = forwardRef((props: InputProps, ref: any) => {
             type={type}
             style={style}
             value={oInput.value}
-            className={classnames('jqb-input', className, { 'jqb-input__error': isError })}
+            className={classnames('jqb-input', className, {
+                'jqb-input__error': isError,
+            })}
             disabled={isBan}
             placeholder={placeholder}
             maxLength={maxLength}
             minLength={minLength}
             onFocus={onFocus}
             onBlur={onBlur}
-            onChange={e => {
+            onChange={(e) => {
                 oInput.onChange(e);
                 onChange && onChange(e.target.value, e);
             }}
         />
     );
-})
-
+});
 
 Input.defaultProps = {
     className: '',
     disabled: false,
     error: false,
-    onChange: function () { },
-    onFocus: function () { },
-    onBlur: function () { },
-    onClear: function () { },
+    onChange: function () {},
+    onFocus: function () {},
+    onBlur: function () {},
+    onClear: function () {},
 };
 
 Input.propTypes = {

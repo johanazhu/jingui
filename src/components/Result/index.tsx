@@ -14,7 +14,17 @@ import {
     JqbError500,
 } from './resultStatus';
 
-export type ResultStatus = 'success' | 'fail' | 'empty' | 'cancel' | 'network' | 'right' | 'waiting' | 'countdown' | '404' | '500';
+export type ResultStatus =
+    | 'success'
+    | 'fail'
+    | 'empty'
+    | 'cancel'
+    | 'network'
+    | 'right'
+    | 'waiting'
+    | 'countdown'
+    | '404'
+    | '500';
 
 export const ExceptionMap = {
     success: JqbSuccess,
@@ -46,7 +56,7 @@ const renderIcon = ({ status }: ResultProps) => {
     if (ExceptionStatus.includes(status as ResultStatusType)) {
         const SVGComponent = ExceptionMap[status as ResultStatusType];
         return (
-            <div className={classnames('jqb-result__icon')}>
+            <div className={classnames('jing-result__icon')}>
                 <SVGComponent />
             </div>
         );
@@ -56,15 +66,15 @@ const renderIcon = ({ status }: ResultProps) => {
 const Result = (props: ResultProps) => {
     const { title, subTitle, extra, className, children } = props;
 
-    const _classes = classnames('jqb-result', className);
+    const _classes = classnames('jing-result', className);
 
     return (
         <div className={_classes}>
             {renderIcon(props)}
-            {title && <div className="jqb-result__title">{title}</div>}
-            {subTitle && <div className="jqb-result__subTitle">{subTitle}</div>}
-            {children && <div className="jqb-result__content">{children}</div>}
-            {extra && <div className="jqb-result__extra">{extra}</div>}
+            {title && <div className="jing-result__title">{title}</div>}
+            {subTitle && <div className="jing-result__subTitle">{subTitle}</div>}
+            {children && <div className="jing-result__content">{children}</div>}
+            {extra && <div className="jing-result__extra">{extra}</div>}
         </div>
     );
 };

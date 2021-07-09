@@ -5,7 +5,7 @@ interface PanelProps {
     className?: string;
     title?: React.ReactNode;
     more?: React.ReactNode;
-    children: React.ReactNode;
+    children?: React.ReactNode;
 }
 
 const Panel: React.FC<PanelProps> = ({ className, children, title, more }) => {

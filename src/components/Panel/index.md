@@ -34,7 +34,7 @@ export default () => (
           更多
         </a>
       }
-    ></Panel>
+    />
   </div>
 );
 ```

@@ -19,7 +19,11 @@ function ListItemClicked(onClick: (index: number) => void, index: number) {
     }
 }
 
-function setListItem(item: CheckboxItemProps, index: number, onClick: (index: number) => void) {
+function setListItem(
+    item: CheckboxItemProps,
+    index: number,
+    onClick: (index: number) => void,
+) {
     const { title, value, checked } = item;
 
     return (
@@ -31,7 +35,9 @@ function setListItem(item: CheckboxItemProps, index: number, onClick: (index: nu
             }}
         >
             <span className="ListCheckbox__icon">
-                <Icon kind={checked === true ? 'checkbox_state_on' : 'checkbox'} />
+                <Icon
+                    kind={checked === true ? 'checkbox_state_on' : 'checkbox'}
+                />
             </span>
             <span className="ListCheckbox__content">
                 <span className="ListCheckbox__content-title">{title}</span>
@@ -45,7 +51,9 @@ const Checkbox = (props: CheckboxProps) => {
 
     return (
         <div className="am-group">
-            {list.map((item: CheckboxItemProps, index: number) => setListItem(item, index, onClick))}
+            {list.map((item: CheckboxItemProps, index: number) =>
+                setListItem(item, index, onClick),
+            )}
         </div>
     );
 };

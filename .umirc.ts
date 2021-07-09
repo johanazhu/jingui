@@ -1,12 +1,15 @@
 import { defineConfig } from 'dumi';
 
 export default defineConfig({
-    title: 'jing-ui',
+    title: 'Jing-ui',
     favicon: 'https://i.loli.net/2021/07/07/jV4wc98UW5ELlCS.png',
     logo: 'https://i.loli.net/2021/07/07/jV4wc98UW5ELlCS.png',
     outputPath: 'docs-dist',
     mode: 'site',
-    navs: [null, { title: 'GitHub', path: 'https://github.com/johanazhu/jingui' }],
+    navs: [
+        null,
+        { title: 'GitHub', path: 'https://github.com/johanazhu/jingui' },
+    ],
     themeConfig: {
         hd: {
             // 根据不同的设备屏幕宽度断点切换高清方案
@@ -31,4 +34,48 @@ export default defineConfig({
             .use('@svgr/webpack')
             .loader(require.resolve('@svgr/webpack'));
     },
+    styles: [
+        `
+        .__dumi-default-mobile-demo-layout .jing-page {
+            
+        }
+        .__dumi-default-mobile-demo-layout .jing-panel__header {
+            padding-left: 15px;
+        }
+        .__dumi-default-mobile-demo-layout .jing-panel__body {
+            overflow: hidden;
+            padding: 15px 15px 0 15px;
+        }
+        .__dumi-default-mobile-demo-layout .jing-page-result .jing-panel__body {
+            overflow: hidden;
+            padding: 15px;
+        }
+        .__dumi-default-mobile-demo-layout .jing-page-button .jing-button {
+            margin-bottom: 15px;
+            margin-right: 15px;
+        }
+        .markdown *:not(pre) code {
+          margin: 0 1px;
+          padding: .2em .4em !important;
+          font-size: .9em;
+          color: rgba(0, 0, 0, 0.85) !important;
+          background: #f2f4f5 !important;
+          border: 1px solid #f0f0f0;
+          border-radius: 3px;
+          font-family: sfmono-regular,Consolas,liberation mono,Menlo,Courier,monospace;
+        }
+        .markdown table td:nth-child(3) {
+          color: #FF5555;
+          font-size: 13px;
+          word-break: break-all;
+        }
+        .markdown table td:nth-child(3) > code {
+          color: #FF5555 !important;
+          background-color: #F6F6F6 !important;
+          font-size: 13px;
+          word-break: break-all;
+          margin-bottom: 6px;
+        }
+        `,
+    ],
 });
