@@ -10,6 +10,9 @@ export default defineConfig({
         null,
         { title: 'GitHub', path: 'https://github.com/johanazhu/jingui' },
     ],
+    theme: {
+        '@c-primary': '#3264c8',
+    },
     themeConfig: {
         hd: {
             // 根据不同的设备屏幕宽度断点切换高清方案

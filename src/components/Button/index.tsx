@@ -1,6 +1,6 @@
 import React, { FC, TouchEvent, MouseEvent, useState } from 'react';
 import classNames from 'classnames';
-import { MOVEOFFSET, tuple } from '../utils';
+import { MOVEOFFSET } from '../utils';
 // import { Loading } from 'components';
 
 let touchX = 0;
@@ -8,12 +8,14 @@ let touchXPos = 0;
 let touchY = 0;
 let touchYPos = 0;
 
+export type ButtonVariant = 'contained' | 'outlined' | 'text';
 export type ButtonColor = 'blue' | 'orange' | 'green';
-export type ButtonSize = 'lg' | 'md' | 'sm' | 'xs';
+export type ButtonSize = 'md' | 'sm';
 export type ButtonState = 'loading' | 'disable' | 'active';
 
 export interface ButtonProps {
     className?: string;
+    variant?: ButtonVariant;
     color?: ButtonColor;
     size?: ButtonSize;
     state?: ButtonState;
@@ -26,11 +28,12 @@ export interface ButtonProps {
 const Button: FC<ButtonProps> = (props) => {
     const [isActive, setIsActive] = useState(false);
 
-    const { className, color, size, state, block, children, style } = props;
+    const { className, variant, color, size, state, block, children, style } = props;
 
     const prefixCls = 'jing-button';
 
     const classes = classNames(prefixCls, className, {
+        [`${prefixCls}--${variant}`]: !!variant,
         [`${prefixCls}--${color}`]: !!color,
         [`${prefixCls}--${size}`]: !!size,
         [`${prefixCls}--${state}`]: !!state,
@@ -108,6 +111,7 @@ const Button: FC<ButtonProps> = (props) => {
 };
 
 Button.defaultProps = {
+    variant: 'contained',
     color: 'blue',
     size: 'md',
     block: false,

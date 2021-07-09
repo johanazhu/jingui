@@ -1,40 +1,80 @@
+
+@mixin jing-button--contained($color) {
+    background: $color;
+    color: $white-1;
+}
+
+// 大小
+@mixin button-size($height, $padding, $font-size, $icon-size) {
+    padding: 0 $padding;
+    font-size: $font-size;
+    height: $height;
+    line-height: 1.5;
+  
+    @include m(circle) {
+      width: $height;
+      padding: 0;
+    }
+  
+    @include b(icon) {
+      font-size: $icon-size;
+    }
+  
+    * + span {
+      margin-left: calc(#{$padding} / 2);
+    }
+  }
+
+
 .jing-button {
-  // display: block;
-  // width: 100%;
   height: 2.75rem;
   line-height: 2.75rem;
   margin-left: 3%;
   padding: 0 1rem;
-  // padding: 0 16px;
   position: relative;
   border: 1px solid transparent;
   float: left;
   border-radius: 0.5rem;
-  background-color: #fff;
+//   background-color: #fff;
   font-size: $am-l;
   cursor: pointer;
   overflow: hidden;
   text-align: center;
-  // @extend .text-center;
   outline: none;
   &:first-child {
     margin-left: 0 !important;
   }
+  &--contained {
+    border: none !important;
+  }
+  &--contained {
+    background-color: #fff;
+  }
+  &--text {
+    background-color: #fff;
+  }
+  &--block {
+    display: block;
+    width: 100%;
+  }
   &--disable,
   &--disable:active {
     border: 0 !important;
-    background: rgb(220, 220, 220) !important;
+    background: $button-disable-color !important;
     color: #fff !important;
     cursor: not-allowed !important;
+  }
+  &--md {
+    height: 2.75rem;
+    line-height: 2.75rem;
+    margin-left: 3%;
+    font-size: $am-xs;
   }
   &--sm {
     height: 1.25rem;
     line-height: 1.25rem;
     margin-left: 3%;
     font-size: $am-xs;
-  }
-  &--block {
-    border: none !important;
   }
   &--sm {
     &.jing-button--loading:before {
@@ -44,93 +84,90 @@
     }
   }
   &--blue {
-    border-color: $globalColorBlue;
-    color: $globalColorBlue;
+    border-color: $button-blue-color;
+    color: $button-blue-color;
     &:after,
     &:before {
-      background-color: $globalColorBlue;
+      background-color: $button-blue-color;
     }
   }
   &--blue {
-    &.jing-button--block {
-      background-color: $globalColorBlue;
-      color: #fff !important;
+    &.jing-button--contained {
+        @include jing-button--contained($button-blue-color);
     }
   }
   &--blue {
     &.jing-button--active {
-      background-color: lighten($globalColorBlue, 42%);
+      background-color: lighten($button-blue-color, 42%);
     }
   }
   &--blue {
-    &.jing-button--block {
+    &.jing-button--contained {
       &.jing-button--active {
-        background-color: darken($globalColorBlue, 5%);
+        background-color: darken($button-blue-color, 5%);
         color: #fff;
         &:after,
         &:before {
-          background-color: darken($globalColorBlue, 5%);
+          background-color: darken($button-blue-color, 5%);
         }
       }
     }
   }
   &--orange {
-    border-color: $globalColorOrange;
-    color: $globalColorOrange;
+    border-color: $button-orange-color;
+    color: $button-orange-color;
     &:after,
     &:before {
-      background-color: $globalColorOrange;
+      background-color: $button-orange-color;
     }
   }
   &--orange {
-    &.jing-button--block {
-      background: $globalColorOrangeGradient;
-      color: #fff !important;
+    &.jing-button--contained {
+        @include jing-button--contained($button-orange-color);
     }
   }
   &--orange {
     &.jing-button--active {
-      background-color: lighten($globalColorOrange, 37%);
+      background-color: lighten($button-orange-color, 37%);
     }
   }
   &--orange {
-    &.jing-button--block {
+    &.jing-button--contained {
       &.jing-button--active {
-        background: darken($globalColorOrange, 10%);
+        background: darken($button-orange-color, 10%);
         &:after,
         &:before {
-          background-color: darken($globalColorOrange, 5%);
+          background-color: darken($button-orange-color, 5%);
         }
       }
     }
   }
   &--green {
-    border-color: $globalColorGreen;
-    color: $globalColorGreen;
+    border-color: $button-green-color;
+    color: $button-green-color;
     &:after,
     &:before {
-      background-color: $globalColorGreen;
+      background-color: $button-green-color;
     }
   }
   &--green {
-    &.jing-button--block {
-      background-color: $globalColorGreen;
-      color: #fff !important;
+    &.jing-button--contained {
+        @include jing-button--contained($button-green-color);
     }
   }
   &--green {
     &.jing-button--active {
-      background-color: lighten($globalColorGreen, 50%);
+      background-color: lighten($button-green-color, 50%);
     }
   }
   &--green {
     &.jing-button--block {
       &.jing-button--active {
-        background-color: darken($globalColorGreen, 5%);
+        background-color: darken($button-green-color, 5%);
         color: #fff;
         &:after,
         &:before {
-          background-color: darken($globalColorGreen, 5%);
+          background-color: darken($button-green-color, 5%);
         }
       }
     }
