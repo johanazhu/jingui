@@ -8,10 +8,10 @@
 
 ## 💫 特性
 
-- 基于 `React` 开发 UI 组件
-- 支持 Web 开发
-- 支持按需引入
-- 支持 TypeScript
+-   基于 `React` 开发 UI 组件
+-   支持 Web 开发
+-   支持按需引入
+-   支持 TypeScript
 
 ## 📦 安装
 
@@ -29,9 +29,9 @@ yarn add jing-ui
 import { Button } from 'jing-ui';
 
 const App = () => (
-  <>
-    <Button>Click Jing</Button>
-  </>
+    <>
+        <Button>Click Jing</Button>
+    </>
 );
 ```
 

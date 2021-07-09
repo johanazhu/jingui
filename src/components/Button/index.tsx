@@ -28,7 +28,8 @@ export interface ButtonProps {
 const Button: FC<ButtonProps> = (props) => {
     const [isActive, setIsActive] = useState(false);
 
-    const { className, variant, color, size, state, block, children, style } = props;
+    const { className, variant, color, size, state, block, children, style } =
+        props;
 
     const prefixCls = 'jing-button';
 

@@ -1,7 +1,7 @@
 ---
 nav:
-  title: 组件
-  path: /components
+    title: 组件
+    path: /components
 ---
 
 Demo:
@@ -14,5 +14,5 @@ export default () => <Mask />;
 ```
 
 | 属性        | 说明     | 类型   | 默认值    |
-| ----------- | -------- | ------ | --------- |
-| transparent | 卡片标题 | string | ReactNode | - |
+| ----------- | -------- | ------ | --------- | --- |
+| transparent | 卡片标题 | string | ReactNode | -   |

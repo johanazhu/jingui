@@ -7,9 +7,12 @@ export default () => (
             <Result
                 status="empty"
                 extra={
-                    <Button block onClick={() => {
-                        alert('click');
-                    }}>
+                    <Button
+                        block
+                        onClick={() => {
+                            alert('click');
+                        }}
+                    >
                         按钮
                     </Button>
                 }

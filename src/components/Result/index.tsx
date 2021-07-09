@@ -72,7 +72,9 @@ const Result = (props: ResultProps) => {
         <div className={_classes}>
             {renderIcon(props)}
             {title && <div className="jing-result__title">{title}</div>}
-            {subTitle && <div className="jing-result__subTitle">{subTitle}</div>}
+            {subTitle && (
+                <div className="jing-result__subTitle">{subTitle}</div>
+            )}
             {children && <div className="jing-result__content">{children}</div>}
             {extra && <div className="jing-result__extra">{extra}</div>}
         </div>

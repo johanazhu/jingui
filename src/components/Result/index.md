@@ -1,7 +1,7 @@
 ---
 nav:
-  title: 组件
-  path: /components
+    title: 组件
+    path: /components
 ---
 
 **常规操作**
