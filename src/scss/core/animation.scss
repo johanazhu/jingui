@@ -1,0 +1,24 @@
+// svg loading 动画
+@keyframes jing-activity-ratate360 {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes jing-activity-rotate-circular {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 120, 200;
+        stroke-dashoffset: -60;
+    }
+    100% {
+        stroke-dasharray: 120, 200;
+        stroke-dashoffset: -180;
+    }
+}

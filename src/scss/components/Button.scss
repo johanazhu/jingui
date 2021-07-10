@@ -25,16 +25,7 @@
 }
 
 .jing-button {
-    height: 2.75rem;
-    line-height: 2.75rem;
-    margin-left: 3%;
-    padding: 0 1rem;
-    position: relative;
     border: 1px solid transparent;
-    float: left;
-    border-radius: 0.5rem;
-    //   background-color: #fff;
-    font-size: $am-l;
     cursor: pointer;
     overflow: hidden;
     text-align: center;
@@ -46,40 +37,34 @@
         border: none !important;
     }
     &--contained {
-        background-color: #fff;
-    }
-    &--text {
-        background-color: #fff;
+        background-color: $button-while-color;
     }
     &--block {
         display: block;
         width: 100%;
     }
-    &--disable,
-    &--disable:active {
+    &--disabled,
+    &--disabled:active {
         border: 0 !important;
         background: $button-disable-color !important;
-        color: #fff !important;
+        color: $button-while-color !important;
         cursor: not-allowed !important;
     }
     &--md {
-        height: 2.75rem;
-        line-height: 2.75rem;
-        margin-left: 3%;
-        font-size: $am-xs;
+        height: $button-height-md;
+        line-height: $button-line-height-md;
+        border-radius: $button-radius-md;
+        margin-left: $button-margin-md;
+        font-size: $button-fize-md;
+        padding: 0 $button-padding-md;
     }
     &--sm {
-        height: 1.25rem;
-        line-height: 1.25rem;
-        margin-left: 3%;
-        font-size: $am-xs;
-    }
-    &--sm {
-        &.jing-button--loading:before {
-            width: 1.07rem;
-            height: 1.07rem;
-            margin-left: -0.535rem;
-        }
+        height: $button-height-sm;
+        line-height: $button-line-height-sm;
+        border-radius: $button-radius-sm;
+        margin-left: $button-margin-sm;
+        font-size: $font-size-xs;
+        padding: 0 $button-padding-sm;
     }
     &--blue {
         border-color: $button-blue-color;
@@ -88,25 +73,24 @@
         &:before {
             background-color: $button-blue-color;
         }
-    }
-    &--blue {
-        &.jing-button--contained {
-            @include jing-button--contained($button-blue-color);
-        }
-    }
-    &--blue {
         &.jing-button--active {
             background-color: lighten($button-blue-color, 42%);
         }
-    }
-    &--blue {
         &.jing-button--contained {
+            @include jing-button--contained($button-blue-color);
             &.jing-button--active {
                 background-color: darken($button-blue-color, 5%);
-                color: #fff;
+                color: $button-while-color;
                 &:after,
                 &:before {
                     background-color: darken($button-blue-color, 5%);
+                }
+            }
+        }
+        .jing-button__content {
+            svg {
+                circle {
+                    stroke: $button-while-color;
                 }
             }
         }
@@ -118,24 +102,24 @@
         &:before {
             background-color: $button-orange-color;
         }
-    }
-    &--orange {
-        &.jing-button--contained {
-            @include jing-button--contained($button-orange-color);
-        }
-    }
-    &--orange {
         &.jing-button--active {
             background-color: lighten($button-orange-color, 37%);
         }
-    }
-    &--orange {
         &.jing-button--contained {
+            @include jing-button--contained($button-orange-color);
             &.jing-button--active {
                 background: darken($button-orange-color, 10%);
+                color: $button-while-color;
                 &:after,
                 &:before {
                     background-color: darken($button-orange-color, 5%);
+                }
+            }
+        }
+        .jing-button__content {
+            svg {
+                circle {
+                    stroke: $button-while-color;
                 }
             }
         }
@@ -147,43 +131,40 @@
         &:before {
             background-color: $button-green-color;
         }
-    }
-    &--green {
-        &.jing-button--contained {
-            @include jing-button--contained($button-green-color);
-        }
-    }
-    &--green {
         &.jing-button--active {
             background-color: lighten($button-green-color, 50%);
         }
-    }
-    &--green {
-        &.jing-button--block {
+        &.jing-button--contained {
+            @include jing-button--contained($button-green-color);
             &.jing-button--active {
                 background-color: darken($button-green-color, 5%);
-                color: #fff;
+                color: $button-while-color;
                 &:after,
                 &:before {
                     background-color: darken($button-green-color, 5%);
                 }
             }
         }
+        .jing-button__content {
+            svg {
+                circle {
+                    stroke: $button-while-color;
+                }
+            }
+        }
+    }
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        &-span {
+            margin-left: 8px;
+        }
     }
     &--loading {
-        position: relative;
         opacity: 0.75;
-        cursor: wait !important;
-        .loading {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 2rem;
-            height: 2rem;
-            position: absolute;
-            right: 0.125rem;
-            top: 0.125rem;
-            margin-top: -1px;
-        }
+        cursor: wait;
     }
 }

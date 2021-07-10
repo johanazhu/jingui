@@ -345,13 +345,7 @@ textarea {
 @mixin transform-style($arg) {
     @include pre(transform-style, $arg);
 }
-// @mixin keyframes($name) {
-//     $-webkit-keyframes $name {.-frames(-webkit-);}
-//        $-moz-keyframes $name {.-frames(-moz-);}
-//         $-ms-keyframes $name {.-frames(-ms-);}
-//          $-o-keyframes $name {.-frames(-o-);}
-//             $keyframes $name {.-frames();}
-// }
+
 /*-----------------------------------------from public--------------------------------------------*/
 /*pad*/
 @media screen and (min-width: 414px) {

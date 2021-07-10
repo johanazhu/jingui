@@ -1,5 +1,6 @@
 import React, { FC, TouchEvent, MouseEvent, useState } from 'react';
 import classNames from 'classnames';
+import { IconLoading } from '../Icon';
 import { MOVEOFFSET } from '../utils';
 // import { Loading } from 'components';
 
@@ -8,17 +9,17 @@ let touchXPos = 0;
 let touchY = 0;
 let touchYPos = 0;
 
-export type ButtonVariant = 'contained' | 'outlined' | 'text';
+export type ButtonVariant = 'contained' | 'outlined';
 export type ButtonColor = 'blue' | 'orange' | 'green';
 export type ButtonSize = 'md' | 'sm';
-export type ButtonState = 'loading' | 'disable' | 'active';
 
 export interface ButtonProps {
     className?: string;
     variant?: ButtonVariant;
     color?: ButtonColor;
     size?: ButtonSize;
-    state?: ButtonState;
+    disabled?: boolean;
+    loading?: boolean;
     block?: boolean;
     style?: React.CSSProperties;
     onClick?: (e: MouseEvent) => void;
@@ -28,8 +29,17 @@ export interface ButtonProps {
 const Button: FC<ButtonProps> = (props) => {
     const [isActive, setIsActive] = useState(false);
 
-    const { className, variant, color, size, state, block, children, style } =
-        props;
+    const {
+        className,
+        variant,
+        color,
+        size,
+        disabled,
+        loading,
+        block,
+        children,
+        style,
+    } = props;
 
     const prefixCls = 'jing-button';
 
@@ -37,7 +47,8 @@ const Button: FC<ButtonProps> = (props) => {
         [`${prefixCls}--${variant}`]: !!variant,
         [`${prefixCls}--${color}`]: !!color,
         [`${prefixCls}--${size}`]: !!size,
-        [`${prefixCls}--${state}`]: !!state,
+        [`${prefixCls}--disabled`]: !!disabled,
+        [`${prefixCls}--loading`]: !!loading,
         [`${prefixCls}--block`]: !!block,
         [`${prefixCls}--active`]: isActive,
     });
@@ -85,17 +96,25 @@ const Button: FC<ButtonProps> = (props) => {
     }
 
     function handleClick(e: MouseEvent) {
-        const { onClick, state } = props;
-        if (typeof onClick === 'function' && state === 'active') {
+        const { onClick } = props;
+        if (typeof onClick === 'function') {
             onClick(e);
         }
     }
 
-    const butonDidabled = state === 'disable';
+    const contentRender = loading ? (
+        <div className={`${prefixCls}__content`}>
+            <IconLoading />
+            <span className={`${prefixCls}__content-span`}>{children}</span>
+        </div>
+    ) : (
+        <> {children}</>
+    );
+
     return (
         <button
             className={classes}
-            disabled={butonDidabled}
+            disabled={disabled}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
@@ -105,8 +124,7 @@ const Button: FC<ButtonProps> = (props) => {
             onClick={handleClick}
             style={style}
         >
-            {/* {state === 'loading' && <Loading className="loading" />} */}
-            {children}
+            {contentRender}
         </button>
     );
 };
