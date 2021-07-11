@@ -4,26 +4,12 @@ nav:
     path: /components
 ---
 
-```tsx
-import React from 'react';
-import { Tag } from 'jing-ui';
+<code src="./demo/index.tsx"></code>
 
-export default () => (
-    <div>
-        <Tag color="highOrange">标签</Tag>
-        <Tag color="orange">标签</Tag>
-        <Tag>标签</Tag>
-    </div>
-);
-```
+包裹住 Button 组件，根据子元素的多少，进行 flex 布局
 
-<!-- ## API -->
-
-| 参数    | 说明                       | 类型           | 默认值 |
-| ------- | -------------------------- | -------------- | ------ |
-| header  | 头部、标题                 | string or node | -      |
-| href    | 跳转路由                   | string         | -      |
-| img     | 头部大图                   | string         | -      |
-| icon    | 顶部小图标                 | string         | -      |
-| iconset | 顶部小图标数组，可循环播放 | string[]       | -      |
-| size    | 大小                       | 'lg \| md'     | -      |
+| 参数      | 说明                                         | 类型   | 默认值      |
+| --------- | -------------------------------------------- | ------ | ----------- |
+| className | 自定义 class 名                              | string | -           |
+| variant   | 设置按钮形态，可选值 contained、 outlined    | string | 'contained' |
+| color     | 设置颜色，可选值为 'blue'、'orange'、'green' | string | 'blue'      |

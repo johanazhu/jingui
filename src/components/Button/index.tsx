@@ -2,7 +2,6 @@ import React, { FC, TouchEvent, MouseEvent, useState } from 'react';
 import classNames from 'classnames';
 import { IconLoading } from '../Icon';
 import { MOVEOFFSET } from '../utils';
-// import { Loading } from 'components';
 
 let touchX = 0;
 let touchXPos = 0;

@@ -5,7 +5,7 @@ export { default as Button } from './components/Button';
 export { default as ButtonGroup } from './components/ButtonGroup';
 export { default as Space } from './components/Space';
 export { default as Tag } from './components/Tag';
-export { default as Layout } from './components/Layout';
+export * from './components/Layout';
 // 面板
 export { default as Panel } from './components/Panel';
 // 键盘

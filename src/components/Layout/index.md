@@ -4,13 +4,22 @@ nav:
     path: /components
 ---
 
-<!-- ## 布局 -->
+Demo
 
-Demo:
+<code src="./demo/index.tsx"></code>
 
-<!-- ```tsx
-import React from 'react';
-import { Foo } from 'jing-ui';
+Layout API
 
-export default () => <Foo title="First Demo" />;
-``` -->
+| 参数      | 说明            | 类型   | 默认值 |
+| --------- | --------------- | ------ | ------ |
+| className | 自定义 class 名 | string | -      |
+
+Row API
+| 参数 | 说明 | 类型 | 默认值 |
+| -------- | -------------------------------------------- | ----------------- | ----------- |
+| className | 自定义 class 名 | string | - |
+
+Col API
+| 参数 | 说明 | 类型 | 默认值 |
+| -------- | -------------------------------------------- | ----------------- | ----------- |
+| className | 自定义 class 名 | string | - |

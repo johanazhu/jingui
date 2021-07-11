@@ -10,30 +10,33 @@ export interface ColProps {
     xs?: any;
     className?: string;
     children?: React.ReactNode;
-    // onClick?: (e: any) => void;
 }
 
-const Col = (props: ColProps) => {
+const Col: React.FC<ColProps> = (props) => {
     const { lg, md, sm, xl, xs, children, className } = props;
 
+    let defaultClass = 'jing-col';
+
     const _lg =
-        (typeof lg === 'string' || typeof lg === 'number') && `col-lg-${lg}`;
+        (typeof lg === 'string' || typeof lg === 'number') &&
+        `jing-col-lg-${lg}`;
     const _md =
-        (typeof md === 'string' || typeof md === 'number') && `col-md-${md}`;
+        (typeof md === 'string' || typeof md === 'number') &&
+        `jing-col-md-${md}`;
     const _sm =
-        (typeof sm === 'string' || typeof sm === 'number') && `col-sm-${sm}`;
+        (typeof sm === 'string' || typeof sm === 'number') &&
+        `jing-col-sm-${sm}`;
     const _xl =
-        (typeof xl === 'string' || typeof xl === 'number') && `col-xl-${xl}`;
+        (typeof xl === 'string' || typeof xl === 'number') &&
+        `jing-col-xl-${xl}`;
     const _xs =
-        (typeof xs === 'string' || typeof xs === 'number') && `col-${xs}`;
+        (typeof xs === 'string' || typeof xs === 'number') && `jing-col-${xs}`;
 
-    const _lgBoolean = typeof lg === 'boolean' && `col-lg`;
-    const _mdBoolean = typeof md === 'boolean' && `col-md`;
-    const _smBoolean = typeof sm === 'boolean' && `col-sm`;
-    const _xlBoolean = typeof xl === 'boolean' && `col-xl`;
-    const _xsBoolean = typeof xs === 'boolean' && `col`;
-
-    let defaultClass = 'col';
+    const _lgBoolean = typeof lg === 'boolean' && `jing-col-lg`;
+    const _mdBoolean = typeof md === 'boolean' && `jing-col-md`;
+    const _smBoolean = typeof sm === 'boolean' && `jing-col-sm`;
+    const _xlBoolean = typeof xl === 'boolean' && `jing-col-xl`;
+    const _xsBoolean = typeof xs === 'boolean' && `jing-col`;
 
     if (typeof lg !== 'undefined') defaultClass = '';
     if (typeof md !== 'undefined') defaultClass = '';
@@ -45,14 +48,14 @@ const Col = (props: ColProps) => {
     if (typeof xs === 'object') {
         const { order } = xs;
         if (order !== undefined) _xsOrder = `order-${order}`;
-        defaultClass = 'col';
+        defaultClass = 'jing-col';
     }
     if (typeof md === 'object') {
         const { span, offset, order } = md;
 
-        if (span !== undefined) _mdSpan = `col-md-${span}`;
-        if (order !== undefined) _mdOrder = `order-${order}`;
-        if (offset !== undefined) _mdOffset = `offset-md-${offset}`;
+        if (span !== undefined) _mdSpan = `jing-col-md-${span}`;
+        if (order !== undefined) _mdOrder = `jing-order-${order}`;
+        if (offset !== undefined) _mdOffset = `jing-offset-md-${offset}`;
     }
 
     const classes = classNames(
@@ -106,7 +109,6 @@ Col.propTypes = {
     sm: column,
     xl: column,
     xs: column,
-    className: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 };
 
 export default React.memo(Col);
