@@ -14,7 +14,7 @@ export default () => (
             <Button color="green">绿色</Button>
         </Panel>
         <Panel title="尺寸大小">
-            <Button size="md">普通按钮</Button>
+            <Button>普通按钮</Button>
             <Button size="sm">小按钮</Button>
         </Panel>
         <Panel title="是否为块级元素">
