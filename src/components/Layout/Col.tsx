@@ -80,8 +80,6 @@ const Col: React.FC<ColProps> = (props) => {
     return <div className={classes}>{children}</div>;
 };
 
-Col.defaultProps = {};
-
 const colSize = PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.number,

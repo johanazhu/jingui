@@ -1,4 +1,4 @@
-// 个银行Icon
+// 银行Icon
 export { default as IconBJBank } from './Bank/Beijing'; // 北京银行
 export { default as IconBJRCBBank } from './Bank/Beijingrcb'; // 北京农村商业银行
 export { default as IconBHBank } from './Bank/Bohai'; // 渤海银行

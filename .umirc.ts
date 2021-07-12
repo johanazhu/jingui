@@ -39,15 +39,57 @@ export default defineConfig({
     },
     styles: [
         `
-        .__dumi-default-mobile-demo-layout .jing-page {
-            
+        .__dumi-default-mobile-demo-layout .jing-page .grid{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .__dumi-default-mobile-demo-layout .jing-page .grid-column{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 33.33%;
+            height: 125px;
+            text-align: center;
+        }
+        .__dumi-default-mobile-demo-layout .jing-page .jing-icon{
+            display: block;
+            margin-bottom: 15px;
+        }
+        .__dumi-default-mobile-demo-layout .jing-page-icon .jing-panel__body{
+           padding: 0;
+        }
+        .__dumi-default-mobile-demo-layout .jing-page .grid-column:after{
+            content: "";
+            pointer-events: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            border-radius: 0;
+            border-bottom: 1px solid #dcdcdc;
+            border-right: 1px solid #dcdcdc;
         }
         .__dumi-default-mobile-demo-layout .jing-panel__header {
             padding-left: 15px;
         }
         .__dumi-default-mobile-demo-layout .jing-panel__body {
             overflow: hidden;
-            padding: 15px 15px 0 15px;
+            // padding: 15px 15px 0 15px;
+        }
+        .__dumi-default-mobile-demo-layout .jing-panel__body:after {
+            content: "";
+            pointer-events: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            border-radius: 0;
+            border-top: 1PX solid #dcdcdc;
+            border-bottom: 1PX solid #dcdcdc;
         }
         .__dumi-default-mobile-demo-layout .jing-page-buttongroup .jing-panel__body {
             padding: 15px 0 0;
