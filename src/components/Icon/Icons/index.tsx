@@ -119,6 +119,7 @@ export { default as IconFZ } from './Fz';
 export { default as IconXiaojinguang } from './Xiaojinguang';
 export { default as IconZan } from './Zan';
 export { default as IconZanOver } from './ZanOver';
+export { default as IconLoading } from './Loading';
 
 // 提示框
 export { default as IconToastRight } from './ToastRight';

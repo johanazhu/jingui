@@ -1,189 +1,170 @@
 @mixin jing-button--contained($color) {
-    background: $color;
-    color: $white-1;
+  background: $color;
+  color: $white-1;
 }
 
 // 大小
 @mixin button-size($height, $padding, $font-size, $icon-size) {
-    padding: 0 $padding;
-    font-size: $font-size;
-    height: $height;
-    line-height: 1.5;
+  padding: 0 $padding;
+  font-size: $font-size;
+  height: $height;
+  line-height: 1.5;
 
-    @include m(circle) {
-        width: $height;
-        padding: 0;
-    }
+  @include m(circle) {
+    width: $height;
+    padding: 0;
+  }
 
-    @include b(icon) {
-        font-size: $icon-size;
-    }
+  @include b(icon) {
+    font-size: $icon-size;
+  }
 
-    * + span {
-        margin-left: calc(#{$padding} / 2);
-    }
+  * + span {
+    margin-left: calc(#{$padding} / 2);
+  }
 }
 
 .jing-button {
-    height: 2.75rem;
-    line-height: 2.75rem;
-    margin-left: 3%;
-    padding: 0 1rem;
-    position: relative;
-    border: 1px solid transparent;
-    float: left;
-    border-radius: 0.5rem;
-    //   background-color: #fff;
-    font-size: $am-l;
-    cursor: pointer;
-    overflow: hidden;
-    text-align: center;
-    outline: none;
-    &:first-child {
-        margin-left: 0 !important;
+  border: 1px solid transparent;
+  cursor: pointer;
+  overflow: hidden;
+  text-align: center;
+  outline: none;
+  &:first-child {
+    margin-left: 0 !important;
+  }
+  &--contained {
+    border: none !important;
+  }
+  &--contained {
+    background-color: $button-while-color;
+  }
+  &--block {
+    display: block;
+    width: 100%;
+  }
+  &--disabled,
+  &--disabled:active {
+    border: 0 !important;
+    background: $button-disable-color !important;
+    color: $button-while-color !important;
+    cursor: not-allowed !important;
+  }
+  &--md {
+    height: $button-height-md;
+    line-height: $button-line-height-md;
+    border-radius: $button-radius-md;
+    margin-left: $button-margin-md;
+    font-size: $button-fize-md;
+    padding: 0 $button-padding-md;
+  }
+  &--sm {
+    height: $button-height-sm;
+    line-height: $button-line-height-sm;
+    border-radius: $button-radius-sm;
+    margin-left: $button-margin-sm;
+    font-size: $font-size-xs;
+    padding: 0 $button-padding-sm;
+  }
+  &--blue {
+    border-color: $button-blue-color;
+    color: $button-blue-color;
+    &:after,
+    &:before {
+      background-color: $button-blue-color;
     }
-    &--contained {
-        border: none !important;
+    &.jing-button--active {
+      background-color: lighten($button-blue-color, 42%);
     }
-    &--contained {
-        background-color: #fff;
-    }
-    &--text {
-        background-color: #fff;
-    }
-    &--block {
-        display: block;
-        width: 100%;
-    }
-    &--disable,
-    &--disable:active {
-        border: 0 !important;
-        background: $button-disable-color !important;
-        color: #fff !important;
-        cursor: not-allowed !important;
-    }
-    &--md {
-        height: 2.75rem;
-        line-height: 2.75rem;
-        margin-left: 3%;
-        font-size: $am-xs;
-    }
-    &--sm {
-        height: 1.25rem;
-        line-height: 1.25rem;
-        margin-left: 3%;
-        font-size: $am-xs;
-    }
-    &--sm {
-        &.jing-button--loading:before {
-            width: 1.07rem;
-            height: 1.07rem;
-            margin-left: -0.535rem;
-        }
-    }
-    &--blue {
-        border-color: $button-blue-color;
-        color: $button-blue-color;
+    &.jing-button--contained {
+      @include jing-button--contained($button-blue-color);
+      &.jing-button--active {
+        background-color: darken($button-blue-color, 5%);
+        color: $button-while-color;
         &:after,
         &:before {
-            background-color: $button-blue-color;
+          background-color: darken($button-blue-color, 5%);
         }
+      }
     }
-    &--blue {
-        &.jing-button--contained {
-            @include jing-button--contained($button-blue-color);
+    .jing-button__content {
+      svg {
+        circle {
+          stroke: $button-while-color;
         }
+      }
     }
-    &--blue {
-        &.jing-button--active {
-            background-color: lighten($button-blue-color, 42%);
-        }
+  }
+  &--orange {
+    border-color: $button-orange-color;
+    color: $button-orange-color;
+    &:after,
+    &:before {
+      background-color: $button-orange-color;
     }
-    &--blue {
-        &.jing-button--contained {
-            &.jing-button--active {
-                background-color: darken($button-blue-color, 5%);
-                color: #fff;
-                &:after,
-                &:before {
-                    background-color: darken($button-blue-color, 5%);
-                }
-            }
-        }
+    &.jing-button--active {
+      background-color: lighten($button-orange-color, 37%);
     }
-    &--orange {
-        border-color: $button-orange-color;
-        color: $button-orange-color;
+    &.jing-button--contained {
+      @include jing-button--contained($button-orange-color);
+      &.jing-button--active {
+        background: darken($button-orange-color, 10%);
+        color: $button-while-color;
         &:after,
         &:before {
-            background-color: $button-orange-color;
+          background-color: darken($button-orange-color, 5%);
         }
+      }
     }
-    &--orange {
-        &.jing-button--contained {
-            @include jing-button--contained($button-orange-color);
+    .jing-button__content {
+      svg {
+        circle {
+          stroke: $button-while-color;
         }
+      }
     }
-    &--orange {
-        &.jing-button--active {
-            background-color: lighten($button-orange-color, 37%);
-        }
+  }
+  &--green {
+    border-color: $button-green-color;
+    color: $button-green-color;
+    &:after,
+    &:before {
+      background-color: $button-green-color;
     }
-    &--orange {
-        &.jing-button--contained {
-            &.jing-button--active {
-                background: darken($button-orange-color, 10%);
-                &:after,
-                &:before {
-                    background-color: darken($button-orange-color, 5%);
-                }
-            }
-        }
+    &.jing-button--active {
+      background-color: lighten($button-green-color, 50%);
     }
-    &--green {
-        border-color: $button-green-color;
-        color: $button-green-color;
+    &.jing-button--contained {
+      @include jing-button--contained($button-green-color);
+      &.jing-button--active {
+        background-color: darken($button-green-color, 5%);
+        color: $button-while-color;
         &:after,
         &:before {
-            background-color: $button-green-color;
+          background-color: darken($button-green-color, 5%);
         }
+      }
     }
-    &--green {
-        &.jing-button--contained {
-            @include jing-button--contained($button-green-color);
+    .jing-button__content {
+      svg {
+        circle {
+          stroke: $button-while-color;
         }
+      }
     }
-    &--green {
-        &.jing-button--active {
-            background-color: lighten($button-green-color, 50%);
-        }
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    &-span {
+      margin-left: 8px;
     }
-    &--green {
-        &.jing-button--block {
-            &.jing-button--active {
-                background-color: darken($button-green-color, 5%);
-                color: #fff;
-                &:after,
-                &:before {
-                    background-color: darken($button-green-color, 5%);
-                }
-            }
-        }
-    }
-    &--loading {
-        position: relative;
-        opacity: 0.75;
-        cursor: wait !important;
-        .loading {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 2rem;
-            height: 2rem;
-            position: absolute;
-            right: 0.125rem;
-            top: 0.125rem;
-            margin-top: -1px;
-        }
-    }
+  }
+  &--loading {
+    opacity: 0.75;
+    cursor: wait;
+  }
 }

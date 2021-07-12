@@ -1,21 +1,34 @@
 import React, { FC, memo } from 'react';
 import classNames from 'classnames';
 
+export type ButtonVariant = 'contained' | 'outlined';
+export type ButtonColor = 'blue' | 'orange' | 'green';
+
 interface ButtonGroupProps {
-    type?: string;
     className?: string;
+    variant?: ButtonVariant;
+    color?: ButtonColor;
+    block?: boolean;
+    children?: React.ReactNode;
 }
 
 const ButtonGroup: FC<ButtonGroupProps> = (props) => {
-    const { type, children, className } = props;
+    const { className, variant, color, block, children } = props;
 
-    const classes = classNames('jing-buttonGroup', className, {
-        [`jing-buttonGroup__type_${type}`]: type,
-        // [`am-g-${children.length}`]: Array.isArray(children),
-        // ['am-g-1']: !Array.isArray(children),
+    const classes = classNames('jing-buttonGroup', className);
+
+
+    const items = React.Children.map(children, (item: any) => {
+        return React.cloneElement(item, { variant, color, block, ...item.props });
     });
 
-    return <div className={classes}>{children}</div>;
+    return <div className={classes}>{items}</div>;
 };
+
+ButtonGroup.defaultProps = {
+    variant: 'contained',
+    block: true,
+};
+
 
 export default memo(ButtonGroup);

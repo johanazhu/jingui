@@ -3,13 +3,13 @@ import classNames from 'classnames';
 
 export interface RowProps {
     className?: string;
-    children?: any;
+    children?: React.ReactNode;
 }
 
-const Row = (props: RowProps) => {
+const Row: React.FC<RowProps> = (props) => {
     const { className, children } = props;
 
-    const classes = classNames('row', className);
+    const classes = classNames('jing-row', className);
 
     return <div className={classes}>{children}</div>;
 };

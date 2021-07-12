@@ -49,6 +49,12 @@ export default defineConfig({
             overflow: hidden;
             padding: 15px 15px 0 15px;
         }
+        .__dumi-default-mobile-demo-layout .jing-page-buttongroup .jing-panel__body {
+            padding: 15px 0 0;
+        }
+        .__dumi-default-mobile-demo-layout .jing-page-buttongroup .jing-buttonGroup {
+            padding-bottom: 15px;
+        }
         .__dumi-default-mobile-demo-layout .jing-page-result .jing-panel__body {
             overflow: hidden;
             padding: 15px;

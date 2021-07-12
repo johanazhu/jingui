@@ -143,7 +143,24 @@ $result-margin-sm: 1rem;
 
 // button
 $button-height-lg: $font-size-xxl;
+$button-height-md: 2.75rem;
+$button-line-height-md: 2.75rem;
+$button-height-sm: 1.25rem;
+$button-line-height-sm: 1.25rem;
+$button-fize-md: $font-size-l;
+$button-fize-sm: $font-size-xs;
+$button-radius-md: 0.5rem;
+$button-radius-sm: 0.25rem;
+$button-margin-md: 3%;
+$button-margin-sm: 2%;
+$button-padding-md: 1rem;
+$button-padding-sm: 0.5rem;
+
 $button-blue-color: $blue;
 $button-orange-color: $orange;
 $button-green-color: $green;
+$button-while-color: $white-1;
 $button-disable-color: $black-4;
+
+$button-loading-m-l: $horizontal-gap;
+// calc(var(--button-padding-h-md) / 2)

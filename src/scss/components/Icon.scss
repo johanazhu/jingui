@@ -59,4 +59,20 @@
         width: $icon-size-auto;
         height: $icon-size-auto;
     }
+    &--loading {
+        transform: rotate(-90deg);
+        svg {
+            fill: none;
+            vertical-align: top;
+            animation: jing-activity-ratate360 2s linear infinite;
+            circle {
+                stroke: var(--default-color);
+                fill: none;
+                stroke-width: 5;
+                stroke-linecap: round;
+                animation: jing-activity-rotate-circular 1.5s ease-in-out
+                    infinite;
+            }
+        }
+    }
 }
