@@ -1,5 +1,3 @@
-
-
 export type InputSizes = 'small' | 'default' | 'large';
 
 /**

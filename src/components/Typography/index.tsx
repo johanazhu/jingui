@@ -19,7 +19,11 @@ const Typography: React.FC<TypographyProps> = (props) => {
         );
     }
 
-    return <div className={classnames('jing-typography', className)}>{children}</div>;
+    return (
+        <div className={classnames('jing-typography', className)}>
+            {children}
+        </div>
+    );
 };
 
 export default React.memo(Typography);

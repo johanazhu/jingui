@@ -16,14 +16,16 @@ const PieChart: React.FC<ChartProps> = (props) => {
     let canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
-        let chart: any = canvasRef.current !== null && new F2.Chart({
-            el: canvasRef.current,
-            plugins: PieLabel,
-            pixelRatio: window.devicePixelRatio,
-            padding,
-            width,
-            height,
-        });
+        let chart: any =
+            canvasRef.current !== null &&
+            new F2.Chart({
+                el: canvasRef.current,
+                plugins: PieLabel,
+                pixelRatio: window.devicePixelRatio,
+                padding,
+                width,
+                height,
+            });
 
         chart.source(data);
         chart.coord('polar', {

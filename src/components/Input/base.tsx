@@ -9,7 +9,6 @@ import * as PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { InputProps } from './PropType';
 
-
 function useInputValue(initialValue: string | undefined) {
     const [value, setValue] = useState(initialValue);
 
@@ -85,10 +84,10 @@ Input.defaultProps = {
     className: '',
     disabled: false,
     error: false,
-    onChange: function () { },
-    onFocus: function () { },
-    onBlur: function () { },
-    onClear: function () { },
+    onChange: function () {},
+    onFocus: function () {},
+    onBlur: function () {},
+    onClear: function () {},
 };
 
 Input.propTypes = {

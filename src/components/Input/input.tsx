@@ -15,7 +15,6 @@ import Clear from './clear';
 import Captcha from './captcha';
 import KeyBoard from './keyboard';
 
-
 const Input = (props: any) => {
     return <Base {...props} />;
 };

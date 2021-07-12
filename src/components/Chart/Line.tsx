@@ -15,13 +15,15 @@ const ColumnChart: React.FC<ChartProps> = (props) => {
     let canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
-        let chart: any = canvasRef.current !== null && new F2.Chart({
-            el: canvasRef.current,
-            pixelRatio: window.devicePixelRatio,
-            padding,
-            width,
-            height,
-        });
+        let chart: any =
+            canvasRef.current !== null &&
+            new F2.Chart({
+                el: canvasRef.current,
+                pixelRatio: window.devicePixelRatio,
+                padding,
+                width,
+                height,
+            });
 
         chart.source(data, {
             y: {

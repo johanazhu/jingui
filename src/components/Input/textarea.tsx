@@ -6,7 +6,7 @@ import classnames from 'classnames';
 import Group, { GroupProps } from './group';
 import { InputProps } from './PropType';
 
-interface TextareaProps extends InputProps { }
+interface TextareaProps extends InputProps {}
 
 function useInputValue(initialValue: string) {
     const [value, setValue] = useState(initialValue);

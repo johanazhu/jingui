@@ -1,111 +1,111 @@
 .jing-typography {
-  padding: 1rem;
-  word-break: break-all;
-  word-wrap: break-word;
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  h1 {
-    font-size: $am-xxxl;
-  }
-  h2 {
-    font-size: $am-xxl;
-  }
-  h3 {
-    font-size: $am-xl;
-  }
-  h4 {
-    font-size: $am-l;
-  }
-  h5 {
-    font-size: $am-sm;
-  }
-  h6 {
-    font-size: $am-xs;
-  }
-  p {
-    line-height: 1.8em;
-    margin-bottom: $globalGap;
-  }
-  table p {
-    margin-bottom: 0;
-    // tbody {
-    //     tr:nth-child(odd) {
-    //         background-color: #fafafa;
-    //     }
-    // }
-  }
-  table {
-    width: 100% !important;
-    border-spacing: 0;
-    border-collapse: collapse;
-    border: 1px solid #c8c8c8;
-    background: #fff;
-    margin-bottom: 0;
-    // tbody {
-    //     tr:nth-child(odd) {
-    //         background-color: #fafafa;
-    //     }
-    // }
-    tr:nth-child(odd) {
-      background-color: #fafafa;
+    padding: 1rem;
+    word-break: break-all;
+    word-wrap: break-word;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: bold;
+        margin-bottom: 1rem;
     }
-    tbody {
-      td {
-        font-size: 0.75rem;
-        padding: 3px 6px;
+    h1 {
+        font-size: $am-xxxl;
+    }
+    h2 {
+        font-size: $am-xxl;
+    }
+    h3 {
+        font-size: $am-xl;
+    }
+    h4 {
+        font-size: $am-l;
+    }
+    h5 {
+        font-size: $am-sm;
+    }
+    h6 {
+        font-size: $am-xs;
+    }
+    p {
+        line-height: 1.8em;
+        margin-bottom: $globalGap;
+    }
+    table p {
+        margin-bottom: 0;
+        // tbody {
+        //     tr:nth-child(odd) {
+        //         background-color: #fafafa;
+        //     }
+        // }
+    }
+    table {
+        width: 100% !important;
+        border-spacing: 0;
+        border-collapse: collapse;
         border: 1px solid #c8c8c8;
-      }
+        background: #fff;
+        margin-bottom: 0;
+        // tbody {
+        //     tr:nth-child(odd) {
+        //         background-color: #fafafa;
+        //     }
+        // }
+        tr:nth-child(odd) {
+            background-color: #fafafa;
+        }
+        tbody {
+            td {
+                font-size: 0.75rem;
+                padding: 3px 6px;
+                border: 1px solid #c8c8c8;
+            }
+        }
     }
-  }
-  li {
-    margin-left: $vertical-gap;
-  }
-  li > p {
-    margin-bottom: 0;
-  }
-  hr {
-    height: 1px;
-    margin: 0.75rem 0;
-    border: 0;
-    background-color: $globalColorBorder;
-  }
-  .am-btn.am-sm {
-    display: inline-block;
-    line-height: 1.2rem;
-    margin-left: 0 !important;
-    margin-top: 0.25rem;
-    padding: 0 0.5rem;
-    float: none;
-  }
-  .am-btn.am-color-blue {
-    border-color: #1496ff;
-    background-color: #1496ff;
-    background-repeat: repeat-y;
-    background-size: 100% auto;
-    color: #fff !important;
-  }
-  .am-btn.am-sm {
-    margin-left: 3%;
-    font-size: 0.75rem;
-    border-radius: 0.25rem;
-  }
-  .am-btn.am-sm {
-    height: 1.25rem;
-  }
+    li {
+        margin-left: $vertical-gap;
+    }
+    li > p {
+        margin-bottom: 0;
+    }
+    hr {
+        height: 1px;
+        margin: 0.75rem 0;
+        border: 0;
+        background-color: $globalColorBorder;
+    }
+    .am-btn.am-sm {
+        display: inline-block;
+        line-height: 1.2rem;
+        margin-left: 0 !important;
+        margin-top: 0.25rem;
+        padding: 0 0.5rem;
+        float: none;
+    }
+    .am-btn.am-color-blue {
+        border-color: #1496ff;
+        background-color: #1496ff;
+        background-repeat: repeat-y;
+        background-size: 100% auto;
+        color: #fff !important;
+    }
+    .am-btn.am-sm {
+        margin-left: 3%;
+        font-size: 0.75rem;
+        border-radius: 0.25rem;
+    }
+    .am-btn.am-sm {
+        height: 1.25rem;
+    }
 }
 
 .jing-typography {
-  &.popup {
-    p {
-      line-height: 1.4em;
-      margin-bottom: 0;
+    &.popup {
+        p {
+            line-height: 1.4em;
+            margin-bottom: 0;
+        }
     }
-  }
 }

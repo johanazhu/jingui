@@ -143,7 +143,7 @@ import {
     IcontransferMenu,
     IconAddition,
     IconSubtraction,
-    IconCalculation
+    IconCalculation,
 } from 'jing-ui';
 
 export default () => {
@@ -761,6 +761,6 @@ export default () => {
                     </div>
                 </div>
             </Panel>
-        </div >
+        </div>
     );
 };

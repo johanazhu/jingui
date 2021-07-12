@@ -17,7 +17,17 @@ export interface TimeLineItemProps {
 }
 
 const TimelineItem: React.FC<TimeLineItemProps> = (props) => {
-    const { header, footer, color, dashed, count, percent, showPercent, i, canShowColor } = props;
+    const {
+        header,
+        footer,
+        color,
+        dashed,
+        count,
+        percent,
+        showPercent,
+        i,
+        canShowColor,
+    } = props;
 
     const dotClass = classnames('jing-timeline-item__content', {
         'jing-timeline-item__content-dashed': dashed,
@@ -27,7 +37,8 @@ const TimelineItem: React.FC<TimeLineItemProps> = (props) => {
         'jing-timeline-item__step-dashed': dashed,
     });
     // @ts-ignore
-    const isShowColor = parseInt(percent) - `${count && i && (100 / count) * i}`;
+    const isShowColor =
+        parseInt(percent) - `${count && i && (100 / count) * i}`;
 
     return (
         <li
@@ -38,15 +49,22 @@ const TimelineItem: React.FC<TimeLineItemProps> = (props) => {
         >
             <div
                 className={stepClass}
-                style={{ backgroundColor: isShowColor > 0 && percent === '100%' ? color : '' }}
+                style={{
+                    backgroundColor:
+                        isShowColor > 0 && percent === '100%' ? color : '',
+                }}
             ></div>
             <div className="jing-timeline-item__header">{header}</div>
             <div className="jing-timeline-item__content-box">
                 <div
                     className={dotClass}
                     style={{
-                        backgroundColor: isShowColor > 0 && canShowColor && !dashed ? color : '',
-                        borderColor: isShowColor > 0 && canShowColor ? color : '',
+                        backgroundColor:
+                            isShowColor > 0 && canShowColor && !dashed
+                                ? color
+                                : '',
+                        borderColor:
+                            isShowColor > 0 && canShowColor ? color : '',
                     }}
                 />
             </div>

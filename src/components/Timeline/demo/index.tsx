@@ -1,7 +1,6 @@
 import React from 'react';
 import { Timeline } from 'jing-ui';
 
-
 export default () => {
     return (
         <div>
@@ -12,5 +11,5 @@ export default () => {
                 <Timeline.Item header="预计到账" footer="1~5个工作日" dashed />
             </Timeline>
         </div>
-    )
+    );
 };
