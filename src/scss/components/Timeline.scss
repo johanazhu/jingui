@@ -1,28 +1,25 @@
 .jing-timeline {
-    // height: 4rem;
     position: relative;
-    padding: 1rem 0;
+    padding: $timeline-padding 0;
     &-items {
         overflow: hidden;
         display: flex;
         align-items: center;
-        // height: 4rem;
         position: relative;
         margin: 0;
     }
     &-item {
         position: relative;
-        // width: 25%;
         height: 4rem;
         text-align: center;
         &:first-child {
-            .Timeline-item__percent {
+            .jing-timeline-item__percent {
                 display: block;
                 width: 50%;
                 left: 60%;
                 z-index: 2;
             }
-            .Timeline-item__step {
+            .jing-timeline-item__step {
                 display: block;
                 width: 50%;
                 left: 60%;
@@ -31,20 +28,15 @@
         }
         &:last-child {
             // background: #ff0;
-            .Timeline-item__step-dashed {
+            .jing-timeline-item__step-dashed {
                 width: 100%;
             }
         }
-        // &-isShowPercent {
-        //     .Timeline-item__percent {
-        //         width: 50% !important;
-        //     }
-        // }
         &__percent {
             position: absolute;
             top: 50%;
             left: -50%;
-            background: $globalColorBlack4;
+            background: $timeline-bg;
             transform: translate(0, -50%);
             width: 100%;
             height: 3px;
@@ -54,7 +46,7 @@
             position: absolute;
             top: 50%;
             left: -50%;
-            background: $globalColorBlack4;
+            background: $timeline-bg;
             transform: translate(0, -50%);
             width: 100%;
             height: 3px;
@@ -68,7 +60,7 @@
         .Timeline-item__content-box {
             width: 20px;
             height: 20px;
-            background: $globalColorWhite0;
+            background: $timeline-white-bg;
             position: absolute;
             z-index: 4;
             left: 50%;
@@ -80,7 +72,6 @@
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            // border-radius: 50%;
             background: rgb(227, 227, 227);
             position: absolute;
             z-index: 4;
@@ -89,15 +80,11 @@
             transform: translate(-50%, -50%);
             &-dashed {
                 background: transparent;
-                border: 3px solid #ccc;
+                border: 3px solid rgb(204, 204, 204);
                 width: 12px;
                 height: 12px;
                 border-radius: 50%;
             }
-            // &-percent {
-            //     // background: transparent !important;
-            //     // border-color:
-            // }
         }
         &__footer {
             margin-top: 2rem;

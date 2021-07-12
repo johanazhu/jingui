@@ -1,5 +1,5 @@
 .jing-typography {
-    padding: 1rem;
+    padding: $typography-padding;
     word-break: break-all;
     word-wrap: break-word;
     h1,
@@ -9,29 +9,29 @@
     h5,
     h6 {
         font-weight: bold;
-        margin-bottom: 1rem;
+        margin-bottom: $typography-h-mr-bottom;
     }
     h1 {
-        font-size: $am-xxxl;
+        font-size: $font-size-xxxl;
     }
     h2 {
-        font-size: $am-xxl;
+        font-size: $font-size-xxl;
     }
     h3 {
-        font-size: $am-xl;
+        font-size: $font-size-xl;
     }
     h4 {
-        font-size: $am-l;
+        font-size: $font-size-l;
     }
     h5 {
-        font-size: $am-sm;
+        font-size: $font-size-sm;
     }
     h6 {
-        font-size: $am-xs;
+        font-size: $font-size-xs;
     }
     p {
         line-height: 1.8em;
-        margin-bottom: $globalGap;
+        margin-bottom: $horizontal-gap;
     }
     table p {
         margin-bottom: 0;
@@ -45,8 +45,8 @@
         width: 100% !important;
         border-spacing: 0;
         border-collapse: collapse;
-        border: 1px solid #c8c8c8;
-        background: #fff;
+        border: 1px solid $border-color;
+        background: $bg-white;
         margin-bottom: 0;
         // tbody {
         //     tr:nth-child(odd) {
@@ -54,13 +54,13 @@
         //     }
         // }
         tr:nth-child(odd) {
-            background-color: #fafafa;
+            background-color: $typography-table-tr-bg;
         }
         tbody {
             td {
-                font-size: 0.75rem;
+                font-size: $font-size-xs;
                 padding: 3px 6px;
-                border: 1px solid #c8c8c8;
+                border: 1px solid $black-4;
             }
         }
     }
@@ -85,16 +85,16 @@
         float: none;
     }
     .am-btn.am-color-blue {
-        border-color: #1496ff;
-        background-color: #1496ff;
+        border-color: $blue;
+        background-color: $blue;
         background-repeat: repeat-y;
         background-size: 100% auto;
-        color: #fff !important;
+        color: $white-1 !important;
     }
     .am-btn.am-sm {
         margin-left: 3%;
-        font-size: 0.75rem;
-        border-radius: 0.25rem;
+        font-size: $font-size-xs;
+        border-radius: $border-radius;
     }
     .am-btn.am-sm {
         height: 1.25rem;

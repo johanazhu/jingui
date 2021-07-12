@@ -1,7 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
 
-// 具体到写到页面时再改进
 // percent 百分比
 // 虚线 实线
 export interface TimeLineItemProps {

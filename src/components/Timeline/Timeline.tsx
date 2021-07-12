@@ -31,10 +31,7 @@ const Timeline: TimelineType = (props) => {
     return (
         <div className="jing-timeline">
             <ul className="jing-timeline-items">{items}</ul>
-            <div
-                className="jing-timeline-percent"
-                // style={{ left: `${100 / count / 2}%`, right: `${100 / count / 2}%` }}
-            >
+            <div className="jing-timeline-percent">
                 {percent === '100%' ? (
                     <em style={{ width: percent }}></em>
                 ) : (
