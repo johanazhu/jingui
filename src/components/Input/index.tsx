@@ -3,7 +3,7 @@
 import Input from './input';
 
 import Group from './group';
-import Textarea from './textarea';
+// import Textarea from './textarea';
 import Verify from './verify';
 import Prefix from './prefix';
 import Suffix from './suffix';
@@ -15,7 +15,7 @@ import Captcha from './captcha';
 import KeyBoard from './keyboard';
 
 Input.Group = Group;
-Input.Textarea = Textarea;
+// Input.Textarea = Textarea;
 Input.Verify = Verify;
 Input.Prefix = Prefix;
 Input.Suffix = Suffix;

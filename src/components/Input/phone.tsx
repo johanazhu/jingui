@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import RegInput from './reg';
-import { InputProps } from './input';
 import Prefix from './prefix';
+import { InputProps } from './PropType';
 
 export interface PhoneProps extends InputProps {
     value: string;

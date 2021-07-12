@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
-import { InputProps } from './input';
 import Clear from './clear';
 import Group from './group';
+import { InputProps } from './PropType';
 
 export interface VerifyProps extends InputProps {
     captcha: any;

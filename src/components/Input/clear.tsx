@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { IconCircleDelete, IconEyeClose, IconEyeOpen } from 'icons';
+import { IconCircleDelete, IconEyeClose, IconEyeOpen } from '../Icon';
 
 import Group from './group';
 import Input from './base';
-import { InputProps } from './input';
+import { InputProps } from './PropType';
 
 export interface ClearProps extends InputProps {
     render?: any;
@@ -96,12 +96,12 @@ const Clear = (props: ClearProps) => {
                 minLength={minLength}
                 disabled={disabled}
                 value={oInput.value}
-                onChange={(res, e) => {
+                onChange={(res: any, e: any) => {
                     oInput.onChange(res);
                     onChange && onChange(res, e);
                 }}
                 onFocus={onHandleFocus}
-                onBlur={(e) => {
+                onBlur={(e: any) => {
                     // changeStatus(false);
                     timer = setTimeout(() => {
                         setIsShowClear(false);
@@ -126,36 +126,36 @@ const Clear = (props: ClearProps) => {
     );
 };
 
-Clear.defaultProps = {
-    className: '',
-    groupClassName: '',
-    disabled: false,
-    error: false,
-    style: null,
-    groupStyle: null,
-    onChange: function () {},
-    onFocus: function () {},
-    onBlur: function () {},
-    onEnter: function () {},
-    onClear: function () {},
-};
+// Clear.defaultProps = {
+//     className: '',
+//     groupClassName: '',
+//     disabled: false,
+//     error: false,
+//     style: null,
+//     groupStyle: null,
+//     onChange: function () { },
+//     onFocus: function () { },
+//     onBlur: function () { },
+//     onEnter: function () { },
+//     onClear: function () { },
+// };
 
-Clear.propTypes = {
-    className: PropTypes.string,
-    groupClassName: PropTypes.string,
-    style: PropTypes.object,
-    groupStyle: PropTypes.object,
-    disabled: PropTypes.bool,
-    error: PropTypes.bool,
-    maxLength: PropTypes.number,
-    minLength: PropTypes.number,
-    type: PropTypes.string,
-    onFocus: PropTypes.func,
-    onBlur: PropTypes.func,
-    onChange: PropTypes.func,
-    onEnter: PropTypes.func,
-    onClear: PropTypes.func,
-    render: PropTypes.any,
-};
+// Clear.propTypes = {
+//     className: PropTypes.string,
+//     groupClassName: PropTypes.string,
+//     style: PropTypes.object,
+//     groupStyle: PropTypes.object,
+//     disabled: PropTypes.bool,
+//     error: PropTypes.bool,
+//     maxLength: PropTypes.number,
+//     minLength: PropTypes.number,
+//     type: PropTypes.string,
+//     onFocus: PropTypes.func,
+//     onBlur: PropTypes.func,
+//     onChange: PropTypes.func,
+//     onEnter: PropTypes.func,
+//     onClear: PropTypes.func,
+//     render: PropTypes.any,
+// };
 
-export default React.memo(Clear);
+export default Clear;

@@ -1,9 +1,7 @@
 import * as React from 'react';
-// import * as PropTypes from 'prop-types';
-// import RegInput from './reg';
-import { InputProps } from './input';
 import Input from './base';
 import Prefix from './prefix';
+import { InputProps } from './PropType';
 
 export interface SearchProps extends InputProps {
     value?: string;

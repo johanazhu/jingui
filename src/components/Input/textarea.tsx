@@ -4,10 +4,9 @@ import classnames from 'classnames';
 // import Password from './password';
 // import PrefixInput from './prefixInput';
 import Group, { GroupProps } from './group';
-import { InputProps } from './input';
-import Icon from '../Icon';
+import { InputProps } from './PropType';
 
-interface TextareaProps extends InputProps {}
+interface TextareaProps extends InputProps { }
 
 function useInputValue(initialValue: string) {
     const [value, setValue] = useState(initialValue);

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
-import { InputProps } from './input';
+import { InputProps } from './PropType';
 import Clear from './clear';
 import Group from './group';
 

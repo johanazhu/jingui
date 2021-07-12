@@ -1,12 +1,10 @@
-// import React from 'react';
-// import { Tag } from 'jing-ui';
+import React from 'react';
+import { Tag } from 'jing-ui';
 
-// console.log('Tag', Tag)
-
-// export default () => {
-//     return (
-//         <div>
-//             <Tag>你好</Tag>
-//         </div>
-//     )
-// };
+export default () => (
+    <div>
+        <Tag color="highOrange">标签</Tag>
+        <Tag color="orange">标签</Tag>
+        <Tag>标签</Tag>
+    </div>
+);

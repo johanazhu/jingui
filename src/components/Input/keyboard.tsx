@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import classnames from 'classnames';
 import Group from './group';
 
-import { IconCircleDelete, IconEyeCloseTwo, IconEyeOpenTwo } from 'icons';
+import { IconCircleDelete, IconEyeCloseTwo, IconEyeOpenTwo } from '../Icon';
 
 export interface KeyboardProps {
     value: string;
@@ -160,8 +160,8 @@ const KeyboardInput = (props: KeyboardProps) => {
                     {visible ? (
                         <IconEyeOpenTwo size="small" className="eyeOpen" />
                     ) : (
-                        <IconEyeCloseTwo size="small" className="eyeClose" />
-                    )}
+                            <IconEyeCloseTwo size="small" className="eyeClose" />
+                        )}
                 </div>
             )}
             {isShowClear && (

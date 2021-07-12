@@ -5,9 +5,9 @@ import PieLabel from '@antv/f2/lib/plugin/pie-label';
 // 饼图
 export interface ChartProps {
     data: any;
-    padding?: string;
-    width?: string;
-    height?: string;
+    padding?: any;
+    width?: any;
+    height?: any;
 }
 
 const PieChart: React.FC<ChartProps> = (props) => {
@@ -16,7 +16,7 @@ const PieChart: React.FC<ChartProps> = (props) => {
     let canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
-        let chart = new F2.Chart({
+        let chart: any = canvasRef.current !== null && new F2.Chart({
             el: canvasRef.current,
             plugins: PieLabel,
             pixelRatio: window.devicePixelRatio,

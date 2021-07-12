@@ -1,16 +1,15 @@
 import * as React from 'react';
 import classnames from 'classnames';
 
-import Icon from '../Icon';
 
 import Group from './group';
-import { InputProps } from './input';
+import { InputProps } from './PropType';
 
 function Inner(props: InputProps) {
     return (
         <>
             <div className="jqb-input__group-prefix-left">
-                {props.icon && <Icon kind={props.icon} />}
+                {props.icon}
             </div>
             {props.children}
         </>

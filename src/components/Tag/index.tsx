@@ -17,6 +17,7 @@ export interface TagProps {
     className?: string;
     icon?: React.ReactNode;
     color?: string;
+    children: React.ReactNode;
     onClick?: (e?: any) => void;
 }
 

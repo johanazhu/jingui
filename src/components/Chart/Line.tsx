@@ -4,9 +4,9 @@ import F2 from '@antv/f2';
 // 柱状图
 export interface ChartProps {
     data: any;
-    padding?: string;
-    width?: string;
-    height?: string;
+    padding?: any;
+    width?: any;
+    height?: any;
 }
 
 const ColumnChart: React.FC<ChartProps> = (props) => {
@@ -15,7 +15,7 @@ const ColumnChart: React.FC<ChartProps> = (props) => {
     let canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
-        let chart = new F2.Chart({
+        let chart: any = canvasRef.current !== null && new F2.Chart({
             el: canvasRef.current,
             pixelRatio: window.devicePixelRatio,
             padding,

@@ -7,11 +7,8 @@ import React, {
 } from 'react';
 import * as PropTypes from 'prop-types';
 import classnames from 'classnames';
+import { InputProps } from './PropType';
 
-import { InputProps } from './input';
-
-import { tuple } from '../_util/type';
-export const InputSizes = tuple('small', 'default', 'large');
 
 function useInputValue(initialValue: string | undefined) {
     const [value, setValue] = useState(initialValue);
@@ -88,10 +85,10 @@ Input.defaultProps = {
     className: '',
     disabled: false,
     error: false,
-    onChange: function () {},
-    onFocus: function () {},
-    onBlur: function () {},
-    onClear: function () {},
+    onChange: function () { },
+    onFocus: function () { },
+    onBlur: function () { },
+    onClear: function () { },
 };
 
 Input.propTypes = {

@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import classnames from 'classnames';
-import { InputProps } from './input';
-import Icon from '../Icon';
-import { IconEyeClose, IconEyeOpen } from 'icons';
+import { InputProps } from './PropType';
+import { IconEyeClose, IconEyeOpen } from '../Icon';
 import Clear from './clear';
 
 const Password = (props: InputProps) => {
@@ -41,8 +39,8 @@ const Password = (props: InputProps) => {
                         {visible ? (
                             <IconEyeOpen size="small" />
                         ) : (
-                            <IconEyeClose size="small" />
-                        )}
+                                <IconEyeClose size="small" />
+                            )}
                     </div>
                 )}
             </>

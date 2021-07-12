@@ -1,0 +1,126 @@
+.jing-timeline {
+  // height: 4rem;
+  position: relative;
+  padding: 1rem 0;
+  &-items {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    // height: 4rem;
+    position: relative;
+    margin: 0;
+  }
+  &-item {
+    position: relative;
+    // width: 25%;
+    height: 4rem;
+    text-align: center;
+    &:first-child {
+      .Timeline-item__percent {
+        display: block;
+        width: 50%;
+        left: 60%;
+        z-index: 2;
+      }
+      .Timeline-item__step {
+        display: block;
+        width: 50%;
+        left: 60%;
+        z-index: 1;
+      }
+    }
+    &:last-child {
+      // background: #ff0;
+      .Timeline-item__step-dashed {
+        width: 100%;
+      }
+    }
+    // &-isShowPercent {
+    //     .Timeline-item__percent {
+    //         width: 50% !important;
+    //     }
+    // }
+    &__percent {
+      position: absolute;
+      top: 50%;
+      left: -50%;
+      background: $globalColorBlack4;
+      transform: translate(0, -50%);
+      width: 100%;
+      height: 3px;
+      z-index: 3;
+    }
+    &__step {
+      position: absolute;
+      top: 50%;
+      left: -50%;
+      background: $globalColorBlack4;
+      transform: translate(0, -50%);
+      width: 100%;
+      height: 3px;
+      z-index: 2;
+    }
+    &__header {
+      height: 1rem;
+      line-height: 1rem;
+      font-size: $am-sm;
+    }
+    .Timeline-item__content-box {
+      width: 20px;
+      height: 20px;
+      background: $globalColorWhite0;
+      position: absolute;
+      z-index: 4;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &__content {
+      display: block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      // border-radius: 50%;
+      background: rgb(227, 227, 227);
+      position: absolute;
+      z-index: 4;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      &-dashed {
+        background: transparent;
+        border: 3px solid #ccc;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+      // &-percent {
+      //     // background: transparent !important;
+      //     // border-color:
+      // }
+    }
+    &__footer {
+      margin-top: 2rem;
+      font-size: 0.6rem;
+      height: 1rem;
+      line-height: 1rem;
+    }
+  }
+  &-percent {
+    width: auto !important;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 15%;
+    right: 15%;
+    margin-bottom: 0 !important;
+    em {
+      z-index: 3;
+      transform: translate(0, -50%);
+      position: absolute;
+      left: 0;
+      top: 50%;
+      height: 3px;
+    }
+  }
+}

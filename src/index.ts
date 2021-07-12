@@ -13,7 +13,15 @@ export { default as Panel } from './components/Panel';
 export { default as KeyBoard } from './components/KeyBoard';
 // 结果
 export { default as Result } from './components/Result';
+// 输入款
+export { default as Input } from './components/Input';
 // 遮罩
 export { default as Mask } from './components/Mask';
 // 弹出框
 // export { default as Popup } from './components/Popup';
+// 时间轴
+export { default as Timeline } from './components/Timeline';
+// 富文本
+export { default as Typography } from './components/Typography';
+// 图表
+export * from './components/Chart';
