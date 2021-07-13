@@ -31,14 +31,14 @@ $white-4: rgba(255, 255, 255, 0.1);
 $gradient-blue: linear-gradient(to right, rgb(80, 135, 245), $blue);
 $gradient-orange: linear-gradient(to right, rgb(255, 135, 35), $orange);
 $gradient-blue-disable: linear-gradient(
-  to right,
-  rgb(185, 205, 250),
-  rgb(150, 185, 245)
+    to right,
+    rgb(185, 205, 250),
+    rgb(150, 185, 245)
 );
 $gradient-orange-disable: linear-gradient(
-  to right,
-  rgb(240, 210, 185),
-  rgb(250, 200, 175)
+    to right,
+    rgb(240, 210, 185),
+    rgb(250, 200, 175)
 );
 
 // 背景色
@@ -85,12 +85,12 @@ $font-weight-bold: bold;
 
 // 默认字体
 $base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
-  Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB',
-  'Microsoft Yahei', sans-serif;
+    Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft Yahei', sans-serif;
 
 // 默认价格字体
 $price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial,
-  sans-serif;
+    sans-serif;
 
 // 行高
 $height-l: 1rem;

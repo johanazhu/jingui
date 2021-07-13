@@ -53,7 +53,11 @@ const Verify = (props: VerifyProps) => {
     };
 
     return (
-        <Clear {...props} groupClassName="jing-input__group-verify" backRender={verifyRender()} />
+        <Clear
+            {...props}
+            groupClassName="jing-input__group-verify"
+            backRender={verifyRender()}
+        />
     );
 };
 export default React.memo(Verify);

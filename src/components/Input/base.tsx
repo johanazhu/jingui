@@ -84,10 +84,10 @@ Input.defaultProps = {
     className: '',
     disabled: false,
     error: false,
-    onChange: function () { },
-    onFocus: function () { },
-    onBlur: function () { },
-    onClear: function () { },
+    onChange: function () {},
+    onFocus: function () {},
+    onBlur: function () {},
+    onClear: function () {},
 };
 
 Input.propTypes = {

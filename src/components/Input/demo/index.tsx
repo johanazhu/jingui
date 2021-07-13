@@ -2,14 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Input, Panel } from 'jing-ui';
 
 export default () => {
-
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
-    const [value, setValue] = useState('')
+    const [value, setValue] = useState('');
 
     return (
         <div className="jing-page jing-page-input">
-
             <Panel title="基本用法">
                 <Input
                     placeholder="请输入"
@@ -44,7 +42,7 @@ export default () => {
                     value={value}
                     placeholder="带发送验证码的输入框"
                     onHandleSendMessage={() => {
-                        console.log('调接口')
+                        console.log('调接口');
                     }}
                 />
             </Panel>
@@ -52,9 +50,11 @@ export default () => {
                 <Input.Captcha
                     value={value}
                     placeholder="带验证码的输入框"
-                    captcha={<img src={'http://wx.jingqb.com/certiification.jpg'} />}
+                    captcha={
+                        <img src={'http://wx.jingqb.com/certiification.jpg'} />
+                    }
                     onHandleChangeCaptcha={() => {
-                        console.log('更换验证码')
+                        console.log('更换验证码');
                     }}
                 />
             </Panel>
@@ -65,15 +65,15 @@ export default () => {
                         placeholder="你想干啥"
                         isActive={true}
                         onHandleFocus={() => {
-                            console.log('keyboard聚焦时')
+                            console.log('keyboard聚焦时');
                         }}
                         onClearValue={() => {
-                            console.log('点击清除图标时')
+                            console.log('点击清除图标时');
                         }}
                         maxLength={20}
                     />
                 </Input.Group>
             </Panel>
         </div>
-    )
-}
+    );
+};

@@ -36,11 +36,7 @@ const Password = (props: InputProps) => {
                             }
                         }}
                     >
-                        {visible ? (
-                            <IconEyeOpenTwo />
-                        ) : (
-                                <IconEyeCloseTwo />
-                            )}
+                        {visible ? <IconEyeOpenTwo /> : <IconEyeCloseTwo />}
                     </div>
                 )}
             </>

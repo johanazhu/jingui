@@ -160,8 +160,8 @@ const KeyboardInput = (props: KeyboardProps) => {
                     {visible ? (
                         <IconEyeOpenTwo className="eyeOpen" />
                     ) : (
-                            <IconEyeCloseTwo className="eyeClose" />
-                        )}
+                        <IconEyeCloseTwo className="eyeClose" />
+                    )}
                 </div>
             )}
             {isShowClear && (

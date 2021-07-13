@@ -30,8 +30,8 @@ const PieChart: React.FC<PieChartProps> = (props) => {
             percent: {
                 formatter: function formatter(val: number) {
                     return val * 100 + '%';
-                }
-            }
+                },
+            },
         });
         chart.coord('polar', {
             startAngle: -Math.PI,

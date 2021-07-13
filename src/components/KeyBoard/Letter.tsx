@@ -88,8 +88,8 @@ const Letter = (props: LetterProps) => {
                         if (Number(letterRef.current?.offsetTop) === hTitle) {
                             top = Math.round(
                                 document.body.clientHeight -
-                                hTotal +
-                                element.offsetTop,
+                                    hTotal +
+                                    element.offsetTop,
                             );
                             bottom = Math.round(top + element.offsetHeight);
                         } else {

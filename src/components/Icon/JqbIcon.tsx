@@ -2,7 +2,6 @@ import * as React from 'react';
 import classnames from 'classnames';
 import IconBase, { IconbaseProps } from './IconBase';
 
-
 export type IconSize = 'sm' | 'md' | 'lg' | 'auto';
 
 export interface JqbIconProps extends IconbaseProps {

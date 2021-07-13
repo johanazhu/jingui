@@ -59,9 +59,11 @@ function Textarea(props: TextareaProps) {
     useEffect(() => {
         if (rows && textareaRef.current) {
             // @ts-ignore
-            textareaRef.current.style.height = `${textareaRef.current.scrollHeight * rows}px`;
+            textareaRef.current.style.height = `${
+                textareaRef.current.scrollHeight * rows
+            }px`;
         }
-    }, [rows])
+    }, [rows]);
 
     return (
         <textarea

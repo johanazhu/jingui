@@ -26,7 +26,11 @@ const Captcha = (props: VerifyProps) => {
     };
 
     return (
-        <Clear {...props} groupClassName="jing-input__group-captcha" backRender={captchaRender()} />
+        <Clear
+            {...props}
+            groupClassName="jing-input__group-captcha"
+            backRender={captchaRender()}
+        />
     );
 };
 export default React.memo(Captcha);
