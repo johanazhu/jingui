@@ -144,11 +144,11 @@ const KeyboardInput = (props: KeyboardProps) => {
     }
 
     return (
-        <Group className="jqb-input__group-keyboard">
+        <Group className="jing-input__group-keyboard">
             <div
-                className={classnames('jqb-input__keyboard', {
-                    'jqb-input__keyboard_active': isFocus,
-                    'jqb-input__keyboard_small': !visible,
+                className={classnames('jing-input__keyboard', {
+                    'jing-input__keyboard_active': isFocus,
+                    'jing-input__keyboard_small': !visible,
                 })}
                 onClick={onFocusClick}
             >

@@ -1,12 +1,11 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import * as PropTypes from 'prop-types';
 import classnames from 'classnames';
-// import Password from './password';
-// import PrefixInput from './prefixInput';
-import Group, { GroupProps } from './group';
 import { InputProps } from './PropType';
 
-interface TextareaProps extends InputProps {}
+export interface TextareaProps extends InputProps {
+    rows?: number;
+}
 
 function useInputValue(initialValue: string) {
     const [value, setValue] = useState(initialValue);
@@ -36,7 +35,10 @@ function Textarea(props: TextareaProps) {
         disabled,
         maxLength,
         minLength,
+        rows,
     } = props;
+
+    const textareaRef = useRef(null);
 
     const oInput = useInputValue(value);
     const [isBan, setIsBan] = useState(disabled);
@@ -54,13 +56,22 @@ function Textarea(props: TextareaProps) {
         setIsError(error);
     }, [isError]);
 
+    useEffect(() => {
+        if (rows && textareaRef.current) {
+            // @ts-ignore
+            textareaRef.current.style.height = `${textareaRef.current.scrollHeight * rows}px`;
+        }
+    }, [rows])
+
     return (
         <textarea
+            ref={textareaRef}
             value={oInput.value}
             style={style}
-            className={classnames('jqb-input jqb-textarea', className, {
-                'jqb-input-error': isError,
+            className={classnames('jing-textarea', className, {
+                'jing-input-error': isError,
             })}
+            rows={rows}
             disabled={isBan}
             placeholder={placeholder}
             maxLength={maxLength}
@@ -83,4 +94,4 @@ Textarea.propTypes = {
     className: PropTypes.string,
 };
 
-export default React.memo(Textarea);
+export default Textarea;

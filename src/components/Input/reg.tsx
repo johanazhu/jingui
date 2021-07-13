@@ -38,7 +38,7 @@ const RegInput = (props: RegProps) => {
             type="text"
             value={value}
             className={classnames(
-                { 'jqb-input-error': !_isValid && _value },
+                { 'jing-input-error': !_isValid && _value },
                 className,
             )}
             onChange={(res) => {

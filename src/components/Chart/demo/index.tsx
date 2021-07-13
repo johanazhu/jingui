@@ -130,18 +130,13 @@ export default () => (
     <div className="jing-page jing-page-chart">
         <Panel title="LineChart">
             <LineChart
-                id="jqb-f2chart"
                 width={200}
                 height={300}
                 data={data}
-                onClick={(data: any) => {
-                    console.log('test', data[0]);
-                }}
             />
         </Panel>
         <Panel title="ColumnChart">
             <ColumnChart
-                id="jqb-f2chart2"
                 width={300}
                 height={300}
                 data={[
@@ -178,20 +173,13 @@ export default () => (
                         tem: 2000,
                     },
                 ]}
-                onClick={(data: any) => {
-                    console.log('test', data[0]);
-                }}
             />
         </Panel>
         <Panel title="PieChart">
             <PieChart
-                id="jqb-f2chart3"
                 width={200}
                 height={200}
                 data={data3}
-                onClick={(data: any) => {
-                    console.log('test', data[0]);
-                }}
             />
         </Panel>
     </div>

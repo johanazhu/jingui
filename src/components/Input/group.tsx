@@ -12,7 +12,7 @@ const Group = (props: GroupProps) => {
     const { className, children, style } = props;
     return (
         <div
-            className={classnames('jqb-input__group', className)}
+            className={classnames('jing-input__group', className)}
             style={style}
         >
             {children}

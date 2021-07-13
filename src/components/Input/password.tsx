@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { InputProps } from './PropType';
-import { IconEyeClose, IconEyeOpen } from '../Icon';
+import { IconEyeCloseTwo, IconEyeOpenTwo } from '../Icon';
 import Clear from './clear';
 
 const Password = (props: InputProps) => {
@@ -37,9 +37,9 @@ const Password = (props: InputProps) => {
                         }}
                     >
                         {visible ? (
-                            <IconEyeOpen />
+                            <IconEyeOpenTwo />
                         ) : (
-                                <IconEyeClose />
+                                <IconEyeCloseTwo />
                             )}
                     </div>
                 )}
@@ -50,7 +50,7 @@ const Password = (props: InputProps) => {
     return (
         <Clear
             {...props}
-            groupClassName="jqb-input__group-password"
+            groupClassName="jing-input__group-password"
             type={visible ? 'text' : 'password'}
             onFocus={(e) => {
                 setIsFocus(true);
@@ -62,7 +62,7 @@ const Password = (props: InputProps) => {
                 // }, 100)
                 onBlur && onBlur(e);
             }}
-            render={passwordRender()}
+            backRender={passwordRender()}
         />
     );
 };

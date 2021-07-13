@@ -16,7 +16,7 @@ function Inner(props: any) {
 export default (props: any) => {
     const { className } = props;
     return (
-        <Group className={classnames('jqb-input__group-suffix', className)}>
+        <Group className={classnames('jing-input__group-suffix', className)}>
             <Inner {...props} className={null} />
         </Group>
     );

@@ -69,39 +69,39 @@ $globalColorOrangeBg: rgb(253, 244, 237);
 $KBBtnColor: rgb(173, 179, 188);
 
 $globalColorPurpleGradient: -webkit-linear-gradient(
-    0deg,
-    rgb(80, 135, 245) 0%,
-    rgb(50, 100, 200) 100%
+  0deg,
+  rgb(80, 135, 245) 0%,
+  rgb(50, 100, 200) 100%
 );
 $globalColorDarkBlueGradient: -webkit-linear-gradient(
-    0deg,
-    lighten($globalColorDarkBlue, 15%) 0%,
-    $globalColorDarkBlue 100%
+  0deg,
+  lighten($globalColorDarkBlue, 15%) 0%,
+  $globalColorDarkBlue 100%
 );
 $globalColorBlueGradient: -webkit-linear-gradient(
-    0deg,
-    lighten($globalColorBlue, 15%) 0%,
-    $globalColorBlue 100%
+  0deg,
+  lighten($globalColorBlue, 15%) 0%,
+  $globalColorBlue 100%
 );
 $globalColorOrangeGradient: -webkit-linear-gradient(
-    0deg,
-    rgb(255, 135, 35) 0%,
-    rgb(255, 100, 20) 100%
+  0deg,
+  rgb(255, 135, 35) 0%,
+  rgb(255, 100, 20) 100%
 );
 $globalColorYellowGradient: -webkit-linear-gradient(
-    0deg,
-    lighten($globalColorYellow, 15%) 0%,
-    $globalColorYellow 100%
+  0deg,
+  lighten($globalColorYellow, 15%) 0%,
+  $globalColorYellow 100%
 );
 $globalColorGreenGradient: -webkit-linear-gradient(
-    0deg,
-    lighten($globalColorGreen, 15%) 0%,
-    $globalColorGreen 100%
+  0deg,
+  lighten($globalColorGreen, 15%) 0%,
+  $globalColorGreen 100%
 );
 $globalColorRedGradient: -webkit-linear-gradient(
-    0deg,
-    lighten($globalColorRed, 15%) 0%,
-    $globalColorRed 100%
+  0deg,
+  lighten($globalColorRed, 15%) 0%,
+  $globalColorRed 100%
 );
 /*font-size*/
 $am-xxxs: 0.5rem;
@@ -131,15 +131,6 @@ $iconPos12: -45.35rem;
 $iconPos13: -49.35rem;
 $iconPos14: -53.35rem;
 $iconPos15: -57.35rem;
-
-//输入框配色
-$input-font-color: #484852;
-$input-border-color: #d0d2da;
-$input-error-border-color: #ef5353;
-$input-active-border-color: #645a82;
-$input-disabled-font-color: rgba(72, 72, 82, 0.3);
-$input-disabled-bg-color: #f4f4f6;
-$input-placeholder-color: #b0b2b8;
 
 // border颜色
 $theme-border-color: #f3f3f3;

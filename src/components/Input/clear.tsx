@@ -1,16 +1,17 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { IconCircleDelete, IconEyeClose, IconEyeOpen } from '../Icon';
+import { IconCircleDelete } from '../Icon';
 
 import Group from './group';
 import Input from './base';
 import { InputProps } from './PropType';
 
 export interface ClearProps extends InputProps {
-    render?: any;
     groupClassName?: string;
     groupStyle?: React.CSSProperties;
+    render?: React.ReactNode;
+    backRender?: React.ReactNode;
 }
 
 function useInputValue(initialValue: string | undefined) {
@@ -48,6 +49,7 @@ const Clear = (props: ClearProps) => {
         onBlur,
         onClear,
         render,
+        backRender,
     } = props;
 
     let timer;
@@ -122,23 +124,15 @@ const Clear = (props: ClearProps) => {
                     <IconCircleDelete />
                 </div>
             )}
+            {backRender}
         </Group>
     );
 };
 
-// Clear.defaultProps = {
-//     className: '',
-//     groupClassName: '',
-//     disabled: false,
-//     error: false,
-//     style: null,
-//     groupStyle: null,
-//     onChange: function () { },
-//     onFocus: function () { },
-//     onBlur: function () { },
-//     onEnter: function () { },
-//     onClear: function () { },
-// };
+Clear.defaultProps = {
+    disabled: false,
+    error: false,
+};
 
 // Clear.propTypes = {
 //     className: PropTypes.string,
@@ -153,9 +147,7 @@ const Clear = (props: ClearProps) => {
 //     onFocus: PropTypes.func,
 //     onBlur: PropTypes.func,
 //     onChange: PropTypes.func,
-//     onEnter: PropTypes.func,
 //     onClear: PropTypes.func,
-//     render: PropTypes.any,
 // };
 
 export default Clear;

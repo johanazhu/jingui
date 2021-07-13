@@ -38,8 +38,8 @@ const Verify = (props: VerifyProps) => {
     const verifyRender = () => {
         return (
             <div
-                className={classnames('jqb-input__verify', {
-                    'jqb-input__verify_active': isActive,
+                className={classnames('jing-input__verify', {
+                    'jing-input__verify_active': isActive,
                 })}
                 onClick={() => {
                     onHandleSendMessage();
@@ -53,10 +53,7 @@ const Verify = (props: VerifyProps) => {
     };
 
     return (
-        <Group className="jqb-input__group-verify">
-            <Clear {...props} />
-            {verifyRender()}
-        </Group>
+        <Clear {...props} groupClassName="jing-input__group-verify" backRender={verifyRender()} />
     );
 };
 export default React.memo(Verify);

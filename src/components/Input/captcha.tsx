@@ -15,7 +15,7 @@ const Captcha = (props: VerifyProps) => {
     const captchaRender = () => {
         return (
             <div
-                className={classnames('jqb-input__captcha')}
+                className={classnames('jing-input__captcha')}
                 onClick={() => {
                     onHandleChangeCaptcha();
                 }}
@@ -26,10 +26,7 @@ const Captcha = (props: VerifyProps) => {
     };
 
     return (
-        <Group className="jqb-input__group-captcha">
-            <Clear {...props} />
-            {captchaRender()}
-        </Group>
+        <Clear {...props} groupClassName="jing-input__group-captcha" backRender={captchaRender()} />
     );
 };
 export default React.memo(Captcha);

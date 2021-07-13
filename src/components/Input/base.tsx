@@ -63,8 +63,8 @@ const Input = forwardRef((props: InputProps, ref: any) => {
             type={type}
             style={style}
             value={oInput.value}
-            className={classnames('jqb-input', className, {
-                'jqb-input__error': isError,
+            className={classnames('jing-input', className, {
+                'jing-input__error': isError,
             })}
             disabled={isBan}
             placeholder={placeholder}
@@ -84,10 +84,10 @@ Input.defaultProps = {
     className: '',
     disabled: false,
     error: false,
-    onChange: function () {},
-    onFocus: function () {},
-    onBlur: function () {},
-    onClear: function () {},
+    onChange: function () { },
+    onFocus: function () { },
+    onBlur: function () { },
+    onClear: function () { },
 };
 
 Input.propTypes = {
