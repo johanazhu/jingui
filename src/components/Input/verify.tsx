@@ -9,7 +9,7 @@ export interface VerifyProps extends InputProps {
 }
 
 const Verify = (props: VerifyProps) => {
-    const { onHandleSendMessage } = props;
+    const { onHandleSendMessage, ...rest } = props;
 
     const [text, setText] = useState('获取验证码');
     const [sleepTime, setSleepTime] = useState(60);
@@ -54,7 +54,7 @@ const Verify = (props: VerifyProps) => {
 
     return (
         <Clear
-            {...props}
+            {...rest}
             groupClassName="jing-input__group-verify"
             backRender={verifyRender()}
         />

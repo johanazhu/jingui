@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { FC, useState, useEffect, useCallback, useRef } from 'react';
 import classnames from 'classnames';
 import Group from './group';
 
@@ -52,7 +52,7 @@ function changeValue(value: string) {
     return tempVal;
 }
 
-const KeyboardInput = (props: KeyboardProps) => {
+const KeyboardInput: FC<KeyboardProps> = (props) => {
     const {
         value,
         placeholder,

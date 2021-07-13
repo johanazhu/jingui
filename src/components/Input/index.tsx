@@ -12,18 +12,19 @@ import Search from './search';
 import Clear from './clear';
 import Captcha from './captcha';
 import KeyBoard from './keyboard';
-// import Textarea from './textarea';
+import Textarea from './textarea';
 
 Input.Group = Group;
 Input.Verify = Verify;
+Input.Clear = Clear;
+Input.Password = Password;
+Input.Captcha = Captcha;
+Input.KeyBoard = KeyBoard;
+Input.Textarea = Textarea;
+
 Input.Prefix = Prefix;
 Input.Suffix = Suffix;
 Input.Phone = Phone;
-Input.Password = Password;
 Input.Search = Search;
-Input.Clear = Clear;
-Input.Captcha = Captcha;
-Input.KeyBoard = KeyBoard;
-// Input.Textarea = Textarea;
 
 export default Input;

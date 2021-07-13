@@ -104,10 +104,10 @@ const Clear = (props: ClearProps) => {
                 }}
                 onFocus={onHandleFocus}
                 onBlur={(e: any) => {
-                    // changeStatus(false);
+                    // 小于300毫秒即可，但是要大于100毫秒，不然鼠标点击是反应不过来的
                     timer = setTimeout(() => {
                         setIsShowClear(false);
-                    }, 100);
+                    }, 200);
                     onBlur && onBlur(e);
                 }}
             />
