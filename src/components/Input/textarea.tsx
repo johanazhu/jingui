@@ -60,6 +60,7 @@ function Textarea(props: TextareaProps) {
         if (rows && textareaRef.current) {
             // @ts-ignore
             textareaRef.current.style.height = `${
+                // @ts-ignore
                 textareaRef.current.scrollHeight * rows
             }px`;
         }

@@ -1,92 +1,3 @@
-// .jing-input {
-//   //   @extend.am-row;
-//   &__icon {
-//     @extend.am-g;
-//     width: 2rem !important;
-//     height: 100% !important;
-//     @extend.am-pos-lt;
-//     .jing-icon {
-//       //   @extend.am-pos-lc;
-//     }
-//     & > a {
-//       display: block;
-//       height: 100%;
-//       width: 100%;
-//     }
-//   }
-//   &__content {
-//     @extend.am-g;
-//     &_state_hasicon {
-//       padding-left: 2rem;
-//     }
-//     &-clear {
-//       display: flex !important;
-//       //   @extend .am-flex-center;
-//       //   @extend.am-input-clear;
-//     }
-//     &-eye {
-//       display: flex !important;
-//       //   @extend .am-flex-center;
-//       //   @extend.am-input-pwd;
-//     }
-//     &-eye_state_on {
-//       background-position: center top;
-//     }
-//     &-input {
-//       //   @extend.am-g;
-//       //   @extend.am-input;
-//     }
-//     &-eye ~ &-clear {
-//       right: 1.75rem !important;
-//     }
-//   }
-// }
-
-// .jing-verifymobile {
-//   //   @extend.am-g;
-//   & .ListDesc {
-//     display: none;
-//   }
-//   &__state_send .ListDesc {
-//     display: block;
-//   }
-// }
-
-// .jing-input__type_verifycode {
-//   .jing-input__content {
-//     // @extend.am-g;
-//     // @extend.col-xs-16;
-//   }
-//   .jing-input__link {
-//     // @extend.am-g;
-//     // @extend.col-xs-8;
-//     &-text {
-//       display: block;
-//       height: 2.75rem;
-//       line-height: 2.75rem;
-//       text-align: right;
-//       font-size: $am-sm;
-//     }
-//   }
-// }
-
-// .Input__type_captcha {
-//   .Input__content {
-//     @extend.am-g;
-//     @extend.col-xs-17;
-//   }
-//   .Input__link {
-//     @extend.am-g;
-//     @extend.col-xs-7;
-//     &-text {
-//       display: block;
-//       height: 2.75rem;
-//       line-height: 2.75rem;
-//       text-align: right;
-//     }
-//   }
-// }
-
 @mixin jing-input-placeholder {
     color: $placeholder-color !important;
     font-size: 14px;
@@ -94,60 +5,19 @@
 
 @mixin jing-input() {
     width: 100%;
-    height: 1.5rem;
-    line-height: 1.5rem;
-    margin: $horizontal-gap 0;
+    height: calc($input-height / 2);
+    line-height: calc($input-height / 2);
+    margin: calc($input-height / 4) 0;
     border: 0;
     background-color: transparent;
-    font-size: $am-l;
+    font-size: $input-font-size-l;
 }
 
-@mixin jing-input-clear() {
+@mixin jing-input-common() {
     display: block;
     z-index: 3;
-    width: 3rem;
-    height: 3rem;
-    //   margin-top: -1.375rem;
-    //   margin-right: 0 !important;
-    //   position: absolute;
-    //   right: -1rem;
-    //   top: 50%;
-    background-size: contain;
-}
-
-@mixin jing-input-clear_state_active() {
-    opacity: 0.8;
-}
-
-@mixin jing-input-pwd() {
-    display: block;
-    z-index: 3;
-    content: '';
-    width: 3rem;
-    height: 3rem;
-    //   margin-top: -1.375rem;
-    //   margin-right: 0 !important;
-    //   position: absolute;
-    //   right: -1rem;
-    //   top: 50%;
-    background-size: 100% auto;
-}
-
-@mixin jing-input-pwd_state_active() {
-    opacity: 0.8;
-}
-
-@mixin jing-input-verfify() {
-    display: block;
-    content: '';
-    z-index: 3;
-    width: 3rem;
-    height: 3rem;
-    //   margin-top: -1.375rem;
-    //   margin-right: 0 !important;
-    //   position: absolute;
-    //   top: 50%;
-    background-size: 100% auto;
+    width: $input-width;
+    height: $input-height;
 }
 
 input::placeholder {
@@ -177,34 +47,22 @@ textarea::placeholder {
 .jing-input__group {
     display: inline-flex;
     width: 100%;
-    font-size: 14px;
+    font-size: $input-font-size;
 
     .jing-input {
         flex: 1;
-        // @extend.am-g;
-        // @extend.am-input;
-        width: 100%;
-        height: 1.5rem;
-        line-height: 1.5rem;
-        margin: 0.75rem 0;
-        border: 0;
-        background-color: transparent;
-        font-size: 1rem;
-        // font-family: 'Microsoft YaHei', '微软雅黑', 'arial', '苹果丽中黑';
     }
 
     .eye-btn {
         display: flex !important;
-        @include jing-input-pwd();
         @include flex-center();
-        // right: 0;
+        @include jing-input-common();
     }
 
     .clear-btn {
         display: flex !important;
         @include flex-center();
-        @include jing-input-clear();
-        // right: 0;
+        @include jing-input-common();
     }
 }
 
@@ -215,39 +73,34 @@ textarea::placeholder {
     }
 }
 
+// 带密码的input
 .jing-input__group-password {
     .jing-input {
         border-bottom-right-radius: 0;
         border-top-right-radius: 0;
     }
-    // .clear-btn {
-    //     right: 40px;
-    // }
 }
 
+// 发送短信验证码input
 .jing-input__group-verify {
-    position: relative;
     .jing-input__group {
         width: 65%;
     }
     .jing-input__verify {
         @include flex-center();
         justify-content: flex-end;
-        // flex: 1;
         color: $globalColorPurple;
         height: 3rem;
         line-height: 3rem;
         text-align: right;
-        font-size: $am-sm;
         &_active {
             color: $globalColorBlack1;
         }
     }
 }
 
+// 验证码input
 .jing-input__group-captcha {
-    position: relative;
-    padding-right: 0 !important;
     .jing-input__group {
         width: 65%;
     }
@@ -258,22 +111,21 @@ textarea::placeholder {
         height: 3rem;
         line-height: 3rem;
         text-align: right;
-        font-size: $am-sm;
     }
 }
 
+// 自定义input
 .jing-input__group-keyboard {
     .jing-input__keyboard {
         flex: 1;
         width: 100%;
-        height: 3rem;
-        line-height: 3rem;
+        height: $input-width;
+        line-height: $input-line-height;
         cursor: text;
         position: relative;
         z-index: 2;
         background-color: rgba(255, 255, 255, 0) !important;
         &:after {
-            // display: inline-block;
             display: none;
             content: '';
             width: 1px;
@@ -291,7 +143,7 @@ textarea::placeholder {
             }
         }
         &_small {
-            font-size: $am-xxs;
+            font-size: $input-font-size-xxs;
         }
     }
     sub {
@@ -313,6 +165,7 @@ textarea::placeholder {
     }
 }
 
+// 多行
 .jing-textarea {
     @include jing-input();
     display: block;

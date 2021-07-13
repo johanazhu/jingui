@@ -48,7 +48,7 @@ $bg-orange: rgb(253, 244, 237);
 
 // 字体大小
 $font-size-xxxs: 0.5rem;
-$font-size-xxs: 0.6rem;
+$font-size-xxs: 0.625rem;
 $font-size-xs: 0.75rem;
 $font-size-sm: 0.875rem;
 $font-size-l: 1rem;
@@ -163,6 +163,9 @@ $button-disable-color: $black-4;
 $button-loading-m-l: $horizontal-gap;
 
 // input
+$input-font-size: $font-size-sm;
+$input-font-size-l: $font-size-l;
+$input-font-size-xxs: $font-size-xxs;
 $input-font-color: #484852;
 $input-border-color: #d0d2da;
 $input-error-border-color: #ef5353;
@@ -170,6 +173,9 @@ $input-active-border-color: #645a82;
 $input-disabled-font-color: rgba(72, 72, 82, 0.3);
 $input-disabled-bg-color: #f4f4f6;
 $input-placeholder-color: #b0b2b8;
+$input-width: 3rem;
+$input-height: 3rem;
+$input-line-height: 3rem;
 
 // timeline
 $timeline-padding: 1rem;
