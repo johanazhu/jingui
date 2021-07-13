@@ -6,7 +6,7 @@ const KeyboardDelete = (props: JqbIconProps) => {
     return (
         <JqbIcon
             icon={keyboardDelete}
-            color={props.color || 'white'}
+            color={props.color || 'block'}
             {...props}
         />
     );

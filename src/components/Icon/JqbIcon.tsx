@@ -2,18 +2,21 @@ import * as React from 'react';
 import classnames from 'classnames';
 import IconBase, { IconbaseProps } from './IconBase';
 
+
+export type IconSize = 'sm' | 'md' | 'lg' | 'auto';
+
 export interface JqbIconProps extends IconbaseProps {
     className?: string;
-    onClick?: (e: any) => void;
     color?: string;
-    size?: string;
+    size?: IconSize;
     icon?: any;
-    style?: any;
-    keepOriginColor?: boolean; // 保持原来的颜色
+    style?: React.CSSProperties;
+    keepOriginColor?: boolean;
+    onClick?: (e: any) => void;
 }
 
 const JqbIcon: React.FC<JqbIconProps> = (props) => {
-    const { className, onClick, icon, color, size, style, keepOriginColor } =
+    const { className, color, size, icon, style, keepOriginColor, onClick } =
         props;
     const classes = classnames(
         'jing-icon',

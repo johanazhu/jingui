@@ -57,8 +57,8 @@ const Symbol = (props: SymbolProps) => {
                         if (Number(symbolRef.current?.offsetTop) === hTitle) {
                             top = Math.round(
                                 document.body.clientHeight -
-                                    hTotal +
-                                    element.offsetTop,
+                                hTotal +
+                                element.offsetTop,
                             );
                             bottom = Math.round(top + element.offsetHeight);
                         } else {
@@ -152,7 +152,7 @@ const Symbol = (props: SymbolProps) => {
     return (
         <>
             <div
-                className={classnames('KeyBoardSymbol', className)}
+                className={classnames('jing-keyBoardSymbol', className)}
                 ref={symbolRef}
                 onTouchMove={handleTouchMove}
                 onTouchEnd={handleTouchEnd}
@@ -161,7 +161,7 @@ const Symbol = (props: SymbolProps) => {
                 {symbolKeys &&
                     symbolKeys.map((item: any) => (
                         <SymbolKey
-                            className="KeyBoardSymbol__box"
+                            className="jing-keyBoardSymbol__box"
                             key={item.text}
                             text={item.text}
                             type={item.type}

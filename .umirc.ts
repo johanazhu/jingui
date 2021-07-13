@@ -53,13 +53,16 @@ export default defineConfig({
             height: 125px;
             text-align: center;
         }
-        .__dumi-default-mobile-demo-layout .jing-page .jing-icon{
+        .__dumi-default-mobile-demo-layout .jing-page-icon .jing-icon{
             display: block;
             margin-bottom: 15px;
         }
         .__dumi-default-mobile-demo-layout .jing-page-icon .jing-panel__body{
            padding: 0;
         }
+        .__dumi-default-mobile-demo-layout .jing-page-keyboard .jing-panel__body{
+            overflow: visible;
+         }
         .__dumi-default-mobile-demo-layout .jing-page .grid-column:after{
             content: "";
             pointer-events: none;
@@ -77,7 +80,6 @@ export default defineConfig({
         }
         .__dumi-default-mobile-demo-layout .jing-panel__body {
             overflow: hidden;
-            // padding: 15px 15px 0 15px;
         }
         .__dumi-default-mobile-demo-layout .jing-panel__body:after {
             content: "";

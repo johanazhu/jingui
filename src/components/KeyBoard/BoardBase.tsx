@@ -134,7 +134,7 @@ const BoardBase = (props: BoardBaseProps) => {
 
     return (
         <div
-            className="KeyBoardBase"
+            className="jing-keyBoardBase"
             ref={baseRef}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
@@ -142,7 +142,7 @@ const BoardBase = (props: BoardBaseProps) => {
         >
             {keys.map((item: any) => (
                 <Key
-                    className={classnames('KeyBoardBase__box')}
+                    className={classnames('jing-keyBoardBase__box')}
                     key={item.text}
                     text={item.text}
                     type={item.type}

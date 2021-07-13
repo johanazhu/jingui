@@ -195,19 +195,21 @@ const LetterKey = forwardRef((props: KeyProps, ref: any) => {
         if (type === 'shift')
             return isShiftActive ? (
                 <IconKeyboardShift
+                    size="lg"
                     color="black"
                     onClick={(e) => {
                         e.stopPropagation();
                     }}
                 />
             ) : (
-                <IconKeyboardShiftLine
-                    color="black"
-                    onClick={(e) => {
-                        e.stopPropagation();
-                    }}
-                />
-            );
+                    <IconKeyboardShiftLine
+                        size="lg"
+                        color="black"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                        }}
+                    />
+                );
         if (type === 'symbol') return '123.*!&';
         if (type === 'space') return '空格';
         if (type === 'done') return '完成';

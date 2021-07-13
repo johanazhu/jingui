@@ -102,16 +102,16 @@ const Key = forwardRef((props: KeyProps, ref: any) => {
     function renderText() {
         if (isNew && type === 'del')
             return isActive === 'del' ? (
-                <IconKeyboardDeleteLine color="white" />
+                <IconKeyboardDeleteLine size="lg" color="white" />
             ) : (
-                <IconKeyboardDeleteLine color="black" />
-            );
+                    <IconKeyboardDeleteLine size="lg" color="black" />
+                );
         if (type === 'del')
             return isActive === 'del' ? (
-                <IconKeyboardDeleteLine color="white" />
+                <IconKeyboardDeleteLine size="lg" color="white" />
             ) : (
-                <IconKeyboardDeleteLine color="black" />
-            );
+                    <IconKeyboardDeleteLine size="lg" color="black" />
+                );
         return text;
     }
 

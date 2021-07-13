@@ -3,31 +3,36 @@ import F2 from '@antv/f2';
 import PieLabel from '@antv/f2/lib/plugin/pie-label';
 
 // 饼图
-export interface ChartProps {
+export interface PieChartProps {
     data: any;
     padding?: any;
     width?: any;
     height?: any;
 }
 
-const PieChart: React.FC<ChartProps> = (props) => {
+const PieChart: React.FC<PieChartProps> = (props) => {
     const { data, padding, width, height } = props;
 
     let canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
-        let chart: any =
-            canvasRef.current !== null &&
-            new F2.Chart({
-                el: canvasRef.current,
-                plugins: PieLabel,
-                pixelRatio: window.devicePixelRatio,
-                padding,
-                width,
-                height,
-            });
+        let chart: any = new F2.Chart({
+            // @ts-ignore
+            el: canvasRef.current,
+            plugins: PieLabel,
+            pixelRatio: window.devicePixelRatio,
+            padding,
+            width,
+            height,
+        });
 
-        chart.source(data);
+        chart.source(data, {
+            percent: {
+                formatter: function formatter(val: number) {
+                    return val * 100 + '%';
+                }
+            }
+        });
         chart.coord('polar', {
             startAngle: -Math.PI,
             endAngle: 0,
@@ -37,6 +42,12 @@ const PieChart: React.FC<ChartProps> = (props) => {
         });
         chart.axis(false);
         chart.legend(false);
+        // chart.legend({
+        //     position: 'right',
+        //     itemFormatter: function itemFormatter(val) {
+        //         return val + '  ' + map[val];
+        //     }
+        // });
 
         // tooltip: {
         //     useHTML: true,

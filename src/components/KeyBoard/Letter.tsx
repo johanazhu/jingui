@@ -88,8 +88,8 @@ const Letter = (props: LetterProps) => {
                         if (Number(letterRef.current?.offsetTop) === hTitle) {
                             top = Math.round(
                                 document.body.clientHeight -
-                                    hTotal +
-                                    element.offsetTop,
+                                hTotal +
+                                element.offsetTop,
                             );
                             bottom = Math.round(top + element.offsetHeight);
                         } else {
@@ -193,7 +193,7 @@ const Letter = (props: LetterProps) => {
 
     return (
         <div
-            className={classnames('KeyBoardLetter', className)}
+            className={classnames('jing-keyBoardLetter', className)}
             ref={letterRef}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
@@ -202,7 +202,7 @@ const Letter = (props: LetterProps) => {
             {letterKeys &&
                 letterKeys.map((item: any, id: any) => (
                     <LetterKey
-                        className="KeyBoardLetter__box"
+                        className="jing-keyBoardLetter__box"
                         key={item.text + id}
                         text={item.text}
                         type={item.type}

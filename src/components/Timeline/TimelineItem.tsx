@@ -35,8 +35,9 @@ const TimelineItem: React.FC<TimeLineItemProps> = (props) => {
     const stepClass = classnames('jing-timeline-item__step', {
         'jing-timeline-item__step-dashed': dashed,
     });
-    // @ts-ignore
+
     const isShowColor =
+        // @ts-ignore
         parseInt(percent) - `${count && i && (100 / count) * i}`;
 
     return (

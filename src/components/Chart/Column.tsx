@@ -2,15 +2,15 @@ import React, { useState, useEffect, useRef } from 'react';
 import F2 from '@antv/f2';
 
 // 柱状图
-export interface ChartProps {
+export interface ColumnChartProps {
     data: any;
     padding?: any;
     width?: any;
     height?: any;
 }
 
-const ColumnChart: React.FC<ChartProps> = (props) => {
-    const { data, padding = 'auto', width, height } = props;
+const ColumnChart: React.FC<ColumnChartProps> = (props) => {
+    const { data, padding, width, height } = props;
 
     let canvasRef = useRef<HTMLCanvasElement>(null);
 

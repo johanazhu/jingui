@@ -24,7 +24,7 @@ export default class extends React.PureComponent<KeyBoardProps> {
         const { className, style } = this.props;
         return (
             <div
-                className={classnames('KeyBoard scroller', className)}
+                className={classnames('jing-keyBoard scroller', className)}
                 style={style}
             >
                 {this.props.children}

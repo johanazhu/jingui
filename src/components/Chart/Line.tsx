@@ -2,14 +2,14 @@ import React, { useState, useEffect, useRef } from 'react';
 import F2 from '@antv/f2';
 
 // 柱状图
-export interface ChartProps {
+export interface LineChartProps {
     data: any;
     padding?: any;
     width?: any;
     height?: any;
 }
 
-const ColumnChart: React.FC<ChartProps> = (props) => {
+const LineChart: React.FC<LineChartProps> = (props) => {
     const { data, padding, width, height } = props;
 
     let canvasRef = useRef<HTMLCanvasElement>(null);
@@ -70,4 +70,4 @@ const ColumnChart: React.FC<ChartProps> = (props) => {
     return <canvas ref={canvasRef}></canvas>;
 };
 
-export default React.memo(ColumnChart);
+export default React.memo(LineChart);

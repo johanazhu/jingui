@@ -119,7 +119,7 @@ const Clear = (props: ClearProps) => {
                         onChange && onChange('');
                     }}
                 >
-                    <IconCircleDelete size="small" />
+                    <IconCircleDelete />
                 </div>
             )}
         </Group>

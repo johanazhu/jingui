@@ -1,14 +1,21 @@
 ---
 nav:
-    title: 组件
-    path: /components
+  title: 组件
+  path: /components
 ---
 
 <!-- ## Tag -->
 
 **Demo：**
 
+基本用法
 <code src="./demo/index.tsx" />
+
+Letter
+<code src="./demo/Letter.tsx" />
+
+Symbol
+<code src="./demo/Symbol.tsx" />
 
 **Props**
 

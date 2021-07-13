@@ -158,15 +158,15 @@ const KeyboardInput = (props: KeyboardProps) => {
             {isFocus && (
                 <div className="eye-btn" onClick={onEyeClick}>
                     {visible ? (
-                        <IconEyeOpenTwo size="small" className="eyeOpen" />
+                        <IconEyeOpenTwo className="eyeOpen" />
                     ) : (
-                        <IconEyeCloseTwo size="small" className="eyeClose" />
-                    )}
+                            <IconEyeCloseTwo className="eyeClose" />
+                        )}
                 </div>
             )}
             {isShowClear && (
                 <div className="clear-btn" onClick={onClearClick}>
-                    <IconCircleDelete size="small" />
+                    <IconCircleDelete />
                 </div>
             )}
         </Group>
