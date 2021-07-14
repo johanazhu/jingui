@@ -1,9 +1,10 @@
-import React, { FC, useState, useEffect, forwardRef } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 export interface portalProps {
-    container?: any;
-    className?: any;
+    container?: HTMLDivElement;
+    className?: string;
+    children?: React.ReactNode;
 }
 
 const Portal: FC<portalProps> = (props) => {
