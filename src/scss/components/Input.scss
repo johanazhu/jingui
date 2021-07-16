@@ -5,9 +5,9 @@
 
 @mixin jing-input() {
     width: 100%;
-    height: calc($input-height / 2);
-    line-height: calc($input-height / 2);
-    margin: calc($input-height / 4) 0;
+    height: calc(#{$input-height} / 2);
+    line-height: calc(#{$input-height} / 2);
+    margin: calc(#{$input-height} / 4) 0;
     border: 0;
     background-color: transparent;
     font-size: $input-font-size-l;
@@ -89,9 +89,9 @@ textarea::placeholder {
     .jing-input__verify {
         @include flex-center();
         justify-content: flex-end;
-        color: $globalColorPurple;
-        height: 3rem;
-        line-height: 3rem;
+        color: $input-verify-font-color;
+        height: $input-height;
+        line-height: $input-line-height;
         text-align: right;
         &_active {
             color: $globalColorBlack1;
@@ -106,11 +106,6 @@ textarea::placeholder {
     }
     .jing-input__captcha {
         @include flex-center();
-        justify-content: flex-end;
-        color: $globalColorPurple;
-        height: 3rem;
-        line-height: 3rem;
-        text-align: right;
     }
 }
 
@@ -147,21 +142,16 @@ textarea::placeholder {
         }
     }
     sub {
-        display: block;
-        height: 1em;
-        line-height: 1em;
-        font-size: 1rem;
-        position: absolute;
         z-index: 1;
-        left: 12px;
-        top: 11px;
-        color: #c8c8c8;
+        display: block;
         position: absolute;
-        // left: 0;
-        // top: 50%;
         left: 1px;
         top: 52%;
         transform: translate(0, -50%);
+        height: 1em;
+        line-height: 1em;
+        font-size: 1rem;
+        color: $input-keyboard-sub-color;
     }
 }
 

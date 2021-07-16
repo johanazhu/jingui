@@ -155,39 +155,6 @@
     }
 }
 
-// .PopupAlertSelect {
-//   width: 80%;
-//   border-radius: 0.5rem;
-//   background-color: #fff;
-//   opacity: 0;
-//   @include transform(translate(-50%, -50%) scale(0.875, 0.875));
-//   @include transition(all $globalSpeed ease-out);
-//   .Popup__title {
-//     height: 6rem;
-//     width: 100%;
-//     display: block;
-//     position: relative;
-//     &-text {
-//       display: block;
-//       width: 80%;
-//       line-height: 1.6em;
-//       max-height: 4.8em;
-//       position: absolute;
-//       left: 50%;
-//       top: 50%;
-//       overflow: hidden;
-//       text-align: center;
-//       @include transform(translate(-50%, -50%));
-//     }
-//   }
-//   .Popup__btn {
-//     border-top-width: 1px;
-//   }
-//   .Popup__state_true & {
-//     @include transform(translate(-50%, -50%) scale(1, 1));
-//   }
-// }
-
 .PopupPrompt {
     width: 80%;
     max-width: 700px;
@@ -236,16 +203,6 @@
     }
     .Popup__state_true & {
         @include transform(translate(-50%, -50%) scale(1, 1));
-    }
-}
-
-.PopupFloatLayer {
-    width: 100%;
-    left: auto;
-    top: auto;
-    opacity: 0;
-    .Popup__state_true & {
-        opacity: 1;
     }
 }
 
@@ -328,96 +285,6 @@
     .NoticeBar {
         border-top: 1px solid $globalColorBorder;
         border-bottom: 0;
-    }
-}
-
-.PopupPasscode {
-    width: 70%;
-    height: 8.5rem;
-    top: 20%;
-    left: 50%;
-    border-radius: 0.5rem;
-    background-color: #fff;
-    opacity: 0;
-    @include transform(translate(-50%, 0) scale(0.875, 0.875));
-    .Popup__title {
-        height: 2.25rem;
-        line-height: 2.25rem;
-        border-bottom: 1px solid $globalColorPurple;
-        text-align: center;
-        font-size: $am-xs;
-        &-text {
-            display: block;
-            width: 70%;
-            height: 100%;
-            margin: 0 15%;
-            font-size: $am-sm;
-            overflow: hidden;
-        }
-    }
-    .Popup__btn {
-        &_type_cancel {
-            display: block;
-            width: 2.25rem;
-            height: 2.25rem;
-            position: absolute;
-            left: 0;
-            top: 0;
-            .Icon {
-                @extend.am-pos-cc;
-            }
-        }
-    }
-    .Popup__content {
-        width: 86%;
-        height: 2.5rem;
-        margin: 1.75rem auto 0 auto;
-        border: 1px solid $globalColorBorder;
-        &-text {
-            display: -webkit-box;
-            width: 16.6666%;
-            height: 100%;
-            float: left;
-            border-left: 1px solid $globalColorBorder;
-            font-size: $am-xxxxl;
-            font-family: arial;
-            @extend .text-center;
-            &:first-child {
-                border: 0;
-            }
-            &_state_true:before {
-                display: block;
-                content: '•';
-            }
-        }
-        &_state_true .Popup__content-text {
-            color: $globalColorPurple;
-        }
-    }
-    .Popup__forgetpwd {
-        float: right;
-        margin-right: 1rem;
-        padding: 0.5rem 0;
-        font-size: $am-xs;
-    }
-    .Popup__state_true & {
-        @include transform(translate(-50%, 0) scale(1, 1));
-    }
-
-    @media screen and (max-width: 414px) {
-        .Popup__content {
-            height: 2.5rem;
-        }
-    }
-    @media screen and (max-width: 375px) {
-        .Popup__content {
-            height: 2.35rem;
-        }
-    }
-    @media screen and (max-width: 320px) {
-        .Popup__content {
-            height: 2.15rem;
-        }
     }
 }
 

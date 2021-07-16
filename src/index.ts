@@ -17,8 +17,10 @@ export { default as Result } from './components/Result';
 export { default as Input } from './components/Input';
 // 遮罩
 export { default as Mask } from './components/Mask';
+// 传送门
+export { default as Portal } from './components/Portal';
 // 弹出框
-// export { default as Popup } from './components/Popup';
+export { default as Popup } from './components/Popup';
 // 时间轴
 export { default as Timeline } from './components/Timeline';
 // 富文本
