@@ -93,6 +93,9 @@ export default defineConfig({
             border-top: 1PX solid #dcdcdc;
             border-bottom: 1PX solid #dcdcdc;
         }
+        .__dumi-default-mobile-demo-layout .jing-page-button .jing-panel__body {
+            padding: 15px 0 0;
+        }
         .__dumi-default-mobile-demo-layout .jing-page-buttongroup .jing-panel__body {
             padding: 15px 0 0;
         }
