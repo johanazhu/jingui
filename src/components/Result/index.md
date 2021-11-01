@@ -1,18 +1,26 @@
 ---
+toc: false
 nav:
-    title: 组件
-    path: /components
+  path: /components
+group:
+  title: 操作反馈组件
+  path: /components/data
+  order: 3
 ---
 
-**常规操作**
+# Result 结果
+
+## 代码演示
+
+### 常规操作
 
 <code src="./demo/index.tsx" />
 
-**extra**
+### 额外操作
 
 <code src="./demo/extra.tsx" />
 
-**Props**
+### API
 
 | 属性      | 说明            | 类型                                                                         | 默认值 |
 | --------- | --------------- | ---------------------------------------------------------------------------- | ------ |

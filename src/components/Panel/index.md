@@ -1,45 +1,51 @@
 ---
+toc: false
 nav:
-    title: 组件
-    path: /components
+  path: /components
+group:
+  title: 展示组件
+  path: /components/data
+  order: 4
 ---
 
-<!-- ## Tag -->
+# Panel 面板
 
-**Demo：**
+面板展示
+
+## 代码演示
 
 ```tsx
 import React from 'react';
 import { Panel } from 'jing-ui';
 
 export default () => (
-    <div>
-        <Panel
-            title="标题"
-            more={
-                <a href="#" onClick={() => alert('click more')}>
-                    更多
-                </a>
-            }
-        >
-            <div className="box" style={{ padding: '1rem' }}>
-                内容
-            </div>
-        </Panel>
-        <Panel title="用户投保案例" />
-        <Panel
-            title="保险哪些事儿"
-            more={
-                <a href="#" onClick={() => alert('click more')}>
-                    更多
-                </a>
-            }
-        />
-    </div>
+  <div>
+    <Panel
+      title="标题"
+      more={
+        <a href="#" onClick={() => alert('click more')}>
+          更多
+        </a>
+      }
+    >
+      <div className="box" style={{ padding: '1rem' }}>
+        内容
+      </div>
+    </Panel>
+    <Panel title="用户投保案例" />
+    <Panel
+      title="保险哪些事儿"
+      more={
+        <a href="#" onClick={() => alert('click more')}>
+          更多
+        </a>
+      }
+    />
+  </div>
 );
 ```
 
-**Props**
+### API
 
 | 属性      | 说明            | 类型            | 默认值 |
 | --------- | --------------- | --------------- | ------ |

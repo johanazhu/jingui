@@ -3,21 +3,16 @@ toc: false
 nav:
   path: /components
 group:
-  title: 基础组件
-  path: /components/base
-  order: 2
+  title: 展示组件
+  path: /components/data
+  order: 5
 ---
 
-# Mask 遮罩层
+# NoticeBar 通知栏
+
+用于循环播放展示一组消息通知。
 
 ### 代码演示
-
-```tsx
-import React from 'react';
-import { Mask } from 'jing-ui';
-
-export default () => <Mask />;
-```
 
 ### API
 

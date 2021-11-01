@@ -1,14 +1,15 @@
 ---
+toc: false
 nav:
-    title: 组件
-    path: /components
+  path: /components
+group:
+  title: 基础组件
+  path: /components/base
 ---
 
-## Space
+# Space 空格
 
-## 空格
-
-Demo:
+## 代码演示
 
 ```tsx
 import React from 'react';
@@ -17,7 +18,7 @@ import { Space } from 'jing-ui';
 export default () => <Space />;
 ```
 
-## Props
+## API
 
 | 属性         | 说明                   | 类型                       | 默认值     |
 | ------------ | ---------------------- | -------------------------- | ---------- |

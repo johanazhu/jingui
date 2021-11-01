@@ -1,14 +1,20 @@
 ---
+toc: false
 nav:
-    title: 组件
-    path: /components
+  path: /components
+group:
+  title: 基础组件
+  path: /components/base
+  order: 2
 ---
 
-**Demo：**
+# Icon 图标
+
+### 代码演示
 
 <code src="./demo/index.tsx" />
 
-**Props**
+### API
 
 | 属性            | 说明                          | 类型                | 默认值 |
 | --------------- | ----------------------------- | ------------------- | ------ |

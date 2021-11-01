@@ -1,15 +1,13 @@
 ---
 toc: false
 nav:
-    path: /components
+  path: /components
 group:
   title: 展示组件
   path: /components/data
   order: 4
 ---
 
-# List 列表
+# Picker 选择器
 
 未完成
-
-### 

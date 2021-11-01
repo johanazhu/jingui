@@ -1,16 +1,22 @@
 ---
+toc: false
 nav:
-    title: 组件
-    path: /components
+  path: /components
+group:
+  title: 展示组件
+  path: /components/data
+  order: 5
 ---
 
-<!-- ## Tag -->
+# Typography 富文本
 
-**Demo**
+
+
+### 代码演示
 
 <code src="./demo/index.tsx"></code>
 
-**Props**
+### API
 
 | 属性      | 说明            | 类型                                                                               | 默认值 |
 | --------- | --------------- | ---------------------------------------------------------------------------------- | ------ |

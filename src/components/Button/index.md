@@ -1,14 +1,22 @@
 ---
+toc: false
 nav:
-    title: 组件
-    path: /components
+  path: /components
+group:
+  title: 基础组件
+  path: /components/base
+  order: 2
 ---
 
-Demo
+# Button 按钮
+
+按钮用于触发一个操作，如提交表单。
+
+## 代码演示
 
 <code src="./demo/index.tsx"></code>
 
-API
+## API
 
 | 参数      | 说明                                         | 类型              | 默认值      |
 | --------- | -------------------------------------------- | ----------------- | ----------- |

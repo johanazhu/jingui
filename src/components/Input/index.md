@@ -1,14 +1,24 @@
 ---
+toc: false
 nav:
-    title: 组件
     path: /components
+group:
+  title: 展示组件
+  path: /components/data
+  order: 4
 ---
 
-Input 例子
+# Input 输入
+
+表单中的输入框组件
+
+
+
+### 代码演示
 
 <code src="./demo/index.tsx"></code>
 
-Input props
+### API
 
 | 参数        | 说明                                      | 类型            | 默认值 |
 | ----------- | ----------------------------------------- | --------------- | ------ |
@@ -34,11 +44,11 @@ Input props
 | onBlur      | 失去焦点时的事件                          | function        | -      |
 | onClear     | Clear 中点击 x 后的回调                   | function        | -      |
 
-Input.Group 例子
+### Input.Group 代码演示
 
 <code src="./demo/Group.tsx"></code>
 
-Input.Group props
+### Input.Group API
 
 | 参数      | 说明            | 类型            | 默认值 |
 | --------- | --------------- | --------------- | ------ |
@@ -46,11 +56,11 @@ Input.Group props
 | style     | 自定义样式      | object          | -      |
 | children  | 尺寸大小        | React.ReactNode | -      |
 
-Input.Verify 例子
+### Input.Verify 代码演示
 
 <code src="./demo/Verify.tsx"></code>
 
-Input.Verify props
+### Input.Verify API
 
 基于 base，base 有的参数它都有
 
@@ -58,11 +68,11 @@ Input.Verify props
 | ------------------- | ---------------- | -------- | ------ |
 | onHandleSendMessage | 发生短信后的回调 | function | -      |
 
-Input.Clear 例子
+### Input.Clear 代码演示
 
 <code src="./demo/Clear.tsx"></code>
 
-Input.Clear props
+### Input.Clear API
 
 基于 base, base 有的参数它都有
 
@@ -73,11 +83,11 @@ Input.Clear props
 | render         | 在 clear Icon 前 render | React.ReactNode | -      |
 | backRender     | 在 clear Icon 后 render | React.ReactNode | -      |
 
-Input.Password 例子
+### Input.Password 代码演示
 
 <code src="./demo/Password.tsx"></code>
 
-Input.Password props
+### Input.Password API
 
 基于 Password 组件
 
@@ -105,11 +115,11 @@ Input.Password props
 | onBlur      | 失去焦点时的事件                          | function        | -      |
 | onClear     | Clear 中点击 x 后的回调                   | function        | -      |
 
-Input.Captcha 例子
+### Input.Captcha 代码演示
 
 <code src="./demo/Captcha.tsx"></code>
 
-Input.Captcha props
+### Input.Captcha API
 
 基于 Captcha 组件
 
@@ -137,11 +147,11 @@ Input.Captcha props
 | onBlur      | 失去焦点时的事件                          | function        | -      |
 | onClear     | Clear 中点击 x 后的回调                   | function        | -      |
 
-Input.KeyBoard 例子
+### Input.KeyBoard 代码演示
 
 <code src="./demo/KeyBoard.tsx"></code>
 
-Input.KeyBoard props
+### Input.KeyBoard API
 
 这个需要结合 keyboard 和 pickkeyboard 来做
 
@@ -155,11 +165,11 @@ Input.KeyBoard props
 | onHandleFocus | 获取焦点时的事件                   | function | -      |
 | onClearValue  | Clear 中点击 x 后的回调            | function | -      |
 
-Input.Prefix 例子
+### Input.Prefix 代码演示
 
 <code src="./demo/Prefix.tsx"></code>
 
-Input.Prefix props
+### Input.Prefix API
 
 与 base 一致
 

@@ -1,14 +1,24 @@
 ---
+toc: false
 nav:
-    title: 组件
-    path: /components
+  path: /components
+group:
+  title: 业务组件
+  path: /components/work
+  order: 6
 ---
 
-**Demo**
+
+
+# Timeline 时间线
+
+## 代码演示
 
 <code src="./demo/index.tsx"></code>
 
-**Timeline props**
+## API
+
+### Timeline props
 
 | 属性      | 说明            | 类型    | 默认值 |
 | --------- | --------------- | ------- | ------ |
@@ -17,7 +27,8 @@ nav:
 | color     | 颜色            | string  | -      |
 | hundred   | 是否显示百分号  | boolean | false  |
 
-**TimelineItem Props**
+### TimelineItem Props
+
 | 属性 | 说明 | 类型 | 默认值 |
 | --------- | --------------- | ---------------------------------------------------------------------------------- | ------ |
 | header | 组件头部信息 | React.ReactNode | - |

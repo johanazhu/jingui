@@ -1,19 +1,27 @@
 ---
+toc: false
 nav:
-    title: 组件
-    path: /components
+  path: /components
+group:
+  title: 布局组件
+  path: /components/
+  order: 3
 ---
 
-Demo
+# Layout 栅格布局
+
+## 代码演示
 
 <code src="./demo/index.tsx"></code>
 
-Row API
-| 参数 | 说明 | 类型 | 默认值 |
-| -------- | -------------------------------------------- | ----------------- | ----------- |
-| className | 自定义 class 名 | string | - |
+## Row API
 
-Col API
-| 参数 | 说明 | 类型 | 默认值 |
-| -------- | -------------------------------------------- | ----------------- | ----------- |
-| className | 自定义 class 名 | string | - |
+| 参数      | 说明            | 类型   | 默认值 |
+| --------- | --------------- | ------ | ------ |
+| className | 自定义 class 名 | string | -      |
+
+## Col API
+
+| 参数      | 说明            | 类型   | 默认值 |
+| --------- | --------------- | ------ | ------ |
+| className | 自定义 class 名 | string | -      |
