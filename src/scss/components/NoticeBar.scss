@@ -1,13 +1,13 @@
-.NoticeBar {
+.jing-notice-bar {
     position: relative;
     display: flex;
     align-items: center;
-    height: 30px;
-    color: $globalColorOrange;
-    font-size: $am-sm;
+    height: $noticebar-height;
+    color: $noticebar-color;
+    font-size: $noticebar-font-size-xs;
     font-weight: bold;
     line-height: 24px;
-    background-color: #ffefe5;
+    background-color: $noticebar-color-bg;
     &__wrap {
         position: relative;
         flex: 1;
@@ -20,8 +20,8 @@
         &-content {
             position: absolute;
             white-space: nowrap;
-            // transition-timing-function: linear;
-            // animation: noticeBarPlay 15s linear infinite;
+            transition-timing-function: linear;
+            animation: noticeBarPlay 15s linear infinite;
         }
     }
     &__left,
@@ -30,7 +30,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 40px;
+        width: $noticebar-width;
         height: 100%;
+    }
+    &__normal {
+        width: 0;
     }
 }

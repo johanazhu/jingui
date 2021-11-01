@@ -27,3 +27,5 @@ export { default as Timeline } from './components/Timeline';
 export { default as Typography } from './components/Typography';
 // 图表
 export { LineChart, ColumnChart, PieChart } from './components/Chart';
+// 通知栏
+export { default as NoticeBar } from './components/NoticeBar';
