@@ -1,3 +1,4 @@
+@use "sass:math";
 .jing-layout {
     width: 100%;
     margin-right: auto;
@@ -7,23 +8,30 @@
 .jing-row {
     display: flex;
     flex-wrap: wrap;
-    &--justify-center {
-        justify-content: center;
+    &--justify {
+        &-center {
+            justify-content: center;
+        }
+        &-end {
+            justify-content: end;
+        }
+        &-space-between {
+            justify-content: space-between;
+        }
+        &-space-around {
+            justify-content: space-around;
+        }
     }
-    &--justify-end {
-        justify-content: end;
-    }
-    &--justify-space-between {
-        justify-content: space-between;
-    }
-    &--justify-space-around {
-        justify-content: space-around;
-    }
-    &--align-center {
-        align-items: center;
-    }
-    &--align-bottom {
-        align-items: flex-end;
+    &--align {
+        &-top {
+            align-items: flex-start;
+        }
+        &-center {
+            align-items: center;
+        }
+        &-bottom {
+            align-items: flex-end;
+        }
     }
 }
 
@@ -32,20 +40,11 @@
     flex-grow: 1;
     max-width: 100%;
     @for $i from 1 through 24 {
+        // $item: math.div(25%, 6) * $i;
+        $item: 25% / 6 * $i;
         &--#{$i} {
-            flex: 25% / 6 * $i;
-            max-width: 25% / 6 * $i;
-        }
-        &--offset-#{$i} {
-            flex: 25% / 6 * $i;
-            max-width: 25% / 6 * $i;
+            flex: $item;
+            max-width: $item;
         }
     }
 }
-
-// @for $i from 1 through 24 {
-//   .jing-col--#{$i} {
-//     flex: 25% / 6 * $i;
-//     max-width: 25% / 6 * $i;
-//   }
-// }

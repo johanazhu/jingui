@@ -10,7 +10,7 @@ export default defineConfig({
         null,
         { title: 'GitHub', path: 'https://github.com/johanazhu/jingui' },
     ],
-    mfsu: {},
+    // mfsu: {},
     theme: {
         '@c-primary': '#3264c8',
     },

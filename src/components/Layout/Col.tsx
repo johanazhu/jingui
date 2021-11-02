@@ -28,10 +28,10 @@ export type spanSize =
     | 23
     | 24;
 export interface ColProps {
-    span: spanSize;
     className?: string;
     style?: React.CSSProperties;
     children?: React.ReactNode;
+    span: spanSize;
 }
 
 const Col: React.FC<ColProps> = (props) => {

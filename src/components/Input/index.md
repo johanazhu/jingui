@@ -3,16 +3,14 @@ toc: false
 nav:
     path: /components
 group:
-  title: 展示组件
-  path: /components/data
-  order: 4
+    title: 展示组件
+    path: /components/data
+    order: 4
 ---
 
 # Input 输入
 
 表单中的输入框组件
-
-
 
 ### 代码演示
 
@@ -38,7 +36,7 @@ group:
 | suffix      | 带后缀图标的 input                        | object          | -      |
 | style       | 自定义样式                                | object          | -      |
 | size        | 尺寸大小                                  | string          | -      |
-| children    | 尺寸大小                                  | React.ReactNode | -      |
+| children    | 子项内容                                  | React.ReactNode | -      |
 | onChange    | input 中的 value 改变时触发               | function        | -      |
 | onFocus     | 获取焦点时的事件                          | function        | -      |
 | onBlur      | 失去焦点时的事件                          | function        | -      |
@@ -54,7 +52,7 @@ group:
 | --------- | --------------- | --------------- | ------ |
 | className | 自定义 class 名 | string          | -      |
 | style     | 自定义样式      | object          | -      |
-| children  | 尺寸大小        | React.ReactNode | -      |
+| children  | 子项内容        | React.ReactNode | -      |
 
 ### Input.Verify 代码演示
 
@@ -109,7 +107,7 @@ group:
 | suffix      | 带后缀图标的 input                        | object          | -      |
 | style       | 自定义样式                                | object          | -      |
 | size        | 尺寸大小                                  | string          | -      |
-| children    | 尺寸大小                                  | React.ReactNode | -      |
+| children    | 子项内容                                  | React.ReactNode | -      |
 | onChange    | input 中的 value 改变时触发               | function        | -      |
 | onFocus     | 获取焦点时的事件                          | function        | -      |
 | onBlur      | 失去焦点时的事件                          | function        | -      |
@@ -141,7 +139,7 @@ group:
 | suffix      | 带后缀图标的 input                        | object          | -      |
 | style       | 自定义样式                                | object          | -      |
 | size        | 尺寸大小                                  | string          | -      |
-| children    | 尺寸大小                                  | React.ReactNode | -      |
+| children    | 子项内容                                  | React.ReactNode | -      |
 | onChange    | input 中的 value 改变时触发               | function        | -      |
 | onFocus     | 获取焦点时的事件                          | function        | -      |
 | onBlur      | 失去焦点时的事件                          | function        | -      |
@@ -191,7 +189,7 @@ group:
 | suffix      | 带后缀图标的 input                        | object          | -      |
 | style       | 自定义样式                                | object          | -      |
 | size        | 尺寸大小                                  | string          | -      |
-| children    | 尺寸大小                                  | React.ReactNode | -      |
+| children    | 子项内容                                  | React.ReactNode | -      |
 | onChange    | input 中的 value 改变时触发               | function        | -      |
 | onFocus     | 获取焦点时的事件                          | function        | -      |
 | onBlur      | 失去焦点时的事件                          | function        | -      |

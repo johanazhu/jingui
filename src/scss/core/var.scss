@@ -46,7 +46,14 @@ $bg: rgb(245, 245, 245);
 $bg-white: rgb(255, 255, 255);
 $bg-orange: rgb(253, 244, 237);
 
-// 字体大小
+// 元件
+$background-color: rgb(245, 245, 245);
+$text-color: $black-1;
+$active-color: $black-2;
+$active-opacity: 0.7;
+$disabled-opacity: 0.5;
+
+// 字体
 $font-size-xxxs: 0.5rem;
 $font-size-xxs: 0.625rem;
 $font-size-xs: 0.75rem;
@@ -57,10 +64,18 @@ $font-size-xxl: 1.25rem;
 $font-size-xxxl: 1.5rem;
 $font-size-xxxxl: 2rem;
 $font-size-lg: 3rem;
+// 在安卓手机设置数字是无效的，700默认威bold，600视为正常
+$font-weight-bold: bold;
+// 默认字体
+$base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+    Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft Yahei', sans-serif;
+// 默认价格字体
+$price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial,
+    sans-serif;
 
-// 竖向间距
+// 间距
 $vertical-gap: 1rem;
-// 横向间距
 $horizontal-gap: 0.75rem;
 
 // 堆叠顺序
@@ -80,18 +95,6 @@ $padding-l: $padding-base * 4;
 $padding-lg: $padding-base * 6;
 $padding-xl: $padding-base * 8;
 
-// 在安卓手机设置数字是无效的，700默认威bold，600视为正常
-$font-weight-bold: bold;
-
-// 默认字体
-$base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
-    Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB',
-    'Microsoft Yahei', sans-serif;
-
-// 默认价格字体
-$price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial,
-    sans-serif;
-
 // 行高
 $height-l: 1rem;
 $line-height-l: 1rem;
@@ -99,7 +102,9 @@ $line-height-sm: $font-size-sm;
 
 // 动画
 $animation-duration-base: 0.3s;
-$animation-duration-fast: 0.3s;
+$animation-duration-fast: 0.2s;
+$animation-timing-function-enter: ease-out;
+$animation-timing-function-leave: ease-in;
 
 // Border
 $border-color: $black-5;
