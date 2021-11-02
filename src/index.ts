@@ -29,3 +29,5 @@ export { default as Typography } from './components/Typography';
 export { LineChart, ColumnChart, PieChart } from './components/Chart';
 // 标签页
 export { default as Tab } from './components/Tab';
+// 通知栏
+export { default as NoticeBar } from './components/NoticeBar';

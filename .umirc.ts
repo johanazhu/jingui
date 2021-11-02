@@ -110,6 +110,10 @@ export default defineConfig({
             margin-bottom: 15px;
             margin-right: 15px;
         }
+        .__dumi-default-mobile-demo-layout .jing-page-noticebar p {
+            font-size: 0.75rem;
+            padding: 0.5rem 0.75rem;
+        }
         .markdown *:not(pre) code {
           margin: 0 1px;
           padding: .2em .4em !important;

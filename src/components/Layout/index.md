@@ -1,11 +1,11 @@
 ---
 toc: false
 nav:
-  path: /components
+    path: /components
 group:
-  title: 布局组件
-  path: /components/
-  order: 3
+    title: 布局组件
+    path: /components/layout/
+    order: 3
 ---
 
 # Layout 栅格布局
