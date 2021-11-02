@@ -9,7 +9,7 @@ export { default as Tag } from './components/Tag';
 export { Row, Col } from './components/Layout';
 // 面板
 export { default as Panel } from './components/Panel';
-// 键盘
+// 自定义键盘
 export { default as KeyBoard } from './components/KeyBoard';
 // 结果
 export { default as Result } from './components/Result';
@@ -27,3 +27,5 @@ export { default as Timeline } from './components/Timeline';
 export { default as Typography } from './components/Typography';
 // 图表
 export { LineChart, ColumnChart, PieChart } from './components/Chart';
+// 标签页
+export { default as Tab } from './components/Tab';

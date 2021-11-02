@@ -3,3 +3,4 @@ export * from './env';
 export * from './type';
 export * from './util';
 export * from './dictionary';
+export * from './raf';

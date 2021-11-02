@@ -57,3 +57,17 @@ export const shuffle = (arr: any) => {
     }
     return arr;
 };
+
+/**
+ * 描述: 判断一个对象是否是空对象
+ * @param obj 对象
+ **/
+export const isEmptyObject = (obj: Object) =>
+    !obj || Object.keys(obj).length === 0;
+
+/**
+ * 描述: 判断一个数组是否是空数组
+ * @param arr 数组
+ **/
+export const isEmptyArray = (arr: Array<any>) =>
+    Array.isArray(arr) && arr.length === 0;

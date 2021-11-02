@@ -1,0 +1,109 @@
+.jing-tab {
+    .jing-tab__wrap {
+        display: flex;
+        z-index: 10;
+    }
+    &__sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        left: 0;
+    }
+    &__nav {
+        position: relative;
+        display: flex;
+        user-select: none;
+        width: 100%;
+        padding: 0.25rem 0 0.5rem;
+        &::-webkit-scrollbar {
+            display: none;
+            width: 0;
+            background: transparent;
+        }
+    }
+    &__secondnav {
+        position: relative;
+        display: flex;
+        user-select: none;
+        padding: 1rem 0;
+        &-box {
+            margin-right: 1rem;
+            color: $tab-blue-color;
+            background: $tab-white-color;
+            border-radius: 1rem;
+            border: 1px solid $tab-blue-color;
+            padding: 3px 1rem;
+            flex: none;
+            flex-basis: unset !important;
+            &-active {
+                color: $tab-white-color;
+                background: $tab-blue-bg;
+                border-color: rgba(255, 255, 255, 0);
+            }
+        }
+    }
+    &__item {
+        flex: 1 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+        height: 100%;
+        cursor: pointer;
+        font-size: $tab-fize-sm;
+        img {
+            width: 36px;
+            padding-bottom: 5px;
+        }
+        &-active {
+            color: $tab-blue-color;
+        }
+    }
+    &__scroll {
+        overflow-x: scroll;
+        &-item {
+            min-width: 22%;
+        }
+    }
+    &__scrollable {
+        z-index: 100;
+        overflow: hidden;
+        .jing-tab__nav {
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+        .jing-tab__item {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1 0 auto;
+            flex: 1 0 auto;
+        }
+    }
+    // 下划线
+    &__line {
+        position: absolute;
+        bottom: 0.25rem;
+        left: 0;
+        z-index: 1;
+        width: 1.5rem;
+        height: 3px;
+        background: $tab-blue-bg;
+        border-radius: 3px;
+    }
+    &__content {
+        max-width: 768px;
+        width: 100vw;
+    }
+    .swiper-container {
+        .swiper-slide {
+            width: calc(100% - 1rem * 2) !important;
+            margin: 0 1rem;
+            .ProductCard {
+                &:first-child {
+                    margin-top: $vertical-gap;
+                }
+            }
+            // min-height: 30vh;
+        }
+    }
+}
