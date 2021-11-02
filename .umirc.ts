@@ -10,6 +10,7 @@ export default defineConfig({
         null,
         { title: 'GitHub', path: 'https://github.com/johanazhu/jingui' },
     ],
+    mfsu: {},
     theme: {
         '@c-primary': '#3264c8',
     },
@@ -113,6 +114,10 @@ export default defineConfig({
         .__dumi-default-mobile-demo-layout .jing-page-noticebar p {
             font-size: 0.75rem;
             padding: 0.5rem 0.75rem;
+        }
+        .__dumi-default-mobile-demo-layout .jing-page-layout .jing-col {
+            background-color: #bbeffd;
+            border: 1px solid #61dafb;
         }
         .markdown *:not(pre) code {
           margin: 0 1px;

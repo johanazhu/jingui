@@ -1,13 +1,15 @@
 import React, { FC, memo } from 'react';
 import classnames from 'classnames';
 
-interface SpaceProps {
-    scale?: any;
-    className?: any;
+export type scaleSize = 1 | 2 | 3 | 4 | 5 | 6;
+
+export interface SpaceProps {
+    scale?: scaleSize;
+    className?: string;
     style?: React.CSSProperties;
 }
 
-const Space: FC<SpaceProps> = ({ scale = 1, className, style }) => {
+const Space: FC<SpaceProps> = ({ scale, className, style }) => {
     return (
         <div
             className={classnames(className, {
@@ -16,6 +18,10 @@ const Space: FC<SpaceProps> = ({ scale = 1, className, style }) => {
             style={style}
         />
     );
+};
+
+Space.defaultProps = {
+    scale: 1,
 };
 
 export default memo(Space);

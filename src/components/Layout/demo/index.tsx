@@ -1,17 +1,29 @@
 import React from 'react';
-import { Row, Col, Panel } from 'jing-ui';
+import { Row, Col, Panel, Space } from 'jing-ui';
 
 export default () => (
     <div className="jing-page jing-page-layout">
-        <Panel title="基本排版">
+        <Panel title="基本用法">
+            <Space />
             <Row>
-                <Col>1 of 2</Col>
-                <Col>2 of 2</Col>
+                <Col span={8}>span: 8</Col>
+                <Col span={8}>span: 8</Col>
+                <Col span={8}>span: 8</Col>
             </Row>
-            <Row>
-                <Col>1 of 3</Col>
-                <Col>2 of 3</Col>
-                <Col>3 of 3</Col>
+            <Space />
+        </Panel>
+        <Panel title="Row布局玩法">
+            <Space />
+            <Row justify="center">
+                <Col span={6}>span: 6</Col>
+                <Col span={6}>span: 6</Col>
+                <Col span={6}>span: 6</Col>
+            </Row>
+            <Space />
+            <Row justify="end">
+                <Col span={6}>span: 6</Col>
+                <Col span={6}>span: 6</Col>
+                <Col span={6}>span: 6</Col>
             </Row>
         </Panel>
     </div>

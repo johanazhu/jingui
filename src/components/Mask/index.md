@@ -1,14 +1,16 @@
 ---
 toc: false
 nav:
-  path: /components
+    path: /components
 group:
-  title: 基础组件
-  path: /components/base
-  order: 2
+    title: 基础组件
+    path: /components/base
+    order: 2
 ---
 
 # Mask 遮罩层
+
+遮罩层，popup、portal 等组件的基础组件
 
 ### 代码演示
 

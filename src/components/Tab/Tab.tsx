@@ -248,40 +248,6 @@ const Tab = forwardRef((props: TabProps, ref: any) => {
                         </div>
                     )
                 }
-                {
-                    // @ts-ignore
-                    oData?.data?.labelList?.[currentSecondIndex]?.productList &&
-                    // @ts-ignore
-                    !isEmptyArray(
-                        oData?.data?.labelList?.[currentSecondIndex]
-                            ?.productList,
-                    ) ? (
-                        <>
-                            {
-                                // @ts-ignore
-                                oData?.data?.labelList?.[
-                                    currentSecondIndex
-                                ].productList.map((item: any) => (
-                                    <div>展示数据，后期更改</div>
-                                    // <ProductCard
-                                    //     onClick={() => {
-                                    //         onClick(item);
-                                    //     }}
-                                    //     key={item.productId}
-                                    //     productName={item.productName}
-                                    //     introduction={item.introduction}
-                                    //     insuranceUrl={item.insuranceUrl}
-                                    //     productIcon={item.productIcon}
-                                    //     tagList={item.labelList}
-                                    //     price={item.minPremium}
-                                    // />
-                                ))
-                            }
-                        </>
-                    ) : (
-                        <Result status="empty" title="暂无数据" />
-                    )
-                }
             </TabContent>
         </div>
     );
