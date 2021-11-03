@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 .jing-layout {
     width: 100%;
     margin-right: auto;
@@ -40,8 +40,8 @@
     flex-grow: 1;
     max-width: 100%;
     @for $i from 1 through 24 {
-        // $item: math.div(25%, 6) * $i;
-        $item: 25% / 6 * $i;
+        // $item: math.div(100%, 24) * $i;
+        $item: $i * (100% / 24);
         &--#{$i} {
             flex: $item;
             max-width: $item;
