@@ -32,15 +32,16 @@ export interface ColProps {
     style?: React.CSSProperties;
     children?: React.ReactNode;
     span: spanSize;
+    onClick?: () => void;
 }
 
 const Col: React.FC<ColProps> = (props) => {
-    const { span, children, className, style } = props;
+    const { span, children, className, style, onClick } = props;
 
     const classes = classNames(className, 'jing-col', `jing-col--${span}`);
 
     return (
-        <div className={classes} style={style}>
+        <div className={classes} style={style} onClick={onClick}>
             {children}
         </div>
     );

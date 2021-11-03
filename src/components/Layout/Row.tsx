@@ -11,22 +11,28 @@ export type alignType = 'top' | 'center' | 'bottom';
 
 export interface RowProps {
     className?: string;
+    style?: React.CSSProperties;
     children?: React.ReactNode;
     justify?: justifyType;
     align?: alignType;
+    onClick?: () => void;
 }
 
 const Row: React.FC<RowProps> = (props) => {
-    const { className, children, justify, align } = props;
+    const { className, children, justify, align, style, onClick } = props;
 
     const classes = classNames(
         'jing-row',
-        `jing-row--${justify}`,
-        `jing-row--${align}`,
+        `jing-row--justify-${justify}`,
+        `jing-row--align-${align}`,
         className,
     );
 
-    return <div className={classes}>{children}</div>;
+    return (
+        <div className={classes} style={style} onClick={onClick}>
+            {children}
+        </div>
+    );
 };
 
 Row.defaultProps = {

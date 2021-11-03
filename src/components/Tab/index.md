@@ -5,6 +5,7 @@ nav:
 group:
     title: 业务组件
     path: /components/work
+    order: 6
 ---
 
 # Tab 标签页

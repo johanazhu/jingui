@@ -31,3 +31,6 @@ export { LineChart, ColumnChart, PieChart } from './components/Chart';
 export { default as Tab } from './components/Tab';
 // 通知栏
 export { default as NoticeBar } from './components/NoticeBar';
+
+// 全局配置
+export { default as ConfigProvider } from './components/config-provider';

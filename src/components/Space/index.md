@@ -9,6 +9,8 @@ group:
 
 # Space 空格
 
+占位符，起分行作用
+
 ## 代码演示
 
 <code src="./demo/index.tsx" />
@@ -17,6 +19,6 @@ group:
 
 | 属性      | 说明            | 类型                | 默认值 |
 | --------- | --------------- | ------------------- | ------ |
-| scale     | 卡片标题        | number              | 1      |
+| scale     | 分行行距，1-6   | number              | 1      |
 | className | 自定义 class 名 | string              | -      |
 | style     | 自定义样式      | React.CSSProperties | -      |

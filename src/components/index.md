@@ -54,6 +54,10 @@ group:
 -   [Timeline 时间线](./components/work/timeline)
 -   ProductCard 产品卡片
 
+## 其他
+
+-   [ConfigProvider 全局配置](./components/config/provider)
+
 ## 废弃
 
 -   [Chart 图表](./components/discard/chart)
