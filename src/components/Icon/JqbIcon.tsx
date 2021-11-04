@@ -1,20 +1,10 @@
-import * as React from 'react';
+import React, { MouseEventHandler, CSSProperties, FC } from 'react';
 import classnames from 'classnames';
-import IconBase, { IconbaseProps } from './IconBase';
+import IconBase from './IconBase';
+import  { JqbIconProps } from './PropType'
 
-export type IconSize = 'sm' | 'md' | 'lg' | 'auto';
 
-export interface JqbIconProps extends IconbaseProps {
-    className?: string;
-    color?: string;
-    size?: IconSize;
-    icon?: any;
-    style?: React.CSSProperties;
-    keepOriginColor?: boolean;
-    onClick?: (e: any) => void;
-}
-
-const JqbIcon: React.FC<JqbIconProps> = (props) => {
+const JqbIcon: FC<JqbIconProps> = (props) => {
     const { className, color, size, icon, style, keepOriginColor, onClick } =
         props;
     const classes = classnames(
@@ -27,7 +17,7 @@ const JqbIcon: React.FC<JqbIconProps> = (props) => {
         className,
     );
 
-    function onHandleClick(e: any) {
+    const onHandleClick = (e: any) => {
         onClick && onClick(e);
     }
 

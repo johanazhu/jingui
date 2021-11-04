@@ -1,6 +1,7 @@
 import React, { FC, TouchEvent, MouseEvent, useState } from 'react';
 import classNames from 'classnames';
 import { IconLoading } from '../Icon';
+import { ButtonProps } from './PropType';
 import { MOVEOFFSET } from '../utils';
 
 let touchX = 0;
@@ -8,22 +9,6 @@ let touchXPos = 0;
 let touchY = 0;
 let touchYPos = 0;
 
-export type ButtonVariant = 'contained' | 'outlined';
-export type ButtonColor = 'blue' | 'orange' | 'green';
-export type ButtonSize = 'md' | 'sm';
-
-export interface ButtonProps {
-    className?: string;
-    variant?: ButtonVariant;
-    color?: ButtonColor;
-    size?: ButtonSize;
-    disabled?: boolean;
-    loading?: boolean;
-    block?: boolean;
-    style?: React.CSSProperties;
-    onClick?: (e: MouseEvent) => void;
-    children?: React.ReactNode;
-}
 
 const Button: FC<ButtonProps> = (props) => {
     const [isActive, setIsActive] = useState(false);
@@ -38,6 +23,7 @@ const Button: FC<ButtonProps> = (props) => {
         block,
         children,
         style,
+        onClick,
     } = props;
 
     const prefixCls = 'jing-button';
@@ -94,12 +80,6 @@ const Button: FC<ButtonProps> = (props) => {
         setIsActive(false);
     }
 
-    function handleClick(e: MouseEvent) {
-        const { onClick } = props;
-        if (typeof onClick === 'function') {
-            onClick(e);
-        }
-    }
 
     const contentRender = loading ? (
         <div className={`${prefixCls}__content`}>
@@ -120,7 +100,7 @@ const Button: FC<ButtonProps> = (props) => {
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
-            onClick={handleClick}
+            onClick={onClick}
             style={style}
         >
             {contentRender}

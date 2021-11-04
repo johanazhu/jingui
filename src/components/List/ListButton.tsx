@@ -2,7 +2,7 @@ import React from 'react';
 import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
 import ButtonGroup from '../ButtonGroup';
-import Button, { ButtonColor} from '../Button';
+import Button from '../Button';
 
 export interface ListButtonProps {
     title: string;
@@ -12,7 +12,7 @@ export interface ListButtonProps {
 
 interface ButtonItemProps {
     name: string;
-    color: ButtonColor;
+    color: any;
     primary: boolean;
     onClick?: () => void;
 }

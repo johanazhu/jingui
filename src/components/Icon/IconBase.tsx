@@ -1,12 +1,5 @@
 import * as React from 'react';
-
-export interface IconbaseProps {
-    svgClass?: string;
-    icon?: any;
-    color?: string;
-    fill?: string;
-    style?: any;
-}
+import { IconbaseProps } from './PropType'
 
 const IconBase = (props: IconbaseProps) => {
     const { svgClass, icon } = props;
