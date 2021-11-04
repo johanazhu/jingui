@@ -10,7 +10,7 @@ const PresetColorTypes = tuple(
     'red',
     'blue',
     'yellow',
-    'green',
+    'number',
 );
 
 export interface TagProps {

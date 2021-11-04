@@ -4,7 +4,7 @@
 @import './ButtonGroup.scss';
 // 布局
 @import './Layout.scss';
-// 空行
+// 空行分隔
 @import './Space.scss';
 // 标签
 @import './Tag.scss';
@@ -32,3 +32,17 @@
 @import './Tab.scss';
 // 通知栏
 @import './NoticeBar.scss';
+// 排序栏
+@import './SortBar.scss';
+// 标签栏
+@import './TabBar.scss';
+// 分割线
+@import './Divider.scss';
+// 方向
+@import './Orientation.scss';
+// 滚动
+@import './BetterScroll.scss';
+// 加载
+@import './Loading.scss';
+// 全局加载
+@import './PageLoading.scss';

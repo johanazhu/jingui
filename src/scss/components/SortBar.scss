@@ -1,0 +1,37 @@
+.jing-sortbar {
+    display: flex;
+    justify-content: space-between;
+    height: 45px;
+    &__sticky {
+        z-index: 1000;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        left: 0;
+    }
+    &__Item {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: $am-sm;
+        span {
+            margin-left: 5px;
+        }
+        // &_state_desc { color:@globalColorDarkBlue;}
+        // &_state_noicon { color: @globalColorBlack1}
+    }
+    &__Filter {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        color: $globalColorBlack1;
+        font-size: $am-sm;
+        span {
+            margin-left: 5px;
+        }
+    }
+}

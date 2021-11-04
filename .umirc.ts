@@ -40,6 +40,9 @@ export default defineConfig({
     },
     styles: [
         `
+        .__dumi-default-mobile-demo-layout .jing-page{
+            background: #fff;
+        }
         .__dumi-default-mobile-demo-layout .jing-page .grid{
             display: flex;
             flex-wrap: wrap;

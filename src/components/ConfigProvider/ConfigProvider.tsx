@@ -1,5 +1,5 @@
 import React, { FC, useEffect, Context, createContext } from 'react';
-import type { ConfigProviderProps } from './PropsType';
+import type { ConfigProviderProps } from './PropType';
 import setTheme from './setTheme';
 
 const defaultConfig: ConfigProviderProps = {

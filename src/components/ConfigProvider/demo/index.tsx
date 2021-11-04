@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ConfigProvider } from 'jing-ui';
+import { ConfigProvider, Space } from 'jing-ui';
 
 const colors = [
     '#00bc70',
@@ -18,7 +18,8 @@ export default () => {
     );
 
     return (
-        <div className="jing-page jing-page-layout">
+        <div className="jing-page">
+            <Space />
             <ConfigProvider primaryColor={primaryColor} theme={theme}>
                 <div>1111</div>
             </ConfigProvider>
