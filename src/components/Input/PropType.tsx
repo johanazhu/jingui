@@ -10,7 +10,7 @@ export type InputSizes = 'small' | 'default' | 'large';
  * @param {disabled} bool 是否能点击
  * @param {minLength} number 最少长度 minLength 属性与 <input type="text"> 或 <input type="password"> 配合使用。
  * @param {maxLength} number 最多长度 maxlength 属性与 <input type="text"> 或 <input type="password"> 配合使用。
- * @param {icon} string  React.ReactNode
+ * @param {icon} string  图标
  * @param {error} bool 错误提示
  * @param {errorword} string 正则不匹配时显示的错误文案
  * @param {clearable} boolean 显示清除图标

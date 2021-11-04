@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { IconCircleDelete, IconEyeClose, IconEyeOpen } from 'icons';
+import { IconCircleDelete, IconEyeClose, IconEyeOpen } from '../Icon';
 
 export interface ListInputProps {
     value?: string;

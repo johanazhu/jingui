@@ -18,8 +18,6 @@ const Verify = (props: VerifyProps) => {
     const timer = 60;
 
     useEffect(() => {
-        // console.log('isActive', isActive)
-        // console.log('sleepTime', sleepTime)
         if (isActive) {
             let countDown = setInterval(() => {
                 if (sleepTime < 1) {

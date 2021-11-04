@@ -9,7 +9,7 @@ export interface ListProps {
 const List = (props: ListProps) => {
     const { children, className } = props;
 
-    return <div className={classnames('List', className)}>{children}</div>;
+    return <div className={classnames('jing-list', className)}>{children}</div>;
 };
 
 export default React.memo(List);
