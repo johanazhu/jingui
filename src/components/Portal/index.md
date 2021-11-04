@@ -1,11 +1,11 @@
 ---
 toc: false
 nav:
-  path: /components
+    path: /components
 group:
-  title: 操作反馈组件
-  path: /components/feedback
-  order: 5
+    title: 反馈组件
+    path: /components/feedback
+    order: 5
 ---
 
 # Portal 传送门

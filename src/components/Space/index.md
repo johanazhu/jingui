@@ -7,7 +7,7 @@ group:
     path: /components/base
 ---
 
-# Space 空格
+# Space 空行分隔
 
 占位符，起分行作用
 

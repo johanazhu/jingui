@@ -1,0 +1,27 @@
+.jing-orientation {
+    z-index: 99999;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: $globalColorWhite0;
+    &__inner {
+        position: absolute !important;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        &-icon {
+            width: 100%;
+            height: 3rem;
+            margin-bottom: 2rem;
+        }
+        &-desc {
+            display: block;
+            font-size: $am-l;
+            font-weight: bold;
+            line-height: 1.4;
+        }
+    }
+}

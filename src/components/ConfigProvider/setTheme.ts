@@ -1,4 +1,4 @@
-import type { Theme } from './PropsType';
+import type { Theme } from './PropType';
 
 export const themes = {
     '--theme-primary-lighter': '#303030',

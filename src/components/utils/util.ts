@@ -71,3 +71,18 @@ export const isEmptyObject = (obj: Object) =>
  **/
 export const isEmptyArray = (arr: Array<any>) =>
     Array.isArray(arr) && arr.length === 0;
+
+/**
+ * 防抖
+ */
+export const debounce = (func: Function, delay: number) => {
+    let timer: any = null;
+    return function (...args: any[]) {
+        if (timer) clearTimeout();
+        timer = setTimeout(() => {
+            // @ts-ignore
+            func.apply(this, args);
+            clearTimeout(timer);
+        }, delay);
+    };
+};

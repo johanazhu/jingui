@@ -267,7 +267,7 @@
         &_type_cancel {
             height: 2.75rem;
             line-height: 2.75rem;
-            @extend.text-center;
+            // @extend.text-center;
             border-top: 1px solid $globalColorBorder;
             &:after {
                 display: block;

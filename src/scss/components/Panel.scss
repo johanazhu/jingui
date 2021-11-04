@@ -5,20 +5,20 @@
         color: $black-2;
         &__title {
             flex: 1;
-            font-size: $font-size-l;
+            font-size: $panel-font-size-md;
             font-weight: 700;
             padding: $vertical-gap 0 $horizontal-gap;
         }
         &__more {
             padding: $vertical-gap 0 $horizontal-gap $horizontal-gap;
-            font-size: $font-size-xs;
+            font-size: $panel-font-size-xs;
             color: var(--default-color);
         }
     }
     &__body {
         position: relative;
         background: $bg-white;
-        font-size: $font-size-l;
+        font-size: $panel-font-size-md;
         color: $black;
     }
 }

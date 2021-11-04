@@ -12,22 +12,22 @@
         margin-bottom: $typography-h-mr-bottom;
     }
     h1 {
-        font-size: $font-size-xxxl;
+        font-size: $typography-font-size-xxl;
     }
     h2 {
-        font-size: $font-size-xxl;
+        font-size: $typography-font-size-xl;
     }
     h3 {
-        font-size: $font-size-xl;
+        font-size: $typography-font-size-lg;
     }
     h4 {
-        font-size: $font-size-l;
+        font-size: $typography-font-size-md;
     }
     h5 {
-        font-size: $font-size-sm;
+        font-size: $typography-font-size-sm;
     }
     h6 {
-        font-size: $font-size-xs;
+        font-size: $typography-font-size-xs;
     }
     p {
         line-height: 1.8em;
@@ -35,11 +35,6 @@
     }
     table p {
         margin-bottom: 0;
-        // tbody {
-        //     tr:nth-child(odd) {
-        //         background-color: #fafafa;
-        //     }
-        // }
     }
     table {
         width: 100% !important;
@@ -48,17 +43,12 @@
         border: 1px solid $border-color;
         background: $bg-white;
         margin-bottom: 0;
-        // tbody {
-        //     tr:nth-child(odd) {
-        //         background-color: #fafafa;
-        //     }
-        // }
         tr:nth-child(odd) {
             background-color: $typography-table-tr-bg;
         }
         tbody {
             td {
-                font-size: $font-size-xs;
+                font-size: $typography-font-size-xs;
                 padding: 3px 6px;
                 border: 1px solid $black-4;
             }
@@ -93,7 +83,7 @@
     }
     .am-btn.am-sm {
         margin-left: 3%;
-        font-size: $font-size-xs;
+        font-size: $typography-font-size-xs;
         border-radius: $border-radius;
     }
     .am-btn.am-sm {

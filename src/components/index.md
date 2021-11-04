@@ -18,7 +18,7 @@ group:
 -   [Button 按钮](./components/base/button)
 -   [ButtonGroup 按钮组](./components/base/button-group)
 -   [Icon 图标](./components/base/icon)
--   [Space 空格](./components/base/space)
+-   [Space 空行分隔](./components/base/space)
 -   [Mask 遮罩层](./components/base/mask)
 
 ## 布局组件
@@ -40,12 +40,14 @@ group:
 -   [Picker 选择器](./components/data/picker)
 -   [PickerKeyBoard 键盘选择器](./components/data/picker-keyboard)
 
-## 操作反馈组件
+## 反馈组件
 
 -   [Popup 弹出框](./components/feedback/popup)
 -   [Modal 模态框](./components/feedback/modal)
 -   [Toast 提示框](./components/feedback/toast)
 -   [Portal 传送门](./components/feedback/portal)
+-   [Loading 加载](./components/feedback/loading)
+-   [Pageloading 页面加载](./components/feedback/pageloading)
 
 ## 业务组件
 
@@ -56,7 +58,7 @@ group:
 
 ## 其他
 
--   [ConfigProvider 全局配置](./components/config/provider)
+-   [ConfigProvider 全局配置](./components/config/config-provider)
 
 ## 废弃
 

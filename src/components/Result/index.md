@@ -1,11 +1,11 @@
 ---
 toc: false
 nav:
-  path: /components
+    path: /components
 group:
-  title: 操作反馈组件
-  path: /components/data
-  order: 3
+    title: 反馈组件
+    path: /components/data
+    order: 3
 ---
 
 # Result 结果

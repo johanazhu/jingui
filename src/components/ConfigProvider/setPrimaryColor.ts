@@ -1,5 +1,5 @@
 import Color from 'color';
-import type { ConfigProviderProps } from './PropsType';
+import type { ConfigProviderProps } from './PropType';
 
 const setPrimaryColor = (color: ConfigProviderProps['primaryColor']) => {
     document.documentElement.style.setProperty('--theme-primary', color);

@@ -1,27 +1,19 @@
-// 主色
+// 颜色
 $blue: rgb(50, 100, 200);
 $orange: rgb(255, 100, 20);
 $blue-light: rgb(80, 120, 240);
 $orange-light: rgb(255, 115, 40);
-
-// 其他色
 $green: rgb(50, 205, 50);
 $blue-sky: rgb(20, 200, 255);
 $green-dark: rgb(30, 180, 160);
 $yellow: rgb(250, 180, 40);
 $red: rgb(255, 65, 65);
-
-// 黑色
 $black: rgb(0, 0, 0);
-
-// 灰色
 $black-1: rgb(50, 50, 50);
 $black-2: rgb(100, 100, 100);
 $black-3: rgb(150, 150, 150);
 $black-4: rgb(200, 200, 200);
 $black-5: rgb(230, 230, 230);
-
-// 白色
 $white-1: rgb(255, 255, 255);
 $white-2: rgba(255, 255, 255, 0.5);
 $white-3: rgba(255, 255, 255, 0.3);
@@ -47,36 +39,45 @@ $bg-white: rgb(255, 255, 255);
 $bg-orange: rgb(253, 244, 237);
 
 // 元件
-$background-color: rgb(245, 245, 245);
 $text-color: $black-1;
 $active-color: $black-2;
 $active-opacity: 0.7;
 $disabled-opacity: 0.5;
+$background-color: #f7f8fa;
+$background-color-light: #fafafa;
+$text-link-color: #576b95; // 参考vant
+
+// Padding
+$padding-base: 4px;
+$padding-xs: $padding-base * 2;
+$padding-sm: $padding-base * 3;
+$padding-l: $padding-base * 4;
+$padding-lg: $padding-base * 6;
+$padding-xl: $padding-base * 8;
 
 // 字体
-$font-size-xxxs: 0.5rem;
-$font-size-xxs: 0.625rem;
-$font-size-xs: 0.75rem;
-$font-size-sm: 0.875rem;
-$font-size-l: 1rem;
-$font-size-xl: 1.125rem;
-$font-size-xxl: 1.25rem;
-$font-size-xxxl: 1.5rem;
-$font-size-xxxxl: 2rem;
-$font-size-lg: 3rem;
-// 在安卓手机设置数字是无效的，700默认威bold，600视为正常
-$font-weight-bold: bold;
-// 默认字体
+$font-size-xs: 10px;
+$font-size-sm: 12px;
+$font-size-md: 14px;
+$font-size-lg: 16px;
+$font-size-xl: 18px;
+$font-size-xxl: 18px;
+$font-weight-bold: 500;
 $base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
     Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB',
     'Microsoft Yahei', sans-serif;
-// 默认价格字体
 $price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial,
     sans-serif;
 
-// 间距
-$vertical-gap: 1rem;
-$horizontal-gap: 0.75rem;
+// 动画
+$animation-duration-base: 0.3s;
+$animation-duration-fast: 0.2s;
+$animation-timing-function-enter: ease-out;
+$animation-timing-function-leave: ease-in;
+$cubic-bezier: cubic-bezier(0.25, 0.8, 0.5, 1);
+
+// 占位符
+$placeholder-color: $black-4;
 
 // 堆叠顺序
 $zindex-mask: 1000;
@@ -87,24 +88,29 @@ $opacity-disabled: 0.5;
 $opacity-mask: 0.5;
 $opacity-toast: 0.8;
 
-// Padding
-$padding-base: 4px;
-$padding-xs: $padding-base * 2;
-$padding-sm: $padding-base * 3;
-$padding-l: $padding-base * 4;
-$padding-lg: $padding-base * 6;
-$padding-xl: $padding-base * 8;
-
 // 行高
-$height-l: 1rem;
-$line-height-l: 1rem;
-$line-height-sm: $font-size-sm;
+$line-height-xs: 14px;
+$line-height-sm: 18px;
+$line-height-md: 20px;
+$line-height-lg: 22px;
 
-// 动画
-$animation-duration-base: 0.3s;
-$animation-duration-fast: 0.2s;
-$animation-timing-function-enter: ease-out;
-$animation-timing-function-leave: ease-in;
+// 间距
+$vertical-gap: 16px;
+$horizontal-gap: 10px;
+
+// // 水平间距
+// --padding-h-xs: 8px;
+// --padding-h-sm: 12px;
+// --padding-h-md: 16px;
+// --padding-h-lg: 20px;
+// --padding-h-xl: 24px;
+
+// // 垂直间距
+// --padding-v-xs: 6px;
+// --padding-v-sm: 8px;
+// --padding-v-md: 12px;
+// --padding-v-lg: 16px;
+// --padding-v-xl: 18px;
 
 // Border
 $border-color: $black-5;
@@ -115,15 +121,143 @@ $border-radius-max: 999px;
 // Divider
 $divider-margin: $padding-l 0;
 $divider-text-color: $black-4;
-$divider-font-size: $font-size-l;
+$divider-font-size: $font-size-md;
 $divider-line-height: 24px;
 $divider-border-color: $border-color;
 $divider-content-padding: $padding-l;
 $divider-content-left-width: 10%;
 $divider-content-right-width: 10%;
 
-// Placeholder
-$placeholder-color: $black-4;
+// Tag
+$tag-padding: 0 $padding-base;
+$tag-margin: 2px;
+$tag-text-color: $white-1;
+$tag-font-size: $font-size-sm;
+$tag-line-height: 16px;
+$tag-border-radius: 2px;
+$tag-default-color: $orange;
+$tag-plain-background-color: $white-1;
+// Tag
+// @tag-padding: 0 @padding-base;
+// @tag-text-color: @white;
+// @tag-font-size: @font-size-sm;
+// @tag-border-radius: 2px;
+// @tag-line-height: 16px;
+// @tag-medium-padding: 2px 6px;
+// @tag-large-padding: @padding-base @padding-xs;
+// @tag-large-border-radius: @border-radius-md;
+// @tag-large-font-size: @font-size-md;
+// @tag-round-border-radius: @border-radius-max;
+// @tag-danger-color: @red;
+// @tag-primary-color: @blue;
+// @tag-success-color: @green;
+// @tag-warning-color: @orange;
+// @tag-default-color: @gray-6;
+// @tag-plain-background-color: @white;
+
+// Button
+$button-height-lg: $font-size-xxl;
+$button-height-md: 2.75rem;
+$button-line-height-md: 2.75rem;
+$button-height-sm: 1.25rem;
+$button-line-height-sm: 1.25rem;
+$button-fize-md: $font-size-md;
+$button-fize-sm: $font-size-xs;
+$button-radius-md: 0.5rem;
+$button-radius-sm: 0.25rem;
+$button-margin-md: 3%;
+$button-margin-sm: 2%;
+$button-padding-md: 1rem;
+$button-padding-sm: 0.5rem;
+$button-blue-color: $blue;
+$button-orange-color: $orange;
+$button-green-color: $green;
+$button-while-color: $white-1;
+$button-disable-color: $black-4;
+$button-loading-m-l: $horizontal-gap;
+
+// --button-height-xs: 28px;
+// --button-height-sm: 36px;
+// --button-height-md: 44px;
+// --button-height-lg: 52px;
+// --button-padding-h-xs: var(--padding-h-xs);
+// --button-padding-h-sm: var(--padding-h-sm);
+// --button-padding-h-md: var(--padding-h-md);
+// --button-padding-h-lg: var(--padding-h-lg);
+// --button-font-size-xs: 12px;
+// --button-font-size-sm: 14px;
+// --button-font-size-md: 16px;
+// --button-font-size-lg: 18px;
+// --button-icon-size-xs: 16px;
+// --button-icon-size-sm: 18px;
+// --button-icon-size-md: 22px;
+// --button-icon-size-lg: 26px;
+// --button-disabled-opacity: var(--opacity-disabled);
+// --button-disabled-color-ghost: var(--border-disabled);
+// --button-default-background: var(--color-text-inverse);
+// --button-default-border: var(--theme-default);
+// --button-default-color: var(--color-text);
+// --button-default-active-background: var(--background-active);
+// --button-default-active-border: var(--background-active);
+// --button-default-active-color: var(--color-text);
+// --button-default-ghost-border: var(--color-text-inverse);
+// --button-default-ghost-color: var(--color-text-inverse);
+// --button-default-ghost-active-border: var(--background-active);
+// --button-default-ghost-active-color: var(--background-active);
+// --button-default-shadow-color: rgba(230, 230, 230, 0.3);
+// --button-primary-background: var(--theme-primary);
+// --button-primary-border: var(--theme-primary);
+// --button-primary-color: var(--color-text-inverse);
+// --button-primary-active-background: var(--theme-primary-dark);
+// --button-primary-active-border: var(--theme-primary-dark);
+// --button-primary-active-color: rgba(255, 255, 255, 0.4);
+// --button-primary-ghost-border: var(--theme-primary);
+// --button-primary-ghost-color: var(--theme-primary);
+// --button-primary-ghost-active-border: var(--theme-primary-dark);
+// --button-primary-ghost-active-color: var(--theme-primary-dark);
+// --button-primary-shadow-color: rgba(0, 188, 112, 0.3);
+// --button-danger-background: var(--theme-danger);
+// --button-danger-border: var(--theme-danger);
+// --button-danger-color: var(--color-text-inverse);
+// --button-danger-active-background: var(--theme-danger-dark);
+// --button-danger-active-border: var(--theme-danger-dark);
+// --button-danger-active-color: rgba(255, 255, 255, 0.4);
+// --button-danger-ghost-border: var(--theme-danger);
+// --button-danger-ghost-color: var(--theme-danger);
+// --button-danger-ghost-active-border: var(--theme-danger-dark);
+// --button-danger-ghost-active-color: var(--theme-danger-dark);
+// --button-danger-shadow-color: rgba(255, 80, 80, 0.3);
+
+// Button
+// @button-mini-height: 24px;
+// @button-mini-font-size: @font-size-xs;
+// @button-small-height: 32px;
+// @button-small-font-size: @font-size-sm;
+// @button-normal-font-size: @font-size-md;
+// @button-large-height: 50px;
+// @button-default-height: 44px;
+// @button-default-line-height: 1.2;
+// @button-default-font-size: @font-size-lg;
+// @button-default-color: @text-color;
+// @button-default-background-color: @white;
+// @button-default-border-color: @border-color;
+// @button-primary-color: @white;
+// @button-primary-background-color: @green;
+// @button-primary-border-color: @green;
+// @button-info-color: @white;
+// @button-info-background-color: @blue;
+// @button-info-border-color: @blue;
+// @button-danger-color: @white;
+// @button-danger-background-color: @red;
+// @button-danger-border-color: @red;
+// @button-warning-color: @white;
+// @button-warning-background-color: @orange;
+// @button-warning-border-color: @orange;
+// @button-border-width: @border-width-base;
+// @button-border-radius: @border-radius-sm;
+// @button-round-border-radius: @border-radius-max;
+// @button-plain-background-color: @white;
+// @button-disabled-opacity: @disabled-opacity;
 
 // icon
 $icon-grey-color: rgb(222, 222, 222);
@@ -140,36 +274,15 @@ $icon-size-md: 1.05rem;
 $icon-size-sm: 0.68rem;
 $icon-size-auto: 100%;
 
-// result
+// Result
 $result-margin-md: 2rem;
 $result-margin-sm: 1rem;
+$result-font-size-md: $font-size-md;
 
-// button
-$button-height-lg: $font-size-xxl;
-$button-height-md: 2.75rem;
-$button-line-height-md: 2.75rem;
-$button-height-sm: 1.25rem;
-$button-line-height-sm: 1.25rem;
-$button-fize-md: $font-size-l;
-$button-fize-sm: $font-size-xs;
-$button-radius-md: 0.5rem;
-$button-radius-sm: 0.25rem;
-$button-margin-md: 3%;
-$button-margin-sm: 2%;
-$button-padding-md: 1rem;
-$button-padding-sm: 0.5rem;
-$button-blue-color: $blue;
-$button-orange-color: $orange;
-$button-green-color: $green;
-$button-while-color: $white-1;
-$button-disable-color: $black-4;
-
-$button-loading-m-l: $horizontal-gap;
-
-// input
+// Input
 $input-font-size: $font-size-sm;
-$input-font-size-l: $font-size-l;
-$input-font-size-xxs: $font-size-xxs;
+$input-font-size-l: $font-size-md;
+$input-font-size-xxs: $font-size-xs;
 $input-font-color: #484852;
 $input-verify-font-color: $blue;
 $input-verify-font-color: #484852;
@@ -185,6 +298,10 @@ $input-line-height: 3rem;
 $input-keyboard-sub-color: $black-4;
 // $black-4
 
+// Panel
+$panel-font-size-xs: $font-size-xs;
+$panel-font-size-md: $font-size-md;
+
 // timeline
 $timeline-padding: 1rem;
 $timeline-bg: $black-5;
@@ -194,6 +311,12 @@ $timeline-white-bg: $bg-white;
 $typography-padding: 1rem;
 $typography-h-mr-bottom: 1rem;
 $typography-table-tr-bg: #fafafa;
+$typography-font-size-xs: $font-size-xs;
+$typography-font-size-sm: $font-size-sm;
+$typography-font-size-md: $font-size-md;
+$typography-font-size-lg: $font-size-lg;
+$typography-font-size-xl: $font-size-xl;
+$typography-font-size-xxl: $font-size-xxl;
 
 // tab
 $tab-blue-color: $blue;
@@ -215,32 +338,3 @@ $space-3: 1.25rem;
 $space-4: 1.6rem;
 $space-5: 1.875rem;
 $space-6: 2.5rem;
-
-// // 文字
-// @font-size-xs: 10px;
-// @font-size-sm: 12px;
-// @font-size-md: 14px;
-// @font-size-lg: 16px;
-
-// // 图标
-// @icon-size-xs: 16px;
-// @icon-size-sm: 18px;
-// @icon-size-md: 20px;
-// @icon-size-lg: 22px;
-
-// //颜色
-// @color-primary: #3a7afe;
-// @color-info: #00afef;
-// @color-success: #00c48f;
-// @color-warning: #ff9f00;
-// @color-danger: #f44336;
-// @color-disabled: #e0e0e0;
-// @color-text-disabled: #aaa;
-
-// // 动画函数
-// @cubic-bezier: cubic-bezier(0.25, 0.8, 0.5, 1);
-
-// // 阴影
-// @shadow-key-umbra-opacity: rgba(0, 0, 0, 0.2);
-// @shadow-key-penumbra-opacity: rgba(0, 0, 0, 0.14);
-// @shadow-key-ambient-opacity: rgba(0, 0, 0, 0.12);

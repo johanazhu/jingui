@@ -1,11 +1,11 @@
 .jing-tag {
     display: inline-block;
-    height: $height-l;
-    line-height: $line-height-l;
-    margin-right: 0.25rem;
-    padding: 0 $padding-base;
-    border-radius: 0.25rem;
-    font-size: $font-size-xxs;
+    //   height: $tag-height;
+    line-height: $tag-line-height;
+    margin-right: $tag-margin;
+    padding: $tag-padding;
+    border-radius: $tag-border-radius;
+    font-size: $tag-font-size;
     background-color: $bg-orange;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -26,3 +26,12 @@
         background-color: $bg-white;
     }
 }
+
+// 小号
+// 高16px，左右间隔4px，圆角2px，字号12
+
+// 中号
+// 高20px，左右间隔6px，圆角2px，字号12
+
+// 大号
+// 高24px，左右间隔8px，圆角4px，字号14
