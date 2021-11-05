@@ -1,27 +1,31 @@
 ---
 toc: false
 nav:
-  path: /components
+    path: /components
 group:
-  title: 展示组件
-  path: /components/data
-  order: 4
+    title: 展示组件
+    path: /components/data
+    order: 4
 ---
 
 # Tag 标签
-
-标签党
 
 ### 代码演示
 
 <code src="./demo/index.tsx"></code>
 
+default 红底橙字
+primary 蓝底白字
+normal 白底灰字
+disabled 灰底白字
+
 ### API
 
-| 属性      | 说明            | 类型                                                                               | 默认值 |
-| --------- | --------------- | ---------------------------------------------------------------------------------- | ------ |
-| className | 自定义 Class 名 | string                                                                             | -      |
-| icon      | 图标            | React.ReactNode                                                                    | -      |
-| color     | 颜色            | enum: 'orange', 'highOrange','white', 'highWhite','red', 'blue', 'yellow', 'green' | -      |
-| children  | 内容            | React.ReactNode                                                                    | -      |
-| onClick   | 点击事件        | -                                                                                  | -      |
+| 属性      | 说明             | 类型                                              | 默认值  |
+| --------- | ---------------- | ------------------------------------------------- | ------- |
+| className | 自定义 Class 名  | string                                            | -       |
+| type      | 类型             | 类型，可选值为 default、primary、normal、disabled | default |
+| size      | 颜色             | 大小, 可选值为 large medium                       | -       |
+| active    | 是否选中         | boolean                                           | -       |
+| children  | 内容             | ReactNode                                         | -       |
+| onClick   | 点击后的回调事件 | MouseEventHandler                                 | -       |

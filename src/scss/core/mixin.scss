@@ -37,7 +37,7 @@
     pointer-events: none;
 }
 
-@mixin hairline($color: $border-color) {
+@mixin hairline($color: var(--border-color)) {
     @extend .hairline-common;
     top: -50%;
     right: -50%;
@@ -47,7 +47,7 @@
     transform: scale(0.5);
 }
 
-@mixin hairline-top($color: $border-color, $left: 0, $right: 0) {
+@mixin hairline-top($color: var(--border-color), $left: 0, $right: 0) {
     @extend .hairline-common;
     top: 0;
     right: $right;
@@ -56,7 +56,7 @@
     transform: scaleY(0.5);
 }
 
-@mixin hairline-bottom($color: $border-color, $left: 0, $right: 0) {
+@mixin hairline-bottom($color: var(--border-color), $left: 0, $right: 0) {
     @extend .hairline-common;
     bottom: 0;
     right: $right;
@@ -65,7 +65,7 @@
     transform: scaleY(0.5);
 }
 
-@mixin hairline-left($color: $border-color, $top: 0, $bottom: 0) {
+@mixin hairline-left($color: var(--border-color), $top: 0, $bottom: 0) {
     @extend .hairline-common;
     left: 0;
     top: $top;
@@ -74,7 +74,7 @@
     transform: scaleX(0.5) scaleY(0.5);
 }
 
-@mixin hairline-finance-left($color: $border-color, $top: 0, $bottom: 0) {
+@mixin hairline-finance-left($color: var(--border-color), $top: 0, $bottom: 0) {
     @extend .hairline-common;
     left: 0;
     top: $top;
@@ -83,7 +83,7 @@
     transform: scaleY(0.8) scaleX(0.5);
 }
 
-@mixin hairline-right($color: $border-color, $top: 0, $bottom: 0) {
+@mixin hairline-right($color: var(--border-color), $top: 0, $bottom: 0) {
     @extend .hairline-common;
     right: 0;
     top: $top;

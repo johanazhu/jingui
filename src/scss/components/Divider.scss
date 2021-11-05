@@ -1,11 +1,10 @@
 .jing-divider {
     display: flex;
     align-items: center;
-    margin: $am-l 0;
-    color: $globalColorBlack1;
-    line-height: $am-lg;
-    //   border-color: $globalColorBlack0;
-    border-color: #ebedf0;
+    margin: var(--divider-margin);
+    color: var(--color-black-4);
+    line-height: var(--divider-line-height);
+    border-color: var(--divider-border-color);
     border-style: solid;
     border-width: 0;
     &::before,
@@ -15,7 +14,7 @@
         height: 1px;
         border-color: inherit;
         border-style: inherit;
-        border-width: $border-width-base 0 0;
+        border-width: var(--border-width-base) 0 0;
     }
     &::before {
         content: '';
@@ -31,25 +30,25 @@
         border-style: dashed;
     }
 
-    &__content-center,
-    &__content-left,
-    &__content-right {
+    &--content-center,
+    &--content-left,
+    &--content-right {
         &::before {
-            margin-right: $divider-content-padding;
+            margin-right: var(--divider-content-padding);
         }
         &::after {
-            margin-left: $divider-content-padding;
+            margin-left: var(--divider-content-padding);
             content: '';
         }
     }
-    &__content-left {
+    &--content-left {
         &::before {
-            max-width: 10%;
+            max-width: var(--divider-content-left-width);
         }
     }
-    &__content-right {
+    &--content-right {
         &::after {
-            max-width: 10%;
+            max-width: var(--divider-content-right-width);
         }
     }
 }

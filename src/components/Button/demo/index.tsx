@@ -14,7 +14,8 @@ export default () => (
         </Panel>
         <Panel title="尺寸大小">
             <Button size="sm">小按钮</Button>
-            <Button size="md">md</Button>
+            <Button size="md">中按钮</Button>
+            <Button>按钮</Button>
         </Panel>
         <Panel title="状态">
             <Button loading>loading</Button>

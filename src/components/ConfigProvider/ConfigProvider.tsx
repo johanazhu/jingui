@@ -1,13 +1,17 @@
 import React, { FC, useEffect, Context, createContext } from 'react';
-import type { ConfigProviderProps } from './PropType';
+import type {
+    ConfigProviderContextProps,
+    ConfigProviderProps,
+} from './PropType';
 import setTheme from './setTheme';
+import setPrimaryColor from './setPrimaryColor';
 
-const defaultConfig: ConfigProviderProps = {
+const defaultConfig: ConfigProviderContextProps = {
     theme: 'light',
     primaryColor: '#3264c8',
 };
 
-export const ConfigContext: Context<ConfigProviderProps> =
+export const ConfigContext: Context<ConfigProviderContextProps> =
     createContext(defaultConfig);
 
 const ConfigProvider: FC<ConfigProviderProps> = (props) => {
@@ -15,6 +19,7 @@ const ConfigProvider: FC<ConfigProviderProps> = (props) => {
 
     useEffect(() => {
         setTheme(theme);
+        setPrimaryColor(primaryColor);
     }, [props]);
 
     return (

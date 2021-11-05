@@ -33,7 +33,7 @@
         height: $button-height-md;
         line-height: $button-line-height-md;
         border-radius: $button-radius-md;
-        margin-left: $button-margin-md;
+        // margin-left: $button-margin-md;
         font-size: $button-fize-md;
         padding: 0 $button-padding-md;
     }
@@ -46,23 +46,30 @@
         padding: 0 $button-padding-sm;
     }
     &--blue {
-        border-color: $button-blue-color;
-        color: $button-blue-color;
+        // background-color: var(--button-primary-background);
+        border-color: var(--button-blue-color);
+        color: var(--button-blue-color);
         &:after,
         &:before {
-            background-color: $button-blue-color;
+            background-color: var(--button-blue-color);
         }
         &.jing-button--active {
-            background-color: lighten($button-blue-color, 42%);
+            //   background-color: lighten(var(--button-blue-color), 42%);
+            background: var(--button-blue-color);
+            color: $white-1;
         }
         &.jing-button--contained {
-            @include jing-button--contained($button-blue-color);
+            @include jing-button--contained(var(--button-blue-color));
             &.jing-button--active {
-                background-color: darken($button-blue-color, 5%);
+                // background-color: darken($button-blue-color, 5%);
+                background: $button-blue-color;
+                // color: $white-1;
                 color: $button-while-color;
                 &:after,
                 &:before {
-                    background-color: darken($button-blue-color, 5%);
+                    background: var(--button-blue-color);
+                    color: $white-1;
+                    //   background-color: darken(var(--button-blue-color), 5%);
                 }
             }
         }

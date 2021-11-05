@@ -1,37 +1,46 @@
 .jing-tag {
     display: inline-block;
-    //   height: $tag-height;
-    line-height: $tag-line-height;
-    margin-right: $tag-margin;
-    padding: $tag-padding;
-    border-radius: $tag-border-radius;
-    font-size: $tag-font-size;
-    background-color: $bg-orange;
+    line-height: var(--tag-line-height);
+    margin-right: var(--tag-margin);
+    padding: var(--tag-padding);
+    border-radius: var(--tag-border-radius);
+    font-size: var(--tag-font-size);
+    background-color: var(--bg-white);
     white-space: nowrap;
     text-overflow: ellipsis;
-    &__orange {
-        color: $orange;
-        background-color: $bg-orange;
+    &--default {
+        color: var(--tag-default-color);
+        background-color: var(--tag-default-bg);
+        &.jing-tag--active {
+            color: var(--tag-default-active-color);
+            background: var(--tag-default-active-bg);
+        }
     }
-    &__highOrange {
-        color: $white-1;
-        background: $gradient-orange;
+    &--primary {
+        color: var(--tag-primary-color);
+        background-color: var(--tag-primary-bg);
+        &.jing-tag--active {
+            color: var(--tag-primary-active-color);
+            background-color: var(--tag-primary-active-bg);
+        }
     }
-    &__white {
-        color: $white-1;
-        background-color: $white-3;
+    &--normal {
+        color: var(--tag-normal-color);
+        border: 1px solid var(--tag-normal-border);
+        background-color: var(--tag-normal-bg);
     }
-    &__highWhite {
-        color: $blue;
-        background-color: $bg-white;
+    &--disabled {
+        color: var(--tag-disabled-color);
+        background-color: var(--tag-disabled-bg);
+    }
+
+    &--medium {
+        padding: var(--tag-medium-padding);
+    }
+
+    &--large {
+        padding: var(--tag-large-padding);
+        font-size: var(--tag-large-font-size);
+        border-radius: var(--tag-large-border-radius);
     }
 }
-
-// 小号
-// 高16px，左右间隔4px，圆角2px，字号12
-
-// 中号
-// 高20px，左右间隔6px，圆角2px，字号12
-
-// 大号
-// 高24px，左右间隔8px，圆角4px，字号14

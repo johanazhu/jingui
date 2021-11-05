@@ -8,7 +8,7 @@ group:
     order: 2
 ---
 
-# 分隔线 Divider
+# Divider 分隔线
 
 用于将内容分隔为多个区域。
 

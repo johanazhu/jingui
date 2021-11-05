@@ -98,62 +98,21 @@ $line-height-lg: 22px;
 $vertical-gap: 16px;
 $horizontal-gap: 10px;
 
-// // 水平间距
-// --padding-h-xs: 8px;
-// --padding-h-sm: 12px;
-// --padding-h-md: 16px;
-// --padding-h-lg: 20px;
-// --padding-h-xl: 24px;
-
-// // 垂直间距
-// --padding-v-xs: 6px;
-// --padding-v-sm: 8px;
-// --padding-v-md: 12px;
-// --padding-v-lg: 16px;
-// --padding-v-xl: 18px;
-
-// Border
+// // Border
 $border-color: $black-5;
 $border-width-base: 1px;
 $border-radius: 0.25rem;
-$border-radius-max: 999px;
+// $border-radius-max: 999px;
 
-// Divider
-$divider-margin: $padding-l 0;
-$divider-text-color: $black-4;
-$divider-font-size: $font-size-md;
-$divider-line-height: 24px;
-$divider-border-color: $border-color;
-$divider-content-padding: $padding-l;
-$divider-content-left-width: 10%;
-$divider-content-right-width: 10%;
-
-// Tag
-$tag-padding: 0 $padding-base;
-$tag-margin: 2px;
-$tag-text-color: $white-1;
-$tag-font-size: $font-size-sm;
-$tag-line-height: 16px;
-$tag-border-radius: 2px;
-$tag-default-color: $orange;
-$tag-plain-background-color: $white-1;
-// Tag
-// @tag-padding: 0 @padding-base;
-// @tag-text-color: @white;
-// @tag-font-size: @font-size-sm;
-// @tag-border-radius: 2px;
-// @tag-line-height: 16px;
-// @tag-medium-padding: 2px 6px;
-// @tag-large-padding: @padding-base @padding-xs;
-// @tag-large-border-radius: @border-radius-md;
-// @tag-large-font-size: @font-size-md;
-// @tag-round-border-radius: @border-radius-max;
-// @tag-danger-color: @red;
-// @tag-primary-color: @blue;
-// @tag-success-color: @green;
-// @tag-warning-color: @orange;
-// @tag-default-color: @gray-6;
-// @tag-plain-background-color: @white;
+// // Divider
+// $divider-margin: $padding-l 0;
+// $divider-text-color: $black-4;
+// $divider-font-size: $font-size-md;
+// $divider-line-height: 24px;
+// $divider-border-color: $border-color;
+// $divider-content-padding: $padding-l;
+// $divider-content-left-width: 10%;
+// $divider-content-right-width: 10%;
 
 // Button
 $button-height-lg: $font-size-xxl;
@@ -175,58 +134,6 @@ $button-green-color: $green;
 $button-while-color: $white-1;
 $button-disable-color: $black-4;
 $button-loading-m-l: $horizontal-gap;
-
-// --button-height-xs: 28px;
-// --button-height-sm: 36px;
-// --button-height-md: 44px;
-// --button-height-lg: 52px;
-// --button-padding-h-xs: var(--padding-h-xs);
-// --button-padding-h-sm: var(--padding-h-sm);
-// --button-padding-h-md: var(--padding-h-md);
-// --button-padding-h-lg: var(--padding-h-lg);
-// --button-font-size-xs: 12px;
-// --button-font-size-sm: 14px;
-// --button-font-size-md: 16px;
-// --button-font-size-lg: 18px;
-// --button-icon-size-xs: 16px;
-// --button-icon-size-sm: 18px;
-// --button-icon-size-md: 22px;
-// --button-icon-size-lg: 26px;
-// --button-disabled-opacity: var(--opacity-disabled);
-// --button-disabled-color-ghost: var(--border-disabled);
-// --button-default-background: var(--color-text-inverse);
-// --button-default-border: var(--theme-default);
-// --button-default-color: var(--color-text);
-// --button-default-active-background: var(--background-active);
-// --button-default-active-border: var(--background-active);
-// --button-default-active-color: var(--color-text);
-// --button-default-ghost-border: var(--color-text-inverse);
-// --button-default-ghost-color: var(--color-text-inverse);
-// --button-default-ghost-active-border: var(--background-active);
-// --button-default-ghost-active-color: var(--background-active);
-// --button-default-shadow-color: rgba(230, 230, 230, 0.3);
-// --button-primary-background: var(--theme-primary);
-// --button-primary-border: var(--theme-primary);
-// --button-primary-color: var(--color-text-inverse);
-// --button-primary-active-background: var(--theme-primary-dark);
-// --button-primary-active-border: var(--theme-primary-dark);
-// --button-primary-active-color: rgba(255, 255, 255, 0.4);
-// --button-primary-ghost-border: var(--theme-primary);
-// --button-primary-ghost-color: var(--theme-primary);
-// --button-primary-ghost-active-border: var(--theme-primary-dark);
-// --button-primary-ghost-active-color: var(--theme-primary-dark);
-// --button-primary-shadow-color: rgba(0, 188, 112, 0.3);
-// --button-danger-background: var(--theme-danger);
-// --button-danger-border: var(--theme-danger);
-// --button-danger-color: var(--color-text-inverse);
-// --button-danger-active-background: var(--theme-danger-dark);
-// --button-danger-active-border: var(--theme-danger-dark);
-// --button-danger-active-color: rgba(255, 255, 255, 0.4);
-// --button-danger-ghost-border: var(--theme-danger);
-// --button-danger-ghost-color: var(--theme-danger);
-// --button-danger-ghost-active-border: var(--theme-danger-dark);
-// --button-danger-ghost-active-color: var(--theme-danger-dark);
-// --button-danger-shadow-color: rgba(255, 80, 80, 0.3);
 
 // Button
 // @button-mini-height: 24px;

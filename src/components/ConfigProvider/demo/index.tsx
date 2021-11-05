@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ConfigProvider, Space } from 'jing-ui';
+import { ConfigProvider, Space, Button } from 'jing-ui';
 
 const colors = [
     '#00bc70',
@@ -20,8 +20,14 @@ export default () => {
     return (
         <div className="jing-page">
             <Space />
+            <Button block onClick={() => setPrimaryColor('#712fd1')}>
+                click
+            </Button>
+            <Button block onClick={() => setPrimaryColor('#1890ff')}>
+                click2
+            </Button>
             <ConfigProvider primaryColor={primaryColor} theme={theme}>
-                <div>1111</div>
+                <Button block>中文</Button>
             </ConfigProvider>
         </div>
     );
