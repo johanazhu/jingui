@@ -7,7 +7,7 @@ import { CSSProperties, MouseEventHandler } from 'react';
  * @param {color} string                        // 颜色
  * @param {fill} string                         // 填充颜色
  **/
- export interface IconbaseProps {
+export interface IconbaseProps {
     svgClass?: string;
     icon?: any;
     color?: string;
@@ -33,5 +33,5 @@ export interface JqbIconProps extends IconbaseProps {
     icon?: any;
     style?: CSSProperties;
     keepOriginColor?: boolean;
-    onClick?: (e: MouseEventHandler) => void;
+    onClick?: MouseEventHandler<HTMLElement>;
 }

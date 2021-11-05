@@ -125,7 +125,7 @@ const SymbolKey = React.forwardRef((props: KeyProps, ref: any) => {
                         size="lg"
                         style={{ display: isSymbolActive ? 'block' : 'none' }}
                         color="black"
-                        onClick={(e) => {
+                        onClick={(e: any) => {
                             e.stopPropagation();
                         }}
                     />
@@ -133,7 +133,7 @@ const SymbolKey = React.forwardRef((props: KeyProps, ref: any) => {
                         size="lg"
                         style={{ display: isSymbolActive ? 'none' : 'block' }}
                         color="black"
-                        onClick={(e) => {
+                        onClick={(e: any) => {
                             e.stopPropagation();
                         }}
                     />

@@ -1,5 +1,6 @@
 import * as React from 'react';
-import JqbIcon, { JqbIconProps } from '../../JqbIcon';
+import JqbIcon from '../../JqbIcon';
+import { JqbIconProps } from '../../PropType';
 import loanMenu from '../../svg/short_cut_menu/loan.svg';
 
 const LoanMenu = (props: JqbIconProps) => {

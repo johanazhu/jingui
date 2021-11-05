@@ -1,5 +1,7 @@
 import * as React from 'react';
-import JqbIcon, { JqbIconProps } from '../JqbIcon';
+import JqbIcon from '../JqbIcon';
+import { JqbIconProps } from '../PropType';
+
 import paper2 from '../svg/paper2.svg';
 
 const Paper2 = (props: JqbIconProps) => {

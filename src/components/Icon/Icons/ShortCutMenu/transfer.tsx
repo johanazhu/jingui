@@ -1,5 +1,6 @@
 import * as React from 'react';
-import JqbIcon, { JqbIconProps } from '../../JqbIcon';
+import JqbIcon from '../../JqbIcon';
+import { JqbIconProps } from '../../PropType';
 import transferMenu from '../../svg/short_cut_menu/transfer.svg';
 
 const TransferMenu = (props: JqbIconProps) => {

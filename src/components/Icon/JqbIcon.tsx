@@ -1,8 +1,7 @@
 import React, { MouseEventHandler, CSSProperties, FC } from 'react';
 import classnames from 'classnames';
 import IconBase from './IconBase';
-import  { JqbIconProps } from './PropType'
-
+import { JqbIconProps } from './PropType';
 
 const JqbIcon: FC<JqbIconProps> = (props) => {
     const { className, color, size, icon, style, keepOriginColor, onClick } =
@@ -17,9 +16,9 @@ const JqbIcon: FC<JqbIconProps> = (props) => {
         className,
     );
 
-    const onHandleClick = (e: any) => {
+    const onHandleClick: MouseEventHandler<HTMLDivElement> = (e) => {
         onClick && onClick(e);
-    }
+    };
 
     return (
         <span

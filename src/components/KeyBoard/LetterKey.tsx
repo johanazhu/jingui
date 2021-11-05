@@ -177,14 +177,14 @@ const LetterKey = forwardRef((props: KeyProps, ref: any) => {
                     <IconKeyboardDelete
                         style={{ display: isDeleteActive ? 'block' : 'none' }}
                         color="black"
-                        onClick={(e) => {
+                        onClick={(e: any) => {
                             e.stopPropagation();
                         }}
                     />
                     <IconKeyboardDeleteLine
                         style={{ display: isDeleteActive ? 'none' : 'block' }}
                         color="black"
-                        onClick={(e) => {
+                        onClick={(e: any) => {
                             e.stopPropagation();
                         }}
                     />
@@ -197,7 +197,7 @@ const LetterKey = forwardRef((props: KeyProps, ref: any) => {
                 <IconKeyboardShift
                     size="lg"
                     color="black"
-                    onClick={(e) => {
+                    onClick={(e: any) => {
                         e.stopPropagation();
                     }}
                 />
@@ -205,7 +205,7 @@ const LetterKey = forwardRef((props: KeyProps, ref: any) => {
                 <IconKeyboardShiftLine
                     size="lg"
                     color="black"
-                    onClick={(e) => {
+                    onClick={(e: any) => {
                         e.stopPropagation();
                     }}
                 />

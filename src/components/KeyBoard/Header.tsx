@@ -31,7 +31,7 @@ const Header = forwardRef((props: HeaderProps, ref: any) => {
             <div className="jing-keyBoardHeader__center">
                 <IconKeyboardSecurity
                     // size="md"
-                    onClick={(e) => {
+                    onClick={(e: any) => {
                         e.stopPropagation();
                     }}
                 />
