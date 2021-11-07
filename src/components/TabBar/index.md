@@ -12,6 +12,8 @@ group:
 
 ### 代码演示
 
+<code src="./demo/index.tsx"></code>
+
 ### API
 
 | 参数        | 说明            | 类型      | 默认值 |

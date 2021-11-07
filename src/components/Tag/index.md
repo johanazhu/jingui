@@ -14,11 +14,6 @@ group:
 
 <code src="./demo/index.tsx"></code>
 
-default 红底橙字
-primary 蓝底白字
-normal 白底灰字
-disabled 灰底白字
-
 ### API
 
 | 属性      | 说明             | 类型                                              | 默认值  |

@@ -1,12 +1,12 @@
 .jqb-loading {
     font-size: 24px;
-    .jqb-loading__spinners {
+    &--spinners {
         position: relative;
         display: block;
         width: 1em;
         height: 1em;
     }
-    .jqb-loading__spinner {
+    &--spinner {
         position: absolute;
         left: 44.5%;
         top: 37%;

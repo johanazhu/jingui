@@ -1,5 +1,5 @@
 .jing-panel {
-    &--header {
+    &__header {
         display: flex;
         align-items: center;
         color: $black-2;
@@ -15,7 +15,7 @@
             color: var(--default-color);
         }
     }
-    &--body {
+    &__body {
         position: relative;
         background: $bg-white;
         font-size: $panel-font-size-md;
