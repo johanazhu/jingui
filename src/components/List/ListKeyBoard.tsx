@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Input, Divider } from 'components';
+import Input from '../Input';
 
 // 不同的类型
 export interface ListKeyBoardProps {

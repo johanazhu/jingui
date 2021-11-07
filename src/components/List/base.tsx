@@ -7,7 +7,6 @@ import React, {
     FC
 } from 'react';
 import * as PropTypes from 'prop-types';
-import classnames from 'classnames';
 import { ListProps } from './PropType';
 
 
@@ -40,9 +39,5 @@ List.defaultProps = {
 
 };
 
-List.propTypes = {
-    className: PropTypes.string,
-    hasArrow: PropTypes.bool
-};
 
 export default React.memo(List);

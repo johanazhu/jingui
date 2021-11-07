@@ -10,7 +10,7 @@ export interface ListButtonProps {
     buttonArray: Array<ButtonItemProps>;
 }
 
-interface ButtonItemProps {
+export interface ButtonItemProps {
     name: string;
     color: any;
     primary: boolean;

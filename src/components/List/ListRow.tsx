@@ -1,23 +1,7 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { tuple } from '../_util/type';
-import { IconArrow } from 'icons';
+import { IconArrow } from '../Icon';
 
-const descColorKind = tuple(
-    'red',
-    'blue',
-    'green',
-    'orange',
-    'yellow',
-    'black0',
-    'black1',
-    'black2',
-    'white0',
-    'white1',
-    'white2',
-    'whiteA50',
-);
 
 export interface ListRowProps {
     icon?: any;
@@ -83,7 +67,7 @@ const ListRow = (props: ListRowProps) => {
             {href ||
                 (onClick && (
                     <span className="ListRow__link">
-                        <IconArrow size="mini" />
+                        <IconArrow size="sm" />
                     </span>
                 ))}
         </>
@@ -101,16 +85,5 @@ const ListRow = (props: ListRowProps) => {
     return tempJSX;
 };
 
-ListRow.propTypes = {
-    icon: PropTypes.any,
-    title: PropTypes.string,
-    descColor: PropTypes.oneOf(descColorKind),
-    desc: PropTypes.any,
-    href: PropTypes.string,
-    autoBreak: PropTypes.bool,
-    onClick: PropTypes.func,
-    onDescClick: PropTypes.func,
-    classNameTitle: PropTypes.string,
-};
 
 export default React.memo(ListRow);
