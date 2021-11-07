@@ -1,15 +1,9 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
+import React, { FC } from 'react';
 import classnames from 'classnames';
+import { LoadingProps } from './PropType';
 
-export interface LoadingProps {
-    className?: string;
-    type?: string;
-    color?: string;
-    size?: number | string;
-}
-
-const Loading = (props: LoadingProps) => {
+// 未完成
+const Loading: FC<LoadingProps> = (props) => {
     const { size, className } = props;
     const prefixCls = 'jing-loading';
 

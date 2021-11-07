@@ -19,6 +19,6 @@ group:
 
 | 属性      | 说明            | 类型                | 默认值 |
 | --------- | --------------- | ------------------- | ------ |
-| scale     | 分行行距，1-6   | number              | 1      |
 | className | 自定义 class 名 | string              | -      |
 | style     | 自定义样式      | React.CSSProperties | -      |
+| scale     | 分行行距，1-6   | number              | 1      |

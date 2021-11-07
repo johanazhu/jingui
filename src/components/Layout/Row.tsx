@@ -1,22 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-
-export type justifyType =
-    | 'start'
-    | 'center'
-    | 'end'
-    | 'space-around'
-    | 'space-between';
-export type alignType = 'top' | 'center' | 'bottom';
-
-export interface RowProps {
-    className?: string;
-    style?: React.CSSProperties;
-    children?: React.ReactNode;
-    justify?: justifyType;
-    align?: alignType;
-    onClick?: () => void;
-}
+import { RowProps } from './PropType';
 
 const Row: React.FC<RowProps> = (props) => {
     const { className, children, justify, align, style, onClick } = props;
