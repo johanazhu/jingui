@@ -9,9 +9,10 @@ import classnames from 'classnames';
 import Result from '../Result';
 import { isEmptyArray } from '../utils';
 
-import TabItem, { TabItemProps } from './TabItem';
+import TabItem from './TabItem';
 import TabContent from './TabContext';
 import { scrollLeftTo } from './utils';
+import { TabItemProps, TabProps } from './PropType';
 // import ProductCard from '../../pages/mall/components/ProductCard';
 
 function filterItem(swiper: any, data: any) {
@@ -21,23 +22,6 @@ function filterItem(swiper: any, data: any) {
             return i;
         }
     }
-}
-
-/**
- * Tab 和业务组件耦合，暂时没有好的解决方法
- * @param
- **/
-export interface TabProps {
-    className?: string;
-    style?: React.CSSProperties;
-    sticky?: boolean;
-    selected: TabItemProps | null; // active 选择的Tab 选中的那个Tab
-    data: TabItemProps | any;
-    onChange: (res: TabItemProps) => void;
-    onClick: (item: any) => void;
-    swipeThreshold?: number;
-    duration?: number; // 间隔
-    children?: React.ReactNode;
 }
 
 function useTabList(initialValue: TabItemProps) {

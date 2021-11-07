@@ -1,16 +1,6 @@
 import * as React from 'react';
-import TimelineItem, { TimeLineItemProps } from './TimelineItem';
-
-export interface TimelineProps {
-    className?: string;
-    percent?: string;
-    color?: string;
-    hundred?: boolean;
-}
-
-export interface TimelineType extends React.FC<TimelineProps> {
-    Item: React.FC<TimeLineItemProps>;
-}
+import TimelineItem from './TimelineItem';
+import { TimelineType } from './PropType';
 
 const Timeline: TimelineType = (props) => {
     const { children, percent, color, hundred } = props;

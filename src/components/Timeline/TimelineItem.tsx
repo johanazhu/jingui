@@ -1,19 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
+import { TimeLineItemProps } from './PropType'
 
-// percent 百分比
-// 虚线 实线
-export interface TimeLineItemProps {
-    header: React.ReactNode;
-    footer: React.ReactNode;
-    color?: string;
-    dashed?: boolean;
-    count?: number;
-    percent?: string;
-    showPercent?: boolean;
-    i?: any;
-    canShowColor?: boolean; // 不显示颜色标记
-}
 
 const TimelineItem: React.FC<TimeLineItemProps> = (props) => {
     const {

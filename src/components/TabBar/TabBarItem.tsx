@@ -1,12 +1,10 @@
 import * as React from 'react';
+import { TabBarItemProps } from './PropType';
 
-export interface TabBarItemProps {
-    children: React.ReactNode;
-}
 
 const TabBarItem: React.FC<TabBarItemProps> = (props) => {
     const { children } = props;
-    return <div className="TabBar-item">{children}</div>;
+    return <div className="jing-tabbar--item">{children}</div>;
 };
 
 export default React.memo(TabBarItem);

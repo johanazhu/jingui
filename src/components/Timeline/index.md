@@ -1,14 +1,12 @@
 ---
 toc: false
 nav:
-  path: /components
+    path: /components
 group:
-  title: 业务组件
-  path: /components/work
-  order: 6
+    title: 业务组件
+    path: /components/work
+    order: 6
 ---
-
-
 
 # Timeline 时间线
 
@@ -29,13 +27,13 @@ group:
 
 ### TimelineItem Props
 
-| 属性 | 说明 | 类型 | 默认值 |
-| --------- | --------------- | ---------------------------------------------------------------------------------- | ------ |
-| header | 组件头部信息 | React.ReactNode | - |
-| footer | 组件尾部信息 | React.ReactNode | - |
-| color | 颜色 | string | - |
-| dashed | 是否为虚线 | boolean | false |
-| count | Item 组件的数量 | number | - |
-| percent | 百分比 | string | - |
-| showPercent | 是否显示百分比 | boolean | - |
-| canShowColor | 是否显示颜色 | boolean | true |
+| 属性         | 说明            | 类型            | 默认值 |
+| ------------ | --------------- | --------------- | ------ |
+| header       | 组件头部信息    | React.ReactNode | -      |
+| footer       | 组件尾部信息    | React.ReactNode | -      |
+| color        | 颜色            | string          | -      |
+| dashed       | 是否为虚线      | boolean         | false  |
+| count        | Item 组件的数量 | number          | -      |
+| percent      | 百分比          | string          | -      |
+| showPercent  | 是否显示百分比  | boolean         | -      |
+| canShowColor | 是否显示颜色    | boolean         | true   |

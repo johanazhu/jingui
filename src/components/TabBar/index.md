@@ -12,4 +12,14 @@ group:
 
 ### 代码演示
 
-未完成
+### API
+
+| 参数        | 说明            | 类型      | 默认值 |
+| ----------- | --------------- | --------- | ------ |
+| className   | 自定义 class 名 | string    | -      |
+| value       | ...             | number    | -      |
+| indicator   | ...             | boolean   | -      |
+| sticky      | ...             | boolean   | -      |
+| activeIndex | ...             | number    | -      |
+| children    | ...             | ReactNode | -      |
+| onChange    | ...             | function  | -      |

@@ -27,5 +27,5 @@ disabled 灰底白字
 | type      | 类型             | 类型，可选值为 default、primary、normal、disabled | default |
 | size      | 颜色             | 大小, 可选值为 large medium                       | -       |
 | active    | 是否选中         | boolean                                           | -       |
-| children  | 内容             | ReactNode                                         | -       |
+| children  | 组件中的内容     | ReactNode                                         | -       |
 | onClick   | 点击后的回调事件 | MouseEventHandler                                 | -       |
