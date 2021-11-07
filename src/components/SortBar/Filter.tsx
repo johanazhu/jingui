@@ -10,7 +10,7 @@ const SortBarFilter:FC<SortBarFilterProps> = props => {
 
     return (
         <div
-            className={classnames('SortBar__Filter', {
+            className={classnames('jing-sortbar--filter', {
                 'am-color-blue': status,
             })}
             onClick={onClick}

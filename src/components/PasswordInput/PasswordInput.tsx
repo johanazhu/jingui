@@ -1,7 +1,8 @@
-import React, { useState, useEffect, TouchEvent } from 'react';
+import React, { FC, useState, useEffect, TouchEvent } from 'react';
 import classnames from 'classnames';
-import { Popup, KeyBoard } from 'components';
-import util from '../_util';
+import Popup from '../Popup';
+import KeyBoard from '../KeyBoard';
+// import util from '../_util';
 
 /**
  * PasswordInput 密码输入框
@@ -24,7 +25,7 @@ export interface PasswordInputProps {
     onChange?: (event: any) => void;
 }
 
-const PasswordInput: React.FC<PasswordInputProps> = (props) => {
+const PasswordInput: FC<PasswordInputProps> = (props) => {
     const { value, length, mask, focused, isFocus, mode, onHandleFocus, onChange } = props;
 
     const [safeInputValue, setSafeInputValue] = useState(value);
@@ -41,7 +42,7 @@ const PasswordInput: React.FC<PasswordInputProps> = (props) => {
             // console.log('isFocus', isFocus)
             if (isFocus === true) {
                 // @ts-ignore
-                document.getElementsByClassName('PasswordInput__input')[0].focus();
+                document.getElementsByClassName('jing-passwordinput--input')[0].focus();
             }
         }
     }, [mode, isFocus]);
@@ -55,12 +56,12 @@ const PasswordInput: React.FC<PasswordInputProps> = (props) => {
             Points.push(
                 <li
                     key={i}
-                    className={classnames('PasswordInput__security-item', {
-                        'PasswordInput__security-item-focus': showCursor,
+                    className={classnames('jing-passwordinput--security-item', {
+                        'jing-passwordinput--security-item-focus': showCursor,
                     })}
                 >
                     {mask ? <i style={{ visibility: char ? 'visible' : 'hidden' }}></i> : char}
-                    {showCursor && <div className="PasswordInput__security-cursor"></div>}
+                    {showCursor && <div className="jing-passwordinput--security-cursor"></div>}
                 </li>,
             );
         }
@@ -73,15 +74,15 @@ const PasswordInput: React.FC<PasswordInputProps> = (props) => {
     };
 
     return (
-        <div className="PasswordInput">
-            <ul className="PasswordInput__security" onTouchStart={onTouchStart}>
+        <div className="jing-passwordinput">
+            <ul className="jing-passwordinput--security" onTouchStart={onTouchStart}>
                 {renderPoints()}
             </ul>
             {mode === 'input' && (
                 <input
-                    type={util.system.ios ? "number" : "tel"}
+                    // type={util.system.ios ? "number" : "tel"}
                     pattern="[0-9]*"
-                    className="PasswordInput__input"
+                    className="jing-passwordinput--input"
                     value={safeInputValue}
                     maxLength={Number(length)}
                     onChange={(e) => {

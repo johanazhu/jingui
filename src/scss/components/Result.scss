@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    &__icon {
+    &--icon {
         height: 8rem;
         width: 8rem;
         margin: 0 auto;
@@ -13,24 +13,24 @@
             height: 100%;
         }
     }
-    &__title {
+    &--title {
         display: block;
         font-size: $result-font-size-md;
         font-weight: $font-weight-bold;
         color: $black-1;
         margin: $vertical-gap $vertical-gap 0;
     }
-    &__subTitle {
+    &--subTitle {
         line-height: 1.5em;
         margin: $vertical-gap $vertical-gap 0;
         font-size: $am-sm;
         color: $black-1;
         text-align: center;
     }
-    &__content {
+    &--content {
         margin-top: $result-margin-md;
     }
-    &__extra {
+    &--extra {
         margin-top: $result-margin-md;
     }
 }

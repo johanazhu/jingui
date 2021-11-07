@@ -16,8 +16,14 @@ group:
 
 ### API
 
-| 属性      | 说明            | 类型            | 默认值 |
-| --------- | --------------- | --------------- | ------ |
-| className | 自定义 Class 名 | string          | -      |
-| container | 一个 DOM 元素   | HTMLDivElement  | -      |
-| children  | 内容            | React.ReactNode | -      |
+| 属性          | 说明                   | 类型          | 默认值 |
+| ------------- | ---------------------- | ------------- | ------ |
+| className     | 自定义 Class 名        | string        | -      |
+| show          | 是否显示               | boolean       | -      |
+| mask          | 是否需要遮罩           | boolean       | -      |
+| children      | 组件中的内容           | ReactNode     | -      |
+| islock        | 是否锁屏               | boolean       | -      |
+| isActionSheet | ...                    | boolean       | -      |
+| groupStyle    | 自定义样式             | CSSProperties | -      |
+| model         | 自定义模式，可选 input | string        | -      |
+| onClose       | 点击关闭后的回调       | function      | -      |

@@ -22,9 +22,11 @@ group:
 
 ### API
 
-| 属性      | 说明            | 类型                                                                         | 默认值 |
-| --------- | --------------- | ---------------------------------------------------------------------------- | ------ |
-| className | 自定义 Class 名 | string                                                                       | -      |
-| icon      | 图标            | ReactNode                                                                    | -      |
-| color     | 颜色            | 'orange', 'highOrange','white', 'highWhite','red', 'blue', 'yellow', 'green' | -      |
-| onClick   | 点击事件        | -                                                                            | -      |
+| 属性      | 说明                                                                                  | 类型      | 默认值 |
+| --------- | ------------------------------------------------------------------------------------- | --------- | ------ |
+| className | 自定义 class 名                                                                       | string    | -      |
+| title     | 一级标题                                                                              | string    | -      |
+| subTitle  | 二级标题                                                                              | string    | -      |
+| status    | 状态，可选 success、fail、empty、cancel、network、right、waiting、countdown、404、500 | string    | -      |
+| extra     | 额外自定义区域                                                                        | ReactNode | -      |
+| children  | 组件中的内容                                                                          | ReactNode | -      |

@@ -1,29 +1,41 @@
-import { CSSProperties } from 'react';
 
-
+export type SortBarItemStatus = '0' | '1' | '2';
 /**
- * Mask 遮罩
- * @param {className} string                        // 自定义 class 名
- * @param {style} CSSProperties                     // 自定义样式
- * @param {scale} scaleSize                         // 分行行距，1-6
+ * SortBarItem
+ * @param {name} string                                 // 名字
+ * @param {status} SortBarItemStatus                    // 状态
+ * @param {onClick} function                            // 点击后的回调
  **/
 export interface SortBarItemProps {
     name: string;
-    status?: string;
+    status?: SortBarItemStatus;
     onClick: (isStatus: string) => void;
 }
 
-
+/**
+ * SortBarFilter
+ * @param {name} string                                 // 名字
+ * @param {status} boolean                              // 状态
+ * @param {onClick} function                            // 点击后的回调
+ **/
 export interface SortBarFilterProps {
     name: string;
     status: boolean;
     onClick: () => void;
 }
 
-// 是否开启滚动后悬浮到顶部
+/**
+ * SortBar
+ * @param {options} Array                               // ...
+ * @param {isSticky} boolean                            // ...
+ * @param {filterName} string                           // ...
+ * @param {status} boolean                              // ...
+ * @param {onItemHandleClick} function                  // ...
+ * @param {onFilterHandleClick} function                // ...
+ **/
 export interface SortBarProps {
     options: Array<any>;
-    isSticky: Boolean;
+    isSticky: boolean;
     filterName: string;
     status: boolean;
     onItemHandleClick: (item: any) => void;

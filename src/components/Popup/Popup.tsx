@@ -10,19 +10,8 @@ import * as PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Portal from '../Portal';
 import { SPEED } from '../utils';
+import { PopupProps } from './PropType';
 
-// 如果是动作面板的话，都不使用 Portal
-export interface PopupProps {
-    className?: string;
-    show: boolean;
-    mask?: boolean;
-    children: React.ReactNode;
-    onClose?: () => void;
-    islock?: boolean; // 默认锁屏
-    isActionSheet?: boolean;
-    groupStyle?: any;
-    model?: any; // 什么模式，有输入款模式，可以上下滑动
-}
 
 const Popup = forwardRef((props: PopupProps, ref: any) => {
     let timer: any = null;

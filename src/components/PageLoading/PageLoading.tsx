@@ -1,13 +1,10 @@
 import React, { useState, useEffect, FC } from 'react';
 import classNames from 'classnames';
 import { SPEED } from '../utils';
+import { PageLoadingProps } from './PropType';
 
-export interface LoadingProps {
-    type: string;
-    show: boolean | undefined;
-}
 
-const PageLoading: FC<LoadingProps> = (props) => {
+const PageLoading: FC<PageLoadingProps> = props => {
     const { type, show } = props;
 
     const [isShow, setIsShow] = useState('false');

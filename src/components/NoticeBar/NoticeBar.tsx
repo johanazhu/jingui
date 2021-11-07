@@ -1,20 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { FC, useState, useEffect, useRef } from 'react';
 import { IconClose, IconArrow, IconNotice } from '../Icon';
+import { NoticeBarProps } from './PropType';
 
-// 暂时用不到滚动和时间
-export interface NoticeBarProps {
-    duration?: number; // 动画时长
-    delay?: number; // 动画延迟时间 (s)
-    text: string; // 通知文本内容
-    center?: boolean; // 是否居中
-    hasLeft?: boolean; // 是否需要左边图标
-    mode?: string; // 通告栏模式，可选值为 normal、closeable、link
-    scrollable?: boolean; // 是否开启滚动播放，内容长度溢出时默认开启
-    onClick?: () => void; // mode === link 时 整个NoticeBar 可以点击
-    onClose?: () => void; // mode === closeable 点击关闭按钮关闭noticebar
-}
 
-const NoticeBar: React.FC<NoticeBarProps> = (props) => {
+const NoticeBar: FC<NoticeBarProps> = props => {
     const {
         text,
         delay,

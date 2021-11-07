@@ -23,7 +23,7 @@ const SortBar:FC<SortBarProps> = props => {
         onItemHandleClick(item);
     };
 
-    const classes = classnames('jing-sortbar', { SortBar__sticky: isSticky });
+    const classes = classnames('jing-sortbar', { 'jing-sortBar--sticky': isSticky });
 
     return (
         <div className={classes}>

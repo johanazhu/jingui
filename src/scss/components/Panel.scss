@@ -1,21 +1,21 @@
 .jing-panel {
-    &__header {
+    &--header {
         display: flex;
         align-items: center;
         color: $black-2;
-        &__title {
+        &-title {
             flex: 1;
             font-size: $panel-font-size-md;
             font-weight: 700;
             padding: $vertical-gap 0 $horizontal-gap;
         }
-        &__more {
+        &-more {
             padding: $vertical-gap 0 $horizontal-gap $horizontal-gap;
             font-size: $panel-font-size-xs;
             color: var(--default-color);
         }
     }
-    &__body {
+    &--body {
         position: relative;
         background: $bg-white;
         font-size: $panel-font-size-md;

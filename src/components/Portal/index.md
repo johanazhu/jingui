@@ -18,8 +18,8 @@ group:
 
 ### API
 
-| 属性      | 说明            | 类型            | 默认值 |
-| --------- | --------------- | --------------- | ------ |
-| className | 自定义 Class 名 | string          | -      |
-| container | 一个 DOM 元素   | HTMLDivElement  | -      |
-| children  | 内容            | React.ReactNode | -      |
+| 属性      | 说明                 | 类型           | 默认值 |
+| --------- | -------------------- | -------------- | ------ |
+| container | 自定义传送到的根节点 | HTMLDivElement | -      |
+| className | 自定义 Class 名      | string         | -      |
+| children  | 组件中的内容         | ReactNode      | -      |
