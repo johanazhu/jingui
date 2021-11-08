@@ -1,5 +1,5 @@
-import React, { FC, TouchEvent, MouseEvent, useState } from 'react';
-import classNames from 'classnames';
+import React, { FC } from 'react';
+import classnames from 'classnames';
 import { IconLoading } from '../Icon';
 import { ButtonProps } from './PropType';
 import { WHITE } from '@/utils';
@@ -37,7 +37,7 @@ const Button: FC<ButtonProps> = (props) => {
         }
     }
 
-    const classes = classNames(prefixCls, className, {
+    const classes = classnames(prefixCls, className, {
         [`${prefixCls}--${type}`]: !!type,
         [`${prefixCls}--${size}`]: !!size,
         [`${prefixCls}--plain`]: !!plain,

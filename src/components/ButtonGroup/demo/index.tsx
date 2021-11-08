@@ -3,27 +3,56 @@ import { ButtonGroup, Button, Panel } from 'jing-ui';
 
 export default () => (
     <div className="jing-page jing-page-buttongroup">
-        <Panel title="自定义布局">
+        <Panel title="按钮组类型">
             <ButtonGroup>
-                <Button>ONE</Button>
+                <Button type="primary">我是按钮</Button>
             </ButtonGroup>
-            <ButtonGroup>
-                <Button>ONE</Button>
-                <Button>TWO</Button>
-            </ButtonGroup>
-        </Panel>
-        <Panel title="形态">
-            <ButtonGroup variant="outlined">
-                <Button variant="contained">1</Button>
-                <Button>2</Button>
-                <Button>3</Button>
+            <ButtonGroup type="fixed-bottom">
+                <Button type="primary" disabled>
+                    我是按钮
+                </Button>
+                <Button type="primary">按钮2</Button>
             </ButtonGroup>
         </Panel>
-        <Panel title="颜色">
-            <ButtonGroup>
-                <Button>blue</Button>
-                <Button color="orange">orange</Button>
-                <Button color="green">green</Button>
+        <Panel title="按钮组尺寸">
+            <ButtonGroup size="large">
+                <Button type="primary" plain>
+                    按钮1
+                </Button>
+                <Button type="primary">按钮2</Button>
+            </ButtonGroup>
+            <ButtonGroup size="normal">
+                <Button type="primary" plain>
+                    按钮1
+                </Button>
+                <Button type="primary" plain>
+                    按钮2
+                </Button>
+                <Button type="primary">按钮3</Button>
+            </ButtonGroup>
+            <ButtonGroup size="small">
+                <Button type="primary" plain>
+                    按钮1
+                </Button>
+                <Button type="primary" plain>
+                    按钮2
+                </Button>
+                <Button type="primary">按钮3</Button>
+                <Button type="primary">按钮4</Button>
+            </ButtonGroup>
+            <ButtonGroup size="small">
+                <Button type="primary" plain round>
+                    按钮1
+                </Button>
+                <Button type="primary" plain round>
+                    按钮2
+                </Button>
+                <Button type="primary" round>
+                    按钮3
+                </Button>
+                <Button type="primary" round>
+                    按钮4
+                </Button>
             </ButtonGroup>
         </Panel>
     </div>

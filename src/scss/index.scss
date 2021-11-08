@@ -22,3 +22,9 @@ a {
     text-decoration: none;
     outline: none;
 }
+
+// 后面移走
+.iphonex-extra-height {
+    height: constant(safe-area-inset-bottom);
+    height: env(safe-area-inset-bottom);
+}

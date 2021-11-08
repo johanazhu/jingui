@@ -1,28 +1,44 @@
-import React, { FC, memo } from 'react';
-import classNames from 'classnames';
+import React, { FC, memo, cloneElement, Children } from 'react';
+import classnames from 'classnames';
 import { ButtonGroupProps } from './PropType';
 
-
 const ButtonGroup: FC<ButtonGroupProps> = (props) => {
-    const { className, variant, color, block, children } = props;
+    const { className, type, size, children } = props;
 
-    const classes = classNames('jing-buttonGroup', className);
+    const prefixCls = 'jing-button-group';
 
-    const items = React.Children.map(children, (item: any) => {
-        return React.cloneElement(item, {
-            variant,
-            color,
-            block,
+    const count = Children.count(children);
+
+    // console.log('count', count)
+    console.log('size', size);
+
+    const classes = classnames(prefixCls, className, {
+        [`${prefixCls}--${type}`]: !!type,
+        [`${prefixCls}--${count}`]: Array.isArray(children),
+    });
+
+    const items = Children.map(children, (item: any) => {
+        return cloneElement(item, {
+            size,
             ...item.props,
         });
     });
+
+    if (type === 'fixed-bottom') {
+        return (
+            <div className={classes}>
+                <div className={`${prefixCls}__content`}>{items}</div>
+                <div className="iphonex-extra-height" />
+            </div>
+        );
+    }
 
     return <div className={classes}>{items}</div>;
 };
 
 ButtonGroup.defaultProps = {
-    variant: 'contained',
-    block: true,
+    size: 'normal',
+    type: 'default',
 };
 
 export default memo(ButtonGroup);
