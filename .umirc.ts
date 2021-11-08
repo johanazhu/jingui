@@ -10,18 +10,28 @@ export default defineConfig({
         null,
         { title: 'GitHub', path: 'https://github.com/johanazhu/jingui' },
     ],
-    mfsu: {},
+    // mfsu: {},
     theme: {
         '@c-primary': '#3264c8',
         '@hd': '0.02rem',
     },
     themeConfig: {
+        carrier: 'jingui',
         hd: {
+             rules: [{ mode: 'vw', options: [100, 750] }]
+            // rules: [],
+            // // 禁用高清方案
+            // rules: [],
             // 根据不同的设备屏幕宽度断点切换高清方案
-            rules: [
-                { maxWidth: 375, mode: 'flex', options: [32] },
-                { minWidth: 376, maxWidth: 750, mode: 'flex', options: [32] },
-            ],
+            // rules: [
+            //   { maxWidth: 375, mode: 'vw', options: [100, 750] },
+            //   { minWidth: 376, maxWidth: 750, mode: 'vw', options: [100, 1500] },
+            // ],
+            // 根据不同的设备屏幕宽度断点切换高清方案
+            // rules: [
+            //     { maxWidth: 375, mode: 'flex', options: [32] },
+            //     { minWidth: 376, maxWidth: 750, mode: 'flex', options: [32] },
+            // ],
             // 更多 rule 配置访问 https://github.com/umijs/dumi/blob/master/packages/theme-mobile/src/typings/config.d.ts#L7
         },
     },
@@ -148,18 +158,22 @@ export default defineConfig({
           word-break: break-all;
           margin-bottom: 6px;
         }
-        .__dumi-default-device __dumi-default-mobile-content-device {
+        .__dumi-default-device {
+            width: 360px !important;
+            min-width: 360px !important;
+        }
+        .__dumi-default-mobile-content-device {
             position: absolute;
             top: 90px; 
             right: 30px;
             z-index: 1;
             box-sizing: border-box;
-            width: 360px;
-            min-width: 360px;
+            width: 360px !important;
+            min-width: 360px !important;
             overflow: hidden;
             background: #fafafa;
-            border-radius: 12 px;
-            box-shadow: #ebedf0 0 4px 12px;
+            border-radius: 12px !important;
+            box-shadow: 0 !important;
         }
         `,
     ],

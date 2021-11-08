@@ -7,7 +7,7 @@ export type ButtonSize = 'large' | 'normal' | 'small' | 'mini';
 /**
  * Button 按钮
  * @param {className} string                            // 自定义 class 名
- * @param {type} string                                 // 类型，可选值为 primary secondPrimary default
+ * @param {type} string                                 // 类型，可选值为 primary、second-primary、default
  * @param {plain} boolean                               // 是否为朴素按钮
  * @param {round} boolean                               // 是否为圆形按钮
  * @param {size} string                                 // 设置大小，可选值为 md、sm
