@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import classnames from 'classnames';
 import Result from '../Result';
-import { isEmptyArray } from '../utils';
+import { isEmptyArray } from '@/utils';
 
 import TabItem from './TabItem';
 import TabContent from './TabContext';

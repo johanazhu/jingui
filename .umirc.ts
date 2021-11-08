@@ -10,9 +10,10 @@ export default defineConfig({
         null,
         { title: 'GitHub', path: 'https://github.com/johanazhu/jingui' },
     ],
-    // mfsu: {},
+    mfsu: {},
     theme: {
         '@c-primary': '#3264c8',
+        '@hd': '0.02rem',
     },
     themeConfig: {
         hd: {
@@ -28,6 +29,9 @@ export default defineConfig({
         android: 4,
         ios: 8,
     },
+    // alias: {
+    //     'demos': process.cwd() + '/src/demos/index.ts',
+    // },
     chainWebpack(memo: any, args: any) {
         memo.module.rules.delete('svg');
         memo.module
@@ -112,7 +116,7 @@ export default defineConfig({
         }
         .__dumi-default-mobile-demo-layout .jing-page-button .jing-button {
             margin-bottom: 15px;
-            margin-right: 15px;
+            margin-right: 10px;
         }
         .__dumi-default-mobile-demo-layout .jing-page-noticebar p {
             font-size: 0.75rem;
@@ -143,6 +147,19 @@ export default defineConfig({
           font-size: 13px;
           word-break: break-all;
           margin-bottom: 6px;
+        }
+        .__dumi-default-device __dumi-default-mobile-content-device {
+            position: absolute;
+            top: 90px; 
+            right: 30px;
+            z-index: 1;
+            box-sizing: border-box;
+            width: 360px;
+            min-width: 360px;
+            overflow: hidden;
+            background: #fafafa;
+            border-radius: 12 px;
+            box-shadow: #ebedf0 0 4px 12px;
         }
         `,
     ],

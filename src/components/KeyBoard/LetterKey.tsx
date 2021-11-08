@@ -18,7 +18,7 @@ import {
     lowerLetterDictionary,
     upperLetterDictionary,
     KEYBOARDMOVEOFFSET,
-} from '../utils';
+} from '@/utils';
 
 export interface KeyProps {
     className?: string;

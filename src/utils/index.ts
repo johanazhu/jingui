@@ -4,3 +4,4 @@ export * from './type';
 export * from './util';
 export * from './dictionary';
 export * from './raf';
+export * from './constant';

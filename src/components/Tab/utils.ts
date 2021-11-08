@@ -1,4 +1,4 @@
-import { raf, cancelRaf } from '../utils';
+import { raf, cancelRaf } from '@/utils';
 
 let rafId: number;
 

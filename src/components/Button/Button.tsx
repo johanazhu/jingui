@@ -2,84 +2,50 @@ import React, { FC, TouchEvent, MouseEvent, useState } from 'react';
 import classNames from 'classnames';
 import { IconLoading } from '../Icon';
 import { ButtonProps } from './PropType';
-import { MOVEOFFSET } from '../utils';
-
-let touchX = 0;
-let touchXPos = 0;
-let touchY = 0;
-let touchYPos = 0;
-
+import { WHITE } from '@/utils';
 
 const Button: FC<ButtonProps> = (props) => {
-    const [isActive, setIsActive] = useState(false);
-
     const {
         className,
-        variant,
-        color,
+        type,
+        plain,
+        round,
         size,
         disabled,
         loading,
         block,
+        color,
         children,
-        style,
         onClick,
     } = props;
 
     const prefixCls = 'jing-button';
 
+    const _style: Record<string, string | number> = {};
+
+    if (color) {
+        _style.color = plain ? color : WHITE;
+
+        if (!plain) {
+            _style.background = color;
+        }
+
+        if (color.indexOf('gradient') !== -1) {
+            _style.border = 0;
+        } else {
+            _style.borderColor = color;
+        }
+    }
+
     const classes = classNames(prefixCls, className, {
-        [`${prefixCls}--${variant}`]: !!variant,
-        [`${prefixCls}--${color}`]: !!color,
+        [`${prefixCls}--${type}`]: !!type,
         [`${prefixCls}--${size}`]: !!size,
+        [`${prefixCls}--plain`]: !!plain,
+        [`${prefixCls}--round`]: !!round,
         [`${prefixCls}--disabled`]: !!disabled,
         [`${prefixCls}--loading`]: !!loading,
         [`${prefixCls}--block`]: !!block,
-        [`${prefixCls}--active`]: isActive,
     });
-
-    function handleTouchStart(e: TouchEvent) {
-        touchX = e.changedTouches[0].pageX;
-        touchY = e.changedTouches[0].pageY;
-        setIsActive(true);
-    }
-
-    function handleMouseDown(e: MouseEvent) {
-        touchX = e.pageX;
-        touchY = e.pageY;
-        setIsActive(true);
-    }
-
-    function handleTouchMove(e: TouchEvent) {
-        touchXPos = e.changedTouches[0].pageX;
-        touchYPos = e.changedTouches[0].pageY;
-        if (
-            Math.abs(touchXPos - touchX) > MOVEOFFSET ||
-            Math.abs(touchYPos - touchY) > MOVEOFFSET
-        ) {
-            setIsActive(false);
-        }
-    }
-
-    function handleMouseMove(e: MouseEvent) {
-        touchXPos = e.pageX;
-        touchYPos = e.pageY;
-        if (
-            Math.abs(touchXPos - touchX) > MOVEOFFSET ||
-            Math.abs(touchYPos - touchY) > MOVEOFFSET
-        ) {
-            setIsActive(false);
-        }
-    }
-
-    function handleTouchEnd() {
-        setIsActive(false);
-    }
-
-    function handleMouseUp() {
-        setIsActive(false);
-    }
-
 
     const contentRender = loading ? (
         <div className={`${prefixCls}__content`}>
@@ -94,14 +60,8 @@ const Button: FC<ButtonProps> = (props) => {
         <button
             className={classes}
             disabled={disabled}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-            onMouseDown={handleMouseDown}
-            onMouseMove={handleMouseMove}
-            onMouseUp={handleMouseUp}
             onClick={onClick}
-            style={style}
+            style={_style}
         >
             {contentRender}
         </button>
@@ -109,9 +69,8 @@ const Button: FC<ButtonProps> = (props) => {
 };
 
 Button.defaultProps = {
-    variant: 'contained',
-    color: 'blue',
-    size: 'md',
+    type: 'default',
+    size: 'normal',
     block: false,
 };
 

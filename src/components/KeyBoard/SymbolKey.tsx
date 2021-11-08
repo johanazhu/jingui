@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, TouchEvent } from 'react';
 import classnames from 'classnames';
 import { IconKeyboardDelete, IconKeyboardDeleteLine } from '../Icon';
-import { upperSymbolDictionary, KEYBOARDMOVEOFFSET } from '../utils';
+import { upperSymbolDictionary, KEYBOARDMOVEOFFSET } from '@/utils';
 
 export interface KeyProps {
     className?: string;

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, TouchEvent } from 'react';
 import * as PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Key from './Key';
-import { sample } from '../utils';
+import { sample } from '@/utils';
 
 export interface BoardBaseProps {
     isRandom?: boolean;

@@ -8,7 +8,7 @@ import {
     lowerLetterDictionary,
     shuffle,
     letterKey,
-} from '../utils';
+} from '@/utils';
 
 // isRandom 默认不随机排序
 export interface LetterProps {

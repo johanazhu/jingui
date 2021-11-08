@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, TouchEvent } from 'react';
 import * as PropTypes from 'prop-types';
 import classnames from 'classnames';
 import SymbolKey from './SymbolKey';
-import { symbolKey } from '../utils';
+import { symbolKey } from '@/utils';
 
 export interface SymbolProps {
     className?: string;

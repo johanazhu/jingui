@@ -12,8 +12,7 @@ import { BetterScrollProps } from './PropType';
 import IconPullupImg from '@/assets/icon-pullup.png';
 import IconLoadingImg from '@/assets/icon-loading.png';
 
-import { debounce } from '../utils';
-
+import { debounce } from '@/utils';
 
 const TIME_BOUNCE = 800;
 const TIME_STOP = 600;
