@@ -10,15 +10,16 @@ export default defineConfig({
         null,
         { title: 'GitHub', path: 'https://github.com/johanazhu/jingui' },
     ],
-    // mfsu: {},
+    mfsu: {},
     theme: {
         '@c-primary': '#3264c8',
-        '@hd': '0.02rem',
+    },
+    alias: {
+        demo: process.cwd() + '/src/demo/index.ts',
     },
     themeConfig: {
         carrier: 'jingui',
         hd: {
-             rules: [{ mode: 'vw', options: [100, 750] }]
             // rules: [],
             // // 禁用高清方案
             // rules: [],
@@ -28,10 +29,10 @@ export default defineConfig({
             //   { minWidth: 376, maxWidth: 750, mode: 'vw', options: [100, 1500] },
             // ],
             // 根据不同的设备屏幕宽度断点切换高清方案
-            // rules: [
-            //     { maxWidth: 375, mode: 'flex', options: [32] },
-            //     { minWidth: 376, maxWidth: 750, mode: 'flex', options: [32] },
-            // ],
+            rules: [
+                { maxWidth: 375, mode: 'flex', options: [32] },
+                { minWidth: 376, maxWidth: 750, mode: 'flex', options: [32] },
+            ],
             // 更多 rule 配置访问 https://github.com/umijs/dumi/blob/master/packages/theme-mobile/src/typings/config.d.ts#L7
         },
     },
@@ -39,9 +40,6 @@ export default defineConfig({
         android: 4,
         ios: 8,
     },
-    // alias: {
-    //     'demos': process.cwd() + '/src/demos/index.ts',
-    // },
     chainWebpack(memo: any, args: any) {
         memo.module.rules.delete('svg');
         memo.module
@@ -81,18 +79,6 @@ export default defineConfig({
         .__dumi-default-mobile-demo-layout .jing-page-keyboard .jing-panel__body{
             overflow: visible;
          }
-        .__dumi-default-mobile-demo-layout .jing-page .grid-column:after{
-            content: "";
-            pointer-events: none;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            left: 0;
-            top: 0;
-            border-radius: 0;
-            border-bottom: 1px solid #dcdcdc;
-            border-right: 1px solid #dcdcdc;
-        }
         .__dumi-default-mobile-demo-layout .jing-panel__header {
             padding-left: 15px;
         }
@@ -111,9 +97,6 @@ export default defineConfig({
             border-top: 1PX solid #dcdcdc;
             border-bottom: 1PX solid #dcdcdc;
         }
-        .__dumi-default-mobile-demo-layout .jing-page-button .jing-panel__body {
-            padding: 15px 0 0;
-        }
         .__dumi-default-mobile-demo-layout .jing-page-buttongroup .jing-panel__body {
             padding: 15px 0 0;
         }
@@ -124,10 +107,7 @@ export default defineConfig({
             overflow: hidden;
             padding: 15px;
         }
-        .__dumi-default-mobile-demo-layout .jing-page-button .jing-button {
-            margin-bottom: 15px;
-            margin-right: 10px;
-        }
+
         .__dumi-default-mobile-demo-layout .jing-page-noticebar p {
             font-size: 0.75rem;
             padding: 0.5rem 0.75rem;
@@ -159,21 +139,74 @@ export default defineConfig({
           margin-bottom: 6px;
         }
         .__dumi-default-device {
-            width: 360px !important;
-            min-width: 360px !important;
-        }
-        .__dumi-default-mobile-content-device {
-            position: absolute;
-            top: 90px; 
-            right: 30px;
-            z-index: 1;
-            box-sizing: border-box;
-            width: 360px !important;
-            min-width: 360px !important;
-            overflow: hidden;
-            background: #fafafa;
-            border-radius: 12px !important;
+            width: 340px !important;
+            min-width: 340px !important;
             box-shadow: 0 !important;
+            margin-left: 40px !important;
+            // box-shadow: none !important;
+            box-shadow: #ebedf0 0 4px 12px !important;
+        }
+        .__dumi-default-device body::-webkit-scrollbar {
+            width: 0;
+            background: transparent;
+        }
+        iframe::-webkit-scrollbar {  
+            width: 0;
+            background: transparent;
+        }  
+        iframe document::-webkit-scrollbar {  
+            width: 0;
+            background: transparent;
+        } 
+        iframe > html::-webkit-scrollbar {  
+            width: 0;
+            background: transparent;
+        } 
+        html[data-scale="true"]::-webkit-scrollbar {
+            width: 0;
+            background: transparent;
+        }
+        .__dumi-default-menu[data-mode=site] { 
+            width: 240px !important;
+            position: fixed;
+            z-index: 100;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 260px;
+            background-color: #f2f5fa;
+            box-sizing: border-box;
+            transition: left .3s;
+            overflow-y: auto;
+            border-right: 1px solid #ebedf1;
+        }
+        .__dumi-default-menu[data-mode='site'] .__dumi-default-menu-list > li > a {
+            padding-left: 30px !important;
+        }
+        .__dumi-default-menu[data-mode='site'] .__dumi-default-menu-list > li > a ~ ul {
+            margin-left: 30px !important;
+        }
+        .__dumi-default-layout[data-site-mode='true'][data-show-sidemenu='true'] {
+            padding-left: 290px !important;
+        }
+        .__dumi-default-layout[data-show-slugs='false'] {
+            padding-right: 30px !important;
+        }
+        .__dumi-default-menu-inner::-webkit-scrollbar {
+            width: 0;
+            background: transparent;
+        }
+        .__dumi-default-menu-inner::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+            background-color: transparent;
+          }
+        .__dumi-default-menu-inner::-webkit-scrollbar-thumb {
+            background-color: transparent;
+            border-radius: 6px;
+        }
+        .__dumi-default-menu-inner:hover::-webkit-scrollbar-thumb {
+            background-color: rgba(69, 90, 100, 0.2);
         }
         `,
     ],

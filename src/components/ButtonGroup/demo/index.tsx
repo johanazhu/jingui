@@ -1,12 +1,15 @@
 import React from 'react';
 import { ButtonGroup, Button, Panel } from 'jing-ui';
+// import { DemoBlock } from 'demos'
 
 export default () => (
     <div className="jing-page jing-page-buttongroup">
         <Panel title="按钮组类型">
-            <ButtonGroup>
-                <Button type="primary">我是按钮</Button>
-            </ButtonGroup>
+            {/* <DemoBlock title='选项状态'>
+                <ButtonGroup>
+                    <Button type="primary">我是按钮</Button>
+                </ButtonGroup>
+            </DemoBlock> */}
             <ButtonGroup type="fixed-bottom">
                 <Button type="primary" disabled>
                     我是按钮
