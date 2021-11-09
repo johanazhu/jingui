@@ -162,21 +162,26 @@
     --button-font-size-sm: 14px;
     --button-font-size-md: 16px;
     --button-font-size-lg: 18px;
-    --button-border-radius: var(--border-radius-sm);
+    --button-border-radius: var(--border-radius-md);
     --button-border-radius-md: var(--border-radius-md);
     --button-border-radius-round: var(--border-radius-max);
-    --button-plain-bg: var(--color-white-1);
-    --button-loading-bg: var(--color-white-1);
+    --button-plain-bg: var(--bg-white);
+    --button-loading-bg: var(--bg-white);
     --button-disabled-color: var(--color-white-1);
     --button-disabled-bg: var(--color-black-4);
     --button-disabled-opacity: var(--opacity-disabled);
-    --button-default-color: var(--text-color);
+    --button-default-color: var(--color-black);
     --button-default-border-color: var(--border-color);
-    --button-default-bg: var(--color-white-1);
-    --button-primary-color: var(--bg-white);
+    --button-default-bg: var(--bg-white);
+    --button-primary-color: var(--color-white-1);
     --button-primary-border-color: var(--theme-primary);
     --button-primary-bg: var(--gradient-primary);
-    --button-second-primary-color: var(--bg-white);
+    --button-second-primary-color: var(--color-white-1);
     --button-second-primary-border-color: var(--theme-second-primary);
     --button-second-primary-bg: var(--gradient-second-primary);
+
+    // ButtonGroup
+    --button-fixed-bottom-bg: var(--bg-white);
+    --button-group-padding-h: var(--padding-sm);
+    --button-group-padding-v: var(--padding-md);
 }

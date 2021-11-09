@@ -9,12 +9,9 @@ const ButtonGroup: FC<ButtonGroupProps> = (props) => {
 
     const count = Children.count(children);
 
-    // console.log('count', count)
-    console.log('size', size);
-
     const classes = classnames(prefixCls, className, {
         [`${prefixCls}--${type}`]: !!type,
-        [`${prefixCls}--${count}`]: Array.isArray(children),
+        [`${prefixCls}--${count}`]: !!count,
     });
 
     const items = Children.map(children, (item: any) => {

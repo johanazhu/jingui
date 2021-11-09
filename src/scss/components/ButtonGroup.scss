@@ -1,6 +1,13 @@
+@mixin jing-button-group-count($size) {
+    &.jing-button-group {
+        justify-content: space-between;
+    }
+    .jing-button {
+        width: calc((100% - 3% * ($size - 1)) / $size);
+    }
+}
+
 .jing-button-group {
-    //   padding-left: 1rem;
-    //   padding-right: 1rem;
     &--default {
         display: flex;
         justify-content: space-around;
@@ -13,23 +20,34 @@
         bottom: 0;
         left: 0;
         width: 100%;
-        background: #fff;
-        padding: 0.75rem 1rem;
+        background: var(--button-fixed-bottom-bg);
+        padding: var(--button-group-padding-h) var(--button-group-padding-v);
     }
 
     &--1 {
-        flex: 1;
+        @include jing-button-group-count(1);
     }
 
     &--2 {
-        flex: 1;
+        @include jing-button-group-count(2);
     }
 
     &--3 {
-        flex: 1;
+        @include jing-button-group-count(3);
+    }
+
+    &--4 {
+        @include jing-button-group-count(4);
+    }
+
+    &--5 {
+        @include jing-button-group-count(5);
     }
 
     &__content {
         width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 }

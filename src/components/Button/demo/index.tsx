@@ -65,8 +65,8 @@ export default () => (
             </Button>
         </DemoBlock>
         <DemoBlock title="点击事件">
-            <Button type="primary" block onClick={() => alert('Hello')}>
-                click
+            <Button type="primary" block onClick={() => alert('我错了')}>
+                有本事就来点我啊
             </Button>
         </DemoBlock>
     </>
