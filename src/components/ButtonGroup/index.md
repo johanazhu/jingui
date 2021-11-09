@@ -19,10 +19,9 @@ group:
 
 ### API
 
-| 参数      | 说明                                         | 类型      | 默认值      |
-| --------- | -------------------------------------------- | --------- | ----------- |
-| className | 自定义 class 名                              | string    | -           |
-| variant   | 设置按钮形态，可选值 contained、 outlined    | string    | 'contained' |
-| color     | 设置颜色，可选值为 'blue'、'orange'、'green' | string    | 'blue'      |
-| block     | 是否填充满                                   | boolean   | true        |
-| children  | 组件中的内容                                 | ReactNode | -           |
+| 参数      | 说明                                          | 类型      | 默认值    |
+| --------- | --------------------------------------------- | --------- | --------- |
+| className | 自定义 class 名                               | string    | -         |
+| type      | 类型，可选值为 default、fixed-bottom          | string    | 'default' |
+| size      | 设置大小，可选值为 large、normal、small、mini | string    | 'normal'  |
+| children  | 组件中的内容                                  | ReactNode | -         |

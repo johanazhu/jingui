@@ -4,7 +4,7 @@ import { IconLoading } from '../Icon';
 import { ButtonProps } from './PropType';
 import { WHITE } from '@/utils';
 
-const Button: FC<ButtonProps> = (props) => {
+const Button: FC<ButtonProps> = props => {
     const {
         className,
         type,

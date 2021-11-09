@@ -43,6 +43,11 @@ const Cell: CellType = (props) => {
     );
 };
 
+Cell.defaultProps = {
+    center: false,
+    isLink: false,
+};
+
 Cell.Group = CellGroup;
 
 export default Cell;

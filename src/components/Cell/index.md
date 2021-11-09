@@ -22,11 +22,25 @@ Cell 可以单独使用，也可以与 CellGroup 搭配使用，CellGroup 可以
 
 <!-- <code src="./demo/index2.tsx"></code> -->
 
-### API
+### Cell API
 
-| 属性      | 说明            | 类型      | 默认值 |
-| --------- | --------------- | --------- | ------ |
-| className | 自定义 Class 名 | string    | -      |
-| title     | 标题            | ReactNode | -      |
-| more      | 更多渲染        | ReactNode | -      |
-| children  | 组件中的内容    | ReactNode | -      |
+| 属性      | 说明               | 类型               | 默认值 |
+| --------- | ------------------ | ------------------ | ------ |
+| className | 自定义 Class 名    | string             | -      |
+| title     | 左侧标题           | `number 、 string` | -      |
+| value     | 右侧内容           | `number 、 string` | -      |
+| label     | 标题下方的描述信息 | string             | -      |
+| desc      | 内容下方的描述信息 | string             | -      |
+| icon      | 左侧图标名称       | ReactNode          | -      |
+| center    | 是否使内容垂直居中 | boolean            | false  |
+| isLink    | 是否显示箭头       | boolean            | false  |
+| onClick   | 点击单元格后的回调 | function           | -      |
+
+### CellGroup API
+
+| 属性      | 说明             | 类型    | 默认值 |
+| --------- | ---------------- | ------- | ------ |
+| className | 自定义 Class 名  | string  | -      |
+| inset     | 是否使用卡片模式 | boolean | false  |
+| title     | 分组标题         | string  | -      |
+| shadow    | 是否显示外阴影   | boolean | true   |
