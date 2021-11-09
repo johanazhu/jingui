@@ -4,7 +4,7 @@ import CellGroup from './Group';
 import { IconArrow } from '../Icon';
 import { CellType } from './PropType';
 
-const Cell: CellType = (props) => {
+const Cell: CellType = props => {
     const {
         className,
         label,
