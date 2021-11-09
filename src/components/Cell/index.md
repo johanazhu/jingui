@@ -18,6 +18,10 @@ Cell 可以单独使用，也可以与 CellGroup 搭配使用，CellGroup 可以
 
 <code src="./demo/index.tsx"></code>
 
+<!-- CellGroup 的使用方法 -->
+
+<!-- <code src="./demo/index2.tsx"></code> -->
+
 ### API
 
 | 属性      | 说明            | 类型      | 默认值 |

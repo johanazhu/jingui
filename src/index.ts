@@ -5,6 +5,7 @@ export { default as Button } from './components/Button';
 export { default as ButtonGroup } from './components/ButtonGroup';
 export { default as Space } from './components/Space';
 export { default as Tag } from './components/Tag';
+export { default as Cell } from './components/Cell';
 // 排版
 export { Row, Col } from './components/Layout';
 // 面板
