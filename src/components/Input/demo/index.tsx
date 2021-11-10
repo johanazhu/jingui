@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Input, Panel } from 'jing-ui';
+import { Input, Panel, Cell } from 'jing-ui';
+import { DemoBlock } from 'demo';
 
 export default () => {
     const [title, setTitle] = useState('');
@@ -7,8 +8,8 @@ export default () => {
     const [value, setValue] = useState('');
 
     return (
-        <div className="jing-page jing-page-input">
-            <Panel title="基本用法">
+        <>
+            <DemoBlock title="基础用法" padding="">
                 <Input
                     placeholder="请输入"
                     value={title}
@@ -18,8 +19,8 @@ export default () => {
                     }}
                     onBlur={(value: any) => console.log(`onBlur: ${value}`)}
                 />
-            </Panel>
-            <Panel title="多行文本">
+            </DemoBlock>
+            <DemoBlock title="多行文本" padding="">
                 <Input.Textarea
                     rows={3}
                     placeholder="请输入"
@@ -30,14 +31,14 @@ export default () => {
                     }}
                     onBlur={(value: any) => console.log(`onBlur: ${value}`)}
                 />
-            </Panel>
-            <Panel title="带密码的输入框">
+            </DemoBlock>
+            <DemoBlock title="带密码的输入框" padding="">
                 <Input.Password value={value} placeholder="带密码的输入框" />
-            </Panel>
-            <Panel title="带清除的输入框">
+            </DemoBlock>
+            <DemoBlock title="带清除的输入框" padding="">
                 <Input.Clear value={value} placeholder="带清除的输入框" />
-            </Panel>
-            <Panel title="带发送验证码的输入框">
+            </DemoBlock>
+            <DemoBlock title="带发送验证码的输入框" padding="">
                 <Input.Verify
                     value={value}
                     placeholder="带发送验证码的输入框"
@@ -45,8 +46,8 @@ export default () => {
                         console.log('调接口');
                     }}
                 />
-            </Panel>
-            <Panel title="带验证码的输入框">
+            </DemoBlock>
+            <DemoBlock title="带验证码的输入框" padding="">
                 <Input.Captcha
                     value={value}
                     placeholder="带验证码的输入框"
@@ -57,8 +58,8 @@ export default () => {
                         console.log('更换验证码');
                     }}
                 />
-            </Panel>
-            <Panel title="KeyBoard输入框">
+            </DemoBlock>
+            <DemoBlock title="KeyBoard输入框" padding="">
                 <Input.Group>
                     <Input.KeyBoard
                         value={value}
@@ -73,7 +74,7 @@ export default () => {
                         maxLength={20}
                     />
                 </Input.Group>
-            </Panel>
-        </div>
+            </DemoBlock>
+        </>
     );
 };
