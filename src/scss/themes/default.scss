@@ -49,7 +49,7 @@
 
     // 元件
     --text-color: var(--color-black-1);
-    --active-color: var(--color-black-2);
+    --active-color: var(--color-black-5);
     --active-opacity: 0.7;
     --disabled-opacity: 0.5;
     --text-link-color: #576b95;
@@ -102,8 +102,8 @@
     --line-height-lg: 22px;
 
     // 间距
-    --vertical-gap: 16px;
-    --horizontal-gap: 10px;
+    --vertical-gap: 10px;
+    --horizontal-gap: 16px;
 
     // Border
     --border-color: var(--color-black-5);
@@ -186,25 +186,34 @@
     --button-group-padding-v: var(--padding-md);
 
     // Cell
-    //   @cell-font-size: @font-size-md;
-    //   @cell-line-height: 24px;
-    //   @cell-vertical-padding: 10px;
-    //   @cell-horizontal-padding: @padding-md;
-    //   @cell-text-color: @text-color;
-    //   @cell-background-color: @white;
-    //   @cell-border-color: @border-color;
-    //   @cell-active-color: @active-color;
-    //   @cell-required-color: @red;
-    //   @cell-label-color: @gray-6;
-    //   @cell-label-font-size: @font-size-sm;
-    //   @cell-label-line-height: @line-height-sm;
-    //   @cell-label-margin-top: @padding-base;
-    //   @cell-value-color: @gray-6;
-    //   @cell-icon-size: 16px;
-    //   @cell-right-icon-color: @gray-6;
-    //   @cell-large-vertical-padding: @padding-sm;
-    //   @cell-large-title-font-size: @font-size-lg;
-    //   @cell-large-label-font-size: @font-size-md;
+    --cell-font-size: var(--font-size-md);
+    --cell-height: 24px;
+    --cell-line-height: 24px;
+    --cell-vertical-padding: var(--vertical-gap);
+    --cell-horizontal-padding: var(--horizontal-gap);
+    --cell-text-color: var(--text-color);
+    --cell-bg: var(--bg-white);
+    --cell-border-color: var(--border-color);
+    --cell-active-color: var(--active-color);
+    --cell-required-color: var(--theme-danger);
+    --cell-value-font-size: var(--font-size-md);
+    // --cell-value-font-size: var(--font-size-sm);
+    --cell-label-color: var(--color-black-3);
+    // --cell-label-font-size: var(--font-size-xs);
+    --cell-label-font-size: var(--font-size-sm);
+    --cell-label-line-height: var(--line-height-sm);
+    --cell-label-margin-top: var(--padding-base);
+    // --cell-desc-color-size:  var(--font-size-xs);
+    --cell-desc-color-size: var(--font-size-sm);
+    --cell-value-color: var(--color-black-3);
+    --cell-icon-color: var(--color-black-3);
+    --cell-icon-margin-left: var(--padding-base);
+    --cell-link-color: var(--color-black-3);
+    --cell-link-margin-left: var(--padding-base);
+
+    --cell-group-bg: var(--bg-white);
+    --cell-group-inset-margin: var(--horizontal-gap);
+    --cell-group-border-radius: var(--border-radius-lg);
 
     //   // CellGroup
     //   @cell-group-background-color: @white;

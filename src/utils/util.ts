@@ -1,3 +1,15 @@
+export function isDef(val: unknown): boolean {
+    return val !== undefined && val !== null;
+}
+
+export function isFunction(val: unknown): val is Function {
+    return typeof val === 'function';
+}
+
+export function isObject(val: unknown): val is Record<any, any> {
+    return val !== null && typeof val === 'object';
+}
+
 /**
  * 生成随机数
  * @param {min} number 最小值

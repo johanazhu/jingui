@@ -2,10 +2,10 @@ import React, { FC, memo, cloneElement, Children } from 'react';
 import classnames from 'classnames';
 import { ButtonGroupProps } from './PropType';
 
+const prefixCls = 'jing-button-group';
+
 const ButtonGroup: FC<ButtonGroupProps> = (props) => {
     const { className, type, size, children } = props;
-
-    const prefixCls = 'jing-button-group';
 
     const count = Children.count(children);
 

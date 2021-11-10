@@ -27,6 +27,6 @@ export const DemoBlock: FC<Props> = (props) => {
 };
 
 DemoBlock.defaultProps = {
-    padding: '12px 12px',
+    padding: '10px 16px',
     background: '#ffffff',
 };

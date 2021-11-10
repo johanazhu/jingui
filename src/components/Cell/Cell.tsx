@@ -1,10 +1,13 @@
-import React, { FC } from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
 import CellGroup from './Group';
 import { IconArrow } from '../Icon';
 import { CellType } from './PropType';
+import { isDef } from '@/utils';
 
-const Cell: CellType = props => {
+const prefixCls = 'jing-cell';
+
+const Cell: CellType = (props) => {
     const {
         className,
         label,
@@ -12,28 +15,40 @@ const Cell: CellType = props => {
         value,
         desc,
         icon,
-        isLink,
         center,
+        isLink,
+        required,
         onClick,
     } = props;
 
-    const prefixCls = 'jing-cell';
-
     const classes = classnames(prefixCls, className, {
         [`${prefixCls}--center`]: !!center,
+        [`${prefixCls}--clickable`]: !!isLink,
+        [`${prefixCls}--required`]: !!required,
     });
 
     return (
         <div className={classnames(classes)} onClick={onClick}>
             {icon && <span className={`${prefixCls}__icon`}>{icon}</span>}
-            <div className={`${prefixCls}__title`}>
-                <span>{title}</span>
-                {label && <div className={`${prefixCls}__label`}>{label}</div>}
-            </div>
-            <div className={`${prefixCls}__value`}>
-                <span>{value}</span>
-                {desc && <div className={`${prefixCls}__desc`}>{desc}</div>}
-            </div>
+            {title && (
+                <div className={`${prefixCls}__title`}>
+                    <span>{title}</span>
+                    {label && (
+                        <div className={`${prefixCls}__label`}>{label}</div>
+                    )}
+                </div>
+            )}
+            {value && (
+                <div
+                    className={classnames(`${prefixCls}__value`, {
+                        [`${prefixCls}__value--alone`]:
+                            !isDef(title) && isDef(value),
+                    })}
+                >
+                    <span>{value}</span>
+                    {desc && <div className={`${prefixCls}__desc`}>{desc}</div>}
+                </div>
+            )}
             {isLink && (
                 <span className={`${prefixCls}__link`}>
                     <IconArrow size="sm" />
@@ -46,6 +61,7 @@ const Cell: CellType = props => {
 Cell.defaultProps = {
     center: false,
     isLink: false,
+    required: false,
 };
 
 Cell.Group = CellGroup;

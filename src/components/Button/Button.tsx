@@ -4,7 +4,9 @@ import { IconLoading } from '../Icon';
 import { ButtonProps } from './PropType';
 import { WHITE } from '@/utils';
 
-const Button: FC<ButtonProps> = props => {
+const prefixCls = 'jing-button';
+
+const Button: FC<ButtonProps> = (props) => {
     const {
         className,
         type,
@@ -18,8 +20,6 @@ const Button: FC<ButtonProps> = props => {
         children,
         onClick,
     } = props;
-
-    const prefixCls = 'jing-button';
 
     const _style: Record<string, string | number> = {};
 

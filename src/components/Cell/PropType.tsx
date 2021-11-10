@@ -4,13 +4,11 @@ import { FC, ReactNode } from 'react';
  * CellGroup 列表组
  * @param {className} string                            // 自定义 class 名
  * @param {inset} boolean                               // 是否使用卡片模式
- * @param {title} string                                // 分组标题
  * @param {shadow} boolean                               // 是否显示外阴影
  **/
 export interface CellGroupProps {
     className?: string;
     inset?: boolean;
-    title?: string;
     shadow?: boolean;
 }
 
@@ -24,7 +22,8 @@ export interface CellGroupProps {
  * @param {icon} ReactNode                              // 左侧图标名称
  * @param {center} boolean                              // 是否使内容垂直居中
  * @param {isLink} boolean                              // 是否显示箭头
- * @param {onClick} function                              // 点击单元格后的回调
+ * @param {required} boolean                            // 是否显示表单必填星号
+ * @param {onClick} function                            // 点击单元格后的回调
  **/
 export interface CellProps {
     className?: string;
@@ -35,6 +34,7 @@ export interface CellProps {
     icon?: ReactNode;
     center?: boolean;
     isLink?: boolean;
+    required?: boolean;
     onClick?: () => void;
 }
 
