@@ -114,7 +114,7 @@ export default () => {
     return (
         <>
             <DemoBlock title="用法示例" className="demo-jing-icon" padding="">
-                <Row justify="center" align="center">
+                <Row justify="start" align="center">
                     <Col span={6}>
                         <IconEyeClose />
                         <span>闭眼</span>
@@ -163,334 +163,188 @@ export default () => {
                         <IconEdit />
                         <span>编辑</span>
                     </Col>
+                    <Col span={6}>
+                        <IconPassword />
+                        <span>密码</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconCall />
+                        <span>电话</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconArrow />
+                        <span>箭头</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconRight />
+                        <span>打勾</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconClose />
+                        <span>关闭</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconCircleOk />
+                        <span>圈圈打勾</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconRmb />
+                        <span>人名币￥</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconAuthen />
+                        <span>完成状态</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconBack />
+                        <span>返回</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconCalendar />
+                        <span>日历</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconCallcenter />
+                        <span>计算器</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconCoin2 />
+                        <span>资产-选择</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconTrash />
+                        <span>垃圾桶</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconFace />
+                        <span>人脸</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconFinger />
+                        <span>指纹</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconGesture />
+                        <span>手势密码</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconHelp />
+                        <span>帮助</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconSoundOn />
+                        <span>声音开</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconSoundOff />
+                        <span>声音关</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconIdCard />
+                        <span>身份证</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconIttype />
+                        <span>授权过的身份</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconMagezine />
+                        <span>杂志</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconMoney />
+                        <span>钱</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconMore />
+                        <span>更多</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconMore2 />
+                        <span>等待中</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconPaper />
+                        <span>纸</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconRefresh />
+                        <span>刷新</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconSecurity />
+                        <span>安全-键盘</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconWaiting />
+                        <span>等待</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconCheckboxEmpty />
+                        <span>选择-空</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconCheckboxOk />
+                        <span>选择-打勾</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconMoneyPlus />
+                        <span>货币+</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconMoneyPlusFull />
+                        <span>货币+2</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconExclamation />
+                        <span>感叹</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconCustomer />
+                        <span>客服</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconNotice />
+                        <span>注意</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconFZ />
+                        <span>翻转</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconXiaojinguang />
+                        <span>小金罐</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconZan />
+                        <span>点赞</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconZanOver />
+                        <span>点赞-空</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconPdf />
+                        <span>PDF</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconOfficeExcel />
+                        <span>Excel</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconOfficePpt />
+                        <span>PPT</span>
+                    </Col>
+                    <Col span={6}>
+                        <IconOfficeWord />
+                        <span>Word</span>
+                    </Col>
                 </Row>
             </DemoBlock>
         </>
     );
 };
 
-//             <div className="grid-column">
-//                 <IconPassword />
-//                 <span>密码</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconCall />
-//                 <span>电话</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconLocation />
-//                 <span>地址</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconBriefcase />
-//                 <span>公文包</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconHomework />
-//                 <span>家庭</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconLock />
-//                 <span>锁</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconArrow />
-//                 <span>箭头</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconRight />
-//                 <span>打勾</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconClose />
-//                 <span>关闭</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconCircleOk />
-//                 <span>圈圈打勾</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconRmb />
-//                 <span>人名币￥</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconBank />
-//                 <span>银行卡</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconAbout />
-//                 <span>关于</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconAuthen />
-//                 <span>完成状态</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconBack />
-//                 <span>返回</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconCalendar />
-//                 <span>日历</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconCallcenter />
-//                 <span>计算器</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconCamera />
-//                 <span>照相机</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconCard />
-//                 <span>卡</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconCash />
-//                 <span>现金</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconChart />
-//                 <span>聊天</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconClothbag />
-//                 <span>钱袋子</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconCode />
-//                 <span>九宫-选中</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconCode2 />
-//                 <span>九宫-未选</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconCoin />
-//                 <span>资产-未选</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconCoin2 />
-//                 <span>资产-选择</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconCoupon />
-//                 <span>默认优惠券</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconCoupon2 />
-//                 <span>优惠券-橙色</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconTrash />
-//                 <span>垃圾桶</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconDiamonds />
-//                 <span>砖石</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconFace />
-//                 <span>人脸</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconFinger />
-//                 <span>指纹</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconForward />
-//                 <span>转</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconFriends />
-//                 <span>朋友</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconGesture />
-//                 <span>手势密码</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconGold />
-//                 <span>金</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconGuidepost />
-//                 <span>指示牌</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconHelp />
-//                 <span>帮助</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconHistory />
-//                 <span>历史</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconHome />
-//                 <span>首页</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconSoundOn />
-//                 <span>声音开</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconSoundOff />
-//                 <span>声音关</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconId />
-//                 <span>ID卡</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconIdCard />
-//                 <span>身份证</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconInfo />
-//                 <span>信息</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconInputEdit />
-//                 <span>书写</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconIttype />
-//                 <span>授权过的身份</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconJingbei />
-//                 <span>鲸贝</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconKeyboard />
-//                 <span>键盘</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconLicense />
-//                 <span>执照</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconLoop />
-//                 <span>循环</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconMagezine />
-//                 <span>杂志</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconMenu />
-//                 <span>菜单</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconMoney />
-//                 <span>钱</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconMore />
-//                 <span>更多</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconMore2 />
-//                 <span>等待中</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconNotepad />
-//                 <span>笔记本</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconNotepad2 />
-//                 <span>笔记本-黄</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconPaper />
-//                 <span>纸</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconPaper2 />
-//                 <span>纸2</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconPdf />
-//                 <span>PDF</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconPhoneBack />
-//                 <span>手机反转</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconPhoneRight />
-//                 <span>手机正确</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconRefresh />
-//                 <span>刷新</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconSafe />
-//                 <span>安全-钱</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconSecurity />
-//                 <span>安全-键盘</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconWaiting />
-//                 <span>等待</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconWallet />
-//                 <span>钱包</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconCheckboxEmpty />
-//                 <span>选择-空</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconCheckboxOk />
-//                 <span>选择-打勾</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconMoneyPlus />
-//                 <span>货币+</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconFund />
-//                 <span>基金</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconMoneyPlusFull />
-//                 <span>货币+2</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconExclamation />
-//                 <span>感叹</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconCustomer />
-//                 <span>客服</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconNotice />
-//                 <span>注意</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconFZ />
-//                 <span>翻转</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconXiaojinguang />
-//                 <span>小金罐</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconZan />
-//                 <span>点赞</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconZanOver />
-//                 <span>点赞-空</span>
-//             </div>
-//         </div>
-//     </Panel>
 //     <Panel title="弹出框">
 //         <div className="grid">
 //             <div className="grid-column">
@@ -567,22 +421,7 @@ export default () => {
 //             </div>
 //         </div>
 //     </Panel>
-//     <Panel title="office三剑客">
-//         <div className="grid">
-//             <div className="grid-column">
-//                 <IconOfficeExcel />
-//                 <span>Excel</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconOfficePpt />
-//                 <span>PPT</span>
-//             </div>
-//             <div className="grid-column">
-//                 <IconOfficeWord />
-//                 <span>Word</span>
-//             </div>
-//         </div>
-//     </Panel>
+
 //     <Panel title="理财页导航">
 //         <div className="grid">
 //             <div className="grid-column">
