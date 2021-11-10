@@ -15,7 +15,7 @@ export default () => (
                 <Button type="primary">我是按钮</Button>
             </ButtonGroup>
         </DemoBlock>
-        <DemoBlock title="按钮组尺寸">
+        <DemoBlock title="按钮组尺寸" className="demo-jing-button-group">
             <ButtonGroup size="large">
                 <Button type="primary" plain>
                     按钮1

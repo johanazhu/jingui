@@ -119,6 +119,7 @@
     --divider-font-size: var(--font-size-md);
     --divider-line-height: 24px;
     --divider-border-color: var(--border-color);
+    --divider-border-width: var(--border-width-base);
     --divider-content-padding: var(--padding-md);
     --divider-content-left-width: 10%;
     --divider-content-right-width: 10%;
@@ -196,29 +197,37 @@
     --cell-border-color: var(--border-color);
     --cell-active-color: var(--active-color);
     --cell-required-color: var(--theme-danger);
-    --cell-value-font-size: var(--font-size-md);
-    // --cell-value-font-size: var(--font-size-sm);
+    --cell-value-font-size: var(--font-size-sm);
     --cell-label-color: var(--color-black-3);
-    // --cell-label-font-size: var(--font-size-xs);
-    --cell-label-font-size: var(--font-size-sm);
+    --cell-label-font-size: var(--font-size-xs);
     --cell-label-line-height: var(--line-height-sm);
     --cell-label-margin-top: var(--padding-base);
-    // --cell-desc-color-size:  var(--font-size-xs);
-    --cell-desc-color-size: var(--font-size-sm);
+    --cell-desc-color-size: var(--font-size-xs);
     --cell-value-color: var(--color-black-3);
     --cell-icon-color: var(--color-black-3);
     --cell-icon-margin-left: var(--padding-base);
     --cell-link-color: var(--color-black-3);
     --cell-link-margin-left: var(--padding-base);
 
+    // CellGroup
     --cell-group-bg: var(--bg-white);
     --cell-group-inset-margin: var(--horizontal-gap);
     --cell-group-border-radius: var(--border-radius-lg);
 
-    //   // CellGroup
-    //   @cell-group-background-color: @white;
-    //   @cell-group-title-color: @gray-6;
-    //   @cell-group-title-padding: @padding-md @padding-md @padding-xs;
-    //   @cell-group-title-font-size: @font-size-md;
-    //   @cell-group-title-line-height: 16px;
+    // Panel
+    --panel-bg: var(--bg-white);
+    --panel-text-color: var(--text-color);
+    --panel-font-size: var(--font-size-md);
+    --panel-font-weight: var(--font-weight-bold);
+    --panel-title-font-size: var(--font-size-sm);
+    --panel-padding-v: var(--vertical-gap);
+    --panel-padding-h: var(--horizontal-gap);
+    --panel-more-text-color: var(--theme-primary);
+    --panel-body-bg: var(--bg-white);
+
+    // Space
+    --space-height-1: 10px;
+    --space-height-2: 20px;
+    --space-height-3: 40px;
+    --space-height-4: 80px;
 }

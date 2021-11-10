@@ -1,21 +1,18 @@
 .jing-space {
     display: flex;
     &-1 {
-        height: $space-1;
+        height: var(--space-height-1);
     }
+
     &-2 {
-        height: $space-2;
+        height: var(--space-height-2);
     }
+
     &-3 {
-        height: $space-3;
+        height: var(--space-height-3);
     }
+
     &-4 {
-        height: $space-4;
-    }
-    &-5 {
-        height: $space-6;
-    }
-    &-6 {
-        height: $space-6;
+        height: var(--space-height-4);
     }
 }

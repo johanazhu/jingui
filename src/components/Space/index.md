@@ -21,4 +21,4 @@ group:
 | --------- | --------------- | ------------------- | ------ |
 | className | 自定义 class 名 | string              | -      |
 | style     | 自定义样式      | React.CSSProperties | -      |
-| scale     | 分行行距，1-6   | number              | 1      |
+| scale     | 分行行距，`1-4` | number              | 1      |

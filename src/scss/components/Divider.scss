@@ -2,11 +2,13 @@
     display: flex;
     align-items: center;
     margin: var(--divider-margin);
-    color: var(--color-black-4);
+    color: var(--divider-text-color);
+    font-size: var(--divider-font-size);
     line-height: var(--divider-line-height);
     border-color: var(--divider-border-color);
     border-style: solid;
     border-width: 0;
+
     &::before,
     &::after {
         display: block;
@@ -14,11 +16,13 @@
         height: 1px;
         border-color: inherit;
         border-style: inherit;
-        border-width: var(--border-width-base) 0 0;
+        border-width: var(--divider-border-width) 0 0;
     }
+
     &::before {
         content: '';
     }
+
     &--hairline {
         &::before,
         &::after {
@@ -41,11 +45,13 @@
             content: '';
         }
     }
+
     &--content-left {
         &::before {
             max-width: var(--divider-content-left-width);
         }
     }
+
     &--content-right {
         &::after {
             max-width: var(--divider-content-right-width);

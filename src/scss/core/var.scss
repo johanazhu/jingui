@@ -104,68 +104,6 @@ $border-width-base: 1px;
 $border-radius: 0.25rem;
 // $border-radius-max: 999px;
 
-// // Divider
-// $divider-margin: $padding-l 0;
-// $divider-text-color: $black-4;
-// $divider-font-size: $font-size-md;
-// $divider-line-height: 24px;
-// $divider-border-color: $border-color;
-// $divider-content-padding: $padding-l;
-// $divider-content-left-width: 10%;
-// $divider-content-right-width: 10%;
-
-// Button
-$button-height-lg: $font-size-xxl;
-$button-height-md: 2.75rem;
-$button-line-height-md: 2.75rem;
-$button-height-sm: 1.25rem;
-$button-line-height-sm: 1.25rem;
-$button-fize-md: $font-size-md;
-$button-fize-sm: $font-size-xs;
-$button-radius-md: 0.5rem;
-$button-radius-sm: 0.25rem;
-$button-margin-md: 3%;
-$button-margin-sm: 2%;
-$button-padding-md: 1rem;
-$button-padding-sm: 0.5rem;
-$button-blue-color: $blue;
-$button-orange-color: $orange;
-$button-green-color: $green;
-$button-while-color: $white-1;
-$button-disable-color: $black-4;
-$button-loading-m-l: $horizontal-gap;
-
-// Button
-// @button-mini-height: 24px;
-// @button-mini-font-size: @font-size-xs;
-// @button-small-height: 32px;
-// @button-small-font-size: @font-size-sm;
-// @button-normal-font-size: @font-size-md;
-// @button-large-height: 50px;
-// @button-default-height: 44px;
-// @button-default-line-height: 1.2;
-// @button-default-font-size: @font-size-lg;
-// @button-default-color: @text-color;
-// @button-default-background-color: @white;
-// @button-default-border-color: @border-color;
-// @button-primary-color: @white;
-// @button-primary-background-color: @green;
-// @button-primary-border-color: @green;
-// @button-info-color: @white;
-// @button-info-background-color: @blue;
-// @button-info-border-color: @blue;
-// @button-danger-color: @white;
-// @button-danger-background-color: @red;
-// @button-danger-border-color: @red;
-// @button-warning-color: @white;
-// @button-warning-background-color: @orange;
-// @button-warning-border-color: @orange;
-// @button-border-width: @border-width-base;
-// @button-border-radius: @border-radius-sm;
-// @button-round-border-radius: @border-radius-max;
-// @button-plain-background-color: @white;
-// @button-disabled-opacity: @disabled-opacity;
-
 // icon
 $icon-grey-color: rgb(222, 222, 222);
 $icon-blue-color: $blue;
@@ -205,10 +143,6 @@ $input-line-height: 3rem;
 $input-keyboard-sub-color: $black-4;
 // $black-4
 
-// Panel
-$panel-font-size-xs: $font-size-xs;
-$panel-font-size-md: $font-size-md;
-
 // timeline
 $timeline-padding: 1rem;
 $timeline-bg: $black-5;
@@ -237,11 +171,3 @@ $noticebar-height: 30px;
 $noticebar-font-size-xs: $font-size-xs;
 $noticebar-color-bg: #ffefe5;
 $noticebar-width: 40px;
-
-// space
-$space-1: 0.625rem;
-$space-2: 0.9rem;
-$space-3: 1.25rem;
-$space-4: 1.6rem;
-$space-5: 1.875rem;
-$space-6: 2.5rem;

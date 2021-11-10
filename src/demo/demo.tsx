@@ -1,7 +1,9 @@
 import React, { FC } from 'react';
+import classnames from 'classnames';
 import './index.scss';
 
 export interface Props {
+    className?: string;
     title: string;
     padding?: string;
     border?: string;
@@ -10,7 +12,7 @@ export interface Props {
 
 export const DemoBlock: FC<Props> = (props) => {
     return (
-        <div className="jing-demo">
+        <div className={classnames('jing-demo', props.className)}>
             <div className="jing-demo__title">{props.title}</div>
             <div
                 className="jing-demo__content"
