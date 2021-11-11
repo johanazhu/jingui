@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Input, Panel, Cell } from 'jing-ui';
+import { Input, IconCalculation } from 'jing-ui';
 import { DemoBlock } from 'demo';
 
 export default () => {
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
+    const [img, setImg] = useState('http://wx.jingqb.com/certiification.jpg');
     const [value, setValue] = useState('');
 
     return (
@@ -32,11 +33,28 @@ export default () => {
                     onBlur={(value: any) => console.log(`onBlur: ${value}`)}
                 />
             </DemoBlock>
+            <DemoBlock title="带前缀的输入框" padding="">
+                <Input.Prefix
+                    value={value}
+                    placeholder="带前缀的输入框"
+                    icon={<IconCalculation />}
+                />
+            </DemoBlock>
             <DemoBlock title="带密码的输入框" padding="">
                 <Input.Password value={value} placeholder="带密码的输入框" />
             </DemoBlock>
             <DemoBlock title="带清除的输入框" padding="">
                 <Input.Clear value={value} placeholder="带清除的输入框" />
+                <Input.Clear
+                    value={value}
+                    placeholder="带清除的输入框"
+                    render="111"
+                />
+                <Input.Clear
+                    value={value}
+                    placeholder="带清除的输入框"
+                    backRender="111"
+                />
             </DemoBlock>
             <DemoBlock title="带发送验证码的输入框" padding="">
                 <Input.Verify
@@ -49,17 +67,18 @@ export default () => {
             </DemoBlock>
             <DemoBlock title="带验证码的输入框" padding="">
                 <Input.Captcha
+                    type="text"
+                    maxLength={4}
                     value={value}
                     placeholder="带验证码的输入框"
-                    captcha={
-                        <img src={'http://wx.jingqb.com/certiification.jpg'} />
-                    }
+                    captcha={<img src={img} />}
                     onHandleChangeCaptcha={() => {
-                        console.log('更换验证码');
+                        setImg(img + '?' + new Date().getTime());
                     }}
                 />
+
             </DemoBlock>
-            <DemoBlock title="KeyBoard输入框" padding="">
+            {/* <DemoBlock title="KeyBoard输入框" padding="">
                 <Input.Group>
                     <Input.KeyBoard
                         value={value}
@@ -74,7 +93,7 @@ export default () => {
                         maxLength={20}
                     />
                 </Input.Group>
-            </DemoBlock>
+            </DemoBlock> */}
         </>
     );
 };

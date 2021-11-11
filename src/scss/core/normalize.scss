@@ -1,0 +1,55 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+*[contenteditable] {
+  -webkit-user-select: auto !important;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  font-family: var(----base-font-family);
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+input,
+button,
+textarea,
+[class*='jing-'] {
+  &:focus {
+    outline: none;
+  }
+  color: inherit;
+  font: inherit;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+input {
+  border: none;
+  border-radius: 0;
+  background: none;
+  -webkit-appearance: none;
+}
+
+textarea {
+  border: none;
+  border-radius: 0;
+  resize: none;
+}

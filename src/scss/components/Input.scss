@@ -1,166 +1,329 @@
 @mixin jing-input-placeholder {
-    color: $placeholder-color !important;
-    font-size: 14px;
-}
-
-@mixin jing-input() {
-    width: 100%;
-    height: calc(#{$input-height} / 2);
-    line-height: calc(#{$input-height} / 2);
-    margin: calc(#{$input-height} / 4) 0;
-    border: 0;
-    background-color: transparent;
-    font-size: $input-font-size-l;
+  color: var(--input-placeholder-text-color) !important;
+  //   font-size: 14px;
 }
 
 @mixin jing-input-common() {
-    display: block;
-    z-index: 3;
-    width: $input-width;
-    height: $input-height;
+  display: block;
+  z-index: 3;
+  width: var(--input-width);
 }
 
 input::placeholder {
-    @include jing-input-placeholder();
+  @include jing-input-placeholder();
 }
 
 textarea::placeholder {
-    @include jing-input-placeholder();
+  @include jing-input-placeholder();
 }
 
 .jing-input {
-    @include jing-input();
+  @include cell;
 
-    &.jing-input__error {
-        border-color: $input-error-border-color;
+  &.jing-input__error {
+    border-color: var(--input-error-border-color);
 
-        &:focus {
-            border-color: $input-error-border-color;
-        }
+    &:focus {
+      border-color: var(--input-error-border-color);
     }
+  }
 
-    &::-webkit-input-placeholder {
-        color: $input-placeholder-color;
-    }
+  &::-webkit-input-placeholder {
+    color: var(--input-placeholder-text-color);
+  }
 }
 
 .jing-input__group {
-    display: inline-flex;
-    width: 100%;
-    font-size: $input-font-size;
+  display: inline-flex;
+  width: 100%;
+  font-size: var(--input-font-size);
+  .jing-input {
+    flex: 1;
+  }
 
-    .jing-input {
-        flex: 1;
-    }
+  .eye-btn {
+    display: flex !important;
+    @include flex-center();
+    @include jing-input-common();
+  }
 
-    .eye-btn {
-        display: flex !important;
-        @include flex-center();
-        @include jing-input-common();
-    }
-
-    .clear-btn {
-        display: flex !important;
-        @include flex-center();
-        @include jing-input-common();
-    }
+  .clear-btn {
+    display: flex !important;
+    @include flex-center();
+    @include jing-input-common();
+  }
 }
 
 .jing-input__group-suffix {
-    .jing-input {
-        border-bottom-right-radius: 0;
-        border-top-right-radius: 0;
-    }
+  .jing-input {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
 }
 
 // 带密码的input
 .jing-input__group-password {
-    .jing-input {
-        border-bottom-right-radius: 0;
-        border-top-right-radius: 0;
-    }
+  .jing-input {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
 }
 
 // 发送短信验证码input
 .jing-input__group-verify {
-    .jing-input__group {
-        width: 65%;
+  .jing-input__group {
+    width: 65%;
+  }
+  .jing-input__verify {
+    @include flex-center();
+    justify-content: flex-end;
+    color: var(--input-verify-text-color);
+    // height: $input-height;
+    // line-height: $input-line-height;
+    text-align: right;
+    &_active {
+      color: $globalColorBlack1;
     }
-    .jing-input__verify {
-        @include flex-center();
-        justify-content: flex-end;
-        color: $input-verify-font-color;
-        height: $input-height;
-        line-height: $input-line-height;
-        text-align: right;
-        &_active {
-            color: $globalColorBlack1;
-        }
-    }
+  }
 }
 
 // 验证码input
 .jing-input__group-captcha {
-    .jing-input__group {
-        width: 65%;
-    }
-    .jing-input__captcha {
-        @include flex-center();
-    }
+  .jing-input__group {
+    width: 65%;
+  }
+  .jing-input__captcha {
+    @include flex-center();
+  }
 }
 
 // 自定义input
 .jing-input__group-keyboard {
-    .jing-input__keyboard {
-        flex: 1;
-        width: 100%;
-        height: $input-width;
-        line-height: $input-line-height;
-        cursor: text;
-        position: relative;
-        z-index: 2;
-        background-color: rgba(255, 255, 255, 0) !important;
-        &:after {
-            display: none;
-            content: '';
-            width: 1px;
-            height: 1.25rem;
-            background: #000;
-            border-radius: 2px;
-            position: relative;
-            top: 0.25rem;
-            left: 0;
-            animation: inputMark 1s ease-in infinite;
-        }
-        &_active {
-            &:after {
-                display: inline-block;
-            }
-        }
-        &_small {
-            font-size: $input-font-size-xxs;
-        }
+  .jing-input__keyboard {
+    flex: 1;
+    width: 100%;
+    // height: $input-width;
+    // line-height: $input-line-height;
+    cursor: text;
+    position: relative;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0) !important;
+    &:after {
+      display: none;
+      content: '';
+      width: 1px;
+      height: 1.25rem;
+      background: #000;
+      border-radius: 2px;
+      position: relative;
+      top: 0.25rem;
+      left: 0;
+      animation: jqb-cursor-flicker 1s ease-in infinite;
     }
-    sub {
-        z-index: 1;
-        display: block;
-        position: absolute;
-        left: 1px;
-        top: 52%;
-        transform: translate(0, -50%);
-        height: 1em;
-        line-height: 1em;
-        font-size: 1rem;
-        color: $input-keyboard-sub-color;
+    &_active {
+      &:after {
+        display: inline-block;
+      }
     }
+    &_small {
+      font-size: var(--input-keyboard-sub-font-size);
+    }
+  }
+  sub {
+    z-index: 1;
+    display: block;
+    position: absolute;
+    left: 1px;
+    top: 52%;
+    transform: translate(0, -50%);
+    height: 1em;
+    line-height: 1em;
+    font-size: 1rem;
+    color: var(--input-keyboard-sub-text-color);
+  }
 }
 
 // 多行
 .jing-textarea {
-    @include jing-input();
-    display: block;
-    resize: none;
-    word-break: break-all;
-    word-wrap: break-word;
-    overflow: visible;
+  @include cell();
+  display: block;
+  resize: none;
+  word-break: break-all;
+  word-wrap: break-word;
+  overflow: visible;
 }
+
+// @import '../style/var';
+
+// .van-field {
+//   &__label {
+//     flex: none;
+//     box-sizing: border-box;
+//     width: @field-label-width;
+//     margin-right: @field-label-margin-right;
+//     color: @field-label-color;
+//     text-align: left;
+//     word-wrap: break-word;
+
+//     &--center {
+//       text-align: center;
+//     }
+
+//     &--right {
+//       padding-right: @padding-md;
+//       text-align: right;
+//     }
+//   }
+
+//   &--disabled {
+//     .van-field__label {
+//       color: @field-disabled-text-color;
+//     }
+//   }
+
+//   &__value {
+//     overflow: visible;
+//   }
+
+//   &__body {
+//     display: flex;
+//     align-items: center;
+//   }
+
+//   &__control {
+//     display: block;
+//     box-sizing: border-box;
+//     width: 100%;
+//     min-width: 0; // for flex-shrink in field__button
+//     margin: 0;
+//     padding: 0;
+//     color: @field-input-text-color;
+//     line-height: inherit;
+//     text-align: left;
+//     background-color: transparent;
+//     border: 0;
+//     resize: none;
+
+//     &::placeholder {
+//       color: @field-placeholder-text-color;
+//     }
+
+//     &:disabled {
+//       color: @field-input-disabled-text-color;
+//       background-color: transparent;
+//       cursor: not-allowed;
+//       opacity: 1;
+//       -webkit-text-fill-color: currentColor; // fix disabled color in iOS
+//     }
+
+//     &:read-only {
+//       cursor: default;
+//     }
+
+//     &--center {
+//       justify-content: center;
+//       text-align: center;
+//     }
+
+//     &--right {
+//       justify-content: flex-end;
+//       text-align: right;
+//     }
+
+//     &--custom {
+//       display: flex;
+//       align-items: center;
+//       min-height: @cell-line-height;
+//     }
+
+//     // for ios wechat
+//     &[type='date'],
+//     &[type='time'],
+//     &[type='datetime-local'] {
+//       min-height: @cell-line-height;
+//     }
+
+//     // for safari
+//     &[type='search'] {
+//       -webkit-appearance: none;
+//     }
+//   }
+
+//   &__clear,
+//   &__icon,
+//   &__button,
+//   &__right-icon {
+//     flex-shrink: 0;
+//   }
+
+//   &__clear,
+//   &__right-icon {
+//     margin-right: -@padding-xs;
+//     padding: 0 @padding-xs;
+//     line-height: inherit;
+//   }
+
+//   &__clear {
+//     color: @field-clear-icon-color;
+//     font-size: @field-clear-icon-size;
+//     cursor: pointer;
+//   }
+
+//   &__left-icon .van-icon,
+//   &__right-icon .van-icon {
+//     display: block;
+//     min-width: 1em;
+//     font-size: @field-icon-size;
+//     line-height: inherit;
+//   }
+
+//   &__left-icon {
+//     margin-right: @padding-base;
+//   }
+
+//   &__right-icon {
+//     color: @field-right-icon-color;
+//   }
+
+//   &__button {
+//     padding-left: @padding-xs;
+//   }
+
+//   &__error-message {
+//     color: @field-error-message-color;
+//     font-size: @field-error-message-text-color;
+//     text-align: left;
+
+//     &--center {
+//       text-align: center;
+//     }
+
+//     &--right {
+//       text-align: right;
+//     }
+//   }
+
+//   &__word-limit {
+//     margin-top: @padding-base;
+//     color: @field-word-limit-color;
+//     font-size: @field-word-limit-font-size;
+//     line-height: @field-word-limit-line-height;
+//     text-align: right;
+//   }
+
+//   &--error {
+//     .van-field__control {
+//       &,
+//       &::placeholder {
+//         color: @field-input-error-text-color;
+//         -webkit-text-fill-color: currentColor;
+//       }
+//     }
+//   }
+
+//   &--min-height {
+//     .van-field__control {
+//       min-height: @field-text-area-min-height;
+//     }
+//   }
+// }

@@ -33,6 +33,11 @@ export default () => (
         <DemoBlock title="垂直居中" padding="0">
             <Cell center title="单元格" value="内容" label="描述信息" />
             <Cell center title="单元格" value="内容" desc="详情信息" />
+            <Cell
+                title="我标题很长很长可以换行换行换行换行换行换行换行，没有链接"
+                isLink
+                center
+            />
         </DemoBlock>
         <DemoBlock title="展示必填星号" padding="0">
             <Cell required title="单元格" value="内容" />

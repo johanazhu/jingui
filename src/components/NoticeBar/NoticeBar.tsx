@@ -36,9 +36,8 @@ const NoticeBar: FC<NoticeBarProps> = props => {
                 @keyframes noticeBarPlay {
                     0%  {-webkit-transform:translate3d(0,0,0);}
                     ${persolProportion}% {-webkit-transform:translate3d(-100% ,0,0);}
-                    ${
-                        persolProportion + 0.01
-                    }% {-webkit-transform:translate3d(${wrapWidth}px,0,0);}
+                    ${persolProportion + 0.01
+                }% {-webkit-transform:translate3d(${wrapWidth}px,0,0);}
                     100%  {-webkit-transform:translate3d(0,0,0);}
                 }
             `,
@@ -68,6 +67,20 @@ const NoticeBar: FC<NoticeBarProps> = props => {
             </div>
         );
     };
+
+    // const contentStyle = {
+    //     transform: this.offset ? `translateX(${this.offset}px)` : '',
+    //     transitionDuration: this.duration + 's',
+    //   };
+
+    // style={
+    //     animationDuration! > 0
+    //       ? {
+    //         WebkitAnimation: `${NOTICEBAR_KEYFRAME_NAME} ${animationDuration}ms linear infinite`,
+    //         animation: `${NOTICEBAR_KEYFRAME_NAME} ${animationDuration}ms linear infinite`,
+    //       }
+    //       : undefined
+    //   }
 
     const renderMarquee = () => {
         return (

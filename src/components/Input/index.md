@@ -1,11 +1,11 @@
 ---
 toc: false
 nav:
-    path: /components
+  path: /components
 group:
-    title: 展示组件
-    path: /components/data
-    order: 4
+  title: 展示组件
+  path: /components/data
+  order: 4
 ---
 
 # Input 输入
@@ -42,10 +42,6 @@ group:
 | onBlur      | 失去焦点时的事件                          | function        | -      |
 | onClear     | Clear 中点击 x 后的回调                   | function        | -      |
 
-### Input.Group 代码演示
-
-<code src="./demo/Group.tsx"></code>
-
 ### Input.Group API
 
 | 参数      | 说明            | 类型            | 默认值 |
@@ -54,10 +50,6 @@ group:
 | style     | 自定义样式      | object          | -      |
 | children  | 子项内容        | React.ReactNode | -      |
 
-### Input.Verify 代码演示
-
-<code src="./demo/Verify.tsx"></code>
-
 ### Input.Verify API
 
 基于 base，base 有的参数它都有
@@ -65,10 +57,6 @@ group:
 | 参数                | 说明             | 类型     | 默认值 |
 | ------------------- | ---------------- | -------- | ------ |
 | onHandleSendMessage | 发生短信后的回调 | function | -      |
-
-### Input.Clear 代码演示
-
-<code src="./demo/Clear.tsx"></code>
 
 ### Input.Clear API
 
@@ -80,10 +68,6 @@ group:
 | groupStyle     | group 组件的 style      | string          | -      |
 | render         | 在 clear Icon 前 render | React.ReactNode | -      |
 | backRender     | 在 clear Icon 后 render | React.ReactNode | -      |
-
-### Input.Password 代码演示
-
-<code src="./demo/Password.tsx"></code>
 
 ### Input.Password API
 
@@ -113,10 +97,6 @@ group:
 | onBlur      | 失去焦点时的事件                          | function        | -      |
 | onClear     | Clear 中点击 x 后的回调                   | function        | -      |
 
-### Input.Captcha 代码演示
-
-<code src="./demo/Captcha.tsx"></code>
-
 ### Input.Captcha API
 
 基于 Captcha 组件
@@ -145,10 +125,6 @@ group:
 | onBlur      | 失去焦点时的事件                          | function        | -      |
 | onClear     | Clear 中点击 x 后的回调                   | function        | -      |
 
-### Input.KeyBoard 代码演示
-
-<code src="./demo/KeyBoard.tsx"></code>
-
 ### Input.KeyBoard API
 
 这个需要结合 keyboard 和 pickkeyboard 来做
@@ -162,10 +138,6 @@ group:
 | onChange      | 自定义 input 中的 value 改变时触发 | function | -      |
 | onHandleFocus | 获取焦点时的事件                   | function | -      |
 | onClearValue  | Clear 中点击 x 后的回调            | function | -      |
-
-### Input.Prefix 代码演示
-
-<code src="./demo/Prefix.tsx"></code>
 
 ### Input.Prefix API
 

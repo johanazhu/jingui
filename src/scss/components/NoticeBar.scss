@@ -1,39 +1,36 @@
 .jing-notice-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: var(--noticebar-height);
+  color: var(--noticebar-text-color);
+  font-size: var(--noticebar-font-size);
+  line-height: var(--noticebar-line-height);
+  background-color: var(--noticebar-bg);
+  &__wrap {
     position: relative;
+    flex: 1;
     display: flex;
+    justify-content: flex-start;
     align-items: center;
-    height: $noticebar-height;
-    color: $noticebar-color;
-    font-size: $noticebar-font-size-xs;
-    font-weight: bold;
-    line-height: 24px;
-    background-color: $noticebar-color-bg;
-    &__wrap {
-        position: relative;
-        flex: 1;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        &-content {
-            position: absolute;
-            white-space: nowrap;
-            transition-timing-function: linear;
-            animation: noticeBarPlay 15s linear infinite;
-        }
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    &-content {
+      position: absolute;
+      white-space: nowrap;
+      transition-timing-function: linear;
+      animation: noticeBarPlay 15s linear infinite;
     }
-    &__left,
-    &__close,
-    &__link {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: $noticebar-width;
-        height: 100%;
-    }
-    &__normal {
-        width: 0;
-    }
+  }
+  &__left,
+  &__close,
+  &__link {
+    @include flex-center;
+    width: var(--noticebar-link-width);
+    // height: 100%;
+  }
+  &__normal {
+    width: 0;
+  }
 }

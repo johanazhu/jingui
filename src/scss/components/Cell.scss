@@ -1,206 +1,96 @@
 .jing-cell {
+  @include cell;
+
+  &::after {
+    left: var(--cell-horizontal-padding) !important;
+    @include hairline-bottom(var(--cell-border-color), 0, 0);
+  }
+
+  &:last-child::after {
+    display: none;
+  }
+
+  &--center {
+    align-items: center;
+  }
+
+  &--clickable {
+    cursor: pointer;
+    &:active {
+      background-color: var(--cell-active-color);
+    }
+  }
+
+  &--required {
+    overflow: visible;
+    &::before {
+      position: absolute;
+      left: 4px;
+      color: var(--cell-required-color);
+      font-size: var(--cell-font-size);
+      content: '*';
+    }
+  }
+
+  &__title,
+  &__value {
+    flex: 1;
+  }
+
+  &__value {
     position: relative;
-    display: flex;
     overflow: hidden;
-    width: 100%;
-    padding: var(--cell-vertical-padding) var(--cell-horizontal-padding);
-    color: var(--cell-text-color);
-    font-size: var(--cell-font-size);
-    line-height: var(--cell-line-height);
-    background-color: var(--cell-bg);
-
-    &::after {
-        left: var(--cell-horizontal-padding) !important;
-        @include hairline-bottom(var(--cell-border-color), 0, 0);
+    color: var(--cell-value-color);
+    font-size: var(--cell-value-font-size);
+    text-align: right;
+    vertical-align: middle;
+    word-wrap: break-word;
+    &--alone {
+      color: var(--cell-alone-color);
+      text-align: left;
+      font-size: var(--cell-alone-font-size);
     }
+  }
 
-    &:last-child::after {
-        display: none;
-    }
+  &__label {
+    margin-top: var(--cell-label-margin-top);
+    color: var(--cell-icon-color);
+    font-size: var(--cell-label-font-size);
+    line-height: var(--cell-label-line-height);
+  }
 
-    &--center {
-        align-items: center;
-    }
+  &__desc {
+    font-size: var(--cell-desc-color-size);
+  }
 
-    &--clickable {
-        cursor: pointer;
-        &:active {
-            background-color: var(--cell-active-color);
-        }
-    }
+  &__icon,
+  &__link {
+    min-width: 1em;
+    height: var(--cell-height);
+    font-size: var(--cell-icon-size);
+    line-height: var(cell-line-height);
+  }
 
-    &--required {
-        overflow: visible;
-        &::before {
-            position: absolute;
-            left: 4px;
-            color: var(--cell-required-color);
-            font-size: var(--cell-font-size);
-            content: '*';
-        }
-    }
+  &__icon {
+    margin-right: var(--cell-icon-margin-left);
+  }
 
-    &__title,
-    &__value {
-        flex: 1;
-    }
-
-    &__value {
-        position: relative;
-        overflow: hidden;
-        color: var(--cell-value-color);
-        font-size: var(--cell-value-font-size);
-        text-align: right;
-        vertical-align: middle;
-        word-wrap: break-word;
-        &--alone {
-            color: #323233;
-            text-align: left;
-        }
-    }
-
-    &__label {
-        margin-top: var(--cell-label-margin-top);
-        color: var(--cell-icon-color);
-        font-size: var(--cell-label-font-size);
-        line-height: var(--cell-label-line-height);
-    }
-
-    &__desc {
-        font-size: var(--cell-desc-color-size);
-    }
-
-    &__icon,
-    &__link {
-        min-width: 1em;
-        height: var(--cell-height);
-        font-size: var(--cell-icon-size);
-        line-height: var(cell-line-height);
-    }
-
-    &__icon {
-        margin-right: var(--cell-icon-margin-left);
-    }
-
-    &__link {
-        margin-left: var(--cell-link-margin-left);
-        color: var(--cell-link-color);
-    }
+  &__link {
+    margin-left: var(--cell-link-margin-left);
+    color: var(--cell-link-color);
+  }
 }
 
 .jing-cell-group {
-    background-color: var(--cell-group-bg);
-    &--inset {
-        margin: 0 var(--cell-group-inset-margin);
-        overflow: hidden;
-        border-radius: var(--cell-group-border-radius);
-    }
-    &--shadow {
-        @include background-shadow();
-    }
+  background-color: var(--cell-group-bg);
+
+  &--inset {
+    margin: 0 var(--cell-group-inset-margin);
+    overflow: hidden;
+    border-radius: var(--cell-group-border-radius);
+  }
+
+  &--shadow {
+    @include background-shadow();
+  }
 }
-
-// @import '../style/var';
-// @import '../style/mixins/hairline';
-
-// .van-cell {
-//   position: relative;
-//   display: flex;
-//   box-sizing: border-box;
-//   width: 100%;
-//   padding: @cell-vertical-padding @cell-horizontal-padding;
-//   overflow: hidden;
-//   color: @cell-text-color;
-//   font-size: @cell-font-size;
-//   line-height: @cell-line-height;
-//   background-color: @cell-background-color;
-
-//   &::after {
-//     .hairline-bottom(@cell-border-color, @padding-md, @padding-md);
-//   }
-
-//   &:last-child::after,
-//   &--borderless::after {
-//     display: none;
-//   }
-
-//   &__label {
-//     margin-top: @cell-label-margin-top;
-//     color: @cell-label-color;
-//     font-size: @cell-label-font-size;
-//     line-height: @cell-label-line-height;
-//   }
-
-//   &__title,
-//   &__value {
-//     flex: 1;
-//   }
-
-//   &__value {
-//     position: relative;
-//     overflow: hidden;
-//     color: @cell-value-color;
-//     text-align: right;
-//     vertical-align: middle;
-//     word-wrap: break-word;
-
-//     &--alone {
-//       color: @text-color;
-//       text-align: left;
-//     }
-//   }
-
-//   &__left-icon,
-//   &__right-icon {
-//     min-width: 1em;
-//     height: @cell-line-height;
-//     font-size: @cell-icon-size;
-//     line-height: @cell-line-height;
-//   }
-
-//   &__left-icon {
-//     margin-right: @padding-base;
-//   }
-
-//   &__right-icon {
-//     margin-left: @padding-base;
-//     color: @cell-right-icon-color;
-//   }
-
-//   &--clickable {
-//     cursor: pointer;
-
-//     &:active {
-//       background-color: @cell-active-color;
-//     }
-//   }
-
-//   &--required {
-//     overflow: visible;
-
-//     &::before {
-//       position: absolute;
-//       left: @padding-xs;
-//       color: @cell-required-color;
-//       font-size: @cell-font-size;
-//       content: '*';
-//     }
-//   }
-
-//   &--center {
-//     align-items: center;
-//   }
-
-//   &--large {
-//     padding-top: @cell-large-vertical-padding;
-//     padding-bottom: @cell-large-vertical-padding;
-
-//     .van-cell__title {
-//       font-size: @cell-large-title-font-size;
-//     }
-
-//     .van-cell__label {
-//       font-size: @cell-large-label-font-size;
-//     }
-//   }
-// }
