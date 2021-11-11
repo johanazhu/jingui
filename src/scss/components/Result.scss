@@ -3,41 +3,52 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    &--icon {
-        height: 8rem;
-        width: 8rem;
+    color: var(--result-text-color);
+
+    &__icon {
+        height: var(--result-width);
+        width: var(--result-height);
         margin: 0 auto;
-        .jing-icon {
+        img {
             width: 100%;
             height: 100%;
         }
     }
-    &--title {
+
+    &__title {
         display: block;
-        font-size: $result-font-size-md;
-        font-weight: $font-weight-bold;
-        color: $black-1;
-        margin: $vertical-gap $vertical-gap 0;
+        font-size: var(--result-title-font-size);
+        font-weight: var(--result-title-font-weight);
+        margin-top: var(--result-title-margin);
     }
-    &--subTitle {
-        line-height: 1.5em;
-        margin: $vertical-gap $vertical-gap 0;
-        font-size: $am-sm;
-        color: $black-1;
-        text-align: center;
+
+    &__content {
+        line-height: var(--result-content-line-height);
+        margin-top: var(--result-content-margin);
+        font-size: var(--result-content-font-size);
+        color: var(--result-content-color);
+        width: 100%;
+        &--left {
+            text-align: left;
+        }
+
+        &--center {
+            text-align: center;
+        }
+
+        &--right {
+            text-align: right;
+        }
     }
-    &--content {
-        margin-top: $result-margin-md;
-    }
-    &--extra {
-        margin-top: $result-margin-md;
+
+    &__extra {
+        margin-top: var(--result-margin);
     }
 }
 
 @media screen and (max-width: 320px) and (max-height: 480px) {
     .jing-result {
-        margin-bottom: $result-margin-sm;
-        padding-top: $result-margin-sm;
+        margin-bottom: var(--result-margin);
+        padding-top: var(--result-paddding);
     }
 }

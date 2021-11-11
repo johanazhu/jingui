@@ -68,8 +68,8 @@
     --font-size-md: 14px;
     --font-size-lg: 16px;
     --font-size-xl: 18px;
-    --font-size-xxl: 18px;
-    --font-weight-bold: 500;
+    --font-size-xxl: 20px;
+    --font-weight-bold: 600;
     --base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
         Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB',
         'Microsoft Yahei', sans-serif;
@@ -230,6 +230,21 @@
     --space-height-2: 20px;
     --space-height-3: 40px;
     --space-height-4: 80px;
+
+    // Result
+    --result-width: 8rem;
+    --result-height: 8rem;
+    --result-margin: 2rem;
+    --result-paddding: 1rem;
+    --result-font-size: var(font-size-md);
+    --result-text-color: var(--text-color);
+    --result-title-font-size: var(--font-size-xl);
+    --result-title-font-weight: var(--font-weight-bold);
+    --result-title-margin: 1rem;
+    --result-content-font-size: var(--font-size-md);
+    --result-content-color: var(--color-black-2);
+    --result-content-line-height: 1.5em;
+    --result-content-margin: 1rem;
 
     // Input
 
