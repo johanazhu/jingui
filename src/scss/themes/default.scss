@@ -126,7 +126,7 @@
 
     // Tag
     --tag-padding: 0 var(--padding-base);
-    --tag-margin: 2px;
+    --tag-margin: var(--padding-base);
     --tag-text-color: var(--color-white-1);
     --tag-font-size: var(--font-size-sm);
     --tag-line-height: 16px;
