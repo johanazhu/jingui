@@ -1,18 +1,12 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { IconCircleDelete } from '../Icon';
 
 import Group from './group';
 import Input from './base';
-import { InputProps } from './PropType';
+import { ClearProps } from './PropType';
 
-export interface ClearProps extends InputProps {
-    groupClassName?: string;
-    groupStyle?: React.CSSProperties;
-    render?: React.ReactNode;
-    backRender?: React.ReactNode;
-}
+const prefixCls = 'jing-input';
 
 function useInputValue(initialValue: string | undefined) {
     const [value, setValue] = useState(initialValue);
@@ -114,7 +108,7 @@ const Clear = (props: ClearProps) => {
             {render}
             {isShowClear && (
                 <div
-                    className="clear-btn"
+                    className={`${prefixCls}--clear`}
                     onClick={() => {
                         inputRef.current?.focus();
                         oInput.clearValue();
@@ -133,21 +127,5 @@ Clear.defaultProps = {
     disabled: false,
     error: false,
 };
-
-// Clear.propTypes = {
-//     className: PropTypes.string,
-//     groupClassName: PropTypes.string,
-//     style: PropTypes.object,
-//     groupStyle: PropTypes.object,
-//     disabled: PropTypes.bool,
-//     error: PropTypes.bool,
-//     maxLength: PropTypes.number,
-//     minLength: PropTypes.number,
-//     type: PropTypes.string,
-//     onFocus: PropTypes.func,
-//     onBlur: PropTypes.func,
-//     onChange: PropTypes.func,
-//     onClear: PropTypes.func,
-// };
 
 export default Clear;

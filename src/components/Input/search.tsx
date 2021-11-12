@@ -1,15 +1,9 @@
-import * as React from 'react';
+import React, { FC } from 'react';
 import Input from './base';
 import Prefix from './prefix';
-import { InputProps } from './PropType';
+import { SearchProps } from './PropType';
 
-export interface SearchProps extends InputProps {
-    value?: string;
-    icon?: string;
-    className?: string;
-}
-
-const Search = (props: SearchProps) => {
+const Search: FC<SearchProps> = (props) => {
     const { value, icon, className } = props;
 
     return (

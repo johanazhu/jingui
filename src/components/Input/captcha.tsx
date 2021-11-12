@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import * as React from 'react';
 import classnames from 'classnames';
 import Clear from './clear';
-import Group from './group';
 import { InputProps } from './PropType';
+
+const prefixCls = 'jing-input';
 
 export interface VerifyProps extends InputProps {
     captcha: any;
@@ -15,7 +16,7 @@ const Captcha = (props: VerifyProps) => {
     const captchaRender = () => {
         return (
             <div
-                className={classnames('jing-input__captcha')}
+                className={classnames(`${prefixCls}__captcha`)}
                 onClick={() => {
                     onHandleChangeCaptcha();
                 }}
@@ -28,9 +29,10 @@ const Captcha = (props: VerifyProps) => {
     return (
         <Clear
             {...props}
-            groupClassName="jing-input__group-captcha"
+            groupClassName={`${prefixCls}__group-captcha`}
             backRender={captchaRender()}
         />
     );
 };
+
 export default React.memo(Captcha);

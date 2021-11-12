@@ -1,14 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, FC } from 'react';
 import classnames from 'classnames';
-import { InputProps } from './PropType';
 import Clear from './clear';
-import Group from './group';
+import { VerifyProps } from './PropType';
 
-export interface VerifyProps extends InputProps {
-    onHandleSendMessage: () => void;
-}
+const prefixCls = 'jing-input';
 
-const Verify = (props: VerifyProps) => {
+const Verify: FC<VerifyProps> = (props) => {
     const { onHandleSendMessage, ...rest } = props;
 
     const [text, setText] = useState('获取验证码');
@@ -36,8 +33,8 @@ const Verify = (props: VerifyProps) => {
     const verifyRender = () => {
         return (
             <div
-                className={classnames('jing-input__verify', {
-                    'jing-input__verify_active': isActive,
+                className={classnames(`${prefixCls}__verify`, {
+                    [`${prefixCls}__verify-active`]: isActive,
                 })}
                 onClick={() => {
                     onHandleSendMessage();
@@ -53,9 +50,10 @@ const Verify = (props: VerifyProps) => {
     return (
         <Clear
             {...rest}
-            groupClassName="jing-input__group-verify"
+            groupClassName={`${prefixCls}__group-verify`}
             backRender={verifyRender()}
         />
     );
 };
+
 export default React.memo(Verify);

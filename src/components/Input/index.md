@@ -1,11 +1,11 @@
 ---
 toc: false
 nav:
-  path: /components
+    path: /components
 group:
-  title: 展示组件
-  path: /components/data
-  order: 4
+    title: 展示组件
+    path: /components/data
+    order: 4
 ---
 
 # Input 输入
@@ -30,7 +30,6 @@ group:
 | maxLength   | 最多长度                                  | number          | -      |
 | icon        | 加入 icon                                 | React.ReactNode | -      |
 | error       | 是否显示错误提示                          | boolean         | -      |
-| errorword   | 正则不匹配时显示的错误文案                | string          | -      |
 | clearable   | 显示清除图标                              | boolean         | -      |
 | prefix      | 带前缀图标的 input                        | object          | -      |
 | suffix      | 带后缀图标的 input                        | object          | -      |
@@ -85,7 +84,6 @@ group:
 | maxLength   | 最多长度                                  | number          | -      |
 | icon        | 加入 icon                                 | React.ReactNode | -      |
 | error       | 是否显示错误提示                          | boolean         | -      |
-| errorword   | 正则不匹配时显示的错误文案                | string          | -      |
 | clearable   | 显示清除图标                              | boolean         | -      |
 | prefix      | 带前缀图标的 input                        | object          | -      |
 | suffix      | 带后缀图标的 input                        | object          | -      |
@@ -113,7 +111,6 @@ group:
 | maxLength   | 最多长度                                  | number          | -      |
 | icon        | 加入 icon                                 | React.ReactNode | -      |
 | error       | 是否显示错误提示                          | boolean         | -      |
-| errorword   | 正则不匹配时显示的错误文案                | string          | -      |
 | clearable   | 显示清除图标                              | boolean         | -      |
 | prefix      | 带前缀图标的 input                        | object          | -      |
 | suffix      | 带后缀图标的 input                        | object          | -      |
@@ -155,7 +152,6 @@ group:
 | maxLength   | 最多长度                                  | number          | -      |
 | icon        | 加入 icon                                 | React.ReactNode | -      |
 | error       | 是否显示错误提示                          | boolean         | -      |
-| errorword   | 正则不匹配时显示的错误文案                | string          | -      |
 | clearable   | 显示清除图标                              | boolean         | -      |
 | prefix      | 带前缀图标的 input                        | object          | -      |
 | suffix      | 带后缀图标的 input                        | object          | -      |

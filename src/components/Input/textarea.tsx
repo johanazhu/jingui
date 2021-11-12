@@ -1,11 +1,8 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import * as PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { InputProps } from './PropType';
+import { TextareaProps } from './PropType';
 
-export interface TextareaProps extends InputProps {
-    rows?: number;
-}
+const prefixCls = 'jing-textarea';
 
 function useInputValue(initialValue: string) {
     const [value, setValue] = useState(initialValue);
@@ -14,7 +11,6 @@ function useInputValue(initialValue: string) {
         setValue(e.currentTarget.value);
     }, []);
 
-    // tslint:disable-next-line:no-shadowed-variable
     const updateValue = function (value: any) {
         setValue(value);
     };
@@ -71,8 +67,8 @@ function Textarea(props: TextareaProps) {
             ref={textareaRef}
             value={oInput.value}
             style={style}
-            className={classnames('jing-textarea', className, {
-                'jing-input-error': isError,
+            className={classnames(prefixCls, className, {
+                [`${prefixCls}--error`]: isError,
             })}
             rows={rows}
             disabled={isBan}
@@ -91,10 +87,6 @@ function Textarea(props: TextareaProps) {
 
 Textarea.defaultProps = {
     className: '',
-};
-
-Textarea.propTypes = {
-    className: PropTypes.string,
 };
 
 export default Textarea;

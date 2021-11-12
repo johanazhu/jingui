@@ -5,9 +5,10 @@ import React, {
     forwardRef,
     useRef,
 } from 'react';
-import * as PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { InputProps } from './PropType';
+
+const prefixCls = 'jing-input';
 
 function useInputValue(initialValue: string | undefined) {
     const [value, setValue] = useState(initialValue);
@@ -63,8 +64,8 @@ const Input = forwardRef((props: InputProps, ref: any) => {
             type={type}
             style={style}
             value={oInput.value}
-            className={classnames('jing-input', className, {
-                'jing-input__error': isError,
+            className={classnames(prefixCls, className, {
+                [`${prefixCls}--error`]: isError,
             })}
             disabled={isBan}
             placeholder={placeholder}
@@ -81,27 +82,8 @@ const Input = forwardRef((props: InputProps, ref: any) => {
 });
 
 Input.defaultProps = {
-    className: '',
     disabled: false,
     error: false,
-    onChange: function () {},
-    onFocus: function () {},
-    onBlur: function () {},
-    onClear: function () {},
-};
-
-Input.propTypes = {
-    className: PropTypes.string,
-    style: PropTypes.object,
-    disabled: PropTypes.bool,
-    error: PropTypes.bool,
-    maxLength: PropTypes.number,
-    minLength: PropTypes.number,
-    type: PropTypes.string,
-    onFocus: PropTypes.func,
-    onBlur: PropTypes.func,
-    onChange: PropTypes.func,
-    onClear: PropTypes.func,
 };
 
 export default React.memo(Input);

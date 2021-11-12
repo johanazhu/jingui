@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, FC } from 'react';
 import { InputProps } from './PropType';
 import { IconEyeCloseTwo, IconEyeOpenTwo } from '../Icon';
 import Clear from './clear';
 
-const Password = (props: InputProps) => {
+const prefixCls = 'jing-input';
+
+const Password: FC<InputProps> = (props) => {
     const { onFocus, onBlur } = props;
 
     let timer;
@@ -16,13 +18,13 @@ const Password = (props: InputProps) => {
 
     const [visible, setIsVisible] = useState(false);
     const [isFocus, setIsFocus] = useState(false);
-    const IconKind = visible ? 'eye-on' : 'eye-off';
+
     const passwordRender = () => {
         return (
             <>
                 {isFocus && (
                     <div
-                        className="eye-btn"
+                        className={`${prefixCls}--focus`}
                         onClick={() => {
                             // isShowClear = true;
                             // clearTimeout(timer);
@@ -46,7 +48,7 @@ const Password = (props: InputProps) => {
     return (
         <Clear
             {...props}
-            groupClassName="jing-input__group-password"
+            groupClassName={`${prefixCls}__group-password`}
             type={visible ? 'text' : 'password'}
             onFocus={(e) => {
                 setIsFocus(true);
@@ -62,4 +64,5 @@ const Password = (props: InputProps) => {
         />
     );
 };
+
 export default React.memo(Password);

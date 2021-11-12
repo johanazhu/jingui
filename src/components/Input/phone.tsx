@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import RegInput from './reg';
 import Prefix from './prefix';
-import { InputProps } from './PropType';
-
-export interface PhoneProps extends InputProps {
-    value: string;
-    icon?: string;
-    className?: string;
-    reg?: RegExp | any;
-}
+import { PhoneProps } from './PropType';
 
 const filterValue = (val: string) => {
     const _reg = /^[0-9]*$/;

@@ -1,29 +1,19 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
 import classnames from 'classnames';
+import { GroupProps } from './PropType';
 
-export interface GroupProps {
-    className?: string;
-    children?: React.ReactNode;
-    style?: React.CSSProperties;
-}
+const prefixCls = 'jing-input';
 
 const Group = (props: GroupProps) => {
     const { className, children, style } = props;
     return (
         <div
-            className={classnames('jing-input__group', className)}
+            className={classnames(`${prefixCls}__group`, className)}
             style={style}
         >
             {children}
         </div>
     );
-};
-
-Group.propTypes = {
-    className: PropTypes.string,
-    children: PropTypes.node,
-    style: PropTypes.node,
 };
 
 export default React.memo(Group);

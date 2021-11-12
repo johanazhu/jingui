@@ -1,18 +1,10 @@
 import React, { FC, useState, useEffect, useCallback, useRef } from 'react';
 import classnames from 'classnames';
 import Group from './group';
-
 import { IconCircleDelete, IconEyeCloseTwo, IconEyeOpenTwo } from '../Icon';
+import { KeyboardProps } from './PropType';
 
-export interface KeyboardProps {
-    value: string;
-    placeholder?: string;
-    isActive?: boolean;
-    maxLength?: number;
-    onChange?: (val: string) => void;
-    onClearValue?: () => void;
-    onHandleFocus?: () => void;
-}
+const prefixCls = 'jing-input';
 
 function useInputValue(initialValue: string) {
     const [value, setValue] = useState(initialValue);
@@ -144,11 +136,11 @@ const KeyboardInput: FC<KeyboardProps> = (props) => {
     }
 
     return (
-        <Group className="jing-input__group-keyboard">
+        <Group className={`${prefixCls}__group-keyboard`}>
             <div
-                className={classnames('jing-input__keyboard', {
-                    'jing-input__keyboard_active': isFocus,
-                    'jing-input__keyboard_small': !visible,
+                className={classnames(`${prefixCls}__keyboard`, {
+                    [`${prefixCls}__keyboard-active`]: isFocus,
+                    [`${prefixCls}__keyboard-small`]: !visible,
                 })}
                 onClick={onFocusClick}
             >
@@ -156,16 +148,20 @@ const KeyboardInput: FC<KeyboardProps> = (props) => {
             </div>
             <sub>{placeHolderValue}</sub>
             {isFocus && (
-                <div className="eye-btn" onClick={onEyeClick}>
+                <div className={`${prefixCls}--focus`} onClick={onEyeClick}>
                     {visible ? (
-                        <IconEyeOpenTwo className="eyeOpen" />
+                        <IconEyeOpenTwo
+                            className={`${prefixCls}--focus-open`}
+                        />
                     ) : (
-                        <IconEyeCloseTwo className="eyeClose" />
+                        <IconEyeCloseTwo
+                            className={`${prefixCls}--focus-close`}
+                        />
                     )}
                 </div>
             )}
             {isShowClear && (
-                <div className="clear-btn" onClick={onClearClick}>
+                <div className={`${prefixCls}--clear`} onClick={onClearClick}>
                     <IconCircleDelete />
                 </div>
             )}

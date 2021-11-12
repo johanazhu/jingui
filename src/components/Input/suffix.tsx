@@ -4,6 +4,8 @@ import classnames from 'classnames';
 import Group from './group';
 import Clear from './clear';
 
+const prefixCls = 'jing-input';
+
 function Inner(props: any) {
     return (
         <>
@@ -15,9 +17,10 @@ function Inner(props: any) {
 
 export default (props: any) => {
     const { className } = props;
+
     return (
-        <Group className={classnames('jing-input__group-suffix', className)}>
-            <Inner {...props} className={null} />
+        <Group className={classnames(`${prefixCls}__group-suffix`, className)}>
+            <Inner {...props} className={''} />
         </Group>
     );
 };
