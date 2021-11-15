@@ -1,13 +1,5 @@
 import * as React from 'react';
-
-export interface SteplineItemProps {
-    header: React.ReactNode;
-    footer: React.ReactNode;
-    color?: string;
-    percent?: string;
-    count?: number;
-    i?: any;
-}
+import { SteplineItemProps } from './PropType';
 
 const StepLineItem: React.FC<SteplineItemProps> = (props) => {
     const { header, footer, color, percent, count, i } = props;

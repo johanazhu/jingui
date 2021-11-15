@@ -1,25 +1,8 @@
 import * as React from 'react';
 import classnames from 'classnames';
 import Tag from '../Tag';
-import { IconArrow } from 'icons';
-
-export interface BankCardProps {
-    bankNo: any;
-    title: JSX.Element;
-    desc: React.ReactNode;
-    footer?: string | JSX.Element;
-    className?: string;
-    tagList?: Array<TagItemProps>;
-    onClick: () => void;
-    onHandleClickToIcon?: (pkid: string) => void;
-    rightRender: any;
-}
-
-interface TagItemProps {
-    labelName: string;
-    labelContentLinkPkid: any;
-    largePaymentFlag: any;
-}
+import { IconArrow } from '../Icon';
+import { BankCardProps } from './PropType';
 
 const BankCard: React.FC<BankCardProps> = (props) => {
     const {
@@ -47,7 +30,7 @@ const BankCard: React.FC<BankCardProps> = (props) => {
                     {tagList &&
                         tagList.map((item, i) => (
                             <Tag
-                                color="orange"
+                                // color="orange"
                                 key={i}
                                 onClick={(e: any) => {
                                     if (item.labelContentLinkPkid) {

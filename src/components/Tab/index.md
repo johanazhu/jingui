@@ -12,7 +12,7 @@ group:
 
 ## 代码演示
 
-<!-- <code src="./demo/index.tsx"></code> -->
+<code src="./demo/index.tsx"></code>
 
 ### TabContent API
 
