@@ -63,6 +63,7 @@
     --padding-xl: calc(var(--padding-base) * 8);
 
     // 字体
+    --font-size-xxs: 8px;
     --font-size-xs: 10px;
     --font-size-sm: 12px;
     --font-size-md: 14px;
@@ -284,8 +285,17 @@
     --typography-font-size-xl: var(--font-size-xl);
     --typography-font-size-xxl: var(--font-size-xxl);
     --typography-table-bg: var(--bg-white);
-    --typography-table-tr-bg: #fafafa;
+    --typography-table-tr-bg: var(--background-color-light);
     --typography-table-td-border-color: var(--color-black-4);
     --typography-li-margin-left: var(--vertical-gap);
     --typography-hr-bg: var(--color-black-5);
+
+    // Timeline
+    --timeline-header-font-size: var(--font-size-xs);
+    --timeline-footer-font-size: var(--font-size-xxs);
+    --timeline-padding: var(--vertical-gap);
+    --timeline-bg: var(--color-black-5);
+    --timeline-white-bg: var(--bg-white);
+    --timeline-content-bg: rgb(227, 227, 227);
+    --timeline-content-dash-bg: rgb(204, 204, 204);
 }

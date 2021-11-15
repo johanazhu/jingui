@@ -1,7 +1,8 @@
 import React from 'react';
 import classnames from 'classnames';
-import { TimeLineItemProps } from './PropType'
+import { TimeLineItemProps } from './PropType';
 
+const prefixCls = 'jing-timeline--item';
 
 const TimelineItem: React.FC<TimeLineItemProps> = (props) => {
     const {
@@ -16,12 +17,12 @@ const TimelineItem: React.FC<TimeLineItemProps> = (props) => {
         canShowColor,
     } = props;
 
-    const dotClass = classnames('jing-timeline-item__content', {
-        'jing-timeline-item__content-dashed': dashed,
+    const dotClass = classnames(`${prefixCls}__content`, {
+        [`${prefixCls}__content--dashed`]: dashed,
     });
 
-    const stepClass = classnames('jing-timeline-item__step', {
-        'jing-timeline-item__step-dashed': dashed,
+    const stepClass = classnames(`${prefixCls}__step`, {
+        [`${prefixCls}__step--dashed`]: dashed,
     });
 
     const isShowColor =
@@ -30,8 +31,8 @@ const TimelineItem: React.FC<TimeLineItemProps> = (props) => {
 
     return (
         <li
-            className={classnames('jing-timeline-item', {
-                'jing-timeline-item-isShowPercent': showPercent,
+            className={classnames(prefixCls, {
+                [`${prefixCls}--isShowPercent`]: showPercent,
             })}
             style={{ width: `${count && 100 / count}%` }}
         >
@@ -42,8 +43,8 @@ const TimelineItem: React.FC<TimeLineItemProps> = (props) => {
                         isShowColor > 0 && percent === '100%' ? color : '',
                 }}
             ></div>
-            <div className="jing-timeline-item__header">{header}</div>
-            <div className="jing-timeline-item__content-box">
+            <div className={`${prefixCls}__header`}>{header}</div>
+            <div className={`${prefixCls}__contents`}>
                 <div
                     className={dotClass}
                     style={{
@@ -56,7 +57,7 @@ const TimelineItem: React.FC<TimeLineItemProps> = (props) => {
                     }}
                 />
             </div>
-            <div className="jing-timeline-item__footer">{footer}</div>
+            <div className={`${prefixCls}__footer`}>{footer}</div>
         </li>
     );
 };
