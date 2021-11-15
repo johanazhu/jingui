@@ -1,0 +1,11 @@
+.SmallConnect {
+    min-height: 1px;
+    margin-top: $globalGap;
+    margin-bottom: $globalGap;
+    &-desc {
+        padding: 0 1rem;
+        font-size: 0.75rem;
+        line-height: 1.8em;
+        color: $globalColorBlack1;
+    }
+}

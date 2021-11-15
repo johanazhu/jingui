@@ -1,0 +1,16 @@
+.ProductDetailCard {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: $globalColorWhite0;
+    &__Header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 40px;
+        font-size: $am-xs;
+        border-bottom: 1px solid $globalColorBorder;
+        padding-right: 1rem;
+        margin-left: 1rem;
+    }
+}

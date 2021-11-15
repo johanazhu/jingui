@@ -1,0 +1,52 @@
+.DetailList {
+    @include background-shadow();
+    @extend .am-card;
+    @extend .am-float-none;
+    margin: 0 $global-vertical-gap;
+    width: calc(100% - 2rem);
+    padding-left: $global-vertical-gap;
+    &-header {
+        // @extend .am-g;
+        padding: 0.5rem 0;
+        font-size: $am-sm;
+        font-weight: 700;
+    }
+    &-line {
+        position: relative;
+        top: 0;
+        margin: 0.3rem 0;
+        width: 100%;
+        height: 1px;
+        &:after {
+            @include hairline-top($globalColorBorder);
+        }
+    }
+    &-body {
+        &-item {
+            // @extend .am-g;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: $am-sm;
+            // padding: 0.75rem 1rem 0 0;
+            color: $globalColorBlack0;
+            padding: 0.25rem 0;
+            padding-right: 1rem;
+            &__left {
+                align-self: flex-start;
+                max-width: 30%;
+                // float: left;
+                @extend .am-break;
+            }
+            &__right {
+                max-width: 70%;
+                // float: right;
+                text-align: right;
+                @extend .am-break;
+            }
+            &:last-child {
+                padding-bottom: 0.75rem;
+            }
+        }
+    }
+}

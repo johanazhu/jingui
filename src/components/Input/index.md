@@ -59,7 +59,7 @@ group:
 
 ### Input.Clear API
 
-基于 base, base 有的参数它都有
+<!-- 基于 base, base 有的参数它都有
 
 | 参数           | 说明                    | 类型            | 默认值 |
 | -------------- | ----------------------- | --------------- | ------ |
@@ -161,4 +161,4 @@ group:
 | onChange    | input 中的 value 改变时触发               | function        | -      |
 | onFocus     | 获取焦点时的事件                          | function        | -      |
 | onBlur      | 失去焦点时的事件                          | function        | -      |
-| onClear     | Clear 中点击 x 后的回调                   | function        | -      |
+| onClear     | Clear 中点击 x 后的回调                   | function        | -      | -->

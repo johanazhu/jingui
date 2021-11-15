@@ -4,19 +4,19 @@ import { DemoBlock } from 'demo';
 
 export default () => {
     const [title, setTitle] = useState('');
+    const [title2, setTitle2] = useState('');
     const [iserror, setIsError] = useState(false);
     const [text, setText] = useState('');
     const [img, setImg] = useState('http://wx.jingqb.com/certiification.jpg');
     const [value, setValue] = useState('');
 
     useEffect(() => {
-        console.log('title', title);
-        if (title.length > 3) {
+        if (title2.length > 3) {
             setIsError(true);
         } else {
             setIsError(false);
         }
-    }, [title]);
+    }, [title2]);
 
     return (
         <>
@@ -32,10 +32,10 @@ export default () => {
                 <Space style={{ backgroundColor: 'grey' }} />
                 <Input
                     placeholder="请输入超过3个字报错"
-                    value={title}
+                    value={title2}
                     error={iserror}
                     onChange={(value: any) => {
-                        setTitle(value);
+                        setTitle2(value);
                     }}
                 />
             </DemoBlock>
@@ -85,18 +85,6 @@ export default () => {
                     }}
                 />
             </DemoBlock>
-            <DemoBlock title="多行文本" padding="">
-                <Input.Textarea
-                    rows={3}
-                    placeholder="请输入"
-                    value={text}
-                    onChange={(value: any) => {
-                        setText(value);
-                        console.log(`onChange: ${value}`);
-                    }}
-                    onBlur={(value: any) => console.log(`onBlur: ${value}`)}
-                />
-            </DemoBlock>
             <DemoBlock title="KeyBoard输入框" padding="">
                 <Input.Group>
                     <Input.KeyBoard
@@ -112,6 +100,18 @@ export default () => {
                         maxLength={20}
                     />
                 </Input.Group>
+            </DemoBlock>
+            <DemoBlock title="多行文本" padding="">
+                <Input.Textarea
+                    rows={3}
+                    placeholder="请输入"
+                    value={text}
+                    onChange={(value: any) => {
+                        setText(value);
+                        console.log(`onChange: ${value}`);
+                    }}
+                    onBlur={(value: any) => console.log(`onBlur: ${value}`)}
+                />
             </DemoBlock>
         </>
     );

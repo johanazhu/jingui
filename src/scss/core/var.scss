@@ -23,14 +23,14 @@ $white-4: rgba(255, 255, 255, 0.1);
 $gradient-blue: linear-gradient(to right, rgb(80, 135, 245), $blue);
 $gradient-orange: linear-gradient(to right, rgb(255, 135, 35), $orange);
 $gradient-blue-disable: linear-gradient(
-  to right,
-  rgb(185, 205, 250),
-  rgb(150, 185, 245)
+    to right,
+    rgb(185, 205, 250),
+    rgb(150, 185, 245)
 );
 $gradient-orange-disable: linear-gradient(
-  to right,
-  rgb(240, 210, 185),
-  rgb(250, 200, 175)
+    to right,
+    rgb(240, 210, 185),
+    rgb(250, 200, 175)
 );
 
 // 背景色
@@ -64,10 +64,10 @@ $font-size-xl: 18px;
 $font-size-xxl: 18px;
 $font-weight-bold: 500;
 $base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
-  Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB',
-  'Microsoft Yahei', sans-serif;
+    Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft Yahei', sans-serif;
 $price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial,
-  sans-serif;
+    sans-serif;
 
 // 动画
 $animation-duration-base: 0.3s;
@@ -120,22 +120,22 @@ $icon-size-sm: 0.68rem;
 $icon-size-auto: 100%;
 
 // Input
-$input-font-size: $font-size-sm;
-$input-font-size-l: $font-size-md;
-$input-font-size-xxs: $font-size-xs;
-$input-font-color: #484852;
-$input-verify-font-color: $blue;
-$input-verify-font-color: #484852;
-$input-border-color: #d0d2da;
-$input-error-border-color: #ef5353;
-$input-active-border-color: #645a82;
-$input-disabled-font-color: rgba(72, 72, 82, 0.3);
-$input-disabled-bg-color: #f4f4f6;
-$input-placeholder-color: #b0b2b8;
-$input-width: 3rem;
-$input-height: 3rem;
-$input-line-height: 3rem;
-$input-keyboard-sub-color: $black-4;
+// $input-font-size: $font-size-sm;
+// $input-font-size-l: $font-size-md;
+// $input-font-size-xxs: $font-size-xs;
+// $input-font-color: #484852;
+// $input-verify-font-color: $blue;
+// $input-verify-font-color: #484852;
+// $input-border-color: #d0d2da;
+// $input-error-border-color: #ef5353;
+// $input-active-border-color: #645a82;
+// $input-disabled-font-color: rgba(72, 72, 82, 0.3);
+// $input-disabled-bg-color: #f4f4f6;
+// $input-placeholder-color: #b0b2b8;
+// $input-width: 3rem;
+// $input-height: 3rem;
+// $input-line-height: 3rem;
+// $input-keyboard-sub-color: $black-4;
 // $black-4
 
 // timeline

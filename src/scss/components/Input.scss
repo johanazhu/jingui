@@ -4,8 +4,6 @@
 }
 
 @mixin jing-input-common() {
-    //   display: block;
-    //   z-index: 3;
     width: var(--input-width);
 }
 
@@ -117,6 +115,7 @@ textarea::placeholder {
 .jing-input__group-keyboard {
     position: relative;
     .jing-input__keyboard {
+        @include cell;
         flex: 1;
         width: 100%;
         cursor: text;
@@ -127,13 +126,13 @@ textarea::placeholder {
             display: none;
             content: '';
             width: 1px;
-            height: 1.25rem;
+            height: 18px;
             background: #000;
             border-radius: 2px;
             position: relative;
-            top: 0.25rem;
+            top: 1px;
             left: 0;
-            animation: jqb-cursor-flicker 1s ease-in infinite;
+            animation: 1s step-start infinite jqb-cursor-flicker;
         }
         &-active {
             &:after {
@@ -148,12 +147,12 @@ textarea::placeholder {
         z-index: 1;
         display: block;
         position: absolute;
-        left: 1px;
+        left: 16px;
         top: 52%;
         transform: translate(0, -50%);
         height: 1em;
         line-height: 1em;
-        font-size: 1rem;
+        font-size: 14px;
         color: var(--input-keyboard-sub-text-color);
     }
 }

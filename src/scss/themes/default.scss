@@ -260,7 +260,7 @@
     --input-keyboard-sub-font-size: var(--font-size-xs);
     --input-keyboard-sub-text-color: var(--color-black-4);
     --input-verify-font-size: var(--font-size-sm);
-    --input-verify-active-color: var(--color-black-2);
+    --input-verify-active-color: var(--color-black-3);
 
     // NoticeBar
     --noticebar-height: 30px;
@@ -270,4 +270,22 @@
     --noticebar-font-weight: var(--font-weight-bold);
     --noticebar-bg: #ffefe5;
     --noticebar-link-width: 40px;
+
+    // Typography
+    --typography-padding: var(--horizontal-gap);
+    --typography-border-color: var(--border-color);
+    --typography-h-margin-bottom: var(--horizontal-gap);
+    --typography-p-line-height: 1.8em;
+    --typography-p-margin-bottom: var(--horizontal-gap);
+    --typography-font-size-xs: var(--font-size-xs);
+    --typography-font-size-sm: var(--font-size-sm);
+    --typography-font-size-md: var(--font-size-md);
+    --typography-font-size-lg: var(--font-size-lg);
+    --typography-font-size-xl: var(--font-size-xl);
+    --typography-font-size-xxl: var(--font-size-xxl);
+    --typography-table-bg: var(--bg-white);
+    --typography-table-tr-bg: #fafafa;
+    --typography-table-td-border-color: var(--color-black-4);
+    --typography-li-margin-left: var(--vertical-gap);
+    --typography-hr-bg: var(--color-black-5);
 }

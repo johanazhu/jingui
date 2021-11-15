@@ -1,0 +1,48 @@
+.BankCard {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    position: relative;
+    background: $globalColorWhite0;
+    &__icon {
+        align-self: flex-start;
+        width: 2.5rem;
+        height: 2.5rem;
+        .Icon {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__content {
+        flex: 5;
+        display: flex;
+        flex-direction: column;
+        // width: 60vw;
+        margin-left: 1rem;
+        &-title {
+            font-size: $am-xl;
+            font-weight: 700;
+            color: $globalColorBlack0;
+            margin-bottom: 0.5rem;
+        }
+        &-desc {
+            font-size: $am-xs;
+            color: $globalColorBlack2;
+            line-height: 1rem;
+            padding-right: 2em;
+        }
+    }
+    .ProductCard__header-taglist {
+        .Tag {
+            display: flex;
+            align-items: center;
+            .Icon {
+                width: 0.4rem;
+                // height: 0.5rem;
+            }
+        }
+    }
+    &__right {
+        flex: 1;
+    }
+}

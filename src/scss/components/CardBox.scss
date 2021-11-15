@@ -1,0 +1,13 @@
+.CardBox {
+    flex-direction: column;
+    // height: 40px;
+    line-height: inherit;
+    // text-align: center;
+    &__header {
+        font-size: $am-xxl;
+    }
+    &__footer {
+        font-size: $am-xs;
+        color: $globalColorBlack2;
+    }
+}
