@@ -1,19 +1,16 @@
-import * as React from 'react';
+import React, { FC, memo } from 'react';
 import classnames from 'classnames';
-import { Col } from 'components';
+import { CardBoxHeaderProps } from './PropType';
 
-export interface CardBoxHeaderProps {
-    className?: string;
-    children: React.ReactNode;
-}
+const prefixCls = 'jing-cardbox';
 
-const CardBoxHeader: React.FC<CardBoxHeaderProps> = (props) => {
+const CardBoxHeader: FC<CardBoxHeaderProps> = (props) => {
     const { children, className } = props;
     return (
-        <div className={classnames('CardBox__header', className)}>
+        <div className={classnames(`${prefixCls}__header`, className)}>
             {children}
         </div>
     );
 };
 
-export default React.memo(CardBoxHeader);
+export default memo(CardBoxHeader);

@@ -37,6 +37,27 @@ export interface AreaTabSourceProps {
     label: string;
 }
 
+
+/**
+ * 单个选择器
+ * @param {columnSource} Array 单个选择器的数据源
+ * @param {tabSource} Array<header的数据源>;
+ * @param {rangeKey} string 单个选择器的key
+ * @param {onClick} function 回调函数
+ **/
+
+ export interface AreaColumn {
+    columnSource: Array<AreaColumnRangeProps>;
+    tabSource?: Array<AreaTabSourceProps>;
+    rangeKey?: string;
+    onClick: (item: AreaColumnRangeProps) => void;
+}
+
+export interface AreaColumnRangeProps {
+    value: string;
+    label: string;
+}
+
 /**
  * 从底部弹起的滚动选择器（高仿京东地址选择器）
  * @param {tabSource} Array 头部的数据源

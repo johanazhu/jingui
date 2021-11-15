@@ -32,11 +32,11 @@ group:
 
 ### SortBar API
 
-| 属性                | 说明 | 类型     | 默认值 |
-| ------------------- | ---- | -------- | ------ |
-| options             | ...  | string   | -      |
-| isSticky            | ...  | boolean  | -      |
-| filterName          | ...  | string   | -      |
-| status              | ...  | boolean  | -      |
-| onItemHandleClick   | ...  | function | -      |
-| onFilterHandleClick | ...  | function | -      |
+| 属性                | 说明                 | 类型     | 默认值 |
+| ------------------- | -------------------- | -------- | ------ |
+| options             | ...                  | string   | -      |
+| sticky              | 是否使用粘性定位布局 | boolean  | -      |
+| filterName          | ...                  | string   | -      |
+| status              | ...                  | boolean  | -      |
+| onItemHandleClick   | ...                  | function | -      |
+| onFilterHandleClick | ...                  | function | -      |

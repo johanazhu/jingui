@@ -27,7 +27,7 @@ export interface SortBarFilterProps {
 /**
  * SortBar
  * @param {options} Array                               // ...
- * @param {isSticky} boolean                            // ...
+ * @param {sticky} boolean                            // 是否使用粘性定位布局
  * @param {filterName} string                           // ...
  * @param {status} boolean                              // ...
  * @param {onItemHandleClick} function                  // ...
@@ -35,7 +35,7 @@ export interface SortBarFilterProps {
  **/
 export interface SortBarProps {
     options: Array<any>;
-    isSticky: boolean;
+    sticky: boolean;
     filterName: string;
     status: boolean;
     onItemHandleClick: (item: any) => void;

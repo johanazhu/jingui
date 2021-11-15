@@ -1,27 +1,22 @@
-import * as React from 'react';
+import React, { Children } from 'react';
 import classnames from 'classnames';
-import CardBoxHeader, { CardBoxHeaderProps } from './Header';
-import CardBoxFooter, { CardBoxFooterProps } from './Footer';
-import { Row } from 'components';
+import CardBoxHeader from './Header';
+import CardBoxFooter from './Footer';
+import { Row } from '../Layout';
+import { CardBoxType } from './PropType';
 
-export interface CardBoxProps {
-    className?: string;
-}
 
-interface CardBoxType extends React.FC<CardBoxProps> {
-    Header: React.FC<CardBoxHeaderProps>;
-    Footer: React.FC<CardBoxFooterProps>;
-}
+const prefixCls = 'jing-cardbox';
 
 const CardBox: CardBoxType = (props) => {
     const { children, className } = props;
 
-    const cardChildren = React.Children.map(children, (child, i) => {
+    const cardChildren = Children.map(children, (child, i) => {
         return child;
     });
 
     return (
-        <Row className={classnames('CardBox', className)}>{cardChildren}</Row>
+        <Row className={classnames(prefixCls, className)}>{cardChildren}</Row>
     );
 };
 

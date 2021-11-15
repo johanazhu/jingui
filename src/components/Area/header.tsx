@@ -1,23 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import * as PropTypes from 'prop-types';
 import classnames from 'classnames';
+import {AreaHeaderArea, AreaTabSourceProps } from './PropType';
 
-/**
- * 选择器的头部
- * @param {tabSource} Array
- * @param {rangeKey} string
- * @param {onClick} function
- **/
-
-export interface AreaHeaderArea {
-    onClick?: (item: AreaTabSourceProps) => void;
-    tabSource?: Array<AreaTabSourceProps>;
-}
-
-export interface AreaTabSourceProps {
-    value: string;
-    label: string;
-}
 
 const Header = (props: AreaHeaderArea) => {
     const { tabSource, onClick } = props;
@@ -70,9 +54,5 @@ const Header = (props: AreaHeaderArea) => {
     );
 };
 
-Header.propTypes = {
-    tabSource: PropTypes.array,
-    onClick: PropTypes.func,
-};
 
 export default React.memo(Header);

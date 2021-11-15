@@ -1,10 +1,10 @@
-import * as React from 'react';
+import React, { FC } from 'react';
 import classnames from 'classnames';
 import Tag from '../Tag';
 import { IconArrow } from '../Icon';
 import { BankCardProps } from './PropType';
 
-const BankCard: React.FC<BankCardProps> = (props) => {
+const BankCard: FC<BankCardProps> = (props) => {
     const {
         bankNo,
         title,

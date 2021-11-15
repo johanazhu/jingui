@@ -5,12 +5,14 @@ import SortBarFilter from './Filter';
 import { SortBarProps } from './PropType';
 
 
+const prefixCls = 'jing-sortbar';
+
 const SortBar:FC<SortBarProps> = props => {
     const {
         options,
         status,
         filterName,
-        isSticky,
+        sticky,
         onItemHandleClick,
         onFilterHandleClick,
     } = props;
@@ -23,7 +25,7 @@ const SortBar:FC<SortBarProps> = props => {
         onItemHandleClick(item);
     };
 
-    const classes = classnames('jing-sortbar', { 'jing-sortBar--sticky': isSticky });
+    const classes = classnames(prefixCls, { [`${prefixCls}--sticky`]: sticky });
 
     return (
         <div className={classes}>
@@ -45,7 +47,7 @@ const SortBar:FC<SortBarProps> = props => {
 };
 
 SortBar.defaultProps = {
-    isSticky: true,
+    sticky: true,
 };
 
 export default React.memo(SortBar);

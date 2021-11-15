@@ -1,10 +1,18 @@
-import React from 'react';
-import { Tag } from 'jing-ui';
+import React, {useState} from 'react';
+import { Button } from 'jing-ui';
+import { DemoBlock } from 'demo';
 
-export default () => (
-    <div>
-        <Tag color="highOrange">标签</Tag>
-        <Tag color="orange">标签</Tag>
-        <Tag>标签</Tag>
-    </div>
-);
+export default () => {
+    const [isShow, setIsShow] = useState(false);
+    return (
+        <>
+            <DemoBlock
+                title="类型"
+                className="demo-jing-button"
+                padding="10px 16px 0"
+            >
+                <Button type="primary" onClick={() => setIsShow(true)}>主色按钮</Button>
+            </DemoBlock>
+        </>
+    );
+};

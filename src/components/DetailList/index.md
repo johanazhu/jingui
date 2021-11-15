@@ -8,6 +8,6 @@ group:
     order: 6
 ---
 
-# 不知道叫什么 RecordList
+# 详情列表 DetailList
 
 ## 代码演示

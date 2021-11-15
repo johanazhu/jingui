@@ -1,28 +1,8 @@
 import React, { useState } from 'react';
-import * as PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { IconRight } from 'icons';
-import { AreaTabSourceProps } from './header';
+import { IconRight } from '../Icon';
+import { AreaColumn, AreaColumnRangeProps } from './PropType'
 
-/**
- * 单个选择器
- * @param {columnSource} Array 单个选择器的数据源
- * @param {tabSource} Array<header的数据源>;
- * @param {rangeKey} string 单个选择器的key
- * @param {onClick} function 回调函数
- **/
-
-export interface AreaColumn {
-    columnSource: Array<AreaColumnRangeProps>;
-    tabSource?: Array<AreaTabSourceProps>;
-    rangeKey?: string;
-    onClick: (item: AreaColumnRangeProps) => void;
-}
-
-export interface AreaColumnRangeProps {
-    value: string;
-    label: string;
-}
 
 const Column = (props: AreaColumn) => {
     const { columnSource, tabSource, onClick } = props;
@@ -52,7 +32,7 @@ const Column = (props: AreaColumn) => {
                             (headerSource &&
                                 headerSource.indexOf(item.value) > -1)) && (
                             <span className="checkout">
-                                <IconRight size="small" />
+                                <IconRight size="sm" />
                             </span>
                         )}
                     </div>
@@ -60,12 +40,6 @@ const Column = (props: AreaColumn) => {
             })}
         </div>
     );
-};
-
-Column.propTypes = {
-    columnSource: PropTypes.array,
-    rangeKey: PropTypes.string,
-    onClick: PropTypes.func,
 };
 
 export default React.memo(Column);

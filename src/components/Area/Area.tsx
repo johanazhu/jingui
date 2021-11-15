@@ -1,30 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import * as PropTypes from 'prop-types';
-import { Picker } from 'components';
-import Column, { AreaColumnRangeProps } from './column';
-import Header, { AreaTabSourceProps } from './header';
+import React, { useState, useEffect, FC } from 'react';
+import { Picker } from '../Picker';
+import Column from './column';
+import Header from './header';
+import { AreaProps } from './PropType';
 
-/**
- * 从底部弹起的滚动选择器（高仿京东地址选择器）
- * @param {tabSource} Array 头部的数据源
- * @param {columnSource} Array 选择器的数据
- * @param {onHeaderItemClick} 头部中的点击回调
- * @param {onColumnItemClick} 选择器中的点击回调
- * @param {show} 是否显示
- * @param {title} 标题
- * @param {onHandleCancel} 点击空白处回调
- */
-export interface AreaProps {
-    tabSource?: Array<AreaTabSourceProps>;
-    columnSource: Array<AreaColumnRangeProps>;
-    onHeaderItemClick?: (item: AreaTabSourceProps) => void;
-    onColumnItemClick: (item: AreaColumnRangeProps) => void;
-    show: boolean;
-    title: string;
-    onHandleCancel?: () => void;
-}
+const prefixCls = 'jing-area';
 
-const Area = (props: AreaProps) => {
+const Area:FC<AreaProps> = (props) => {
     const {
         tabSource,
         columnSource,
@@ -42,7 +24,7 @@ const Area = (props: AreaProps) => {
 
     return (
         <Picker show={isShow} title={title} onHandleCancel={onHandleCancel}>
-            <div className="Area">
+            <div className={prefixCls}>
                 {tabSource && (
                     <Header
                         tabSource={tabSource}
@@ -66,16 +48,6 @@ const Area = (props: AreaProps) => {
 
 Area.defaultProps = {
     show: true,
-};
-
-Area.propTypes = {
-    tabSource: PropTypes.array,
-    columnSource: PropTypes.array.isRequired,
-    onHeaderItemClick: PropTypes.func,
-    onColumnItemClick: PropTypes.func.isRequired,
-    show: PropTypes.bool,
-    title: PropTypes.string,
-    onHandleCancel: PropTypes.func,
 };
 
 export default React.memo(Area);
