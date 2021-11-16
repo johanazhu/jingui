@@ -258,8 +258,12 @@
     --input-disabled-bg: var(--color-black-5);
     --input-placeholder-text-color: var(--color-black-4);
     --input-placeholder-font-size: var(--font-size-md);
-    --input-keyboard-sub-font-size: var(--font-size-xs);
+    --input-keyboard-height: 46px;
+    --input-keyboard-small-font-size: var(--font-size-md);
+    --input-keyboard-sub-font-size: var(--font-size-md);
     --input-keyboard-sub-text-color: var(--color-black-4);
+    --input-keyboard-cursor-height: 18px;
+    --input-keyboard-cursor-bg: var(--color-black-1);
     --input-verify-font-size: var(--font-size-sm);
     --input-verify-active-color: var(--color-black-3);
 

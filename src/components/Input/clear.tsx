@@ -41,7 +41,6 @@ const Clear = (props: ClearProps) => {
         onChange,
         onFocus,
         onBlur,
-        onClear,
         render,
         backRender,
     } = props;
@@ -52,11 +51,6 @@ const Clear = (props: ClearProps) => {
     const [isFocus, setIsFocus] = useState(false);
     const [isShowClear, setIsShowClear] = useState(false);
     const inputRef = useRef<HTMLInputElement>(null);
-    // console.log('value', value)
-    // useEffect(() => {
-    //     console.log('value', value)
-    //     value && oInput.updateValue(value);
-    // }, [value]);
 
     useEffect(() => {
         if (oInput.value !== '' && isFocus) {

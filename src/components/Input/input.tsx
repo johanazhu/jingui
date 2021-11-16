@@ -13,9 +13,7 @@ import Captcha from './captcha';
 import KeyBoard from './keyboard';
 import Textarea from './textarea';
 
-const Input = (props: any) => {
-    return <Base {...props} />;
-};
+const Input = (props: any) => <Base {...props} />;
 
 Input.Group = Group;
 Input.Verify = Verify;

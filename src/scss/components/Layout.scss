@@ -40,8 +40,8 @@
     flex-grow: 1;
     max-width: 100%;
     @for $i from 1 through 24 {
-        // $item: math.div(100%, 24) * $i; // 不支持 build
-        $item: $i * (100% / 24);
+        $item: math.div(100%, 24) * $i;
+        // $item: $i * (100% / 24);
         &--#{$i} {
             flex: $item;
             max-width: $item;

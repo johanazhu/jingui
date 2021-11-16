@@ -3,7 +3,7 @@ import React, {
     useEffect,
     useCallback,
     forwardRef,
-    useRef,
+    memo,
 } from 'react';
 import classnames from 'classnames';
 import { InputProps } from './PropType';
@@ -86,4 +86,4 @@ Input.defaultProps = {
     error: false,
 };
 
-export default React.memo(Input);
+export default memo(Input);

@@ -23,7 +23,60 @@
     }
 }
 
+@keyframes jing-spinner-fade {
+    0% {
+        opacity: 0.85;
+    }
+    50% {
+        opacity: 0.25;
+    }
+    100% {
+        opacity: 0.25;
+    }
+}
 // input.keyboard 动画
 // inputMark
 
 // noticebar 动画
+@keyframes jqb-fade-enter {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.jqb-fade-enter {
+    animation: jqb-fade-enter both ease-in;
+}
+
+@keyframes jqb-fade-leave {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.jqb-fade-leave {
+    animation: jqb-fade-leave both ease-out;
+}
+
+// 输入框 光标效果
+@keyframes jqb-cursor-flicker {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

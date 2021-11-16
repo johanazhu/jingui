@@ -21,7 +21,6 @@ textarea::placeholder {
 
     &--error {
         border-color: var(--input-error-border-color);
-        // border: 1px solid var(--input-error-border-color);
 
         &:focus {
             border-color: var(--input-error-border-color);
@@ -29,6 +28,10 @@ textarea::placeholder {
     }
 
     &::-webkit-input-placeholder {
+        color: var(--input-placeholder-text-color);
+    }
+
+    &::placeholder {
         color: var(--input-placeholder-text-color);
     }
 }
@@ -43,7 +46,6 @@ textarea::placeholder {
     }
 
     .jing-input--focus {
-        // display: flex !important;
         @include flex-center();
         @include jing-input-common();
     }
@@ -54,7 +56,11 @@ textarea::placeholder {
         @include jing-input-common();
     }
 
-    &-prefix-left {
+    &-prefix-icon {
+        @include flex-center();
+        @include jing-input-common();
+    }
+    &-suffix-icon {
         @include flex-center();
         @include jing-input-common();
     }
@@ -111,48 +117,49 @@ textarea::placeholder {
     }
 }
 
-// 自定义input
+// keyboard
 .jing-input__group-keyboard {
     position: relative;
     .jing-input__keyboard {
         @include cell;
         flex: 1;
         width: 100%;
+        height: var(--input-keyboard-height);
         cursor: text;
         position: relative;
         z-index: 2;
-        background-color: rgba(255, 255, 255, 0) !important;
+        background-color: rgba(255, 255, 255, 0);
+        border: 1px solid transparent;
         &:after {
-            display: none;
+            visibility: hidden;
             content: '';
             width: 1px;
-            height: 18px;
-            background: #000;
-            border-radius: 2px;
+            height: var(--input-keyboard-cursor-height);
+            background: var(--input-keyboard-cursor-bg);
             position: relative;
-            top: 1px;
+            top: 3px;
             left: 0;
             animation: 1s step-start infinite jqb-cursor-flicker;
         }
         &-active {
             &:after {
-                display: inline-block;
+                visibility: visible;
             }
         }
         &-small {
-            font-size: var(--input-keyboard-sub-font-size);
+            font-size: var(--input-keyboard-small-font-size);
         }
     }
     sub {
         z-index: 1;
         display: block;
         position: absolute;
-        left: 16px;
+        left: 17px;
         top: 52%;
         transform: translate(0, -50%);
         height: 1em;
         line-height: 1em;
-        font-size: 14px;
+        font-size: var(--input-keyboard-sub-font-size);
         color: var(--input-keyboard-sub-text-color);
     }
 }
@@ -166,178 +173,3 @@ textarea::placeholder {
     word-wrap: break-word;
     overflow: visible;
 }
-
-// @import '../style/var';
-
-// .van-field {
-//   &__label {
-//     flex: none;
-//     box-sizing: border-box;
-//     width: @field-label-width;
-//     margin-right: @field-label-margin-right;
-//     color: @field-label-color;
-//     text-align: left;
-//     word-wrap: break-word;
-
-//     &--center {
-//       text-align: center;
-//     }
-
-//     &--right {
-//       padding-right: @padding-md;
-//       text-align: right;
-//     }
-//   }
-
-//   &--disabled {
-//     .van-field__label {
-//       color: @field-disabled-text-color;
-//     }
-//   }
-
-//   &__value {
-//     overflow: visible;
-//   }
-
-//   &__body {
-//     display: flex;
-//     align-items: center;
-//   }
-
-//   &__control {
-//     display: block;
-//     box-sizing: border-box;
-//     width: 100%;
-//     min-width: 0; // for flex-shrink in field__button
-//     margin: 0;
-//     padding: 0;
-//     color: @field-input-text-color;
-//     line-height: inherit;
-//     text-align: left;
-//     background-color: transparent;
-//     border: 0;
-//     resize: none;
-
-//     &::placeholder {
-//       color: @field-placeholder-text-color;
-//     }
-
-//     &:disabled {
-//       color: @field-input-disabled-text-color;
-//       background-color: transparent;
-//       cursor: not-allowed;
-//       opacity: 1;
-//       -webkit-text-fill-color: currentColor; // fix disabled color in iOS
-//     }
-
-//     &:read-only {
-//       cursor: default;
-//     }
-
-//     &--center {
-//       justify-content: center;
-//       text-align: center;
-//     }
-
-//     &--right {
-//       justify-content: flex-end;
-//       text-align: right;
-//     }
-
-//     &--custom {
-//       display: flex;
-//       align-items: center;
-//       min-height: @cell-line-height;
-//     }
-
-//     // for ios wechat
-//     &[type='date'],
-//     &[type='time'],
-//     &[type='datetime-local'] {
-//       min-height: @cell-line-height;
-//     }
-
-//     // for safari
-//     &[type='search'] {
-//       -webkit-appearance: none;
-//     }
-//   }
-
-//   &__clear,
-//   &__icon,
-//   &__button,
-//   &__right-icon {
-//     flex-shrink: 0;
-//   }
-
-//   &__clear,
-//   &__right-icon {
-//     margin-right: -@padding-xs;
-//     padding: 0 @padding-xs;
-//     line-height: inherit;
-//   }
-
-//   &__clear {
-//     color: @field-clear-icon-color;
-//     font-size: @field-clear-icon-size;
-//     cursor: pointer;
-//   }
-
-//   &__left-icon .van-icon,
-//   &__right-icon .van-icon {
-//     display: block;
-//     min-width: 1em;
-//     font-size: @field-icon-size;
-//     line-height: inherit;
-//   }
-
-//   &__left-icon {
-//     margin-right: @padding-base;
-//   }
-
-//   &__right-icon {
-//     color: @field-right-icon-color;
-//   }
-
-//   &__button {
-//     padding-left: @padding-xs;
-//   }
-
-//   &__error-message {
-//     color: @field-error-message-color;
-//     font-size: @field-error-message-text-color;
-//     text-align: left;
-
-//     &--center {
-//       text-align: center;
-//     }
-
-//     &--right {
-//       text-align: right;
-//     }
-//   }
-
-//   &__word-limit {
-//     margin-top: @padding-base;
-//     color: @field-word-limit-color;
-//     font-size: @field-word-limit-font-size;
-//     line-height: @field-word-limit-line-height;
-//     text-align: right;
-//   }
-
-//   &--error {
-//     .van-field__control {
-//       &,
-//       &::placeholder {
-//         color: @field-input-error-text-color;
-//         -webkit-text-fill-color: currentColor;
-//       }
-//     }
-//   }
-
-//   &--min-height {
-//     .van-field__control {
-//       min-height: @field-text-area-min-height;
-//     }
-//   }
-// }

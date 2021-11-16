@@ -1,16 +1,11 @@
-import * as React from 'react';
+import React, { FC, memo } from 'react';
 import classnames from 'classnames';
 import Clear from './clear';
-import { InputProps } from './PropType';
+import { CaptchaProps } from './PropType';
 
 const prefixCls = 'jing-input';
 
-export interface VerifyProps extends InputProps {
-    captcha: any;
-    onHandleChangeCaptcha: () => void;
-}
-
-const Captcha = (props: VerifyProps) => {
+const Captcha: FC<CaptchaProps> = (props) => {
     const { captcha, onHandleChangeCaptcha } = props;
 
     const captchaRender = () => {
@@ -35,4 +30,4 @@ const Captcha = (props: VerifyProps) => {
     );
 };
 
-export default React.memo(Captcha);
+export default memo(Captcha);

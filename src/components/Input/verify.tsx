@@ -1,4 +1,4 @@
-import React, { useState, useEffect, FC } from 'react';
+import React, { useState, useEffect, FC, memo } from 'react';
 import classnames from 'classnames';
 import Clear from './clear';
 import { VerifyProps } from './PropType';
@@ -11,8 +11,6 @@ const Verify: FC<VerifyProps> = (props) => {
     const [text, setText] = useState('获取验证码');
     const [sleepTime, setSleepTime] = useState(60);
     const [isActive, setIsActive] = useState(false);
-
-    const timer = 60;
 
     useEffect(() => {
         if (isActive) {
@@ -56,4 +54,4 @@ const Verify: FC<VerifyProps> = (props) => {
     );
 };
 
-export default React.memo(Verify);
+export default memo(Verify);

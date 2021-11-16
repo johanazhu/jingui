@@ -1,4 +1,4 @@
-import React, { useState, useEffect, FC } from 'react';
+import React, { useState, useEffect, FC, memo } from 'react';
 import { InputProps } from './PropType';
 import { IconEyeCloseTwo, IconEyeOpenTwo } from '../Icon';
 import Clear from './clear';
@@ -26,11 +26,6 @@ const Password: FC<InputProps> = (props) => {
                     <div
                         className={`${prefixCls}--focus`}
                         onClick={() => {
-                            // isShowClear = true;
-                            // clearTimeout(timer);
-                            // if (inputRef.current) {
-                            //     inputRef.current.focus();
-                            // }
                             if (visible) {
                                 setIsVisible(false);
                             } else {
@@ -55,9 +50,6 @@ const Password: FC<InputProps> = (props) => {
                 onFocus && onFocus(e);
             }}
             onBlur={(e) => {
-                // timer = setTimeout(() => {
-                //     setIsFocus(false)
-                // }, 100)
                 onBlur && onBlur(e);
             }}
             backRender={passwordRender()}
@@ -65,4 +57,4 @@ const Password: FC<InputProps> = (props) => {
     );
 };
 
-export default React.memo(Password);
+export default memo(Password);

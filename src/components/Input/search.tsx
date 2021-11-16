@@ -1,8 +1,9 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 import Input from './base';
 import Prefix from './prefix';
 import { SearchProps } from './PropType';
 
+// 不适用，没有搜索图标
 const Search: FC<SearchProps> = (props) => {
     const { value, icon, className } = props;
 
@@ -13,4 +14,4 @@ const Search: FC<SearchProps> = (props) => {
     );
 };
 
-export default React.memo(Search);
+export default memo(Search);

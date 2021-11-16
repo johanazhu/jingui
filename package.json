@@ -40,7 +40,7 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,jsx,less,scss,md,json}": [
+    "*.{js,jsx,scss,md,json}": [
       "prettier --write"
     ],
     "*.ts?(x)": [
@@ -48,7 +48,6 @@
     ]
   },
   "dependencies": {
-    "@antv/f2": "^3.8.9",
     "@better-scroll/core": "^2.4.2",
     "classnames": "^2.3.1",
     "color": "^4.0.1",
@@ -57,7 +56,7 @@
     "swiper": "^7.2.0"
   },
   "devDependencies": {
-    "@svgr/webpack": "^5.5.0",
+    "@svgr/webpack": "^3.1.0",
     "@types/color": "^3.0.2",
     "@types/react-dom": "^17.0.10",
     "@umijs/plugin-sass": "^1.1.1",
@@ -68,9 +67,7 @@
     "gh-pages": "^3.2.3",
     "lint-staged": "^11.2.6",
     "lorem-ipsum": "^2.0.4",
-    "node-sass": "^6.0.1",
     "prettier": "^2.4.1",
-    "sass-loader": "^12.3.0",
     "yorkie": "^2.0.0"
   }
 }

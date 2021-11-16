@@ -19,14 +19,13 @@ const RegInput: FC<RegProps> = (props) => {
     return (
         <Input
             {...props}
-            type="text"
             value={value}
             className={classnames(className, {
                 [`${prefixCls}--error`]: !_isValid && _value,
             })}
             onChange={(res) => {
                 setValue(res);
-                onChange(res, _isValid);
+                onChange && onChange(res, _isValid);
             }}
         />
     );

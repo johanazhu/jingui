@@ -1,5 +1,3 @@
-// import * as React from 'react';
-
 import Input from './input';
 
 import Group from './group';

@@ -1,4 +1,11 @@
-import React, { FC, useState, useEffect, useCallback, useRef } from 'react';
+import React, {
+    FC,
+    useState,
+    useEffect,
+    memo,
+    useCallback,
+    useRef,
+} from 'react';
 import classnames from 'classnames';
 import Group from './group';
 import { IconCircleDelete, IconEyeCloseTwo, IconEyeOpenTwo } from '../Icon';
@@ -48,14 +55,14 @@ const KeyboardInput: FC<KeyboardProps> = (props) => {
     const {
         value,
         placeholder,
-        isActive,
+        active,
         maxLength,
         onClearValue,
         onHandleFocus,
     } = props;
 
     const [isShowClear, setIsShowClear] = useState(false);
-    const [isFocus, setIsFocus] = useState(isActive);
+    const [isFocus, setIsFocus] = useState(active);
     const [visible, setIsVisible] = useState(false);
     const [placeHolderValue, setPlaceHolderValue] = useState(placeholder);
 
@@ -104,8 +111,8 @@ const KeyboardInput: FC<KeyboardProps> = (props) => {
     }, [oInput.value, isFocus]);
 
     useEffect(() => {
-        setIsFocus(isActive);
-    }, [isActive]);
+        setIsFocus(active);
+    }, [active]);
 
     function onFocusClick() {
         setIsFocus(true);
@@ -169,4 +176,4 @@ const KeyboardInput: FC<KeyboardProps> = (props) => {
     );
 };
 
-export default React.memo(KeyboardInput);
+export default memo(KeyboardInput);

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Input, Space, IconUser } from 'jing-ui';
+import { Input, Space, IconUser, IconArrow } from 'jing-ui';
 import { DemoBlock } from 'demo';
 
 export default () => {
@@ -9,6 +9,7 @@ export default () => {
     const [text, setText] = useState('');
     const [img, setImg] = useState('http://wx.jingqb.com/certiification.jpg');
     const [value, setValue] = useState('');
+    const [isActive, setIsActive] = useState(false);
 
     useEffect(() => {
         if (title2.length > 3) {
@@ -44,6 +45,13 @@ export default () => {
                     value={value}
                     placeholder="带前缀的输入框"
                     icon={<IconUser />}
+                />
+            </DemoBlock>
+            <DemoBlock title="带后缀的输入框" padding="">
+                <Input.Suffix
+                    value={value}
+                    placeholder="带后缀的输入框"
+                    icon={<IconArrow />}
                 />
             </DemoBlock>
             <DemoBlock title="带密码的输入框" padding="">
@@ -90,11 +98,13 @@ export default () => {
                     <Input.KeyBoard
                         value={value}
                         placeholder="你想干啥"
-                        isActive={true}
+                        active={isActive}
                         onHandleFocus={() => {
+                            setIsActive(true);
                             console.log('keyboard聚焦时');
                         }}
                         onClearValue={() => {
+                            setIsActive(false);
                             console.log('点击清除图标时');
                         }}
                         maxLength={20}

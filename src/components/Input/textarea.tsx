@@ -85,8 +85,4 @@ function Textarea(props: TextareaProps) {
     );
 }
 
-Textarea.defaultProps = {
-    className: '',
-};
-
 export default Textarea;

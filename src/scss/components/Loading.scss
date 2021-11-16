@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 .jqb-loading {
     font-size: 24px;
     &--spinners {
@@ -15,24 +17,14 @@
         border-radius: 50%/20%;
         opacity: 0.25;
         background-color: currentColor;
-        @include animation(spinner-fade 1s linear infinite);
+        animation: jing-spinner-fade 1s linear infinite;
 
         @for $num from 1 through 12 {
             &:nth-child(#{$num}) {
-                animation-delay: $num / 12 + s;
+                animation-delay: math.div($num, 12) + s;
+                // animation-delay: $num / 12 + s;
                 transform: rotate(30deg * ($num - 6)) translateY(-150%);
             }
-        }
-    }
-    @keyframes spinner-fade {
-        0% {
-            opacity: 0.85;
-        }
-        50% {
-            opacity: 0.25;
-        }
-        100% {
-            opacity: 0.25;
         }
     }
 }

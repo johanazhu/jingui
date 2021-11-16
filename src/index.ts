@@ -27,7 +27,7 @@ export { default as Timeline } from './components/Timeline';
 // 富文本
 export { default as Typography } from './components/Typography';
 // 图表
-export { LineChart, ColumnChart, PieChart } from './components/Chart';
+// export { LineChart, ColumnChart, PieChart } from './components/Chart';
 // 标签页
 export { default as Tab } from './components/Tab';
 // 通知栏

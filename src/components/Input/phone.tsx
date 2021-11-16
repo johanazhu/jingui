@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import RegInput from './reg';
-import Prefix from './prefix';
 import { PhoneProps } from './PropType';
 
 const filterValue = (val: string) => {
@@ -15,7 +14,7 @@ const filterValue = (val: string) => {
 };
 
 const Phone = (props: PhoneProps) => {
-    const { value, icon, className, reg } = props;
+    const { value, reg } = props;
 
     const [_value, setValue] = useState(value);
 
@@ -24,15 +23,13 @@ const Phone = (props: PhoneProps) => {
     }, [value]);
 
     return (
-        <Prefix icon={icon} className={className}>
-            <RegInput
-                {...props}
-                type="text"
-                reg={reg || /^[1]([3-9])[0-9]{9}$/}
-                value={_value}
-            />
-        </Prefix>
+        <RegInput
+            {...props}
+            type="text"
+            reg={reg || /^[1]([3-9])[0-9]{9}$/}
+            value={_value}
+        />
     );
 };
 
-export default React.memo(Phone);
+export default memo(Phone);
