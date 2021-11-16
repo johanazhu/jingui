@@ -12,14 +12,14 @@ export type InputSizes = 'small' | 'default' | 'large';
  * @param {disabled} bool                           // 是否能点击
  * @param {minLength} number                        // 最少长度 minLength 属性与 <input type="text"> 或 <input type="password"> 配合使用。
  * @param {maxLength} number                        // 最多长度 maxlength 属性与 <input type="text"> 或 <input type="password"> 配合使用。
- * @param {icon} string                             // 图标
+ * @param {icon} ReactNode                          // 图标
  * @param {error} bool                              // 错误提示
  * @param {clearable} boolean                       // 显示清除图标
  * @param {prefix} object                           // 带前缀图标的 input
  * @param {suffix} object                           // 带后缀图标的 input
  * @param {style} object                            // 自定义样式
  * @param {size} string                             // 尺寸大小
- * @param {children} ReactNode                      // children 渲染内容
+ * @param {children} ReactNode                      // 组件中的内容
  * @param {Group} ReactNode                         // group 渲染内容
  * @param {onChange} function                       // value改变时触发
  * @param {onFocus} function                        // 获取焦点时的事件
@@ -134,14 +134,14 @@ export interface PhoneProps extends InputProps {
 
 /**
  * Input.Reg
- * @param {reg} RegExp                                      // 正则
  * @param {value} string                                    // 值
+ * @param {reg} RegExp                                      // 正则
  * @param {className} string                                // 自定义class
  * @param {onChange} function                               // 输入值后的回调
  **/
 export interface RegProps extends InputProps {
-    reg: RegExp;
     value: string;
+    reg: RegExp;
     className?: string;
     onChange?: (res: string, _isValid: boolean) => void;
 }

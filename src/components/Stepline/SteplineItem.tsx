@@ -1,31 +1,33 @@
-import * as React from 'react';
+import  React, { FC, memo } from 'react';
 import { SteplineItemProps } from './PropType';
 
-const StepLineItem: React.FC<SteplineItemProps> = (props) => {
+const StepLineItem: FC<SteplineItemProps> = (props) => {
     const { header, footer, color, percent, count, i } = props;
 
-    // @ts-ignore
+    const prefixCls = 'jing-stepline--item';
+
     const canShowColor =
+        // @ts-ignore
         parseInt(percent) - `${count && i && (100 / count) * (i + 1)}`;
 
     return (
         <li
-            className="Stepline-item"
+            className={prefixCls}
             style={{ width: `${count && 100 / count}%` }}
         >
             <div
-                className="Stepline-item__step"
+                className={`${prefixCls}__step`}
                 style={{ backgroundColor: canShowColor > 0 ? color : '' }}
             ></div>
             <div
-                className="Stepline-item__header"
+                className={`${prefixCls}__header`}
                 style={{ backgroundColor: canShowColor > 0 ? color : '' }}
             >
                 {header}
             </div>
-            <div className="Stepline-item__footer">{footer}</div>
+            <div className={`${prefixCls}__footer`}>{footer}</div>
         </li>
     );
 };
 
-export default React.memo(StepLineItem);
+export default memo(StepLineItem);

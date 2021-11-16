@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, FC, memo } from 'react';
 import classnames from 'classnames';
 import { IconRight } from '../Icon';
 import { AreaColumn, AreaColumnRangeProps } from './PropType'
 
 
-const Column = (props: AreaColumn) => {
+const Column:FC<AreaColumn> = (props) => {
     const { columnSource, tabSource, onClick } = props;
     const headerSource = tabSource && tabSource.map((item: any) => item.value);
 
@@ -42,4 +42,4 @@ const Column = (props: AreaColumn) => {
     );
 };
 
-export default React.memo(Column);
+export default memo(Column);

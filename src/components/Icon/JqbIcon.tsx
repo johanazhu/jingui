@@ -3,17 +3,17 @@ import classnames from 'classnames';
 import IconBase from './IconBase';
 import { JqbIconProps } from './PropType';
 
+const prefixCls = 'jing-icon';
+
 const JqbIcon: FC<JqbIconProps> = (props) => {
-    const { className, color, size, icon, style, keepOriginColor, onClick } =
-        props;
-    const classes = classnames(
-        'jing-icon',
+    const { className, color, size, icon, style, keepOriginColor, onClick } = props;
+    
+    const classes = classnames(prefixCls,className,
         {
-            [`jing-icon--${color}`]:
+            [`${prefixCls}--${color}`]:
                 Boolean(color) && !Boolean(keepOriginColor),
-            [`jing-icon--${size}`]: Boolean(size),
+            [`${prefixCls}--${size}`]: Boolean(size),
         },
-        className,
     );
 
     const onHandleClick: MouseEventHandler<HTMLDivElement> = (e) => {

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, FC, memo } from 'react';
 import classnames from 'classnames';
 import {AreaHeaderArea, AreaTabSourceProps } from './PropType';
 
 
-const Header = (props: AreaHeaderArea) => {
+const Header:FC<AreaHeaderArea> = (props) => {
     const { tabSource, onClick } = props;
     // console.log('props tabSource---------------', tabSource)
 
@@ -55,4 +55,4 @@ const Header = (props: AreaHeaderArea) => {
 };
 
 
-export default React.memo(Header);
+export default memo(Header);

@@ -9,8 +9,8 @@ const Tag: FC<TagProps> = (props) => {
 
     const classes = classnames(prefixCls, className, {
         [`${prefixCls}--${type}`]: !!type,
-        [`${prefixCls}--active`]: !!active,
         [`${prefixCls}--${size}`]: !!size,
+        [`${prefixCls}--active`]: !!active,
     });
 
     return (

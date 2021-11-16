@@ -1,5 +1,4 @@
 :root {
-    --default-color: $blue; // 去掉
     //   主题色
     --theme-primary: rgb(50, 100, 200);
     --theme-second-primary: rgb(255, 100, 20);
@@ -302,6 +301,23 @@
     --timeline-white-bg: var(--bg-white);
     --timeline-content-bg: rgb(227, 227, 227);
     --timeline-content-dash-bg: rgb(204, 204, 204);
+
+    // Icon
+   
+    --icon-grey-color: rgb(222, 222, 222);
+    --icon-blue-color: var(--theme-primary);
+    --icon-white-color: var(--color-white-1);
+    --icon-black-color: var(--color-black);
+    --icon-red-color: var(--theme-danger);
+    --icon-orange-color: var(--theme-second-primary);
+    --icon-shy-blue-color: var(--theme-info);
+
+    --icon-fill-color: var(--color-black-4);
+    --icon-size-lg: 1.375rem;
+    --icon-size-md: 1.05rem;
+    --icon-size-sm: 0.68rem;
+    --icon-size-auto: 100%;
+    --icon-loading-color: var(--theme-primary);
 
     // Tab
     // --tab-
