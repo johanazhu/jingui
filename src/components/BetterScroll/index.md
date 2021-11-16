@@ -3,12 +3,12 @@ toc: false
 nav:
     path: /components
 group:
-    title: 业务组件
-    path: /components/work
-    order: 6
+    title: 反馈组件
+    path: /components/feedback
+    order: 5
 ---
 
-# 滚动条 Scroll
+# Scroll 滚动条
 
 <code src="./demo/index.tsx"></code>
 

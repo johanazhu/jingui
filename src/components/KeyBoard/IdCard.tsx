@@ -1,25 +1,22 @@
 import * as React from 'react';
 import BoardBase from './BoardBase';
+import { IdCardBoardProps } from './PropType';
 
-export interface IdCardBoardProps {
-    isRandom?: boolean;
-    value: string;
-    onHandleDelete: (text: any) => void;
-    onHandleValue: (text: any) => void;
-}
 const idCardRegular = [
     { text: 'X', type: 'X' },
     { text: '0', type: '0' },
     { text: 'del', type: 'del' },
 ];
+
 let keys: { text: any; type: string }[] = [];
 for (let i = 1; i <= 9; i++) {
     keys.push({ text: i + '', type: i + '' });
 }
+
 keys = keys.concat(idCardRegular);
 
 const IdCard = (props: IdCardBoardProps) => {
-    const { isRandom, value, onHandleValue, onHandleDelete } = props;
+    const { random, value, onHandleValue, onHandleDelete } = props;
 
     return (
         <BoardBase
@@ -28,7 +25,7 @@ const IdCard = (props: IdCardBoardProps) => {
             onHandleValue={onHandleValue}
             onHandleDelete={onHandleDelete}
             value={value}
-            isRandom={isRandom}
+            random={random}
         />
     );
 };

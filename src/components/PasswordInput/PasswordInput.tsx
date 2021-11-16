@@ -1,32 +1,21 @@
-import React, { FC, useState, useEffect, TouchEvent } from 'react';
+import React, { useState, useEffect, TouchEvent, FC, memo } from 'react';
 import classnames from 'classnames';
 import Popup from '../Popup';
 import KeyBoard from '../KeyBoard';
 // import util from '../_util';
-
-/**
- * PasswordInput 密码输入框
- * @param {value} string 密码值
- * @param {length} string | number 密码最大长度
- * @param {mask} boolean 是否隐藏密码内容
- * @param {focused} boolean 是否已聚焦，聚焦时会显示光标
- * @param {mode} string 模式，input模式 和 默认模式
- * @param {onHandleFocus} function focus时方法
- * @param {onChange} function change时方法
- **/
-export interface PasswordInputProps {
-    value: string;
-    length: string | number;
-    mask: boolean;
-    focused: boolean;
-    mode?: string;
-    isFocus?: boolean; // 是否让他一开始就弹出系统键盘
-    onHandleFocus?: (event: TouchEvent) => void;
-    onChange?: (event: any) => void;
-}
+import { PasswordInputProps } from './PropType';
 
 const PasswordInput: FC<PasswordInputProps> = (props) => {
-    const { value, length, mask, focused, isFocus, mode, onHandleFocus, onChange } = props;
+    const {
+        value,
+        length,
+        mask,
+        focused,
+        isFocus,
+        mode,
+        onHandleFocus,
+        onChange,
+    } = props;
 
     const [safeInputValue, setSafeInputValue] = useState(value);
 
@@ -36,13 +25,14 @@ const PasswordInput: FC<PasswordInputProps> = (props) => {
         setSafeInputValue(value);
     }, [value]);
 
-
     useEffect(() => {
         if (mode === 'input') {
             // console.log('isFocus', isFocus)
             if (isFocus === true) {
                 // @ts-ignore
-                document.getElementsByClassName('jing-passwordinput--input')[0].focus();
+                document
+                    .getElementsByClassName('jing-passwordinput--input')[0]
+                    .focus();
             }
         }
     }, [mode, isFocus]);
@@ -60,8 +50,16 @@ const PasswordInput: FC<PasswordInputProps> = (props) => {
                         'jing-passwordinput--security-item-focus': showCursor,
                     })}
                 >
-                    {mask ? <i style={{ visibility: char ? 'visible' : 'hidden' }}></i> : char}
-                    {showCursor && <div className="jing-passwordinput--security-cursor"></div>}
+                    {mask ? (
+                        <i
+                            style={{ visibility: char ? 'visible' : 'hidden' }}
+                        ></i>
+                    ) : (
+                        char
+                    )}
+                    {showCursor && (
+                        <div className="jing-passwordinput--security-cursor"></div>
+                    )}
                 </li>,
             );
         }
@@ -75,7 +73,10 @@ const PasswordInput: FC<PasswordInputProps> = (props) => {
 
     return (
         <div className="jing-passwordinput">
-            <ul className="jing-passwordinput--security" onTouchStart={onTouchStart}>
+            <ul
+                className="jing-passwordinput--security"
+                onTouchStart={onTouchStart}
+            >
                 {renderPoints()}
             </ul>
             {mode === 'input' && (
@@ -100,4 +101,4 @@ PasswordInput.defaultProps = {
     isFocus: true,
 };
 
-export default React.memo(PasswordInput);
+export default memo(PasswordInput);

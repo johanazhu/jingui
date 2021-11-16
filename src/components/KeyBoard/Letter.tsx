@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef, TouchEvent } from 'react';
-import * as PropTypes from 'prop-types';
+import React, { useState, useEffect, useRef, TouchEvent, memo } from 'react';
 import classnames from 'classnames';
 import LetterKey from './LetterKey';
 
@@ -9,25 +8,14 @@ import {
     shuffle,
     letterKey,
 } from '@/utils';
-
-// isRandom 默认不随机排序
-export interface LetterProps {
-    className?: string;
-    isRandom?: boolean;
-    value: string;
-    updatePosition?: boolean;
-    onHandleDelete?: (text: string) => void;
-    onHandleValue?: (text: any) => void;
-    onHandleDone?: () => void;
-    onHandleSymbol?: () => void;
-}
+import { LetterProps } from './PropType';
 
 let keys: { text: any; type: any }[] = [];
 
 const Letter = (props: LetterProps) => {
     const {
         className,
-        isRandom,
+        random,
         value,
         updatePosition,
         onHandleValue,
@@ -44,7 +32,7 @@ const Letter = (props: LetterProps) => {
     const letterRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        if (isRandom) {
+        if (random) {
             const randomLetterKey = shuffle(letterKey);
             randomLetterKey.map((item: any) => {
                 if (keys.length < 31) {
@@ -221,11 +209,7 @@ const Letter = (props: LetterProps) => {
 };
 
 Letter.defaultProps = {
-    isRandom: false,
+    random: false,
 };
 
-Letter.propTypes = {
-    isRandom: PropTypes.bool,
-};
-
-export default React.memo(Letter);
+export default memo(Letter);

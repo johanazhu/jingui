@@ -8,7 +8,7 @@ group:
     order: 6
 ---
 
-# 标签栏 TabBar
+# TabBar 标签栏
 
 ### 代码演示
 

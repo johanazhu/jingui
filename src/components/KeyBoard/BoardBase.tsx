@@ -3,16 +3,7 @@ import * as PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Key from './Key';
 import { sample } from '@/utils';
-
-export interface BoardBaseProps {
-    isRandom?: boolean;
-    value: string;
-    isNew?: boolean;
-    onHandleDelete: (text: any) => void;
-    onHandleValue: (text: any) => void;
-    sourceNumber: any; // 源字母
-    keys: any;
-}
+import { BoardBaseProps } from './PropType';
 
 function changeRandomKeys(sourceNumber: any, keys: any) {
     const numberKey = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
@@ -26,13 +17,13 @@ function changeRandomKeys(sourceNumber: any, keys: any) {
 
 const BoardBase = (props: BoardBaseProps) => {
     const {
-        isRandom,
         value,
-        isNew,
-        onHandleValue,
-        onHandleDelete,
+        random,
+        new: isNew,
         sourceNumber,
         keys,
+        onHandleValue,
+        onHandleDelete,
     } = props;
 
     const [numberKeys, setNumberKeys] = useState<any>(null);
@@ -42,7 +33,7 @@ const BoardBase = (props: BoardBaseProps) => {
     const baseRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        if (isRandom) {
+        if (random) {
             changeRandomKeys(sourceNumber, keys);
         } else {
             setNumberKeys(keys);
@@ -148,7 +139,7 @@ const BoardBase = (props: BoardBaseProps) => {
                     type={item.type}
                     keyActive={keyIsActive}
                     value={value}
-                    isNew={isNew}
+                    new={isNew}
                     onTouchStartCb={(text: any) => {
                         setKeyIsActive(text);
                     }}

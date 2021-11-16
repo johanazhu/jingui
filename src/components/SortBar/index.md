@@ -8,7 +8,7 @@ group:
     order: 6
 ---
 
-# 排序栏 SortBar
+# SortBar 排序栏
 
 ### 代码演示
 

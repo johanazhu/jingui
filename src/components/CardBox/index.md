@@ -8,6 +8,6 @@ group:
     order: 6
 ---
 
-# 卡片盒子 CardBox
+# CardBox 卡片盒子
 
 ## 代码演示

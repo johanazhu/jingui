@@ -1,11 +1,7 @@
 import * as React from 'react';
-import Header, { HeaderProps } from './Header';
-import Body, { BodyProps } from './Body';
-
-export interface ProductDetailTopProps extends React.FC {
-    Header: React.FC<HeaderProps>;
-    Body: React.FC<BodyProps>;
-}
+import Header from './Header';
+import Body from './Body';
+import { ProductDetailTopProps } from './PropType';
 
 const ProductDetailTop: ProductDetailTopProps = (props) => {
     const { children } = props;

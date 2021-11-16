@@ -1,32 +1,22 @@
-import { CSSProperties } from 'react';
-
+import { TouchEvent } from 'react';
 
 /**
- * Mask 遮罩
- * @param {className} string                        // 自定义 class 名
- * @param {style} CSSProperties                     // 自定义样式
- * @param {scale} scaleSize                         // 分行行距，1-6
+ * PasswordInput 密码输入框
+ * @param {value} string 密码值
+ * @param {length} string | number 密码最大长度
+ * @param {mask} boolean 是否隐藏密码内容
+ * @param {focused} boolean 是否已聚焦，聚焦时会显示光标
+ * @param {mode} string 模式，input模式 和 默认模式
+ * @param {onHandleFocus} function focus时方法
+ * @param {onChange} function change时方法
  **/
-export interface SortBarItemProps {
-    name: string;
-    status?: string;
-    onClick: (isStatus: string) => void;
+export interface PasswordInputProps {
+    value: string;
+    length: string | number;
+    mask: boolean;
+    focused: boolean;
+    mode?: string;
+    isFocus?: boolean; // 是否让他一开始就弹出系统键盘
+    onHandleFocus?: (event: TouchEvent) => void;
+    onChange?: (event: any) => void;
 }
-
-
-export interface SortBarFilterProps {
-    name: string;
-    status: boolean;
-    onClick: () => void;
-}
-
-// 是否开启滚动后悬浮到顶部
-export interface SortBarProps {
-    options: Array<any>;
-    isSticky: Boolean;
-    filterName: string;
-    status: boolean;
-    onItemHandleClick: (item: any) => void;
-    onFilterHandleClick: () => void;
-}
-

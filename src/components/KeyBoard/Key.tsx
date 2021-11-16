@@ -4,23 +4,13 @@ import React, {
     TouchEvent,
     forwardRef,
     useRef,
+    memo,
 } from 'react';
 
 import classnames from 'classnames';
 
 import { IconKeyboardDeleteLine } from '../Icon';
-
-export interface KeyProps {
-    className?: string;
-    text: string;
-    type: string;
-    value: string;
-    keyBoardHeight?: number;
-    onPress: (text: string, type: string) => void;
-    keyActive: string;
-    isNew?: boolean;
-    onTouchStartCb?: (text: any) => void;
-}
+import { KeyProps } from './PropType';
 
 let startX = 0;
 let startY = 0;
@@ -29,11 +19,11 @@ const Key = forwardRef((props: KeyProps, ref: any) => {
     const {
         text,
         type,
+        new: isNew,
         value,
         className,
         onPress,
         keyActive,
-        isNew,
         onTouchStartCb,
     } = props;
 
@@ -123,7 +113,7 @@ const Key = forwardRef((props: KeyProps, ref: any) => {
         >
             <span
                 className={classnames(`${className}-span`, {
-                    [`${className}-span-isNew`]: isNew,
+                    [`${className}-span-new`]: isNew,
                 })}
             >
                 {renderText()}
@@ -132,4 +122,4 @@ const Key = forwardRef((props: KeyProps, ref: any) => {
     );
 });
 
-export default React.memo(Key);
+export default memo(Key);

@@ -6,11 +6,7 @@ import IdCard from './IdCard';
 import Letter from './Letter';
 import Symbol from './Symbol';
 import Header from './Header';
-
-export interface KeyBoardProps {
-    className?: string;
-    style?: React.CSSProperties;
-}
+import { KeyBoardProps } from './PropType';
 
 export default class extends React.PureComponent<KeyBoardProps> {
     static Number = Number;

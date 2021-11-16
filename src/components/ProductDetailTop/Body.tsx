@@ -1,20 +1,9 @@
-import * as React from 'react';
+import React, { FC, memo } from 'react';
 import classnames from 'classnames';
+import { BodyProps, BodyItemProps } from './PropType';
 
-interface BodyItemProps {
-    title: React.ReactNode;
-    desc: string;
-}
-
-export interface BodyProps {
-    list: Array<BodyItemProps>;
-    mode?: string;
-}
-
-const Body: React.FC<BodyProps> = (props) => {
+const Body: FC<BodyProps> = (props) => {
     const { list, mode } = props;
-
-    // if (mode === )
 
     return (
         <div className="ProductDetailTop__Body">
@@ -39,4 +28,4 @@ Body.defaultProps = {
     mode: 'fourthreethree',
 };
 
-export default React.memo(Body);
+export default memo(Body);

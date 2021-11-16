@@ -19,18 +19,7 @@ import {
     upperLetterDictionary,
     KEYBOARDMOVEOFFSET,
 } from '@/utils';
-
-export interface KeyProps {
-    className?: string;
-    text: string;
-    type: string;
-    value: string;
-    keyBoardHeight?: number;
-    onPress: (text: string, type: string) => void;
-    keyActive: string;
-    onTouchStartCb?: (text: any) => void;
-    changeDoneActive?: boolean;
-}
+import { KeyProps } from './PropType';
 
 let startX = 0;
 let startY = 0;
@@ -236,4 +225,4 @@ const LetterKey = forwardRef((props: KeyProps, ref: any) => {
     );
 });
 
-export default React.memo(LetterKey);
+export default memo(LetterKey);

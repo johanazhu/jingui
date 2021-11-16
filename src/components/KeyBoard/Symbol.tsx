@@ -1,22 +1,20 @@
-import React, { useState, useEffect, useRef, TouchEvent } from 'react';
+import React, {
+    useState,
+    useEffect,
+    useRef,
+    TouchEvent,
+    FC,
+    memo,
+} from 'react';
 import * as PropTypes from 'prop-types';
 import classnames from 'classnames';
 import SymbolKey from './SymbolKey';
 import { symbolKey } from '@/utils';
-
-export interface SymbolProps {
-    className?: string;
-    value: string;
-    updatePosition?: boolean;
-    onHandleDelete?: (text: string) => void;
-    onHandleValue?: (text: any) => void;
-    onHandleDone?: () => void;
-    onHandleSymbol?: () => void;
-}
+import { SymbolProps } from './PropType';
 
 const keys: { text: any; type?: string }[] = [];
 
-const Symbol = (props: SymbolProps) => {
+const Symbol: FC<SymbolProps> = (props) => {
     const {
         className,
         value,
@@ -180,12 +178,4 @@ const Symbol = (props: SymbolProps) => {
     );
 };
 
-Symbol.defaultProps = {
-    isRandom: false,
-};
-
-Symbol.propTypes = {
-    isRandom: PropTypes.bool,
-};
-
-export default React.memo(Symbol);
+export default memo(Symbol);

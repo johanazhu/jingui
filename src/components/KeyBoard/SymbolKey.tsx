@@ -1,26 +1,22 @@
-import React, { useState, useEffect, useRef, TouchEvent } from 'react';
+import React, {
+    useState,
+    useEffect,
+    useRef,
+    TouchEvent,
+    forwardRef,
+    memo,
+} from 'react';
 import classnames from 'classnames';
 import { IconKeyboardDelete, IconKeyboardDeleteLine } from '../Icon';
 import { upperSymbolDictionary, KEYBOARDMOVEOFFSET } from '@/utils';
-
-export interface KeyProps {
-    className?: string;
-    text: string;
-    type: string;
-    value: string;
-    keyBoardHeight?: number;
-    onPress: (text: string, type: string) => void;
-    keyActive: string;
-    onTouchStartCb?: (text: any) => void;
-    changeDoneActive?: boolean;
-}
+import { KeyProps } from './PropType';
 
 let startX = 0;
 let startY = 0;
 let offsetX = 0;
 let offsetY = 0;
 
-const SymbolKey = React.forwardRef((props: KeyProps, ref: any) => {
+const SymbolKey = forwardRef((props: KeyProps, ref: any) => {
     const {
         className,
         value,
@@ -160,4 +156,4 @@ const SymbolKey = React.forwardRef((props: KeyProps, ref: any) => {
     );
 });
 
-export default React.memo(SymbolKey);
+export default memo(SymbolKey);

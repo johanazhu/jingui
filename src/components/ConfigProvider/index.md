@@ -8,7 +8,7 @@ group:
     order: 7
 ---
 
-# 全局配置 ConfigProvider
+# ConfigProvider 全局配置
 
 ### 代码演示
 

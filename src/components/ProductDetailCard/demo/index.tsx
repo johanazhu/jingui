@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { DemoBlock } from 'demo';
 
 export default () => (

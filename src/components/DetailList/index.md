@@ -8,6 +8,6 @@ group:
     order: 6
 ---
 
-# 详情列表 DetailList
+# DetailList 详情列表
 
 ## 代码演示

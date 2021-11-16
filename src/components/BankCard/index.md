@@ -8,6 +8,6 @@ group:
     order: 6
 ---
 
-# 银行卡 BankCard
+# BankCard 银行卡
 
 ## 代码演示

@@ -3,8 +3,9 @@ toc: false
 nav:
     path: /components
 group:
-    title: 基础组件
-    path: /components/base
+    title: 布局组件
+    path: /components/layout
+    order: 3
 ---
 
 # Space 空行分隔

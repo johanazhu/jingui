@@ -1,26 +1,23 @@
 import * as React from 'react';
 import BoardBase from './BoardBase';
+import { NumberBoardProps } from './PropType';
 
-export interface NumberBoardProps {
-    isRandom?: boolean;
-    value: string;
-    isNew?: boolean;
-    onHandleDelete: (text: any) => void;
-    onHandleValue: (text: any) => void;
-}
 const numberRegular = [
     { text: 'emty', type: 'emty' },
     { text: '0', type: '0' },
     { text: 'del', type: 'del' },
 ];
+
 let keys: { text: any; type: string }[] = [];
+
 for (let i = 1; i <= 9; i++) {
     keys.push({ text: i + '', type: i + '' });
 }
+
 keys = keys.concat(numberRegular);
 
 const Number = (props: NumberBoardProps) => {
-    const { isRandom, value, isNew, onHandleValue, onHandleDelete } = props;
+    const { random, value, new: isNew, onHandleValue, onHandleDelete } = props;
 
     return (
         <BoardBase
@@ -29,8 +26,8 @@ const Number = (props: NumberBoardProps) => {
             onHandleValue={onHandleValue}
             onHandleDelete={onHandleDelete}
             value={value}
-            isRandom={isRandom}
-            isNew={isNew}
+            random={random}
+            new={isNew}
         />
     );
 };

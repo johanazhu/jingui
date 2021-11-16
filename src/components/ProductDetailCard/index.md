@@ -8,6 +8,6 @@ group:
     order: 6
 ---
 
-# RecordList
+# ProductDetailTop 产品详情
 
 ## 代码演示

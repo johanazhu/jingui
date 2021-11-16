@@ -1,14 +1,6 @@
-import * as React from 'react';
+import React, { FC, memo } from 'react';
 import classnames from 'classnames';
-
-export interface ProductDetailCardProps {
-    hasHeader?: boolean;
-    headerLeft: any;
-    headerRight?: JSX.Element;
-    children: React.ReactNode;
-    leftclass?: string;
-    onClick?: () => void;
-}
+import { ProductDetailCardProps } from './PropType';
 
 const ProductDetailCard: React.FC<ProductDetailCardProps> = (props) => {
     const { hasHeader, children, headerLeft, headerRight, leftclass, onClick } =
@@ -42,4 +34,4 @@ ProductDetailCard.defaultProps = {
     hasHeader: false,
 };
 
-export default React.memo(ProductDetailCard);
+export default memo(ProductDetailCard);

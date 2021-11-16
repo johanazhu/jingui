@@ -1,11 +1,6 @@
-import React, { useState, useEffect, useRef, forwardRef } from 'react';
-import * as PropTypes from 'prop-types';
+import React, { useState, useEffect, useRef, forwardRef, memo } from 'react';
 import { IconArrow, IconKeyboardSecurity } from '../Icon';
-
-export interface HeaderProps {
-    onClick?: () => void;
-    showIcon?: boolean;
-}
+import { HeaderProps } from './PropType';
 
 const Header = forwardRef((props: HeaderProps, ref: any) => {
     const { onClick, showIcon } = props;
@@ -52,12 +47,8 @@ const Header = forwardRef((props: HeaderProps, ref: any) => {
     );
 });
 
-Header.propTypes = {
-    onClick: PropTypes.func,
-};
-
 Header.defaultProps = {
     showIcon: true,
 };
 
-export default React.memo(Header);
+export default memo(Header);

@@ -1,45 +1,7 @@
 // import * as React from 'react';
 // import classnames from 'classnames';
 // import { Tag, CardBox } from 'components';
-
-// export interface ProductCardProps {
-//     headerTitle: string;
-//     headerTagList?: Array<HeaderTagItemProps>;
-//     contentList: Array<CardItemProps>;
-//     tagList?: Array<TagItemProps>;
-//     footerTagList?: Array<FooterTagItemProps>;
-//     productList?: any;
-//     saleStartDate?: string;
-//     convertedRemainAmount?: string; // 剩余金额
-//     salePercent?: any;
-//     renderFooter?: boolean; // 是否渲染底部
-//     countdown?: []; // 倒计时时间数组 天 小时 分 秒
-//     ShortSpace?: boolean; // 缩短CardBox的间距
-//     productFooterText?: string; // 底部文字
-//     productOnlineStatus?: string; // 产品在线状态
-//     btnText?: string; // button 按钮文字
-//     btnStatus?: string; // button 按钮状态
-//     showBtn?: boolean; // 是否显示btn按钮
-//     onHandleClick?: () => void; // 卡片点击事件
-//     mode?: string; // 布局模式 433 334 11
-// }
-
-// interface HeaderTagItemProps {
-//     headerTagList: string;
-//     headerTitleClasses: string;
-// }
-
-// interface CardItemProps {
-//     title: any;
-//     desc: string;
-// }
-
-// interface TagItemProps {
-//     labelName: string;
-//     labelType: string;
-// }
-
-// interface FooterTagItemProps { }
+import { ProductCardProps } from './PropType';
 
 // /**
 //  * @Description: 产品卡片底部渲染, 高端，固收，基金显示底部，但是基金没有“剩余”与“进度条”，
