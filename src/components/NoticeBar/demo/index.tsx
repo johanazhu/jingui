@@ -1,5 +1,5 @@
 import React from 'react';
-import { NoticeBar, Panel, Space } from 'jing-ui';
+import { NoticeBar } from 'jing-ui';
 import { DemoBlock } from 'demo';
 
 export default () => (

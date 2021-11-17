@@ -10,7 +10,7 @@ export default defineConfig({
         null,
         { title: 'GitHub', path: 'https://github.com/johanazhu/jingui' },
     ],
-    // mfsu: {},
+    mfsu: {},
     theme: {
         '@c-primary': '#3264c8',
     },
@@ -50,15 +50,7 @@ export default defineConfig({
         .__dumi-default-mobile-demo-layout .jing-page-keyboard .jing-panel__body{
             overflow: visible;
          }
-        .__dumi-default-mobile-demo-layout .jing-page-result .jing-panel__body {
-            overflow: hidden;
-            padding: 15px;
-        }
 
-        .__dumi-default-mobile-demo-layout .jing-page-noticebar p {
-            font-size: 0.75rem;
-            padding: 0.5rem 0.75rem;
-        }
         .__dumi-default-device {
             width: 340px !important;
             min-width: 340px !important;

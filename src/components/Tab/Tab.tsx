@@ -1,7 +1,7 @@
 import React, { memo, CSSProperties, FC } from 'react';
 import classnames from 'classnames';
 
-const prefixCls = 'jing-tab';
+const prefixCls = 'jing-tab__panel';
 
 export interface TabProps {
     className?: string;
