@@ -11,11 +11,10 @@ import classnames from 'classnames';
 
 export interface TabsTitleProps {
     active: boolean; // 是否选中
-    value: string;
-    label: string; // 值
+    value: string; // 值
     disabled?: boolean;
     className?: string;
-    icon?: string;
+    img?: string;
     tagId?: string;
     style?: React.CSSProperties;
     onClick?: (e: MouseEvent) => void;
@@ -46,8 +45,9 @@ function useTabDisabled(initialValue: boolean | undefined) {
 const prefixCls = 'jing-tab';
 
 const Title = forwardRef<TabsTitleRef, TabsTitleProps>((props, ref) => {
-    const { active, label, value, disabled, className, icon, style, onClick } =
-        props;
+    const { active, img, value, disabled, className, style, onClick } = props;
+
+    console.log('value', value);
 
     const oValue = useTabActive(value);
     const oDisabled = useTabDisabled(disabled);
@@ -97,8 +97,8 @@ const Title = forwardRef<TabsTitleRef, TabsTitleProps>((props, ref) => {
             onClick={handleClick}
             aria-selected={active}
         >
-            {icon && <img src={icon} alt="" />}
-            {label}
+            {img && <img src={img} alt="" />}
+            {oValue.value}
         </div>
     );
 });

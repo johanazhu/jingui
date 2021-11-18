@@ -1,12 +1,10 @@
 import React, { FC, useState, useEffect, memo } from 'react';
-import {
-    IconFilterDown,
-    IconFilterEmty,
-    IconFilterUp,
-} from '../Icon';
+import { IconFilterDown, IconFilterEmty, IconFilterUp } from '../Icon';
 import { SortBarItemProps } from './PropType';
 
-const SortBarItem:FC<SortBarItemProps> = props => {
+const prefixCls = 'jing-sortbar';
+
+const SortBarItem: FC<SortBarItemProps> = (props) => {
     const { name, status, onClick } = props;
     const [isStatus, setIsStatus] = useState(status);
 
@@ -25,7 +23,7 @@ const SortBarItem:FC<SortBarItemProps> = props => {
     };
 
     return (
-        <div className="jing-sortbar--item" onClick={onHandleClick}>
+        <div className={`${prefixCls}--item`} onClick={onHandleClick}>
             {name}
             {isStatus === '0' && <IconFilterEmty size="sm" />}
             {isStatus === '1' && <IconFilterDown size="sm" />}
@@ -34,5 +32,4 @@ const SortBarItem:FC<SortBarItemProps> = props => {
     );
 };
 
-
-export default memo(SortBarItem)
+export default memo(SortBarItem);

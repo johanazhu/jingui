@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, FC } from 'react';
 
 export interface TabBarItemProps {
     children: ReactNode;
@@ -6,12 +6,12 @@ export interface TabBarItemProps {
 
 /**
  * TabBar
- * @param {className} string                            // 自定义 class 名  
+ * @param {className} string                            // 自定义 class 名
  * @param {value} string                                // ...
  * @param {indicator} string                            // ...
  * @param {sticky} any                                  // ...
  * @param {activeIndex} boolean                         // ...
- * @param {children} string                             // ...                        
+ * @param {children} string                             // ...
  * @param {onChange} function                           // ...
  **/
 export interface TabBarProps {
@@ -24,6 +24,6 @@ export interface TabBarProps {
     onChange: () => void;
 }
 
-export interface TabBarType extends React.FC<TabBarProps> {
-    Item: React.FC<TabBarItemProps>;
+export interface TabBarType extends FC<TabBarProps> {
+    Item: FC<TabBarItemProps>;
 }

@@ -2,7 +2,7 @@ import React, { useEffect, ReactNode, FC, memo } from 'react';
 import classnames from 'classnames';
 
 export interface TabsContentProps {
-    count?: string;
+    count?: number;
     animated?: boolean;
     swipeable?: boolean;
     currentIndex?: number;

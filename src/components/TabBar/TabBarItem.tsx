@@ -1,10 +1,11 @@
-import * as React from 'react';
+import React, { FC, memo } from 'react';
 import { TabBarItemProps } from './PropType';
 
+const prefixCls = 'jing-tabbar';
 
-const TabBarItem: React.FC<TabBarItemProps> = (props) => {
+const TabBarItem: FC<TabBarItemProps> = (props) => {
     const { children } = props;
-    return <div className="jing-tabbar--item">{children}</div>;
+    return <div className={`${prefixCls}--item`}>{children}</div>;
 };
 
-export default React.memo(TabBarItem);
+export default memo(TabBarItem);

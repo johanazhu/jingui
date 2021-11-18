@@ -303,7 +303,7 @@
     --timeline-content-dash-bg: rgb(204, 204, 204);
 
     // Icon
-   
+
     --icon-grey-color: rgb(222, 222, 222);
     --icon-blue-color: var(--theme-primary);
     --icon-white-color: var(--color-white-1);
@@ -320,9 +320,17 @@
     --icon-loading-color: var(--theme-primary);
 
     // Tab
-    // --tab-
-    //     $tab-blue-color: $blue;
-    // $tab-white-color: $white-1;
-    // $tab-blue-bg: $gradient-blue;
-    // $tab-fize-sm: $font-size-xs;
+    --tab-text-color: var(--color-black-4);
+    --tab-active-text-color: var(--text-color);
+    --tab-disabled-text-color: var(--color-white-1);
+    --tab-font-size: var(--font-size-md);
+    --tab-line-height: var(--line-height-md);
+
+    // Tabs
+    --tabs-default-color: var(--theme-danger);
+    --tabs-line-height: 44px;
+    --tabs-nav-bg: var(--bg-white);
+    --tabs-bottom-bar-width: 40px;
+    --tabs-bottom-bar-height: 3px;
+    --tabs-bottom-bar-color: var(--tabs-default-color);
 }

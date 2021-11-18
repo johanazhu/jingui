@@ -9,25 +9,31 @@
     background-color: var(--bg-white);
     white-space: nowrap;
     text-overflow: ellipsis;
+
     &--default {
         color: var(--tag-default-color);
         background-color: var(--tag-default-bg);
+
         &.jing-tag--active {
             color: var(--tag-default-active-color);
             background: var(--tag-default-active-bg);
         }
     }
+
     &--primary {
         color: var(--tag-primary-color);
         background-color: var(--tag-primary-bg);
+
         &.jing-tag--active {
             color: var(--tag-primary-active-color);
             background-color: var(--tag-primary-active-bg);
         }
     }
+
     &--normal {
         color: var(--tag-normal-color);
         background-color: var(--tag-normal-bg);
+
         &::before {
             position: absolute;
             top: 0;
@@ -41,6 +47,7 @@
             pointer-events: none;
         }
     }
+
     &--disabled {
         color: var(--tag-disabled-color);
         background-color: var(--tag-disabled-bg);

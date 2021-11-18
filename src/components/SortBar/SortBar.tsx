@@ -4,10 +4,9 @@ import SortBarItem from './Item';
 import SortBarFilter from './Filter';
 import { SortBarProps } from './PropType';
 
-
 const prefixCls = 'jing-sortbar';
 
-const SortBar:FC<SortBarProps> = props => {
+const SortBar: FC<SortBarProps> = (props) => {
     const {
         options,
         status,

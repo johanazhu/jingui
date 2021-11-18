@@ -4,6 +4,7 @@
     position: relative;
 
     &__wrap {
+        height: var(--tabs-line-height);
         overflow: hidden;
 
         &--scrollable {
@@ -16,159 +17,65 @@
                 overflow-x: auto;
                 overflow-y: hidden;
                 -webkit-overflow-scrolling: touch;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
             }
         }
     }
+
+    &__nav {
+        position: relative;
+        display: flex;
+        background-color: var(--tabs-nav-bg);
+        user-select: none;
+        height: 100%;
+        padding-bottom: 15px;
+    }
+
+    &__line {
+        position: absolute;
+        bottom: 15px;
+        left: 0;
+        z-index: 1;
+        width: var(--tabs-bottom-bar-width);
+        height: var(--tabs-bottom-bar-height);
+        background-color: var(--tabs-bottom-bar-color);
+        border-radius: var(--tabs-bottom-bar-height);
+    }
 }
 
-// .van-tabs {
-//   position: relative;
+.jing-tab {
+    @include flex-center;
+    position: relative;
+    flex: 1;
+    padding: 0 var(--padding-base);
+    color: var(--tab-text-color);
+    font-size: var(--tab-font-size);
+    line-height: var(--tab-line-height);
+    cursor: pointer;
 
-//   &__wrap {
-//     overflow: hidden;
+    &--active {
+        color: var(--tab-active-text-color);
+        font-weight: var(--font-weight-bold);
+    }
 
-//     &--page-top {
-//       position: fixed;
-//     }
+    &--disabled {
+        color: var(--tab-disabled-text-color);
+        cursor: not-allowed;
+    }
 
-//     &--content-bottom {
-//       top: auto;
-//       bottom: 0;
-//     }
+    &__text {
+        &--ellipsis {
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
 
-//     &--scrollable {
-//       .van-tab {
-//         flex: 1 0 auto;
-//         padding: 0 @padding-sm;
-//       }
-
-//       .van-tabs__nav {
-//         overflow-x: auto;
-//         overflow-y: hidden;
-//         -webkit-overflow-scrolling: touch;
-
-//         &::-webkit-scrollbar {
-//           display: none;
-//         }
-
-//         &--complete {
-//           padding-right: 8px;
-//           padding-left: 8px;
-//         }
-//       }
-//     }
-//   }
-
-//   &__nav {
-//     position: relative;
-//     display: flex;
-//     background-color: @tabs-nav-background-color;
-//     user-select: none;
-
-//     &--line {
-//       box-sizing: content-box;
-//       height: 100%;
-//       padding-bottom: 15px; /* 15px padding to hide scrollbar in mobile safari */
-//     }
-
-//     &--card {
-//       box-sizing: border-box;
-//       height: @tabs-card-height;
-//       margin: 0 @padding-md;
-//       border: @border-width-base solid @tabs-default-color;
-//       border-radius: @border-radius-sm;
-
-//       .van-tab {
-//         color: @tabs-default-color;
-//         border-right: @border-width-base solid @tabs-default-color;
-
-//         &:last-child {
-//           border-right: none;
-//         }
-
-//         &.van-tab--active {
-//           color: @white;
-//           background-color: @tabs-default-color;
-//         }
-
-//         &--disabled {
-//           color: @tab-disabled-text-color;
-//         }
-//       }
-//     }
-//   }
-
-//   &__line {
-//     position: absolute;
-//     bottom: 15px;
-//     left: 0;
-//     z-index: 1;
-//     width: @tabs-bottom-bar-width;
-//     height: @tabs-bottom-bar-height;
-//     background-color: @tabs-bottom-bar-color;
-//     border-radius: @tabs-bottom-bar-height;
-//   }
-
-//   &__track {
-//     position: relative;
-//     display: flex;
-//     width: 100%;
-//     height: 100%;
-//     will-change: left;
-//   }
-
-//   &__content {
-//     &--animated {
-//       overflow: hidden;
-//     }
-//   }
-
-//   &--line {
-//     .van-tabs__wrap {
-//       height: @tabs-line-height;
-//     }
-//   }
-
-//   &--card {
-//     > .van-tabs__wrap {
-//       height: @tabs-card-height;
-//     }
-//   }
-// }
-
-// .van-tab {
-//   position: relative;
-//   display: flex;
-//   flex: 1;
-//   align-items: center;
-//   justify-content: center;
-//   box-sizing: border-box;
-//   padding: 0 @padding-base;
-//   color: @tab-text-color;
-//   font-size: @tab-font-size;
-//   line-height: @tab-line-height;
-//   cursor: pointer;
-
-//   &--active {
-//     color: @tab-active-text-color;
-//     font-weight: @font-weight-bold;
-//   }
-
-//   &--disabled {
-//     color: @tab-disabled-text-color;
-//     cursor: not-allowed;
-//   }
-
-//   &__text {
-//     &--ellipsis {
-//       display: -webkit-box;
-//       overflow: hidden;
-//       -webkit-line-clamp: 1;
-//       -webkit-box-orient: vertical;
-//     }
-//   }
-
-//   &__text-wrapper {
-//     position: relative;
-//   }
-// }
+        &-wrapper {
+            position: relative;
+        }
+    }
+}

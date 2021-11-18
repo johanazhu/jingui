@@ -3,12 +3,14 @@ import classnames from 'classnames';
 import TabBarItem from './TabBarItem';
 import { TabBarType } from './PropType';
 
-const TabBar: TabBarType = props => {
+const prefixCls = 'jing-tabbar';
+
+const TabBar: TabBarType = (props) => {
     const { children, sticky, className } = props;
     return (
         <div
-            className={classnames('jing-tabbar', className, {
-                'jing-tabbar--sticky': sticky,
+            className={classnames(prefixCls, className, {
+                [`${prefixCls}--sticky`]: sticky,
             })}
         >
             {children}

@@ -1,17 +1,17 @@
 import React, { FC, memo } from 'react';
 import classnames from 'classnames';
-import {
-    IconFilter,
-} from '../Icon';
+import { IconFilter } from '../Icon';
 import { SortBarFilterProps } from './PropType';
 
-const SortBarFilter:FC<SortBarFilterProps> = props => {
+const prefixCls = 'jing-sortbar';
+
+const SortBarFilter: FC<SortBarFilterProps> = (props) => {
     const { name, status, onClick } = props;
 
     return (
         <div
-            className={classnames('jing-sortbar--filter', {
-                'am-color-blue': status,
+            className={classnames(`${prefixCls}--filter`, {
+                [`${prefixCls}--filter-active`]: status,
             })}
             onClick={onClick}
         >
@@ -21,5 +21,4 @@ const SortBarFilter:FC<SortBarFilterProps> = props => {
     );
 };
 
-
-export default memo(SortBarFilter)
+export default memo(SortBarFilter);
