@@ -1,39 +1,23 @@
-import React, { useState, CSSProperties, ReactNode, FC, memo } from 'react';
+import React, {
+    useState,
+    useEffect,
+    useRef,
+    CSSProperties,
+    ReactNode,
+    FC,
+    memo,
+} from 'react';
 import type { MouseEvent } from 'react';
 import classnames from 'classnames';
 import Title from './TabsTitle';
-import Content from './TabsContent';
-import classNames from 'classnames';
-
-export interface TabsProps {
-    className?: string;
-    style?: CSSProperties;
-    value?: number;
-    swipeable?: boolean;
-    sticky?: boolean;
-    ellipsis?: boolean; // 是否省略过长的标题文字
-    animated?: boolean;
-    lineStyle?: CSSProperties;
-    swipeThreshold?: number; // 滚动阈值，标签数量超过阈值且总宽度超过标签栏宽度时开始横向滚动 默认5
-    children?: ReactNode;
-    onChange?: (index?: number) => void;
-    // active：下标
-}
-
-// export default interface PropsType {
-//     value?: number;
-//     defaultValue?: number;
-//     lineWidth?: string | number;
-//     disabled?: boolean;
-//     swipeable?: boolean;
-//     scrollable?: boolean;
-//     direction?: 'horizontal' | 'vertical';
-//     onChange?: (index?: number) => void;
-//   }
+// import Content from './TabsContent';
+import TabPanel from './TabPanel';
+import { TabsType } from './PropType';
+import { scrollLeftTo } from './utils';
 
 const prefixCls = 'jing-tabs';
 
-const Tabs: FC<TabsProps> = (props) => {
+const Tabs: TabsType = (props) => {
     const {
         className,
         style,
@@ -42,13 +26,18 @@ const Tabs: FC<TabsProps> = (props) => {
         sticky,
         ellipsis,
         animated,
-        lineStyle,
+        duration,
+        disabled,
         swipeThreshold,
         children,
         onChange,
     } = props;
 
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const tabsNavRef = useRef<any>(null);
+    const tabsTitleRef = useRef<any>([]);
+
+    const [currentIndex, setCurrentIndex] = useState(value);
+    const [lineStyle, setLineStyle] = useState<CSSProperties>();
 
     const count = React.Children.count(children);
 
@@ -58,61 +47,84 @@ const Tabs: FC<TabsProps> = (props) => {
         scrollable = count > swipeThreshold || !ellipsis;
     }
 
+    useEffect(() => {
+        const { offsetLeft, offsetWidth } = tabsTitleRef.current[currentIndex];
+
+        const navDom = tabsNavRef.current;
+
+        const left = offsetLeft + offsetWidth / 2;
+
+        const to = offsetLeft - (navDom.offsetWidth - offsetWidth) / 2;
+
+        duration && scrollLeftTo(navDom, to, duration);
+
+        const lineStyle: CSSProperties = {
+            transform: `translateX(${left}px) translateX(-50%)`,
+            transitionDuration: `${duration}s`,
+        };
+
+        setLineStyle(lineStyle);
+    }, [currentIndex]);
+
     const classes = classnames(prefixCls, className);
 
     const onHandleClick = (item: any, index: number) => {
-        // const { value, disabled } = item;
-        console.log('item', item);
+        if (disabled || item.props.disabled) {
+            return;
+        }
+
+        setCurrentIndex(index);
         onChange && onChange(index);
     };
 
-    // onClick(item, index) {
-    //     const { title, disabled, computedName } = this.children[index];
-    //     if (disabled) {
-    //       this.$emit('disabled', computedName, title);
-    //     } else {
-    //       this.callBeforeChange(computedName, () => {
-    //         this.setCurrentIndex(index);
-    //         this.scrollToCurrentContent();
-    //       });
-    //       this.$emit('click', computedName, title);
-    //       route(item.$router, item);
-    //     }
-    //   },
+    // 渲染内容
+    // let contentRender;
 
-    // const setCurrentIndex = (currentIndex: number) => {
-
+    // if (swipeable) {
+    //     contentRender = (
+    //         <Carousel
+    //             swipeable={!disabled}
+    //             direction={direction === 'vertical' ? 'up' : 'left'}
+    //             showPagination={false}
+    //             activeIndex={value}
+    //             ref={this.setCarouselRef}
+    //             onChange={(v: number) => {
+    //                 this.onTabChange(v);
+    //             }}
+    //         >
+    //             {React.Children.map(children, (item: any, index: number) => <div key={+index}>{item.props.children}</div>)}
+    //         </Carousel>
+    //     );
+    // } else {
+    //     contentRender = React.Children.map(children, (item: ReactElement<TabPanel['props'], typeof TabPanel>, index) => {
+    //         return item.props.children && <TabPanel {...item.props} selected={value === index} />;
+    //     });
     // }
 
-    // setCurrentIndex(currentIndex) {
-    //     currentIndex = this.findAvailableTab(currentIndex);
-
-    //     if (isDef(currentIndex) && currentIndex !== this.currentIndex) {
-    //       const shouldEmitChange = this.currentIndex !== null;
-    //       this.currentIndex = currentIndex;
-    //       this.$emit('input', this.currentName);
-
-    //       if (shouldEmitChange) {
-    //         this.$emit(
-    //           'change',
-    //           this.currentName,
-    //           this.children[currentIndex].title
-    //         );
-    //       }
-    //     }
-    //   },
+    const Panel = React.Children.map(children, (item: any, index: number) => {
+        // console.log('itemPanel', item)
+        return (
+            item.props.children && (
+                <TabPanel
+                    {...item.props}
+                    key={+index}
+                    selected={currentIndex === index}
+                />
+            )
+        );
+    });
 
     const Nav = React.Children.map(children, (item: any, index: number) => {
-        console.log('item', item);
+        const { title, img } = item.props;
+
         return (
             <Title
-                // isActive={index === this.currentIndex}
-                active={item.active}
-                img={item.img}
-                value={item.value}
-                disabled={item.disabled}
-                className={item.titleClass}
-                style={item.titleStyle}
+                ref={(el) => (tabsTitleRef.current[index] = el)}
+                active={currentIndex === index}
+                value={title}
+                img={img}
+                key={+index}
+                disabled={disabled || item.props.disabled}
                 onClick={() => {
                     onHandleClick(item, index);
                 }}
@@ -126,13 +138,12 @@ const Tabs: FC<TabsProps> = (props) => {
                 [`${prefixCls}__wrap--scrollable`]: !!scrollable,
             })}
         >
-            <div className={classnames(`${prefixCls}__nav`)}>
+            <div className={classnames(`${prefixCls}__nav`)} ref={tabsNavRef}>
                 {Nav}
                 <div
-                    className={classNames(`${prefixCls}__line`)}
+                    className={classnames(`${prefixCls}__line`)}
                     style={lineStyle}
                 />
-                {/* <div class={bem('line')} style={this.lineStyle} /> */}
             </div>
         </div>
     );
@@ -144,34 +155,17 @@ const Tabs: FC<TabsProps> = (props) => {
             ) : (
                 Wrap
             )}
-            <Content
-                count={count}
-                animated={animated}
-                swipeable={swipeable}
-                currentIndex={value}
-                // selected={value === index}
-                //  selected={value === index}
-                // onChange={onChange}
-            >
-                {children}
-            </Content>
-            {/* <Content
-                count={this.children.length}
-                animated={animated}
-                duration={this.duration}
-                swipeable={this.swipeable}
-                currentIndex={this.currentIndex}
-                onChange={this.setCurrentIndex}
-            >
-                {this.slots()}
-            </Content> */}
+            <div className={classnames(`${prefixCls}__content`)}>{Panel}</div>
         </div>
     );
 };
 
+Tabs.Panel = TabPanel;
+
 Tabs.defaultProps = {
     ellipsis: true,
     swipeThreshold: 5,
+    duration: 0.3,
 };
 
-export default memo(Tabs);
+export default Tabs;

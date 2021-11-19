@@ -24,6 +24,12 @@
             }
         }
     }
+    &.demo-jing-tabs {
+        .jing-tabs__panel {
+            padding: 24px 20px;
+            background-color: #fff;
+        }
+    }
 
     &.demo-jing-button-group {
         .jing-button-group {

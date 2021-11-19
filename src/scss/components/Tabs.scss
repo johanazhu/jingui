@@ -1,7 +1,13 @@
-// @import '../style/var';
-
 .jing-tabs {
     position: relative;
+
+    &__sticky {
+        position: sticky;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 99;
+    }
 
     &__wrap {
         height: var(--tabs-line-height);
@@ -10,7 +16,7 @@
         &--scrollable {
             .jing-tab {
                 flex: 1 0 auto;
-                padding: 0 4px;
+                padding: 0 var(--tabs-scrollable-padding);
             }
 
             .jing-tabs__nav {
@@ -26,6 +32,7 @@
     }
 
     &__nav {
+        box-sizing: content-box;
         position: relative;
         display: flex;
         background-color: var(--tabs-nav-bg);
@@ -39,10 +46,21 @@
         bottom: 15px;
         left: 0;
         z-index: 1;
-        width: var(--tabs-bottom-bar-width);
-        height: var(--tabs-bottom-bar-height);
-        background-color: var(--tabs-bottom-bar-color);
-        border-radius: var(--tabs-bottom-bar-height);
+        width: var(--tabs-line-bar-width);
+        height: var(--tabs-line-bar-height);
+        background-color: var(--tabs-line-bar-color);
+        border-radius: var(--tabs-line-bar-height);
+    }
+
+    &__panel {
+        display: none;
+        position: relative;
+        transition: height 0.3s;
+        height: 100%;
+
+        &--active {
+            display: block;
+        }
     }
 }
 
@@ -56,10 +74,10 @@
     line-height: var(--tab-line-height);
     cursor: pointer;
 
-    &--active {
-        color: var(--tab-active-text-color);
-        font-weight: var(--font-weight-bold);
-    }
+    //   &--active {
+    //     color: var(--tab-active-text-color);
+    //     font-weight: var(--font-weight-bold);
+    //   }
 
     &--disabled {
         color: var(--tab-disabled-text-color);

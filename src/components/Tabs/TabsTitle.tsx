@@ -1,11 +1,4 @@
-import React, {
-    useEffect,
-    useState,
-    forwardRef,
-    useImperativeHandle,
-    useRef,
-    memo,
-} from 'react';
+import React, { useEffect, useState, forwardRef, useRef, memo } from 'react';
 import type { MouseEvent } from 'react';
 import classnames from 'classnames';
 
@@ -44,14 +37,11 @@ function useTabDisabled(initialValue: boolean | undefined) {
 
 const prefixCls = 'jing-tab';
 
-const Title = forwardRef<TabsTitleRef, TabsTitleProps>((props, ref) => {
+const Title = forwardRef((props: TabsTitleProps, ref: any) => {
     const { active, img, value, disabled, className, style, onClick } = props;
-
-    console.log('value', value);
 
     const oValue = useTabActive(value);
     const oDisabled = useTabDisabled(disabled);
-    const rootRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         oValue.updateValue(value);
@@ -66,35 +56,12 @@ const Title = forwardRef<TabsTitleRef, TabsTitleProps>((props, ref) => {
         [`${prefixCls}--disabled`]: oDisabled?.value,
     });
 
-    function scrollTo(index: string) {
-        // const body = bodyRef.current
-        // if (!body) return
-        // const children = body.children
-        // for (let i = 0; i < children.length; i++) {
-        //     const panel = children.item(i) as HTMLElement
-        //     if (!panel) continue
-        //     const panelIndex = panel.dataset['index']
-        //     if (panelIndex === index) {
-        //         body.scrollTop = panel.offsetTop
-        //         setActiveIndex(index)
-        //         return
-        //     }
-        // }
-    }
-
-    useImperativeHandle(ref, () => ({ scrollTo }));
-    // this.$refs.swipe.resize();
-
-    function handleClick(e: MouseEvent<HTMLElement>) {
-        onClick?.(e);
-    }
-
     return (
         <div
-            ref={rootRef}
+            ref={ref}
             className={classes}
             style={style}
-            onClick={handleClick}
+            onClick={onClick}
             aria-selected={active}
         >
             {img && <img src={img} alt="" />}

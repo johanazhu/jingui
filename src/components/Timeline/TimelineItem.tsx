@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { FC, memo } from 'react';
 import classnames from 'classnames';
 import { TimeLineItemProps } from './PropType';
 
 const prefixCls = 'jing-timeline--item';
 
-const TimelineItem: React.FC<TimeLineItemProps> = (props) => {
+const TimelineItem: FC<TimeLineItemProps> = (props) => {
     const {
         header,
         footer,
@@ -67,4 +67,4 @@ TimelineItem.defaultProps = {
     canShowColor: true,
 };
 
-export default React.memo(TimelineItem);
+export default memo(TimelineItem);

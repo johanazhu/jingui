@@ -16,7 +16,7 @@ group:
 
 ### Tabs API
 
-| 参数           | 说明               | 类型          | 默认值 |
+<!-- | 参数           | 说明               | 类型          | 默认值 |
 | -------------- | ------------------ | ------------- | ------ |
 | className      | 自定义 class 名    | string        | -      |
 | style          | 自定义样式         | CSSProperties | -      |
@@ -27,7 +27,7 @@ group:
 | duration       | 动画时长           | number        | -      |
 | children       | 组件中的内容       | boolean       | -      |
 | onClick        | 点击事件后的回调   | function      | -      |
-| onChange       | 滑动改变之后的回调 | function      | -      |
+| onChange       | 滑动改变之后的回调 | function      | -      | -->
 
 <!-- ### TabContent API
 

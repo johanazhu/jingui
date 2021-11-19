@@ -320,17 +320,17 @@
     --icon-loading-color: var(--theme-primary);
 
     // Tab
-    --tab-text-color: var(--color-black-4);
-    --tab-active-text-color: var(--text-color);
-    --tab-disabled-text-color: var(--color-white-1);
+    --tab-text-color: var(--text-color);
+    --tab-disabled-text-color: var(--color-black-4);
     --tab-font-size: var(--font-size-md);
     --tab-line-height: var(--line-height-md);
 
     // Tabs
-    --tabs-default-color: var(--theme-danger);
+    --tabs-default-color: var(--theme-primary);
     --tabs-line-height: 44px;
     --tabs-nav-bg: var(--bg-white);
-    --tabs-bottom-bar-width: 40px;
-    --tabs-bottom-bar-height: 3px;
-    --tabs-bottom-bar-color: var(--tabs-default-color);
+    --tabs-line-bar-width: 40px;
+    --tabs-line-bar-height: 3px;
+    --tabs-line-bar-color: var(--tabs-default-color);
+    --tabs-scrollable-padding: var(--padding-sm);
 }
