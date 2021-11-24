@@ -26,19 +26,8 @@ export interface TabsProps {
     swipeThreshold?: number; // 滚动阈值，标签数量超过阈值且总宽度超过标签栏宽度时开始横向滚动 默认5
     children?: ReactNode;
     onChange?: (index?: number) => void;
-    // active：下标
+    onSwiper?: (index?: number) => void;
 }
-
-// export default interface PropsType {
-//     value?: number;
-//     defaultValue?: number;
-//     lineWidth?: string | number;
-//     disabled?: boolean;
-//     swipeable?: boolean;
-//     scrollable?: boolean;
-//     direction?: 'horizontal' | 'vertical';
-//     onChange?: (index?: number) => void;
-//   }
 
 export interface TabsType extends FC<TabsProps> {
     Panel: FC<TabPanelProps>;

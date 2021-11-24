@@ -1,14 +1,16 @@
-import * as React from 'react';
-import classNames from 'classnames';
+import React, { FC, memo } from 'react';
+import classnames from 'classnames';
 import { RowProps } from './PropType';
 
-const Row: React.FC<RowProps> = (props) => {
+const prefixCls = 'jing-row';
+
+const Row: FC<RowProps> = (props) => {
     const { className, children, justify, align, style, onClick } = props;
 
-    const classes = classNames(
-        'jing-row',
-        `jing-row--justify-${justify}`,
-        `jing-row--align-${align}`,
+    const classes = classnames(
+        prefixCls,
+        `${prefixCls}--justify-${justify}`,
+        `${prefixCls}--align-${align}`,
         className,
     );
 
@@ -24,4 +26,4 @@ Row.defaultProps = {
     align: 'top',
 };
 
-export default React.memo(Row);
+export default memo(Row);

@@ -28,6 +28,9 @@ export { default as Timeline } from './components/Timeline';
 export { default as Typography } from './components/Typography';
 // 图表
 // export { LineChart, ColumnChart, PieChart } from './components/Chart';
+// Swiper
+export { Swiper, SwiperSlide } from './components/Swiper';
+// export { default as Swiper } from './components/Swiper';
 // 标签页
 export { default as Tabs } from './components/Tabs';
 // 标签页内容
@@ -52,9 +55,6 @@ export { default as PageLoading } from './components/PageLoading';
 
 // 全局配置
 export { default as ConfigProvider } from './components/ConfigProvider';
-
-// // 基础组件
-// export { default as FullButton } from './Button/FullButton';
 
 // // 业务组件
 // // export { default as AuthVerified } from './Authorized/AuthVerified';

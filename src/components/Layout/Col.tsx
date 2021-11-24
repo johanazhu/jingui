@@ -1,11 +1,13 @@
-import * as React from 'react';
-import classNames from 'classnames';
+import React, { FC, memo } from 'react';
+import classnames from 'classnames';
 import { ColProps } from './PropType';
 
-const Col: React.FC<ColProps> = (props) => {
+const prefixCls = 'jing-col';
+
+const Col: FC<ColProps> = (props) => {
     const { span, children, className, style, onClick } = props;
 
-    const classes = classNames(className, 'jing-col', `jing-col--${span}`);
+    const classes = classnames(className, prefixCls, `${prefixCls}--${span}`);
 
     return (
         <div className={classes} style={style} onClick={onClick}>
@@ -14,4 +16,4 @@ const Col: React.FC<ColProps> = (props) => {
     );
 };
 
-export default React.memo(Col);
+export default memo(Col);

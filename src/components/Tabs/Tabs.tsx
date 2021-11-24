@@ -7,11 +7,11 @@ import React, {
     FC,
     memo,
 } from 'react';
-import type { MouseEvent } from 'react';
 import classnames from 'classnames';
+import { Swiper, SwiperSlide } from '../Swiper';
 import Title from './TabsTitle';
-// import Content from './TabsContent';
 import TabPanel from './TabPanel';
+
 import { TabsType } from './PropType';
 import { scrollLeftTo } from './utils';
 
@@ -31,6 +31,7 @@ const Tabs: TabsType = (props) => {
         swipeThreshold,
         children,
         onChange,
+        onSwiper,
     } = props;
 
     const tabsNavRef = useRef<any>(null);
@@ -38,6 +39,7 @@ const Tabs: TabsType = (props) => {
 
     const [currentIndex, setCurrentIndex] = useState(value);
     const [lineStyle, setLineStyle] = useState<CSSProperties>();
+    const [tabSwiper, setTabSwiper] = useState(null);
 
     const count = React.Children.count(children);
 
@@ -73,46 +75,60 @@ const Tabs: TabsType = (props) => {
             return;
         }
 
+        if (swipeable) {
+            // @ts-ignore
+            tabSwiper && tabSwiper.slideTo(index);
+        }
         setCurrentIndex(index);
         onChange && onChange(index);
     };
 
+    const onHandleSwiper = (swiper: any, index: number) => {
+        // console.log('swiper', swiper)
+        setCurrentIndex(index);
+        setTabSwiper(swiper);
+        onSwiper && onSwiper(index);
+    };
+
     // 渲染内容
-    // let contentRender;
+    let contentRender;
 
-    // if (swipeable) {
-    //     contentRender = (
-    //         <Carousel
-    //             swipeable={!disabled}
-    //             direction={direction === 'vertical' ? 'up' : 'left'}
-    //             showPagination={false}
-    //             activeIndex={value}
-    //             ref={this.setCarouselRef}
-    //             onChange={(v: number) => {
-    //                 this.onTabChange(v);
-    //             }}
-    //         >
-    //             {React.Children.map(children, (item: any, index: number) => <div key={+index}>{item.props.children}</div>)}
-    //         </Carousel>
-    //     );
-    // } else {
-    //     contentRender = React.Children.map(children, (item: ReactElement<TabPanel['props'], typeof TabPanel>, index) => {
-    //         return item.props.children && <TabPanel {...item.props} selected={value === index} />;
-    //     });
-    // }
-
-    const Panel = React.Children.map(children, (item: any, index: number) => {
-        // console.log('itemPanel', item)
-        return (
-            item.props.children && (
-                <TabPanel
-                    {...item.props}
-                    key={+index}
-                    selected={currentIndex === index}
-                />
-            )
+    if (swipeable) {
+        contentRender = (
+            <Swiper
+                onInit={(swiper: any) => {
+                    setTabSwiper(swiper);
+                    swiper.slideTo(currentIndex);
+                }}
+                onSlideChangeTransitionEnd={(swiper) => {
+                    if (swipeable) {
+                        onHandleSwiper(swiper, swiper.realIndex);
+                    }
+                }}
+            >
+                {React.Children.map(children, (item: any, index: number) => (
+                    <SwiperSlide key={+index}>
+                        {item.props.children}
+                    </SwiperSlide>
+                ))}
+            </Swiper>
         );
-    });
+    } else {
+        contentRender = React.Children.map(
+            children,
+            (item: any, index: number) => {
+                return (
+                    item.props.children && (
+                        <TabPanel
+                            {...item.props}
+                            key={+index}
+                            selected={Number(currentIndex) === index}
+                        />
+                    )
+                );
+            },
+        );
+    }
 
     const Nav = React.Children.map(children, (item: any, index: number) => {
         const { title, img } = item.props;
@@ -155,7 +171,9 @@ const Tabs: TabsType = (props) => {
             ) : (
                 Wrap
             )}
-            <div className={classnames(`${prefixCls}__content`)}>{Panel}</div>
+            <div className={classnames(`${prefixCls}__content`)}>
+                {contentRender}
+            </div>
         </div>
     );
 };

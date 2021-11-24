@@ -12,6 +12,8 @@ group:
 
 页面懒加载时的页面级加载动画
 
+<code src="./demo/index.tsx"></code>
+
 ###
 
 未完成，还需要改造

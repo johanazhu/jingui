@@ -3,42 +3,27 @@ import classNames from 'classnames';
 import { SPEED } from '@/utils';
 import { PageLoadingProps } from './PropType';
 
+const prefixCls = 'jing-pageloading';
+
 const PageLoading: FC<PageLoadingProps> = (props) => {
-    const { type, show } = props;
+    const { mask, loading } = props;
 
-    const [isShow, setIsShow] = useState('false');
-
-    const prefixCls = 'jing-pageloading';
-    let timer;
+    // const [isShow, setIsShow] = useState(loading);
 
     const classes = classNames(prefixCls, {
-        [`${prefixCls}_mask`]: type !== 'noMask',
-        [`${prefixCls}_noMask`]: type === 'noMask',
+        [`${prefixCls}--mask`]: !!mask,
+        // [`${prefixCls}_${loading}`]: !!loading
     });
 
-    useEffect(() => {
-        if (show === true && isShow === 'false') {
-            setIsShow('true');
-        } else if (show === false && isShow === 'true') {
-            setIsShow('ready');
-            timer = setTimeout(function () {
-                setIsShow('false');
-            }, SPEED);
-        }
-        return () => {
-            timer = null;
-        };
-    }, []);
-
     return (
-        <div className={`${classes} ${prefixCls}_${isShow}`}>
+        <div className={classes}>
             <span></span>
         </div>
     );
 };
 
 PageLoading.defaultProps = {
-    type: 'noMask',
+    mask: false,
 };
 
 export default PageLoading;

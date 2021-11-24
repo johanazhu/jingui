@@ -1,8 +1,14 @@
+// 引入第三包样式
+@import '../../node_modules/swiper/swiper-bundle.min.css';
+// @import "swiper/scss";
+// @import 'swiper/swiper.scss';
+// @import 'swiper/components/pagination/pagination.scss';
+
 @import './core/index.scss';
 @import './components/index.scss';
 @import './themes/default.scss';
 
 .iphonex-extra-height {
-  height: constant(safe-area-inset-bottom);
-  height: env(safe-area-inset-bottom);
+    height: constant(safe-area-inset-bottom);
+    height: env(safe-area-inset-bottom);
 }
