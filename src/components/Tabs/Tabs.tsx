@@ -22,10 +22,10 @@ const Tabs: TabsType = (props) => {
         className,
         style,
         value,
+        type,
         swipeable,
         sticky,
         ellipsis,
-        animated,
         duration,
         disabled,
         swipeThreshold,
@@ -43,7 +43,7 @@ const Tabs: TabsType = (props) => {
 
     const count = React.Children.count(children);
 
-    let scrollable;
+    let scrollable: boolean = false;
 
     if (swipeThreshold) {
         scrollable = count > swipeThreshold || !ellipsis;
@@ -68,7 +68,7 @@ const Tabs: TabsType = (props) => {
         setLineStyle(lineStyle);
     }, [currentIndex]);
 
-    const classes = classnames(prefixCls, className);
+    const classes = classnames(prefixCls, className, `${prefixCls}--${type}`);
 
     const onHandleClick = (item: any, index: number) => {
         if (disabled || item.props.disabled) {
@@ -84,7 +84,6 @@ const Tabs: TabsType = (props) => {
     };
 
     const onHandleSwiper = (swiper: any, index: number) => {
-        // console.log('swiper', swiper)
         setCurrentIndex(index);
         setTabSwiper(swiper);
         onSwiper && onSwiper(index);
@@ -140,6 +139,7 @@ const Tabs: TabsType = (props) => {
                 value={title}
                 img={img}
                 key={+index}
+                scrollable={scrollable}
                 disabled={disabled || item.props.disabled}
                 onClick={() => {
                     onHandleClick(item, index);
@@ -150,9 +150,13 @@ const Tabs: TabsType = (props) => {
 
     const Wrap = (
         <div
-            className={classnames(`${prefixCls}__wrap`, {
-                [`${prefixCls}__wrap--scrollable`]: !!scrollable,
-            })}
+            className={classnames(
+                `${prefixCls}__wrap`,
+                `${prefixCls}__wrap--${type}`,
+                {
+                    [`${prefixCls}__wrap--scrollable`]: !!scrollable,
+                },
+            )}
         >
             <div className={classnames(`${prefixCls}__nav`)} ref={tabsNavRef}>
                 {Nav}
@@ -181,6 +185,7 @@ const Tabs: TabsType = (props) => {
 Tabs.Panel = TabPanel;
 
 Tabs.defaultProps = {
+    type: 'line',
     ellipsis: true,
     swipeThreshold: 5,
     duration: 0.3,
