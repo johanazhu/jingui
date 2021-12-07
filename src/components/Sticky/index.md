@@ -8,9 +8,9 @@ group:
     order: 3
 ---
 
-# Space 空行分隔
+# Sticky 粘性布局
 
-占位符，起分行作用
+当组件在屏幕范围内时，会按照正常的布局排列，当组件滚出屏幕范围时，始终会固定在屏幕顶部
 
 ## 代码演示
 
@@ -22,4 +22,4 @@ group:
 | --------- | --------------- | ------------- | ------ |
 | className | 自定义 class 名 | string        | -      |
 | style     | 自定义样式      | CSSProperties | -      |
-| scale     | 分行行距，`1-4` | number        | 1      |
+| children  | 组件中的内容    | ReactNode     | -      |

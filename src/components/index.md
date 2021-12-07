@@ -24,6 +24,8 @@ group:
 ## 布局组件
 
 -   [Layout 栅栏布局](./components/layout)
+-   [Space 空行分隔](./components/layout/space)
+-   [Sticky 粘性布局](./components/layout/sticky)
 
 ## 展示组件
 

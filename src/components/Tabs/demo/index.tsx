@@ -71,6 +71,18 @@ export default () => {
                 </Tabs>
             </DemoBlock>
             <DemoBlock
+                title="粘性布局"
+                padding="0px"
+                className="demo-jing-tabs"
+            >
+                <Tabs value={value} sticky>
+                    <Tabs.Panel title="标签1">内容 1</Tabs.Panel>
+                    <Tabs.Panel title="标签2">内容 2</Tabs.Panel>
+                    <Tabs.Panel title="标签3">内容 3</Tabs.Panel>
+                    <Tabs.Panel title="标签4">内容 4</Tabs.Panel>
+                </Tabs>
+            </DemoBlock>
+            <DemoBlock
                 title="样式风格"
                 padding="0px"
                 className="demo-jing-tabs"
@@ -112,18 +124,6 @@ export default () => {
                     >
                         场景保险
                     </Tabs.Panel>
-                </Tabs>
-            </DemoBlock>
-            <DemoBlock
-                title="粘性布局"
-                padding="0px"
-                className="demo-jing-tabs"
-            >
-                <Tabs value={value} sticky>
-                    <Tabs.Panel title="标签1">内容 1</Tabs.Panel>
-                    <Tabs.Panel title="标签2">内容 2</Tabs.Panel>
-                    <Tabs.Panel title="标签3">内容 3</Tabs.Panel>
-                    <Tabs.Panel title="标签4">内容 4</Tabs.Panel>
                 </Tabs>
             </DemoBlock>
             <DemoBlock

@@ -32,8 +32,6 @@
 @import './Timeline.scss';
 // 标签页
 @import './Tabs.scss';
-// 标签内容，与标签页一起使用
-@import './Tab.scss';
 // 通知栏
 @import './NoticeBar.scss';
 // 排序栏
@@ -50,3 +48,5 @@
 @import './Loading.scss';
 // 全局加载
 @import './PageLoading.scss';
+// 粘性布局
+@import './Sticky.scss';

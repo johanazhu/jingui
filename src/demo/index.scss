@@ -53,6 +53,13 @@
         }
     }
 
+    &.demo-sticky {
+        height: 200vh;
+        .jing-demo__content {
+            height: 50vh;
+        }
+    }
+
     &.demo-jing-icon {
         .jing-col {
             display: flex;

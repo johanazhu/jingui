@@ -33,8 +33,6 @@ export { Swiper, SwiperSlide } from './components/Swiper';
 // export { default as Swiper } from './components/Swiper';
 // 标签页
 export { default as Tabs } from './components/Tabs';
-// 标签页内容
-export { default as Tab } from './components/Tab';
 // 通知栏
 export { default as NoticeBar } from './components/NoticeBar';
 // 排序栏
@@ -52,7 +50,8 @@ export { default as Orientation } from './components/Orientation';
 export { default as Loading } from './components/Loading';
 // 页面加载
 export { default as PageLoading } from './components/PageLoading';
-
+// 粘性布局
+export { default as Sticky } from './components/Sticky';
 // 全局配置
 export { default as ConfigProvider } from './components/ConfigProvider';
 

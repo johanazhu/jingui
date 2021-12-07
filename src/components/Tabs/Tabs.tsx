@@ -8,6 +8,7 @@ import React, {
     memo,
 } from 'react';
 import classnames from 'classnames';
+import Sticky from '../Sticky';
 import { Swiper, SwiperSlide } from '../Swiper';
 import Title from './TabsTitle';
 import TabPanel from './TabPanel';
@@ -170,11 +171,7 @@ const Tabs: TabsType = (props) => {
 
     return (
         <div className={classes} style={style}>
-            {sticky ? (
-                <div className={classnames(`${prefixCls}__sticky`)}>{Wrap}</div>
-            ) : (
-                Wrap
-            )}
+            {sticky ? <Sticky> {Wrap} </Sticky> : Wrap}
             <div className={classnames(`${prefixCls}__content`)}>
                 {contentRender}
             </div>

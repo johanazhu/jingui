@@ -1,14 +1,6 @@
 .jing-tabs {
     position: relative;
 
-    &__sticky {
-        position: sticky;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 99;
-    }
-
     &__wrap {
         height: var(--tabs-line-height);
         overflow: hidden;

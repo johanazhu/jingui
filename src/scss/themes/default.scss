@@ -84,6 +84,7 @@
     --cubic-bezier: cubic-bezier(0.25, 0.8, 0.5, 1);
 
     // 堆叠顺序
+    --zindex-stick: 99;
     --zindex-mask: 1000;
     --zindex-popup: 1100;
 
@@ -337,4 +338,7 @@
     --tabs-img-border-radius: var(--border-radius-max);
     --tabs-line-bar-color: var(--tabs-default-color);
     --tabs-scrollable-padding: var(--padding-sm);
+
+    //   Sticky
+    --sticky-zindex: var(--zindex-stick);
 }
