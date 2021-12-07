@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 import classnames from 'classnames';
 import { TypographyProps } from './PropType';
 
@@ -19,4 +19,4 @@ const Typography: FC<TypographyProps> = (props) => {
     return <div className={classnames(prefixCls, className)}>{children}</div>;
 };
 
-export default React.memo(Typography);
+export default memo(Typography);
