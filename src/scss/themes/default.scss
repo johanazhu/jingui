@@ -1,10 +1,19 @@
 :root {
     //   主题色
-    --theme-primary: rgb(50, 100, 200);
-    --theme-second-primary: rgb(255, 100, 20);
-    --theme-info: rgb(20, 200, 255);
-    --theme-warning: rgb(250, 180, 40);
-    --theme-danger: rgb(255, 65, 65);
+    //   --theme-primary: hsla(220, 60%, 49%, 0.8);
+    //   --theme-primary: rgb(80, 135, 245);
+
+    //   --theme-primary: rgb(50, 100, 200);
+    // --theme-primary-a20: hsla(220, 60%, 49%, 0.8)
+    // --theme-second-primary: rgb(255, 99, 20);
+    //   --theme-info: hsl(194, 100%, 54%);
+    //   --theme-warning: hsl(40, 95%, 57%);
+    //   --theme-danger: hsl(0, 100%, 63%);
+    @include defineColorHSL(--theme-primary, 220, 60%, 49%);
+    @include defineColorHSL(--theme-second-primary, 20, 100%, 54%);
+    @include defineColorHSL(--theme-info, 194, 100%, 54%);
+    @include defineColorHSL(--theme-warning, 40, 95%, 57%);
+    @include defineColorHSL(--theme-danger, 0, 100%, 63%);
 
     // 颜色
     --color-black: rgb(0, 0, 0);
@@ -21,12 +30,12 @@
     // 渐变色
     --gradient-primary: linear-gradient(
         to right,
-        rgb(80, 135, 245),
+        var(--theme-primary-light),
         var(--theme-primary)
     );
     --gradient-second-primary: linear-gradient(
         to right,
-        rgb(255, 135, 35),
+        var(--theme-second-primary-light),
         var(--theme-second-primary)
     );
     --gradient-primary-disable: linear-gradient(

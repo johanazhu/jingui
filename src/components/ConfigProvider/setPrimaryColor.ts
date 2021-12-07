@@ -4,6 +4,10 @@ import type { ConfigProviderProps } from './PropType';
 const setPrimaryColor = (color: ConfigProviderProps['primaryColor']) => {
     document.documentElement.style.setProperty('--theme-primary', color);
     document.documentElement.style.setProperty(
+        '--theme-primary-light',
+        Color(color).alpha(0.8).string(),
+    );
+    document.documentElement.style.setProperty(
         '--theme-primary-dark',
         Color(color).darken(0.05).string(),
     );

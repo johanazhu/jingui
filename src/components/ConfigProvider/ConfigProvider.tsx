@@ -8,7 +8,7 @@ import setPrimaryColor from './setPrimaryColor';
 
 const defaultConfig: ConfigProviderContextProps = {
     theme: 'light',
-    primaryColor: '#3264c8',
+    primaryColor: '#4664D2',
 };
 
 export const ConfigContext: Context<ConfigProviderContextProps> =

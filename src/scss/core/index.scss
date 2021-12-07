@@ -9,9 +9,11 @@
 
 @import './mixin.scss';
 
+@import './mixins/index.scss';
+
 // 动画
 @import './animation.scss';
 
-// 默认主题
 @import './normalize.scss';
+
 // @import './themes.scss';

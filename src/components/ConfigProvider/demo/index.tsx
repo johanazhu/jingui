@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { ConfigProvider, Space, Button } from 'jing-ui';
+import { DemoBlock } from 'demo';
 
 const colors = [
+    '#4664D2',
     '#00bc70',
     '#1890ff',
     '#f5222d',
@@ -17,18 +19,28 @@ export default () => {
         localStorage.primaryColor || colors[0],
     );
 
+    console.log('primaryColor', primaryColor);
+
     return (
-        <div className="jing-page">
-            <Space />
-            <Button block onClick={() => setPrimaryColor('#712fd1')}>
-                click
-            </Button>
-            <Button block onClick={() => setPrimaryColor('#1890ff')}>
-                click2
-            </Button>
-            <ConfigProvider primaryColor={primaryColor} theme={theme}>
-                <Button block>中文</Button>
-            </ConfigProvider>
-        </div>
+        <>
+            <DemoBlock title="基本用法">
+                <Button block onClick={() => setPrimaryColor('#712fd1')}>
+                    修改主题色成712fd1
+                </Button>
+                <Button block onClick={() => setPrimaryColor('#1890ff')}>
+                    修改主题色成1890ff
+                </Button>
+                <ConfigProvider primaryColor={primaryColor} theme={theme}>
+                    <div>
+                        <Button type="primary" block>
+                            主色按钮
+                        </Button>
+                        <Button type="second-primary" block>
+                            次色按钮
+                        </Button>
+                    </div>
+                </ConfigProvider>
+            </DemoBlock>
+        </>
     );
 };
