@@ -90,4 +90,33 @@
             }
         }
     }
+
+    &.demo-jing-config-provider {
+        .colors {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            li {
+                display: inline-block;
+                width: 25px;
+                height: 25px;
+                border-radius: 2px;
+                cursor: pointer;
+                &:not(:last-child) {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+
+    &.demo-jing-tabbar {
+        .jing-tabbar {
+            position: relative;
+            padding-bottom: 0;
+        }
+        .jing-tabbar-container {
+            position: relative;
+            padding-bottom: 0;
+        }
+    }
 }

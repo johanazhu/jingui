@@ -148,8 +148,8 @@ summary {
 }
 
 body {
-    color: $text-color;
-    background-color: $background-color;
+    color: var(--text-color);
+    background-color: var(--background-color);
 }
 
 a {

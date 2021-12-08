@@ -13,7 +13,11 @@ export default () => (
                 label="描述信息"
                 desc="详情信息"
             />
-            <Cell title="我标题很长很长可以换行换行换行换行换行换行换行，没有链接" />
+            <Cell title="我是标题很长很长可以换行换行换行换行换行换行换行，没有链接" />
+            <Cell
+                title="单元格"
+                value="我是内容很长很长可以换行换行换行换行换行换行换行，没有链接"
+            />
         </DemoBlock>
         <DemoBlock title="展示图标" padding="0">
             <Cell title="单元格" icon={<IconZan size="sm" />} />
@@ -26,7 +30,7 @@ export default () => (
             <Cell title="单元格" isLink />
             <Cell title="单元格" isLink value="内容" />
             <Cell
-                title="我标题很长很长可以换行换行换行换行换行换行换行，没有链接"
+                title="我是标题很长很长可以换行换行换行换行换行换行换行，没有链接"
                 isLink
             />
         </DemoBlock>

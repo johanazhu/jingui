@@ -10,6 +10,20 @@ export function isObject(val: unknown): val is Record<any, any> {
     return val !== null && typeof val === 'object';
 }
 
+// export function isPromise(obj: unknown): obj is Promise<unknown> {
+//     return (
+//         obj && typeof obj === 'object' && typeof (obj as any).then === 'function'
+//     )
+// }
+
+export function isPromise(obj: any): obj is Promise<unknown> {
+    return (
+        obj &&
+        typeof obj === 'object' &&
+        typeof (obj as any).then === 'function'
+    );
+}
+
 /**
  * 生成随机数
  * @param {min} number 最小值

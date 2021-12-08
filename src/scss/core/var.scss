@@ -1,126 +1,126 @@
-// 颜色
-$blue: rgb(50, 100, 200);
-$orange: rgb(255, 100, 20);
-$blue-light: rgb(80, 120, 240);
-$orange-light: rgb(255, 115, 40);
-$green: rgb(50, 205, 50);
-$blue-sky: rgb(20, 200, 255);
-$green-dark: rgb(30, 180, 160);
-$yellow: rgb(250, 180, 40);
-$red: rgb(255, 65, 65);
-$black: rgb(0, 0, 0);
-$black-1: rgb(50, 50, 50);
-$black-2: rgb(100, 100, 100);
-$black-3: rgb(150, 150, 150);
-$black-4: rgb(200, 200, 200);
-$black-5: rgb(230, 230, 230);
-$white-1: rgb(255, 255, 255);
-$white-2: rgba(255, 255, 255, 0.5);
-$white-3: rgba(255, 255, 255, 0.3);
-$white-4: rgba(255, 255, 255, 0.1);
+// // 颜色
+// $blue: rgb(50, 100, 200);
+// $orange: rgb(255, 100, 20);
+// $blue-light: rgb(80, 120, 240);
+// $orange-light: rgb(255, 115, 40);
+// $green: rgb(50, 205, 50);
+// $blue-sky: rgb(20, 200, 255);
+// $green-dark: rgb(30, 180, 160);
+// $yellow: rgb(250, 180, 40);
+// $red: rgb(255, 65, 65);
+// $black: rgb(0, 0, 0);
+// $black-1: rgb(50, 50, 50);
+// $black-2: rgb(100, 100, 100);
+// $black-3: rgb(150, 150, 150);
+// $black-4: rgb(200, 200, 200);
+// $black-5: rgb(230, 230, 230);
+// $white-1: rgb(255, 255, 255);
+// $white-2: rgba(255, 255, 255, 0.5);
+// $white-3: rgba(255, 255, 255, 0.3);
+// $white-4: rgba(255, 255, 255, 0.1);
 
-// 渐变色
-$gradient-blue: linear-gradient(to right, rgb(80, 135, 245), $blue);
-$gradient-orange: linear-gradient(to right, rgb(255, 135, 35), $orange);
-$gradient-blue-disable: linear-gradient(
-    to right,
-    rgb(185, 205, 250),
-    rgb(150, 185, 245)
-);
-$gradient-orange-disable: linear-gradient(
-    to right,
-    rgb(240, 210, 185),
-    rgb(250, 200, 175)
-);
+// // 渐变色
+// $gradient-blue: linear-gradient(to right, rgb(80, 135, 245), $blue);
+// $gradient-orange: linear-gradient(to right, rgb(255, 135, 35), $orange);
+// $gradient-blue-disable: linear-gradient(
+//     to right,
+//     rgb(185, 205, 250),
+//     rgb(150, 185, 245)
+// );
+// $gradient-orange-disable: linear-gradient(
+//     to right,
+//     rgb(240, 210, 185),
+//     rgb(250, 200, 175)
+// );
 
-// 背景色
-$bg: rgb(245, 245, 245);
-$bg-white: rgb(255, 255, 255);
-$bg-orange: rgb(253, 244, 237);
+// // 背景色
+// $bg: rgb(245, 245, 245);
+// $bg-white: rgb(255, 255, 255);
+// $bg-orange: rgb(253, 244, 237);
 
-// 元件
-$text-color: $black-1;
-$active-color: $black-2;
-$active-opacity: 0.7;
-$disabled-opacity: 0.5;
-$background-color: #f7f8fa;
-$background-color-light: #fafafa;
-$text-link-color: #576b95; // 参考vant
+// // 元件
+// $text-color: $black-1;
+// $active-color: $black-2;
+// $active-opacity: 0.7;
+// $disabled-opacity: 0.5;
+// $background-color: #f7f8fa;
+// $background-color-light: #fafafa;
+// $text-link-color: #576b95; // 参考vant
 
-// Padding
-$padding-base: 4px;
-$padding-xs: $padding-base * 2;
-$padding-sm: $padding-base * 3;
-$padding-l: $padding-base * 4;
-$padding-lg: $padding-base * 6;
-$padding-xl: $padding-base * 8;
+// // Padding
+// $padding-base: 4px;
+// $padding-xs: $padding-base * 2;
+// $padding-sm: $padding-base * 3;
+// $padding-l: $padding-base * 4;
+// $padding-lg: $padding-base * 6;
+// $padding-xl: $padding-base * 8;
 
-// 字体
-$font-size-xs: 10px;
-$font-size-sm: 12px;
-$font-size-md: 14px;
-$font-size-lg: 16px;
-$font-size-xl: 18px;
-$font-size-xxl: 18px;
-$font-weight-bold: 500;
-$base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
-    Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB',
-    'Microsoft Yahei', sans-serif;
-$price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial,
-    sans-serif;
+// // 字体
+// $font-size-xs: 10px;
+// $font-size-sm: 12px;
+// $font-size-md: 14px;
+// $font-size-lg: 16px;
+// $font-size-xl: 18px;
+// $font-size-xxl: 18px;
+// $font-weight-bold: 500;
+// $base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+//     Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB',
+//     'Microsoft Yahei', sans-serif;
+// $price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial,
+//     sans-serif;
 
-// 动画
-$animation-duration-base: 0.3s;
-$animation-duration-fast: 0.2s;
-$animation-timing-function-enter: ease-out;
-$animation-timing-function-leave: ease-in;
-$cubic-bezier: cubic-bezier(0.25, 0.8, 0.5, 1);
+// // 动画
+// $animation-duration-base: 0.3s;
+// $animation-duration-fast: 0.2s;
+// $animation-timing-function-enter: ease-out;
+// $animation-timing-function-leave: ease-in;
+// $cubic-bezier: cubic-bezier(0.25, 0.8, 0.5, 1);
 
-// 占位符
-$placeholder-color: $black-4;
+// // 占位符
+// $placeholder-color: $black-4;
 
-// 堆叠顺序
-$zindex-mask: 1000;
-$zindex-popup: 1100;
+// // 堆叠顺序
+// $zindex-mask: 1000;
+// $zindex-popup: 1100;
 
-// 透明度
-$opacity-disabled: 0.5;
-$opacity-mask: 0.5;
-$opacity-toast: 0.8;
+// // 透明度
+// $opacity-disabled: 0.5;
+// $opacity-mask: 0.5;
+// $opacity-toast: 0.8;
 
-// 行高
-$line-height-xs: 14px;
-$line-height-sm: 18px;
-$line-height-md: 20px;
-$line-height-lg: 22px;
+// // 行高
+// $line-height-xs: 14px;
+// $line-height-sm: 18px;
+// $line-height-md: 20px;
+// $line-height-lg: 22px;
 
-// 间距
-$vertical-gap: 16px;
-$horizontal-gap: 10px;
+// // 间距
+// $vertical-gap: 16px;
+// $horizontal-gap: 10px;
 
-// // Border
-$border-color: $black-5;
-$border-width-base: 1px;
-$border-radius: 0.25rem;
-// $border-radius-max: 999px;
+// // // Border
+// $border-color: $black-5;
+// $border-width-base: 1px;
+// $border-radius: 0.25rem;
+// // $border-radius-max: 999px;
 
-// icon
-$icon-grey-color: rgb(222, 222, 222);
-$icon-blue-color: $blue;
-$icon-white-color: $white-1;
-$icon-black-color: $black;
-$icon-red-color: $red;
-$icon-orange-color: $orange;
-$icon-green-color: $green;
+// // icon
+// $icon-grey-color: rgb(222, 222, 222);
+// $icon-blue-color: $blue;
+// $icon-white-color: $white-1;
+// $icon-black-color: $black;
+// $icon-red-color: $red;
+// $icon-orange-color: $orange;
+// $icon-green-color: $green;
 
-$icon-fill-color: $black-4;
-$icon-size-lg: 1.375rem;
-$icon-size-md: 1.05rem;
-$icon-size-sm: 0.68rem;
-$icon-size-auto: 100%;
+// $icon-fill-color: $black-4;
+// $icon-size-lg: 1.375rem;
+// $icon-size-md: 1.05rem;
+// $icon-size-sm: 0.68rem;
+// $icon-size-auto: 100%;
 
-// tab
-$tab-blue-color: $blue;
-$tab-white-color: $white-1;
-$tab-blue-bg: $gradient-blue;
-$tab-fize-sm: $font-size-xs;
+// // tab
+// $tab-blue-color: $blue;
+// $tab-white-color: $white-1;
+// $tab-blue-bg: $gradient-blue;
+// $tab-fize-sm: $font-size-xs;

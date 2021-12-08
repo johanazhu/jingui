@@ -1,20 +1,85 @@
-import React from 'react';
-import { Tag } from 'jing-ui';
+import React, { useState } from 'react';
+import {
+    TabBar,
+    IconTabbarHome,
+    IconTabbarFinancial,
+    IconTabbarUser,
+} from 'jing-ui';
 
-export default () => (
-    <div>
-        <Tag>标签</Tag>
-        <Tag type="primary">标签</Tag>
-        <Tag type="normal">标签</Tag>
-        <Tag type="disabled">标签</Tag>
+import { DemoBlock } from 'demo';
 
-        <Tag>标签</Tag>
-        <Tag size="medium">标签</Tag>
-        <Tag size="large">标签</Tag>
+export default () => {
+    const [activeKey, setActiveKey] = useState('home');
+    const [activeKey1, setActiveKey1] = useState('home');
 
-        <Tag active>标签</Tag>
-        <Tag type="primary" active>
-            标签
-        </Tag>
-    </div>
-);
+    return (
+        <>
+            <DemoBlock title="基本用法" padding="" className="demo-jing-tabbar">
+                <TabBar
+                    activeKey={activeKey}
+                    onChange={(key: any) => {
+                        setActiveKey(key);
+                    }}
+                >
+                    <TabBar.Item
+                        itemKey="home"
+                        title="主页"
+                        icon={<IconTabbarHome />}
+                    />
+                    <TabBar.Item
+                        itemKey="financial"
+                        title="理财"
+                        icon={<IconTabbarFinancial />}
+                    />
+                    <TabBar.Item
+                        itemKey="user"
+                        title="我的"
+                        icon={<IconTabbarUser />}
+                    />
+                </TabBar>
+            </DemoBlock>
+            <DemoBlock
+                title="监听切换标签前的回调函数"
+                padding=""
+                className="demo-jing-tabbar"
+            >
+                <TabBar
+                    activeKey={activeKey1}
+                    beforeChange={(value: any) => {
+                        console.log('value', value);
+                        if (value === 'user') {
+                            console.log('点击我的不能打印');
+                            return false;
+                        } else {
+                            return new Promise((resolve) => {
+                                setTimeout(() => {
+                                    console.log('1秒后打印');
+                                    resolve(true);
+                                }, 1000);
+                            });
+                        }
+                    }}
+                    onChange={(key: any) => {
+                        setActiveKey1(key);
+                    }}
+                >
+                    <TabBar.Item
+                        itemKey="home"
+                        title="主页"
+                        icon={<IconTabbarHome />}
+                    />
+                    <TabBar.Item
+                        itemKey="financial"
+                        title="理财"
+                        icon={<IconTabbarFinancial />}
+                    />
+                    <TabBar.Item
+                        itemKey="user"
+                        title="我的"
+                        icon={<IconTabbarUser />}
+                    />
+                </TabBar>
+            </DemoBlock>
+        </>
+    );
+};

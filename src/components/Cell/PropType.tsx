@@ -28,7 +28,7 @@ export interface CellGroupProps {
 export interface CellProps {
     className?: string;
     title?: number | string;
-    value?: number | string;
+    value?: number | string | ReactNode;
     label?: string;
     desc?: string;
     icon?: ReactNode;

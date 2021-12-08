@@ -1,23 +1,19 @@
 import React, { FC, memo } from 'react';
 import classnames from 'classnames';
-import { SpaceProps } from './PropType';
+import { RadioProps } from './PropType';
 
-const prefixCls = 'jing-space';
+const prefixCls = 'jing-radio';
 
-const Space: FC<SpaceProps> = (props) => {
+const Radio: FC<RadioProps> = (props) => {
     const { scale, className, style } = props;
     return (
         <div
             className={classnames(className, {
-                [`${prefixCls}-${scale}`]: scale,
+                [`jing-Radio-${scale}`]: scale,
             })}
             style={style}
         />
     );
 };
 
-Space.defaultProps = {
-    scale: 1,
-};
-
-export default memo(Space);
+export default memo(Radio);
