@@ -8,7 +8,7 @@ import React, {
 import * as PropTypes from 'prop-types';
 // import { lock, unlock, clearBodyLocks } from 'tua-body-scroll-lock';
 import classnames from 'classnames';
-import Portal from '../Portal';
+import Portal from './Portal';
 import { SPEED } from '@/utils';
 import { PopupProps } from './PropType';
 

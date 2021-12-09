@@ -1,7 +1,18 @@
 import { ReactNode, CSSProperties } from 'react';
 
+/**
+ * Portal 传送门
+ * @param {container} HTMLDivElement                        // 自定义传送到的根节点
+ * @param {className} CSSProperties                         // 自定义 class 名
+ * @param {children} scaleSize                              // 组件中的内容
+ **/
+export interface PortalProps {
+    container?: HTMLDivElement;
+    className?: string;
+    children?: ReactNode;
+}
 
-export type PopupModelStatus = 'input'
+export type PopupModelStatus = 'input';
 /**
  * Popup 弹出框
  * @param {className} string                        // 自定义 class 名
@@ -22,8 +33,6 @@ export interface PopupProps {
     islock?: boolean;
     isActionSheet?: boolean;
     groupStyle?: CSSProperties;
-    model?: PopupModelStatus; 
+    model?: PopupModelStatus;
     onClose?: () => void;
 }
-
-

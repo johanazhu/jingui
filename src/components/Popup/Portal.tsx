@@ -1,8 +1,8 @@
-import React, { FC, useState, useEffect } from 'react';
+import React, { FC, useState, useEffect, memo } from 'react';
 import { createPortal } from 'react-dom';
 import { PortalProps } from './PropType';
 
-const Portal: FC<PortalProps> = props => {
+const Portal: FC<PortalProps> = (props) => {
     const { children, container, className } = props;
 
     const [containerEl] = useState(() => {
@@ -22,5 +22,4 @@ const Portal: FC<PortalProps> = props => {
     return createPortal(children, containerEl);
 };
 
-
-export default React.memo(Portal);
+export default memo(Portal);
