@@ -5,7 +5,7 @@ nav:
 group:
     title: 业务组件
     path: /components/work
-    order: 6
+    order: 7
 ---
 
 # Swiper 滑动

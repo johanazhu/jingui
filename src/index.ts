@@ -24,8 +24,6 @@ export { default as Popup } from './components/Popup';
 export { default as Timeline } from './components/Timeline';
 // 富文本
 export { default as Typography } from './components/Typography';
-// 图表
-// export { LineChart, ColumnChart, PieChart } from './components/Chart';
 // Swiper
 export { Swiper, SwiperSlide } from './components/Swiper';
 // export { default as Swiper } from './components/Swiper';
@@ -54,6 +52,7 @@ export { default as Sticky } from './components/Sticky';
 export { default as ConfigProvider } from './components/ConfigProvider';
 
 // // 业务组件
+export { default as FloatingAd } from './components/FloatingAd';
 // // export { default as AuthVerified } from './Authorized/AuthVerified';
 // export { default as AuthBindCard } from './Authorized/AuthBindCard';
 // export { default as PageTabBar } from './PageTabBar';
@@ -80,3 +79,6 @@ export { default as ConfigProvider } from './components/ConfigProvider';
 // // 高阶
 // export { default as TabBarLayout } from './Hoc/TabBarLayout';
 // export { default as AuthVerified } from './Hoc/AuthVerified';
+
+// 图表
+// export { LineChart, ColumnChart, PieChart } from './components/Chart';

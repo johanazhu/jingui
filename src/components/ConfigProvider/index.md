@@ -5,7 +5,7 @@ nav:
 group:
     title: 其他
     path: /components/config
-    order: 7
+    order: 9
 ---
 
 # ConfigProvider 全局配置

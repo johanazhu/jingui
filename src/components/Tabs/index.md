@@ -3,8 +3,8 @@ toc: false
 nav:
     path: /components
 group:
-    title: 业务组件
-    path: /components/work
+    title: 导航组件
+    path: /components/navigation
     order: 6
 ---
 
