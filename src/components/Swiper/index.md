@@ -8,7 +8,7 @@ group:
     order: 7
 ---
 
-# Swiper 滑动
+# Swiper 轮播
 
 ## 代码演示
 

@@ -26,7 +26,6 @@ export { default as Timeline } from './components/Timeline';
 export { default as Typography } from './components/Typography';
 // Swiper
 export { Swiper, SwiperSlide } from './components/Swiper';
-// export { default as Swiper } from './components/Swiper';
 // 标签页
 export { default as Tabs } from './components/Tabs';
 // 通知栏

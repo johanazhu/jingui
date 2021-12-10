@@ -1,23 +1,25 @@
-import React from 'react';
-import { Mask } from 'jing-ui';
+import React, { useState } from 'react';
+import { Mask, Cell, Button } from 'jing-ui';
+import { DemoBlock } from 'demo';
 
-export default () => (
-    <div className="jing-page">
-        <Mask />
-        <Mask isTransparent={true} />
-    </div>
-);
+export default () => {
+    const [visible, setVisible] = useState(false);
 
-{
-    /* <Mask
-visible={props.visible}
-destroyOnClose
-getContainer={props.getContainer}
-afterClose={props.afterClose}
-onMaskClick={props.closeOnMaskClick ? props.onClose : undefined}
-style={props.maskStyle}
-className={classNames(`${classPrefix}-mask`, props.maskClassName)}
-stopPropagation={props.stopPropagation}
-> */
-}
-// https://mobile.ant.design/components/masks
+    const toggle = () => setVisible(!visible);
+
+    return (
+        <>
+            <DemoBlock title="基本用法" padding="">
+                <Cell
+                    title="打开关闭遮罩"
+                    value={
+                        <Button size="mini" onClick={toggle}>
+                            开启
+                        </Button>
+                    }
+                />
+                <Mask visible={visible} onClick={toggle} />
+            </DemoBlock>
+        </>
+    );
+};

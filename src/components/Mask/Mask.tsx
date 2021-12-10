@@ -1,29 +1,24 @@
-import React, { CSSProperties, FC } from 'react';
+import React, { FC, memo } from 'react';
 import classnames from 'classnames';
 import { MaskProps } from './PropType';
 
+const prefixCls = 'jing-mask';
 
 const Mask: FC<MaskProps> = (props) => {
-    const { className, isTransparent, style, onClick } = props;
+    const { className, type, visible, style, onClick } = props;
 
-    const prefixCls = 'jing-mask';
-    
-    const classes = classnames(prefixCls, className, {
-        [`${prefixCls}--transparent`]: !isTransparent,
+    const classes = classnames(className, prefixCls, {
+        [`${prefixCls}--${type}`]: !!type,
     });
 
-    return (
-        <div
-            className={classes}
-            style={style}
-            onClick={onClick}
-        />
-    );
+    return visible ? (
+        <div className={classes} style={style} onClick={onClick} />
+    ) : null;
 };
 
 Mask.defaultProps = {
-    isTransparent: false,
+    type: 'normal',
+    visible: false,
 };
 
-
-export default React.memo(Mask);
+export default memo(Mask);

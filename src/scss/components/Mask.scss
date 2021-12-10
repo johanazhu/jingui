@@ -5,7 +5,9 @@
     right: 0;
     left: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, var(--opacity-mask));
+    &--normal {
+        background: rgba(0, 0, 0, var(--opacity-mask));
+    }
     &--transparent {
         background: rgba(0, 0, 0, 0);
     }
