@@ -9,11 +9,11 @@ export type InputSizes = 'small' | 'default' | 'large';
  * @param {type} string                             // 类型
  * @param {value} string                            // 值
  * @param {placeholder} string                      // 占位符
- * @param {disabled} bool                           // 是否能点击
+ * @param {disabled} boolean                           // 是否能点击
  * @param {minLength} number                        // 最少长度 minLength 属性与 <input type="text"> 或 <input type="password"> 配合使用。
  * @param {maxLength} number                        // 最多长度 maxlength 属性与 <input type="text"> 或 <input type="password"> 配合使用。
  * @param {icon} ReactNode                          // 图标
- * @param {error} bool                              // 错误提示
+ * @param {error} boolean                              // 错误提示
  * @param {clearable} boolean                       // 显示清除图标
  * @param {prefix} object                           // 带前缀图标的 input
  * @param {suffix} object                           // 带后缀图标的 input

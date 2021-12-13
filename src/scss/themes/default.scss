@@ -279,11 +279,13 @@
     // NoticeBar
     --noticebar-height: 30px;
     --noticebar-line-height: 24px;
+    --noticebar-padding: 16px;
     --noticebar-text-color: var(--theme-second-primary);
     --noticebar-font-size: var(--font-size-sm);
     --noticebar-font-weight: var(--font-weight-bold);
     --noticebar-bg: #ffefe5;
-    --noticebar-link-width: 40px;
+    //   --noticebar-link-width: 40px;
+    --noticebar-icon-min-width: 24px;
 
     // Typography
     --typography-padding: var(--horizontal-gap);
@@ -323,9 +325,9 @@
     --icon-shy-blue-color: var(--theme-info);
 
     --icon-fill-color: var(--color-black-4);
-    --icon-size-lg: 1.375rem;
-    --icon-size-md: 1.05rem;
-    --icon-size-sm: 0.68rem;
+    --icon-size-lg: 40px;
+    --icon-size-md: 16px;
+    --icon-size-sm: 12px;
     --icon-size-auto: 100%;
     --icon-loading-color: var(--theme-primary);
 

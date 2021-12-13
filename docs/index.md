@@ -22,8 +22,8 @@ footer: Open-source MIT Licensed | Copyright © 2021<br />Powered by [jing-ui](h
 
 ## 浏览器支持
 
--   IOS 8.0+
--   Android 4.0+
+-   iOS >= 8.0
+-   Android >= 4.0
 
 ## 谁在使用
 

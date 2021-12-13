@@ -24,6 +24,7 @@
             }
         }
     }
+
     &.demo-jing-tabs {
         &:first-of-type {
             .jing-demo__title {
@@ -117,6 +118,14 @@
         .jing-tabbar-container {
             position: relative;
             padding-bottom: 0;
+        }
+    }
+
+    &.demo-jing-noticebar {
+        p {
+            padding: 12px 16px;
+            color: #969696;
+            font-size: 12px;
         }
     }
 }

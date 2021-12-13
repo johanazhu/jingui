@@ -1,4 +1,5 @@
 import { defineConfig } from 'dumi';
+import resolve from 'resolve';
 
 export default defineConfig({
     title: 'Jing-ui',
@@ -16,6 +17,10 @@ export default defineConfig({
     },
     alias: {
         demo: process.cwd() + '/src/demo/index.ts',
+        hook: process.cwd() + '/src/components/hooks',
+        // assets: process.cwd() + 'src/assets',
+        // assets: resolve(__dirname, 'src/assets/'),
+        assets: '/src/assets',
     },
     themeConfig: {
         carrier: 'jingui',
@@ -63,23 +68,23 @@ export default defineConfig({
             width: 0;
             background: transparent;
         }
-        iframe::-webkit-scrollbar {  
+        iframe::-webkit-scrollbar {
             width: 0;
             background: transparent;
-        }  
-        iframe document::-webkit-scrollbar {  
+        }
+        iframe document::-webkit-scrollbar {
             width: 0;
             background: transparent;
-        } 
-        iframe > html::-webkit-scrollbar {  
+        }
+        iframe > html::-webkit-scrollbar {
             width: 0;
             background: transparent;
-        } 
+        }
         html[data-scale="true"]::-webkit-scrollbar {
             width: 0;
             background: transparent;
         }
-        .__dumi-default-menu[data-mode=site] { 
+        .__dumi-default-menu[data-mode=site] {
             width: 240px !important;
             position: fixed;
             z-index: 100;

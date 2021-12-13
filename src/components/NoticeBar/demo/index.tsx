@@ -3,11 +3,11 @@ import { NoticeBar } from 'jing-ui';
 import { DemoBlock } from 'demo';
 
 export default () => (
-    <>
+    <div>
         <DemoBlock title="基本用法" padding="">
             <NoticeBar text="生活不是这样就是那样，总之，不会是你想的那样。" />
         </DemoBlock>
-        <DemoBlock title="滚动播放-scrollable" padding="">
+        <DemoBlock title="滚动播放" padding="" className="demo-jing-noticebar">
             <p>文字较短时，通过设置 scrollable 属性开启滚动播放</p>
             <NoticeBar scrollable text="你的脸，一分天注定，九分看滤镜。" />
             <p>文字较长时，通过禁用 scrollable 属性关闭滚动播放</p>
@@ -18,12 +18,13 @@ export default () => (
         </DemoBlock>
         <DemoBlock title="动画时长" padding="">
             <NoticeBar
+                scrollable
                 duration={3}
                 text="我没有去过你的城市，但我刷过你那的题。"
             />
         </DemoBlock>
         <DemoBlock title="居中" padding="">
-            <NoticeBar center={false} text="别低头，双下巴会露。" />
+            <NoticeBar center text="别低头，双下巴会露。" />
         </DemoBlock>
         <DemoBlock title="closeable模式" padding="">
             <NoticeBar
@@ -51,5 +52,5 @@ export default () => (
                 }}
             />
         </DemoBlock>
-    </>
+    </div>
 );

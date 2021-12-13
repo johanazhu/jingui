@@ -106,9 +106,9 @@ export { default as IconFilterEmty } from './Filter/Emty';
 export { default as IconFilter } from './Filter';
 
 // office 三剑客
-export { default as IconOfficeExcel } from './Office/Excel';
-export { default as IconOfficePpt } from './Office/Ppt';
-export { default as IconOfficeWord } from './Office/Word';
+export { default as IconOfficeExcel } from './Office/excel';
+export { default as IconOfficePpt } from './Office/ppt';
+export { default as IconOfficeWord } from './Office/word';
 
 // 理财页导航
 export { default as IconLoanMenu } from './ShortCutMenu/Loan';

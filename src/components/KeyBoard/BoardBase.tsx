@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef, TouchEvent } from 'react';
-import * as PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Key from './Key';
 import { sample } from '@/utils';
@@ -152,11 +151,6 @@ const BoardBase = (props: BoardBaseProps) => {
 
 BoardBase.defaultProps = {
     isRandom: false,
-};
-
-BoardBase.propTypes = {
-    isRandom: PropTypes.bool,
-    value: PropTypes.string,
 };
 
 export default React.memo(BoardBase);

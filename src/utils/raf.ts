@@ -22,3 +22,10 @@ export function cancelRaf(id: number) {
     const cancelAnimationFrame = root.cancelAnimationFrame || root.clearTimeout;
     cancelAnimationFrame.call(root, id);
 }
+
+// double raf for animation
+export function doubleRaf(fn: FrameRequestCallback): void {
+    raf(() => {
+        raf(fn);
+    });
+}

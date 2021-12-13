@@ -12,7 +12,9 @@
         "paths": {
             "@/*": ["src/*"],
             "@@/*": ["src/.umi/*"],
-            "demo": ["src/demo/index.ts"]
+            "demo": ["src/demo/index.ts"],
+            "hooks": ["src/components/hooks"],
+            "assets": ["src/assets"]
         },
         "allowSyntheticDefaultImports": true
     },

@@ -1,58 +1,77 @@
-import React, { FC, useState, useEffect, useRef } from 'react';
+import React, {
+    FC,
+    useState,
+    useEffect,
+    useImperativeHandle,
+    useRef,
+    forwardRef,
+} from 'react';
+import classnames from 'classnames';
+import { getRect } from '@/components/hooks/use-rect';
+import { doubleRaf, isDef, raf } from '@/utils';
 import { IconClose, IconArrow, IconNotice } from '../Icon';
 import { NoticeBarProps } from './PropType';
 
+const prefixCls = 'jing-notice-bar';
 
-const NoticeBar: FC<NoticeBarProps> = props => {
-    const {
-        text,
-        delay,
-        center,
-        hasLeft,
-        duration,
-        scrollable,
-        mode,
-        onClick,
-        onClose,
-    } = props;
-
-    let wrapRef = useRef<any>(null);
-    let contentRef = useRef<any>(null);
+const NoticeBar: FC<NoticeBarProps> = (props) => {
+    const { text, center, duration, scrollable, mode, onClick, onClose } =
+        props;
 
     const [isShow, setIsShow] = useState(true);
+    const [state, setState] = useState({
+        offset: 0,
+        duration: 0,
+    });
+
+    let wrapRef = useRef<HTMLDivElement>(null);
+    let contentRef = useRef<HTMLDivElement>(null);
+
+    const wrapWidth = useRef(0);
+    const contentWidth = useRef(0);
+    const startTimer = useRef<any>(null);
+
+    const reset = () => {
+        // const ms = isDef(duration)
+        wrapWidth.current = 0;
+        contentWidth.current = 0;
+
+        setState({
+            offset: 0,
+            duration: 0,
+        });
+
+        clearTimeout(startTimer.current);
+        startTimer.current = setTimeout(() => {
+            if (
+                !wrapRef.current ||
+                !contentRef.current ||
+                scrollable === false
+            ) {
+                return;
+            }
+
+            const wrapRefWidth = getRect(wrapRef.current).width;
+            const contentRefWidth = getRect(contentRef.current).width;
+
+            if (scrollable || contentRefWidth > wrapRefWidth) {
+                doubleRaf(() => {
+                    wrapWidth.current = wrapRefWidth;
+                    contentWidth.current = contentRefWidth;
+
+                    setState({
+                        offset: -contentWidth.current,
+                        duration:
+                            duration || (contentRefWidth / wrapRefWidth) * 15,
+                    });
+                });
+            }
+        }, duration);
+    };
 
     useEffect(() => {
-        let style = document.styleSheets[0];
-        const wrapWidth = wrapRef.current ? wrapRef.current.offsetWidth : 0;
-        const contentWidth = contentRef.current
-            ? contentRef.current.offsetWidth
-            : 0;
-
-        if (scrollable || wrapWidth < contentWidth) {
-            const proportion = contentWidth / wrapWidth;
-            const persolProportion = (100 / (proportion + 1)) * proportion;
-            style.insertRule(
-                `
-                @keyframes noticeBarPlay {
-                    0%  {-webkit-transform:translate3d(0,0,0);}
-                    ${persolProportion}% {-webkit-transform:translate3d(-100% ,0,0);}
-                    ${persolProportion + 0.01
-                }% {-webkit-transform:translate3d(${wrapWidth}px,0,0);}
-                    100%  {-webkit-transform:translate3d(0,0,0);}
-                }
-            `,
-            );
-            const _duration = duration || (contentWidth / wrapWidth) * 15;
-            contentRef.current.style.animationName = 'noticeBarPlay';
-            contentRef.current.style.animationDuration = _duration + 's';
-            contentRef.current.style.animationIterationCount = 'infinite';
-            contentRef.current.style.animationTimingFunction = 'linear';
-        }
-
-        return () => {
-            style.insertRule(`@keyframes noticeBarPlay {}`);
-        };
-    }, []);
+        reset();
+    }, [text, scrollable]);
 
     const onHandleClose = (e: any) => {
         e.stopPropagation();
@@ -62,34 +81,52 @@ const NoticeBar: FC<NoticeBarProps> = props => {
 
     const renderLeftIcon = () => {
         return (
-            <div className="jing-notice-bar__left">
+            <div className={`${prefixCls}__left`}>
                 <IconNotice color="orange" size="sm" />
             </div>
         );
     };
 
-    // const contentStyle = {
-    //     transform: this.offset ? `translateX(${this.offset}px)` : '',
-    //     transitionDuration: this.duration + 's',
-    //   };
+    const onTransitionEnd = () => {
+        setState({
+            offset: wrapWidth.current,
+            duration: 0,
+        });
 
-    // style={
-    //     animationDuration! > 0
-    //       ? {
-    //         WebkitAnimation: `${NOTICEBAR_KEYFRAME_NAME} ${animationDuration}ms linear infinite`,
-    //         animation: `${NOTICEBAR_KEYFRAME_NAME} ${animationDuration}ms linear infinite`,
-    //       }
-    //       : undefined
-    //   }
+        raf(() => {
+            doubleRaf(() => {
+                setState({
+                    offset: -contentWidth.current,
+                    duration:
+                        duration ||
+                        (contentWidth.current / wrapWidth.current) * 15,
+                });
+            });
+        });
+    };
 
     const renderMarquee = () => {
+        const contentClass = classnames(`${prefixCls}__content`, {
+            'jing-ellipsis': scrollable === false,
+        });
+
+        const _style = {
+            transform: state.offset ? `translateX(${state.offset}px)` : '',
+            transitionDuration: `${state.duration}s`,
+        };
+
         return (
             <div
-                className="jing-notice-bar__wrap"
+                className={`${prefixCls}__wrap`}
                 style={{ justifyContent: center ? 'center' : 'flex-start' }}
                 ref={wrapRef}
             >
-                <div className="jing-notice-bar__wrap-content" ref={contentRef}>
+                <div
+                    className={contentClass}
+                    ref={contentRef}
+                    style={_style}
+                    onTransitionEnd={onTransitionEnd}
+                >
                     {text}
                 </div>
             </div>
@@ -99,25 +136,25 @@ const NoticeBar: FC<NoticeBarProps> = props => {
     const renderRightIcon = () => {
         if (mode === 'closeable') {
             return (
-                <div className="jing-notice-bar__close" onClick={onHandleClose}>
+                <div className={`${prefixCls}__close`} onClick={onHandleClose}>
                     <IconClose color="orange" size="sm" />
                 </div>
             );
         } else if (mode === 'link') {
             return (
-                <div className="jing-notice-bar__link">
+                <div className={`${prefixCls}__link`}>
                     <IconArrow color="orange" size="sm" />
                 </div>
             );
         } else {
-            return <div className="jing-notice-bar__normal"></div>;
+            return <div className={`${prefixCls}__normal`}></div>;
         }
     };
 
     return (
         <>
             {isShow ? (
-                <div className="jing-notice-bar" onClick={onClick}>
+                <div className={prefixCls} onClick={onClick}>
                     {renderLeftIcon()}
                     {renderMarquee()}
                     {renderRightIcon()}
@@ -128,7 +165,6 @@ const NoticeBar: FC<NoticeBarProps> = props => {
 };
 
 NoticeBar.defaultProps = {
-    scrollable: false,
     mode: 'normal',
 };
 
