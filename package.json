@@ -53,12 +53,14 @@
     "color": "^4.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-transition-group": "^4.4.2",
     "swiper": "^6.8.4"
   },
   "devDependencies": {
     "@svgr/webpack": "^3.1.0",
     "@types/color": "^3.0.2",
     "@types/react-dom": "^17.0.10",
+    "@types/react-transition-group": "^4.4.4",
     "@umijs/plugin-sass": "^1.1.1",
     "@umijs/test": "^3.5.20",
     "dumi": "^1.1.31",

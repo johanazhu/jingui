@@ -17,7 +17,7 @@ export { default as Result } from './components/Result';
 // 输入款
 export { default as Input } from './components/Input';
 // 遮罩
-export { default as Mask } from './components/Mask';
+export { default as Overlay } from './components/Overlay';
 // 弹出框
 export { default as Popup } from './components/Popup';
 // 时间轴

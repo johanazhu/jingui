@@ -9,11 +9,11 @@ import React, {
 import classnames from 'classnames';
 import Portal from './Portal';
 import { SPEED } from '@/utils';
-import Mask from '../Mask';
+import Overlay from '../Overlay';
 import { PopupProps } from './PropType';
 
 const Popup = forwardRef((props: PopupProps, ref: any) => {
-    const {} = props;
+    const { } = props;
 
     return <div>2222</div>;
 });

@@ -1,18 +1,6 @@
 import { ReactNode, CSSProperties } from 'react';
 
-/**
- * Portal 传送门
- * @param {container} HTMLDivElement                        // 自定义传送到的根节点
- * @param {className} CSSProperties                         // 自定义 class 名
- * @param {children} scaleSize                              // 组件中的内容
- **/
-export interface PortalProps {
-    container?: HTMLDivElement;
-    className?: string;
-    children?: ReactNode;
-}
 
-export type PopupModelStatus = 'input';
 /**
  * Popup 弹出框
  * @param {className} string                        // 自定义 class 名
@@ -40,7 +28,7 @@ export interface PopupProps {
     animationType: string;
     animationDuration: number;
     mask?: boolean;
-    maskType?: string;
+    maskType?: 'normal' | 'transparent';
     destroy?: boolean;
     lockScroll?: boolean;
     safeAreaInsetBottom: boolean;
@@ -49,4 +37,14 @@ export interface PopupProps {
     afterClose?: () => void;
     onMaskClick?: () => void;
     mountContainer?: HTMLElement;
+}
+
+/**
+ * Portal 传送门
+ * @param {className} CSSProperties                         // 自定义 class 名
+ * @param {handlePortalUnmount} function                    // 组件中的内容
+ **/
+export interface PortalProps extends PopupProps {
+    className?: string;
+    handlePortalUnmount?: () => void;
 }
