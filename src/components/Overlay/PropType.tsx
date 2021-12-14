@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode } from 'react';
+import { CSSProperties, ReactNode, MouseEvent } from 'react';
 import { BaseTypeProps } from '@/utils';
 /**
  * Overlay 遮罩
@@ -19,5 +19,5 @@ export interface OverlayProps extends BaseTypeProps {
     lockScroll?: boolean;
     type?: 'normal' | 'transparent';
     children?: ReactNode;
-    onClick?: () => void;
+    onClick?: (e: MouseEvent) => void;
 }
