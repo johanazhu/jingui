@@ -1,5 +1,4 @@
 import { defineConfig } from 'dumi';
-import resolve from 'resolve';
 
 export default defineConfig({
     title: 'Jing-ui',

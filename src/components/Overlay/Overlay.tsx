@@ -1,32 +1,69 @@
-import React, { FC, useRef, useEffect, memo, CSSProperties } from 'react';
+import React, {
+    FC,
+    useRef,
+    useEffect,
+    memo,
+    CSSProperties,
+    TouchEvent,
+} from 'react';
 import classnames from 'classnames';
 import { CSSTransition } from 'react-transition-group';
 import { isDef, preventDefault, noop } from '@/utils';
+import useLockScroll from '../hooks/use-lock-scroll';
 import { OverlayProps } from './PropType';
 
-const prefixCls = 'jing-Overlay';
+const prefixCls = 'jing-overlay';
 
-const Overlay: FC<OverlayProps> = (props) => {
-    const { className, zIndex, lockScroll, duration, type, visible, style, customStyle, onClick } = props;
+// defaultProps 已经生效，但 props 需设置 any，暂无解决方案
+const Overlay: FC<OverlayProps> = (props: any) => {
+    const {
+        className,
+        zIndex,
+        duration,
+        type,
+        visible,
+        style,
+        customStyle,
+        onClick,
+    } = props;
 
+    const [lockScroll, unlockScroll] = useLockScroll(() => props.lockScroll);
     const nodeRef = useRef(null);
-
-    const classes = classnames(className, prefixCls, {
-        [`${prefixCls}--${type}`]: !!type,
-    });
+    const innerLockRef = useRef(false);
 
     const preventTouchMove = (event: TouchEvent) => {
-        preventDefault(event, true);
+        // preventDefault(event, true);
+        event.stopPropagation();
     };
+
+    useEffect(() => {
+        if (!props.lockScroll) return;
+        if (visible) {
+            lockScroll();
+            innerLockRef.current = true;
+        }
+        if (!visible && innerLockRef.current) {
+            unlockScroll();
+            innerLockRef.current = false;
+        }
+    }, [visible]);
+
+    useEffect(() => {
+        return () => {
+            if (props.lockScroll) unlockScroll();
+        };
+    }, []);
 
     const renderOverlay = () => {
         const _style: CSSProperties = {
             zIndex: zIndex !== undefined ? +zIndex : undefined,
             ...style,
-            ...customStyle
-        }
+            ...customStyle,
+        };
 
-        const classes = classnames(prefixCls, className)
+        const classes = classnames(className, prefixCls, {
+            [`${prefixCls}--${type}`]: !!type,
+        });
 
         if (isDef(duration)) {
             _style.animationDuration = `${duration}ms`;
@@ -38,18 +75,12 @@ const Overlay: FC<OverlayProps> = (props) => {
                 style={_style}
                 className={classes}
                 onClick={onClick}
-                onTouchMove={lockScroll ? preventTouchMove : noop}
+                onTouchMove={props.lockScroll ? preventTouchMove : noop}
             >
                 {props.children}
             </div>
-        )
-
-    }
-
-
-    // return visible ? (
-    //     <div className={classes} style={style} onClick={onClick} />
-    // ) : null;
+        );
+    };
 
     return (
         <CSSTransition
@@ -58,16 +89,18 @@ const Overlay: FC<OverlayProps> = (props) => {
             unmountOnExit
             in={visible}
             timeout={duration}
-            classNames={`${prefixCls}-fade`}
+            classNames="jing-fade"
         >
             {renderOverlay()}
         </CSSTransition>
-    )
+    );
 };
 
 Overlay.defaultProps = {
     type: 'normal',
     visible: false,
+    lockScroll: true,
+    duration: 300,
 };
 
 export default memo(Overlay);

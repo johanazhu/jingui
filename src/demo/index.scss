@@ -128,4 +128,26 @@
             font-size: 12px;
         }
     }
+
+    &.demo-jing-overlay {
+        .jing-demo__content {
+            background: transparent !important;
+            border: 0;
+            margin: 16px;
+            .wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                .block {
+                    width: 120px;
+                    height: 120px;
+                    background-color: #fff;
+                    border-radius: 4px;
+                    display: inline-block;
+                    text-align: center;
+                }
+            }
+        }
+    }
 }

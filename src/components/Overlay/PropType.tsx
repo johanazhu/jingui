@@ -1,4 +1,4 @@
-import { CSSProperties } from 'react';
+import { CSSProperties, ReactNode } from 'react';
 import { BaseTypeProps } from '@/utils';
 /**
  * Overlay 遮罩
@@ -8,6 +8,7 @@ import { BaseTypeProps } from '@/utils';
  * @param {duration} number | string                // 动画时长，单位毫秒
  * @param {lockScroll} boolean                      // 是否锁定背景滚动，锁定时蒙层里的内容也将无法滚动
  * @param {type}  normal | transparent              // 遮罩层的类型，可选值 transparent, normal
+ * @param {children}  ReactNode                     // 组件内的内容
  * @param {onClick} function                        // 点击事件后的回调
  **/
 export interface OverlayProps extends BaseTypeProps {
@@ -17,5 +18,6 @@ export interface OverlayProps extends BaseTypeProps {
     duration?: number | string;
     lockScroll?: boolean;
     type?: 'normal' | 'transparent';
+    children?: ReactNode;
     onClick?: () => void;
 }

@@ -1,12 +1,12 @@
-.jing-mask {
-    z-index: var(--zindex-mask);
+.jing-overlay {
+    z-index: var(--zindex-overlay);
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
     &--normal {
-        background: rgba(0, 0, 0, var(--opacity-mask));
+        background: rgba(0, 0, 0, var(--opacity-overlay));
     }
     &--transparent {
         background: rgba(0, 0, 0, 0);
