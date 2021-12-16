@@ -1,388 +1,123 @@
+.jing-overflow-hidden {
+  overflow: hidden !important;
+}
+
 .jing-popup {
-    width: 100%;
-    position: relative;
-    z-index: -999;
-    left: 0;
+  position: fixed;
+  max-height: 100%;
+  overflow-y: auto;
+  background-color: var(--popup-background-color);
+  transition: var(--popup-transition);
+  -webkit-overflow-scrolling: touch;
+  &--center {
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+  }
+
+  &--top {
     top: 0;
-    bottom: 0;
-    overflow: hidden;
-    &__container {
-        width: 100%;
-        height: 100%;
-    }
-    &__mask {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        background-color: rgba(0, 0, 0, 0.75);
-        opacity: 0;
-        // @include transition(all 1000ms ease-out);
-        @include transition(all $globalSpeed ease-out);
-        &_opactity {
-            opacity: 0;
-        }
-    }
-    &__window {
-        display: block;
-        position: absolute;
-        z-index: 1;
-        left: 50%;
-        top: 50%;
-        overflow: hidden;
-        // @include transition(all 1000ms ease-out);
-        @include transition(all $globalSpeed ease-out);
-    }
-    &__state_ready {
-        z-index: 99999;
-        position: fixed;
-    }
-    &__state_true {
-        z-index: 99999;
-        position: fixed;
-        // z-index: 99999;
-        // position: fixed;
-        // height: 261px;
-        // background: #ddd;
-        // .PopupSlideup {
-        //     overflow: auto;
-        // }
-    }
-    &__state_true &__mask,
-    &__state_true &__window {
-        opacity: 1;
-    }
-    &__type_noCancel &__btn_type_cancel {
-        display: none;
-    }
-    &__type_noCancel &__btn_type_submit {
-        width: 100% !important;
-        border-left-width: 0 !important;
-    }
-    &__type_noSubmit &__btn_type_submit {
-        display: none;
-    }
-    &__type_noSubmit &__btn_type_cancel {
-        width: 100% !important;
-    }
-
-    &__btn {
-        display: block;
-        height: 2.75rem;
-        line-height: 2.75rem;
-        overflow: hidden;
-        text-align: center;
-        border: 0 solid $globalColorBorder;
-        cursor: pointer;
-        &_type_cancel {
-            color: $globalColorBlack1;
-        }
-        &_type_active {
-            background-color: darken(#fff, 3%) !important;
-        }
-    }
-}
-
-.jing-popup--alert {
-    width: 80%;
-    border-radius: 0.5rem;
-    background-color: #fff;
-    opacity: 0;
-    @include transform(translate(-50%, -50%) scale(0.875, 0.875));
-    @include transition(all $globalSpeed ease-out);
-    .Popup__title {
-        height: 6rem;
-        width: 100%;
-        display: block;
-        position: relative;
-        &-text {
-            display: block;
-            width: 80%;
-            line-height: 1.6em;
-            max-height: 4.8em;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            overflow: hidden;
-            text-align: center;
-            @include transform(translate(-50%, -50%));
-        }
-    }
-    .Popup__btn {
-        border-top-width: 1px;
-    }
-    .Popup__state_true & {
-        @include transform(translate(-50%, -50%) scale(1, 1));
-    }
-}
-
-.jing-popup--confirm {
-    width: 80%;
-    border-radius: 0.5rem;
-    background-color: #fff;
-    opacity: 0;
-    @include transform(translate(-50%, -50%) scale(0.875, 0.875));
-    .Popup__title {
-        display: block;
-        width: 100%;
-        height: 6rem;
-        position: relative;
-        &-text {
-            display: block;
-            width: 80%;
-            line-height: 1.6em;
-            max-height: 4.8em;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            overflow: hidden;
-            text-align: center;
-            @include transform(translate(-50%, -50%));
-        }
-    }
-    .Popup__btn {
-        width: 50%;
-        float: left;
-        border-top-width: 1px;
-        &_type_submit {
-            color: $globalColorPurple;
-            border-left-width: 1px;
-        }
-    }
-    .Popup__state_true & {
-        @include transform(translate(-50%, -50%) scale(1, 1));
-    }
-}
-
-.PopupPrompt {
-    width: 80%;
-    max-width: 700px;
-    border-radius: 0.5rem;
-    background-color: #fff;
-    overflow: hidden;
-    opacity: 0;
-    @include transform(translate(-50%, -50%) scale(0.875, 0.875));
-    .Popup__title {
-        position: relative;
-        height: 4rem;
-        line-height: 4rem;
-        overflow: hidden;
-        text-align: center;
-
-        // border-bottom: 1px solid $globalColorBorder;
-        position: relative;
-        margin-bottom: 0;
-        &:after {
-            @include hairline-bottom($globalColorBorder);
-        }
-        &-text {
-            display: block;
-            width: 90%;
-            height: 100%;
-            margin: 0 5%;
-            overflow: hidden;
-            font-weight: bold;
-        }
-    }
-    .Popup__content {
-        min-height: 1rem !important;
-        margin-bottom: 0;
-        border: 0;
-        overflow-x: hidden;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-    .Popup__btn {
-        width: 50%;
-        float: left;
-        border-top-width: 1px !important;
-        &_type_submit {
-            border-left-width: 1px;
-        }
-    }
-    .Popup__state_true & {
-        @include transform(translate(-50%, -50%) scale(1, 1));
-    }
-}
-
-.PopupSlideup {
+    left: 0;
     width: 100%;
-    height: 60vh;
-    // height: 60%;
-    top: auto;
+  }
+
+  &--bottom {
     bottom: 0;
     left: 0;
-    border-radius: 1rem 1rem 0 0;
-    // overflow: visible !important;
-    background-color: $globalColorWhite0;
-    // animation: jqb-fade-leave ease-in both;
-    @include transform(translate(0, 100%));
-    .Popup__title {
-        position: relative;
-        height: 2.75rem;
-        line-height: 2.75rem;
-        margin: 0;
-        text-align: center;
-        overflow: hidden;
-        &:after {
-            @include hairline-bottom($globalColorBorder);
-        }
-        // border-bottom: 1px solid #ddd;
-    }
-    .Popup__content {
-        // border-top: 1px solid $globalColorBorder;
-        -webkit-overflow-scrolling: touch;
-        &_hidden {
-            overflow: auto;
-            // position: absolute;
-            // top: 2.75rem;
-            // left: 0;
-            // right: 0;
-            // bottom: 0;
-        }
-        &_hidden-style {
-            position: absolute;
-            top: 2.75rem;
-            left: 0;
-            right: 0;
-            bottom: 0;
-        }
-        .List {
-            border-top: 0;
-        }
-    }
-    .Popup__btn {
-        &_type_back {
-            display: block;
-            width: 3.25rem;
-            height: 2.75rem;
-            position: absolute;
-            top: 0;
-            right: 0;
-            .Icon {
-                @extend.am-pos-cc;
-            }
-        }
-        &_type_cancel {
-            height: 2.75rem;
-            line-height: 2.75rem;
-            // @extend.text-center;
-            border-top: 1px solid $globalColorBorder;
-            &:after {
-                display: block;
-                content: '取消';
-                color: $globalColorBlack0;
-            }
-            .Icon {
-                display: none;
-            }
-        }
-    }
-    .Popup__state_true & {
-        @include transform(translate(0, 0));
-    }
-    .NoticeBar {
-        border-top: 1px solid $globalColorBorder;
-        border-bottom: 0;
-    }
-}
+    width: 100%;
+  }
 
-.android .Popup {
-    &__type_noCancel &__btn_type_submit {
-        border-radius: 0 0 0.5rem 0.5rem;
-    }
-    .PopupPrompt {
-        .Popup__title {
-            border-radius: 0.5rem 0.5rem 0 0;
-        }
-        .Popup__btn_type_submit {
-            border-radius: 0 0 0.5rem 0;
-        }
-        .Popup__btn_type_cancel {
-            border-radius: 0 0 0 0.5rem;
-        }
-    }
-    .PopupPasscode {
-        .Popup__btn_type_cancel {
-            border-radius: 0.5rem 0 0 0;
-        }
-    }
-}
-
-.PopupMiddle {
-    width: 80%;
-    height: 70vh;
-    border-radius: 0.5rem;
-    opacity: 0;
-    @include transform(translate(-50%, -50%) scale(0.875, 0.875));
-    @include transition(all $globalSpeed ease-out);
-    &_content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 60vh;
-        background-color: #fff;
-        border-radius: 1rem;
-        margin: auto 0;
-        text-align: center;
-    }
-    &_close {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 50px;
-        height: 50px;
-        position: absolute;
-        left: 50%;
-        bottom: 0;
-        // background-color: #fff;
-        @include transform(translate(-50%, 0));
-    }
-}
-
-.PopupCustom {
-    width: 100vh;
-    height: 100vh;
-    opacity: 0;
-    @include transition(all $globalSpeed ease-out);
-}
-.Popup__window.PopupCustom {
-    position: static;
-    left: 0;
+  &--left {
     top: 0;
+    left: 0;
+  }
+
+  &--right {
+    top: 0;
+    right: 0;
+  }
+
+  &-slide-top-enter,
+  &-slide-top-exit-active {
+    transform: translate3d(0, -100%, 0);
+  }
+
+  &-slide-right-enter,
+  &-slide-right-exit-active {
+    transform: translate3d(100%, 0, 0);
+  }
+
+  &-slide-bottom-enter,
+  &-slide-bottom-exit-active {
+    transform: translate3d(0, 100%, 0);
+  }
+
+  &-slide-left-enter,
+  &-slide-left-exit-active {
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  &-slide-top-enter-active,
+  &-slide-left-enter-active,
+  &-slide-right-enter-active,
+  &-slide-bottom-enter-active {
+    transform: translate3d(0, 0, 0);
+    transition: var(--popup-transition);
+  }
+
+  &-slide-top-exit-active,
+  &-slide-left-exit-active,
+  &-slide-right-exit-active,
+  &-slide-bottom-exit-active {
+    transition: var(--popup-transition);
+    transition-timing-function: var(--animation-timing-function-leave);
+  }
 }
 
-.PopupModel {
-    width: 70%;
-    border-radius: 1rem;
-    background-color: #fff;
-    opacity: 0;
-    @include transform(translate(-50%, -50%) scale(0.875, 0.875));
-    @include transition(all $globalSpeed ease-out);
-    .Popup__title {
-        height: 4rem;
-        width: 100%;
-        display: block;
-        position: relative;
-        &-text {
-            display: block;
-            width: 80%;
-            line-height: 1.6em;
-            max-height: 4.8em;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            overflow: hidden;
-            text-align: center;
-            @include transform(translate(-50%, -50%));
-        }
-    }
-    .Popup__btn {
-        border-top-width: 1px;
-    }
-    .Popup__state_true & {
-        @include transform(translate(-50%, -50%) scale(1, 1));
-    }
-}
+//     &__close-icon {
+//       position: absolute;
+//       z-index: var(--rv-popup-close-icon-z-index);
+//       color: var(--rv-popup-close-icon-color);
+//       font-size: var(--rv-popup-close-icon-size);
+//       cursor: pointer;
+
+//       &:active {
+//         color: var(--rv-popup-close-icon-active-color);
+//       }
+
+//       &--top-left {
+//         top: var(--rv-popup-close-icon-margin);
+//         left: var(--rv-popup-close-icon-margin);
+//       }
+
+//       &--top-right {
+//         top: var(--rv-popup-close-icon-margin);
+//         right: var(--rv-popup-close-icon-margin);
+//       }
+
+//       &--bottom-left {
+//         bottom: var(--rv-popup-close-icon-margin);
+//         left: var(--rv-popup-close-icon-margin);
+//       }
+
+//       &--bottom-right {
+//         right: var(--rv-popup-close-icon-margin);
+//         bottom: var(--rv-popup-close-icon-margin);
+//       }
+//     }
+
+//     &__title {
+//       margin: 20 * @hd 12 * @hd;
+//       font-weight: 500;
+//       font-size: var(--rv-popup-title-font-size);
+//       line-height: var(--rv-popup-title-font-size);
+//       text-align: center;
+//     }
+
+//     &__descrition {
+//       margin: 0 20 * @hd;
+//       color: var(--rv-popup-descrition-color);
+//       font-size: var(--rv-popup-descrition-font-size);
+//     }
+//   }
+// }

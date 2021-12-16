@@ -2,18 +2,23 @@ import React, {
     FC,
     useState,
     useEffect,
+    useMemo,
     useRef,
     MouseEvent,
     memo,
 } from 'react';
+import classnames from 'classnames';
 import { CSSTransition } from 'react-transition-group';
 import Overlay from '../Overlay';
 import Portal from './Portal';
 import { PopupProps } from './PropType';
+import { isDef } from '@/utils';
 
 const prefixCls = 'jing-popup';
 
-const Popup: FC<PopupProps> = (props) => {
+let globalZIndex = 2000;
+
+const Popup: FC<PopupProps> = (props: any) => {
     const {
         className,
         style,
@@ -22,19 +27,59 @@ const Popup: FC<PopupProps> = (props) => {
         overlay,
         overlayType,
         duration,
-        destroy,
         lockScroll,
         safeAreaInsetBottom,
+        closeOnClickOverlay,
         children,
-        afterOpen,
-        afterClose,
+        onOpen,
+        onClose,
+        onOpened,
+        onClosed,
         mountContainer,
     } = props;
 
-    const popupRef = useRef<HTMLDivElement>();
+    const popupRef = useRef<HTMLDivElement>(null);
+    const zIndex = useRef<number>(props.zIndex ?? globalZIndex)
+    const [animatedVisible, setAnimatedVisible] = useState(visible);
+
+
+    useEffect(() => {
+        if (visible) {
+            setAnimatedVisible(true);
+        }
+    }, [visible]);
+
+    const _style = useMemo(() => {
+        const initStyle = {
+            zIndex: zIndex.current,
+            ...style
+        }
+
+        if (isDef(duration)) {
+            const key = position === 'center' ? 'animationDuration' : 'transitionDuration';
+            initStyle[key] = `${duration}ms`
+        }
+        return initStyle;
+
+    }, [zIndex.current, style, duration])
+
+
+    const open = () => {
+        if (props.zIndex !== undefined) {
+            zIndex.current = +props.zIndex;
+        } else {
+            zIndex.current = globalZIndex++;
+        }
+
+        onOpen?.();
+    };
+
 
     const onClickOverlay = (event: MouseEvent) => {
         props.onClickOverlay?.(event);
+        if (closeOnClickOverlay) {
+            onClose?.();
+        }
     };
 
     const OverlayRender = () => {
@@ -42,9 +87,10 @@ const Popup: FC<PopupProps> = (props) => {
             return (
                 <Overlay
                     visible={visible}
-                    lockScroll={props.lockScroll}
+                    lockScroll={lockScroll}
                     duration={duration}
                     type={overlayType}
+                    zIndex={zIndex.current}
                     onClick={onClickOverlay}
                 />
             );
@@ -52,20 +98,31 @@ const Popup: FC<PopupProps> = (props) => {
         return null;
     };
 
-    const getComponent = () => {
+    const renderPopup = () => {
+
+        const classes = classnames(className, prefixCls, {
+            [`${prefixCls}--${position}`]: position,
+            'iphonex-extra-height': safeAreaInsetBottom
+        });
+        return (
+            <div
+                ref={popupRef}
+                style={{
+                    ..._style,
+                    display: !visible && !animatedVisible ? 'none' : undefined,
+                }}
+                className={classes}
+                onClick={onClickOverlay}>
+                {children}
+            </div>
+        )
+    }
+
+    const renderTransition = () => {
         const name =
             position === 'center'
                 ? 'jing-fade'
                 : `jing-popup-slide-${position}`;
-
-        if (!overlay) {
-            return (
-                <div className="popup" role="dialog">
-                    {children}
-                </div>
-            );
-        }
-
         return (
             <CSSTransition
                 in={visible}
@@ -74,24 +131,49 @@ const Popup: FC<PopupProps> = (props) => {
                 classNames={name}
                 mountOnEnter
                 unmountOnExit
-                // onEnter={open}
-                // onEntered={props.onOpened}
-                // onExited={() => {
-                //     setAnimatedVisible(false);
-                //     props.onClosed?.();
-                // }}
+                onEnter={open}
+                onEntered={onOpened}
+                onExited={() => {
+                    setAnimatedVisible(false);
+                    onClosed?.();
+                }}
             >
-                {children}
+                {renderPopup()}
             </CSSTransition>
+        );
+    }
+
+    const getComponent = () => {
+        if (!overlay) {
+            return renderTransition()
+        }
+        return (
+            <>
+                {OverlayRender()}
+                {renderTransition()}
+            </>
+
         );
     };
 
     return (
         <Portal mountContainer={mountContainer}>
-            {OverlayRender()}
             {getComponent()}
         </Portal>
-    );
+    )
+};
+
+
+Popup.defaultProps = {
+    duration: 300,
+    overlay: true,
+    position: 'center',
+    mountContainer: document.body,
+    closeOnClickOverlay: true,
+    safeAreaInsetBottom: false,
+    lockScroll: true,
+    // closeIcon: 'cross',
+    // closeIconPosition: 'top-right',
 };
 
 export default memo(Popup);

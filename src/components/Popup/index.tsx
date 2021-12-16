@@ -1,3 +1,8 @@
-import React from 'react';
+import Popup from './Popup';
+import Portal from './Portal';
 
-export default () => <div>Popup</div>;
+export default Popup;
+
+export { Popup, Portal };
+
+export type { PopupProps, PortalProps } from './PropType';

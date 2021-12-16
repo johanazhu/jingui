@@ -1,25 +1,13 @@
-import React, { FC, useState, useEffect, memo } from 'react';
-import { createPortal } from 'react-dom';
+import { FC } from 'react';
 import { PortalProps } from './PropType';
+import { renderToContainer } from '@/utils/dom/renderToContainer';
+
 
 const Portal: FC<PortalProps> = (props) => {
-    const { children, mountContainer, className } = props;
+    const { children, mountContainer } = props;
 
-    const [containerEl] = useState(() => {
-        const el = document.createElement('div');
-        el.className += `jing-portal__container ${className}`;
-        return el;
-    });
+    return renderToContainer(mountContainer, children)
 
-    useEffect(() => {
-        document.body.appendChild(mountContainer || containerEl);
-
-        return () => {
-            document.body.removeChild(containerEl);
-        };
-    }, []);
-
-    return createPortal(children, containerEl);
 };
 
-export default memo(Portal);
+export default Portal;
