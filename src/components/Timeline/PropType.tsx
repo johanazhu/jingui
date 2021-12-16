@@ -12,7 +12,7 @@ import { ReactNode } from 'react';
  * @param {i} any                                   // ...
  * @param {canShowColor} boolean                    // 是否显示颜色
  **/
-export interface TimeLineItemProps {
+export interface TimelineItemProps {
     header: ReactNode;
     footer: ReactNode;
     color?: string;
@@ -37,5 +37,5 @@ export interface TimelineProps {
 }
 
 export interface TimelineType extends React.FC<TimelineProps> {
-    Item: React.FC<TimeLineItemProps>;
+    Item: React.FC<TimelineItemProps>;
 }

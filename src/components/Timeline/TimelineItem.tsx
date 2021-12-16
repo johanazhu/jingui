@@ -1,10 +1,10 @@
 import React, { FC, memo } from 'react';
 import classnames from 'classnames';
-import { TimeLineItemProps } from './PropType';
+import { TimelineItemProps } from './PropType';
 
 const prefixCls = 'jing-timeline--item';
 
-const TimelineItem: FC<TimeLineItemProps> = (props) => {
+const TimelineItem: FC<TimelineItemProps> = (props) => {
     const {
         header,
         footer,

@@ -1,10 +1,10 @@
-import * as React from 'react';
+import React, { FC } from 'react';
 import SteplineItem from './SteplineItem';
-import { StepLineType } from './PropType';
+import { SteplineType } from './PropType';
 
 const prefixCls = 'jing-stepline';
 
-const Stepline:StepLineType = (props) => {
+const Stepline:SteplineType = (props) => {
     const { children, percent, color } = props;
 
     const count = React.Children.count(children);

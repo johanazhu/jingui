@@ -7,12 +7,7 @@ import React, {
     memo,
     useRef,
 } from 'react';
-
-export interface FloatingAdProps {
-    children?: ReactNode;
-    style?: CSSProperties;
-    onClick?: () => void;
-}
+import { FloatingAdProps } from './PropType';
 
 const prefixCls = 'jing-FloatingAd';
 
