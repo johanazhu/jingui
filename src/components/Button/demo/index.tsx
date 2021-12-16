@@ -71,7 +71,7 @@ export default () => (
                 小按钮
             </Button>
             <Button type="primary" size="mini" round>
-                迷你按钮
+                迷你
             </Button>
         </DemoBlock>
         <DemoBlock

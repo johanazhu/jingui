@@ -1,19 +1,21 @@
 .jing-demo {
+    background: #fff;
     &:last-of-type {
         padding-bottom: 32px;
     }
 
     &__title {
-        padding: 12px 16px 6px;
+        padding: 24px 16px 12px;
+        // padding: 32px 16px 16px;
         color: #969696;
         font-size: 14px;
     }
 
-    &__content {
-        border: solid 1px #eee;
-        border-right: none;
-        border-left: none;
-    }
+    //   &__content {
+    //     border: solid 1px #eee;
+    //     border-right: none;
+    //     border-left: none;
+    //   }
 
     &.demo-jing-button {
         .jing-button {
@@ -147,6 +149,16 @@
                     display: inline-block;
                     text-align: center;
                 }
+            }
+        }
+    }
+
+    &.demo-jing-loading {
+        .jing-loading {
+            display: inline-block;
+            margin: 5px 0 5px 20px;
+            &--vertical {
+                display: inline-flex;
             }
         }
     }

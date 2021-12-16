@@ -1,258 +1,254 @@
 // svg loading 动画
 @keyframes jing-activity-ratate360 {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes jing-activity-rotate-circular {
-  0% {
-    stroke-dasharray: 1, 200;
-    stroke-dashoffset: 0;
-  }
-  50% {
-    stroke-dasharray: 120, 200;
-    stroke-dashoffset: -60;
-  }
-  100% {
-    stroke-dasharray: 120, 200;
-    stroke-dashoffset: -180;
-  }
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 120, 200;
+        stroke-dashoffset: -60;
+    }
+    100% {
+        stroke-dasharray: 120, 200;
+        stroke-dashoffset: -180;
+    }
 }
 
 @keyframes jing-spinner-fade {
-  0% {
-    opacity: 0.85;
-  }
-  50% {
-    opacity: 0.25;
-  }
-  100% {
-    opacity: 0.25;
-  }
+    0% {
+        opacity: 0.85;
+    }
+    50% {
+        opacity: 0.25;
+    }
+    100% {
+        opacity: 0.25;
+    }
 }
 
 // noticebar 动画
 @keyframes jqb-fade-enter {
-  from {
-    opacity: 0;
-  }
+    from {
+        opacity: 0;
+    }
 
-  to {
-    opacity: 1;
-  }
+    to {
+        opacity: 1;
+    }
 }
 
 .jqb-fade-enter {
-  animation: jqb-fade-enter both ease-in;
+    animation: jqb-fade-enter both ease-in;
 }
 
 @keyframes jqb-fade-leave {
-  from {
-    opacity: 1;
-  }
+    from {
+        opacity: 1;
+    }
 
-  to {
-    opacity: 0;
-  }
+    to {
+        opacity: 0;
+    }
 }
 
 .jqb-fade-leave {
-  animation: jqb-fade-leave both ease-out;
+    animation: jqb-fade-leave both ease-out;
 }
 
 // 输入框 光标效果
 @keyframes jqb-cursor-flicker {
-  0% {
-    opacity: 0;
-  }
+    0% {
+        opacity: 0;
+    }
 
-  50% {
-    opacity: 1;
-  }
+    50% {
+        opacity: 1;
+    }
 
-  100% {
-    opacity: 0;
-  }
+    100% {
+        opacity: 0;
+    }
 }
 
 // 淡入
 @keyframes jing-fade-in {
-  from {
-    opacity: 0;
-  }
+    from {
+        opacity: 0;
+    }
 
-  to {
-    opacity: 1;
-  }
+    to {
+        opacity: 1;
+    }
 }
 
 // 淡出
 @keyframes jing-fade-out {
-  from {
-    opacity: 1;
-  }
+    from {
+        opacity: 1;
+    }
 
-  to {
-    opacity: 0;
-  }
+    to {
+        opacity: 0;
+    }
 }
 
 // 向上划入
 @keyframes jing-slide-up-enter {
-  from {
-    transform: translate3d(0, 100%, 0);
-  }
+    from {
+        transform: translate3d(0, 100%, 0);
+    }
 }
 
 // 向上划出
 @keyframes jing-slide-up-leave {
-  to {
-    transfrom: translate3d(0, 100%, 0);
-  }
+    to {
+        transfrom: translate3d(0, 100%, 0);
+    }
 }
 
 // 向下划入
 @keyframes jing-slide-down-enter {
-  from {
-    transform: translate3d(0, -100%, 0);
-  }
+    from {
+        transform: translate3d(0, -100%, 0);
+    }
 }
 
 // 向下划出
 @keyframes jing-slide-down-leave {
-  to {
-    transform: translate3d(0, -100%, 0);
-  }
+    to {
+        transform: translate3d(0, -100%, 0);
+    }
 }
 
 @keyframes jing-slide-left-enter {
-  from {
-    transform: translate3d(-100%, 0, 0);
-  }
+    from {
+        transform: translate3d(-100%, 0, 0);
+    }
 }
 
 @keyframes jing-slide-left-leave {
-  to {
-    transform: translate3d(-100%, 0, 0);
-  }
+    to {
+        transform: translate3d(-100%, 0, 0);
+    }
 }
 
 @keyframes jing-slide-right-enter {
-  from {
-    transform: translate3d(100%, 0, 0);
-  }
+    from {
+        transform: translate3d(100%, 0, 0);
+    }
 }
 
 @keyframes jing-slide-right-leave {
-  to {
-    transform: translate3d(100%, 0, 0);
-  }
+    to {
+        transform: translate3d(100%, 0, 0);
+    }
 }
 
 @keyframes jing-zoom-in {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
 
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 @keyframes jing-zoom-out {
-  from {
-    transform: scale(1);
-    opacity: 1;
-  }
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
 
-  to {
-    transform: scale(0.8);
-    opacity: 0;
-  }
+    to {
+        transform: scale(0.8);
+        opacity: 0;
+    }
 }
 
 @keyframes jing-rotate {
-  from {
-    transform: rotate(0deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
 
-  to {
-    transform: rotate(360deg);
-  }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .jing-fade {
-  //   &-enter {
-  //     opacity: 1;
-  //     transform: scale(0.2);
-  //   }
-  &-enter-active {
-    animation: var(--animation-duration-base) jing-fade-in both
-      var(--animation-timing-function-enter);
-  }
-  &-exit-active {
-    animation: var(--animation-duration-base) jing-fade-out both
-      var(--animation-timing-function-leave);
-  }
+    &-enter-active {
+        animation: var(--animation-duration-base) jing-fade-in both
+            var(--animation-timing-function-enter);
+    }
+    &-exit-active {
+        animation: var(--animation-duration-base) jing-fade-out both
+            var(--animation-timing-function-leave);
+    }
 }
 
 .jing-slide-up {
-  &-enter-active {
-    animation: var(--animation-duration-base) jing-slide-up-enter both
-      var(--animation-timing-function-enter);
-  }
-  &-exit-active {
-    animation: var(--animation-duration-base) jing-slide-up-leave both
-      var(--animation-timing-function-leave);
-  }
+    &-enter-active {
+        animation: var(--animation-duration-base) jing-slide-up-enter both
+            var(--animation-timing-function-enter);
+    }
+    &-exit-active {
+        animation: var(--animation-duration-base) jing-slide-up-leave both
+            var(--animation-timing-function-leave);
+    }
 }
 
 .jing-slide-down {
-  &-enter-active {
-    animation: var(--animation-duration-base) jing-slide-down-enter both
-      var(--animation-timing-function-enter);
-  }
-  &-exit-active {
-    animation: var(--animation-duration-base) jing-slide-down-leave both
-      var(--animation-timing-function-leave);
-  }
+    &-enter-active {
+        animation: var(--animation-duration-base) jing-slide-down-enter both
+            var(--animation-timing-function-enter);
+    }
+    &-exit-active {
+        animation: var(--animation-duration-base) jing-slide-down-leave both
+            var(--animation-timing-function-leave);
+    }
 }
 
 .jing-slide-left {
-  &-enter-active {
-    animation: var(--animation-duration-base) jing-slide-left-enter both
-      var(--animation-timing-function-enter);
-  }
-  &-exit-active {
-    animation: var(--animation-duration-base) jing-slide-left-leave both
-      var(--animation-timing-function-leave);
-  }
+    &-enter-active {
+        animation: var(--animation-duration-base) jing-slide-left-enter both
+            var(--animation-timing-function-enter);
+    }
+    &-exit-active {
+        animation: var(--animation-duration-base) jing-slide-left-leave both
+            var(--animation-timing-function-leave);
+    }
 }
 
 .jing-slide-right {
-  &-enter-active {
-    animation: var(--animation-duration-base) jing-slide-right-enter both
-      var(--animation-timing-function-enter);
-  }
-  &-exit-active {
-    animation: var(--animation-duration-base) jing-slide-right-leave both
-      var(--animation-timing-function-leave);
-  }
+    &-enter-active {
+        animation: var(--animation-duration-base) jing-slide-right-enter both
+            var(--animation-timing-function-enter);
+    }
+    &-exit-active {
+        animation: var(--animation-duration-base) jing-slide-right-leave both
+            var(--animation-timing-function-leave);
+    }
 }
 
 .jing-zoom {
-  &-enter-active {
-    animation: var(--animation-duration-base) jing-zoom-in both
-      var(--animation-timing-function-enter);
-  }
-  &-exit-active {
-    animation: var(--animation-duration-base) jing-zoom-out both
-      var(--animation-timing-function-leave);
-  }
+    &-enter-active {
+        animation: var(--animation-duration-base) jing-zoom-in both
+            var(--animation-timing-function-enter);
+    }
+    &-exit-active {
+        animation: var(--animation-duration-base) jing-zoom-out both
+            var(--animation-timing-function-leave);
+    }
 }

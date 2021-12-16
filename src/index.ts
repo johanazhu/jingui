@@ -20,6 +20,8 @@ export { default as Input } from './components/Input';
 export { default as Overlay } from './components/Overlay';
 // 弹出框
 export { default as Popup } from './components/Popup';
+// 轻提示
+export { default as Toast } from './components/Toast';
 // 时间轴
 export { default as Timeline } from './components/Timeline';
 // 富文本
