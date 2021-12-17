@@ -5,4 +5,8 @@ export default Popup;
 
 export { Popup, Portal };
 
-export type { PopupProps, PortalProps } from './PropType';
+export type {
+    PopupProps,
+    PortalProps,
+    PopupCloseIconPosition,
+} from './PropType';

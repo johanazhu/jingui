@@ -21,8 +21,3 @@ export interface LoadingProps extends BaseTypeProps {
     vertical?: boolean;
     children?: ReactNode;
 }
-
-export interface UseLoading {
-    show: (props: LoadingProps) => void;
-    hide: () => void;
-}

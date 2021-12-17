@@ -3,7 +3,7 @@ import { Loading } from 'jing-ui';
 import { DemoBlock } from 'demo';
 
 export default () => (
-    <>
+    <div className="demo-loading">
         <DemoBlock title="加载类型" padding="" className="demo-jing-loading">
             <Loading />
             <Loading type="spinner" />
@@ -37,5 +37,5 @@ export default () => (
                 加载中..
             </Loading>
         </DemoBlock>
-    </>
+    </div>
 );

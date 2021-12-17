@@ -1,5 +1,5 @@
 .jing-demo {
-    background: #fff;
+    background-color: #f7f8fa;
     &:last-of-type {
         padding-bottom: 32px;
     }
@@ -135,7 +135,7 @@
         .jing-demo__content {
             background: transparent !important;
             border: 0;
-            margin: 16px;
+            padding: 0 16px;
             .wrapper {
                 display: flex;
                 align-items: center;
@@ -161,5 +161,12 @@
                 display: inline-flex;
             }
         }
+    }
+}
+
+.demo-loading {
+    background-color: #fff;
+    .jing-demo {
+        background-color: #fff;
     }
 }

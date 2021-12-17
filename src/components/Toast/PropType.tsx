@@ -1,35 +1,33 @@
 import { ReactNode, MouseEventHandler } from 'react';
+import { LoadingType } from '../Loading';
+import { BaseTypeProps } from '@/utils';
 
-export type TagType = 'default' | 'primary' | 'normal' | 'disabled';
-export type TagSize = 'medium' | 'large';
+export type ToastType = 'loading' | 'success' | 'fail' | 'info';
+
+export type ToastPosition = 'top' | 'middle' | 'bottom';
 
 /**
  * Toast 轻提示
- * @param {className} string                            // 自定义 class 名
  * @param {type} TagType                                // 类型
  * @param {size} string                                 // 颜色
  * @param {active} boolean                              // 是否选中
  * @param {children} ReactNode                          // 组件中的内容
  * @param {onClick} MouseEventHandler<HTMLElement>      // 点击后的回调事件
  **/
-export interface ToastProps {
-    className?: string;
-    type?: TagType;
-    size?: string;
-    active?: boolean;
+export interface ToastProps extends BaseTypeProps {
+    type?: ToastType;
+    message?: number | string;
+    duration?: number | string;
+    icon?: ReactNode;
+    loadingType?: LoadingType;
+    overlay?: boolean;
+    forbidClick?: boolean;
+    closeOnClickOverlay?: boolean;
+    position?: ToastPosition;
     children: ReactNode;
-    onClick?: MouseEventHandler<HTMLElement>;
+    onClose?: () => void;
+    onClick?: () => void;
 }
-
-// export interface BaseToastProps {
-//     visible?: boolean;
-//     stayTime?: number;
-//     content?: ReactNode;
-//     mountContainer?: ContainerType | false;
-//     afterClose?: () => void;
-//     mask?: boolean;
-//     onMaskClick?: () => void;
-//   }
 
 // import { LoadingType } from '../loading/PropsType';
 // import { BaseTypeProps } from '../utils';
@@ -111,3 +109,13 @@ export interface ToastProps {
 //   /** 关闭提示	 */
 //   clear(): void;
 // }
+
+// export interface BaseToastProps {
+//     visible?: boolean;
+//     stayTime?: number;
+//     content?: ReactNode;
+//     mountContainer?: ContainerType | false;
+//     afterClose?: () => void;
+//     mask?: boolean;
+//     onMaskClick?: () => void;
+//   }

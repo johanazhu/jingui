@@ -11,6 +11,7 @@ import classnames from 'classnames';
 import { CSSTransition } from 'react-transition-group';
 import Overlay from '../Overlay';
 import Portal from './Portal';
+import { IconClose } from '../Icon';
 import { PopupProps } from './PropType';
 import { isDef } from '@/utils';
 
@@ -29,19 +30,22 @@ const Popup: FC<PopupProps> = (props: any) => {
         duration,
         lockScroll,
         safeAreaInsetBottom,
-        closeOnClickOverlay,
+        closeable,
+        closeIconPosition,
         children,
         onOpen,
         onClose,
         onOpened,
         onClosed,
+        closeOnClickOverlay,
+        onClick,
+        onClickCloseIcon,
         mountContainer,
     } = props;
 
     const popupRef = useRef<HTMLDivElement>(null);
-    const zIndex = useRef<number>(props.zIndex ?? globalZIndex)
+    const zIndex = useRef<number>(props.zIndex ?? globalZIndex);
     const [animatedVisible, setAnimatedVisible] = useState(visible);
-
 
     useEffect(() => {
         if (visible) {
@@ -52,17 +56,18 @@ const Popup: FC<PopupProps> = (props: any) => {
     const _style = useMemo(() => {
         const initStyle = {
             zIndex: zIndex.current,
-            ...style
-        }
+            ...style,
+        };
 
         if (isDef(duration)) {
-            const key = position === 'center' ? 'animationDuration' : 'transitionDuration';
-            initStyle[key] = `${duration}ms`
+            const key =
+                position === 'center'
+                    ? 'animationDuration'
+                    : 'transitionDuration';
+            initStyle[key] = `${duration}ms`;
         }
         return initStyle;
-
-    }, [zIndex.current, style, duration])
-
+    }, [zIndex.current, style, duration]);
 
     const open = () => {
         if (props.zIndex !== undefined) {
@@ -73,7 +78,6 @@ const Popup: FC<PopupProps> = (props: any) => {
 
         onOpen?.();
     };
-
 
     const onClickOverlay = (event: MouseEvent) => {
         props.onClickOverlay?.(event);
@@ -98,11 +102,35 @@ const Popup: FC<PopupProps> = (props: any) => {
         return null;
     };
 
-    const renderPopup = () => {
+    const onClickToCloseIcon = (event: MouseEvent) => {
+        if (onClickCloseIcon) {
+            onClickCloseIcon(event);
+        }
+        onClose?.();
+    };
 
+    const renderCloseIcon = () => {
+        if (closeable) {
+            return (
+                <div
+                    className={classnames(
+                        `${prefixCls}__close-icon`,
+                        `${prefixCls}__close-icon--${closeIconPosition}`,
+                    )}
+                    onClick={onClickToCloseIcon}
+                >
+                    {' '}
+                    <IconClose />
+                </div>
+            );
+        }
+        return null;
+    };
+
+    const renderPopup = () => {
         const classes = classnames(className, prefixCls, {
             [`${prefixCls}--${position}`]: position,
-            'iphonex-extra-height': safeAreaInsetBottom
+            'iphonex-extra-height': safeAreaInsetBottom,
         });
         return (
             <div
@@ -112,11 +140,13 @@ const Popup: FC<PopupProps> = (props: any) => {
                     display: !visible && !animatedVisible ? 'none' : undefined,
                 }}
                 className={classes}
-                onClick={onClickOverlay}>
+                onClick={onClick}
+            >
                 {children}
+                {renderCloseIcon()}
             </div>
-        )
-    }
+        );
+    };
 
     const renderTransition = () => {
         const name =
@@ -141,28 +171,22 @@ const Popup: FC<PopupProps> = (props: any) => {
                 {renderPopup()}
             </CSSTransition>
         );
-    }
+    };
 
     const getComponent = () => {
         if (!overlay) {
-            return renderTransition()
+            return renderTransition();
         }
         return (
             <>
                 {OverlayRender()}
                 {renderTransition()}
             </>
-
         );
     };
 
-    return (
-        <Portal mountContainer={mountContainer}>
-            {getComponent()}
-        </Portal>
-    )
+    return <Portal mountContainer={mountContainer}>{getComponent()}</Portal>;
 };
-
 
 Popup.defaultProps = {
     duration: 300,
@@ -172,8 +196,8 @@ Popup.defaultProps = {
     closeOnClickOverlay: true,
     safeAreaInsetBottom: false,
     lockScroll: true,
-    // closeIcon: 'cross',
-    // closeIconPosition: 'top-right',
+    overlayType: 'normal',
+    closeIconPosition: 'top-right',
 };
 
 export default memo(Popup);

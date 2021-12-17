@@ -1,8 +1,6 @@
-
-
 import Loading from './Loading';
 
 export default Loading;
 export { Loading };
 
-export type { LoadingProps } from './PropType';
+export type { LoadingProps, LoadingType } from './PropType';

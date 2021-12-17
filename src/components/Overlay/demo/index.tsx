@@ -43,7 +43,7 @@ export default () => {
                 className="demo-jing-overlay"
             >
                 <Button type="primary" onClick={toggle2}>
-                    嵌入内容
+                    透明背景
                 </Button>
                 <Overlay
                     type="transparent"

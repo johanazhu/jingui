@@ -9,6 +9,11 @@ export default () => {
     const [showPopup3, setShowPopup3] = useState(false);
     const [showPopup4, setShowPopup4] = useState(false);
     const [showPopup5, setShowPopup5] = useState(false);
+    const [showPopup6, setShowPopup6] = useState(false);
+    const [showPopup7, setShowPopup7] = useState(false);
+    const [showPopup8, setShowPopup8] = useState(false);
+    const [showPopup9, setShowPopup9] = useState(false);
+    const [showPopup10, setShowPopup10] = useState(false);
     const popupRef = useRef();
 
     return (
@@ -79,7 +84,12 @@ export default () => {
                     isLink
                     onClick={() => setShowPopup5(true)}
                 />
-                <div ref={(ref) => popupRef}>去F12中看 dom 结构</div>
+                <div
+                    ref={(ref) => popupRef}
+                    style={{ fontSize: '12px', padding: '16px' }}
+                >
+                    去F12中看 dom 结构
+                </div>
                 <Popup
                     visible={showPopup5}
                     mountContainer={popupRef.current}
@@ -87,6 +97,84 @@ export default () => {
                 >
                     <div style={{ padding: '30px 50px' }}>内容</div>
                 </Popup>
+            </DemoBlock>
+            <DemoBlock title="事件处理" padding="" className="demo-jing-popup">
+                <Cell
+                    title="事件处理"
+                    isLink
+                    onClick={() => setShowPopup6(true)}
+                />
+                <Popup
+                    visible={showPopup6}
+                    mountContainer={popupRef.current}
+                    onOpen={() => console.log('打开时')}
+                    onOpened={() => console.log('打开完成')}
+                    onClose={() => {
+                        setShowPopup6(false);
+                        console.log('关闭时');
+                    }}
+                    onClosed={() => console.log('关闭完成')}
+                    onClickOverlay={() => console.log('点击遮罩关闭弹出层')}
+                    onClick={() => console.log('点击我本人')}
+                >
+                    <div style={{ padding: '30px 50px' }}>F12看console</div>
+                </Popup>
+            </DemoBlock>
+            <DemoBlock title="允许滑动" padding="" className="demo-jing-popup">
+                <Cell
+                    title="允许滑动"
+                    isLink
+                    onClick={() => setShowPopup7(true)}
+                />
+                <Popup
+                    visible={showPopup7}
+                    lockScroll={false}
+                    mountContainer={popupRef.current}
+                    onClose={() => setShowPopup7(false)}
+                >
+                    <div style={{ padding: '30px 50px' }}>内容</div>
+                </Popup>
+            </DemoBlock>
+            <DemoBlock title="关闭图标" padding="" className="demo-jing-popup">
+                <Cell
+                    title="关闭图标"
+                    isLink
+                    onClick={() => setShowPopup8(true)}
+                />
+                <Cell
+                    title="图标位置-左上"
+                    isLink
+                    onClick={() => setShowPopup9(true)}
+                />
+                <Cell
+                    title="图标位置-右下"
+                    isLink
+                    onClick={() => setShowPopup10(true)}
+                />
+                <Popup
+                    visible={showPopup8}
+                    closeable
+                    style={{ height: '30%' }}
+                    position="bottom"
+                    onClose={() => setShowPopup8(false)}
+                />
+                <Popup
+                    visible={showPopup9}
+                    closeable
+                    style={{ height: '30%' }}
+                    position="bottom"
+                    closeIconPosition="top-left"
+                    onClose={() => setShowPopup9(false)}
+                />
+                <Popup
+                    visible={showPopup10}
+                    closeable
+                    style={{ height: '30%' }}
+                    position="bottom"
+                    closeIcon="close"
+                    closeIconPosition="bottom-right"
+                    onClose={() => setShowPopup10(false)}
+                />
             </DemoBlock>
         </>
     );

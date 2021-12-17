@@ -12,8 +12,6 @@ group:
 
 加载图标，用于表示加载中的过渡状态。
 
-###
-
 <code src="./demo/index.tsx"></code>
 
 ## API

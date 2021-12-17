@@ -13,6 +13,7 @@ export default () => {
                         // Toast('上不在高，有仙则灵')
                     }}
                 />
+                <Toast />
                 <Cell
                     title="加载   提示"
                     isLink
