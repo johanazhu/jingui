@@ -3,11 +3,12 @@ import classnames from 'classnames';
 import { ToastProps } from './PropType';
 import Popup from '../Popup';
 import Loading from '../Loading';
+import { IconRight, IconClose } from '../Icon';
 import { isDef } from '@/utils';
 
 const prefixCls = 'jing-toast';
 
-const Toast: FC<ToastProps & { visible?: boolean }> = (props: any) => {
+const Toast: FC<ToastProps> = (props: any) => {
     const {
         className,
         style,
@@ -20,16 +21,31 @@ const Toast: FC<ToastProps & { visible?: boolean }> = (props: any) => {
         overlay,
         forbidClick,
         closeOnClickOverlay,
-        position,
-        onClose,
         onClick,
+        onClose,
+        onClosed,
+        onOpened,
     } = props;
 
     const renderIcon = () => {
+        const hasIcon = icon || type === 'success' || type === 'fail';
+
+        if (hasIcon) {
+            return typeof icon === 'string' ? (
+                type === 'success' ? (
+                    <IconRight size="lg" />
+                ) : (
+                    <IconClose size="lg" />
+                )
+            ) : (
+                icon
+            );
+        }
+
         if (type === 'loading') {
             return (
                 <Loading
-                    className={classnames(`${prefixCls}--loading`)}
+                    className={classnames(`${prefixCls}__loading`)}
                     type={loadingType}
                 />
             );
@@ -40,31 +56,31 @@ const Toast: FC<ToastProps & { visible?: boolean }> = (props: any) => {
     const renderMessage = () => {
         if (isDef(message) && message !== '') {
             return (
-                <div className={classnames(`${prefixCls}--info`)}>
+                <div className={classnames(`${prefixCls}__info`)}>
                     {message}
                 </div>
             );
         }
         return null;
     };
-    const classes = classnames(className, prefixCls, {
-        [`${prefixCls}--${position}`]: position,
-    });
+    const classes = classnames(className, prefixCls);
 
     return (
         <Popup
             className={classes}
+            style={style}
             visible={visible}
-            position={position}
             duration={duration}
             overlay={overlay}
             lockScroll={false}
+            onClick={onClick}
             onClose={onClose}
+            onClosed={onClosed}
+            onOpened={onOpened}
+            closeOnClickOverlay={closeOnClickOverlay}
         >
-            <>
-                {renderIcon}
-                {renderMessage}
-            </>
+            {renderIcon()}
+            {renderMessage()}
         </Popup>
     );
 };
@@ -72,7 +88,6 @@ const Toast: FC<ToastProps & { visible?: boolean }> = (props: any) => {
 Toast.defaultProps = {
     type: 'info',
     duration: 2000,
-    position: 'middle',
     loadingType: 'circular',
     overlay: false,
 };

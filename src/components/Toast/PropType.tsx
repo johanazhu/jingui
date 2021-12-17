@@ -1,32 +1,31 @@
 import { ReactNode, MouseEventHandler } from 'react';
 import { LoadingType } from '../Loading';
-import { BaseTypeProps } from '@/utils';
+import { BaseTypeProps, GetContainer } from '@/utils';
 
 export type ToastType = 'loading' | 'success' | 'fail' | 'info';
-
-export type ToastPosition = 'top' | 'middle' | 'bottom';
 
 /**
  * Toast 轻提示
  * @param {type} TagType                                // 类型
  * @param {size} string                                 // 颜色
  * @param {active} boolean                              // 是否选中
- * @param {children} ReactNode                          // 组件中的内容
- * @param {onClick} MouseEventHandler<HTMLElement>      // 点击后的回调事件
+ * @param {onClick}                                     // 点击后的回调事件
  **/
 export interface ToastProps extends BaseTypeProps {
+    visible?: boolean;
     type?: ToastType;
     message?: number | string;
     duration?: number | string;
-    icon?: ReactNode;
+    icon?: string | ReactNode;
     loadingType?: LoadingType;
     overlay?: boolean;
     forbidClick?: boolean;
     closeOnClickOverlay?: boolean;
-    position?: ToastPosition;
-    children: ReactNode;
-    onClose?: () => void;
     onClick?: () => void;
+    onClose?: () => void;
+    onClosed?: () => void;
+    onOpened?: () => void;
+    mountContainer?: GetContainer;
 }
 
 // import { LoadingType } from '../loading/PropsType';

@@ -49,7 +49,14 @@ export default () => {
                     type="transparent"
                     visible={visible2}
                     onClick={toggle2}
-                />
+                >
+                    <div className="wrapper">
+                        <div
+                            className="block"
+                            style={{ background: '#ddd' }}
+                        ></div>
+                    </div>
+                </Overlay>
             </DemoBlock>
         </>
     );

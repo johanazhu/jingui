@@ -1,0 +1,50 @@
+.jing-toast {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: content-box;
+    width: var(--toast-default-width);
+    min-width: var(--toast-min-width);
+    max-width: var(--toast-max-width);
+    padding: var(--toast-default-padding);
+    color: var(--toast-text-color);
+    font-size: var(--toast-font-size);
+    line-height: var(--toast-line-height);
+    white-space: pre-wrap;
+    word-break: break-all;
+    text-align: center;
+    background-color: var(--toast-background-color);
+    border-radius: var(--toast-border-radius);
+    transition: all var(--animation-duration-fast);
+
+    &--unclickable {
+        overflow: hidden;
+        cursor: not-allowed;
+
+        * {
+            pointer-events: none;
+        }
+    }
+
+    &--info,
+    &--html {
+        width: fit-content;
+        min-height: var(--toast-text-min-width);
+        min-height: 0;
+        padding: var(--toast-text-padding);
+
+        .jing-toast__info {
+            margin-top: 0;
+        }
+    }
+
+    &__loading {
+        padding: var(--paddding-base);
+        color: var(--toast-loading-icon-color);
+    }
+
+    &__info {
+        margin-top: var(--padding-xs);
+    }
+}

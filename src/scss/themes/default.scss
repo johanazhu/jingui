@@ -377,14 +377,6 @@
     --popup-transition: transform var(--animation-duration-base);
     --popup-close-icon-z-index: 1;
     --popup-close-icon-margin: 16px;
-    //   @popup-background-color: @white;
-    //   @popup-transition: transform @animation-duration-base;
-    //   @popup-round-border-radius: 20px;
-    //   @popup-close-icon-size: 22px;
-    //   @popup-close-icon-color: @gray-5;
-    //   @popup-close-icon-active-color: @gray-6;
-    //   @popup-close-icon-margin: 16px;
-    //   @popup-close-icon-z-index: 1;
 
     // Loading
     --loading-color: var(--color-black-2);
@@ -393,4 +385,19 @@
     --loading-text-color: var(--color-black-3);
     --loading-text-font-size: var(--font-size-md);
     --loading-text-margin: var(--padding-xs);
+
+    // Toast
+    --toast-min-width: 50%;
+    --toast-max-width: 80%;
+    --toast-font-size: var(--font-size-md);
+    --toast-text-color: var(--color-white-1);
+    --toast-loading-icon-color: var(--color-white-1);
+    --toast-line-height: var(--line-height-md);
+    --toast-border-radius: var(--border-radius-lg);
+    --toast-background-color: rgb(0, 0, 0, 0.7);
+    --toast-text-min-width: 96px;
+    --toast-text-padding: var(--padding-xs) var(--padding-sm);
+    --toast-default-padding: var(--padding-md);
+    --toast-default-width: 88px;
+    --toast-default-min-height: 88px;
 }

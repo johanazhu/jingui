@@ -171,7 +171,6 @@ export default () => {
                     closeable
                     style={{ height: '30%' }}
                     position="bottom"
-                    closeIcon="close"
                     closeIconPosition="bottom-right"
                     onClose={() => setShowPopup10(false)}
                 />

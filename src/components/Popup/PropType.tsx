@@ -1,4 +1,4 @@
-import { ReactNode, ReactElement, CSSProperties, MouseEvent } from 'react';
+import { ReactElement, MouseEvent } from 'react';
 import { BaseTypeProps, GetContainer } from '@/utils';
 
 export type PopupCloseIconPosition =
@@ -20,7 +20,7 @@ export type PopupCloseIconPosition =
  * @param {closeOnClickOverlay} boolean             // 是否在点击遮罩层后关闭
  * @param {closeable} boolean                       // 是否显示关闭图标
  * @param {closeIconPosition} PopupCloseIconPosition// 关闭图标出现的位置
- * @param {children} ReactElement                   // 组件中的内容
+ * @param {children} any                            // 组件中的内容
  * @param {onOpen} function                         // 打开弹出层时触发
  * @param {onClose} function                        // 关闭弹出层时触发
  * @param {onOpened} function                       // 打开弹出层且动画结束后触发
@@ -43,7 +43,7 @@ export interface PopupProps extends BaseTypeProps {
     closeOnClickOverlay?: boolean;
     closeable?: boolean;
     closeIconPosition?: PopupCloseIconPosition;
-    children?: ReactElement;
+    children?: any;
     onOpen?: () => void;
     onClose?: () => void;
     onOpened?: () => void;

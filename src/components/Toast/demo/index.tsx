@@ -3,6 +3,7 @@ import { Cell, Toast } from 'jing-ui';
 import { DemoBlock } from 'demo';
 
 export default () => {
+    const [visible, setVisible] = useState(false);
     return (
         <>
             <DemoBlock title="基本用法" padding="" className="demo-jing-popup">
@@ -10,12 +11,13 @@ export default () => {
                     title="文字提示"
                     isLink
                     onClick={() => {
+                        setVisible(true);
                         // Toast('上不在高，有仙则灵')
                     }}
                 />
-                <Toast />
+                <Toast visible={visible} message="上不在高，有仙则灵" />
                 <Cell
-                    title="加载   提示"
+                    title="加载提示"
                     isLink
                     onClick={() => {
                         // Toast.loading({
