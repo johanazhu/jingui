@@ -5,8 +5,8 @@
     justify-content: center;
     box-sizing: content-box;
     width: var(--toast-default-width);
-    min-width: var(--toast-min-width);
     max-width: var(--toast-max-width);
+    min-height: var(--toast-default-min-height);
     padding: var(--toast-default-padding);
     color: var(--toast-text-color);
     font-size: var(--toast-font-size);
@@ -37,6 +37,11 @@
         .jing-toast__info {
             margin-top: 0;
         }
+    }
+
+    &__icon {
+        width: 32px;
+        height: 32px;
     }
 
     &__loading {

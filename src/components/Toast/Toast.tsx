@@ -1,31 +1,56 @@
-import React, { FC, memo } from 'react';
+import React, { useEffect, FC, memo } from 'react';
 import classnames from 'classnames';
-import { ToastProps } from './PropType';
+import { ToastProps, ToastPrivateProps } from './PropType';
 import Popup from '../Popup';
 import Loading from '../Loading';
 import { IconRight, IconClose } from '../Icon';
 import { isDef } from '@/utils';
+import { lockClick } from './lock-click';
 
 const prefixCls = 'jing-toast';
 
-const Toast: FC<ToastProps> = (props: any) => {
+const Toast: FC<ToastProps & ToastPrivateProps & { visible?: boolean }> = (
+    props: any,
+) => {
     const {
         className,
         style,
         visible,
         type,
         message,
-        duration,
         icon,
         loadingType,
         overlay,
         forbidClick,
         closeOnClickOverlay,
-        onClick,
+        closeOnClick,
         onClose,
         onClosed,
         onOpened,
     } = props;
+
+    let clickable = false;
+
+    useEffect(() => {
+        toggleClickable();
+    }, [visible, forbidClick]);
+
+    const toggleClickable = () => {
+        const newValue = visible && forbidClick;
+        if (clickable !== newValue) {
+            clickable = newValue;
+            lockClick(clickable);
+        }
+        if (!visible) {
+            lockClick(false);
+        }
+    };
+
+    const onClick = () => {
+        if (closeOnClick) {
+            props.onClick();
+        }
+    };
 
     const renderIcon = () => {
         const hasIcon = icon || type === 'success' || type === 'fail';
@@ -33,9 +58,9 @@ const Toast: FC<ToastProps> = (props: any) => {
         if (hasIcon) {
             return typeof icon === 'string' ? (
                 type === 'success' ? (
-                    <IconRight size="lg" />
+                    <IconRight color="white" className={`${prefixCls}__icon`} />
                 ) : (
-                    <IconClose size="lg" />
+                    <IconClose color="white" className={`${prefixCls}__icon`} />
                 )
             ) : (
                 icon
@@ -63,14 +88,14 @@ const Toast: FC<ToastProps> = (props: any) => {
         }
         return null;
     };
-    const classes = classnames(className, prefixCls);
+
+    const classes = classnames(className, prefixCls, `${prefixCls}--${type}`);
 
     return (
         <Popup
             className={classes}
             style={style}
             visible={visible}
-            duration={duration}
             overlay={overlay}
             lockScroll={false}
             onClick={onClick}
@@ -90,6 +115,8 @@ Toast.defaultProps = {
     duration: 2000,
     loadingType: 'circular',
     overlay: false,
+    forbidClick: false,
+    mountContainer: () => document.body,
 };
 
 export default memo(Toast);
