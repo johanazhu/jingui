@@ -1,20 +1,42 @@
-import React from 'react';
-import { Tag } from 'jing-ui';
+import React, { useState, useEffect } from 'react';
+import { SortBar } from 'jing-ui';
+import { DemoBlock } from 'demo';
 
-export default () => (
-    <div>
-        <Tag>标签</Tag>
-        <Tag type="primary">标签</Tag>
-        <Tag type="normal">标签</Tag>
-        <Tag type="disabled">标签</Tag>
+export default () => {
+    const [activeKey, setActiveKey] = useState('annualized');
 
-        <Tag>标签</Tag>
-        <Tag size="medium">标签</Tag>
-        <Tag size="large">标签</Tag>
-
-        <Tag active>标签</Tag>
-        <Tag type="primary" active>
-            标签
-        </Tag>
-    </div>
-);
+    return (
+        <>
+            <DemoBlock title="基本用法" padding="">
+                <SortBar
+                    activeKey={activeKey}
+                    onChange={(key: string, status: string) => {
+                        setActiveKey(key);
+                    }}
+                    onClick={() => {
+                        console.log('点击筛选');
+                    }}
+                >
+                    <SortBar.Item title="年化" itemKey="annualized" />
+                    <SortBar.Item title="期限" itemKey="term" />
+                    <SortBar.Item title="价格" itemKey="price" />
+                </SortBar>
+            </DemoBlock>
+            <DemoBlock title="类型-禅模式（固定宽度）" padding="">
+                <SortBar
+                    activeKey={activeKey}
+                    onChange={(key: string, status: string) => {
+                        setActiveKey(key);
+                    }}
+                    type="chan"
+                    onClick={() => {
+                        console.log('点击筛选');
+                    }}
+                >
+                    <SortBar.Item title="结束时间" itemKey="time" />
+                    <SortBar.Item title="保费金额" itemKey="price1" />
+                </SortBar>
+            </DemoBlock>
+        </>
+    );
+};

@@ -46,7 +46,6 @@ export default () => {
                 <TabBar
                     activeKey={activeKey1}
                     beforeChange={(value: any) => {
-                        console.log('value', value);
                         if (value === 'user') {
                             console.log('点击我的不能打印');
                             return false;

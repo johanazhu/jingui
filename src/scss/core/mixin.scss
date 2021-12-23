@@ -1,4 +1,4 @@
-@import './var.scss';
+// @import './var.scss';
 
 @mixin pre($style, $value) {
     -webkit-#{$style}: $value;

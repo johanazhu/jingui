@@ -315,8 +315,7 @@
     --timeline-content-dash-bg: rgb(204, 204, 204);
 
     // Icon
-
-    --icon-grey-color: rgb(222, 222, 222);
+    --icon-grey-color: var(--color-black-4);
     --icon-blue-color: var(--theme-primary);
     --icon-white-color: var(--color-white-1);
     --icon-black-color: var(--color-black);
@@ -399,4 +398,12 @@
     --toast-default-padding: var(--padding-md);
     --toast-default-width: 88px;
     --toast-default-min-height: 88px;
+
+    // SortBar
+    --sortbar-height: 50px;
+    --sortbar-bg: var(--bg-white);
+    --sortbar-font-size: var(--font-size-md);
+    --sortbar-text-color: var(--color-black-2);
+    --sortbar-line-height: var(--line-height-md);
+    --sortbar-line-color: var(--color-black-4);
 }

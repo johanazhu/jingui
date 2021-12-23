@@ -3,22 +3,21 @@ import classnames from 'classnames';
 import { IconFilter } from '../Icon';
 import { SortBarFilterProps } from './PropType';
 
-const prefixCls = 'jing-sortbar';
+const prefixCls = 'jing-sortbar__filter';
 
-const SortBarFilter: FC<SortBarFilterProps> = (props) => {
-    const { name, status, onClick } = props;
+const Filter: FC<SortBarFilterProps> = (props) => {
+    const { title, onClick } = props;
 
     return (
-        <div
-            className={classnames(`${prefixCls}--filter`, {
-                [`${prefixCls}--filter-active`]: status,
-            })}
-            onClick={onClick}
-        >
-            {name}
-            <IconFilter size="sm" color={status ? 'blue' : 'grey'} />
+        <div className={classnames(`${prefixCls}`)} onClick={onClick}>
+            {title}
+            <IconFilter size="sm" />
         </div>
     );
 };
 
-export default memo(SortBarFilter);
+Filter.defaultProps = {
+    title: '筛选',
+};
+
+export default memo(Filter);

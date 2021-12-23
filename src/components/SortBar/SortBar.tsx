@@ -1,52 +1,59 @@
-import React, { FC } from 'react';
+import React, { useState, memo, cloneElement } from 'react';
 import classnames from 'classnames';
-import SortBarItem from './Item';
-import SortBarFilter from './Filter';
-import { SortBarProps } from './PropType';
+import Sticky from '../Sticky';
+import Item from './Item';
+import Filter from './Filter';
+import { SortBarType } from './PropType';
 
 const prefixCls = 'jing-sortbar';
 
-const SortBar: FC<SortBarProps> = (props) => {
+const SortBar: SortBarType = (props) => {
     const {
-        options,
-        status,
-        filterName,
+        className,
+        style,
+        activeKey,
+        type,
+        title,
         sticky,
-        onItemHandleClick,
-        onFilterHandleClick,
+        children,
+        onClick,
+        onChange,
     } = props;
 
-    const onClick = (isStatus: string, item: any) => {
-        options.forEach((option) => {
-            option.status = '0';
-        });
-        item.status = isStatus;
-        onItemHandleClick(item);
+    const onHandleClick = (key: string, status: string) => {
+        onChange && onChange(key, status);
     };
 
-    const classes = classnames(prefixCls, { [`${prefixCls}--sticky`]: sticky });
+    const items = React.Children.map(children, (element, index) => {
+        if (!React.isValidElement(element)) return null;
 
-    return (
-        <div className={classes}>
-            {options.map((item: any) => (
-                <SortBarItem
-                    key={item.id}
-                    name={item.name}
-                    status={item.status}
-                    onClick={(isStatus: string) => onClick(isStatus, item)}
-                />
-            ))}
-            <SortBarFilter
-                name={filterName}
-                status={status}
-                onClick={onFilterHandleClick}
-            />
+        return cloneElement(element, {
+            key: index,
+            title: element.props.title,
+            itemKey: element.props.itemKey || index,
+            selected: activeKey === element.props.itemKey,
+            onClick: (status: string) =>
+                onHandleClick(element.props.itemKey, status),
+        });
+    });
+
+    const classes = classnames(prefixCls, className, `${prefixCls}--${type}`);
+
+    const Content = (
+        <div className={classes} style={style}>
+            {items}
+            <Filter title={title} onClick={onClick} />
         </div>
     );
+
+    return <>{sticky ? <Sticky> {Content} </Sticky> : Content}</>;
 };
+
+SortBar.Item = Item;
 
 SortBar.defaultProps = {
     sticky: true,
+    type: 'normal',
 };
 
-export default React.memo(SortBar);
+export default SortBar;

@@ -66,7 +66,7 @@ group:
 -   [ ] [DetailTop 详情顶部](./components/work/detailtop)
 -   [ ] [Orientation 方向](./components/work/orientation)
 -   [ ] [ProductCard 产品卡片](./components/work/productCard)
--   [ ] [SortBar 排序栏](./components/work/productCard)
+-   [ ] [SortBar 排序栏](./components/work/sort-bar)
 -   [x] [Timeline 时间线](./components/work/timeline)
 -   [ ] [Floatingad 悬浮广告](./components/work/floatingad)
 
