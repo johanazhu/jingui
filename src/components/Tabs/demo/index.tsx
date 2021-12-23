@@ -14,7 +14,7 @@ export default () => {
             >
                 <Tabs
                     value={value}
-                    onChange={(index: number) => {
+                    onChange={(index?: number) => {
                         index && setValue(index);
                     }}
                 >
@@ -59,7 +59,7 @@ export default () => {
             >
                 <Tabs
                     value={value}
-                    onChange={(index: number) => {
+                    onChange={(index?: number) => {
                         index && setValue(index);
                     }}
                 >
@@ -90,7 +90,7 @@ export default () => {
                 <Tabs
                     value={value}
                     type="img"
-                    onChange={(index: number) => {
+                    onChange={(index?: number) => {
                         index && setValue(index);
                     }}
                 >
@@ -145,7 +145,7 @@ export default () => {
             >
                 <Tabs
                     value={value}
-                    onChange={(index: number) => {
+                    onChange={(index?: number) => {
                         index && setValue(index);
                         alert(index);
                     }}

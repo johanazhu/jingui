@@ -6,7 +6,7 @@ const prefixCls = 'jing-sortbar__item';
 
 const Item: FC<SortBarItemProps> = (props) => {
     const { title, selected, onClick } = props;
-    const [_status, setStatus] = useState('0');
+    const [status, setStatus] = useState('0');
 
     useEffect(() => {
         if (selected === false) {
@@ -15,10 +15,10 @@ const Item: FC<SortBarItemProps> = (props) => {
     }, [selected]);
 
     const onHandleClick = () => {
-        if (_status === '0' || _status === '2') {
+        if (status === '0' || status === '2') {
             setStatus('1');
             onClick && onClick('1');
-        } else if (_status === '1') {
+        } else if (status === '1') {
             setStatus('2');
             onClick && onClick('2');
         }
@@ -27,9 +27,9 @@ const Item: FC<SortBarItemProps> = (props) => {
     return (
         <div className={`${prefixCls}`} onClick={onHandleClick}>
             {title}
-            {_status === '0' && <IconFilterEmty size="sm" />}
-            {_status === '1' && <IconFilterDown size="sm" />}
-            {_status === '2' && <IconFilterUp size="sm" />}
+            {status === '0' && <IconFilterEmty size="sm" />}
+            {status === '1' && <IconFilterDown size="sm" />}
+            {status === '2' && <IconFilterUp size="sm" />}
         </div>
     );
 };
