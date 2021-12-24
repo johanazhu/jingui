@@ -32,8 +32,6 @@ export { Swiper, SwiperSlide } from './components/Swiper';
 export { default as Tabs } from './components/Tabs';
 // 通知栏
 export { default as NoticeBar } from './components/NoticeBar';
-// 排序栏
-export { default as SortBar } from './components/SortBar';
 // 标签栏
 export { default as TabBar } from './components/TabBar';
 // 分割线
@@ -49,11 +47,17 @@ export { default as Loading } from './components/Loading';
 export { default as PageLoading } from './components/PageLoading';
 // 粘性布局
 export { default as Sticky } from './components/Sticky';
+// 索引栏
+export { default as IndexBar } from './components/IndexBar';
+// 图片
+export { default as Image } from './components/Image';
 // 全局配置
 export { default as ConfigProvider } from './components/ConfigProvider';
 
 // // 业务组件
 export { default as FloatingAd } from './components/FloatingAd';
+// 排序栏
+export { default as SortBar } from './components/SortBar';
 // // export { default as AuthVerified } from './Authorized/AuthVerified';
 // export { default as AuthBindCard } from './Authorized/AuthBindCard';
 // export { default as PageTabBar } from './PageTabBar';

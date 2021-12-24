@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 import classnames from 'classnames';
 import { TagProps } from './PropType';
 
@@ -24,4 +24,4 @@ Tag.defaultProps = {
     type: 'default',
 };
 
-export default React.memo(Tag);
+export default memo(Tag);

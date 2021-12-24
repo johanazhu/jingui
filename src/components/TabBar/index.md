@@ -18,7 +18,6 @@ group:
 
 | 参数                | 说明                                                          | 类型      | 默认值  |
 | ------------------- | ------------------------------------------------------------- | --------- | ------- | --- |
-| className           | 自定义 class 名                                               | string    | -       |
 | activeKey           | 当前选中项                                                    | `number   | string` | -   |
 | defaultActiveKey    | 初始选中项, 默认第一个选中                                    | `number   | string` | 0   |
 | fixed               | 是否固定在底部                                                | boolean   | true    |
@@ -29,13 +28,11 @@ group:
 
 ### TabBar.Item API
 
-| 参数       | 说明                                                | 类型          | 默认值  |
-| ---------- | --------------------------------------------------- | ------------- | ------- | --- |
-| className  | 自定义 class 名                                     | string        | -       |
-| itemKey    | 唯一标识，对应 activeKey，不设置则默认取 index 索引 | `number       | string` | -   |
-| title      | 标题文字                                            | ReactNode     | -       |
-| icon       | ReactNode                                           | ReactNode     | -       |
-| activeIcon | 是否开启底部安全区适配，设置 fixed 时默认开启       | ReactNode     | -       |
-| style      | TabbarItem 的样式                                   | CSSProperties | -       |
-| selected   | 是否选中                                            | boolean       | -       |
-| onChange   | 值变化时触发的回调函数                              | function      | -       |
+| 参数       | 说明                                                | 类型      | 默认值  |
+| ---------- | --------------------------------------------------- | --------- | ------- | --- |
+| itemKey    | 唯一标识，对应 activeKey，不设置则默认取 index 索引 | `number   | string` | -   |
+| title      | 标题文字                                            | ReactNode | -       |
+| icon       | ReactNode                                           | ReactNode | -       |
+| activeIcon | 是否开启底部安全区适配，设置 fixed 时默认开启       | ReactNode | -       |
+| selected   | 是否选中                                            | boolean   | -       |
+| onChange   | 值变化时触发的回调函数                              | function  | -       |

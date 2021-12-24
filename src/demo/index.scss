@@ -162,6 +162,18 @@
             }
         }
     }
+
+    &.demo-jing-image {
+        .jing-col {
+            padding: 5px;
+        }
+        .text {
+            text-align: center;
+            font-size: 14px;
+            color: #646566;
+            margin-top: 5px;
+        }
+    }
 }
 
 .demo-loading {

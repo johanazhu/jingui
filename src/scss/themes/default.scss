@@ -324,7 +324,8 @@
     --icon-shy-blue-color: var(--theme-info);
 
     --icon-fill-color: var(--color-black-4);
-    --icon-size-lg: 40px;
+    //   --icon-size-lg: 40px;
+    --icon-size-lg: 32px;
     --icon-size-md: 16px;
     --icon-size-sm: 12px;
     --icon-size-auto: 100%;
@@ -406,4 +407,9 @@
     --sortbar-text-color: var(--color-black-2);
     --sortbar-line-height: var(--line-height-md);
     --sortbar-line-color: var(--color-black-4);
+
+    // Image
+    --image-placeholder-text-color: var(--color-black-3);
+    --image-placeholder-font-size: var(--font-size-md);
+    --image-placeholder-bg: var(--bg);
 }

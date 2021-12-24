@@ -104,6 +104,8 @@ import {
     IconAddition,
     IconSubtraction,
     IconCalculation,
+    IconPhoto,
+    IconPhotoFail,
     Row,
     Col,
     Tabs,
@@ -416,6 +418,14 @@ export default () => {
                             <Col span={6}>
                                 <IconZanOver />
                                 <span>点赞-空</span>
+                            </Col>
+                            <Col span={6}>
+                                <IconPhoto />
+                                <span>图片</span>
+                            </Col>
+                            <Col span={6}>
+                                <IconPhotoFail />
+                                <span>图片裂开</span>
                             </Col>
                             <Col span={6}>
                                 <IconPdf />

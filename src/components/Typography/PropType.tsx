@@ -1,14 +1,12 @@
 import { ReactNode } from 'react';
-
+import { BaseTypeProps } from '@/utils';
 
 /**
  * Typography 富文本
- * @param {className} string                            // 自定义 class 名
  * @param {innerHtml} CSSProperties                     // inner内容
- * @param {children} scaleSize                          // 组件中的内容  
+ * @param {children} scaleSize                          // 组件中的内容
  **/
- export interface TypographyProps {
-    className?: string;
+export interface TypographyProps extends BaseTypeProps {
     innerHtml?: string;
     children?: ReactNode;
 }

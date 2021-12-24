@@ -13,14 +13,19 @@ group:
 
 以下列出 Jing-ui 提供的所有组件及工具
 
+## 写在前面
+
+所有的组件都有 className 和 style 属性
+
 ## 基础组件
 
 -   [x] [Button 按钮](./components/base/button)
 -   [x] [ButtonGroup 按钮组](./components/base/button-group)
 -   [x] [Cell 列表项](./components/base/cell)
 -   [x] [Divider 分割线](./components/base/divider)
--   [x] [Icon 图标](./components/base/icon)（尺寸 0.68rem 是否太小？）
+-   [x] [Icon 图标](./components/base/icon)
 -   [x] [Mask 遮罩层](./components/base/mask)
+-   [x] [Image 图片](./components/base/image)
 
 ## 布局组件
 
@@ -56,6 +61,7 @@ group:
 
 -   [x] [Tab 标签页](./components/navigation/tab)
 -   [x] [Tabbar 标签栏](./components/navigation/tabbar)
+-   [x] [IndexBar 索引栏](./components/navigation/index-bar)
 
 ## 业务组件
 
@@ -66,7 +72,7 @@ group:
 -   [ ] [DetailTop 详情顶部](./components/work/detailtop)
 -   [ ] [Orientation 方向](./components/work/orientation)
 -   [ ] [ProductCard 产品卡片](./components/work/productCard)
--   [ ] [SortBar 排序栏](./components/work/sort-bar)
+-   [x] [SortBar 排序栏](./components/work/sort-bar)
 -   [x] [Timeline 时间线](./components/work/timeline)
 -   [ ] [Floatingad 悬浮广告](./components/work/floatingad)
 

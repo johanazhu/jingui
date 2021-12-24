@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { BaseTypeProps } from '@/utils';
 
 /**
  * TimeLineItem
@@ -12,7 +13,7 @@ import { ReactNode } from 'react';
  * @param {i} any                                   // ...
  * @param {canShowColor} boolean                    // 是否显示颜色
  **/
-export interface TimelineItemProps {
+export interface TimelineItemProps extends BaseTypeProps {
     header: ReactNode;
     footer: ReactNode;
     color?: string;
@@ -26,12 +27,10 @@ export interface TimelineItemProps {
 
 /**
  * TimeLine
- * @param {className} string                        // 自定义 class 名
  * @param {percent} string                          // 百分比
  * @param {color} string                            // 颜色
  **/
-export interface TimelineProps {
-    className?: string;
+export interface TimelineProps extends BaseTypeProps {
     percent?: string;
     color?: string;
 }

@@ -81,6 +81,8 @@ export { default as IconXiaojinguang } from './Xiaojinguang';
 export { default as IconZan } from './Zan';
 export { default as IconZanOver } from './ZanOver';
 export { default as IconLoading } from './Loading';
+export { default as IconPhoto } from './Photo';
+export { default as IconPhotoFail } from './PhotoFail';
 
 // 提示框
 export { default as IconToastRight } from './ToastRight';

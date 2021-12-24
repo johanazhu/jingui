@@ -1,4 +1,5 @@
 import { ReactNode, CSSProperties, FC, MouseEvent } from 'react';
+import { BaseTypeProps } from '@/utils';
 
 /**
  * TabsTitle Tab标题部分
@@ -20,17 +21,13 @@ export interface TabsTitleProps {
 
 /**
  * TabsPanel Tab内容部分
- * @param {className} string                        // 自定义 class 名
- * @param {style} CSSProperties                     // 自定义样式
  * @param {title} ReactNode                         // 标题
  * @param {img} ReactNode                           // 图片模式
  * @param {selected} boolean                        // 选中时
  * @param {disabled} boolean                        // 是否禁用标签
  * @param {children} ReactNode                      // 组件中的内容
  **/
-export interface TabsPanelProps {
-    className?: string;
-    style?: CSSProperties;
+export interface TabsPanelProps extends BaseTypeProps {
     title?: ReactNode;
     img?: ReactNode;
     selected?: boolean;
@@ -40,8 +37,6 @@ export interface TabsPanelProps {
 
 /**
  * Tabs 标签页
- * @param {className} string                        // 自定义 class 名
- * @param {style} CSSProperties                     // 自定义样式
  * @param {value} ReactNode                         // 绑定当前选中标签的标识符
  * @param {type} string                             // 样式风格类型，可选值为 img
  * @param {swipeable} boolean                       // 是否开启手势滑动切换
@@ -54,9 +49,7 @@ export interface TabsPanelProps {
  * @param {onChange} function                       // 当前激活的标签改变时触发
  * @param {onSwiper} function                       // 切换标签的回调函数
  **/
-export interface TabsProps {
-    className?: string;
-    style?: CSSProperties;
+export interface TabsProps extends BaseTypeProps {
     value: number;
     type?: string;
     swipeable?: boolean;

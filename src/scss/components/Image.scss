@@ -1,0 +1,35 @@
+.jing-image {
+    position: relative;
+    display: inline-block;
+
+    &--round {
+        overflow: hidden;
+        border-radius: var(--border-radius-max);
+
+        .jing-image__img {
+            border-radius: inherit;
+        }
+    }
+
+    &__img,
+    &__error,
+    &__loading {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__loading,
+    &__error {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: var(--image-placeholder-text-color);
+        font-size: var(--image-placeholder-font-size);
+        background-color: var(--image-placeholder-bg);
+    }
+}
