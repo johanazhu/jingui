@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { BaseTypeProps } from '@/utils';
 
 /**
  * NoticeBar 通知栏
@@ -10,7 +11,7 @@ import { ReactNode } from 'react';
  * @param {onClick} function                            // mode === link 时 整个NoticeBar 可以点击
  * @param {onClose} function                            // mode === closeable 点击关闭按钮关闭noticebar
  **/
-export interface NoticeBarProps {
+export interface NoticeBarProps extends BaseTypeProps {
     duration?: number;
     text: string;
     center?: boolean;

@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { BaseTypeProps } from '@/utils';
 
 /**
  * Divider 分割线
@@ -7,7 +8,7 @@ import { ReactNode } from 'react';
  * @param {contentPosition} string              // 内容所在位置，可选 left，center，right
  * @param {chilren} ReactNode                   // 分割线中的文字
  **/
-export interface DividerProps {
+export interface DividerProps extends BaseTypeProps {
     dashed?: boolean;
     hairline?: boolean;
     contentPosition?: 'left' | 'center' | 'right';

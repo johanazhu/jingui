@@ -18,9 +18,8 @@ group:
 
 ### API
 
-| 属性      | 说明            | 类型      | 默认值 |
-| --------- | --------------- | --------- | ------ |
-| className | 自定义 Class 名 | string    | -      |
-| title     | 标题            | ReactNode | -      |
-| more      | 更多渲染        | ReactNode | -      |
-| children  | 组件中的内容    | ReactNode | -      |
+| 属性     | 说明         | 类型      | 默认值 |
+| -------- | ------------ | --------- | ------ |
+| title    | 标题         | ReactNode | -      |
+| more     | 更多渲染     | ReactNode | -      |
+| children | 组件中的内容 | ReactNode | -      |

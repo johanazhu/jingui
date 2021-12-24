@@ -1,4 +1,6 @@
 import { ReactNode } from 'react';
+import { BaseTypeProps } from '@/utils';
+
 import {
     JqbSuccess,
     JqbFail,
@@ -49,8 +51,7 @@ export type ResultPlace = 'left' | 'center' | 'right';
  * @param {extra} ReactNode                         // 额外自定义区域
  * @param {children} ReactNode                      // 组件中的内容
  **/
-export interface ResultProps {
-    className?: string;
+export interface ResultProps extends BaseTypeProps {
     title?: string;
     status?: ResultStatus;
     place?: ResultPlace;

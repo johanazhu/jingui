@@ -1,4 +1,5 @@
 import { TouchEvent } from 'react';
+import { BaseTypeProps } from '@/utils';
 
 /**
  * PasswordInput 密码输入框
@@ -10,7 +11,7 @@ import { TouchEvent } from 'react';
  * @param {onHandleFocus} function focus时方法
  * @param {onChange} function change时方法
  **/
-export interface PasswordInputProps {
+export interface PasswordInputProps extends BaseTypeProps {
     value: string;
     length: string | number;
     mask: boolean;

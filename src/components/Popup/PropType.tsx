@@ -60,6 +60,6 @@ export interface PopupProps extends BaseTypeProps {
  * @param {children} ReactNode                              // 组件中的内容
  **/
 export interface PortalProps {
-    mountContainer: GetContainer;
+    mountContainer?: GetContainer;
     children: ReactElement;
 }

@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { BaseTypeProps } from '@/utils';
 
 /**
  * 选择器
@@ -7,8 +8,8 @@ import { ReactNode } from 'react';
  * @param {height} 选择器高度
  * @param {onHandleCancel} 点击空白处回调
  */
-export interface PickerProps {
-    children: React.ReactNode;
+export interface PickerProps extends BaseTypeProps {
+    children: ReactNode;
     show: boolean;
     title: string;
     height?: string;

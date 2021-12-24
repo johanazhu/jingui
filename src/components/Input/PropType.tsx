@@ -1,23 +1,22 @@
 import { ReactNode, CSSProperties } from 'react';
+import { BaseTypeProps } from '@/utils';
 
 export type InputSizes = 'small' | 'default' | 'large';
 
 /**
  * Input 输入框组件
- * @param {className} string                        // 输入框组件样式名
  * @param {name} string                             // 唯一标识，有传入点击title会聚焦
  * @param {type} string                             // 类型
  * @param {value} string                            // 值
  * @param {placeholder} string                      // 占位符
- * @param {disabled} boolean                           // 是否能点击
+ * @param {disabled} boolean                        // 是否能点击
  * @param {minLength} number                        // 最少长度 minLength 属性与 <input type="text"> 或 <input type="password"> 配合使用。
  * @param {maxLength} number                        // 最多长度 maxlength 属性与 <input type="text"> 或 <input type="password"> 配合使用。
  * @param {icon} ReactNode                          // 图标
- * @param {error} boolean                              // 错误提示
+ * @param {error} boolean                           // 错误提示
  * @param {clearable} boolean                       // 显示清除图标
  * @param {prefix} object                           // 带前缀图标的 input
  * @param {suffix} object                           // 带后缀图标的 input
- * @param {style} object                            // 自定义样式
  * @param {size} string                             // 尺寸大小
  * @param {children} ReactNode                      // 组件中的内容
  * @param {Group} ReactNode                         // group 渲染内容
@@ -26,8 +25,7 @@ export type InputSizes = 'small' | 'default' | 'large';
  * @param {onBlur} function                         // 失去焦点时的事件
  * @param {onClear} function                        // Clear 中点击 x 后的回调
  **/
-export interface InputProps {
-    className?: string;
+export interface InputProps extends BaseTypeProps {
     name?: string;
     type?: string;
     value?: string;
@@ -40,7 +38,6 @@ export interface InputProps {
     clearable?: boolean;
     prefix?: ReactNode | string;
     suffix?: ReactNode | string;
-    style?: CSSProperties;
     size?: InputSizes;
     children?: any;
     Group?: ReactNode;
@@ -52,13 +49,9 @@ export interface InputProps {
 
 /**
  *  Input.Group
- * @param {className} string                            // 自定义 class 名
- * @param {style} CSSProperties                         // 自定义样式
  * @param {children} ReactNode                          // 组件中的内容
  **/
-export interface GroupProps {
-    className?: string;
-    style?: CSSProperties;
+export interface GroupProps extends BaseTypeProps {
     children?: ReactNode;
 }
 
@@ -104,7 +97,7 @@ export interface CaptchaProps extends InputProps {
  * @param {onClearValue} function                   // 点击清除时的回调
  * @param {onHandleFocus} function                  // 点击选中时的回调
  **/
-export interface KeyboardProps {
+export interface KeyboardProps extends BaseTypeProps {
     value: string;
     placeholder?: string;
     active?: boolean;

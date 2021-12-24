@@ -1,3 +1,5 @@
+import { BaseTypeProps } from '@/utils';
+
 export interface RecordListProps {
     leftTopText: string;
     leftBottomText: string;
