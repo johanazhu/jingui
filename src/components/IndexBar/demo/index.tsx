@@ -1,28 +1,55 @@
 import React, { useState } from 'react';
-import { Cell } from 'jing-ui';
+import { Tabs, IndexBar, Cell } from 'jing-ui';
 import { DemoBlock } from 'demo';
 
 export default () => {
-    const [visible, setVisible] = useState(false);
-    const [visible1, setVisible1] = useState(false);
-    const [visible2, setVisible2] = useState(false);
+    const indexList = [];
+    const customIndexList = [1, 2, 3, 4, 5, 6, 8, 9, 10];
+    const charCodeOfA = 'A'.charCodeAt(0);
 
-    const toggle = () => setVisible(!visible);
-
+    for (let i = 0; i < 26; i += 1) {
+        indexList.push(String.fromCharCode(charCodeOfA + i));
+    }
+    const [value, setValue] = useState(0);
     return (
         <>
-            <DemoBlock title="基本用法" padding="">
-                {/* <IndexBar>
-                        <IndexBar.Anchor index="A"/>
-                        <Cell title="文本" />
-                        <Cell title="文本" />
-                        <Cell title="文本" />
-                        <IndexBar.Anchor index="B"/>
-                        <Cell title="文本" />
-                        <Cell title="文本" />
-                        <Cell title="文本" />
-                </IndexBar> */}
-            </DemoBlock>
+            <Tabs
+                value={value}
+                onChange={(index) => {
+                    index && setValue(index);
+                }}
+            >
+                <Tabs.Panel title="用法示例">
+                    <DemoBlock padding="" background="transparent">
+                        <IndexBar>
+                            {indexList.map((item) => (
+                                <div key={item}>
+                                    <IndexBar.Anchor index={item} />
+                                    <Cell title="文本" />
+                                    <Cell title="文本" />
+                                    <Cell title="文本" />
+                                </div>
+                            ))}
+                        </IndexBar>
+                    </DemoBlock>
+                </Tabs.Panel>
+                <Tabs.Panel title="自定义索引列表">
+                    <DemoBlock padding="" background="transparent">
+                        <IndexBar indexList={customIndexList}>
+                            {customIndexList.map((item) => (
+                                <div key={item}>
+                                    <IndexBar.Anchor index={item}>
+                                        标题 {item}
+                                    </IndexBar.Anchor>
+                                    <Cell title="文本" />
+                                    <Cell title="文本" />
+                                    <Cell title="文本" />
+                                </div>
+                            ))}
+                        </IndexBar>
+                    </DemoBlock>
+                </Tabs.Panel>
+            </Tabs>
         </>
     );
 };

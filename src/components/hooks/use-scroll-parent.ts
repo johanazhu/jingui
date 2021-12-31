@@ -16,9 +16,9 @@ function isElement(node: Element) {
     );
 }
 
-// @ts-ignore
 export function getScrollParent(
     el: Element,
+    // @ts-ignore
     root: ScrollElement = defaultRoot,
 ): ScrollElement {
     if (root === undefined) {

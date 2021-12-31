@@ -4,7 +4,7 @@ import './index.scss';
 
 export interface Props {
     className?: string;
-    title: string;
+    title?: string;
     padding?: string;
     border?: string;
     background?: string;
@@ -13,7 +13,9 @@ export interface Props {
 export const DemoBlock: FC<Props> = (props) => {
     return (
         <div className={classnames('jing-demo', props.className)}>
-            <div className="jing-demo__title">{props.title}</div>
+            {props.title && (
+                <div className="jing-demo__title">{props.title}</div>
+            )}
             <div
                 className="jing-demo__content"
                 style={{

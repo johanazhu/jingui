@@ -12,19 +12,20 @@ import React, {
     ReactElement,
 } from 'react';
 import classnames from 'classnames';
-import { CSSTransition } from 'react-transition-group';
-import { isDef, noop } from '@/utils';
+import IndexBarContext from './IndexBarContext';
+import { isDef, preventDefault } from '@/utils';
 import IndexAnchor from './IndexAnchor';
 import { useRefs } from '../hooks/use-refs';
 import { getRect } from '../hooks/use-rect';
 import useTouch from '../hooks/use-touch';
+import useEventListener from '../hooks/use-event-listener';
 import useScrollParent, { getScrollParent } from '../hooks/use-scroll-parent';
 import {
     getScrollTop,
     getRootScrollTop,
     setRootScrollTop,
 } from '@/utils/dom/scroll';
-import { IndexBarInstance, IndexBarProps, IndexBarType } from './PropType';
+import { COMPONENT_TYPE_KEY, IndexBarType } from './PropType';
 import { INDEX_ANCHORE_KEY } from './IndexAnchor';
 
 const prefixCls = 'jing-index-bar';
@@ -74,13 +75,18 @@ const IndexBar: IndexBarType = (props) => {
     }, [highlightColor]);
 
     useEffect(() => {
+        setTimeout(onScroll, 0);
+    }, []);
+
+    useEffect(() => {
         if (onChange && typeof onChange === 'function') {
             onChange(activeAnchor);
         }
     }, [activeAnchor]);
 
     const getScrollerRect = () => {
-        if (scrollParent.getBoundingClientRect()) {
+        // @ts-ignore
+        if (scrollParent.getBoundingClientRect) {
             return getRect(scrollParent);
         }
         return {
@@ -151,9 +157,9 @@ const IndexBar: IndexBarType = (props) => {
         }
     };
 
-    useEffect(() => {
-        setTimeout(onScroll, 0);
-    }, []);
+    const onTouchStart = (event: TouchEvent | React.TouchEvent) => {
+        touch.start(event as TouchEvent);
+    };
 
     const scrollTo = (index: number | string) => {
         if (!index) {
@@ -182,17 +188,46 @@ const IndexBar: IndexBarType = (props) => {
         scrollToElement(event.target);
     };
 
-    const onTouchStart = (event: TouchEvent | React.TouchEvent) => {
-        touch.start(event as TouchEvent);
+    const onTouchMove = (event: TouchEvent) => {
+        touch.move(event);
+
+        preventDefault(event);
+
+        if (touch.isVertical()) {
+            const { clientX, clientY } = event.touches[0];
+            const target: any = document.elementFromPoint(clientX, clientY);
+
+            if (target) {
+                const { index } = target.dataset;
+
+                if (touchActiveIndex.current !== index) {
+                    // @ts-ignore
+                    touchActiveIndex.current = index;
+                    scrollToElement(target);
+                }
+            }
+        }
     };
+
+    useEventListener('scroll', onScroll as EventListener, {
+        target: scrollParent,
+        depends: [scrollParent],
+    });
+    useEventListener('touchmove', onTouchMove as EventListener, {
+        target: sidebar.current,
+        depends: [touch.deltaY],
+    });
 
     const renderIndexes = () =>
         indexList.map((index: any) => {
             const active = index === activeAnchor;
+
             return (
                 <span
                     key={index}
-                    className={`${prefixCls}__index`}
+                    className={classnames(`${prefixCls}__index`, {
+                        [`${prefixCls}__index--active`]: active,
+                    })}
                     style={active ? highlightStyle : {}}
                     data-index={index}
                 >
@@ -214,13 +249,11 @@ const IndexBar: IndexBarType = (props) => {
         );
     };
 
-    const handleMapChildren = ($children: ReactNode) => {
+    const handleMapChildren: any = ($children: ReactNode) => {
         return React.Children.toArray($children)
             .filter(Boolean)
-            .map((child: ReactElement) => {
-                if (
-                    child.type?.['__REACT_JING_COMPONENT'] === INDEX_ANCHORE_KEY
-                ) {
+            .map((child: any) => {
+                if (child.type?.[COMPONENT_TYPE_KEY] === INDEX_ANCHORE_KEY) {
                     return React.cloneElement(child, {
                         ref: setRefs(child.props.index),
                     });
@@ -233,17 +266,15 @@ const IndexBar: IndexBarType = (props) => {
             });
     };
 
-    const renderContent = React.Children.map(children, (element, index) => {
-        if (!React.isValidElement(element)) return null;
-
-        return <IndexAnchor index={'1'} />;
-    });
+    const memoChildren = useMemo(() => handleMapChildren(children), [children]);
 
     return (
-        <div className={classes} style={style}>
-            {renderSidebar()}
-            {renderContent}
-        </div>
+        <IndexBarContext.Provider value={{ zIndex, highlightColor, sticky }}>
+            <div ref={root} className={classes} style={style}>
+                {renderSidebar()}
+                {memoChildren}
+            </div>
+        </IndexBarContext.Provider>
     );
 };
 

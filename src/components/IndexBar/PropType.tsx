@@ -22,8 +22,9 @@ export interface IndexBarProps extends BaseTypeProps {
     onSelect?: (value: number | string) => void;
 }
 
+/** 索引字符	 */
 export interface IndexAnchorProps extends BaseTypeProps {
-    index: string;
+    index: number | string;
     children?: ReactNode;
     onClick?: (e: MouseEvent) => void;
 }
@@ -36,3 +37,5 @@ export interface IndexBarType extends FC<IndexBarProps> {
 export type IndexBarInstance = {
     scrollTo: (index: number | string) => void;
 };
+
+export const COMPONENT_TYPE_KEY = '__REACT_JING_COMPONENT';

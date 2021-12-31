@@ -1,12 +1,10 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect } from 'react';
-import { inBrowser } from '../utils';
+import { inBrowser } from '@/utils';
 import {
     BasicTarget,
     getTargetElement,
     TargetElement,
-} from '../utils/dom/getTargetElement';
+} from '@/utils/dom/getTargetElement';
 
 // https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/addEventListener#使用_passive_改善的滚屏性能
 let supportsPassive = false;
@@ -18,8 +16,8 @@ if (inBrowser) {
                 supportsPassive = true;
             },
         });
+        // @ts-ignore
         window.addEventListener('test-passive', null, opts);
-        // eslint-disable-next-line no-empty
     } catch (e) {}
 }
 

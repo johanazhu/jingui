@@ -6,9 +6,10 @@
 // 重置
 @import './reset.scss';
 
+// mixin
 @import './mixin.scss';
-
 @import './mixins/index.scss';
+@import './mixins/hairline.scss';
 
 // 动画
 @import './animation.scss';
@@ -27,4 +28,38 @@
     height: constant(safe-area-inset-bottom);
     height: env(safe-area-inset-bottom);
     //   height: 10px;
+}
+
+[class*='jing-hairline'] {
+    &::after {
+        @include hairline;
+    }
+}
+
+.jing-hairline {
+    &,
+    &--top,
+    &--left,
+    &--right,
+    &--bottom,
+    &--surround,
+    &--top-bottom {
+        position: relative;
+    }
+
+    &--top::after {
+        border-top-width: var(--border-width-base);
+    }
+
+    &--left::after {
+        border-left-width: var(--border-width-base);
+    }
+
+    &--right::after {
+        border-right-width: var(--border-width-base);
+    }
+
+    &--bottom::after {
+        border-bottom-width: var(--border-width-base);
+    }
 }
