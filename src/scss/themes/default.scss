@@ -350,7 +350,7 @@
     --tabs-line-bar-color: var(--tabs-default-color);
     --tabs-scrollable-padding: var(--padding-sm);
 
-    //   Sticky
+    // Sticky
     --sticky-zindex: var(--zindex-stick);
 
     // TabBar
@@ -427,4 +427,13 @@
     --index-anchor-bg: transparent;
     --index-anchor-sticky-text-color: var(--theme-primary);
     --index-anchor-sticky-bg: var(--bg-white);
+
+    //   Switch
+    --switch-width: 53px;
+    --switch-height: 32px;
+    --switch-handle-size: 26px;
+    --switch-handle-bg: var(--color-white-1);
+    --switch-border-color: var(--color-black-5);
+    --switch-radius-round: var(--border-radius-max);
+    --switch-bg: var(--color-black-5);
 }

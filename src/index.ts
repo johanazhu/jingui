@@ -16,6 +16,8 @@ export { default as KeyBoard } from './components/KeyBoard';
 export { default as Result } from './components/Result';
 // 输入款
 export { default as Input } from './components/Input';
+// 开关
+export { default as Switch } from './components/Switch';
 // 遮罩
 export { default as Overlay } from './components/Overlay';
 // 弹出框

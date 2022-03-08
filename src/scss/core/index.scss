@@ -36,6 +36,12 @@
     }
 }
 
+[type='checkbox'],
+[type='radio'] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
 .jing-hairline {
     &,
     &--top,

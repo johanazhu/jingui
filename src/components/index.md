@@ -36,6 +36,7 @@ group:
 ## 展示组件
 
 -   [x] [Input 输入](./components/data/input)
+-   [x] [Switch 输入](./components/data/switch)
 -   [ ] [KeyBoard 自定义键盘](./components/data/key-board)
 -   [ ] [KeyInput 自定义输入](./components/data/key-input)
 -   [ ] [List 列表](./components/data/list)
