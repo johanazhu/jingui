@@ -58,9 +58,13 @@ export default () => {
                 <Popup
                     visible={showPopup2}
                     position="bottom"
-                    style={{ height: '30%' }}
+                    // style={{ height: '30%' }}
                     onClose={() => setShowPopup2(false)}
-                />
+                >
+                    <div style={{ height: '100px', background: '#fff' }}>
+                        内容2
+                    </div>
+                </Popup>
                 <Popup
                     visible={showPopup3}
                     position="left"

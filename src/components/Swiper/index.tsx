@@ -1,13 +1,10 @@
 // // import { Swiper, SwiperSlide } from './Swiper';
-// import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 // import * as swiper from 'swiper/react'
 
-// export { Swiper, SwiperSlide }
+export { Swiper, SwiperSlide };
 // export default swiper;
 
-// import Lazyload from 'vue-lazyload';
+// import { Swiper, SwiperSlide, SwiperProps, SwiperSlideProps, useSwiper, useSwiperSlide } from 'swiper/react';
 
-// export default Lazyload;
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-export { Swiper, SwiperSlide };
+// export { Swiper, SwiperSlide, SwiperProps, SwiperSlideProps, useSwiper, useSwiperSlide };

@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, MouseEvent, TouchEvent } from 'react';
 
 /**
  * CellGroup 列表组
@@ -16,7 +16,7 @@ export interface CellGroupProps {
  * Cell 列表项
  * @param {className} string                            // 自定义 class 名
  * @param {title} number | string                       // 左侧标题
- * @param {value} number | string                       // 右侧内容
+ * @param {value} number | string | ReactNode           // 右侧内容
  * @param {label} string                                // 标题下方的描述信息
  * @param {desc} string                                 // 内容下方的描述信息
  * @param {icon} ReactNode                              // 左侧图标名称
@@ -24,6 +24,7 @@ export interface CellGroupProps {
  * @param {isLink} boolean                              // 是否显示箭头
  * @param {required} boolean                            // 是否显示表单必填星号
  * @param {onClick} function                            // 点击单元格后的回调
+ * @param {onTouchStart} function                       // 开始 touch 后的回调
  **/
 export interface CellProps {
     className?: string;
@@ -35,7 +36,12 @@ export interface CellProps {
     center?: boolean;
     isLink?: boolean;
     required?: boolean;
-    onClick?: () => void;
+    onClick?: (
+        event?: MouseEvent<HTMLElement> | TouchEvent<HTMLElement>,
+    ) => void;
+    onTouchStart?: (
+        event?: MouseEvent<HTMLElement> | TouchEvent<HTMLElement>,
+    ) => void;
 }
 
 export interface CellType extends FC<CellProps> {

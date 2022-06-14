@@ -7,7 +7,7 @@ const KeyboardShiftLine = (props: JqbIconProps) => {
     return (
         <JqbIcon
             icon={keyboardShiftLine}
-            color={props.color || 'block'}
+            color={props.color || 'black'}
             {...props}
         />
     );

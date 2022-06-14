@@ -149,7 +149,7 @@ const Popup: FC<PopupProps> = (props: any) => {
     };
 
     const renderTransition = () => {
-        const name =
+        const classname =
             position === 'center'
                 ? 'jing-fade'
                 : `jing-popup-slide-${position}`;
@@ -158,7 +158,7 @@ const Popup: FC<PopupProps> = (props: any) => {
                 in={visible}
                 nodeRef={popupRef}
                 timeout={duration}
-                classNames={name}
+                classNames={classname}
                 mountOnEnter
                 unmountOnExit
                 onEnter={open}

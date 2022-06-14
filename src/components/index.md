@@ -24,8 +24,8 @@ group:
 -   [x] [Cell 列表项](./components/base/cell)
 -   [x] [Divider 分割线](./components/base/divider)
 -   [x] [Icon 图标](./components/base/icon)
--   [x] [Mask 遮罩层](./components/base/mask)
 -   [x] [Image 图片](./components/base/image)
+-   [x] [Overlay 遮罩层](./components/base/overlay)
 
 ## 布局组件
 
@@ -36,33 +36,33 @@ group:
 ## 展示组件
 
 -   [x] [Input 输入](./components/data/input)
--   [x] [Switch 输入](./components/data/switch)
 -   [ ] [KeyBoard 自定义键盘](./components/data/key-board)
 -   [ ] [KeyInput 自定义输入](./components/data/key-input)
 -   [ ] [List 列表](./components/data/list)
 -   [x] [NoticeBar 通知栏](./components/data/notice-bar)
 -   [x] [Panel 面板](./components/data/panel)
 -   [ ] [PasswordInput 密码输入框](./components/data/password-input)
--   [ ] [picker 选择器](./components/data/picker)
--   [ ] [pickerkeyboard 键盘选择器](./components/data/picker-keyboard)
+-   [ ] [Picker 选择器](./components/data/picker)
+-   [ ] [Pickerkeyboard 键盘选择器](./components/data/picker-keyboard)
 -   [x] [Result 结果](./components/data/result)
+-   [x] [Switch 输入](./components/data/switch)
 -   [x] [Tag 标签](./components/data/tag)
 -   [x] [Typography 富文本](./components/data/typography)
 
 ## 反馈组件
 
 -   [ ] [Scroll 滚动](./components/feedback/scroll)
--   [ ] [loading 加载](./components/feedback/loading)
--   [ ] [modal 模态框](./components/feedback/modal)
--   [ ] [pageloading 页面加载](./components/feedback/pageloading)
--   [ ] [popup 弹出框](./components/feedback/popup)
--   [ ] [toast 提示框](./components/feedback/toast)
+-   [x] [Loading 加载](./components/feedback/loading)
+-   [ ] [Modal 模态框](./components/feedback/modal)
+-   [x] [Pageloading 页面加载](./components/feedback/page-loading)
+-   [x] [Popup 弹出框](./components/feedback/popup)
+-   [x] [Toast 提示框](./components/feedback/toast)
 
 ## 导航组件
 
--   [x] [Tab 标签页](./components/navigation/tab)
--   [x] [Tabbar 标签栏](./components/navigation/tabbar)
 -   [x] [IndexBar 索引栏](./components/navigation/index-bar)
+-   [x] [TabBar 标签栏](./components/navigation/tabbar)
+-   [x] [Tab 标签页](./components/navigation/tab)
 
 ## 业务组件
 
@@ -75,7 +75,7 @@ group:
 -   [ ] [ProductCard 产品卡片](./components/work/productCard)
 -   [x] [SortBar 排序栏](./components/work/sort-bar)
 -   [x] [Timeline 时间线](./components/work/timeline)
--   [ ] [Floatingad 悬浮广告](./components/work/floatingad)
+-   [x] [Floatingad 悬浮广告](./components/work/floatingad)
 
 ## 其他
 

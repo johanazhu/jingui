@@ -94,22 +94,20 @@ export default () => {
                 />
             </DemoBlock>
             <DemoBlock title="KeyBoard输入框" padding="">
-                <Input.Group>
-                    <Input.KeyBoard
-                        value={value}
-                        placeholder="你想干啥"
-                        active={isActive}
-                        onHandleFocus={() => {
-                            setIsActive(true);
-                            console.log('keyboard聚焦时');
-                        }}
-                        onClearValue={() => {
-                            setIsActive(false);
-                            console.log('点击清除图标时');
-                        }}
-                        maxLength={20}
-                    />
-                </Input.Group>
+                <Input.KeyBoard
+                    value={value}
+                    placeholder="你想干啥"
+                    active={isActive}
+                    onHandleFocus={() => {
+                        setIsActive(true);
+                        console.log('keyboard聚焦时');
+                    }}
+                    onClearValue={() => {
+                        setIsActive(false);
+                        console.log('点击清除图标时');
+                    }}
+                    maxLength={20}
+                />
             </DemoBlock>
             <DemoBlock title="多行文本" padding="">
                 <Input.Textarea

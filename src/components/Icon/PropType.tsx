@@ -1,4 +1,4 @@
-import { CSSProperties, MouseEventHandler } from 'react';
+import { MouseEvent, TouchEvent } from 'react';
 import { BaseTypeProps } from '@/utils';
 
 /**
@@ -30,5 +30,7 @@ export interface JqbIconProps extends IconbaseProps {
     size?: IconSize;
     icon?: any;
     keepOriginColor?: boolean;
-    onClick?: MouseEventHandler<HTMLElement>;
+    onClick?: (
+        event?: MouseEvent<HTMLElement> | TouchEvent<HTMLElement>,
+    ) => void;
 }

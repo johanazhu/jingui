@@ -10,7 +10,7 @@ group:
 
 # KeyBoard 自定义键盘
 
-虚拟数字键盘，可以配合[密码输入框组件](https://youzan.github.io/vant/#/zh-CN/password-input)或自定义的输入框组件使用。
+虚拟数字键盘，可以配合[密码输入框组件](xxx)或自定义的输入框组件使用。
 
 未完成
 

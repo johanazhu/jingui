@@ -213,6 +213,7 @@ const IndexBar: IndexBarType = (props) => {
         target: scrollParent,
         depends: [scrollParent],
     });
+
     useEventListener('touchmove', onTouchMove as EventListener, {
         target: sidebar.current,
         depends: [touch.deltaY],

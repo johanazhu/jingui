@@ -15,7 +15,7 @@ export default () => {
         <>
             <Tabs
                 value={value}
-                onChange={(index) => {
+                onChange={(index: any) => {
                     index && setValue(index);
                 }}
             >

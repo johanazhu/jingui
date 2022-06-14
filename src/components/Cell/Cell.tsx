@@ -19,6 +19,7 @@ const Cell: CellType = (props) => {
         isLink,
         required,
         onClick,
+        onTouchStart,
     } = props;
 
     const classes = classnames(prefixCls, className, {
@@ -28,7 +29,11 @@ const Cell: CellType = (props) => {
     });
 
     return (
-        <div className={classnames(classes)} onClick={onClick}>
+        <div
+            className={classnames(classes)}
+            onClick={onClick}
+            onTouchStart={onTouchStart}
+        >
             {icon && <span className={`${prefixCls}__icon`}>{icon}</span>}
             {title && (
                 <div className={`${prefixCls}__title`}>

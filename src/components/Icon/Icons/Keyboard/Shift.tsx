@@ -7,7 +7,7 @@ const KeyboardShift = (props: JqbIconProps) => {
     return (
         <JqbIcon
             icon={keyboardShift}
-            color={props.color || 'block'}
+            color={props.color || 'black'}
             {...props}
         />
     );

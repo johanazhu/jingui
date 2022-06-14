@@ -60,6 +60,9 @@ export { default as ConfigProvider } from './components/ConfigProvider';
 export { default as FloatingAd } from './components/FloatingAd';
 // 排序栏
 export { default as SortBar } from './components/SortBar';
+
+// 新虚拟键盘
+export { default as FakerKeyboard } from './components/FakerKeyboard';
 // // export { default as AuthVerified } from './Authorized/AuthVerified';
 // export { default as AuthBindCard } from './Authorized/AuthBindCard';
 // export { default as PageTabBar } from './PageTabBar';

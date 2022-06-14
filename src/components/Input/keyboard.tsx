@@ -10,6 +10,7 @@ import classnames from 'classnames';
 import Group from './group';
 import { IconCircleDelete, IconEyeCloseTwo, IconEyeOpenTwo } from '../Icon';
 import { KeyboardProps } from './PropType';
+import { stopPropagation } from '@/utils';
 
 const prefixCls = 'jing-input';
 
@@ -121,7 +122,7 @@ const KeyboardInput: FC<KeyboardProps> = (props) => {
 
     function onEyeClick(e: any) {
         // e.preventDefault()
-        e.stopPropagation();
+        stopPropagation(e);
 
         if (visible) {
             oInput.updateCacheValue(oInput.value);
@@ -135,7 +136,7 @@ const KeyboardInput: FC<KeyboardProps> = (props) => {
 
     function onClearClick(e: any) {
         // e.preventDefault();
-        e.stopPropagation();
+        stopPropagation(e);
         oInput.clearValue();
         oInput.clearCacheValue();
         setIsShowClear(false);
@@ -154,6 +155,11 @@ const KeyboardInput: FC<KeyboardProps> = (props) => {
                 {oInput.value}
             </div>
             <sub>{placeHolderValue}</sub>
+            {isShowClear && (
+                <div className={`${prefixCls}--clear`} onClick={onClearClick}>
+                    <IconCircleDelete />
+                </div>
+            )}
             {isFocus && (
                 <div className={`${prefixCls}--focus`} onClick={onEyeClick}>
                     {visible ? (
@@ -165,11 +171,6 @@ const KeyboardInput: FC<KeyboardProps> = (props) => {
                             className={`${prefixCls}--focus-close`}
                         />
                     )}
-                </div>
-            )}
-            {isShowClear && (
-                <div className={`${prefixCls}--clear`} onClick={onClearClick}>
-                    <IconCircleDelete />
                 </div>
             )}
         </Group>

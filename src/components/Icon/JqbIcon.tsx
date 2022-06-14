@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, CSSProperties, FC } from 'react';
+import React, { FC, MouseEvent, TouchEvent } from 'react';
 import classnames from 'classnames';
 import IconBase from './IconBase';
 import { JqbIconProps } from './PropType';
@@ -6,18 +6,18 @@ import { JqbIconProps } from './PropType';
 const prefixCls = 'jing-icon';
 
 const JqbIcon: FC<JqbIconProps> = (props) => {
-    const { className, color, size, icon, style, keepOriginColor, onClick } = props;
-    
-    const classes = classnames(prefixCls,className,
-        {
-            [`${prefixCls}--${color}`]:
-                Boolean(color) && !Boolean(keepOriginColor),
-            [`${prefixCls}--${size}`]: Boolean(size),
-        },
-    );
+    const { className, color, size, icon, style, keepOriginColor, onClick } =
+        props;
 
-    const onHandleClick: MouseEventHandler<HTMLDivElement> = (e) => {
-        onClick && onClick(e);
+    const classes = classnames(prefixCls, className, {
+        [`${prefixCls}--${color}`]: Boolean(color) && !Boolean(keepOriginColor),
+        [`${prefixCls}--${size}`]: Boolean(size),
+    });
+
+    const onHandleClick = (
+        event: MouseEvent<HTMLElement> | TouchEvent<HTMLElement>,
+    ) => {
+        onClick && onClick(event);
     };
 
     return (
