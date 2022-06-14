@@ -11,7 +11,7 @@ export { Row, Col } from './components/Layout';
 // 面板
 export { default as Panel } from './components/Panel';
 // 自定义键盘
-export { default as KeyBoard } from './components/KeyBoard';
+export { default as KeyBoard } from './components/Keyboard';
 // 结果
 export { default as Result } from './components/Result';
 // 输入款
@@ -55,14 +55,11 @@ export { default as IndexBar } from './components/IndexBar';
 export { default as Image } from './components/Image';
 // 全局配置
 export { default as ConfigProvider } from './components/ConfigProvider';
-
-// // 业务组件
+// 业务组件
 export { default as FloatingAd } from './components/FloatingAd';
 // 排序栏
 export { default as SortBar } from './components/SortBar';
 
-// 新虚拟键盘
-export { default as FakerKeyboard } from './components/FakerKeyboard';
 // // export { default as AuthVerified } from './Authorized/AuthVerified';
 // export { default as AuthBindCard } from './Authorized/AuthBindCard';
 // export { default as PageTabBar } from './PageTabBar';
@@ -77,7 +74,6 @@ export { default as FakerKeyboard } from './components/FakerKeyboard';
 // export { default as FixedBottom } from './FixedBottom';
 // export { default as FixedDetailBottom } from './FixedDetailBottom';
 // export { default as FixedTransferBottom } from './FixedTransferBottom';
-// export { default as FilterPicker } from './FilterPicker';
 // export { default as BankCard } from './BankCard';
 // export { default as CustomerService } from './CustomerService';
 // export { default as Banner } from './Banner';

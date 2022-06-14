@@ -97,7 +97,7 @@ export interface CaptchaProps extends InputProps {
  * @param {onClearValue} function                   // 点击清除时的回调
  * @param {onHandleFocus} function                  // 点击选中时的回调
  **/
-export interface KeyboardProps extends BaseTypeProps {
+export interface KeyboardInputProps extends BaseTypeProps {
     value: string;
     placeholder?: string;
     active?: boolean;

@@ -1,8 +1,5 @@
 import React, { useState, useEffect, TouchEvent, FC, memo } from 'react';
 import classnames from 'classnames';
-import Popup from '../Popup';
-import KeyBoard from '../KeyBoard';
-// import util from '../_util';
 import { PasswordInputProps } from './PropType';
 
 const PasswordInput: FC<PasswordInputProps> = (props) => {
@@ -19,8 +16,6 @@ const PasswordInput: FC<PasswordInputProps> = (props) => {
 
     const [safeInputValue, setSafeInputValue] = useState(value);
 
-    // console.log('组件里的focus', isFocus)
-
     useEffect(() => {
         setSafeInputValue(value);
     }, [value]);
@@ -29,10 +24,10 @@ const PasswordInput: FC<PasswordInputProps> = (props) => {
         if (mode === 'input') {
             // console.log('isFocus', isFocus)
             if (isFocus === true) {
-                // @ts-ignore
                 document
-                    .getElementsByClassName('jing-passwordinput--input')[0]
-                    .focus();
+                    ?.getElementsByClassName('jing-passwordinput--input')[0]
+                    // @ts-ignore
+                    ?.focus();
             }
         }
     }, [mode, isFocus]);

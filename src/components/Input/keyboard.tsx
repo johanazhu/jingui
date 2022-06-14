@@ -9,7 +9,7 @@ import React, {
 import classnames from 'classnames';
 import Group from './group';
 import { IconCircleDelete, IconEyeCloseTwo, IconEyeOpenTwo } from '../Icon';
-import { KeyboardProps } from './PropType';
+import { KeyboardInputProps } from './PropType';
 import { stopPropagation } from '@/utils';
 
 const prefixCls = 'jing-input';
@@ -52,7 +52,7 @@ function changeValue(value: string) {
     return tempVal;
 }
 
-const KeyboardInput: FC<KeyboardProps> = (props) => {
+const KeyboardInput: FC<KeyboardInputProps> = (props) => {
     const {
         value,
         placeholder,

@@ -10,7 +10,7 @@ import React, {
 import classnames from 'classnames';
 import { IconKeyboardShift, IconKeyboardShiftLine } from '../Icon';
 import Key from './Key';
-import { FakerKeyboardProps, KeyType } from './PropType';
+import { KeyboardProps, KeyType } from './PropType';
 import Popup from '../Popup';
 import { stopPropagation } from '@/utils';
 import { getDefaultDisplay, getCantActive } from './utils';
@@ -18,7 +18,7 @@ import { useDebounceFn, useThrottleFn, useThrottle } from '../hooks';
 
 const prefixCls = 'jing-keyboard';
 
-const Keyboard: FC<FakerKeyboardProps> = (props) => {
+const Keyboard: FC<KeyboardProps> = (props) => {
     const {
         className,
         layout,
@@ -110,7 +110,7 @@ const Keyboard: FC<FakerKeyboardProps> = (props) => {
 
     const getButtonDisplayName = (
         button: string,
-        display: FakerKeyboardProps['display'],
+        display: KeyboardProps['display'],
     ) => {
         display = display || getDefaultDisplay();
         return display[button] || button;

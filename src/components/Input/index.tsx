@@ -27,8 +27,17 @@ Input.Search = Search;
 
 export default Input;
 
-export { Input }
+export { Input };
 
-export type { InputProps, GroupProps, ClearProps, VerifyProps, CaptchaProps, KeyboardProps, TextareaProps, PhoneProps, RegProps, SearchProps} from './PropType';
-
-
+export type {
+    InputProps,
+    GroupProps,
+    ClearProps,
+    VerifyProps,
+    CaptchaProps,
+    KeyboardInputProps,
+    TextareaProps,
+    PhoneProps,
+    RegProps,
+    SearchProps,
+} from './PropType';
