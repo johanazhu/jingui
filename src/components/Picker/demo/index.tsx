@@ -18,3 +18,13 @@ export default () => (
         </Tag>
     </div>
 );
+
+{
+    /* <van-picker
+  title="标题"
+  :columns="columns"
+  @confirm="onConfirm"
+  @cancel="onCancel"
+  @change="onChange"
+/> */
+}
