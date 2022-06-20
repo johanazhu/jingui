@@ -18,8 +18,6 @@
 @import './Switch.scss';
 // 列表项
 @import './Cell.scss';
-// 键盘
-@import './KeyBoard.scss';
 // 结果
 @import './Result.scss';
 // 遮罩层
@@ -58,5 +56,7 @@
 @import './IndexBar.scss';
 // 图片
 @import './Image.scss';
-// 新虚拟键盘
-@import './FakerKeyBoard.scss';
+// 虚拟键盘
+@import './KeyBoard.scss';
+// 选择器
+@import './Picker.scss';

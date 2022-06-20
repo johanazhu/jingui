@@ -55,11 +55,14 @@ export { default as IndexBar } from './components/IndexBar';
 export { default as Image } from './components/Image';
 // 全局配置
 export { default as ConfigProvider } from './components/ConfigProvider';
-// 业务组件
-export { default as FloatingAd } from './components/FloatingAd';
 // 排序栏
 export { default as SortBar } from './components/SortBar';
+// 选择器
+export { default as Picker } from './components/Picker';
 
+// 业务组件
+// 悬浮广告
+export { default as FloatingAd } from './components/FloatingAd';
 // // export { default as AuthVerified } from './Authorized/AuthVerified';
 // export { default as AuthBindCard } from './Authorized/AuthBindCard';
 // export { default as PageTabBar } from './PageTabBar';

@@ -7,15 +7,3 @@
 @import './core/index.scss';
 @import './components/index.scss';
 @import './themes/default.scss';
-
-.iphonex-extra-height {
-  height: constant(safe-area-inset-bottom);
-  height: env(safe-area-inset-bottom);
-}
-
-// 放 base 中
-.jing-ellipsis {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}

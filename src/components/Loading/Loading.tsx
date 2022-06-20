@@ -93,11 +93,11 @@ const Loading: FC<LoadingProps> = (props: any) => {
 
 Loading.defaultProps = {
     type: 'circular',
-    color: '#c8c8c8',
-    size: '30px',
-    textSize: '14px',
-    textColor: '#c8c8c8',
-    vertical: false,
+    // color: '#c8c8c8',
+    // size: '30px',
+    // textSize: '14px',
+    // textColor: '#c8c8c8',
+    // vertical: false,
 };
 
 export default memo(Loading);

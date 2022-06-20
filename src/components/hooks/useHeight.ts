@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getRect } from './use-rect';
+import { getRect } from './useRect';
 
 export const useHeight = (element: {
     current: Element | undefined;

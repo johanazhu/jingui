@@ -12,9 +12,8 @@ import React, {
 import classnames from 'classnames';
 import { COMPONENT_TYPE_KEY, IndexAnchorProps } from './PropType';
 import IndexBarContext from './IndexBarContext';
-import { getRect as getElementRect } from '../hooks/use-rect';
-import useHeight from '../hooks/use-height';
-import useSetState from '../hooks/use-set-state';
+import { getRect as getElementRect } from '../hooks/useRect';
+import { useSetState, useHeight } from '../hooks';
 import { getScrollTop, getRootScrollTop } from '@/utils/dom/scroll';
 
 export const INDEX_ANCHORE_KEY = Symbol('index-anchor');

@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { isFunction } from '@/utils';
-import useRefState from './use-ref-state';
+import useRefState from './useRefState';
 import useUnmountedRef from './use-unmounted-ref';
 
 const useSetState = <T extends object>(

@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-export function useRefs() {
+export default function useRefs() {
     const refs = useRef<HTMLDivElement[]>([]);
 
     const setRefs = (index: number) => (el: HTMLDivElement) => {

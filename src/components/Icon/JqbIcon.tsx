@@ -17,7 +17,7 @@ const JqbIcon: FC<JqbIconProps> = (props) => {
     const onHandleClick = (
         event: MouseEvent<HTMLElement> | TouchEvent<HTMLElement>,
     ) => {
-        onClick && onClick(event);
+        onClick?.(event);
     };
 
     return (

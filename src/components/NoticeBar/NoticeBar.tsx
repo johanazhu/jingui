@@ -7,7 +7,7 @@ import React, {
     forwardRef,
 } from 'react';
 import classnames from 'classnames';
-import { getRect } from '@/components/hooks/use-rect';
+import { getRect } from '../hooks/useRect';
 import { doubleRaf, isDef, raf } from '@/utils';
 import { IconClose, IconArrow, IconNotice } from '../Icon';
 import { NoticeBarProps } from './PropType';

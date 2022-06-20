@@ -1,488 +1,274 @@
-.jing-keyBoardBase {
-    display: flex;
-    flex-wrap: wrap;
+.jing-keyboard {
+    //   position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: var(--keyboard-z-index);
     width: 100%;
-    padding: 4px 0;
-    // filter: blur(10px); // 毛玻璃效果
-    &__box {
-        flex: 0 0 33.33%;
-        position: relative;
-        height: 25%;
-        &-active {
-            .jing-keyBoardBase__box-span {
-                background-color: #dddddd;
-            }
-            &:nth-child(12) {
-                .KeyBoardBase__box-span {
-                    background-color: #dddddd !important;
-                    // background-color: $globalColorWhite0 !important;
-                }
-            }
-            .jing-keyBoardBase__box-span-isNew {
-                background-color: #adb3bc !important;
-                // color: #000;
-            }
-            &:nth-child(12) {
-                .jing-keyBoardBase__box-span-isNew {
-                    background-color: #adb3bc !important;
-                }
-            }
-        }
+    //   padding-bottom: 22px;
+    background-color: var(--keyboard-bg);
+    user-select: none;
 
-        &-span {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+    &__header {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: var(--keyboard-title-height);
+        padding-top: 6px;
+        color: var(--keyboard-title-color);
+        font-size: var(--keyboard-title-font-size);
+    }
+
+    &__title {
+        display: inline-block;
+        font-weight: normal;
+
+        &-left {
             position: absolute;
-            top: 0.2rem;
-            left: 0.2rem;
-            right: 0.2rem;
-            bottom: 0.2rem;
-            font-size: 1.5rem;
-            // border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-            background-color: $globalColorWhite0;
-            border-radius: 0.4rem;
-            box-shadow: 0px 1px 0px $globalColorBlack2;
-        }
-        &:nth-child(3n-2) {
-            span {
-                left: 0.2rem;
-                right: 0.1rem;
-            }
-        }
-        &:nth-child(3n-1) {
-            span {
-                left: 0.1rem;
-                right: 0.1rem;
-            }
-        }
-        &:nth-child(3n) {
-            span {
-                left: 0.1rem;
-                right: 0.2rem;
-            }
-        }
-        &-emty {
-            visibility: hidden;
-            opacity: 0;
-        }
-        &:nth-child(12) {
-            .jing-keyBoardBase__box-span {
-                .Icon {
-                    width: 60%;
-                    height: 60%;
-                }
-                // background-color: $KBBtnColor;
-                // color: $globalColorWhite0;
-            }
-            .jing-keyBoardBase__box-span-isNew {
-                background-color: $globalColorWhite0;
-                .Icon {
-                    width: 60%;
-                    height: 60%;
-                }
-            }
-        }
-        &-span-isNew {
-            width: 100%;
-            height: 100%;
-            top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            border: 0;
-            border-radius: 0;
-            background-color: $globalColorWhite0;
         }
     }
-}
 
-.jing-keyBoardLetter {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    float: none;
-    // height: 200px;
-    &__box {
-        flex: 0 0 10%;
-        position: relative;
-        display: block;
-        width: 100%;
-        height: 25%;
-        float: left;
-        margin: 0;
-        border-radius: 0;
-        background: 0 0;
-        color: #000;
-        overflow: visible;
-        font-weight: 400;
-        &-active {
-            span {
-                background-color: $globalColorWhite0 !important;
-                color: #000 !important;
-            }
-        }
-        &-space {
-            &__active {
-                span {
-                    background-color: $KBBtnColor !important;
-                    color: $globalColorWhite0 !important;
-                }
-            }
-        }
-        &-span {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            top: 0.25rem;
-            left: 0.2rem;
-            right: 0.2rem;
-            bottom: 0.25rem;
-            font-size: 1.375rem;
-            border-bottom: 1px solid $globalColorBlackA50;
-            background-color: $globalColorWhite0;
-            border-radius: 0.25rem;
-            color: #000;
-            // padding-bottom: 0.2rem;
-        }
-        &:nth-child(11) {
-            margin-left: 5%;
-        }
-        &:nth-child(20) {
-            flex: 0 0 13%;
-            margin-right: 2%;
-            span {
-                background-color: $KBBtnColor;
-                color: $globalColorWhite0;
-                font-size: 1rem;
-            }
-        }
-        &:nth-child(28) {
-            flex: 0 0 13%;
-            margin-right: 0;
-            margin-left: 2%;
-            span {
-                background-color: $KBBtnColor;
-                color: $globalColorWhite0;
-                font-size: 1rem;
-            }
-        }
-        &:nth-child(29) {
-            flex: 0 0 25%;
-            span {
-                background-color: $KBBtnColor;
-                color: $globalColorWhite0;
-                font-size: 1rem;
-            }
-        }
-        &:nth-child(30) {
-            flex: 0 0 50%;
-            span {
-                font-size: 1rem;
-            }
-        }
-        &:nth-child(31) {
-            flex: 0 0 25%;
-            span {
-                background-color: $KBBtnColor;
-                color: $globalColorWhite0;
-                font-size: 1rem;
-            }
-        }
-        &-letter {
-            &__active {
-                span {
-                    width: 100%;
-                    height: 100%;
-                    font-size: 225% !important;
-                    z-index: 2;
-                    bottom: 125%;
-                    left: 0;
-                    right: 0;
-                    top: auto;
-                    border: 0;
-                    background: 0 0;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-                &:after {
-                    z-index: 100;
-                    display: block;
-                    content: '';
-                    width: 230%;
-                    height: 230%;
-                    position: absolute;
-                    z-index: 1;
-                    // top: 0;
-                    bottom: 4%;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    background: url('~@/assets/keyboard-active.png') center
-                        center no-repeat;
-                    background-size: auto 100%;
-                }
-                &:nth-child(1) {
-                    span {
-                        left: 37.5% !important;
-                    }
-                    &:after {
-                        background-position: left center !important;
-                        left: -3% !important;
-                        transform: translateX(0) !important;
-                    }
-                }
-                &:nth-child(10) {
-                    span {
-                        left: auto !important;
-                        right: 37.5% !important;
-                    }
-                    &:after {
-                        background-position: right center !important;
-                        left: auto !important;
-                        right: -3% !important;
-                        transform: translateX(0) !important;
-                    }
-                }
-            }
-            &__symbol__active {
-                &:nth-child(28) {
-                    span {
-                        background-color: $globalColorWhite0;
-                    }
-                }
-                &:nth-child(29) {
-                    span {
-                        background-color: $globalColorWhite0;
-                        color: $globalColorBlack0;
-                    }
-                }
-                &:nth-child(30) {
-                    span {
-                        background-color: $KBBtnColor;
-                        color: $globalColorWhite0;
-                    }
-                }
-            }
-            &__done__active {
-                &:nth-child(31) {
-                    span {
-                        background-color: $globalColorPurple;
-                        color: $globalColorWhite0;
-                    }
-                }
-            }
-            &__shift__active {
-                &:nth-child(20) {
-                    span {
-                        background-color: $globalColorWhite0;
-                        color: $globalColorBlack0;
-                    }
-                }
-            }
-            &__del__active {
-                &:nth-child(28) {
-                    span {
-                        background-color: $globalColorWhite0;
-                    }
-                }
-            }
-        }
-    }
-}
-
-.jing-keyBoardSymbol {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    &__box {
-        flex: 0 0 10%;
-        position: relative;
-        height: 25%;
-        display: block;
-        float: left;
-        margin: 0;
-        border-radius: 0;
-        position: relative;
-        background: 0 0;
-        color: #000;
-        overflow: visible;
-        font-weight: 400;
-        &-active {
-            span {
-                background-color: #f2f3f5;
-            }
-        }
-        &-span {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            top: 0.25rem;
-            left: 0.2rem;
-            right: 0.2rem;
-            bottom: 0.25rem;
-            font-size: 1.375rem;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-            background-color: $globalColorWhite0;
-            border-radius: 0.25rem;
-            color: #000;
-        }
-        &:nth-child(11) {
-            margin-left: 5%;
-        }
-        &:nth-child(20) {
-            margin-left: 5%;
-        }
-        &:nth-child(28) {
-            flex: 0 0 13%;
-            margin-right: 0;
-            margin-left: 2%;
-            span {
-                background-color: $KBBtnColor;
-                color: $globalColorWhite0;
-                font-size: 1rem;
-            }
-        }
-        &:nth-child(29) {
-            flex: 0 0 25%;
-            span {
-                background-color: $KBBtnColor;
-                color: $globalColorWhite0;
-                font-size: 1rem;
-            }
-        }
-        &:nth-child(35) {
-            flex: 0 0 25%;
-            span {
-                background-color: $KBBtnColor;
-                color: $globalColorWhite0;
-                font-size: 1rem;
-            }
-        }
-        &-symbol {
-            &__active {
-                span {
-                    width: 100%;
-                    height: 100%;
-                    font-size: 225% !important;
-                    z-index: 2;
-                    bottom: 125%;
-                    left: 0;
-                    right: 0;
-                    top: auto;
-                    border: 0;
-                    background: 0 0;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-                &:after {
-                    z-index: 100;
-                    display: block;
-                    content: '';
-                    width: 230%;
-                    height: 230%;
-                    position: absolute;
-                    z-index: 1;
-                    bottom: 4%;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    background: url('~@/assets/keyboard-active.png') center
-                        center no-repeat;
-                    background-size: auto 100%;
-                }
-                &:nth-child(1) {
-                    span {
-                        left: 37.5% !important;
-                    }
-                    &:after {
-                        background-position: left center !important;
-                        left: -3% !important;
-                        transform: translateX(0) !important;
-                    }
-                }
-                &:nth-child(10) {
-                    span {
-                        left: auto !important;
-                        right: 37.5% !important;
-                    }
-                    &:after {
-                        background-position: right center !important;
-                        left: auto !important;
-                        right: -3% !important;
-                        transform: translateX(0) !important;
-                    }
-                }
-            }
-            &__symbol__active {
-                &:nth-child(28) {
-                    span {
-                        background-color: $globalColorWhite0;
-                    }
-                }
-                &:nth-child(29) {
-                    span {
-                        background-color: $globalColorWhite0;
-                        color: $globalColorBlack0;
-                    }
-                }
-            }
-            &__done__active {
-                &:nth-child(35) {
-                    span {
-                        background-color: $globalColorPurple;
-                        color: $globalColorWhite0;
-                    }
-                }
-            }
-        }
-    }
-}
-
-.jing-keyBoardHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fafafa;
-    border-bottom: 1px solid #fafafa;
-    border-top: 1px solid $globalColorBorder;
-    &__left,
-    &__right {
-        width: $am-lg;
+    &__body {
+        display: flex;
+        padding: 4px 0 0 4px;
         height: 100%;
     }
-    &__center,
-    &__right {
+
+    &__keys {
         display: flex;
-        justify-content: center;
-        align-items: center;
+        // flex: 3;
+        flex-wrap: wrap;
     }
-    &__center {
-        .jing-icon {
-            margin-right: $am-xxxs;
+
+    //   &__title {
+    //     display: inline-block;
+    //     font-weight: normal;
+
+    //     &-left {
+    //       position: absolute;
+    //       left: 0;
+    //     }
+    //   }
+}
+
+.jing-keyboard-key {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    height: 100%;
+    font-size: var(--keyboard-key-font-size);
+    line-height: 1.5;
+    background-color: var(--color-white-1);
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    padding: var(--keyboard-key-padding) 0;
+    border-bottom: 1px solid var(--keyboard-key-border-color);
+
+    &__wrapper {
+        position: relative;
+        flex: 0 0 10%;
+        padding: 0 var(--keyboard-key-padding) var(--keyboard-key-padding) 0;
+        height: 25%;
+        &-active {
+            .jing-keyboard-key {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: auto;
+                width: 100%;
+                height: 100%;
+                font-size: var(--keyboard-active-font-size);
+                z-index: 2;
+                bottom: 125%;
+                border: 0;
+                background: 0 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            &:after {
+                z-index: 100;
+                display: block;
+                content: '';
+                width: 230%;
+                height: 230%;
+                position: absolute;
+                z-index: 1;
+                bottom: 4%;
+                left: 50%;
+                transform: translateX(-50%);
+                background: url('~@/assets/keyboard-active.png') center center
+                    no-repeat;
+                background-size: auto 100%;
+            }
+            &:nth-child(1) {
+                .jing-keyboard-key {
+                    left: 37.5% !important;
+                }
+                &:after {
+                    background-position: left center !important;
+                    left: -3% !important;
+                    transform: translateX(0) !important;
+                }
+            }
+            &:nth-child(10) {
+                .jing-keyboard-key {
+                    left: auto !important;
+                    right: 37.5% !important;
+                }
+                &:after {
+                    background-position: right center !important;
+                    left: auto !important;
+                    right: -3% !important;
+                    transform: translateX(0) !important;
+                }
+            }
         }
-        &-title {
-            font-size: $am-sm;
-            color: $globalColorBlack1;
+        &-delete-active {
+            .jing-keyboard-key {
+                background-color: var(--color-white-1) !important;
+            }
+        }
+        &-special-active {
+            &:nth-child(28) {
+                .jing-keyboard-key {
+                    background-color: var(--color-white-1);
+                }
+            }
+            &:nth-child(29) {
+                .jing-keyboard-key {
+                    background-color: var(--color-white-1);
+                    color: var(--color-black-1);
+                }
+            }
+            &:nth-child(30) {
+                .jing-keyboard-key {
+                    background-color: var(--keyboard-key-color);
+                    color: var(--color-white-1);
+                }
+            }
         }
     }
-    &__right {
-        transform: rotate(90deg);
+
+    &__shift-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    &__delete-icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    &__collapse-icon {
+        width: 30px;
+        height: 24px;
     }
 }
 
-.jing-keyBoard {
-    width: 100%;
-    height: 100%;
-    background-color: $globalColorBlack4;
-    font-family: Arial, '微软雅黑', 'Microsoft YaHei', SimSun, Helvetica,
-        sans-serif;
-    padding-bottom: calc(env(safe-area-inset-bottom));
-    @supports (backdrop-filter: none) {
-        .background {
-            backdrop-filter: blur(10px);
+.jing-keyboard__layout {
+    &-default,
+    &-shift {
+        .jing-keyboard-key__wrapper {
+            &:nth-child(11) {
+                margin-left: 5%;
+            }
+            &:nth-child(20) {
+                flex: 0 0 13%;
+                margin-right: 2%;
+                .jing-keyboard-key {
+                    background-color: var(--keyboard-key-color);
+                    color: var(--color-white-1);
+                    font-size: var(--keyboard-key-special-font-size);
+                    align-items: center;
+                }
+            }
+            &:nth-child(28) {
+                flex: 0 0 13%;
+                margin-right: 0;
+                margin-left: 2%;
+                .jing-keyboard-key {
+                    background-color: var(--keyboard-key-color);
+                    color: var(--color-white-1);
+                    font-size: var(--keyboard-key-special-font-size);
+                    align-items: center;
+                }
+            }
+            &:nth-child(29) {
+                flex: 0 0 25%;
+                .jing-keyboard-key {
+                    background-color: var(--keyboard-key-color);
+                    color: var(--color-white-1);
+                    font-size: var(--keyboard-key-special-font-size);
+                    align-items: center;
+                }
+            }
+            &:nth-child(30) {
+                flex: 0 0 50%;
+                .jing-keyboard-key {
+                    font-size: var(--keyboard-key-special-font-size);
+                    align-items: center;
+                }
+            }
+            &:nth-child(31) {
+                flex: 0 0 25%;
+                .jing-keyboard-key {
+                    background-color: var(--keyboard-key-color);
+                    color: var(--color-white-1);
+                    font-size: var(--keyboard-key-special-font-size);
+                    align-items: center;
+                }
+            }
+        }
+    }
+    &-shift {
+        .jing-keyboard-key__wrapper {
+            &:nth-child(20) {
+                .jing-keyboard-key {
+                    background-color: var(--color-white-1);
+                    color: var(--color-white-1);
+                }
+            }
+        }
+    }
+    &-symbol {
+        .jing-keyboard-key__wrapper {
+            &:nth-child(11) {
+                margin-left: 5%;
+            }
+            &:nth-child(20) {
+                margin-left: 5%;
+            }
+            &:nth-child(28) {
+                flex: 0 0 13%;
+                margin-right: 0;
+                margin-left: 2%;
+                .jing-keyboard-key {
+                    background-color: var(--keyboard-key-color);
+                    color: var(--color-white-1);
+                    font-size: var(--keyboard-key-special-font-size);
+                    align-items: center;
+                }
+            }
+            &:nth-child(29) {
+                flex: 0 0 25%;
+                .jing-keyboard-key {
+                    background-color: var(--keyboard-key-color);
+                    color: var(--color-white-1);
+                    font-size: var(--keyboard-key-special-font-size);
+                    align-items: center;
+                }
+            }
+            &:nth-child(35) {
+                flex: 0 0 25%;
+                .jing-keyboard-key {
+                    background-color: var(--keyboard-key-color);
+                    color: var(--color-white-1);
+                    font-size: var(--keyboard-key-special-font-size);
+                    align-items: center;
+                }
+            }
         }
     }
 }

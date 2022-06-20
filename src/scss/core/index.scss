@@ -30,6 +30,17 @@
     //   height: 10px;
 }
 
+.iphonex-extra-height {
+    height: constant(safe-area-inset-bottom);
+    height: env(safe-area-inset-bottom);
+}
+
+.jing-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 [class*='jing-hairline'] {
     &::after {
         @include hairline;
@@ -67,5 +78,16 @@
 
     &--bottom::after {
         border-bottom-width: var(--border-width-base);
+    }
+
+    &,
+    &-unset {
+        &--top-bottom::after {
+            border-width: var(--border-width-base) 0;
+        }
+    }
+
+    &--surround::after {
+        border-width: var(--border-width-base);
     }
 }

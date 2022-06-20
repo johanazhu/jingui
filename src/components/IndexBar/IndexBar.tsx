@@ -15,9 +15,8 @@ import classnames from 'classnames';
 import IndexBarContext from './IndexBarContext';
 import { isDef, preventDefault } from '@/utils';
 import IndexAnchor from './IndexAnchor';
-import { useRefs } from '../hooks/use-refs';
-import { getRect } from '../hooks/use-rect';
-import useTouch from '../hooks/use-touch';
+import { getRect } from '../hooks/useRect';
+import { useTouch, useRefs } from '../hooks';
 import useEventListener from '../hooks/use-event-listener';
 import useScrollParent, { getScrollParent } from '../hooks/use-scroll-parent';
 import {
