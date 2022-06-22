@@ -50,8 +50,8 @@ export interface KeyboardKeyProps extends BaseTypeProps {
  * @param {onHide} function                                // 点击 完成 后的自定义回调
  **/
 export interface KeyboardProps extends BaseTypeProps {
-    layout?: KeyboardLayoutObject;
-    layoutName?: string;
+    layout?: KeyboardLayoutObject | Array<string>;
+    layoutName?: LetterKeyboardKey;
     titleLeft?: ReactNode;
     title?: string;
     theme?: KeyboardType;
@@ -95,3 +95,5 @@ export type KeyboardType =
     | 'id'
     | 'custom-letter'
     | 'custom-number';
+
+export type LetterKeyboardKey = 'default' | 'shift' | 'symbol';

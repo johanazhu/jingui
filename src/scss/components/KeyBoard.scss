@@ -313,7 +313,7 @@
 //     flex: 0 0 10%;
 //   }
 // }
-
+.jing-keyboard__layout-custom-number,
 .jing-keyboard__layout-number,
 .jing-keyboard__layout-price,
 .jing-keyboard__layout-id {
@@ -364,5 +364,12 @@
                 border-bottom: 0;
             }
         }
+    }
+}
+
+// jing-keyboard jing-keyboard__layout-shift jing-keyboard__layout-custom-letter
+.jing-keyboard__layout-custom-letter {
+    .jing-keyboard-key__wrapper {
+        flex: 1;
     }
 }

@@ -94,10 +94,17 @@ export default () => {
                     }}
                 />
                 <Cell
-                    title="自定义键盘布局"
+                    title="自定义字母键盘布局"
                     isLink
                     onClick={() => {
                         setState({ v6: true });
+                    }}
+                />
+                <Cell
+                    title="自定义数字键盘布局"
+                    isLink
+                    onClick={() => {
+                        setState({ v7: true });
                     }}
                 />
                 <Input.Group>
@@ -125,11 +132,11 @@ export default () => {
                     onPress={onHandlePress}
                     onDelete={onHandleDelete}
                 />
-                {/* <KeyBoard
+                <KeyBoard
                     visible={state.v2}
-                    type="number"
+                    theme="number"
                     onBlur={() => {
-                        setState({ v2: false })
+                        setState({ v2: false });
                     }}
                     onClose={onHandleClose}
                     onPress={onHandlePress}
@@ -137,9 +144,9 @@ export default () => {
                 />
                 <KeyBoard
                     visible={state.v3}
-                    type="price"
+                    theme="price"
                     onBlur={() => {
-                        setState({ v3: false })
+                        setState({ v3: false });
                     }}
                     onClose={onHandleClose}
                     onPress={onHandlePress}
@@ -147,9 +154,9 @@ export default () => {
                 />
                 <KeyBoard
                     visible={state.v4}
-                    type="id"
+                    theme="id"
                     onBlur={() => {
-                        setState({ v4: false })
+                        setState({ v4: false });
                     }}
                     onClose={onHandleClose}
                     onPress={onHandlePress}
@@ -159,7 +166,7 @@ export default () => {
                     visible={state.v5}
                     title="弹出带标题的键盘"
                     onBlur={() => {
-                        setState({ v5: false })
+                        setState({ v5: false });
                     }}
                     onClose={onHandleClose}
                     onPress={onHandlePress}
@@ -169,10 +176,9 @@ export default () => {
                     visible={state.v6}
                     title="自定义字母键盘布局"
                     theme="custom-letter"
-                    // layoutName="custom"
                     layout={customLetterLayout}
                     onBlur={() => {
-                        setState({ v6: false })
+                        setState({ v6: false });
                     }}
                     onClose={onHandleClose}
                     onPress={onHandlePress}
@@ -181,11 +187,10 @@ export default () => {
                 <KeyBoard
                     visible={state.v7}
                     title="自定义数字键盘布局"
-                    // layoutName="custom"
                     theme="custom-number"
                     layout={customNumberLayout}
                     onBlur={() => {
-                        setState({ v7: false })
+                        setState({ v7: false });
                     }}
                     onClose={onHandleClose}
                     onPress={onHandlePress}
@@ -197,7 +202,7 @@ export default () => {
                     maxLength={10}
                     layoutName={layoutName}
                     onBlur={() => {
-                        setState1({ visible: false })
+                        setState1({ visible: false });
                     }}
                     onInput={(value: string) => {
                         setState1({ value });
@@ -208,7 +213,7 @@ export default () => {
                     onDoneCb={() => {
                         Toast('点击完成');
                     }}
-                /> */}
+                />
             </DemoBlock>
         </>
     );
