@@ -26,13 +26,14 @@ export const getCantActive = (element: string) => {
     }
 };
 
+// export const numberLayout = ['1 2 3'];
 export const numberLayout = ['1 2 3', '4 5 6', '7 8 9', '{emty} 0 {delete}'];
 
 export const priceLayout = ['1 2 3', '4 5 6', '7 8 9', '. 0 {delete}'];
 
 export const idLayout = ['1 2 3', '4 5 6', '7 8 9', 'X 0 {delete}'];
 
-export const typeToLayout = (type: string) => {
+export const themeToLayout = (type: string) => {
     switch (type) {
         case 'number':
             return numberLayout;

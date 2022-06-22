@@ -1,10 +1,18 @@
-import { useRef } from 'react';
+import { useRef, useCallback } from 'react';
 
 export default function useRefs() {
     const refs = useRef<HTMLDivElement[]>([]);
 
-    const setRefs = (index: number) => (el: HTMLDivElement) => {
-        refs.current[index] = el;
-    };
-    return [refs.current, setRefs as any];
+    const setRefs = useCallback(
+        (index: number) => (el: HTMLDivElement) => {
+            if (el) refs.current[index] = el;
+        },
+        [],
+    );
+
+    const reset = useCallback(() => {
+        refs.current = [];
+    }, []);
+
+    return [refs.current, setRefs as any, reset];
 }

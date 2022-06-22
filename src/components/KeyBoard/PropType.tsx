@@ -22,7 +22,7 @@ export interface KeyboardKeyProps extends BaseTypeProps {
     touchStart?: (text: ReactNode | string) => void;
     touchMove?: (e: TouchEvent) => void;
     touchEnd?: (e: TouchEvent) => void;
-    onPress: (text: ReactNode | string, type: KeyType | string) => void;
+    onPress?: (text: ReactNode | string, type: KeyType | string) => void;
 }
 
 /**
@@ -30,9 +30,8 @@ export interface KeyboardKeyProps extends BaseTypeProps {
  * @param {layout} Array<string>                                    // 布局
  * @param {titleLeft} ReactNode                                     // 自定义标题栏左侧内容
  * @param {title} string                                            // 键盘标题
- * @param {theme} string                                            // 样式风格，可选值为 custom、number、letter
+ * @param {theme} string                                            // 样式风格，可选值为 custom-letter、custom-number、letter、number、price、id
  * @param {visible} boolean                                         // 是否显示键盘
- * @param {closeButtonText} boolean                                 // 是否将关闭按钮设置为加载中状态，仅在 theme="custom" 时有效
  * @param {display} [button: string]: string                        // 自定义某一按钮的名字
  * @param {value} string                                            // 当前输入值
  * @param {maxLength}  number | boolean                             // 输入值最大长度
@@ -51,15 +50,14 @@ export interface KeyboardKeyProps extends BaseTypeProps {
  * @param {onHide} function                                // 点击 完成 后的自定义回调
  **/
 export interface KeyboardProps extends BaseTypeProps {
-    type?: KeyboardType;
     layout?: KeyboardLayoutObject;
     layoutName?: string;
     titleLeft?: ReactNode;
     title?: string;
-    theme?: string;
+    theme?: KeyboardType;
     visible: boolean;
     transition?: boolean;
-    closeButtonText?: boolean;
+    showTitle?: boolean;
     display?: { [button: string]: string };
     value?: string;
     maxLength?: number | string;
@@ -90,4 +88,10 @@ export type KeyType =
     | 'complete'
     | 'close';
 
-export type KeyboardType = 'letter' | 'number' | 'price' | 'id';
+export type KeyboardType =
+    | 'letter'
+    | 'number'
+    | 'price'
+    | 'id'
+    | 'custom-letter'
+    | 'custom-number';

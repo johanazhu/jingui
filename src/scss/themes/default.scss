@@ -444,12 +444,14 @@
     --keyboard-key-font-size: var(--font-size-xxxl);
     --keyboard-key-padding: var(--padding-base);
     --keyboard-key-border-color: rgba(0, 0, 0, 0.5);
-    //   --keyboard-key-active-color:
-    --keyboard-title-color: var(--color-black-4);
+    --keyboard-title-color: var(--color-black-2);
     --keyboard-title-height: 34px;
     --keyboard-title-font-size: var(--font-size-sm);
+    --keyboard-title-bg: var(--background-color-light);
+    --keyboard-title-border-bottom-color: var(--background-color-light);
+    --keyboard-title-border-top-color: var(--color-black-5);
     --keyboard-active-font-size: 225% !important;
-    --keyboard-key-color: #adb3bc;
+    --keyboard-key-color: rgb(173, 179, 188);
     --keyboard-key-special-font-size: var(--font-size-lg);
 
     // Picker

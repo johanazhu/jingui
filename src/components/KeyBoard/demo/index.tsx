@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Cell, Input, KeyBoard, Toast, hooks } from 'jing-ui';
 import { DemoBlock } from 'demo';
+import { customLetterLayout, customNumberLayout } from './data';
 import './index.scss';
 
 export default () => {
@@ -12,6 +13,7 @@ export default () => {
         v4: false,
         v5: false,
         v6: false,
+        v7: false,
     });
     const [state1, setState1] = hooks.useSetState({
         visible: false,
@@ -165,8 +167,25 @@ export default () => {
                 />
                 <KeyBoard
                     visible={state.v6}
+                    title="自定义字母键盘布局"
+                    theme="custom-letter"
+                    // layoutName="custom"
+                    layout={customLetterLayout}
                     onBlur={() => {
                         setState({ v6: false })
+                    }}
+                    onClose={onHandleClose}
+                    onPress={onHandlePress}
+                    onDelete={onHandleDelete}
+                />
+                <KeyBoard
+                    visible={state.v7}
+                    title="自定义数字键盘布局"
+                    // layoutName="custom"
+                    theme="custom-number"
+                    layout={customNumberLayout}
+                    onBlur={() => {
+                        setState({ v7: false })
                     }}
                     onClose={onHandleClose}
                     onPress={onHandlePress}

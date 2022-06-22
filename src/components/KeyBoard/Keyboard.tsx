@@ -9,13 +9,20 @@ import React, {
 } from 'react';
 import classnames from 'classnames';
 import { CSSTransition } from 'react-transition-group';
-import { IconKeyboardShift, IconKeyboardShiftLine } from '../Icon';
+import {
+    IconKeyboardShift,
+    IconKeyboardShiftLine,
+    IconArrow,
+    IconKeyboardSecurity,
+} from '../Icon';
 import Key from './Key';
 import { KeyboardProps, KeyType } from './PropType';
 import Popup from '../Popup';
-import { useUpdateEffect } from '../hooks';
+import { useUpdateEffect, useRefs } from '../hooks';
+import { getRect as getElementRect } from '../hooks/useRect';
 import { stopPropagation } from '@/utils';
-import { getDefaultDisplay, getCantActive, typeToLayout } from './utils';
+import { getDefaultDisplay, getCantActive, themeToLayout } from './utils';
+
 import {
     useEventListener,
     useDebounceFn,
@@ -28,15 +35,13 @@ const prefixCls = 'jing-keyboard';
 const Keyboard: FC<KeyboardProps> = (props) => {
     const {
         className,
-        type,
         layout,
         layoutName,
-        titleLeft,
         title,
-        theme,
+        theme = 'letter',
+        showTitle,
         visible,
         transition,
-        closeButtonText,
         display,
         value = '',
         maxLength = Infinity,
@@ -56,6 +61,7 @@ const Keyboard: FC<KeyboardProps> = (props) => {
     const keyRef = useRef<any>([]);
     const valueRef = useRef<any>(value);
     const showRef = useRef<any>(visible);
+    const [refs, setRefs, resetRefs] = useRefs();
 
     const [layoutNamePlus, setLayoutNamePlus] = useState(layoutName);
     const [keyboardHeaderHeight, setKeyboardHeaderHeight] =
@@ -64,8 +70,9 @@ const Keyboard: FC<KeyboardProps> = (props) => {
     const [activeElement, setActiveElement] = useState<any>('');
 
     const classes = classnames(prefixCls, className, {
-        [`${prefixCls}__layout-${layoutNamePlus}`]: type === 'letter',
-        [`${prefixCls}__layout-${type}`]: type !== 'letter',
+        [`${prefixCls}__layout-${layoutNamePlus}`]:
+            theme.indexOf('letter') >= 0,
+        [`${prefixCls}__layout-${theme}`]: theme.indexOf('letter') !== 0,
     });
 
     useEffect(() => {
@@ -157,9 +164,9 @@ const Keyboard: FC<KeyboardProps> = (props) => {
     };
 
     const onPress = (text: ReactNode | string, type: KeyType | string) => {
-        console.log('activeElement', activeElement);
-        console.log('text', text);
-        console.log('type', type);
+        // console.log('activeElement', activeElement);
+        // console.log('text', text);
+        // console.log('type', type);
 
         if (type === 'delete') {
             onDelete?.();
@@ -194,8 +201,15 @@ const Keyboard: FC<KeyboardProps> = (props) => {
         const currentPageX = touch.pageX;
         const currentPageY = touch.pageY;
 
+        // refs.map()
+        console.log('shift', keyRef.current);
+
         keyRef.current.forEach((element: any) => {
+            // console.log('element', element.innerText)
             const eleRect = element?.getBoundingClientRect();
+            console.log('ref eleRect', getElementRect(element));
+            // console.log('eleRect', eleRect)
+            // console.log('currentPageX', currentPageX)
 
             if (
                 currentPageX > eleRect?.left &&
@@ -203,6 +217,7 @@ const Keyboard: FC<KeyboardProps> = (props) => {
                 currentPageY > eleRect?.top &&
                 currentPageY < eleRect?.bottom
             ) {
+                console.log('这里', element.innerText);
                 if (element.innerHTML.indexOf('delete') > 0) {
                     setActiveElement('delete');
                 } else if (getCantActive(element.innerText)) {
@@ -241,7 +256,7 @@ const Keyboard: FC<KeyboardProps> = (props) => {
     };
 
     const renderKeys = () => {
-        switch (type) {
+        switch (theme) {
             case 'letter':
                 return renderLetter();
             case 'number':
@@ -252,84 +267,90 @@ const Keyboard: FC<KeyboardProps> = (props) => {
     };
 
     const renderOthers = () => {
-        let layout = type && typeToLayout(type);
+        let layout = theme && themeToLayout(theme);
+        return null;
 
-        return layout?.map((row, rIndex) => {
-            let rowArray = row.split(' ');
-            return (
-                <>
-                    {rowArray.map((item, index) => {
-                        const buttonDisplayName = getButtonDisplayName(
-                            item,
-                            display,
-                        );
+        // return layout?.map((row, rIndex) => {
+        //     let rowArray = row.split(' ');
 
-                        let keyIndex = parseInt(
-                            rIndex.toString() + index.toString(),
-                        );
+        //     return (
+        //         <>
+        //             {rowArray.map((item: string, index: string | number) => {
+        //                 const buttonDisplayName = getButtonDisplayName(
+        //                     item,
+        //                     display,
+        //                 );
 
-                        if (buttonDisplayName === 'emty') {
-                            return (
-                                <Key
-                                    /* @ts-ignore */
-                                    ref={(el) =>
-                                        (keyRef.current[keyIndex] = el)
-                                    }
-                                    key={keyIndex}
-                                    text=""
-                                    type="emty"
-                                    onPress={onPress}
-                                />
-                            );
-                        }
+        //                 let keyIndex = parseInt(
+        //                     rIndex.toString() + index.toString(),
+        //                 );
 
-                        return (
-                            <Key
-                                /* @ts-ignore */
-                                ref={(el) => (keyRef.current[keyIndex] = el)}
-                                key={keyIndex}
-                                text={buttonDisplayName}
-                                type={buttonDisplayName}
-                                touchStart={(text: ReactNode | string) => {
-                                    console.log('key props', text);
-                                    setActiveElement(text);
-                                }}
-                                active={activeElement === buttonDisplayName}
-                                onPress={onPress}
-                            />
-                        );
-                    })}
-                </>
-            );
-        });
+        //                 if (buttonDisplayName === 'emty') {
+        //                     return (
+        //                         <Key
+        //                             /* @ts-ignore */
+        //                             ref={setRefs(keyIndex)}
+        //                             key={keyIndex}
+        //                             text=""
+        //                             type="emty"
+        //                         />
+        //                     );
+        //                 }
+
+        //                 return (
+        //                     <Key
+        //                         /* @ts-ignore */
+        //                         ref={setRefs(keyIndex)}
+        //                         key={keyIndex}
+        //                         text={buttonDisplayName}
+        //                         type={buttonDisplayName}
+        //                         touchStart={(text: ReactNode | string) => {
+        //                             console.log('key props', text);
+        //                             setActiveElement(text);
+        //                         }}
+        //                         active={activeElement === buttonDisplayName}
+        //                         onPress={onPress}
+        //                     />
+        //                 );
+        //             })}
+        //         </>
+        //     );
+        // });
     };
 
     const renderLetter = () =>
         layout?.[layoutNamePlus || 'default']?.map((row, rIndex) => {
             let rowArray = row.split(' ');
-
-            console.log('rIndex', rIndex);
+            const length = layout?.[layoutNamePlus || 'default'].length;
+            // console.log('rowArray', rowArray)
 
             return (
-                <>
-                    {rowArray.map((item, index) => {
+                <div
+                    className={`${prefixCls}__keys-row`}
+                    style={{ height: 100 / length + '%' }}
+                >
+                    {rowArray.map((item, cIndex) => {
                         const buttonDisplayName = getButtonDisplayName(
                             item,
                             display,
                         );
 
                         let keyIndex = parseInt(
-                            rIndex.toString() + index.toString(),
+                            rIndex.toString() + cIndex.toString(),
                         );
+
+                        // console.log('index', cIndex)
+                        // console.log('column', index)
+
+                        // console.log('keyIndex', keyIndex)
 
                         if (buttonDisplayName === 'shift') {
                             return (
                                 <Key
                                     /* @ts-ignore */
-                                    ref={(el) =>
-                                        (keyRef.current[keyIndex] = el)
-                                    }
-                                    key={keyIndex}
+                                    ref={(el) => (keyRef.current['shift'] = el)}
+                                    // ref={setRefs(keyIndex)}
+                                    key={'shift'}
                                     text={renderShiftButton()}
                                     type="shift"
                                     active={activeElement === 'shift'}
@@ -342,7 +363,8 @@ const Keyboard: FC<KeyboardProps> = (props) => {
                             <Key
                                 /* @ts-ignore */
                                 ref={(el) => (keyRef.current[keyIndex] = el)}
-                                key={keyIndex}
+                                // ref={setRefs(keyIndex)}
+                                key={keyIndex + buttonDisplayName}
                                 text={buttonDisplayName}
                                 type={buttonDisplayName}
                                 touchStart={(text: ReactNode | string) => {
@@ -354,14 +376,11 @@ const Keyboard: FC<KeyboardProps> = (props) => {
                             />
                         );
                     })}
-                </>
+                </div>
             );
         });
 
     const renderTitle = () => {
-        const showClose = closeButtonText && theme === 'number';
-        const showTitle = title || showClose || titleLeft;
-
         if (!showTitle) {
             return;
         }
@@ -371,26 +390,24 @@ const Keyboard: FC<KeyboardProps> = (props) => {
                 className={`${prefixCls}__header`}
                 style={{ height: keyboardHeaderHeight }}
             >
-                {titleLeft && (
-                    <span className={`${prefixCls}__title-left`}>
-                        {titleLeft}
-                    </span>
-                )}
-                {title && <h2 className={`${prefixCls}__title`}>{title}</h2>}
-                {showClose && (
-                    <button
-                        type="button"
-                        className={`${prefixCls}__close`}
-                        onClick={onClose}
-                    >
-                        {closeButtonText}
-                    </button>
-                )}
+                <div
+                    className={`${prefixCls}__header-left`}
+                    style={{ width: keyboardHeaderHeight }}
+                ></div>
+                <h2 className={`${prefixCls}__header-title`}>
+                    {title === '鲸禧保安全键盘' && <IconKeyboardSecurity />}
+                    {title}
+                </h2>
+                <div
+                    className={`${prefixCls}__header-right`}
+                    onClick={onClose}
+                    style={{ width: keyboardHeaderHeight }}
+                >
+                    <IconArrow />
+                </div>
             </div>
         );
     };
-
-    console.log('1');
 
     return (
         <CSSTransition
@@ -402,22 +419,22 @@ const Keyboard: FC<KeyboardProps> = (props) => {
             classNames={transition ? 'jing-slide-up' : ''}
             onExited={onAnimationEnd}
         >
-            <div
-                className={classes}
-                ref={keyboardRef}
-                style={{
-                    height: keyboardBodyHeight,
-                }}
-            >
+            <div className={classes} ref={keyboardRef}>
                 {renderTitle()}
-                <div className={`${prefixCls}__body`}>
+                <div
+                    className={`${prefixCls}__body`}
+                    style={{
+                        height: keyboardBodyHeight,
+                    }}
+                >
                     <div
                         className={`${prefixCls}__keys`}
                         ref={keyboardKeysRef}
                         onTouchMove={handleTouchMove}
                         onTouchEnd={handleTouchEnd}
                     >
-                        {renderKeys()}
+                        {/* {renderKeys()} */}
+                        {renderLetter()}
                     </div>
                 </div>
             </div>
@@ -426,7 +443,7 @@ const Keyboard: FC<KeyboardProps> = (props) => {
 };
 
 Keyboard.defaultProps = {
-    type: 'letter',
+    theme: 'letter',
     layout: {
         default: [
             'q w e r t y u i o p',
@@ -453,6 +470,8 @@ Keyboard.defaultProps = {
     value: '',
     maxLength: Infinity,
     noNeedHideElements: ['jing-input--clear', 'jing-input--focus'],
+    title: '鲸禧保安全键盘',
+    showTitle: true,
 };
 
 export default memo(Keyboard);
