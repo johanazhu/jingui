@@ -11,7 +11,6 @@ export interface DetailProps {
     leftStyle?: CSSProperties;
 }
 
-
 export interface DetailListProps {
     children: React.ReactNode;
 }

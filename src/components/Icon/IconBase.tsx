@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IconbaseProps } from './PropType'
+import { IconbaseProps } from './PropType';
 
 const IconBase = (props: IconbaseProps) => {
     const { svgClass, icon } = props;

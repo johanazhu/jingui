@@ -1,12 +1,15 @@
 import * as React from 'react';
 import { DetailProps, DetailListType } from './PropType';
 
-
 const prefixCls = 'jing-detaillist';
 
-const Header = (props: DetailProps) =>  <div className={`${prefixCls}__header`}>{props.title}</div>
+const Header = (props: DetailProps) => (
+    <div className={`${prefixCls}__header`}>{props.title}</div>
+);
 
-const Body = (props: DetailProps) => <div className={`${prefixCls}__content`}>{props.children}</div>
+const Body = (props: DetailProps) => (
+    <div className={`${prefixCls}__content`}>{props.children}</div>
+);
 
 const Line = () => <div className={`${prefixCls}__line`} />;
 
@@ -16,7 +19,10 @@ const Item = (props: DetailProps) => {
     if (!customChildren) {
         return (
             <div className={`${prefixCls}__content--item`}>
-                <div className={`${prefixCls}__content--item__left`} style={leftStyle}>
+                <div
+                    className={`${prefixCls}__content--item__left`}
+                    style={leftStyle}
+                >
                     {leftText}
                 </div>
                 <div className={`${prefixCls}__content--item__right`}>
@@ -25,10 +31,13 @@ const Item = (props: DetailProps) => {
             </div>
         );
     } else {
-        return <div className={`${prefixCls}__content--item`}>{customChildren}</div>;
+        return (
+            <div className={`${prefixCls}__content--item`}>
+                {customChildren}
+            </div>
+        );
     }
 };
-
 
 const DetailList: DetailListType = (props) => {
     return <div className={prefixCls}>{props.children}</div>;

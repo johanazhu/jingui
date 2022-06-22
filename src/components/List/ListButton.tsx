@@ -20,7 +20,6 @@ export interface ButtonItemProps {
 const ListButton = (props: ListButtonProps) => {
     const { title, desc, buttonArray } = props;
 
-
     return (
         <div className="jing-list-button">
             <span
@@ -39,7 +38,7 @@ const ListButton = (props: ListButtonProps) => {
                 style={{ width: 3.2 * buttonArray.length + 'rem' }}
             >
                 <ButtonGroup>
-                 {buttonArray.map((item: ButtonItemProps) => (
+                    {buttonArray.map((item: ButtonItemProps) => (
                         <Button
                             key={item.name}
                             color={item.color}
@@ -49,7 +48,6 @@ const ListButton = (props: ListButtonProps) => {
                         </Button>
                     ))}
                 </ButtonGroup>
- 
             </span>
         </div>
     );

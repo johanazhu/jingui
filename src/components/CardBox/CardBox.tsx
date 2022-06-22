@@ -5,7 +5,6 @@ import CardBoxFooter from './Footer';
 import { Row } from '../Layout';
 import { CardBoxType } from './PropType';
 
-
 const prefixCls = 'jing-cardbox';
 
 const CardBox: CardBoxType = (props) => {

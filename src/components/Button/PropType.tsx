@@ -9,7 +9,7 @@ export type ButtonSize = 'large' | 'normal' | 'small' | 'mini';
  * @param {type} string                                 // 类型，可选值为 primary、second-primary、default
  * @param {plain} boolean                               // 是否为朴素按钮
  * @param {round} boolean                               // 是否为圆形按钮
- * @param {size} string                                 // 设置大小，可选值为 large、normal、small、mini 
+ * @param {size} string                                 // 设置大小，可选值为 large、normal、small、mini
  * @param {disabled} boolean                            // 是否禁用
  * @param {loading} boolean                             // 是否加载中状态
  * @param {block} boolean                               // 是否块级元素

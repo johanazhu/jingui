@@ -1,12 +1,10 @@
 import { ReactNode } from 'react';
 
-
 export interface TagItemProps {
     labelName: string;
     labelContentLinkPkid: any;
     largePaymentFlag: any;
 }
-
 
 export interface BankCardProps {
     bankNo: ReactNode;

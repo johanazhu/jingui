@@ -2,7 +2,6 @@ import * as React from 'react';
 import classnames from 'classnames';
 import { IconArrow } from '../Icon';
 
-
 export interface ListRowProps {
     icon?: any;
     title: string;
@@ -84,6 +83,5 @@ const ListRow = (props: ListRowProps) => {
     }
     return tempJSX;
 };
-
 
 export default React.memo(ListRow);

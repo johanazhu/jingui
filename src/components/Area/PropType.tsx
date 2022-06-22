@@ -37,7 +37,6 @@ export interface AreaTabSourceProps {
     label: string;
 }
 
-
 /**
  * 单个选择器
  * @param {columnSource} Array 单个选择器的数据源
@@ -46,7 +45,7 @@ export interface AreaTabSourceProps {
  * @param {onClick} function 回调函数
  **/
 
- export interface AreaColumn {
+export interface AreaColumn {
     columnSource: Array<AreaColumnRangeProps>;
     tabSource?: Array<AreaTabSourceProps>;
     rangeKey?: string;

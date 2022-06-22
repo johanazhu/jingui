@@ -1,3 +1,3 @@
-import BetterScroll from "./BetterScroll";
+import BetterScroll from './BetterScroll';
 
 export default BetterScroll;

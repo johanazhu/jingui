@@ -5,12 +5,10 @@ export interface CardBoxHeaderProps {
     children: ReactNode;
 }
 
-
 export interface CardBoxFooterProps {
     className?: string;
     children: ReactChild;
 }
-
 
 export interface CardBoxProps {
     className?: string;

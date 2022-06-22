@@ -1,10 +1,9 @@
 import React, { useState, FC, memo } from 'react';
 import classnames from 'classnames';
 import { IconRight } from '../Icon';
-import { AreaColumn, AreaColumnRangeProps } from './PropType'
+import { AreaColumn, AreaColumnRangeProps } from './PropType';
 
-
-const Column:FC<AreaColumn> = (props) => {
+const Column: FC<AreaColumn> = (props) => {
     const { columnSource, tabSource, onClick } = props;
     const headerSource = tabSource && tabSource.map((item: any) => item.value);
 
