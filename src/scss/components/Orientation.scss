@@ -5,7 +5,7 @@
     top: 0;
     right: 0;
     bottom: 0;
-    background: $globalColorWhite0;
+    background: var(--color-white-1);
     &__inner {
         position: absolute !important;
         left: 50%;
@@ -19,7 +19,7 @@
         }
         &-desc {
             display: block;
-            font-size: $am-l;
+            font-size: var(--font-size-lg);
             font-weight: bold;
             line-height: 1.4;
         }

@@ -7,13 +7,16 @@
     bottom: 0;
     opacity: 1;
     background-color: transparent;
-    @include transition(all $globalSpeed ease-out);
+    @include transition(all var(--animation-duration-base) ease-out);
 
     span {
         display: block;
         width: 5rem;
         height: 5rem;
-        @extend .am-pos-cc;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
         background-position: center top;
         background-repeat: no-repeat;
         background-size: 100% auto;

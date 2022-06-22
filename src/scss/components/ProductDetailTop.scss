@@ -4,7 +4,7 @@
     width: 100%;
     // height: 9rem;
     background: $globalColorDarkBlueGradient;
-    color: $globalColorWhite0;
+    color: var(--color-white-1);
     &__Header {
         display: flex;
         flex-direction: column;
@@ -18,7 +18,7 @@
         }
         &-content {
             margin-top: 0.5rem;
-            font-size: $am-xs;
+            font-size: var(--font-size-xs);
             // span {
             //     background: $globalColorWhiteA30;
             //     border-radius: 4px;
@@ -69,7 +69,7 @@
             }
             &-desc {
                 color: $globalColorWhiteA30;
-                font-size: $am-xs;
+                font-size: var(--font-size-xs);
             }
         }
     }

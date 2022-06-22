@@ -1,5 +1,5 @@
 .jing-keyboard {
-    //   position: fixed;
+    position: fixed;
     bottom: 0;
     left: 0;
     z-index: var(--keyboard-z-index);
@@ -269,6 +269,23 @@
                     align-items: center;
                 }
             }
+        }
+    }
+}
+
+.jing-keyboard__layout-letter {
+    .jing-keyboard-key__wrapper {
+        flex: 0 0 10%;
+    }
+}
+.jing-keyboard__layout-number,
+.jing-keyboard__layout-price,
+.jing-keyboard__layout-id {
+    width: 100%;
+    .jing-keyboard__keys {
+        width: 100%;
+        .jing-keyboard-key__wrapper {
+            flex: 0 0 33%;
         }
     }
 }

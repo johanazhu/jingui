@@ -8,39 +8,47 @@ import React, {
     TouchEvent,
 } from 'react';
 import classnames from 'classnames';
+import { CSSTransition } from 'react-transition-group';
 import { IconKeyboardShift, IconKeyboardShiftLine } from '../Icon';
 import Key from './Key';
 import { KeyboardProps, KeyType } from './PropType';
 import Popup from '../Popup';
+import { useUpdateEffect } from '../hooks';
 import { stopPropagation } from '@/utils';
-import { getDefaultDisplay, getCantActive } from './utils';
-import { useDebounceFn, useThrottleFn, useThrottle } from '../hooks';
+import { getDefaultDisplay, getCantActive, typeToLayout } from './utils';
+import {
+    useEventListener,
+    useDebounceFn,
+    useThrottleFn,
+    useThrottle,
+} from '../hooks';
 
 const prefixCls = 'jing-keyboard';
 
 const Keyboard: FC<KeyboardProps> = (props) => {
     const {
         className,
+        type,
         layout,
         layoutName,
         titleLeft,
         title,
         theme,
         visible,
+        transition,
         closeButtonText,
         display,
         value = '',
         maxLength = Infinity,
         hideOnClickOutside,
         noNeedHideElements,
-        onHandleClose,
-        onHandleBlur,
-        onHandleDelete,
-        onHandleValue,
-        onHandlePress,
-        onHandleShiftCb,
-        onHandleSpaceCb,
-        onHandleDoneCb,
+        onDelete,
+        onInput,
+        onShiftCb,
+        onSpaceCb,
+        onDoneCb,
+        onShow,
+        onHide,
     } = props;
 
     const keyboardRef = useRef<HTMLDivElement>(null);
@@ -55,11 +63,10 @@ const Keyboard: FC<KeyboardProps> = (props) => {
     const [keyboardBodyHeight, setKeyboardBodyHeight] = useState<number>(220);
     const [activeElement, setActiveElement] = useState<any>('');
 
-    const classes = classnames(
-        prefixCls,
-        className,
-        `${prefixCls}__layout-${layoutNamePlus}`,
-    );
+    const classes = classnames(prefixCls, className, {
+        [`${prefixCls}__layout-${layoutNamePlus}`]: type === 'letter',
+        [`${prefixCls}__layout-${type}`]: type !== 'letter',
+    });
 
     useEffect(() => {
         if (hideOnClickOutside) {
@@ -86,6 +93,12 @@ const Keyboard: FC<KeyboardProps> = (props) => {
                 stopPropagation,
             );
         };
+    }, [visible]);
+
+    useUpdateEffect(() => {
+        if (!transition) {
+            visible ? onShow?.() : onHide?.();
+        }
     }, [visible]);
 
     useEffect(() => {
@@ -135,13 +148,11 @@ const Keyboard: FC<KeyboardProps> = (props) => {
     };
 
     const onBlur = () => {
-        // console.log('props.visible', show)
-        // visible && onHandleBlur && onHandleBlur()
-        showRef.current && onHandleBlur?.();
+        showRef.current && props.onBlur?.();
     };
 
     const onClose = () => {
-        onHandleClose?.();
+        props.onClose?.();
         onBlur();
     };
 
@@ -151,8 +162,8 @@ const Keyboard: FC<KeyboardProps> = (props) => {
         console.log('type', type);
 
         if (type === 'delete') {
-            onHandleDelete?.();
-            onHandleValue?.(
+            onDelete?.();
+            onInput?.(
                 valueRef.current.substring(0, valueRef.current.length - 1),
             );
         } else if (type === 'close') {
@@ -161,20 +172,20 @@ const Keyboard: FC<KeyboardProps> = (props) => {
             const shiftToggle =
                 layoutNamePlus === 'default' ? 'shift' : 'default';
             setLayoutNamePlus(shiftToggle);
-            onHandleShiftCb?.();
+            onShiftCb?.();
         } else if (type === '123.*!&' || type === 'ABC') {
             const shiftToggle =
                 layoutNamePlus === 'default' ? 'symbol' : 'default';
             setLayoutNamePlus(shiftToggle);
         } else if (type === '空格') {
             // type space
-            onHandleSpaceCb?.();
+            onSpaceCb?.();
         } else if (type === '完成') {
             // onHandleDone
-            onHandleDoneCb?.();
+            onDoneCb?.();
         } else if (value.length < maxLength) {
-            onHandlePress?.(activeElement || text, type);
-            onHandleValue?.(value + (activeElement || text));
+            props.onPress?.(activeElement || text, type);
+            onInput?.(value + (activeElement || text));
         }
     };
 
@@ -208,11 +219,10 @@ const Keyboard: FC<KeyboardProps> = (props) => {
     };
 
     const onAnimationEnd = () => {
-        console.log('animation');
-        visible ? 'show' : 'hide';
+        visible ? onShow?.() : onHide?.();
     };
 
-    const genShiftButton = () => {
+    const renderShiftButton = () => {
         return layoutNamePlus === 'default' ? (
             <IconKeyboardShiftLine
                 className={`${prefixCls}-key__shift-icon`}
@@ -230,9 +240,75 @@ const Keyboard: FC<KeyboardProps> = (props) => {
         );
     };
 
-    const genKeys = () =>
+    const renderKeys = () => {
+        switch (type) {
+            case 'letter':
+                return renderLetter();
+            case 'number':
+            case 'price':
+            case 'id':
+                return renderOthers();
+        }
+    };
+
+    const renderOthers = () => {
+        let layout = type && typeToLayout(type);
+
+        return layout?.map((row, rIndex) => {
+            let rowArray = row.split(' ');
+            return (
+                <>
+                    {rowArray.map((item, index) => {
+                        const buttonDisplayName = getButtonDisplayName(
+                            item,
+                            display,
+                        );
+
+                        let keyIndex = parseInt(
+                            rIndex.toString() + index.toString(),
+                        );
+
+                        if (buttonDisplayName === 'emty') {
+                            return (
+                                <Key
+                                    /* @ts-ignore */
+                                    ref={(el) =>
+                                        (keyRef.current[keyIndex] = el)
+                                    }
+                                    key={keyIndex}
+                                    text=""
+                                    type="emty"
+                                    onPress={onPress}
+                                />
+                            );
+                        }
+
+                        return (
+                            <Key
+                                /* @ts-ignore */
+                                ref={(el) => (keyRef.current[keyIndex] = el)}
+                                key={keyIndex}
+                                text={buttonDisplayName}
+                                type={buttonDisplayName}
+                                touchStart={(text: ReactNode | string) => {
+                                    console.log('key props', text);
+                                    setActiveElement(text);
+                                }}
+                                active={activeElement === buttonDisplayName}
+                                onPress={onPress}
+                            />
+                        );
+                    })}
+                </>
+            );
+        });
+    };
+
+    const renderLetter = () =>
         layout?.[layoutNamePlus || 'default']?.map((row, rIndex) => {
             let rowArray = row.split(' ');
+
+            console.log('rIndex', rIndex);
 
             return (
                 <>
@@ -254,7 +330,7 @@ const Keyboard: FC<KeyboardProps> = (props) => {
                                         (keyRef.current[keyIndex] = el)
                                     }
                                     key={keyIndex}
-                                    text={genShiftButton()}
+                                    text={renderShiftButton()}
                                     type="shift"
                                     active={activeElement === 'shift'}
                                     onPress={onPress}
@@ -282,7 +358,7 @@ const Keyboard: FC<KeyboardProps> = (props) => {
             );
         });
 
-    const genTitle = () => {
+    const renderTitle = () => {
         const showClose = closeButtonText && theme === 'number';
         const showTitle = title || showClose || titleLeft;
 
@@ -314,14 +390,17 @@ const Keyboard: FC<KeyboardProps> = (props) => {
         );
     };
 
+    console.log('1');
+
     return (
-        <Popup
-            visible={visible}
-            position="bottom"
-            overlay={false}
-            style={{
-                overflowY: 'visible',
-            }}
+        <CSSTransition
+            mountOnEnter
+            unmountOnExit
+            nodeRef={keyboardRef}
+            in={visible}
+            timeout={300}
+            classNames={transition ? 'jing-slide-up' : ''}
+            onExited={onAnimationEnd}
         >
             <div
                 className={classes}
@@ -329,9 +408,8 @@ const Keyboard: FC<KeyboardProps> = (props) => {
                 style={{
                     height: keyboardBodyHeight,
                 }}
-                onAnimationEnd={onAnimationEnd}
             >
-                {genTitle()}
+                {renderTitle()}
                 <div className={`${prefixCls}__body`}>
                     <div
                         className={`${prefixCls}__keys`}
@@ -339,15 +417,16 @@ const Keyboard: FC<KeyboardProps> = (props) => {
                         onTouchMove={handleTouchMove}
                         onTouchEnd={handleTouchEnd}
                     >
-                        {genKeys()}
+                        {renderKeys()}
                     </div>
                 </div>
             </div>
-        </Popup>
+        </CSSTransition>
     );
 };
 
 Keyboard.defaultProps = {
+    type: 'letter',
     layout: {
         default: [
             'q w e r t y u i o p',
@@ -370,6 +449,7 @@ Keyboard.defaultProps = {
     },
     layoutName: 'default',
     hideOnClickOutside: true,
+    transition: true,
     value: '',
     maxLength: Infinity,
     noNeedHideElements: ['jing-input--clear', 'jing-input--focus'],

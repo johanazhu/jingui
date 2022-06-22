@@ -7,7 +7,7 @@
         font-size: $am-xxl;
     }
     &__footer {
-        font-size: $am-xs;
-        color: $globalColorBlack2;
+        font-size: var(--font-size-xs);
+        color: var(--color-black-1);
     }
 }

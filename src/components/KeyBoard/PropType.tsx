@@ -9,7 +9,6 @@ export interface KeyboardLayoutObject {
  * 虚拟键盘单独按钮
  * @param {type} string                                         // 类型如 delete、shift、extra 等
  * @param {text} number | string                                // 键盘内内容
- * @param {color} string                                        // 键盘按钮
  * @param {active} boolean                                      // 该元素是否被按住
  * @param {touchStart} function                                 // 触碰到按钮时的回调
  * @param {touchMove} function                                  // 按住移动时的回调
@@ -19,7 +18,6 @@ export interface KeyboardLayoutObject {
 export interface KeyboardKeyProps extends BaseTypeProps {
     type: KeyType | string;
     text: ReactNode | string;
-    color?: string;
     active?: boolean;
     touchStart?: (text: ReactNode | string) => void;
     touchMove?: (e: TouchEvent) => void;
@@ -40,38 +38,44 @@ export interface KeyboardKeyProps extends BaseTypeProps {
  * @param {maxLength}  number | boolean                             // 输入值最大长度
  * @param {hideOnClickOutside} boolean                              // 是否在点击外部时收起键盘
  * @param {noNeedHideElements}  Array<string>                       // 点击外部不用收起键盘的id
- * @param {onHandleClose} function                                  // 点击关闭按钮时触发
- * @param {onHandleBlur} function                                   // 点击关闭按钮或非键盘区域时触发
- * @param {onHandleDelete} function                                 // 点击删除键时触发
- * @param {onHandleValue} function                                  // 输入值回调
+ * @param {onClose} function                                  // 点击关闭按钮时触发
+ * @param {onBlur} function                                   // 点击关闭按钮或非键盘区域时触发
+ * @param {onDelete} function                                 // 点击删除键时触发
+ * @param {onValue} function                                  // 输入值回调
  * @param {touchEnd} function                                       // 放开按钮时的回调
- * @param {onHandlePress} function                                  // 点击按钮时的回调
- * @param {onHandleShiftCb} function                                // 点击 shift 后的自定义回调
- * @param {onHandleSpaceCb} function                                // 点击 空格 后的自定义回调
- * @param {onHandleDoneCb} function                                // 点击 完成 后的自定义回调
+ * @param {onPress} function                                  // 点击按钮时的回调
+ * @param {onShiftCb} function                                // 点击 shift 后的自定义回调
+ * @param {onSpaceCb} function                                // 点击 空格 后的自定义回调
+ * @param {onDoneCb} function                                // 点击 完成 后的自定义回调
+ * @param {onShow} function                                // 点击 完成 后的自定义回调
+ * @param {onHide} function                                // 点击 完成 后的自定义回调
  **/
 export interface KeyboardProps extends BaseTypeProps {
+    type?: KeyboardType;
     layout?: KeyboardLayoutObject;
     layoutName?: string;
     titleLeft?: ReactNode;
     title?: string;
     theme?: string;
     visible: boolean;
+    transition?: boolean;
     closeButtonText?: boolean;
     display?: { [button: string]: string };
     value?: string;
     maxLength?: number | string;
     hideOnClickOutside?: boolean;
     noNeedHideElements?: Array<string>;
-    onHandleClose?: () => void;
-    onHandleBlur?: () => void;
-    onHandleDelete?: () => void;
-    onHandleValue?: (value: string) => void;
+    onClose?: () => void;
+    onBlur?: () => void;
+    onDelete?: () => void;
+    onInput?: (value: string) => void;
+    onPress?: (text: ReactNode, type: string) => void;
     touchEnd?: (e: TouchEvent) => void;
-    onHandlePress?: (text: ReactNode, type: string) => void;
-    onHandleShiftCb?: () => void;
-    onHandleSpaceCb?: () => void;
-    onHandleDoneCb?: () => void;
+    onShiftCb?: () => void;
+    onSpaceCb?: () => void;
+    onDoneCb?: () => void;
+    onShow?: () => void;
+    onHide?: () => void;
 }
 
 // export interface KeyType
@@ -85,3 +89,5 @@ export type KeyType =
     | 'space'
     | 'complete'
     | 'close';
+
+export type KeyboardType = 'letter' | 'number' | 'price' | 'id';

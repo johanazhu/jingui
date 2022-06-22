@@ -11,9 +11,6 @@ import classnames from 'classnames';
 import { PickerProps, PickerObjectColumn } from './PropType';
 import { useRefs } from '../hooks';
 
-import { isDef, preventDefault } from '@/utils';
-import useEventListener from '../hooks/use-event-listener';
-
 import Loading from '../Loading';
 import Column from './PickerColumn';
 
@@ -253,13 +250,6 @@ const Picker = forwardRef<{}, PickerProps>((props, ref) => {
         getColumnValues,
         setColumnValues,
     }));
-
-    // const onHandleMove = (event: TouchEvent) => preventDefault
-
-    // useEventListener('touchmove', preventDefault as EventListener, {
-    //     target: columnsRef.current,
-    //     // depends: [touch.deltaY],
-    // });
 
     const renderToolbar = () => (
         <div className={`${prefixCls}__toolbar`}>

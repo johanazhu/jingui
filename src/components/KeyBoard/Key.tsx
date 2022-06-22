@@ -6,6 +6,7 @@ import React, {
     TouchEvent,
     forwardRef,
     useRef,
+    useImperativeHandle,
 } from 'react';
 import classnames from 'classnames';
 import { IconKeyboardDelete, IconKeyboardDeleteLine } from '../Icon';
@@ -29,178 +30,169 @@ function getDirection(x: number, y: number) {
 
 const prefixCls = 'jing-keyboard-key';
 
-const Key = forwardRef<any, KeyboardKeyProps>(
-    (props: KeyboardKeyProps, ref) => {
-        const {
-            className,
-            type,
-            text,
-            color,
-            active,
-            touchStart,
-            touchMove,
-            touchEnd,
-            onPress,
-        } = props;
+const Key = forwardRef<{}, KeyboardKeyProps>((props: KeyboardKeyProps, ref) => {
+    const {
+        className,
+        type,
+        text,
+        active,
+        touchStart,
+        touchMove,
+        touchEnd,
+        onPress,
+    } = props;
 
-        const [isActive, setIsActive] = useState(false);
-        const keyRef = useRef<HTMLDivElement>(null);
-        const longPressRef = useRef<any>(null);
-        const textRef = useRef<any>(text);
+    const [isActive, setIsActive] = useState(false);
+    const keyRef = useRef<HTMLDivElement>(null);
+    const longPressRef = useRef<any>(null);
+    const textRef = useRef<any>(text);
 
-        const classes = classnames(prefixCls, className);
+    const classes = classnames(prefixCls, className);
 
-        useEffect(() => {
-            keyRef?.current?.addEventListener(
-                'touchstart',
-                onHandleTouchStart,
-                { passive: false },
-            );
-
-            return () => {
-                keyRef?.current?.removeEventListener(
-                    'touchstart',
-                    onHandleTouchStart,
-                );
-            };
-        }, []);
-
-        useEffect(() => {
-            textRef.current = text;
-        }, [text]);
-
-        const wrapperClass = classnames(`${prefixCls}__wrapper`, {
-            [`${prefixCls}__wrapper-active`]: active && !getCantActive(type),
-            [`${prefixCls}__wrapper-delete-active`]:
-                isActive && type === 'delete',
-            [`${prefixCls}__wrapper-special-active`]:
-                isActive && getCantActive(type),
+    useEffect(() => {
+        keyRef?.current?.addEventListener('touchstart', onHandleTouchStart, {
+            passive: false,
         });
 
-        let startX = 0,
-            startY = 0,
-            deltaX = 0,
-            deltaY = 0,
-            offsetX = 0,
-            offsetY = 0,
-            direction = '0';
-
-        const resetTouchStatus = () => {
-            direction = '';
-            deltaX = 0;
-            deltaY = 0;
-            offsetX = 0;
-            offsetY = 0;
+        return () => {
+            keyRef?.current?.removeEventListener(
+                'touchstart',
+                onHandleTouchStart,
+            );
         };
+    }, []);
 
-        const dispatchValue = () => {
-            onPress(text, type);
-        };
+    useEffect(() => {
+        textRef.current = text;
+    }, [text]);
 
-        const onLongPressIn = () => {
-            dispatchValue();
-            longPressRef.current = setTimeout(() => {
-                longPressRef.current = setInterval(() => {
-                    dispatchValue();
-                }, 150);
-            }, 750);
-        };
+    const wrapperClass = classnames(`${prefixCls}__wrapper`, {
+        [`${prefixCls}__wrapper-active`]: active && !getCantActive(type),
+        [`${prefixCls}__wrapper-delete-active`]: isActive && type === 'delete',
+        [`${prefixCls}__wrapper-special-active`]:
+            isActive && getCantActive(type),
+    });
 
-        const onLongPressOut = () => {
-            clearTimeout(longPressRef.current);
-            longPressRef.current = null;
-        };
+    let startX = 0,
+        startY = 0,
+        deltaX = 0,
+        deltaY = 0,
+        offsetX = 0,
+        offsetY = 0,
+        direction = '0';
 
-        const onHandleTouchStart = (event: Event) => {
-            if (type === 'delete') {
-                onLongPressIn();
-            }
-            touchStart?.(textRef.current);
-            setIsActive(true);
-            resetTouchStatus();
-            // startX = event?.touches[0].clientX;
-            // startY = event?.touches[0].clientY;
-        };
+    const resetTouchStatus = () => {
+        direction = '';
+        deltaX = 0;
+        deltaY = 0;
+        offsetX = 0;
+        offsetY = 0;
+    };
 
-        const onTouchMove = (event: TouchEvent) => {
-            touchMove?.(event);
-            const touch = event.touches[0];
-            deltaX = touch.clientX - startX;
-            deltaY = touch.clientY - startY;
-            offsetX = Math.abs(deltaX);
-            offsetY = Math.abs(deltaY);
-            direction = direction || getDirection(offsetX, offsetY);
-            if (direction) {
-                setIsActive(false);
-            }
-        };
+    const dispatchValue = () => {
+        onPress(text, type);
+    };
 
-        const onTouchEnd = (event: TouchEvent) => {
-            event.preventDefault();
-            setIsActive(false);
-            if (type === 'delete') {
-                onLongPressOut();
-            } else {
+    const onLongPressIn = () => {
+        dispatchValue();
+        longPressRef.current = setTimeout(() => {
+            longPressRef.current = setInterval(() => {
                 dispatchValue();
-            }
-        };
+            }, 150);
+        }, 750);
+    };
 
-        const renderText = () => {
-            const isEmty = type === 'emty';
-            const isDelete = type === 'delete';
-            if (isDelete) {
-                return (
-                    <>
-                        <IconKeyboardDelete
-                            className={`${prefixCls}__delete-icon`}
-                            style={{
-                                display: isActive === true ? 'block' : 'none',
-                            }}
-                            color="black"
-                            onClick={(e: any) => {
-                                stopPropagation(e);
-                            }}
-                        />
-                        <IconKeyboardDeleteLine
-                            className={`${prefixCls}__delete-icon`}
-                            style={{
-                                display: isActive === true ? 'none' : 'block',
-                            }}
-                            color="black"
-                            onClick={(e: any) => {
-                                stopPropagation(e);
-                            }}
-                        />
-                    </>
-                );
-            }
+    const onLongPressOut = () => {
+        clearTimeout(longPressRef.current);
+        longPressRef.current = null;
+    };
 
-            if (isEmty) {
-                return '';
-            }
+    const onHandleTouchStart = (event: Event) => {
+        if (type === 'delete') {
+            onLongPressIn();
+        }
+        touchStart?.(textRef.current);
+        setIsActive(true);
+        resetTouchStatus();
+        // startX = event?.touches[0].clientX;
+        // startY = event?.touches[0].clientY;
+    };
 
-            return text;
-        };
+    const onTouchMove = (event: TouchEvent) => {
+        touchMove?.(event);
+        const touch = event.touches[0];
+        deltaX = touch.clientX - startX;
+        deltaY = touch.clientY - startY;
+        offsetX = Math.abs(deltaX);
+        offsetY = Math.abs(deltaY);
+        direction = direction || getDirection(offsetX, offsetY);
+        if (direction) {
+            setIsActive(false);
+        }
+    };
 
-        return (
-            <div
-                className={wrapperClass}
-                ref={ref}
-                onTouchMove={onTouchMove}
-                onTouchEnd={onTouchEnd}
-                onTouchCancel={onTouchEnd}
-            >
-                <div
-                    role="button"
-                    tabIndex={0}
-                    className={classes}
-                    ref={keyRef}
-                >
-                    {renderText()}
-                </div>
+    const onTouchEnd = (event: TouchEvent) => {
+        event.preventDefault();
+        setIsActive(false);
+        if (type === 'delete') {
+            onLongPressOut();
+        } else {
+            dispatchValue();
+        }
+    };
+
+    useImperativeHandle(ref, () => ({}));
+
+    const renderText = () => {
+        const isEmty = type === 'emty';
+        const isDelete = type === 'delete';
+        if (isDelete) {
+            return (
+                <>
+                    <IconKeyboardDelete
+                        className={`${prefixCls}__delete-icon`}
+                        style={{
+                            display: isActive === true ? 'block' : 'none',
+                        }}
+                        color="black"
+                        onClick={(e: any) => {
+                            stopPropagation(e);
+                        }}
+                    />
+                    <IconKeyboardDeleteLine
+                        className={`${prefixCls}__delete-icon`}
+                        style={{
+                            display: isActive === true ? 'none' : 'block',
+                        }}
+                        color="black"
+                        onClick={(e: any) => {
+                            stopPropagation(e);
+                        }}
+                    />
+                </>
+            );
+        }
+
+        if (isEmty) {
+            return '';
+        }
+
+        return text;
+    };
+
+    return (
+        <div
+            className={wrapperClass}
+            // ref={ref}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+            onTouchCancel={onTouchEnd}
+        >
+            <div role="button" tabIndex={0} className={classes} ref={keyRef}>
+                {renderText()}
             </div>
-        );
-    },
-);
+        </div>
+    );
+});
 
 export default memo(Key);

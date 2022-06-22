@@ -1,7 +1,7 @@
 .DetailTop {
     @include background-shadow();
     margin: $global-horizontal-gap $global-vertical-gap 0;
-    background: $globalColorWhite0;
+    background: var(--color-white-1);
     text-align: center;
     padding: 1rem 0;
     &-bigtext {
@@ -25,7 +25,7 @@
         display: block;
         line-height: 1.5em;
         color: $globalColorBlack1;
-        font-size: $am-xs;
+        font-size: var(--font-size-xs);
         margin-bottom: 0;
     }
 }

@@ -9,6 +9,7 @@ import useSetState from './useSetState';
 import useRefs from './useRefs';
 import useHeight from './useHeight';
 import useUpdateEffect from './useUpdateEffect';
+import useEventListener from './useEventListener';
 
 export {
     // useRect,
@@ -22,6 +23,7 @@ export {
     useRefs,
     useHeight,
     useUpdateEffect,
+    useEventListener,
 };
 
 export default {
@@ -36,4 +38,5 @@ export default {
     useRefs,
     useHeight,
     useUpdateEffect,
+    useEventListener,
 };

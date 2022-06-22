@@ -41,7 +41,7 @@
 //                 left: 100%;
 //                 top: -15%;
 //                 opacity: 0;
-//                 transition: all $globalSpeed ease-out;
+//                 transition: all var(--animation-duration-base) ease-out;
 //             }
 //         }
 //         &_turn_on {
@@ -95,7 +95,7 @@
 //         line-height: 30px;
 //         padding: 5px 0;
 //         float: left;
-//         font-size: $am-xs;
+//         font-size: var(--font-size-xs);
 //         &:after {
 //             content: '';
 //         }
@@ -132,7 +132,7 @@
 //         }
 //         .Scroll_pullup-msg {
 //             content: '没有更多了';
-//             color: $globalColorBlack2;
+//             color: var(--color-black-1);
 //         }
 //     }
 // }
@@ -379,7 +379,7 @@
 //         left: 100%;
 //         top: -15%;
 //         opacity: 1;
-//         @include transition(all $globalSpeed ease-out);
+//         @include transition(all var(--animation-duration-base) ease-out);
 //         background-image: url('../assets/images/icon-pageload-text1.png');
 //     }
 // }
@@ -443,15 +443,15 @@
             width: 80px;
             line-height: 30px;
             padding: 5px 0;
-            font-size: $am-xs;
+            font-size: var(--font-size-xs);
             text-align: center;
         }
     }
     .pullup-after {
         height: 50px;
         line-height: 50px;
-        color: $globalColorBlack2;
-        font-size: $am-xs;
+        color: var(--color-black-1);
+        font-size: var(--font-size-xs);
     }
     .pullup-loading {
         display: flex;
@@ -467,7 +467,7 @@
             width: 80px;
             line-height: 30px;
             padding: 5px 0;
-            font-size: $am-xs;
+            font-size: var(--font-size-xs);
             text-align: center;
         }
     }

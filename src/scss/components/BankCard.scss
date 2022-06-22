@@ -3,7 +3,7 @@
     align-items: center;
     padding: 1rem;
     position: relative;
-    background: $globalColorWhite0;
+    background: var(--color-white-1);
     &__icon {
         align-self: flex-start;
         width: 2.5rem;
@@ -26,8 +26,8 @@
             margin-bottom: 0.5rem;
         }
         &-desc {
-            font-size: $am-xs;
-            color: $globalColorBlack2;
+            font-size: var(--font-size-xs);
+            color: var(--color-black-1);
             line-height: 1rem;
             padding-right: 2em;
         }

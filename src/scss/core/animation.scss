@@ -106,18 +106,18 @@
     from {
         transform: translate3d(0, 100%, 0);
     }
-    to {
-        transform: translate3d(0, 0, 0);
-    }
+    //   to {
+    //     transform: translate3d(0, 0, 0);
+    //   }
 }
 
 // 向上划出
 @keyframes jing-slide-up-leave {
-    from {
-        transform: translate3d(0, 0, 0);
-    }
+    //   from {
+    //     transform: translate3d(0, 0, 0);
+    //   }
     to {
-        transfrom: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
     }
 }
 
@@ -126,16 +126,10 @@
     from {
         transform: translate3d(0, -100%, 0);
     }
-    to {
-        transform: translate3d(0, 0, 0);
-    }
 }
 
 // 向下划出
 @keyframes jing-slide-down-leave {
-    from {
-        transform: translate3d(0, 0, 0);
-    }
     to {
         transform: translate3d(0, -100%, 0);
     }

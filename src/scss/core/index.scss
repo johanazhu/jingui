@@ -10,6 +10,7 @@
 @import './mixin.scss';
 @import './mixins/index.scss';
 @import './mixins/hairline.scss';
+@import './mixins/ellipsis.scss';
 
 // 动画
 @import './animation.scss';
@@ -36,9 +37,15 @@
 }
 
 .jing-ellipsis {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    @include ellipsis;
+}
+
+.jing-multi-ellipsis--l2 {
+    @include multi-ellispsis(2);
+}
+
+.jing-multi-ellipsis--l3 {
+    @include multi-ellispsis(3);
 }
 
 [class*='jing-hairline'] {

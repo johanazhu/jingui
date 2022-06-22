@@ -13,7 +13,6 @@ import { PickerColumnProps, PickerOption } from './PropType';
 import { isObject, deepClone } from '@/utils';
 import { range } from '@/utils/format/number';
 import { useTouch, useSetState, useUpdateEffect } from '../hooks';
-import useEventListener from '../hooks/use-event-listener';
 
 const prefixCls = 'jing-picker-column';
 

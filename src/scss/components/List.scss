@@ -61,7 +61,7 @@
 //   height: 1.875rem;
 //   line-height: 1.875rem;
 //   padding-right: $verticalGap;
-//   font-size: $am-xs;
+//   font-size: var(--font-size-xs);
 //   color: $globalColorBlack1;
 // }
 
@@ -104,7 +104,7 @@
 //       min-height: 1.25rem;
 //       line-height: 1.25em;
 //       &-desc {
-//         font-size: $am-xs;
+//         font-size: var(--font-size-xs);
 //         color: $globalColorBlack1;
 //       }
 //     }
@@ -114,7 +114,7 @@
 //       max-width: 60%;
 //       @extend .ellipsis;
 //       float: right;
-//       color: $globalColorBlack2;
+//       color: var(--color-black-1);
 //       font-size: $am-sm;
 //     }
 //   }
@@ -191,7 +191,7 @@
 //       font-size: $am-xl;
 //       color: $globalColorBlack0;
 //       &-desc {
-//         font-size: $am-xs;
+//         font-size: var(--font-size-xs);
 //         color: $globalColorBlack1;
 //       }
 //     }
@@ -352,8 +352,8 @@
 //       min-height: 1rem;
 //       line-height: 1rem;
 //       margin-bottom: 0.25rem;
-//       font-size: $am-xs;
-//       color: $globalColorBlack2;
+//       font-size: var(--font-size-xs);
+//       color: var(--color-black-1);
 //     }
 //   }
 //   &__btn {
@@ -377,7 +377,7 @@
 //       left: 50%;
 //       top: 50%;
 //       background-color: #fff;
-//       @include transition(all $globalSpeed cubic-bezier(0, 0, 0.58, 1));
+//       @include transition(all var(--animation-duration-base) cubic-bezier(0, 0, 0.58, 1));
 //     }
 //     & > em {
 //       display: block;
@@ -392,7 +392,7 @@
 //       background-color: #fff;
 //       box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
 //       @include transition(
-//         all $globalSpeed cubic-bezier(0.175, 0.885, 0.32, 1.185)
+//         all var(--animation-duration-base) cubic-bezier(0.175, 0.885, 0.32, 1.185)
 //       );
 //     }
 //     &_state_active > em {
@@ -409,7 +409,7 @@
 //     &_state_on:before,
 //     &_state_active:before {
 //       @include transform(translate(25%, 0) scale(0.01, 0.01));
-//       @include transition(all $globalSpeed cubic-bezier(0, 0, 0.38, 1));
+//       @include transition(all var(--animation-duration-base) cubic-bezier(0, 0, 0.38, 1));
 //     }
 //     &_state_on > em {
 //       border-color: $globalColorGreen;
@@ -452,8 +452,8 @@
 //       min-height: 1rem;
 //       line-height: 1rem;
 //       margin-bottom: 0.25rem;
-//       font-size: $am-xs;
-//       color: $globalColorBlack2;
+//       font-size: var(--font-size-xs);
+//       color: var(--color-black-1);
 //     }
 //   }
 //   &__btn {
@@ -511,7 +511,7 @@
 //       @extend.am-g;
 //       width: auto;
 //       &-desc {
-//         font-size: $am-xs;
+//         font-size: var(--font-size-xs);
 //         color: $globalColorBlack1;
 //       }
 //     }
@@ -547,13 +547,13 @@
 //       &-desc {
 //         max-height: 2rem;
 //         line-height: 1rem;
-//         font-size: $am-xs;
+//         font-size: var(--font-size-xs);
 //         color: $globalColorBlack1;
 //       }
 //       &-rc {
 //         @extend.am-pos-rc;
 //         font-size: $am-sm;
-//         color: $globalColorBlack2;
+//         color: var(--color-black-1);
 //       }
 //     }
 //   }
@@ -643,7 +643,7 @@
 //       color: $globalColorPlaceholder;
 //       cursor: pointer;
 //       outline: none;
-//       font-size: $am-l;
+//       font-size: var(--font-size-lg);
 //       &-option {
 //         display: block;
 //         color: $globalColorBlack0;

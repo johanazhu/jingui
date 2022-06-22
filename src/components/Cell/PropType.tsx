@@ -24,7 +24,6 @@ export interface CellGroupProps {
  * @param {isLink} boolean                              // 是否显示箭头
  * @param {required} boolean                            // 是否显示表单必填星号
  * @param {onClick} function                            // 点击单元格后的回调
- * @param {onTouchStart} function                       // 开始 touch 后的回调
  **/
 export interface CellProps {
     className?: string;
@@ -37,9 +36,6 @@ export interface CellProps {
     isLink?: boolean;
     required?: boolean;
     onClick?: (
-        event?: MouseEvent<HTMLElement> | TouchEvent<HTMLElement>,
-    ) => void;
-    onTouchStart?: (
         event?: MouseEvent<HTMLElement> | TouchEvent<HTMLElement>,
     ) => void;
 }

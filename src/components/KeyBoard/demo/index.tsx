@@ -1,13 +1,23 @@
 import React, { useState, useRef } from 'react';
-import { Cell, Input, KeyBoard, Toast } from 'jing-ui';
+import { Cell, Input, KeyBoard, Toast, hooks } from 'jing-ui';
 import { DemoBlock } from 'demo';
+import './index.scss';
 
 export default () => {
     const [layoutName, setLayoutName] = useState('default');
-    const [showPopup1, setShowPopup1] = useState(false);
-    const [showPopup2, setShowPopup2] = useState(false);
-    const [showPopup3, setShowPopup3] = useState(false);
-    const [value1, setValue1] = useState('');
+    const [state, setState] = hooks.useSetState({
+        v1: false,
+        v2: false,
+        v3: false,
+        v4: false,
+        v5: false,
+        v6: false,
+    });
+    const [state1, setState1] = hooks.useSetState({
+        visible: false,
+        value: '',
+    });
+
     const [isActive, setIsActive] = useState(false);
 
     const handleShift = () => {
@@ -22,129 +32,165 @@ export default () => {
         setLayoutName(shiftToggle);
     };
 
+    const onHandleClose = () => {
+        Toast('关闭');
+    };
+
+    const onHandlePress = (text: React.ReactNode, type: string) => {
+        console.log('点的是什么', text, type);
+        if (typeof text === 'string') {
+            Toast(text);
+        }
+    };
+
+    const onHandleDelete = () => {
+        Toast('删除');
+    };
+
+    // console.log('state', state.v1)
+
     return (
         <>
-            <DemoBlock title="基本用法" padding="" className="demo-jing-popup">
+            <DemoBlock
+                title="基本用法"
+                padding=""
+                className="demo-jing-keyboard"
+            >
                 <Cell
-                    title="展出默认键盘"
+                    title="弹出默认键盘"
                     isLink
-                    onTouchStart={(event: any) => {
-                        event.stopPropagation();
-                        setShowPopup2(false);
-                        setShowPopup1(true);
+                    onClick={() => {
+                        setState({ v1: true });
                     }}
                 />
                 <Cell
-                    title="展出默认键盘2"
+                    title="弹出数字键盘"
                     isLink
-                    onTouchStart={(event: any) => {
-                        event.stopPropagation();
-                        setShowPopup1(false);
-                        setShowPopup2(true);
+                    onClick={() => {
+                        setState({ v2: true });
+                    }}
+                />
+                <Cell
+                    title="弹出数额键盘"
+                    isLink
+                    onClick={() => {
+                        setState({ v3: true });
+                    }}
+                />
+                <Cell
+                    title="弹出身份证号键盘"
+                    isLink
+                    onClick={() => {
+                        setState({ v4: true });
+                    }}
+                />
+                <Cell
+                    title="弹出带标题的键盘"
+                    isLink
+                    onClick={() => {
+                        setState({ v5: true });
+                    }}
+                />
+                <Cell
+                    title="自定义键盘布局"
+                    isLink
+                    onClick={() => {
+                        setState({ v6: true });
                     }}
                 />
                 <Input.Group>
                     <Input.KeyBoard
-                        value={value1}
-                        placeholder="点击输入"
+                        value={state1.value}
+                        placeholder="双向绑定"
                         active={isActive}
                         onHandleFocus={() => {
                             setIsActive(true);
-                            setShowPopup3(!showPopup3);
+                            setState1({ visible: true });
                         }}
                         onClearValue={() => {
-                            setValue1('');
+                            setState1({ value: '' });
                         }}
                         maxLength={20}
                     />
                 </Input.Group>
                 <KeyBoard
-                    visible={showPopup1}
+                    visible={state.v1}
                     layoutName={layoutName}
-                    onHandleBlur={() => {
-                        setShowPopup1(false);
+                    onBlur={() => {
+                        setState({ v1: false });
                     }}
-                    onHandleClose={() => {
-                        console.log('关闭');
+                    onClose={onHandleClose}
+                    onPress={onHandlePress}
+                    onDelete={onHandleDelete}
+                />
+                {/* <KeyBoard
+                    visible={state.v2}
+                    type="number"
+                    onBlur={() => {
+                        setState({ v2: false })
                     }}
-                    onHandlePress={(text: React.ReactNode, type: string) => {
-                        console.log('点的是什么', text, 'type', type);
-                        if (typeof text === 'string') {
-                            Toast(text);
-                        }
-                    }}
-                    onHandleDelete={() => {
-                        Toast('删除');
-                    }}
+                    onClose={onHandleClose}
+                    onPress={onHandlePress}
+                    onDelete={onHandleDelete}
                 />
                 <KeyBoard
-                    visible={showPopup2}
-                    layoutName="shift"
-                    onHandleBlur={() => {
-                        setShowPopup2(false);
+                    visible={state.v3}
+                    type="price"
+                    onBlur={() => {
+                        setState({ v3: false })
                     }}
-                    onHandleClose={() => {
-                        console.log('关闭');
-                    }}
-                    onHandlePress={(text: React.ReactNode, type: string) => {
-                        console.log('点的是什么', text, type);
-                        if (typeof text === 'string') {
-                            Toast(text);
-                        }
-                    }}
-                    onHandleDelete={() => {
-                        Toast('删除');
-                    }}
+                    onClose={onHandleClose}
+                    onPress={onHandlePress}
+                    onDelete={onHandleDelete}
                 />
                 <KeyBoard
-                    value={value1}
-                    visible={showPopup3}
+                    visible={state.v4}
+                    type="id"
+                    onBlur={() => {
+                        setState({ v4: false })
+                    }}
+                    onClose={onHandleClose}
+                    onPress={onHandlePress}
+                    onDelete={onHandleDelete}
+                />
+                <KeyBoard
+                    visible={state.v5}
+                    title="弹出带标题的键盘"
+                    onBlur={() => {
+                        setState({ v5: false })
+                    }}
+                    onClose={onHandleClose}
+                    onPress={onHandlePress}
+                    onDelete={onHandleDelete}
+                />
+                <KeyBoard
+                    visible={state.v6}
+                    onBlur={() => {
+                        setState({ v6: false })
+                    }}
+                    onClose={onHandleClose}
+                    onPress={onHandlePress}
+                    onDelete={onHandleDelete}
+                />
+                <KeyBoard
+                    value={state1.value}
+                    visible={state1.visible}
                     maxLength={10}
                     layoutName={layoutName}
-                    onHandleBlur={() => {
-                        setShowPopup3(false);
+                    onBlur={() => {
+                        setState1({ visible: false })
                     }}
-                    onHandleClose={() => setShowPopup3(false)}
-                    onHandleValue={(value: string) => {
-                        setValue1(value);
+                    onInput={(value: string) => {
+                        setState1({ value });
                     }}
-                    onHandleSpaceCb={() => {
+                    onSpaceCb={() => {
                         Toast('空格不可用');
                     }}
-                    onHandleDoneCb={() => {
+                    onDoneCb={() => {
                         Toast('点击完成');
                     }}
-                />
+                /> */}
             </DemoBlock>
-            {/* <DemoBlock title="键盘类型" padding="" className="demo-jing-popup">
-                <Cell
-                    title="字母键盘"
-                    isLink
-                    onClick={() => setShowPopup1(true)}
-                />
-                <Cell
-                    title="数字键盘"
-                    isLink
-                    onClick={() => setShowPopup2(true)}
-                />
-                <Cell
-                    title="价格键盘"
-                    isLink
-                    onClick={() => setShowPopup2(true)}
-                />
-                <Cell
-                    title="证件键盘"
-                    isLink
-                    onClick={() => setShowPopup2(true)}
-                />
-            </DemoBlock>
-            <DemoBlock title="自定义键盘" padding="" className="demo-jing-popup">
-                <Cell
-                    title="看我的厉害"
-                    isLink
-                    onClick={() => setShowPopup1(true)}
-                />
-            </DemoBlock> */}
         </>
     );
 };

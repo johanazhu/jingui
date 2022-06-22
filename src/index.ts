@@ -1,63 +1,39 @@
 import './scss';
 
+export * as hooks from './components/hooks';
 export * from './components/Icon';
 export { default as Button } from './components/Button';
 export { default as ButtonGroup } from './components/ButtonGroup';
 export { default as Space } from './components/Space';
 export { default as Tag } from './components/Tag';
 export { default as Cell } from './components/Cell';
-// 排版
 export { Row, Col } from './components/Layout';
-// 面板
 export { default as Panel } from './components/Panel';
-// 自定义键盘
 export { default as KeyBoard } from './components/Keyboard';
-// 结果
 export { default as Result } from './components/Result';
-// 输入款
 export { default as Input } from './components/Input';
-// 开关
 export { default as Switch } from './components/Switch';
-// 遮罩
 export { default as Overlay } from './components/Overlay';
-// 弹出框
 export { default as Popup } from './components/Popup';
-// 轻提示
 export { default as Toast } from './components/Toast';
-// 时间轴
 export { default as Timeline } from './components/Timeline';
-// 富文本
 export { default as Typography } from './components/Typography';
-// Swiper
 export { Swiper, SwiperSlide } from './components/Swiper';
-// 标签页
 export { default as Tabs } from './components/Tabs';
-// 通知栏
 export { default as NoticeBar } from './components/NoticeBar';
-// 标签栏
 export { default as TabBar } from './components/TabBar';
-// 分割线
 export { default as Divider } from './components/Divider';
-// 方向
 export { default as Orientation } from './components/Orientation';
 // 滚动
 // export { default as Scroll } from './components/BetterScroll';
 // 列表
-// 加载
 export { default as Loading } from './components/Loading';
-// 页面加载
 export { default as PageLoading } from './components/PageLoading';
-// 粘性布局
 export { default as Sticky } from './components/Sticky';
-// 索引栏
 export { default as IndexBar } from './components/IndexBar';
-// 图片
 export { default as Image } from './components/Image';
-// 全局配置
 export { default as ConfigProvider } from './components/ConfigProvider';
-// 排序栏
 export { default as SortBar } from './components/SortBar';
-// 选择器
 export { default as Picker } from './components/Picker';
 
 // 业务组件
