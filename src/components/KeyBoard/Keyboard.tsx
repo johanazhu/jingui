@@ -282,7 +282,7 @@ const Keyboard: FC<KeyboardProps> = (props) => {
             _layout = themeToLayout(theme);
         }
 
-        console.log('_layout', _layout);
+        // console.log('_layout', _layout);
 
         return _layout?.map((row, rIndex) => {
             let rowArray = row.split(' ');

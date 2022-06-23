@@ -49,8 +49,6 @@ export default () => {
         Toast('删除');
     };
 
-    // console.log('state', state.v1)
-
     return (
         <>
             <DemoBlock

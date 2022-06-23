@@ -7,6 +7,8 @@ export * from './system';
 export * from './env';
 export * from './type';
 export * from './util';
-export * from './dictionary';
 export * from './raf';
 export * from './constant';
+
+export * from './format/number';
+export * from './format/unit';

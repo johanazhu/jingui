@@ -48,6 +48,16 @@ input {
     -webkit-appearance: none;
 }
 
+// 隐藏 input type=number元素，右侧的上下箭头
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
 textarea {
     border: none;
     border-radius: 0;

@@ -1,4 +1,3 @@
-import { CSSProperties } from 'react';
 import { isDef } from '..';
 
 export function isNumeric(val: string): boolean {

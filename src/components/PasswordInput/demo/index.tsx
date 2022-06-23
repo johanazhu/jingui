@@ -1,20 +1,84 @@
 import React from 'react';
-import { Tag } from 'jing-ui';
+import { PasswordInput, KeyBoard, Toast, hooks } from 'jing-ui';
+import { DemoBlock } from 'demo';
+import './index.scss';
 
-export default () => (
-    <div>
-        <Tag>标签</Tag>
-        <Tag type="primary">标签</Tag>
-        <Tag type="normal">标签</Tag>
-        <Tag type="disabled">标签</Tag>
+export default () => {
+    const [state, setState] = hooks.useSetState({
+        visible: false,
+        value: '',
+    });
+    const onSubmit = (val: string) => {
+        console.log('onSubmit val', val);
+        Toast(`输入值为：${val}`);
+    };
 
-        <Tag>标签</Tag>
-        <Tag size="medium">标签</Tag>
-        <Tag size="large">标签</Tag>
-
-        <Tag active>标签</Tag>
-        <Tag type="primary" active>
-            标签
-        </Tag>
-    </div>
-);
+    return (
+        <>
+            <DemoBlock
+                title="基本用法"
+                padding=""
+                className="demo-jing-password-input"
+            >
+                <PasswordInput onSubmit={onSubmit} />
+            </DemoBlock>
+            <DemoBlock
+                title="自定义长度"
+                padding=""
+                className="demo-jing-password-input"
+            >
+                <PasswordInput length={4} onSubmit={onSubmit} />
+            </DemoBlock>
+            <DemoBlock
+                title="格子间距"
+                padding=""
+                className="demo-jing-password-input"
+            >
+                <PasswordInput gutter={10} onSubmit={onSubmit} />
+            </DemoBlock>
+            <DemoBlock
+                title="明文展示"
+                padding=""
+                className="demo-jing-password-input"
+            >
+                <PasswordInput value="123" mask={false} onSubmit={onSubmit} />
+            </DemoBlock>
+            <DemoBlock
+                title="只允许数字"
+                padding=""
+                className="demo-jing-password-input"
+            >
+                <PasswordInput
+                    type="number"
+                    value="123"
+                    mask={false}
+                    onSubmit={onSubmit}
+                />
+            </DemoBlock>
+            <DemoBlock
+                title="与键盘联动"
+                padding=""
+                className="demo-jing-password-input demo-jing-password-input-keyboard"
+            >
+                <PasswordInput
+                    mode="keyboard"
+                    value={state.value}
+                    autoFocus={state.visible}
+                    onFocus={() => setState({ visible: true })}
+                    onSubmit={onSubmit}
+                />
+                <KeyBoard
+                    visible={state.visible}
+                    theme="number"
+                    onBlur={() => {
+                        setState({ visible: false });
+                    }}
+                    onInput={(value: string) => {
+                        console.log('value', value);
+                        setState({ value: state.value + value });
+                    }}
+                />
+            </DemoBlock>
+        </>
+    );
+};

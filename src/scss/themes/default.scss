@@ -453,6 +453,10 @@
     --keyboard-active-font-size: 225% !important;
     --keyboard-key-color: rgb(173, 179, 188);
     --keyboard-key-special-font-size: var(--font-size-lg);
+    --keyboard-cursor-color: var(--text-color);
+    --keyboard-cursor-width: 1px;
+    --keyboard-cursor-height: 40%;
+    --keyboard-cursor-cursor-animation-duration: 1s;
 
     // Picker
     --picker-bg: var(--color-white-1);
@@ -468,4 +472,13 @@
     --picker-option-disabled-opacity: 0.3;
     --picker-loading-icon-color: var(--theme-primary);
     --picker-loading-mask-color: rgba(255, 255, 255, 0.9);
+
+    // PasswordInput
+    --password-input-height: 50px;
+    --password-input-margin: 0 var(--padding-md);
+    --password-input-font-size: 20px;
+    --password-input-border-radius: 6px;
+    --password-input-bg: var(--color-white-1);
+    --password-input-dot-size: 10px;
+    --password-input-dot-color: var(--color-black);
 }

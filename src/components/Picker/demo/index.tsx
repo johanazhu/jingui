@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Picker, Popup, Cell, Toast, Space } from 'jing-ui';
+import { Picker, Popup, Cell, Toast } from 'jing-ui';
 import { DemoBlock } from 'demo';
 import {
     normalColumns,
