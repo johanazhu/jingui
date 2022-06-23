@@ -1,0 +1,16 @@
+.demo-layout {
+    .jing-col {
+        margin-bottom: 10px;
+        color: var(--van-white);
+        font-size: 13px;
+        line-height: 30px;
+        text-align: center;
+        background-clip: content-box;
+    }
+    .jing-col:nth-child(odd) {
+        background-color: #39a9ed;
+    }
+    .jing-col:nth-child(even) {
+        background-color: #66c6f2;
+    }
+}

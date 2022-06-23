@@ -5,9 +5,11 @@ import { ColProps } from './PropType';
 const prefixCls = 'jing-col';
 
 const Col: FC<ColProps> = (props) => {
-    const { span, children, className, style, onClick } = props;
+    const { span, offset, children, className, style, onClick } = props;
 
-    const classes = classnames(className, prefixCls, `${prefixCls}--${span}`);
+    const classes = classnames(className, prefixCls, `${prefixCls}--${span}`, {
+        [`${prefixCls}--offset-${offset}`]: !!offset,
+    });
 
     return (
         <div className={classes} style={style} onClick={onClick}>

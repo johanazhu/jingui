@@ -29,11 +29,13 @@ export type spanSize =
 /**
  * Col
  * @param {span} spanSize                           // 列元素宽度
+ * @param {offset} spanSize                           // 列元素偏移距离
  * @param {chilren} ReactNode                       // 组件中的内容
  * @param {onClick} function                        // 点击事件后的回调
  **/
 export interface ColProps extends BaseTypeProps {
     span: spanSize;
+    offset: spanSize;
     children?: ReactNode;
     onClick?: () => void;
 }
@@ -50,12 +52,14 @@ export type alignType = 'top' | 'center' | 'bottom';
  * Row
  * @param {justify} justifyType                     // 主轴对齐方式，可选值为 end center space-around space-between
  * @param {align} alignType                         // 交叉轴对齐方式，可选值为 center bottom
+ * @param {gutter} number | string                  // 列元素之间的间距（单位为 px）
  * @param {chilren} ReactNode                       // 组件中的内容
  * @param {onClick} function                        // 点击事件后的回调
  **/
 export interface RowProps extends BaseTypeProps {
     justify?: justifyType;
     align?: alignType;
+    gutter?: number | string;
     children?: ReactNode;
     onClick?: () => void;
 }

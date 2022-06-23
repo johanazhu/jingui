@@ -47,4 +47,13 @@
             max-width: $item;
         }
     }
+
+    &--offset {
+        @for $i from 1 through 24 {
+            $item: math.div(100%, 24) * $i;
+            &-#{$i} {
+                margin-left: $item;
+            }
+        }
+    }
 }
