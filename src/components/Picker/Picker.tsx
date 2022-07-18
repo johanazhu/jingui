@@ -9,7 +9,8 @@ import React, {
 } from 'react';
 import classnames from 'classnames';
 import { PickerProps, PickerObjectColumn } from './PropType';
-import { useRefs } from '../hooks';
+import { useRefs, useEventListener } from '../hooks';
+import { preventDefault } from '@/utils';
 
 import Loading from '../Loading';
 import Column from './PickerColumn';
@@ -236,6 +237,10 @@ const Picker = forwardRef<{}, PickerProps>((props, ref) => {
         const column = getChild(index);
         return column?.getValue();
     };
+
+    useEventListener('touchmove', preventDefault, {
+        target: columnsRef.current,
+    });
 
     useImperativeHandle(ref, () => ({
         confirm,

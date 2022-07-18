@@ -48,16 +48,16 @@
     @include multi-ellispsis(3);
 }
 
-[class*='jing-hairline'] {
-    &::after {
-        @include hairline;
-    }
-}
-
 [type='checkbox'],
 [type='radio'] {
     box-sizing: border-box;
     padding: 0;
+}
+
+[class*='jing-hairline'] {
+    &::after {
+        @include hairline;
+    }
 }
 
 .jing-hairline {

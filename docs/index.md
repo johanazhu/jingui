@@ -3,7 +3,7 @@ title: Jing-ui - 一套移动端组件库
 order: 10
 hero:
     title: Jing-ui
-    desc: 鲸钱包前端团队自研移动端组件库
+    desc: 公司前端团队自研移动端组件库
     actions:
         - text: 开始
           link: /components
@@ -24,11 +24,6 @@ footer: Open-source MIT Licensed | Copyright © 2021<br />Powered by [jing-ui](h
 
 -   iOS >= 8.0
 -   Android >= 4.0
-
-## 谁在使用
-
--   [鲸钱包](https://weixin.jingqb.com/)
--   [鲸禧保-保险商城](https://shop.jingxb.com/)
 
 ## 反馈与共建
 

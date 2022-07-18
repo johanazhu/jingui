@@ -9,8 +9,7 @@ import React, {
 } from 'react';
 import classnames from 'classnames';
 import { IconPhoto, IconPhotoFail } from '../Icon';
-import { isDef } from '@/utils';
-import { addUnit } from '@/utils/format/unit';
+import { isDef, addUnit } from '@/utils';
 import { ImageProps } from './PropType';
 
 const prefixCls = 'jing-image';

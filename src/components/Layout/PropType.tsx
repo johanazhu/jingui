@@ -35,8 +35,8 @@ export type spanSize =
  **/
 export interface ColProps extends BaseTypeProps {
     span: spanSize;
-    offset: spanSize;
     children?: ReactNode;
+    offset?: spanSize;
     onClick?: () => void;
 }
 

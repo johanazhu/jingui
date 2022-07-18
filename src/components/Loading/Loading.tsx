@@ -1,7 +1,7 @@
 import React, { FC, memo, useMemo } from 'react';
 import classnames from 'classnames';
 import { LoadingProps } from './PropType';
-import { addUnit, getSizeStyle } from '@/utils/format/unit';
+import { addUnit, getSizeStyle } from '@/utils';
 
 const prefixCls = 'jing-loading';
 
