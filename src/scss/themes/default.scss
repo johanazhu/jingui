@@ -1,6 +1,6 @@
 :root {
     //   主题色
-    //   --theme-primary: #3264c8cc;
+    //   --theme-primary: #3264c8;
     //   --theme-primary: rgb(80, 135, 245);
 
     //   --theme-primary: rgb(50, 100, 200);
@@ -481,4 +481,24 @@
     --password-input-bg: var(--color-white-1);
     --password-input-dot-size: 10px;
     --password-input-dot-color: var(--color-black);
+
+    //   Modal
+    --modal-width: 320px;
+    --modal-small-screen-width: 90%;
+    --modal-font-size: var(--font-size-lg);
+    --modal-transition: var(--animation-duration-base);
+    --modal-border-radius: 16px;
+    --modal-bg: var(--color-white-1);
+    --modal-header-font-weight: var(--font-weight-bold);
+    --modal-header-line-height: 24px;
+    --modal-header-padding-top: 26px;
+    --modal-header-isolated-padding: var(--padding-lg) 0;
+    --modal-message-padding: var(--padding-lg);
+    --modal-message-font-size: va(--font-size-md);
+    --modal-message-line-height: va(--line-height-md);
+    --modal-message-max-height: 60vh;
+    --modal-has-title-message-text-color: var(--color-black-4);
+    --modal-has-title-message-padding-top: var(--padding-xs);
+    --modal-button-height: 48px;
+    --modal-conform-button-text-color: var(--theme-primary);
 }

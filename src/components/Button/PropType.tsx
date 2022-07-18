@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { BaseTypeProps } from '@/utils';
 
 export type ButtonType = 'primary' | 'second-primary' | 'default';
 export type ButtonSize = 'large' | 'normal' | 'small' | 'mini';
@@ -17,8 +18,7 @@ export type ButtonSize = 'large' | 'normal' | 'small' | 'mini';
  * @param {children} ReactNode                          // 组件中的内容
  * @param {onClick} function                            // 点击后的回调事件
  **/
-export interface ButtonProps {
-    className?: string;
+export interface ButtonProps extends BaseTypeProps {
     type?: ButtonType;
     plain?: boolean;
     round?: boolean;
@@ -27,6 +27,7 @@ export interface ButtonProps {
     loading?: boolean;
     block?: boolean;
     color?: string;
+    text?: string;
     children?: ReactNode;
     onClick?: () => void;
 }

@@ -2,8 +2,8 @@ import { defineConfig } from 'dumi';
 
 export default defineConfig({
     title: 'Jing-ui',
-    favicon: 'https://i.loli.net/2021/07/07/jV4wc98UW5ELlCS.png',
-    logo: 'https://i.loli.net/2021/07/07/jV4wc98UW5ELlCS.png',
+    // favicon: 'https://i.loli.net/2021/07/07/jV4wc98UW5ELlCS.png',
+    // logo: 'https://i.loli.net/2021/07/07/jV4wc98UW5ELlCS.png',
     outputPath: 'docs-dist',
     mode: 'site',
     navs: [

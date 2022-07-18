@@ -36,6 +36,7 @@ export { default as ConfigProvider } from './components/ConfigProvider';
 export { default as SortBar } from './components/SortBar';
 export { default as Picker } from './components/Picker';
 export { default as PasswordInput } from './components/PasswordInput';
+export { default as Modal } from './components/Modal';
 
 // 业务组件
 // 悬浮广告

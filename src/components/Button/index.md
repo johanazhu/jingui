@@ -29,5 +29,6 @@ group:
 | loading   | 是否加载中状态                                  | boolean    | false     |
 | block     | 是否块级元素                                    | boolean    | false     |
 | color     | 自定义颜色                                      | string     | -         |
+| text      | 按钮文字                                        | string     | -         |
 | children  | 组件中的内容                                    | ReactNode  | -         |
 | onClick   | 点击后的回调事件                                | () => void | -         |

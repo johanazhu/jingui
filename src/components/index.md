@@ -36,12 +36,12 @@ group:
 ## 展示组件
 
 -   [x] [Input 输入](./components/data/input)
--   [ ] [KeyBoard 自定义键盘](./components/data/key-board)
+-   [x] [KeyBoard 自定义键盘](./components/data/key-board)
 -   [ ] [List 列表](./components/data/list)
 -   [x] [NoticeBar 通知栏](./components/data/notice-bar)
 -   [x] [Panel 面板](./components/data/panel)
--   [ ] [PasswordInput 密码输入框](./components/data/password-input)
--   [ ] [Picker 选择器](./components/data/picker)
+-   [x] [PasswordInput 密码输入框](./components/data/password-input)
+-   [x] [Picker 选择器](./components/data/picker)
 -   [x] [Result 结果](./components/data/result)
 -   [x] [Switch 输入](./components/data/switch)
 -   [x] [Tag 标签](./components/data/tag)

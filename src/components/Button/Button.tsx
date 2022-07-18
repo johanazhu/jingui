@@ -9,6 +9,7 @@ const prefixCls = 'jing-button';
 const Button: FC<ButtonProps> = (props) => {
     const {
         className,
+        style,
         type,
         plain,
         round,
@@ -17,11 +18,12 @@ const Button: FC<ButtonProps> = (props) => {
         loading,
         block,
         color,
+        text,
         children,
         onClick,
     } = props;
 
-    const _style: Record<string, string | number> = {};
+    const _style: Record<string, string | number> = { ...style };
 
     if (color) {
         _style.color = plain ? color : WHITE;
@@ -53,7 +55,7 @@ const Button: FC<ButtonProps> = (props) => {
             <span className={`${prefixCls}__content-span`}>{children}</span>
         </div>
     ) : (
-        <> {children}</>
+        <> {children || text} </>
     );
 
     return (
