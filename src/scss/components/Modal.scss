@@ -33,7 +33,7 @@
         }
     }
 
-    &__mesage {
+    &__message {
         flex: 1;
         max-height: var(--modal-message-max-height);
         padding: 26px var(--modal-message-padding);
@@ -67,12 +67,12 @@
         user-select: none;
     }
 
-    &__confrim,
+    &__confirm,
     &__cancel {
         flex: 1;
         height: var(--modal-button-height);
         margin: 0;
-        padding: 0;
+        border: 0;
     }
 
     &__confirm {
@@ -82,41 +82,3 @@
         }
     }
 }
-
-//   &--round-button {
-//     .@{rv-prefix}-dialog__footer {
-//       position: relative;
-//       height: auto;
-//       padding: var(--rv-padding-xs) var(--rv-padding-lg) var(--rv-padding-md);
-//     }
-
-//     .@{rv-prefix}-dialog__message {
-//       padding-bottom: var(--rv-padding-md);
-//       color: var(--rv-text-color);
-//     }
-
-//     .@{rv-prefix}-dialog__confirm,
-//     .@{rv-prefix}-dialog__cancel {
-//       height: var(--rv-dialog-round-button-height);
-//     }
-
-//     .@{rv-prefix}-dialog__confirm {
-//       color: var(--rv-white);
-//     }
-//   }
-
-//   &-bounce-enter {
-//     transform: translate3d(-50%, -50%, 0) scale(0.7);
-//     opacity: 0;
-//   }
-
-//   &-bounce-exit-active {
-//     transform: translate3d(-50%, -50%, 0) scale(0.9);
-//     opacity: 0;
-//   }
-//   &-bounce-enter-active,
-//   &-bounce-leave-exit {
-//     transform: translate3d(-50%, -50%, 0);
-//     opacity: 1;
-//   }
-// }

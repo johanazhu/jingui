@@ -31,7 +31,7 @@ group:
 | ------------------- | ------------------------------------ | ------------------------------- | --------- |
 | visible             | 是否显示弹窗                         | boolean                         | -         |
 | title               | 标题                                 | string                          | -         |
-| width               | 弹窗宽度，默认单位为 px              | `number/string`                 | 320px     |
+| width               | 弹窗宽度，默认单位为 px              | `number/string`                 | -         |
 | message             | 文本内容，支持通过`\n` 换行          | string                          | -         |
 | messageAlign        | 内容对齐方式，可选值为`left` `right` | string                          | `center`  |
 | showConfirmButton   | 是否展示确认按钮                     | boolean                         | `true`    |

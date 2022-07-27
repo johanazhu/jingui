@@ -175,7 +175,7 @@
     --button-border-radius-md: var(--border-radius-md);
     --button-border-radius-round: var(--border-radius-max);
     --button-plain-bg: var(--bg-white);
-    --button-loading-bg: var(--bg-white);
+    --button-loading-bg: var(--color-black-4);
     --button-disabled-color: var(--color-white-1);
     --button-disabled-bg: var(--color-black-4);
     --button-disabled-opacity: var(--opacity-disabled);
@@ -483,7 +483,7 @@
     --password-input-dot-color: var(--color-black);
 
     //   Modal
-    --modal-width: 320px;
+    --modal-width: 80%;
     --modal-small-screen-width: 90%;
     --modal-font-size: var(--font-size-lg);
     --modal-transition: var(--animation-duration-base);
@@ -494,11 +494,11 @@
     --modal-header-padding-top: 26px;
     --modal-header-isolated-padding: var(--padding-lg) 0;
     --modal-message-padding: var(--padding-lg);
-    --modal-message-font-size: va(--font-size-md);
-    --modal-message-line-height: va(--line-height-md);
+    --modal-message-font-size: var(--font-size-md);
+    --modal-message-line-height: var(--line-height-md);
     --modal-message-max-height: 60vh;
-    --modal-has-title-message-text-color: var(--color-black-4);
+    --modal-has-title-message-text-color: var(--color-black-2);
     --modal-has-title-message-padding-top: var(--padding-xs);
     --modal-button-height: 48px;
-    --modal-conform-button-text-color: var(--theme-primary);
+    --modal-confirm-button-text-color: var(--theme-primary);
 }

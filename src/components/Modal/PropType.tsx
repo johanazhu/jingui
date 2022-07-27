@@ -38,9 +38,11 @@ export interface ModalProps extends BaseTypeProps {
     showConfirmButton?: boolean;
     showCancelButton?: boolean;
     confirmButtonText?: string;
-    confirmButtonColor: string;
+    confirmButtonColor?: string;
     cancelButtonText?: string;
     cancelButtonColor?: string;
+    cancelProps?: ModalBtnProps;
+    confirmProps?: ModalBtnProps;
     overlay?: boolean;
     overlayClass?: string;
     overlayStyle?: object;
@@ -48,8 +50,22 @@ export interface ModalProps extends BaseTypeProps {
     closeOnPopstate?: boolean;
     closeOnClickOverlay?: boolean;
     lockScroll?: boolean;
-    onCancel?: () => void;
-    onConfirm?: () => void;
+    onConfirm?: (
+        e: React.MouseEvent,
+    ) =>
+        | void
+        | boolean
+        | Promise<boolean>
+        | Promise<void>
+        | Promise<void | boolean>;
+    onCancel?: (
+        e: React.MouseEvent,
+    ) =>
+        | void
+        | boolean
+        | Promise<boolean>
+        | Promise<void>
+        | Promise<void | boolean>;
     onClose?: () => void;
     onClosed?: () => void;
     teleport?: () => HTMLElement | HTMLElement;

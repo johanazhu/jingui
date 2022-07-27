@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import { ModalProps } from './PropType';
 import Popup from '../Popup';
 import Button from '../Button';
-import { addUnit } from '@/utils';
+import { addUnit, noop, BORDER_TOP, BORDER_LEFT } from '@/utils';
 
 const prefixCls = 'jing-modal';
 
@@ -15,7 +15,7 @@ const Modal: FC<ModalProps> = (props) => {
         visible,
         message,
         messageAlign = 'center',
-        width = '320px',
+        width,
         closeOnClickOverlay,
         footer,
         children,
@@ -25,6 +25,8 @@ const Modal: FC<ModalProps> = (props) => {
         confirmButtonText = '确定',
         cancelButtonColor,
         confirmButtonColor,
+        cancelProps,
+        confirmProps,
         onClose,
         onClosed,
         onCancel,
@@ -85,23 +87,38 @@ const Modal: FC<ModalProps> = (props) => {
     const renderFooter = () => {
         if (footer) return footer;
         return (
-            <div className={classnames(`${prefixCls}__footer`)}>
+            <div className={classnames(`${prefixCls}__footer`, BORDER_TOP)}>
                 {showCancelButton && (
                     <Button
                         size="large"
                         text={cancelButtonText || '取消'}
                         className={`${prefixCls}__cancel`}
                         style={{ color: cancelButtonColor }}
-                        onClick={onCancel}
+                        loading={props.cancelProps?.loading}
+                        disabled={props.cancelProps?.disabled}
+                        onClick={
+                            props.cancelProps?.loading
+                                ? noop
+                                : (onCancel as () => void)
+                        }
                     />
                 )}
                 {showConfirmButton && (
                     <Button
                         size="large"
                         text={confirmButtonText || '确认'}
-                        className={`${prefixCls}__confirm`}
+                        className={classnames(
+                            `${prefixCls}__confirm`,
+                            BORDER_LEFT,
+                        )}
                         style={{ color: confirmButtonColor }}
-                        onClick={onConfirm}
+                        loading={props.confirmProps?.loading}
+                        disabled={props.confirmProps?.disabled}
+                        onClick={
+                            props.confirmProps?.loading
+                                ? noop
+                                : (onConfirm as () => void)
+                        }
                     />
                 )}
             </div>
@@ -126,9 +143,7 @@ const Modal: FC<ModalProps> = (props) => {
     );
 };
 
-// width, messageAlign, showConfirmButton, confirmButtonText
 Modal.defaultProps = {
-    width: '320px',
     messageAlign: 'center',
     showConfirmButton: true,
     confirmButtonText: '确定',

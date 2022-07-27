@@ -95,6 +95,7 @@
     &--loading {
         opacity: 0.75;
         cursor: wait;
+        color: currentColor;
     }
 
     &--round {
