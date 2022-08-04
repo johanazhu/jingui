@@ -14,4 +14,4 @@ const QD = (props: JqbIconProps) => {
     );
 };
 
-export default React.memo(QD);
+export default QD;

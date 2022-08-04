@@ -7,4 +7,4 @@ const IdCard = (props: JqbIconProps) => {
     return <JqbIcon icon={idcard} {...props} />;
 };
 
-export default React.memo(IdCard);
+export default IdCard;

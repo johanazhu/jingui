@@ -7,4 +7,4 @@ const Customer = (props: JqbIconProps) => {
     return <JqbIcon icon={customer} color="orange" {...props} />;
 };
 
-export default React.memo(Customer);
+export default Customer;

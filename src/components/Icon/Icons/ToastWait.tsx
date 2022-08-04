@@ -7,4 +7,4 @@ const ToastWait = (props: JqbIconProps) => {
     return <JqbIcon icon={toastWait} color="grey" {...props} />;
 };
 
-export default React.memo(ToastWait);
+export default ToastWait;

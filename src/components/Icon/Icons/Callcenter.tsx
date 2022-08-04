@@ -7,4 +7,4 @@ const Callcenter = (props: JqbIconProps) => {
     return <JqbIcon icon={callcenter} color="grey" {...props} />;
 };
 
-export default React.memo(Callcenter);
+export default Callcenter;

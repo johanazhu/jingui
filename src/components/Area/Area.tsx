@@ -14,7 +14,7 @@
 //         onColumnItemClick,
 //         show,
 //         title,
-//         onHandleCancel,
+//         onCancel,
 //     } = props;
 //     const [isShow, setIsShow] = useState(show);
 
@@ -23,7 +23,7 @@
 //     }, [show]);
 
 //     return (
-//         <Picker show={isShow} title={title} onHandleCancel={onHandleCancel}>
+//         <Picker show={isShow} title={title} onCancel={onCancel}>
 //             <div className={prefixCls}>
 //                 {tabSource && (
 //                     <Header
@@ -50,4 +50,4 @@
 //     show: true,
 // };
 
-// export default React.memo(Area);
+// export default Area;

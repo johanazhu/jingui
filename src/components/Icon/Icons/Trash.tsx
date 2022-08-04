@@ -7,4 +7,4 @@ const Trash = (props: JqbIconProps) => {
     return <JqbIcon icon={trash} {...props} />;
 };
 
-export default React.memo(Trash);
+export default Trash;

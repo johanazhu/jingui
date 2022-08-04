@@ -70,4 +70,4 @@
 //     return <canvas ref={canvasRef}></canvas>;
 // };
 
-// export default React.memo(LineChart);
+// export default LineChart

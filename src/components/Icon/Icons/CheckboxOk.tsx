@@ -7,4 +7,4 @@ const CheckboxOk = (props: JqbIconProps) => {
     return <JqbIcon icon={checkboxok} {...props} />;
 };
 
-export default React.memo(CheckboxOk);
+export default CheckboxOk;

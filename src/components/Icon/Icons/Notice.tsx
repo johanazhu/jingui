@@ -7,4 +7,4 @@ const Notice = (props: JqbIconProps) => {
     return <JqbIcon icon={notice} {...props} />;
 };
 
-export default React.memo(Notice);
+export default Notice;

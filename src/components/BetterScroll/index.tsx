@@ -1,3 +1,7 @@
-import BetterScroll from './BetterScroll';
+import Scroll from './BetterScroll';
 
-export default BetterScroll;
+export { Scroll };
+
+export default Scroll;
+
+export type { ScrollProps } from './PropType';

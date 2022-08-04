@@ -7,4 +7,4 @@ const Medal = (props: JqbIconProps) => {
     return <JqbIcon icon={medal} {...props} />;
 };
 
-export default React.memo(Medal);
+export default Medal;

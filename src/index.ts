@@ -24,9 +24,7 @@ export { default as NoticeBar } from './components/NoticeBar';
 export { default as TabBar } from './components/TabBar';
 export { default as Divider } from './components/Divider';
 export { default as Orientation } from './components/Orientation';
-// 滚动
-// export { default as Scroll } from './components/BetterScroll';
-// 列表
+export { default as Scroll } from './components/BetterScroll';
 export { default as Loading } from './components/Loading';
 export { default as PageLoading } from './components/PageLoading';
 export { default as Sticky } from './components/Sticky';
@@ -37,9 +35,6 @@ export { default as SortBar } from './components/SortBar';
 export { default as Picker } from './components/Picker';
 export { default as PasswordInput } from './components/PasswordInput';
 export { default as Modal } from './components/Modal';
-
-// 业务组件
-// 悬浮广告
 export { default as FloatingAd } from './components/FloatingAd';
 // // export { default as AuthVerified } from './Authorized/AuthVerified';
 // export { default as AuthBindCard } from './Authorized/AuthBindCard';

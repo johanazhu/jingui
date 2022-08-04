@@ -7,4 +7,4 @@ const Rmb = (props: JqbIconProps) => {
     return <JqbIcon icon={rmb} color="" {...props} />;
 };
 
-export default React.memo(Rmb);
+export default Rmb;

@@ -14,4 +14,4 @@ const PF = (props: JqbIconProps) => {
     );
 };
 
-export default React.memo(PF);
+export default PF;

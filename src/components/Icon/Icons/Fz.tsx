@@ -7,4 +7,4 @@ const FZ = (props: JqbIconProps) => {
     return <JqbIcon icon={fz} color="grey" {...props} />;
 };
 
-export default React.memo(FZ);
+export default FZ;

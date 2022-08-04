@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react';
+import React, { FC } from 'react';
 import classnames from 'classnames';
 import { CellGroupProps } from './PropType';
 
@@ -20,4 +20,4 @@ CellGroup.defaultProps = {
     shadow: true,
 };
 
-export default memo(CellGroup);
+export default CellGroup;

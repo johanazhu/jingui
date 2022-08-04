@@ -168,4 +168,4 @@ NoticeBar.defaultProps = {
     mode: 'normal',
 };
 
-export default React.memo(NoticeBar);
+export default NoticeBar;

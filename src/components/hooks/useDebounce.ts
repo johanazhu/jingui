@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import useDebounceFn, { DebounceOptions } from './useDebounceFn';
 
 function useDebounce<T>(value: T, options?: DebounceOptions) {

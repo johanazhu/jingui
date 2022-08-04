@@ -65,7 +65,7 @@ export interface AreaColumnRangeProps {
  * @param {onColumnItemClick} 选择器中的点击回调
  * @param {show} 是否显示
  * @param {title} 标题
- * @param {onHandleCancel} 点击空白处回调
+ * @param {onCancel} 点击空白处回调
  */
 export interface AreaProps {
     tabSource?: Array<AreaTabSourceProps>;
@@ -74,5 +74,5 @@ export interface AreaProps {
     onColumnItemClick: (item: AreaColumnRangeProps) => void;
     show: boolean;
     title: string;
-    onHandleCancel?: () => void;
+    onCancel?: () => void;
 }

@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react';
+import React, { FC } from 'react';
 import classnames from 'classnames';
 import { CardBoxHeaderProps } from './PropType';
 
@@ -13,4 +13,4 @@ const CardBoxHeader: FC<CardBoxHeaderProps> = (props) => {
     );
 };
 
-export default memo(CardBoxHeader);
+export default CardBoxHeader;

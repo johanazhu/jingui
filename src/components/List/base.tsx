@@ -25,4 +25,4 @@ List.defaultProps = {
     hasArrow: false,
 };
 
-export default React.memo(List);
+export default List;

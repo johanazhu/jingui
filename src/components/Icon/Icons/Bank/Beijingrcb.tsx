@@ -14,4 +14,4 @@ const BJRCB = (props: JqbIconProps) => {
     );
 };
 
-export default React.memo(BJRCB);
+export default BJRCB;

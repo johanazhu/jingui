@@ -1,4 +1,4 @@
-import React, { useState, FC, memo } from 'react';
+import React, { useState, FC } from 'react';
 import classnames from 'classnames';
 import { IconRight } from '../Icon';
 import { AreaColumn, AreaColumnRangeProps } from './PropType';
@@ -41,4 +41,4 @@ const Column: FC<AreaColumn> = (props) => {
     );
 };
 
-export default memo(Column);
+export default Column;

@@ -14,4 +14,4 @@ const GDNX = (props: JqbIconProps) => {
     );
 };
 
-export default React.memo(GDNX);
+export default GDNX;

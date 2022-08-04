@@ -7,4 +7,4 @@ const Gesture = (props: JqbIconProps) => {
     return <JqbIcon icon={gesture} {...props} />;
 };
 
-export default React.memo(Gesture);
+export default Gesture;

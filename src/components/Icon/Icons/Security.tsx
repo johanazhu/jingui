@@ -7,4 +7,4 @@ const Security = (props: JqbIconProps) => {
     return <JqbIcon icon={security} {...props} />;
 };
 
-export default React.memo(Security);
+export default Security;

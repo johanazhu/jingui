@@ -29,4 +29,4 @@ const ConfigProvider: FC<ConfigProviderProps> = (props) => {
     );
 };
 
-export default React.memo(ConfigProvider);
+export default ConfigProvider;

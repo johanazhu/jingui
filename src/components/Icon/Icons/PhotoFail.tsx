@@ -7,4 +7,4 @@ const PhotoFail = (props: JqbIconProps) => {
     return <JqbIcon icon={photofail} color="grey" {...props} />;
 };
 
-export default React.memo(PhotoFail);
+export default PhotoFail;

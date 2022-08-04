@@ -7,4 +7,4 @@ const SoundOn = (props: JqbIconProps) => {
     return <JqbIcon icon={soundon} {...props} />;
 };
 
-export default React.memo(SoundOn);
+export default SoundOn;

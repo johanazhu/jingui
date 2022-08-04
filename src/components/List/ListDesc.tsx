@@ -10,4 +10,4 @@ const ListDesc = (props: ListDescProps) => {
     return <div className="jing-list__Desc">{children}</div>;
 };
 
-export default React.memo(ListDesc);
+export default ListDesc;

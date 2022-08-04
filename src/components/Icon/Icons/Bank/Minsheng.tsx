@@ -14,4 +14,4 @@ const MS = (props: JqbIconProps) => {
     );
 };
 
-export default React.memo(MS);
+export default MS;

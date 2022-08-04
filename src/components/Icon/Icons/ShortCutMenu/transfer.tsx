@@ -7,4 +7,4 @@ const TransferMenu = (props: JqbIconProps) => {
     return <JqbIcon icon={transferMenu} {...props} />;
 };
 
-export default React.memo(TransferMenu);
+export default TransferMenu;

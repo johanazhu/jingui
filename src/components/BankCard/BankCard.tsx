@@ -13,7 +13,7 @@ const BankCard: FC<BankCardProps> = (props) => {
         className,
         tagList,
         onClick,
-        onHandleClickToIcon,
+        onClickToIcon,
         rightRender,
     } = props;
 
@@ -35,17 +35,13 @@ const BankCard: FC<BankCardProps> = (props) => {
                                 onClick={(e: any) => {
                                     if (item.labelContentLinkPkid) {
                                         e.stopPropagation();
-                                        onHandleClickToIcon &&
-                                            onHandleClickToIcon(
-                                                item.labelContentLinkPkid,
-                                            );
+                                        onClickToIcon?.(
+                                            item.labelContentLinkPkid,
+                                        );
                                     }
                                     if (item.largePaymentFlag) {
                                         e.stopPropagation();
-                                        onHandleClickToIcon &&
-                                            onHandleClickToIcon(
-                                                item.largePaymentFlag,
-                                            );
+                                        onClickToIcon?.(item.largePaymentFlag);
                                     }
                                 }}
                             >
@@ -63,4 +59,4 @@ const BankCard: FC<BankCardProps> = (props) => {
     );
 };
 
-export default React.memo(BankCard);
+export default BankCard;

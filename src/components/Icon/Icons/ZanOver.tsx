@@ -7,4 +7,4 @@ const ZanOver = (props: JqbIconProps) => {
     return <JqbIcon icon={zanover} color="" {...props} />;
 };
 
-export default React.memo(ZanOver);
+export default ZanOver;

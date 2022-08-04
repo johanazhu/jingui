@@ -29,7 +29,7 @@ group:
 
 ## 布局组件
 
--   [x] [Layout 栅栏布局](./components/layout)（PS:文档样式可以再改造的漂亮一点）
+-   [x] [Layout 栅栏布局](./components/layout)
 -   [x] [Space 空行分隔](./components/layout/space)
 -   [x] [Sticky 粘性布局](./components/layout/sticky)
 
@@ -46,12 +46,13 @@ group:
 -   [x] [Switch 输入](./components/data/switch)
 -   [x] [Tag 标签](./components/data/tag)
 -   [x] [Typography 富文本](./components/data/typography)
+-   [ ][radio 单选框](./components/data/Radio)
 
 ## 反馈组件
 
 -   [ ] [Scroll 滚动](./components/feedback/scroll)
 -   [x] [Loading 加载](./components/feedback/loading)
--   [ ] [Modal 模态框](./components/feedback/modal)
+-   [x] [Modal 模态框](./components/feedback/modal)
 -   [x] [Pageloading 页面加载](./components/feedback/page-loading)
 -   [x] [Popup 弹出框](./components/feedback/popup)
 -   [x] [Toast 提示框](./components/feedback/toast)
@@ -65,6 +66,7 @@ group:
 ## 业务组件
 
 -   [ ] [Area 地址](./components/work/area)
+-   [ ] [Stepline 步骤](./components/work/stepline)
 -   [ ] [BankCard 银行卡](./components/work/bankcard)
 -   [ ] [CardBox 卡片盒子](./components/work/cardbox)
 -   [ ] [DetailList 详情列表](./components/work/detaillist)

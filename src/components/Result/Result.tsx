@@ -41,4 +41,4 @@ Result.defaultProps = {
     place: 'left',
 };
 
-export default React.memo(Result);
+export default Result;

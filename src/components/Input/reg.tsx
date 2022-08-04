@@ -35,4 +35,4 @@ RegInput.defaultProps = {
     reg: /[\s\S]*/,
 };
 
-export default React.memo(RegInput);
+export default RegInput;

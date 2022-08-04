@@ -7,4 +7,4 @@ const Finger = (props: JqbIconProps) => {
     return <JqbIcon icon={finger} {...props} />;
 };
 
-export default React.memo(Finger);
+export default Finger;

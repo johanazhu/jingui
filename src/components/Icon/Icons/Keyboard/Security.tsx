@@ -7,4 +7,4 @@ const KeyboardSecurity = (props: JqbIconProps) => {
     return <JqbIcon icon={keyboardSecurity} color="green" {...props} />;
 };
 
-export default React.memo(KeyboardSecurity);
+export default KeyboardSecurity;

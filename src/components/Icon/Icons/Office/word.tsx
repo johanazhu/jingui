@@ -7,4 +7,4 @@ const Word = (props: JqbIconProps) => {
     return <JqbIcon icon={word} color="" {...props} />;
 };
 
-export default React.memo(Word);
+export default Word;

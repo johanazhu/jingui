@@ -7,4 +7,4 @@ const Arrow = (props: JqbIconProps) => {
     return <JqbIcon icon={arrow} color="grey" {...props} />;
 };
 
-export default React.memo(Arrow);
+export default Arrow;

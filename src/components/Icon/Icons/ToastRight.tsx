@@ -7,4 +7,4 @@ const ToastRight = (props: JqbIconProps) => {
     return <JqbIcon icon={toastRight} color="grey" {...props} />;
 };
 
-export default React.memo(ToastRight);
+export default ToastRight;

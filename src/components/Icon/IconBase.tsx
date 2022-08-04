@@ -12,4 +12,4 @@ const IconBase = (props: IconbaseProps) => {
     });
 };
 
-export default React.memo(IconBase);
+export default IconBase;

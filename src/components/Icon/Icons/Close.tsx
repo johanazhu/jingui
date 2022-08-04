@@ -7,4 +7,4 @@ const Close = (props: JqbIconProps) => {
     return <JqbIcon icon={close} color="grey" {...props} />;
 };
 
-export default React.memo(Close);
+export default Close;

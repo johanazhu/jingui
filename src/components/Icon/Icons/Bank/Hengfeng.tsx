@@ -14,4 +14,4 @@ const HF = (props: JqbIconProps) => {
     );
 };
 
-export default React.memo(HF);
+export default HF;

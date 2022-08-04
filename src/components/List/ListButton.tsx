@@ -60,4 +60,4 @@ ListButton.propTypes = {
     buttonArray: PropTypes.array,
 };
 
-export default React.memo(ListButton);
+export default ListButton;

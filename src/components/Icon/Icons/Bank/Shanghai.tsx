@@ -14,4 +14,4 @@ const SH = (props: JqbIconProps) => {
     );
 };
 
-export default React.memo(SH);
+export default SH;

@@ -7,4 +7,4 @@ const Authen = (props: JqbIconProps) => {
     return <JqbIcon icon={authen} {...props} />;
 };
 
-export default React.memo(Authen);
+export default Authen;

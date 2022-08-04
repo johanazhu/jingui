@@ -14,4 +14,4 @@ const JSU = (props: JqbIconProps) => {
     );
 };
 
-export default React.memo(JSU);
+export default JSU;

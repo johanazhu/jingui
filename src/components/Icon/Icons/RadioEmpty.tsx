@@ -7,4 +7,4 @@ const RadioEmpty = (props: JqbIconProps) => {
     return <JqbIcon icon={radioempty} color="grey" {...props} />;
 };
 
-export default React.memo(RadioEmpty);
+export default RadioEmpty;

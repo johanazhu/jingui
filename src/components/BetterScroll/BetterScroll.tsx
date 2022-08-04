@@ -8,7 +8,7 @@ import React, {
     useImperativeHandle,
 } from 'react';
 import BScroll from '@better-scroll/core';
-import { BetterScrollProps } from './PropType';
+import { ScrollProps } from './PropType';
 import IconPullupImg from '@/assets/icon-pullup.png';
 import IconLoadingImg from '@/assets/icon-loading.png';
 
@@ -16,8 +16,9 @@ import { debounce } from '@/utils';
 
 const TIME_BOUNCE = 800;
 const TIME_STOP = 600;
+const prefixCls = 'jing-button';
 
-const BetterScroll = forwardRef((props: BetterScrollProps, ref) => {
+const BetterScroll = forwardRef((props: ScrollProps, ref) => {
     const {
         pullUpLoading,
         pullUpCb,
@@ -177,28 +178,30 @@ const BetterScroll = forwardRef((props: BetterScrollProps, ref) => {
 
     return (
         <div
-            className="scroll__container"
+            className={prefixCls}
             style={{
                 bottom: `${bottom}px`,
                 top: `${top}px`,
             }}
         >
-            <div className="pulldown-bswrapper" ref={scrollContainerRef}>
-                <div className="pulldown-scroller">
+            <div className={`${prefixCls}__pulldown`} ref={scrollContainerRef}>
+                <div className={`${prefixCls}__pulldown--scroller`}>
                     {children}
                     {pullUpLoading && (
-                        <div className="pullup-wrapper" ref={pullupRef}>
+                        <div className={`${prefixCls}__pullup`} ref={pullupRef}>
                             {thePullingUpStatus ? (
-                                <div className="pullup-after">
+                                <div className={`${prefixCls}__pullup--after`}>
                                     <span> 没有更多了 </span>
                                 </div>
                             ) : isShowPullingUp ? (
-                                <div className="pullup-loading">
+                                <div
+                                    className={`${prefixCls}__pullup--loading`}
+                                >
                                     <img src={IconLoadingImg} />
                                     <span> 加载中... </span>
                                 </div>
                             ) : (
-                                <div className="pullup-before">
+                                <div className={`${prefixCls}__pullup--before`}>
                                     <img src={IconPullupImg} />
                                     <span>{pullupText}</span>
                                 </div>
@@ -217,4 +220,4 @@ BetterScroll.defaultProps = {
     bounceBottom: true,
 };
 
-export default React.memo(BetterScroll);
+export default BetterScroll;

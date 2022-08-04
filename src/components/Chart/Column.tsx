@@ -52,4 +52,4 @@
 //     return <canvas ref={canvasRef}></canvas>;
 // };
 
-// export default React.memo(ColumnChart);
+// export default ColumnChart

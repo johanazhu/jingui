@@ -13,4 +13,4 @@ const KeyboardShift = (props: JqbIconProps) => {
     );
 };
 
-export default React.memo(KeyboardShift);
+export default KeyboardShift;

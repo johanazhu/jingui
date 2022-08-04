@@ -134,4 +134,4 @@
 //     return <canvas ref={canvasRef}></canvas>;
 // };
 
-// export default React.memo(PieChart);
+// export default PieChart

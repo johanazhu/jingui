@@ -14,4 +14,4 @@ const GD = (props: JqbIconProps) => {
     );
 };
 
-export default React.memo(GD);
+export default GD;

@@ -7,4 +7,4 @@ const Exclamation = (props: JqbIconProps) => {
     return <JqbIcon icon={exclamation} {...props} />;
 };
 
-export default React.memo(Exclamation);
+export default Exclamation;

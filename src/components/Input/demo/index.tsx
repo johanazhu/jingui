@@ -7,7 +7,6 @@ export default () => {
     const [title2, setTitle2] = useState('');
     const [iserror, setIsError] = useState(false);
     const [text, setText] = useState('');
-    const [img, setImg] = useState('http://wx.jingqb.com/certiification.jpg');
     const [value, setValue] = useState('');
     const [isActive, setIsActive] = useState(false);
 
@@ -60,17 +59,6 @@ export default () => {
             <DemoBlock title="带清除的输入框" padding="">
                 <Input.Clear value={value} placeholder="带清除的输入框" />
                 <Space style={{ backgroundColor: 'grey' }} />
-                <Input.Clear
-                    value={value}
-                    placeholder="带清除前面的输入框"
-                    render="111"
-                />
-                <Space style={{ backgroundColor: 'grey' }} />
-                <Input.Clear
-                    value={value}
-                    placeholder="带清除后面的输入框"
-                    backRender="111"
-                />
             </DemoBlock>
             <DemoBlock title="带发送验证码的输入框" padding="">
                 <Input.Verify
@@ -81,7 +69,7 @@ export default () => {
                     }}
                 />
             </DemoBlock>
-            <DemoBlock title="带验证码的输入框" padding="">
+            {/* <DemoBlock title="带验证码的输入框" padding="">
                 <Input.Captcha
                     type="text"
                     maxLength={4}
@@ -92,11 +80,11 @@ export default () => {
                         setImg(img + '?' + new Date().getTime());
                     }}
                 />
-            </DemoBlock>
+            </DemoBlock> */}
             <DemoBlock title="KeyBoard输入框" padding="">
                 <Input.KeyBoard
                     value={value}
-                    placeholder="你想干啥"
+                    placeholder="具体可去键盘组件查看demo"
                     active={isActive}
                     onHandleFocus={() => {
                         setIsActive(true);

@@ -14,4 +14,4 @@ const GZRCB = (props: JqbIconProps) => {
     );
 };
 
-export default React.memo(GZRCB);
+export default GZRCB;

@@ -76,4 +76,4 @@ Button.defaultProps = {
     block: false,
 };
 
-export default React.memo(Button);
+export default Button;

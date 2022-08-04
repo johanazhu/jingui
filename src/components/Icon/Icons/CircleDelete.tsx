@@ -7,4 +7,4 @@ const CircleDelete = (props: JqbIconProps) => {
     return <JqbIcon icon={circledelete} color="grey" {...props} />;
 };
 
-export default React.memo(CircleDelete);
+export default CircleDelete;

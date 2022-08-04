@@ -12,4 +12,4 @@ const List = (props: ListProps) => {
     return <div className={classnames('jing-list', className)}>{children}</div>;
 };
 
-export default React.memo(List);
+export default List;

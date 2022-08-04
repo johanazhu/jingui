@@ -16,4 +16,4 @@ const Group = (props: GroupProps) => {
     );
 };
 
-export default React.memo(Group);
+export default Group;

@@ -7,4 +7,4 @@ const Call = (props: JqbIconProps) => {
     return <JqbIcon icon={call} {...props} />;
 };
 
-export default React.memo(Call);
+export default Call;

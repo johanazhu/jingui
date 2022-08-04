@@ -14,4 +14,4 @@ const ZX = (props: JqbIconProps) => {
     );
 };
 
-export default React.memo(ZX);
+export default ZX;

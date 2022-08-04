@@ -7,4 +7,4 @@ const Xiaojinguang = (props: JqbIconProps) => {
     return <JqbIcon icon={xiaojinguang} color="" {...props} />;
 };
 
-export default React.memo(Xiaojinguang);
+export default Xiaojinguang;

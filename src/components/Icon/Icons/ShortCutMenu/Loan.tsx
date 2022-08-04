@@ -7,4 +7,4 @@ const LoanMenu = (props: JqbIconProps) => {
     return <JqbIcon icon={loanMenu} color="" {...props} />;
 };
 
-export default React.memo(LoanMenu);
+export default LoanMenu;

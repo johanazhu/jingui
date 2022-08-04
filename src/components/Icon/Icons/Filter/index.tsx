@@ -7,4 +7,4 @@ const Filter = (props: JqbIconProps) => {
     return <JqbIcon icon={filter} color="grey" {...props} />;
 };
 
-export default React.memo(Filter);
+export default Filter;

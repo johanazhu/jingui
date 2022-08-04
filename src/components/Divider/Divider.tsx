@@ -24,4 +24,4 @@ Divider.defaultProps = {
     contentPosition: 'center',
 };
 
-export default React.memo(Divider);
+export default Divider;

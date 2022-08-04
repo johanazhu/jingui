@@ -22,4 +22,4 @@ const Panel: FC<PanelProps> = (props) => {
     );
 };
 
-export default React.memo(Panel);
+export default Panel;

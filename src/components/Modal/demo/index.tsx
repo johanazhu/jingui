@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Modal, KeyBoard, Cell, Toast, hooks } from 'jing-ui';
 import { DemoBlock } from 'demo';
-import './index.scss';
 
 export default () => {
     const [state, setState] = hooks.useSetState({

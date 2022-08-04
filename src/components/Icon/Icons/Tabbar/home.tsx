@@ -7,4 +7,4 @@ const TabbarHome = (props: JqbIconProps) => {
     return <JqbIcon icon={Home} color="grey" {...props} />;
 };
 
-export default React.memo(TabbarHome);
+export default TabbarHome;

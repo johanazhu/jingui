@@ -7,4 +7,4 @@ const Waiting = (props: JqbIconProps) => {
     return <JqbIcon icon={waiting} {...props} />;
 };
 
-export default React.memo(Waiting);
+export default Waiting;

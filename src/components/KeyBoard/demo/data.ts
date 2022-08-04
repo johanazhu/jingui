@@ -1,18 +1,4 @@
 export const customLetterLayout = {
-    // default: [
-    //     'F1 F2 F3 F4 F5 F6 F7 F8 F9 F10',
-    //     '格式为',
-    //     '{shift} 4 5 6',
-    //     '7 8 9',
-    //     '0 {delete}',
-    // ],
-    // shift: [
-    //     '有 没 有 人 曾 告 诉 你',
-    //     '{shift} 我 很 爱 你',
-    //     '有 没 有 人 曾 在 你 日 记 里 哭 泣',
-    //     '有 没 有 人 曾 告 诉 你',
-    //     '我 很 在 意',
-    // ],
     default: [
         'F1 F2 F3 F4 F5 F6 F7 F8 F9 F10',
         '有 没 有 人 曾 告 诉 你 呢',

@@ -7,4 +7,4 @@ const Back = (props: JqbIconProps) => {
     return <JqbIcon icon={back} color="grey" {...props} />;
 };
 
-export default React.memo(Back);
+export default Back;

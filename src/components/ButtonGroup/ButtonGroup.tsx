@@ -1,4 +1,4 @@
-import React, { FC, memo, cloneElement, Children } from 'react';
+import React, { FC, cloneElement, Children } from 'react';
 import classnames from 'classnames';
 import { ButtonGroupProps } from './PropType';
 
@@ -38,4 +38,4 @@ ButtonGroup.defaultProps = {
     type: 'default',
 };
 
-export default memo(ButtonGroup);
+export default ButtonGroup;

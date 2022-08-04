@@ -14,6 +14,6 @@ export interface BankCardProps {
     className?: string;
     tagList?: Array<TagItemProps>;
     onClick: () => void;
-    onHandleClickToIcon?: (pkid: string) => void;
+    onClickToIcon?: (pkid: string) => void;
     rightRender: any;
 }

@@ -7,4 +7,4 @@ const Loading = (props: JqbIconProps) => {
     return <JqbIcon className="jing-icon--loading" icon={loading} {...props} />;
 };
 
-export default React.memo(Loading);
+export default Loading;

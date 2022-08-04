@@ -115,4 +115,4 @@ import { ProductCardProps } from './PropType';
 //     mode: 'fourthreethree',
 // };
 
-// export default React.memo(ProductCard);
+// export default ProductCard

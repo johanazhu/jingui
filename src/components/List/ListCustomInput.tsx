@@ -108,4 +108,4 @@ ListCustomInput.propTypes = {
     onHandleBlur: PropTypes.func,
 };
 
-export default React.memo(ListCustomInput);
+export default ListCustomInput;

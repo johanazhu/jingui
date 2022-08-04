@@ -1,20 +1,74 @@
-import React from 'react';
-import { Tag } from 'jing-ui';
+import React, { useState, useRef } from 'react';
+import { Modal, Scroll, hooks } from 'jing-ui';
+import { DemoBlock } from 'demo';
+import './index.scss';
 
-export default () => (
-    <div>
-        <Tag>标签</Tag>
-        <Tag type="primary">标签</Tag>
-        <Tag type="normal">标签</Tag>
-        <Tag type="disabled">标签</Tag>
+export default () => {
+    const [state, setState] = hooks.useSetState({
+        v1: false,
+        v2: false,
+        v3: false,
+        // v4: false,
+        // v5: false,
+        // v6: false,
+        // v7: false,
+    });
 
-        <Tag>标签</Tag>
-        <Tag size="medium">标签</Tag>
-        <Tag size="large">标签</Tag>
+    const scrollRef = useRef<any>(null);
+    const [items, setItems] = useState([]);
 
-        <Tag active>标签</Tag>
-        <Tag type="primary" active>
-            标签
-        </Tag>
-    </div>
-);
+    const onPullingUp = () => {};
+
+    const onPullingDown = () => {};
+
+    return (
+        <>
+            <DemoBlock title="基本用法" padding="" className="demo-jing-scroll">
+                <Scroll>
+                    <ul>
+                        {new Array(20).fill(1).map((item, index) => (
+                            <li className="item">{index}</li>
+                        ))}
+                    </ul>
+                </Scroll>
+                {/* <Scroll
+                    ref={scrollRef}
+                    onPullingUp={onPullingUp}
+                    onPullingDown={onPullingDown}
+                    pullUpLoading={isShowPullUpLoading}
+                    pullUpCb={handlePullUp}
+                    pullingUpStatus={isStatusForPullingUp}
+                >
+                    <ul>
+                        {items.map((item, index) => (
+                            <li className="item">{index}</li>
+                        ))}
+                    </ul>
+                </Scroll> */}
+            </DemoBlock>
+            <DemoBlock title="基本用法" padding="" className="demo-jing-scroll">
+                <Scroll>
+                    <ul>
+                        {new Array(20).fill(1).map((item, index) => (
+                            <li className="item">{index}</li>
+                        ))}
+                    </ul>
+                </Scroll>
+                {/* <Scroll
+                    ref={scrollRef}
+                    onPullingUp={onPullingUp}
+                    onPullingDown={onPullingDown}
+                    pullUpLoading={isShowPullUpLoading}
+                    pullUpCb={handlePullUp}
+                    pullingUpStatus={isStatusForPullingUp}
+                >
+                    <ul>
+                        {items.map((item, index) => (
+                            <li className="item">{index}</li>
+                        ))}
+                    </ul>
+                </Scroll> */}
+            </DemoBlock>
+        </>
+    );
+};

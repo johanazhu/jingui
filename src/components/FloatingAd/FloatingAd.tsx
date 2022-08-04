@@ -1,12 +1,4 @@
-import React, {
-    useState,
-    useEffect,
-    CSSProperties,
-    ReactNode,
-    FC,
-    memo,
-    useRef,
-} from 'react';
+import React, { useState, useEffect, CSSProperties, FC, useRef } from 'react';
 import { FloatingAdProps } from './PropType';
 
 const prefixCls = 'jing-FloatingAd';
@@ -75,4 +67,4 @@ const FloatingAd: FC<FloatingAdProps> = (props) => {
     );
 };
 
-export default memo(FloatingAd);
+export default FloatingAd;

@@ -7,4 +7,4 @@ const RadioOk = (props: JqbIconProps) => {
     return <JqbIcon icon={radiook} {...props} />;
 };
 
-export default React.memo(RadioOk);
+export default RadioOk;

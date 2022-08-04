@@ -418,7 +418,7 @@ const Keyboard: FC<KeyboardProps> = (props) => {
                     style={{ width: keyboardHeaderHeight }}
                 ></div>
                 <h2 className={`${prefixCls}__header-title`}>
-                    {title === '鲸禧保安全键盘' && <IconKeyboardSecurity />}
+                    {title === '安全键盘' && <IconKeyboardSecurity />}
                     {title}
                 </h2>
                 <div
@@ -473,7 +473,7 @@ Keyboard.defaultProps = {
     value: '',
     maxLength: Infinity,
     noNeedHideElements: ['jing-input--clear', 'jing-input--focus'],
-    title: '鲸禧保安全键盘',
+    title: '安全键盘',
     showTitle: true,
 };
 

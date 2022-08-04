@@ -7,4 +7,4 @@ const Subtraction = (props: JqbIconProps) => {
     return <JqbIcon icon={subtraction} {...props} />;
 };
 
-export default React.memo(Subtraction);
+export default Subtraction;

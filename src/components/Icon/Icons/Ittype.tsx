@@ -7,4 +7,4 @@ const Ittype = (props: JqbIconProps) => {
     return <JqbIcon icon={ittype} color="" {...props} />;
 };
 
-export default React.memo(Ittype);
+export default Ittype;

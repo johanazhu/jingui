@@ -14,4 +14,4 @@ const JT = (props: JqbIconProps) => {
     );
 };
 
-export default React.memo(JT);
+export default JT;

@@ -7,4 +7,4 @@ const EyeOpenTwo = (props: JqbIconProps) => {
     return <JqbIcon icon={eyeopentwo} color="grey" {...props} />;
 };
 
-export default React.memo(EyeOpenTwo);
+export default EyeOpenTwo;

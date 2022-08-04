@@ -13,4 +13,4 @@ const KeyboardShiftLine = (props: JqbIconProps) => {
     );
 };
 
-export default React.memo(KeyboardShiftLine);
+export default KeyboardShiftLine;

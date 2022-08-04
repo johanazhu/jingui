@@ -69,4 +69,4 @@ RecordList.defaultProps = {
     colWidth: 12,
 };
 
-export default React.memo(RecordList);
+export default RecordList;

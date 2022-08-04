@@ -7,4 +7,4 @@ const Password = (props: JqbIconProps) => {
     return <JqbIcon icon={password} {...props} />;
 };
 
-export default React.memo(Password);
+export default Password;

@@ -7,4 +7,4 @@ const Magezine = (props: JqbIconProps) => {
     return <JqbIcon icon={magezine} {...props} />;
 };
 
-export default React.memo(Magezine);
+export default Magezine;

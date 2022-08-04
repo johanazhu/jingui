@@ -33,9 +33,4 @@ SmallConnect.defaultProps = {
     right: false,
 };
 
-SmallConnect.propTypes = {
-    right: PropTypes.bool,
-    onClick: PropTypes.func,
-};
-
-export default React.memo(SmallConnect);
+export default SmallConnect;

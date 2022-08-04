@@ -7,4 +7,4 @@ const More = (props: JqbIconProps) => {
     return <JqbIcon icon={more} {...props} />;
 };
 
-export default React.memo(More);
+export default More;

@@ -84,4 +84,4 @@ const ListRow = (props: ListRowProps) => {
     return tempJSX;
 };
 
-export default React.memo(ListRow);
+export default ListRow;

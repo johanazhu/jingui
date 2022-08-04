@@ -14,4 +14,4 @@ const PA = (props: JqbIconProps) => {
     );
 };
 
-export default React.memo(PA);
+export default PA;

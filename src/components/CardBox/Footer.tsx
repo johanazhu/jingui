@@ -1,4 +1,4 @@
-import React, { memo, FC } from 'react';
+import React, { FC } from 'react';
 import classnames from 'classnames';
 import { CardBoxFooterProps } from './PropType';
 
@@ -13,4 +13,4 @@ const CardBoxFooter: FC<CardBoxFooterProps> = (props) => {
     );
 };
 
-export default memo(CardBoxFooter);
+export default CardBoxFooter;

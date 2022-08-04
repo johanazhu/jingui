@@ -7,4 +7,4 @@ const Pdf = (props: JqbIconProps) => {
     return <JqbIcon icon={pdf} color="" {...props} />;
 };
 
-export default React.memo(Pdf);
+export default Pdf;

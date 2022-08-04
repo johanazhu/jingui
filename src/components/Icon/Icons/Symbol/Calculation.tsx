@@ -7,4 +7,4 @@ const Calculation = (props: JqbIconProps) => {
     return <JqbIcon icon={calculation} color="orange" {...props} />;
 };
 
-export default React.memo(Calculation);
+export default Calculation;

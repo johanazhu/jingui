@@ -7,4 +7,4 @@ const Edit = (props: JqbIconProps) => {
     return <JqbIcon icon={edit} {...props} />;
 };
 
-export default React.memo(Edit);
+export default Edit;

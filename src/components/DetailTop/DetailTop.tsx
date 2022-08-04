@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react';
+import React, { FC } from 'react';
 import classnames from 'classnames';
 import { DetailTopProps } from './PropType';
 
@@ -43,4 +43,4 @@ DetailTop.defaultProps = {
     desc: '',
 };
 
-export default memo(DetailTop);
+export default DetailTop;

@@ -14,4 +14,4 @@ const YZ = (props: JqbIconProps) => {
     );
 };
 
-export default React.memo(YZ);
+export default YZ;

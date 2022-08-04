@@ -13,4 +13,4 @@ const KeyboardDelete = (props: JqbIconProps) => {
     );
 };
 
-export default React.memo(KeyboardDelete);
+export default KeyboardDelete;

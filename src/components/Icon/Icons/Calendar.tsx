@@ -7,4 +7,4 @@ const Calendar = (props: JqbIconProps) => {
     return <JqbIcon icon={calendar} color="grey" {...props} />;
 };
 
-export default React.memo(Calendar);
+export default Calendar;

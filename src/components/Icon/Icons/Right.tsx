@@ -7,4 +7,4 @@ const Right = (props: JqbIconProps) => {
     return <JqbIcon icon={right} {...props} />;
 };
 
-export default React.memo(Right);
+export default Right;
