@@ -66,6 +66,7 @@ const Overlay: FC<OverlayProps> = (props: any) => {
         });
 
         if (isDef(duration)) {
+            // @ts-ignore
             _style.animationDuration = `${duration}ms`;
         }
 

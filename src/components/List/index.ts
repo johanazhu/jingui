@@ -1,25 +1,43 @@
-// import ListGroup from './List';
-// import ListButton from './ListButton';
-// import ListRow from './ListRow';
-// import ListDesc from './ListDesc';
-// import ListInput from './ListInput';
-// import ListSelect from './ListSelect';
-// import ListDashboard from './ListDashboard';
-// import ListCustomInput from './ListCustomInput';
-// import ListInput1 from './ListInput1';
-// import ListKeyBoard from './ListKeyBoard';
+// import List from './list';
 
-// const List = {
-//     Group: ListGroup,
-//     Button: ListButton,
-//     Row: ListRow,
-//     Desc: ListDesc,
-//     Input: ListInput,
-//     Select: ListSelect,
-//     Dashboard: ListDashboard,
-//     CustomInput: ListCustomInput,
-//     Input1: ListInput1,
-//     KeyBoard: ListKeyBoard,
-// };
+// // import Group from './group';
+// // import Verify from './verify';
+// // import Prefix from './prefix';
+// // import Suffix from './suffix';
+// // import Phone from './phone';
+// // import Password from './password';
+// // import Search from './search';
+// // import Clear from './clear';
+// // import Captcha from './captcha';
+// // import KeyBoard from './keyboard';
+// // import Textarea from './textarea';
+
+// // Input.Group = Group;
+// // Input.Verify = Verify;
+// // Input.Clear = Clear;
+// // Input.Password = Password;
+// // Input.Captcha = Captcha;
+// // Input.KeyBoard = KeyBoard;
+// // Input.Textarea = Textarea;
+
+// // Input.Prefix = Prefix;
+// // Input.Suffix = Suffix;
+// // Input.Phone = Phone;
+// // Input.Search = Search;
 
 // export default List;
+
+// export { List };
+
+// export type {
+//     ListProps,
+//     // GroupProps,
+//     // ClearProps,
+//     // VerifyProps,
+//     // CaptchaProps,
+//     // KeyboardInputProps,
+//     // TextareaProps,
+//     // PhoneProps,
+//     // RegProps,
+//     // SearchProps,
+// } from './PropType';

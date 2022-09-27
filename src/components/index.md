@@ -46,7 +46,7 @@ group:
 -   [x] [Switch 输入](./components/data/switch)
 -   [x] [Tag 标签](./components/data/tag)
 -   [x] [Typography 富文本](./components/data/typography)
--   [ ][radio 单选框](./components/data/Radio)
+-   [ ] [radio 单选框](./components/data/Radio)
 
 ## 反馈组件
 

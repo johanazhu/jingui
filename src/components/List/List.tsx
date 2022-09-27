@@ -1,15 +1,9 @@
 import * as React from 'react';
-import classnames from 'classnames';
 
-export interface ListProps {
-    children: React.ReactNode;
-    className?: string;
-}
+// import Base from './base';
 
-const List = (props: ListProps) => {
-    const { children, className } = props;
+// const Input = (props: any) => <Base {...props} />;
 
-    return <div className={classnames('jing-list', className)}>{children}</div>;
-};
+// Input.Title = Title;
 
-export default List;
+// export default List;

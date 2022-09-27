@@ -1,5 +1,5 @@
 import { ReactNode, CSSProperties } from 'react';
-
+import { BaseTypeProps } from '@/utils';
 /**
  * List 列表
  * @param {className} string                            // 输入框组件样式名
@@ -10,12 +10,11 @@ import { ReactNode, CSSProperties } from 'react';
  * @param {help} ReactNode                              // 设置下方提示信息区域内容，通常配合 Message 组件使用
  * @param {onClick} function                            // Clear 中点击 x 后的回调
  **/
-export interface ListProps {
-    className?: string;
-    hasArrow?: boolean;
-    icon?: ReactNode;
-    title?: ReactNode;
-    description?: React.ReactNode;
-    help?: React.ReactNode;
+export interface ListProps extends BaseTypeProps {
     onClick?: () => void;
+}
+
+export interface ListTitleProps extends BaseTypeProps {
+    leftText: string;
+    rightText: string;
 }

@@ -46,15 +46,19 @@ const Image: FC<ImageProps> = (props) => {
         const internalStyle: CSSProperties = { ...style };
 
         if (isDef(width)) {
+            // @ts-ignore
             internalStyle.width = addUnit(width);
         }
 
         if (isDef(height)) {
+            // @ts-ignore
             internalStyle.height = addUnit(height);
         }
 
         if (isDef(radius)) {
+            // @ts-ignore
             internalStyle.overflow = 'hidden';
+            // @ts-ignore
             internalStyle.borderRadius = addUnit(radius);
         }
 
