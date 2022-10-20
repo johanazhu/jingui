@@ -1,7 +1,11 @@
-import Timeline from './Timeline';
+import './style/index.scss';
+
+import _Timeline from './Timeline';
+import TimelineItem from './TimelineItem';
+
+const Timeline = Object.assign(_Timeline, { Item: TimelineItem });
 
 export default Timeline;
+export { Timeline, TimelineItem };
 
-export { Timeline };
-
-export type { TimelineType, TimelineItemProps } from './PropType';
+export type { TimelineProps, TimelineItemProps } from './PropType';

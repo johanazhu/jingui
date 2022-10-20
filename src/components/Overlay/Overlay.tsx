@@ -11,6 +11,7 @@ import { CSSTransition } from 'react-transition-group';
 import { isDef, preventDefault, noop } from '@/utils';
 import useLockScroll from '../hooks/use-lock-scroll';
 import { OverlayProps } from './PropType';
+import './style/index.scss';
 
 const prefixCls = 'jing-overlay';
 

@@ -1,0 +1,12 @@
+@import '../../Style/variable';
+
+// Panel
+$panel-bg: var(--bg-white);
+$panel-text-color: var(--text-color);
+$panel-font-size: var(--font-size-md);
+$panel-font-weight: var(--font-weight-bold);
+$panel-title-font-size: var(--font-size-sm);
+$panel-padding-v: var(--vertical-gap);
+$panel-padding-h: var(--horizontal-gap);
+$panel-more-text-color: var(--primary-color);
+$panel-body-bg: var(--bg-white);

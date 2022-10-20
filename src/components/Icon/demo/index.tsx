@@ -80,6 +80,7 @@ import {
     IconXiaojinguang,
     IconZan,
     IconZanOver,
+    IconShare,
     IconToastRight,
     IconToastWait,
     IconToastWrong,
@@ -109,7 +110,7 @@ import {
     Row,
     Col,
     Tabs,
-} from 'jing-ui';
+} from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
 
 export default () => {
@@ -426,6 +427,10 @@ export default () => {
                             <Col span={6}>
                                 <IconPhotoFail />
                                 <span>图片裂开</span>
+                            </Col>
+                            <Col span={6}>
+                                <IconShare />
+                                <span>分享</span>
                             </Col>
                             <Col span={6}>
                                 <IconPdf />

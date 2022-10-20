@@ -1,9 +1,9 @@
-import './scss';
+import './components/Style';
 
 export * as hooks from './components/hooks';
 export * from './components/Icon';
 export { default as Button } from './components/Button';
-export { default as ButtonGroup } from './components/ButtonGroup';
+// export { default as ButtonGroup } from './components/ButtonGroup';
 export { default as Space } from './components/Space';
 export { default as Tag } from './components/Tag';
 export { default as Cell } from './components/Cell';
@@ -36,6 +36,7 @@ export { default as Picker } from './components/Picker';
 export { default as PasswordInput } from './components/PasswordInput';
 export { default as Modal } from './components/Modal';
 export { default as FloatingAd } from './components/FloatingAd';
+export { default as Stepline } from './components/Stepline';
 // // export { default as AuthVerified } from './Authorized/AuthVerified';
 // export { default as AuthBindCard } from './Authorized/AuthBindCard';
 // export { default as PageTabBar } from './PageTabBar';

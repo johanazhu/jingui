@@ -1,13 +1,13 @@
-import * as React from 'react';
+import React, { FC } from 'react';
 import classnames from 'classnames';
 import CellGroup from './Group';
 import { IconArrow } from '../Icon';
-import { CellType } from './PropType';
+import { CellProps } from './PropType';
 import { isDef } from '@/utils';
 
 const prefixCls = 'jing-cell';
 
-const Cell: CellType = (props) => {
+const Cell: FC<CellProps> = (props) => {
     const {
         className,
         label,
@@ -63,7 +63,5 @@ Cell.defaultProps = {
     isLink: false,
     required: false,
 };
-
-Cell.Group = CellGroup;
 
 export default Cell;

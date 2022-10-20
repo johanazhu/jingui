@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tab } from 'jing-ui';
+import { Tab } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
 
 export default () => (

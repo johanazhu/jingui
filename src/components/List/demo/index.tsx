@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Panel } from 'jing-ui';
+import { Row, Col, Panel } from '@jojobo/jing-ui';
 
 export default () => (
     <div className="jing-page jing-page-layout">

@@ -1,6 +1,10 @@
-import Button from './Button';
+import './style/index.scss';
+import _Button from './Button';
+import ButtonGroup from './Group';
 
-export { Button };
+const Button = Object.assign(_Button, { Group: ButtonGroup });
 
 export default Button;
-export type { ButtonProps } from './PropType';
+export { Button, ButtonGroup };
+
+export type { ButtonProps, ButtonGroupProps } from './PropType';

@@ -1,3 +1,4 @@
+import './style/index.scss';
 import Popup from './Popup';
 import Portal from './Portal';
 

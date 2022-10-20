@@ -1,5 +1,5 @@
 import React from 'react';
-import { Loading } from 'jing-ui';
+import { Loading } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
 
 export default () => (
@@ -30,10 +30,10 @@ export default () => (
             padding=""
             className="demo-jing-loading"
         >
-            <Loading size="24" color="#4664D2" textColor="#4664D2" vertical>
+            <Loading size="24" vertical color="#4664D2" textColor="#4664D2">
                 加载中..
             </Loading>
-            <Loading size="24" vertical textColor="#FF6414">
+            <Loading size="24" vertical color="#FF6414" textColor="#FF6414">
                 加载中..
             </Loading>
         </DemoBlock>

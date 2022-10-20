@@ -1,20 +1,20 @@
 import { ReactNode, FC } from 'react';
+import { BaseTypeProps } from '@/utils';
+
+export type SteplineType = 'normal' | 'ellipsis';
 
 export interface SteplineItemProps {
-    header: ReactNode;
-    footer: ReactNode;
-    color?: string;
+    children: ReactNode;
+    footer?: ReactNode;
     percent?: string;
+    color?: string;
+    type?: SteplineType;
     count?: number;
     i?: any;
 }
 
-export interface StepLineProps {
-    className?: string;
+export interface SteplineProps extends BaseTypeProps {
+    type?: SteplineType;
     percent?: string;
     color?: string;
-}
-
-export interface StepLineType extends FC<StepLineProps> {
-    Item: FC<SteplineItemProps>;
 }

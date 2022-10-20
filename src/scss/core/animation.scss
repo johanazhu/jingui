@@ -207,66 +207,66 @@
 
 .jing-fade {
     &-enter-active {
-        animation: var(--animation-duration-base) jing-fade-in both
-            var(--animation-timing-function-enter);
+        animation: var($animation-duration-base) jing-fade-in both
+            var($animation-timing-function-enter);
     }
     &-exit-active {
-        animation: var(--animation-duration-base) jing-fade-out both
-            var(--animation-timing-function-leave);
+        animation: var($animation-duration-base) jing-fade-out both
+            var($animation-timing-function-leave);
     }
 }
 
 .jing-slide-up {
     &-enter-active {
-        animation: var(--animation-duration-base) jing-slide-up-enter both
-            var(--animation-timing-function-enter);
+        animation: var($animation-duration-base) jing-slide-up-enter both
+            var($animation-timing-function-enter);
     }
     &-exit-active {
-        animation: var(--animation-duration-base) jing-slide-up-leave both
-            var(--animation-timing-function-leave);
+        animation: var($animation-duration-base) jing-slide-up-leave both
+            var($animation-timing-function-leave);
     }
 }
 
 .jing-slide-down {
     &-enter-active {
-        animation: var(--animation-duration-base) jing-slide-down-enter both
-            var(--animation-timing-function-enter);
+        animation: var($animation-duration-base) jing-slide-down-enter both
+            var($animation-timing-function-enter);
     }
     &-exit-active {
-        animation: var(--animation-duration-base) jing-slide-down-leave both
-            var(--animation-timing-function-leave);
+        animation: var($animation-duration-base) jing-slide-down-leave both
+            var($animation-timing-function-leave);
     }
 }
 
 .jing-slide-left {
     &-enter-active {
-        animation: var(--animation-duration-base) jing-slide-left-enter both
-            var(--animation-timing-function-enter);
+        animation: var($animation-duration-base) jing-slide-left-enter both
+            var($animation-timing-function-enter);
     }
     &-exit-active {
-        animation: var(--animation-duration-base) jing-slide-left-leave both
-            var(--animation-timing-function-leave);
+        animation: var($animation-duration-base) jing-slide-left-leave both
+            var($animation-timing-function-leave);
     }
 }
 
 .jing-slide-right {
     &-enter-active {
-        animation: var(--animation-duration-base) jing-slide-right-enter both
-            var(--animation-timing-function-enter);
+        animation: var($animation-duration-base) jing-slide-right-enter both
+            var($animation-timing-function-enter);
     }
     &-exit-active {
-        animation: var(--animation-duration-base) jing-slide-right-leave both
-            var(--animation-timing-function-leave);
+        animation: var($animation-duration-base) jing-slide-right-leave both
+            var($animation-timing-function-leave);
     }
 }
 
 .jing-zoom {
     &-enter-active {
-        animation: var(--animation-duration-base) jing-zoom-in both
-            var(--animation-timing-function-enter);
+        animation: var($animation-duration-base) jing-zoom-in both
+            var($animation-timing-function-enter);
     }
     &-exit-active {
-        animation: var(--animation-duration-base) jing-zoom-out both
-            var(--animation-timing-function-leave);
+        animation: var($animation-duration-base) jing-zoom-out both
+            var($animation-timing-function-leave);
     }
 }

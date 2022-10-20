@@ -1,5 +1,5 @@
 import React from 'react';
-import { Timeline, Panel } from 'jing-ui';
+import { Timeline, Panel } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
 
 export default () => {

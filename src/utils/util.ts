@@ -104,7 +104,7 @@ export const isEmptyArray = (arr: Array<any>) =>
 export const debounce = (func: Function, delay: number) => {
     let timer: any = null;
     return function (...args: any[]) {
-        if (timer) clearTimeout();
+        if (timer) clearTimeout(timer);
         timer = setTimeout(() => {
             // @ts-ignore
             func.apply(this, args);

@@ -1,15 +1,14 @@
-import React, { Children, cloneElement } from 'react';
-import TimelineItem from './TimelineItem';
-import { TimelineType } from './PropType';
+import React, { FC } from 'react';
+import { TimelineProps } from './PropType';
 
 const prefixCls = 'jing-timeline';
 
-const Timeline: TimelineType = (props) => {
+const Timeline: FC<TimelineProps> = (props) => {
     const { children, percent, color } = props;
 
-    const count = Children.count(children);
+    const count = React.Children.count(children);
 
-    const items = Children.map(children, (child: any, i) => {
+    const items = React.Children.map(children, (child: any, i) => {
         const childProps = {
             ...child.props,
             count,
@@ -17,7 +16,7 @@ const Timeline: TimelineType = (props) => {
             color,
             i,
         };
-        return cloneElement(child, childProps);
+        return React.cloneElement(child, childProps);
     });
 
     return (
@@ -33,8 +32,6 @@ const Timeline: TimelineType = (props) => {
         </div>
     );
 };
-
-Timeline.Item = TimelineItem;
 
 Timeline.defaultProps = {
     color: '#4666D8',

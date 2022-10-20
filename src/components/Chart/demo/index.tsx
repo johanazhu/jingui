@@ -1,5 +1,5 @@
 import React from 'react';
-import { LineChart, ColumnChart, PieChart, Panel } from 'jing-ui';
+import { LineChart, ColumnChart, PieChart, Panel } from '@jojobo/jing-ui';
 
 const data = [
     {

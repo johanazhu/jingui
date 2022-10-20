@@ -1,6 +1,7 @@
 import React from 'react';
-import { Button } from 'jing-ui';
+import { Button } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
+import './index.scss';
 
 export default () => (
     <>
@@ -104,6 +105,61 @@ export default () => (
             <Button type="primary" block onClick={() => alert('我错了')}>
                 有本事就来点我啊
             </Button>
+        </DemoBlock>
+
+        <DemoBlock title="选项状态">
+            <Button.Group>
+                <Button type="primary">我是按钮</Button>
+            </Button.Group>
+            <Button.Group type="fixed-bottom">
+                <Button type="primary" disabled>
+                    我是按钮
+                </Button>
+                <Button type="primary">我是按钮</Button>
+            </Button.Group>
+        </DemoBlock>
+        <DemoBlock title="按钮组尺寸" className="demo-jing-button-group">
+            <Button.Group size="large">
+                <Button type="primary" plain>
+                    按钮1
+                </Button>
+                <Button type="primary" loading>
+                    按钮2
+                </Button>
+            </Button.Group>
+            <Button.Group size="normal">
+                <Button type="primary" plain>
+                    按钮1
+                </Button>
+                <Button type="primary" plain>
+                    按钮2
+                </Button>
+                <Button type="primary">按钮3</Button>
+            </Button.Group>
+            <Button.Group size="small">
+                <Button type="primary" plain>
+                    按钮1
+                </Button>
+                <Button type="primary" plain>
+                    按钮2
+                </Button>
+                <Button type="primary">按钮3</Button>
+                <Button type="primary">按钮4</Button>
+            </Button.Group>
+            <Button.Group size="mini">
+                <Button type="primary" plain>
+                    按钮1
+                </Button>
+                <Button type="primary" plain round>
+                    按钮2
+                </Button>
+                <Button type="second-primary" round>
+                    按钮3
+                </Button>
+                <Button type="second-primary" disabled>
+                    按钮4
+                </Button>
+            </Button.Group>
         </DemoBlock>
     </>
 );

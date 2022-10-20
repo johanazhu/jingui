@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, KeyBoard, Cell, Toast, hooks } from 'jing-ui';
+import { Modal, KeyBoard, Cell, Toast, hooks } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
 
 export default () => {
@@ -62,7 +62,7 @@ export default () => {
                 className="demo-jing-modal"
             >
                 <Cell
-                    title="Modal.alert"
+                    title="Promise调用Modal.alert "
                     isLink
                     onClick={async () => {
                         await Modal.alert({
@@ -73,7 +73,7 @@ export default () => {
                     }}
                 />
                 <Cell
-                    title="Modal.confirm"
+                    title="Promise调用Modal.confirm"
                     isLink
                     onClick={async () => {
                         try {
@@ -86,33 +86,6 @@ export default () => {
                         } catch (error) {
                             console.log('cancel');
                         }
-                    }}
-                />
-            </DemoBlock>
-            <DemoBlock
-                title="自定义内容"
-                padding=""
-                className="demo-jing-modal"
-            >
-                <Cell
-                    title="Modal.alert"
-                    isLink
-                    onClick={async () => {
-                        await Modal.alert({
-                            title: '标题',
-                            closeable: true,
-                            theme: 'round-button',
-                            message: (
-                                <div
-                                    style={{
-                                        textAlign: 'center',
-                                        margin: '16px',
-                                    }}
-                                >
-                                    自定义内容：代码是写出来给人看的，附带能在机器上运行
-                                </div>
-                            ),
-                        });
                     }}
                 />
             </DemoBlock>

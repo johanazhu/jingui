@@ -4,7 +4,7 @@ import {
     IconTabbarHome,
     IconTabbarFinancial,
     IconTabbarUser,
-} from 'jing-ui';
+} from '@jojobo/jing-ui';
 
 import { DemoBlock } from 'demo';
 

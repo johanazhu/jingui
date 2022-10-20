@@ -1,7 +1,11 @@
-import TabBar from './TabBar';
+import './style/index.scss';
+import _TabBar from './TabBar';
+import TabBarItem from './TabBarItem';
+
+const TabBar = Object.assign(_TabBar, { Item: TabBarItem });
 
 export default TabBar;
 
-export { TabBar };
+export { TabBar, TabBarItem };
 
-export type { TabBarType, TabBarItemProps } from './PropType';
+export type { TabBarProps, TabBarItemProps } from './PropType';

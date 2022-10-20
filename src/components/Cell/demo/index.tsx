@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cell, IconZan } from 'jing-ui';
+import { Cell, IconZan } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
 
 export default () => (

@@ -1,0 +1,13 @@
+@import './var.scss';
+
+:root {
+    --sticky-zindex: #{$sticky-zindex};
+}
+
+.jing-sticky {
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: var(--sticky-zindex);
+}

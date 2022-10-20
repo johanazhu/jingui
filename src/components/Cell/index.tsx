@@ -1,6 +1,10 @@
-import Cell from './Cell';
+import './style/index.scss';
+import _Cell from './Cell';
+import CellGroup from './Group';
+
+const Cell = Object.assign(_Cell, { Group: CellGroup });
 
 export default Cell;
-export { Cell };
+export { Cell, CellGroup };
 
-export type { CellProps, CellType, CellGroupProps } from './PropType';
+export type { CellProps, CellGroupProps } from './PropType';

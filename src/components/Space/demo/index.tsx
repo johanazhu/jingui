@@ -1,5 +1,5 @@
 import React from 'react';
-import { Space } from 'jing-ui';
+import { Space } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
 
 export default () => (

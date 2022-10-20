@@ -34,7 +34,3 @@ export interface TimelineProps extends BaseTypeProps {
     percent?: string;
     color?: string;
 }
-
-export interface TimelineType extends React.FC<TimelineProps> {
-    Item: React.FC<TimelineItemProps>;
-}

@@ -1,0 +1,15 @@
+@import '../../Style/variable';
+
+// Toast
+$toast-max-width: 80%;
+$toast-font-size: var(--font-size-md);
+$toast-text-color: var(--color-white-1);
+$toast-loading-icon-color: var(--color-white-1);
+$toast-line-height: var(--line-height-md);
+$toast-border-radius: var(--border-radius-lg);
+$toast-background-color: rgb(0, 0, 0, 0.7);
+$toast-text-min-width: 96px;
+$toast-text-padding: var(--padding-xs) var(--padding-sm);
+$toast-default-padding: var(--padding-md);
+$toast-default-width: 88px;
+$toast-default-min-height: 88px;

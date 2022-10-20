@@ -1,5 +1,6 @@
 .jing-demo {
     background-color: #f7f8fa;
+    overflow: hidden;
     &:last-of-type {
         padding-bottom: 32px;
     }
@@ -39,20 +40,6 @@
         .jing-tabs__content {
             padding: 24px 20px;
             background-color: #fff;
-        }
-    }
-
-    &.demo-jing-button-group {
-        .jing-button-group {
-            margin-bottom: 15px;
-
-            &:last-child {
-                margin-right: 0;
-            }
-            &.jing-button-group--1,
-            &.jing-button-group--fixed-bottom {
-                margin-bottom: 0;
-            }
         }
     }
 

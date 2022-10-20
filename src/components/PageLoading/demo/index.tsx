@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageLoading } from 'jing-ui';
+import { PageLoading } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
 
 export default () => (

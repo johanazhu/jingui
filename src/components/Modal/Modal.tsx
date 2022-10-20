@@ -40,10 +40,14 @@ const Modal: FC<ModalProps> = (props) => {
         if (title) {
             return (
                 <div
-                    className={classnames(`${prefixCls}__header`, {
-                        [`${prefixCls}__header-isolated`]:
-                            !message && !children,
-                    })}
+                    className={classnames(
+                        `${prefixCls}__header`,
+                        'jing-hairline--bottom',
+                        {
+                            [`${prefixCls}__header-isolated`]:
+                                !message && !children,
+                        },
+                    )}
                 >
                     {' '}
                     {title}

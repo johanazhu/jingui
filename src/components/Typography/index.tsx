@@ -1,3 +1,4 @@
+import './style/index.scss';
 import Typography from './Typography';
 
 export default Typography;

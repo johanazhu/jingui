@@ -13,7 +13,7 @@ const useSetState = <T extends object>(
     const unmountedRef = useUnmountedRef();
     const [state, setState, ref] = useRefState<T>(initialState);
 
-    const setMergeState = useCallback((patch) => {
+    const setMergeState = useCallback((patch: any) => {
         if (unmountedRef.current) return;
         setState((prevState) => ({
             ...prevState,

@@ -40,7 +40,3 @@ export interface TabBarProps extends BaseTypeProps {
         value?: number | string,
     ) => boolean | Promise<unknown> | any;
 }
-
-export interface TabBarType extends FC<TabBarProps> {
-    Item: FC<TabBarItemProps>;
-}

@@ -15,7 +15,7 @@ group:
 ## 引入
 
 ```js
-import { PasswordInput } from 'jing-ui';
+import { PasswordInput } from '@jojobo/jing-ui';
 ```
 
 ## 代码演示

@@ -1,13 +1,12 @@
-import React, { useState, memo, cloneElement } from 'react';
+import React, { FC, cloneElement } from 'react';
 import classnames from 'classnames';
 import Sticky from '../Sticky';
-import Item from './Item';
 import Filter from './Filter';
-import { SortBarType } from './PropType';
+import { SortBarProps } from './PropType';
 
 const prefixCls = 'jing-sortbar';
 
-const SortBar: SortBarType = (props) => {
+const SortBar: FC<SortBarProps> = (props) => {
     const {
         className,
         style,
@@ -29,6 +28,7 @@ const SortBar: SortBarType = (props) => {
 
         return cloneElement(element, {
             key: index,
+            // @ts-ignore
             title: element.props.title,
             itemKey: element.props.itemKey || index,
             selected: activeKey === element.props.itemKey,
@@ -48,8 +48,6 @@ const SortBar: SortBarType = (props) => {
 
     return <>{sticky ? <Sticky> {Content} </Sticky> : Content}</>;
 };
-
-SortBar.Item = Item;
 
 SortBar.defaultProps = {
     sticky: true,

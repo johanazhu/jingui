@@ -1,5 +1,5 @@
 import React from 'react';
-import { PasswordInput, KeyBoard, Toast, hooks } from 'jing-ui';
+import { PasswordInput, KeyBoard, Toast, hooks } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
 import './index.scss';
 

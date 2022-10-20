@@ -1,7 +1,7 @@
 import type { Theme } from './PropType';
 
 export const themes = {
-    '--theme-primary-lighter': '#303030',
+    '$primary-color-lighter': '#303030',
     '--color-text': 'rgba(255, 255, 255, 0.85)',
     '--color-text-inverse': 'rgba(255, 255, 255, 0.8)',
     '--color-text-placeholder': 'rgba(255, 255, 255, 0.3)',

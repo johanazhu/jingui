@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Switch, Cell } from 'jing-ui';
+import { Switch, Cell } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
 
 export default () => {

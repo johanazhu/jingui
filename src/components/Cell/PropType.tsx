@@ -1,4 +1,5 @@
 import { FC, ReactNode, MouseEvent, TouchEvent } from 'react';
+import { BaseTypeProps } from '@/utils';
 
 /**
  * CellGroup 列表组
@@ -6,8 +7,7 @@ import { FC, ReactNode, MouseEvent, TouchEvent } from 'react';
  * @param {inset} boolean                               // 是否使用卡片模式
  * @param {shadow} boolean                               // 是否显示外阴影
  **/
-export interface CellGroupProps {
-    className?: string;
+export interface CellGroupProps extends BaseTypeProps {
     inset?: boolean;
     shadow?: boolean;
 }
@@ -25,8 +25,7 @@ export interface CellGroupProps {
  * @param {required} boolean                            // 是否显示表单必填星号
  * @param {onClick} function                            // 点击单元格后的回调
  **/
-export interface CellProps {
-    className?: string;
+export interface CellProps extends BaseTypeProps {
     title?: number | string;
     value?: number | string | ReactNode;
     label?: string;
@@ -38,8 +37,4 @@ export interface CellProps {
     onClick?: (
         event?: MouseEvent<HTMLElement> | TouchEvent<HTMLElement>,
     ) => void;
-}
-
-export interface CellType extends FC<CellProps> {
-    Group: React.FC<CellGroupProps>;
 }

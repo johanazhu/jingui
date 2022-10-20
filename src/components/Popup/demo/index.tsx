@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Popup, Cell } from 'jing-ui';
+import { Popup, Cell } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
 
 export default () => {

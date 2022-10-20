@@ -44,7 +44,3 @@ export interface SortBarProps extends BaseTypeProps {
     onClick?: () => void;
     onChange?: (key: string, status: string) => void;
 }
-
-export interface SortBarType extends FC<SortBarProps> {
-    Item: FC<SortBarItemProps>;
-}

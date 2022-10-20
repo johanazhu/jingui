@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Panel, Space } from 'jing-ui';
+import { Row, Col, Panel, Space } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
 import './index.scss';
 

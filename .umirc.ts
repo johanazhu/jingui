@@ -68,6 +68,9 @@ export default defineConfig({
             width: 0;
             background: transparent;
         }
+        iframe[title="dumi-previewer"] {
+            background: #f7f8fa;
+        }
         iframe::-webkit-scrollbar {
             width: 0;
             background: transparent;

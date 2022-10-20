@@ -1,3 +1,4 @@
+import './style/index.scss';
 import Input from './input';
 
 import Group from './group';

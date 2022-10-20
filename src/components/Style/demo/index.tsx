@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Cell, Button } from 'jing-ui';
+import { Cell, Button } from '@jojobo/jing-ui';
 import { CSSTransition } from 'react-transition-group';
 import { DemoBlock } from 'demo';
 import './index.scss';

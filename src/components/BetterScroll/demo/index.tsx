@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Modal, Scroll, hooks } from 'jing-ui';
+import { Modal, Scroll, hooks } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
 import './index.scss';
 

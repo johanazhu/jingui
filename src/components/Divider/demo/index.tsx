@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Divider } from 'jing-ui';
+import { Divider } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
 
 export default () => (

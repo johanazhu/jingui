@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Input, Space, IconUser, IconArrow } from 'jing-ui';
+import { Input, Space, IconUser, IconArrow } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
 
 export default () => {

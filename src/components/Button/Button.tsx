@@ -1,7 +1,8 @@
-import React, { FC } from 'react';
+import React, { FC, useContext } from 'react';
 import classnames from 'classnames';
 import { IconLoading } from '../Icon';
 import { ButtonProps } from './PropType';
+import ButtonContext from './Context';
 import { WHITE } from '@/utils';
 
 const prefixCls = 'jing-button';
@@ -23,6 +24,11 @@ const Button: FC<ButtonProps> = (props) => {
         onClick,
     } = props;
 
+    const { parent } = useContext(ButtonContext);
+
+    console.log('props', props);
+    console.log('parent', parent);
+
     const _style: Record<string, string | number> = { ...style };
 
     if (color) {
@@ -41,7 +47,7 @@ const Button: FC<ButtonProps> = (props) => {
 
     const classes = classnames(prefixCls, className, {
         [`${prefixCls}--${type}`]: !!type,
-        [`${prefixCls}--${size}`]: !!size,
+        [`${prefixCls}--${parent?.size || size}`]: parent?.size || !!size,
         [`${prefixCls}--plain`]: !!plain,
         [`${prefixCls}--round`]: !!round,
         [`${prefixCls}--disabled`]: !!disabled,

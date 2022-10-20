@@ -6,7 +6,7 @@ import { BaseTypeProps } from '@/utils';
  * @param {visible} boolean                             // 是否显示弹窗
  * @param {title} string                                // 标题
  * @param {width} number/string                         // 弹窗宽度，默认单位为 px
- * @param {message} string                              // 文本内容，支持通过`\n` 换行
+ * @param {message} React.ReactNode                     // 设置主题内容
  * @param {messageAlign} string                         // 内容对齐方式，可选值为 center left right
  * @param {showConfirmButton} boolean                   // 是否展示确认按钮
  * @param {showCancelButton} boolean                    // 是否展示取消按钮
@@ -30,10 +30,10 @@ import { BaseTypeProps } from '@/utils';
  * @param {children} ReactNode                          // 自定义底部按钮区域
  **/
 export interface ModalProps extends BaseTypeProps {
-    visible: boolean;
+    visible?: boolean;
     title?: string;
     width?: number | string;
-    message?: string;
+    message?: React.ReactNode;
     messageAlign?: string;
     showConfirmButton?: boolean;
     showCancelButton?: boolean;

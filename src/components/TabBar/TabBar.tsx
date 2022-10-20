@@ -1,12 +1,12 @@
-import React, { cloneElement } from 'react';
+import React, { FC } from 'react';
 import classnames from 'classnames';
 import TabBarItem from './TabBarItem';
-import { TabBarType } from './PropType';
+import { TabBarProps } from './PropType';
 import { isPromise, isFunction } from '@/utils';
 
 const prefixCls = 'jing-tabbar';
 
-const TabBar: TabBarType = (props) => {
+const TabBar: FC<TabBarProps> = (props) => {
     const {
         className,
         activeKey,
@@ -50,8 +50,9 @@ const TabBar: TabBarType = (props) => {
 
     const items = React.Children.map(children, (element, index) => {
         if (!React.isValidElement(element)) return null;
-        return cloneElement(element, {
+        return React.cloneElement(element, {
             key: index,
+            // @ts-ignore
             title: element.props.title,
             icon: element.props.icon,
             itemKey: element.props.itemKey || index,
@@ -75,8 +76,6 @@ const TabBar: TabBarType = (props) => {
 
     return <div className={classnames(prefixCls, className)}>{items}</div>;
 };
-
-TabBar.Item = TabBarItem;
 
 TabBar.defaultProps = {
     fixed: true,

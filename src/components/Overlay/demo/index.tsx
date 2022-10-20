@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Overlay, Button } from 'jing-ui';
+import { Overlay, Button } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
 
 export default () => {

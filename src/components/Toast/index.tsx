@@ -10,6 +10,7 @@ import {
     ToastReturnType,
     ToastType,
 } from './PropType';
+import './style/index.scss';
 
 const defaultOptions: ToastProps = {
     icon: '',

@@ -7,7 +7,7 @@ const prefixCls = 'jing-textarea';
 function useInputValue(initialValue: string) {
     const [value, setValue] = useState(initialValue);
 
-    const onChange = useCallback((e) => {
+    const onChange = useCallback((e: any) => {
         setValue(e.currentTarget.value);
     }, []);
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ConfigProvider, Cell, Button, ButtonGroup } from 'jing-ui';
+import { ConfigProvider, Cell, Button, ButtonGroup } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
 
 const colors = [

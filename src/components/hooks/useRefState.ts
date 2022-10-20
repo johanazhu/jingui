@@ -10,7 +10,7 @@ export default function useRefState<T>(
     const [state, setState] = useState<T>(initialState);
     const ref = useRef(state);
     const setRafState = useCallback(
-        (patch) => {
+        (patch: any) => {
             setState((prevState) => {
                 // eslint-disable-next-line no-return-assign
                 return (ref.current = isFunction(patch)

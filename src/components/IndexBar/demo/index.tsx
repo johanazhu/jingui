@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Tabs, IndexBar, Cell } from 'jing-ui';
+import { Tabs, IndexBar, Cell } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
 
 export default () => {

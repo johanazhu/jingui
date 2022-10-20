@@ -1,0 +1,7 @@
+@import '../../Style/variable';
+
+// Popup
+$popup-background-color: var(--bg-white);
+$popup-transition: transform var(--animation-duration-base);
+$popup-close-icon-z-index: 1;
+$popup-close-icon-margin: 16px;

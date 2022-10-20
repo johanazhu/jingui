@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sticky, Button } from 'jing-ui';
+import { Sticky, Button } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
 import './index.scss';
 

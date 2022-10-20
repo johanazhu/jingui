@@ -83,6 +83,7 @@ export { default as IconZanOver } from './ZanOver';
 export { default as IconLoading } from './Loading';
 export { default as IconPhoto } from './Photo';
 export { default as IconPhotoFail } from './PhotoFail';
+export { default as IconShare } from './Share';
 
 // 提示框
 export { default as IconToastRight } from './ToastRight';

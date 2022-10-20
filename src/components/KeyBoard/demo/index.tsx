@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Cell, Input, KeyBoard, Toast, hooks } from 'jing-ui';
+import { Cell, Input, KeyBoard, Toast, hooks } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
 import { customLetterLayout, customNumberLayout } from './data';
 import './index.scss';

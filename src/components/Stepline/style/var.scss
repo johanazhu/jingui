@@ -1,0 +1,15 @@
+@import '../../Style/variable';
+
+// Stepline
+$stepline-step-height: 4px;
+$stepline-step-background: var(--color-black-4);
+$stepline-step-position-top: 18px;
+$stepline-header-color: var(--color-white-1);
+$stepline-header-font-size: var(--font-size-md);
+$stepline-header-width: 36px;
+$stepline-header-height: 36px;
+$stepline-header-line-height: 35px;
+$stepline-header-background: var(--color-black-4);
+$stepline-footer-font-size: var(--font-size-sm);
+$stepline-footer-color: var(--color-black-1);
+$stepline-footer-margin-top: 15px;

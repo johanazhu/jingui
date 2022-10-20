@@ -33,7 +33,6 @@ const JqbIcon: FC<JqbIconProps> = (props) => {
 };
 
 JqbIcon.defaultProps = {
-    color: 'blue',
     size: 'md',
     keepOriginColor: false,
 };

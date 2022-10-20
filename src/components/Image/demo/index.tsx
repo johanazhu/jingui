@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Row, Col, Loading } from 'jing-ui';
+import { Image, Row, Col, Loading } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
 
 export default () => {

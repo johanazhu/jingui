@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography } from 'jing-ui';
+import { Typography } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
 
 export default () => (

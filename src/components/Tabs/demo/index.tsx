@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Tabs } from 'jing-ui';
+import { Tabs } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
 
 export default () => {

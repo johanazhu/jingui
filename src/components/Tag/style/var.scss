@@ -1,0 +1,26 @@
+@import '../../Style/variable';
+
+// Tag
+$tag-padding: 0 var(--padding-base);
+$tag-margin: var(--padding-base);
+$tag-text-color: var(--color-white-1);
+$tag-font-size: var(--font-size-sm);
+$tag-line-height: 16px;
+$tag-border-radius: 2px;
+$tag-default-color: var(--second-primary-color);
+$tag-default-bg: rgb(253, 244, 237);
+$tag-primary-color: var(--color-white-1);
+$tag-primary-bg: var(--color-white-3);
+$tag-normal-color: var(--color-black-3);
+$tag-normal-border: var(--color-black-3);
+$tag-normal-bg: var(--bg-white);
+$tag-disabled-color: var(--color-white-1);
+$tag-disabled-bg: var(--color-black-4);
+$tag-medium-padding: 2px 6px;
+$tag-large-padding: var(--padding-base) var(--padding-xs);
+$tag-large-border-radius: var(--border-radius-md);
+$tag-large-font-size: var(--font-size-md);
+$tag-default-active-color: var(--color-white-1);
+$tag-default-active-bg: var(--second-primary-color);
+$tag-primary-active-color: var(--primary-color);
+$tag-primary-active-bg: var(--bg-white);

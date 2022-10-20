@@ -11,7 +11,7 @@ const prefixCls = 'jing-input';
 function useInputValue(initialValue: string | undefined) {
     const [value, setValue] = useState(initialValue);
 
-    let onChange = useCallback((val) => {
+    let onChange = useCallback((val: any) => {
         setValue(val);
     }, []);
 

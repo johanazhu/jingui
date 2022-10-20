@@ -32,7 +32,7 @@ export type PopupCloseIconPosition =
  **/
 export interface PopupProps extends BaseTypeProps {
     zIndex?: number;
-    visible: boolean;
+    visible?: boolean;
     position?: string;
     animationType?: string;
     duration?: number;

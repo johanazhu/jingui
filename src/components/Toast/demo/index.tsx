@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cell, Toast } from 'jing-ui';
+import { Cell, Toast } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
 
 export default () => {

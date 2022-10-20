@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tag } from 'jing-ui';
+import { Tag } from '@jojobo/jing-ui';
 
 export default () => (
     <div>

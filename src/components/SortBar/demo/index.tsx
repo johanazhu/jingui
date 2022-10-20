@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { SortBar } from 'jing-ui';
+import { SortBar } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
 
 export default () => {
