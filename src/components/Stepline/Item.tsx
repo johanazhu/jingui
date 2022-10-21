@@ -10,8 +10,6 @@ const SteplineItem: FC<SteplineItemProps> = (props) => {
     const percentValue = (percent && parseInt(percent)) || 0;
     const showColor = percentValue - distribute;
 
-    console.log('distribute', distribute);
-
     const renderStep = () => {
         if (type === 'normal') {
             return (
@@ -37,7 +35,13 @@ const SteplineItem: FC<SteplineItemProps> = (props) => {
                     ></div>
                     <div
                         style={{
-                            backgroundColor: showColor > 0 ? color : '',
+                            backgroundColor:
+                                showColor > 0 &&
+                                count &&
+                                percent &&
+                                parseInt(percent) > (i + 1) * (100 / count)
+                                    ? color
+                                    : '',
                         }}
                     ></div>
                 </div>
@@ -60,7 +64,7 @@ const SteplineItem: FC<SteplineItemProps> = (props) => {
 };
 
 SteplineItem.defaultProps = {
-    color: '#3264c8',
+    color: 'var(--primary-color)',
 };
 
 export default SteplineItem;

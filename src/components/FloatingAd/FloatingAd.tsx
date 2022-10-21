@@ -13,12 +13,6 @@ const FloatingAd: FC<FloatingAdProps> = (props) => {
     // getBoundingClientRect
     let timer: any;
 
-    useEffect(() => {
-        const screenWidth = document.body.clientWidth;
-        setFloatingAdWidth(screenWidth / 5);
-        setFloatingAdHeight((screenWidth / 5) * 1.25);
-    }, []);
-
     const handleScroll = () => {
         timer && clearTimeout(timer);
         timer = setTimeout(() => {
@@ -36,6 +30,10 @@ const FloatingAd: FC<FloatingAdProps> = (props) => {
     };
 
     useEffect(() => {
+        const screenWidth = document.body.clientWidth;
+        setFloatingAdWidth(screenWidth / 5);
+        setFloatingAdHeight((screenWidth / 5) * 1.25);
+
         window.addEventListener('scroll', handleScroll);
 
         return () => {

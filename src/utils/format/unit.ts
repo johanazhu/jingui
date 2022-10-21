@@ -1,4 +1,4 @@
-import { isDef } from '..';
+import { isDef } from '../util';
 
 export function isNumeric(val: string): boolean {
     return /^\d+(\.\d+)?$/.test(val);

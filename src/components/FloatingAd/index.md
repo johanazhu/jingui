@@ -14,7 +14,7 @@ group:
 
 ### 代码演示
 
-<!-- <code src="./demo/index.tsx" /> -->
+<code src="./demo/index.tsx" />
 
 ### API
 

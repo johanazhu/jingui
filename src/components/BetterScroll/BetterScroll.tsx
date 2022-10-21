@@ -9,8 +9,8 @@ import React, {
 } from 'react';
 import BScroll from '@better-scroll/core';
 import { ScrollProps } from './PropType';
-import IconPullupImg from '@/assets/icon-pullup.png';
-import IconLoadingImg from '@/assets/icon-loading.png';
+import IconPullupImg from '../../assets/icon-pullup.png';
+import IconLoadingImg from '../../assets/icon-loading.png';
 
 import { debounce } from '@/utils';
 

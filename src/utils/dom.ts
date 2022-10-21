@@ -1,5 +1,5 @@
 // 获取元素大小以及相对窗口的位置
-export const getBoundingClientRect = (ele) => {
+export const getBoundingClientRect = (ele: any) => {
     const rect = ele.getBoundingClientRect();
 
     // 解决ie下的兼容问题

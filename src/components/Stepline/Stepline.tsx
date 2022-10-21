@@ -26,7 +26,7 @@ const Stepline: FC<SteplineProps> = (props) => {
 
 Stepline.defaultProps = {
     type: 'normal',
-    color: '#3264c8',
+    color: 'var(--primary-color)',
 };
 
 export default Stepline;

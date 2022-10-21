@@ -1,23 +1,24 @@
 import * as React from 'react';
-import { Divider } from '@jojobo/jing-ui';
+import { FloatingAd } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
+import './index.scss';
 
-export default () => (
-    <>
-        <DemoBlock title="基本用法">
-            <Divider contentPosition="center" />
+export default () => {
+    const onClickAd = () => {
+        alert('点击悬浮广告');
+    };
+
+    return (
+        <DemoBlock title="基本用法" className="demo-jing-ad">
+            <FloatingAd
+                onClick={onClickAd}
+                style={{ width: '4rem', bottom: '4rem' }}
+            >
+                <img
+                    src="https://s2.loli.net/2021/12/24/9NUnJXwYVPquDGf.png"
+                    alt="AD"
+                />
+            </FloatingAd>
         </DemoBlock>
-        <DemoBlock title="展示文本">
-            <Divider contentPosition="center">文本</Divider>
-        </DemoBlock>
-        <DemoBlock title="内容位置">
-            <Divider contentPosition="right">文本</Divider>
-            <Divider contentPosition="center">文本</Divider>
-        </DemoBlock>
-        <DemoBlock title="虚线">
-            <Divider contentPosition="center" dashed>
-                文本
-            </Divider>
-        </DemoBlock>
-    </>
-);
+    );
+};
