@@ -14,6 +14,7 @@ export interface TabBarItemProps extends BaseTypeProps {
     itemKey: number | string;
     title?: ReactNode;
     icon?: ReactNode;
+    greyIcon?: ReactNode;
     activeIcon?: ReactNode;
     selected?: boolean;
     onChange?: (value?: number | string) => void;

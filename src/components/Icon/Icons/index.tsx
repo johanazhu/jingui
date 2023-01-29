@@ -1,5 +1,5 @@
 // 银行Icon
-export { default as IconBJBank } from './Bank/Beijing'; // 北京银行
+export { default as IconBJBank } from './Bank/BeiJing'; // 北京银行
 export { default as IconBJRCBBank } from './Bank/Beijingrcb'; // 北京农村商业银行
 export { default as IconBHBank } from './Bank/Bohai'; // 渤海银行
 export { default as IconGSBank } from './Bank/Gongshang'; // 工商银行
@@ -91,9 +91,15 @@ export { default as IconToastWait } from './ToastWait';
 export { default as IconToastWrong } from './ToastWrong';
 
 // 底部导航条
-export { default as IconTabbarHome } from './Tabbar/home';
-export { default as IconTabbarFinancial } from './Tabbar/financial';
-export { default as IconTabbarUser } from './Tabbar/user';
+export { default as IconHome } from './Home';
+export { default as IconFinancial } from './Financial';
+export { default as IconUser2 } from './User2';
+export { default as IconMall } from './Mall';
+export { default as IconMallBlck } from './MallBlack';
+export { default as IconFind } from './Find';
+export { default as IconFindBlack } from './FindBlack';
+export { default as IconMy } from './My';
+export { default as IconMyBlack } from './MyBlack';
 
 // 键盘
 export { default as IconKeyboardDelete } from './Keyboard/Delete';

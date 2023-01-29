@@ -55,6 +55,7 @@ const TabBar: FC<TabBarProps> = (props) => {
             // @ts-ignore
             title: element.props.title,
             icon: element.props.icon,
+            greyIcon: element.props.greyIcon,
             itemKey: element.props.itemKey || index,
             className: element.props.className,
             style: element.props.style,

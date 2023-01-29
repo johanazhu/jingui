@@ -9,7 +9,7 @@ export { default as Tag } from './components/Tag';
 export { default as Cell } from './components/Cell';
 export { Row, Col } from './components/Layout';
 export { default as Panel } from './components/Panel';
-export { default as KeyBoard } from './components/Keyboard';
+export { default as KeyBoard } from './components/KeyBoard';
 export { default as Result } from './components/Result';
 export { default as Input } from './components/Input';
 export { default as Switch } from './components/Switch';

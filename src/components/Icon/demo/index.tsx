@@ -84,9 +84,6 @@ import {
     IconToastRight,
     IconToastWait,
     IconToastWrong,
-    IconTabbarHome,
-    IconTabbarFinancial,
-    IconTabbarUser,
     IconKeyboardDelete,
     IconKeyboardDeleteLine,
     IconKeyboardSecurity,
@@ -107,6 +104,15 @@ import {
     IconCalculation,
     IconPhoto,
     IconPhotoFail,
+    IconHome,
+    IconFinancial,
+    IconUser2,
+    IconMall,
+    IconMallBlck,
+    IconFind,
+    IconFindBlack,
+    IconMy,
+    IconMyBlack,
     Row,
     Col,
     Tabs,
@@ -120,7 +126,7 @@ export default () => {
             <Tabs
                 value={value}
                 sticky
-                onChange={(index) => {
+                onChange={(index: any) => {
                     index && setValue(index);
                 }}
             >
