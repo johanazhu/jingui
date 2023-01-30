@@ -84,6 +84,8 @@ export { default as IconLoading } from './Loading';
 export { default as IconPhoto } from './Photo';
 export { default as IconPhotoFail } from './PhotoFail';
 export { default as IconShare } from './Share';
+export { default as IconId } from './Id';
+export { default as IconInputEdit } from './InputEdit';
 
 // 提示框
 export { default as IconToastRight } from './ToastRight';
@@ -95,7 +97,7 @@ export { default as IconHome } from './Home';
 export { default as IconFinancial } from './Financial';
 export { default as IconUser2 } from './User2';
 export { default as IconMall } from './Mall';
-export { default as IconMallBlck } from './MallBlack';
+export { default as IconMallBlack } from './MallBlack';
 export { default as IconFind } from './Find';
 export { default as IconFindBlack } from './FindBlack';
 export { default as IconMy } from './My';

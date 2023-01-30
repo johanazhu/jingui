@@ -5,7 +5,7 @@ import {
     IconFinancial,
     IconUser,
     IconMall,
-    IconMallBlck,
+    IconMallBlack,
     IconFind,
     IconFindBlack,
     IconMy,
@@ -56,7 +56,7 @@ export default () => {
                         itemKey="mall"
                         title="鲸选保险"
                         icon={<IconMall />}
-                        greyIcon={<IconMallBlck />}
+                        greyIcon={<IconMallBlack />}
                     />
                     <TabBar.Item
                         itemKey="find"

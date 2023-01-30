@@ -108,7 +108,7 @@ import {
     IconFinancial,
     IconUser2,
     IconMall,
-    IconMallBlck,
+    IconMallBlack,
     IconFind,
     IconFindBlack,
     IconMy,
