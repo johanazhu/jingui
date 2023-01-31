@@ -5,7 +5,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i.return && (_r = _i.return(), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 import React, { useState } from 'react';
-import { IconBJBank, IconBJRCBBank, IconBHBank, IconGSBank, IconGDBank, IconGDNXBank, IconGFBank, IconGZRCBBank, IconHFBank, IconHXBank, IconJSUBank, IconJXBank, IconJSHBank, IconJTBank, IconMSBank, IconNJBank, IconNBBank, IconNYBank, IconPABank, IconPFBank, IconQDBank, IconSHBank, IconXYBank, IconYZBank, IconZSBank, IconZGBank, IconZXBank, IconUser, IconEyeClose, IconEyeOpen, IconEyeCloseTwo, IconEyeOpenTwo, IconCircleDelete, IconRadioEmpty, IconRadioOk, IconPhone, IconEmail, IconMedal, IconEdit, IconPassword, IconCall, IconArrow, IconRight, IconClose, IconCircleOk, IconRmb, IconAuthen, IconBack, IconCalendar, IconCallcenter, IconCoin2, IconTrash, IconFace, IconFinger, IconGesture, IconHelp, IconSoundOn, IconSoundOff, IconIdCard, IconIttype, IconMagezine, IconMoney, IconMore, IconMore2, IconPaper, IconPdf, IconRefresh, IconSecurity, IconWaiting, IconCheckboxEmpty, IconCheckboxOk, IconMoneyPlus, IconMoneyPlusFull, IconExclamation, IconCustomer, IconNotice, IconFZ, IconXiaojinguang, IconZan, IconZanOver, IconShare, IconOfficeExcel, IconOfficePpt, IconOfficeWord, IconPhoto, IconPhotoFail, Row, Col, Tabs } from '@jojobo/jing-ui';
+import { IconBJBank, IconBJRCBBank, IconBHBank, IconGSBank, IconGDBank, IconGDNXBank, IconGFBank, IconGZRCBBank, IconHFBank, IconHXBank, IconJSUBank, IconJXBank, IconJSHBank, IconJTBank, IconMSBank, IconNJBank, IconNBBank, IconNYBank, IconPABank, IconPFBank, IconQDBank, IconSHBank, IconXYBank, IconYZBank, IconZSBank, IconZGBank, IconZXBank, IconUser, IconEyeClose, IconEyeOpen, IconEyeCloseTwo, IconEyeOpenTwo, IconCircleDelete, IconRadioEmpty, IconRadioOk, IconPhone, IconEmail, IconMedal, IconEdit, IconPassword, IconCall, IconArrow, IconRight, IconClose, IconCircleOk, IconRmb, IconAuthen, IconBack, IconCalendar, IconCallcenter, IconCoin2, IconTrash, IconHelp, IconSoundOn, IconSoundOff, IconIdCard, IconIttype, IconMagezine, IconMoney, IconMore, IconMore2, IconPaper, IconRefresh, IconSecurity, IconWaiting, IconCheckboxEmpty, IconCheckboxOk, IconMoneyPlus, IconMoneyPlusFull, IconExclamation, IconCustomer, IconNotice, IconFZ, IconXiaojinguang, IconZan, IconZanOver, IconShare, IconPhoto, IconPhotoFail, Row, Col, Tabs } from '@jojobo/jing-ui';
 import { DemoBlock } from "../../../demo";
 export default (function () {
   var _useState = useState(0),
@@ -101,8 +101,6 @@ export default (function () {
     align: "center"
   }, /*#__PURE__*/React.createElement(Col, {
     span: 6
-  }, /*#__PURE__*/React.createElement(IconPdf, null)), /*#__PURE__*/React.createElement(Col, {
-    span: 6
   }, /*#__PURE__*/React.createElement(IconCustomer, null)), /*#__PURE__*/React.createElement(Col, {
     span: 6
   }, /*#__PURE__*/React.createElement(IconXiaojinguang, null)), /*#__PURE__*/React.createElement(Col, {
@@ -168,12 +166,6 @@ export default (function () {
     span: 6
   }, /*#__PURE__*/React.createElement(IconTrash, null), /*#__PURE__*/React.createElement("span", null, "\u5783\u573E\u6876")), /*#__PURE__*/React.createElement(Col, {
     span: 6
-  }, /*#__PURE__*/React.createElement(IconFace, null), /*#__PURE__*/React.createElement("span", null, "\u4EBA\u8138")), /*#__PURE__*/React.createElement(Col, {
-    span: 6
-  }, /*#__PURE__*/React.createElement(IconFinger, null), /*#__PURE__*/React.createElement("span", null, "\u6307\u7EB9")), /*#__PURE__*/React.createElement(Col, {
-    span: 6
-  }, /*#__PURE__*/React.createElement(IconGesture, null), /*#__PURE__*/React.createElement("span", null, "\u624B\u52BF\u5BC6\u7801")), /*#__PURE__*/React.createElement(Col, {
-    span: 6
   }, /*#__PURE__*/React.createElement(IconHelp, null), /*#__PURE__*/React.createElement("span", null, "\u5E2E\u52A9")), /*#__PURE__*/React.createElement(Col, {
     span: 6
   }, /*#__PURE__*/React.createElement(IconSoundOn, null), /*#__PURE__*/React.createElement("span", null, "\u58F0\u97F3\u5F00")), /*#__PURE__*/React.createElement(Col, {
@@ -226,15 +218,7 @@ export default (function () {
     span: 6
   }, /*#__PURE__*/React.createElement(IconPhotoFail, null), /*#__PURE__*/React.createElement("span", null, "\u56FE\u7247\u88C2\u5F00")), /*#__PURE__*/React.createElement(Col, {
     span: 6
-  }, /*#__PURE__*/React.createElement(IconShare, null), /*#__PURE__*/React.createElement("span", null, "\u5206\u4EAB")), /*#__PURE__*/React.createElement(Col, {
-    span: 6
-  }, /*#__PURE__*/React.createElement(IconPdf, null), /*#__PURE__*/React.createElement("span", null, "PDF")), /*#__PURE__*/React.createElement(Col, {
-    span: 6
-  }, /*#__PURE__*/React.createElement(IconOfficeExcel, null), /*#__PURE__*/React.createElement("span", null, "Excel")), /*#__PURE__*/React.createElement(Col, {
-    span: 6
-  }, /*#__PURE__*/React.createElement(IconOfficePpt, null), /*#__PURE__*/React.createElement("span", null, "PPT")), /*#__PURE__*/React.createElement(Col, {
-    span: 6
-  }, /*#__PURE__*/React.createElement(IconOfficeWord, null), /*#__PURE__*/React.createElement("span", null, "Word"))))), /*#__PURE__*/React.createElement(Tabs.Panel, {
+  }, /*#__PURE__*/React.createElement(IconShare, null), /*#__PURE__*/React.createElement("span", null, "\u5206\u4EAB"))))), /*#__PURE__*/React.createElement(Tabs.Panel, {
     title: "\u94F6\u884C\u5361"
   }, /*#__PURE__*/React.createElement(DemoBlock, {
     className: "demo-jing-icon",

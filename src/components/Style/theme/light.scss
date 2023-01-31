@@ -2,6 +2,8 @@
 
 :root {
     // 颜色
+    --color-primary: #{$color-primary};
+    --color-second-primary: #{$color-second-primary};
     --color-blue: #{$color-blue};
     --color-orange: #{$color-orange};
     --color-sky-blue: #{$color-sky-blue};

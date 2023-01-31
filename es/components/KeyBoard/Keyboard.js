@@ -124,11 +124,14 @@ var Keyboard = function Keyboard(props) {
   var handleTouchNeedHide = function handleTouchNeedHide(event) {
     if (noNeedHideElements && (noNeedHideElements === null || noNeedHideElements === void 0 ? void 0 : noNeedHideElements.length) > 0) {
       // @ts-ignore
-      for (var i = 0; i < (event === null || event === void 0 ? void 0 : event.path.length); i++) {
+      if (event.path) {
         // @ts-ignore
-        var item = event === null || event === void 0 ? void 0 : event.path[i];
-        if (noNeedHideElements.indexOf((item === null || item === void 0 ? void 0 : item.id) || (item === null || item === void 0 ? void 0 : item.className)) !== -1) {
-          return;
+        for (var i = 0; i < (event === null || event === void 0 ? void 0 : event.path.length); i++) {
+          // @ts-ignore
+          var item = event === null || event === void 0 ? void 0 : event.path[i];
+          if (noNeedHideElements.indexOf((item === null || item === void 0 ? void 0 : item.id) || (item === null || item === void 0 ? void 0 : item.className)) !== -1) {
+            return;
+          }
         }
       }
     }

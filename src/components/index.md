@@ -66,13 +66,7 @@ group:
 ## 业务组件
 
 -   [ ] [Area 地址](./components/work/area)
--   [ ] [Stepline 步骤](./components/work/stepline)
--   [ ] [BankCard 银行卡](./components/work/bankcard)
--   [ ] [CardBox 卡片盒子](./components/work/cardbox)
--   [ ] [DetailList 详情列表](./components/work/detaillist)
--   [ ] [DetailTop 详情顶部](./components/work/detailtop)
 -   [ ] [Orientation 方向](./components/work/orientation)
--   [ ] [ProductCard 产品卡片](./components/work/productCard)
 -   [x] [SortBar 排序栏](./components/work/sort-bar)
 -   [x] [Timeline 时间线](./components/work/timeline)
 -   [x] [Floatingad 悬浮广告](./components/work/floatingad)
@@ -81,6 +75,3 @@ group:
 
 -   [ ] [configprovider 全局配置](./components/config/config-provider)
 
-## 废弃
-
--   [Chart 图表](./components/discard/chart)
