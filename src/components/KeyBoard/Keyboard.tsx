@@ -147,14 +147,17 @@ const Keyboard: FC<KeyboardProps> = (props) => {
     const handleTouchNeedHide = (event: Event) => {
         if (noNeedHideElements && noNeedHideElements?.length > 0) {
             // @ts-ignore
-            for (let i = 0; i < event?.path.length; i++) {
+            if (event.path) {
                 // @ts-ignore
-                let item = event?.path[i];
-                if (
-                    noNeedHideElements.indexOf(item?.id || item?.className) !==
-                    -1
-                ) {
-                    return;
+                for (let i = 0; i < event?.path.length; i++) {
+                    // @ts-ignore
+                    let item = event?.path[i];
+                    if (
+                        noNeedHideElements.indexOf(item?.id || item?.className) !==
+                        -1
+                    ) {
+                        return;
+                    }
                 }
             }
         }

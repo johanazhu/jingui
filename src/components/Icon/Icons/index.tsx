@@ -52,9 +52,6 @@ export { default as IconCalendar } from './Calendar';
 export { default as IconCallcenter } from './Callcenter';
 export { default as IconCoin2 } from './Coin2';
 export { default as IconTrash } from './Trash';
-export { default as IconFace } from './Face';
-export { default as IconFinger } from './Finger';
-export { default as IconGesture } from './Gesture';
 export { default as IconHelp } from './Help';
 export { default as IconSoundOn } from './SoundOn';
 export { default as IconSoundOff } from './SoundOff';
@@ -65,7 +62,6 @@ export { default as IconMoney } from './Money';
 export { default as IconMore } from './More';
 export { default as IconMore2 } from './More2';
 export { default as IconPaper } from './Paper';
-export { default as IconPdf } from './Pdf';
 export { default as IconRefresh } from './Refresh';
 export { default as IconSecurity } from './Security';
 export { default as IconWaiting } from './Waiting';
@@ -116,10 +112,6 @@ export { default as IconFilterUp } from './Filter/Up';
 export { default as IconFilterEmty } from './Filter/Emty';
 export { default as IconFilter } from './Filter';
 
-// office 三剑客
-export { default as IconOfficeExcel } from './Office/excel';
-export { default as IconOfficePpt } from './Office/ppt';
-export { default as IconOfficeWord } from './Office/word';
 
 // 理财页导航
 export { default as IconLoanMenu } from './ShortCutMenu/Loan';

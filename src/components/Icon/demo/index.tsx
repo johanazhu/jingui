@@ -52,9 +52,6 @@ import {
     IconCallcenter,
     IconCoin2,
     IconTrash,
-    IconFace,
-    IconFinger,
-    IconGesture,
     IconHelp,
     IconSoundOn,
     IconSoundOff,
@@ -65,7 +62,6 @@ import {
     IconMore,
     IconMore2,
     IconPaper,
-    IconPdf,
     IconRefresh,
     IconSecurity,
     IconWaiting,
@@ -81,27 +77,6 @@ import {
     IconZan,
     IconZanOver,
     IconShare,
-    IconToastRight,
-    IconToastWait,
-    IconToastWrong,
-    IconKeyboardDelete,
-    IconKeyboardDeleteLine,
-    IconKeyboardSecurity,
-    IconKeyboardShift,
-    IconKeyboardShiftLine,
-    IconFilterDown,
-    IconFilterUp,
-    IconFilterEmty,
-    IconFilter,
-    IconOfficeExcel,
-    IconOfficePpt,
-    IconOfficeWord,
-    IconLoanMenu,
-    IconMoneyPlusMenu,
-    IcontransferMenu,
-    IconAddition,
-    IconSubtraction,
-    IconCalculation,
     IconPhoto,
     IconPhotoFail,
     IconHome,
@@ -200,9 +175,6 @@ export default () => {
                         padding=""
                     >
                         <Row justify="start" align="center">
-                            <Col span={6}>
-                                <IconPdf />
-                            </Col>
                             <Col span={6}>
                                 <IconCustomer />
                             </Col>
@@ -319,18 +291,6 @@ export default () => {
                                 <span>垃圾桶</span>
                             </Col>
                             <Col span={6}>
-                                <IconFace />
-                                <span>人脸</span>
-                            </Col>
-                            <Col span={6}>
-                                <IconFinger />
-                                <span>指纹</span>
-                            </Col>
-                            <Col span={6}>
-                                <IconGesture />
-                                <span>手势密码</span>
-                            </Col>
-                            <Col span={6}>
                                 <IconHelp />
                                 <span>帮助</span>
                             </Col>
@@ -437,22 +397,6 @@ export default () => {
                             <Col span={6}>
                                 <IconShare />
                                 <span>分享</span>
-                            </Col>
-                            <Col span={6}>
-                                <IconPdf />
-                                <span>PDF</span>
-                            </Col>
-                            <Col span={6}>
-                                <IconOfficeExcel />
-                                <span>Excel</span>
-                            </Col>
-                            <Col span={6}>
-                                <IconOfficePpt />
-                                <span>PPT</span>
-                            </Col>
-                            <Col span={6}>
-                                <IconOfficeWord />
-                                <span>Word</span>
                             </Col>
                         </Row>
                     </DemoBlock>

@@ -1,3 +1,5 @@
+$color-primary: rgb(38, 164, 164);
+$color-second-primary: rgb(255, 100, 20);
 $color-blue: rgb(50, 100, 200);
 $color-orange: rgb(255, 100, 20);
 $color-light-blue: rgb(80, 120, 240);
@@ -27,26 +29,17 @@ $background-color: #f7f8fa;
 $background-color-light: #fafafa;
 
 // 渐变色
-$gradient-blue: linear-gradient(to right, rgb(80, 135, 245), $color-blue);
-$gradient-orange: linear-gradient(to right, rgb(255, 135, 35), $color-orange);
-$gradient-blue-disable: linear-gradient(
-    to right,
-    rgb(185, 205, 250),
-    rgb(150, 185, 245)
-);
-$gradient-orange-disable: linear-gradient(
-    to right,
-    rgb(240, 210, 185),
-    rgb(250, 200, 175)
-);
+$gradient-primary: linear-gradient(to right, rgb(102, 204, 153), rgb(51, 204, 204));
+$gradient-second-primary: linear-gradient(to right, rgb(255, 135, 35), $color-orange);
 
-$primary-color: var(--color-blue);
-$second-primary-color: var(--color-orange);
+
+$primary-color: var(--color-primary);
+$second-primary-color: var(--color-second-primary);
 $info-color: var(--color-sky-blue);
 $success-color: var(--color-green);
 $warning-color: var(--color-yellow);
 $danger-color: var(--color-red);
-$gradient-primary: var(--gradient-primary);
-$gradient-second-primary: var(--gradient-second-primary);
-$gradient-primary-disable: var(--gradient-primary-disable);
-$gradient-second-primary-disable: var(--gradient-second-primary-disable);
+// $gradient-primary: var(--gradient-primary);
+// $gradient-second-primary: var(--gradient-second-primary);
+// $gradient-primary-disable: var(--gradient-primary-disable);
+// $gradient-second-primary-disable: var(--gradient-second-primary-disable);

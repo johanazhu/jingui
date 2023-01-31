@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 import classnames from 'classnames';
 import './index.scss';
 
@@ -8,6 +8,7 @@ export interface Props {
     padding?: string;
     border?: string;
     background?: string;
+    children?: ReactNode;
 }
 
 export const DemoBlock: FC<Props> = (props) => {

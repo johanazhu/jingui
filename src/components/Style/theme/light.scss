@@ -35,10 +35,10 @@
     --danger-color: #{$danger-color};
 
     // 渐变色
-    --gradient-primary: #{$gradient-blue};
-    --gradient-second-primary: #{$gradient-orange};
-    --gradient-primary-disable: #{$gradient-blue-disable};
-    --gradient-second-primary-disable: #{$gradient-orange-disable};
+    --gradient-primary: #{$gradient-primary};
+    --gradient-second-primary: #{$gradient-second-primary};
+    // --gradient-primary-disable: #{$gradient-blue-disable};
+    // --gradient-second-primary-disable: #{$gradient-orange-disable};
 
     // 动画
     --animation-duration-base: #{$animation-duration-base};
