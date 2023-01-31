@@ -1,0 +1,19 @@
+@import '../../Style/variable';
+
+// Typography
+$typography-padding: var(--vertical-gap);
+$typography-border-color: var(--border-color);
+$typography-h-margin-bottom: var(--vertical-gap);
+$typography-p-line-height: 1.8em;
+$typography-p-margin-bottom: var(--vertical-gap);
+$typography-font-size-xs: var(--font-size-xs);
+$typography-font-size-sm: var(--font-size-sm);
+$typography-font-size-md: var(--font-size-md);
+$typography-font-size-lg: var(--font-size-lg);
+$typography-font-size-xl: var(--font-size-xl);
+$typography-font-size-xxl: var(--font-size-xxl);
+$typography-table-bg: var(--bg-white);
+$typography-table-tr-bg: var(--background-color-light);
+$typography-table-td-border-color: var(--color-black-4);
+$typography-li-margin-left: var(--horizontal-gap);
+$typography-hr-bg: var(--color-black-5);

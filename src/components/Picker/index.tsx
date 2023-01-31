@@ -5,4 +5,10 @@ export default Picker;
 
 export { Picker };
 
-export type { PickerProps } from './PropType';
+export type {
+    PickerProps,
+    PickerObjectColumn,
+    PickerColumnProps,
+    PickerOption
+} from './PropType';
+

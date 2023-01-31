@@ -1,0 +1,31 @@
+@import '../../Style/variable';
+
+// Cell
+$cell-font-size: var(--font-size-md);
+$cell-height: 24px;
+$cell-line-height: 24px;
+$cell-vertical-padding: var(--vertical-gap);
+$cell-horizontal-padding: var(--horizontal-gap);
+$cell-text-color: var(--text-color);
+$cell-bg: var(--bg-white);
+$cell-border-color: var(--border-color);
+$cell-active-color: var(--active-color);
+$cell-required-color: var(--danger-color);
+$cell-value-font-size: var(--font-size-sm);
+$cell-label-color: var(--color-black-3);
+$cell-label-font-size: var(--font-size-xs);
+$cell-label-line-height: var(--line-height-sm);
+$cell-label-margin-top: var(--padding-base);
+$cell-desc-color-size: var(--font-size-xs);
+$cell-value-color: var(--color-black-3);
+$cell-icon-color: var(--color-black-3);
+$cell-icon-margin-left: var(--padding-base);
+$cell-link-color: var(--color-black-3);
+$cell-link-margin-left: var(--padding-base);
+$cell-alone-color: var(--text-color);
+$cell-alone-font-size: var(--font-size-md);
+
+// CellGroup
+$cell-group-bg: var(--bg-white);
+$cell-group-inset-margin: var(--horizontal-gap);
+$cell-group-border-radius: var(--border-radius-lg);

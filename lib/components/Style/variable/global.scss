@@ -1,0 +1,70 @@
+@import './color.scss';
+
+// 字体
+$font-size-xxs: 8px;
+$font-size-xs: 10px;
+$font-size-sm: 12px;
+$font-size-md: 14px;
+$font-size-lg: 16px;
+$font-size-xl: 18px;
+$font-size-xxl: 20px;
+$font-size-xxxl: 22px;
+$font-weight-bold: 600;
+$base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+    Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft Yahei', sans-serif;
+$price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial,
+    sans-serif;
+
+// 元件
+$text-color: var(--color-black-1);
+$active-color: var(--color-black-5);
+$active-opacity: 0.7;
+$disabled-opacity: 0.5;
+$text-link-color: #576b95;
+
+// Padding
+$padding-base: 4px;
+$padding-xs: calc($padding-base * 2);
+$padding-sm: calc($padding-base * 3);
+$padding-md: calc($padding-base * 4);
+$padding-lg: calc($padding-base * 6);
+$padding-xl: calc($padding-base * 8);
+
+// 间距
+// 纵
+$vertical-gap: 16px;
+// 横
+$horizontal-gap: 10px;
+
+// 堆叠顺序
+$zindex-stick: 99;
+$zindex-overlay: 1000;
+$zindex-popup: 1100;
+
+// 透明度
+$opacity-disabled: 0.5;
+$opacity-overlay: 0.7;
+$opacity-toast: 0.8;
+
+// 行高
+$line-height-xs: 14px;
+$line-height-sm: 18px;
+$line-height-md: 20px;
+$line-height-lg: 22px;
+
+// 动画
+$animation-duration-base: 0.3s;
+$animation-duration-fast: 0.2s;
+$animation-timing-function-enter: ease-out;
+$animation-timing-function-leave: ease-in;
+$cubic-bezier: cubic-bezier(0.25, 0.8, 0.5, 1);
+
+// Border
+// $active-color: var(--color-black-5);
+$border-color: var(--color-black-5);
+$border-width-base: 1px;
+$border-radius-sm: 2px;
+$border-radius-md: 4px;
+$border-radius-lg: 8px;
+$border-radius-max: 999px;

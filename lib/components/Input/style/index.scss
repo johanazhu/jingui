@@ -1,0 +1,200 @@
+@import './var.scss';
+@import '../../Style/mixin/index.scss';
+
+:root {
+    --input-width: #{$input-width};
+    --input-font-size: #{$input-font-size};
+    --input-text-color: #{$input-text-color};
+    --input-verify-text-color: #{$input-verify-text-color};
+    --input-border-color: #{$input-border-color};
+    --input-error-border-color: #{$input-error-border-color};
+    --input-active-border-color: #{$input-active-border-color};
+    --input-disbaled-text-color: #{$input-disbaled-text-color};
+    --input-disabled-bg: #{$input-disabled-bg};
+    --input-placeholder-text-color: #{$input-placeholder-text-color};
+    --input-placeholder-font-size: #{$input-placeholder-font-size};
+    --input-keyboard-height: #{$input-keyboard-height};
+    --input-keyboard-small-font-size: #{$input-keyboard-small-font-size};
+    --input-keyboard-sub-font-size: #{$input-keyboard-sub-font-size};
+    --input-keyboard-sub-text-color: #{$input-keyboard-sub-text-color};
+    --input-keyboard-cursor-height: #{$input-keyboard-cursor-height};
+    --input-keyboard-cursor-bg: #{$input-keyboard-cursor-bg};
+    --input-verify-font-size: #{$input-verify-font-size};
+    --input-verify-active-color: #{$input-verify-active-color};
+}
+
+@mixin jing-input-placeholder {
+    color: var(--input-placeholder-text-color) !important;
+    font-size: var(--input-placeholder-font-size);
+}
+
+@mixin jing-input-common() {
+    width: var(--input-width);
+}
+
+input::placeholder {
+    @include jing-input-placeholder();
+}
+
+textarea::placeholder {
+    @include jing-input-placeholder();
+}
+
+.jing-input {
+    @include cell;
+    border: 1px solid transparent;
+
+    &--error {
+        border-color: var(--input-error-border-color);
+
+        &:focus {
+            border-color: var(--input-error-border-color);
+        }
+    }
+
+    &::-webkit-input-placeholder {
+        color: var(--input-placeholder-text-color);
+    }
+
+    &::placeholder {
+        color: var(--input-placeholder-text-color);
+    }
+}
+
+.jing-input__group {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    font-size: var(--input-font-size);
+    .jing-input {
+        flex: 1;
+    }
+
+    .jing-input--focus {
+        @include flex-center();
+        @include jing-input-common();
+    }
+
+    .jing-input--clear {
+        // display: flex !important;
+        @include flex-center();
+        @include jing-input-common();
+    }
+
+    &-prefix-icon {
+        @include flex-center();
+        @include jing-input-common();
+    }
+    &-suffix-icon {
+        @include flex-center();
+        @include jing-input-common();
+    }
+}
+
+// 前缀
+.jing-input__group-prefix {
+    .jing-input {
+        padding-left: 0;
+    }
+}
+
+// 后缀
+.jing-input__group-suffix {
+    .jing-input {
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+    }
+}
+
+// 带密码的input
+.jing-input__group-password {
+    .jing-input {
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+    }
+}
+
+// 发送短信验证码input
+.jing-input__group-verify {
+    .jing-input__group {
+        width: 65%;
+    }
+    .jing-input__verify {
+        @include flex-center();
+        width: 100px;
+        // justify-content: flex-end;
+        color: var(--input-verify-text-color);
+        font-size: var(--input-verify-font-size);
+        text-align: right;
+        &-active {
+            color: var(--input-verify-active-color);
+        }
+    }
+}
+
+// 验证码input
+.jing-input__group-captcha {
+    .jing-input__group {
+        width: 65%;
+    }
+    .jing-input__captcha {
+        @include flex-center();
+    }
+}
+
+// keyboard
+.jing-input__group-keyboard {
+    position: relative;
+    .jing-input__keyboard {
+        @include cell;
+        flex: 1;
+        width: 100%;
+        height: var(--input-keyboard-height);
+        cursor: text;
+        position: relative;
+        z-index: 2;
+        background-color: rgba(255, 255, 255, 0);
+        border: 1px solid transparent;
+        &:after {
+            visibility: hidden;
+            content: '';
+            width: 1px;
+            height: var(--input-keyboard-cursor-height);
+            background: var(--input-keyboard-cursor-bg);
+            position: relative;
+            top: 3px;
+            left: 0;
+            animation: 1s step-start infinite jqb-cursor-flicker;
+        }
+        &-active {
+            &:after {
+                visibility: visible;
+            }
+        }
+        &-small {
+            font-size: var(--input-keyboard-small-font-size);
+        }
+    }
+    sub {
+        z-index: 1;
+        display: block;
+        position: absolute;
+        left: 17px;
+        top: 52%;
+        transform: translate(0, -50%);
+        height: 1em;
+        line-height: 1em;
+        font-size: var(--input-keyboard-sub-font-size);
+        color: var(--input-keyboard-sub-text-color);
+    }
+}
+
+// 多行
+.jing-textarea {
+    @include cell();
+    display: block;
+    resize: none;
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow: visible;
+}

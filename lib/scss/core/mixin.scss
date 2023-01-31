@@ -1,0 +1,166 @@
+// @import './var.scss';
+
+@mixin pre($style, $value) {
+    -webkit-#{$style}: $value;
+    -moz-#{$style}: $value;
+    -ms-#{$style}: $value;
+    -o-#{$style}: $value;
+    #{$style}: $value;
+}
+
+@mixin filter($value) {
+    @include pre(filter, $value);
+}
+@mixin animation($value) {
+    @include pre(animation, $value);
+}
+@mixin transition($arg) {
+    @include pre(transition, $arg);
+}
+@mixin transition-duration($arg) {
+    @include pre(transition-duration, $arg);
+}
+@mixin transform($arg) {
+    @include pre(transform, $arg);
+}
+@mixin transform-origin($arg) {
+    @include pre(transform-origin, $arg);
+}
+@mixin transform-style($arg) {
+    @include pre(transform-style, $arg);
+}
+
+@mixin bg-image($url) {
+    background-image: url($url + '@2x.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+        background-image: url($url + '@3x.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+}
+
+// 3.0 圆角+阴影效果
+@mixin background-shadow() {
+    background: var(--color-white-1);
+    border-radius: 10px;
+    box-shadow: 0px 1px 4px rgba(100, 100, 100, 0.1);
+}
+
+// 3.0 底部的空位
+@mixin padding-bottom() {
+    padding-bottom: 5rem; // btn 高度
+    padding-bottom: calc(constant(safe-area-inset-bottom) + 5rem);
+    padding-bottom: calc(env(safe-area-inset-bottom) + 5rem);
+}
+
+@mixin padding-bottom-nobtn() {
+    padding-bottom: $global-horizontal-gap;
+    padding-bottom: calc(
+        constant(safe-area-inset-bottom) + #{$global-horizontal-gap}
+    );
+    padding-bottom: calc(
+        env(safe-area-inset-bottom) + #{$global-horizontal-gap}
+    );
+}
+
+// 适配各种屁股条手机在微信中的展示，有底部导航条和无导航时
+@mixin iPhoneXAndIPhoneXSScreenFit() {
+    @media only screen and (width: 1125px) and (height: 2172px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+        @content;
+    }
+
+    @media only screen and (width: 2436px) and (height: 1029px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin iPhoneXRScreenFit() {
+    @media only screen and (width: 828px) and (height: 1616px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+        @content;
+    }
+
+    @media only screen and (width: 1792px) and (height: 732px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin iPhoneXSMaxScreenFit() {
+    @media only screen and (width: 1242px) and (height: 2424px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+        @content;
+    }
+
+    @media only screen and (width: 2688px) and (height: 1146px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin iPhoneDevicesScreenFit() {
+    @include iPhoneXAndIPhoneXSScreenFit() {
+        @content;
+    }
+
+    @include iPhoneXRScreenFit() {
+        @content;
+    }
+
+    @include iPhoneXSMaxScreenFit() {
+        @content;
+    }
+}
+
+@mixin iconColorFn($color) {
+    fill: $color;
+    path {
+        fill: $color;
+    }
+    circle {
+        fill: $color;
+    }
+}
+
+// flex 居中对齐
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin cell {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    padding: var(--cell-vertical-padding) var(--cell-horizontal-padding);
+    color: var(--cell-text-color);
+    font-size: var(--cell-font-size);
+    line-height: var(--cell-line-height);
+    background-color: var(--cell-bg);
+}
+
+@mixin defineColorHSL($color, $hue, $saturation, $lightness) {
+    #{$color}: unquote('hsl(#{$hue}, #{$saturation}, #{$lightness})');
+    #{$color}-h: #{$hue};
+    #{$color}-s: #{$saturation};
+    #{$color}-l: #{$lightness};
+    #{$color}-light: unquote(
+        'hsl(#{$hue}, #{$saturation}, #{$lightness}, 0.8)'
+    );
+    #{$color}-light-h: #{$hue};
+    #{$color}-light-s: #{$saturation};
+    #{$color}-light-l: #{$lightness};
+    #{$color}-light-alpha: 0.8;
+    #{$color}-lighter: unquote('hsl(#{$hue}, #{$saturation}, 95%)');
+    #{$color}-lighter-h: #{$hue};
+    #{$color}-lighter-s: #{$saturation};
+    #{$color}-lighter-l: 95%;
+    #{$color}-dark: unquote('hsl(#{$hue}, #{$saturation}, #{$lightness - 4})');
+    #{$color}-dark-h: #{$hue};
+    #{$color}-dark-s: #{$saturation};
+    #{$color}-dark-l: #{$lightness - 4};
+    #{$color}-darker: unquote('hsl(#{$hue}, #{$saturation}, 20%)');
+    #{$color}-darker-h: #{$hue};
+    #{$color}-darker-s: #{$saturation};
+    #{$color}-darker-l: 20%;
+}

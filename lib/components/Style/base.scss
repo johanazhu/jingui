@@ -1,0 +1,87 @@
+// variable
+@import './variable/index.scss';
+
+// 亮/暗/灰模式
+@import './theme/index.scss';
+
+// 重置
+@import './reset.scss';
+
+// mixin
+@import './mixin/index.scss';
+
+// 动画
+@import './animation/index.scss';
+
+.jing-safe-area-bottom {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.jing-iphonex-extra-height {
+    height: constant(safe-area-inset-bottom);
+    height: env(safe-area-inset-bottom);
+    //   height: 10px;
+}
+
+.iphonex-extra-height {
+    height: constant(safe-area-inset-bottom);
+    height: env(safe-area-inset-bottom);
+}
+
+.jing-ellipsis {
+    @include ellipsis;
+}
+
+.jing-multi-ellipsis--l2 {
+    @include multi-ellispsis(2);
+}
+
+.jing-multi-ellipsis--l3 {
+    @include multi-ellispsis(3);
+}
+
+[class*='jing-hairline'] {
+    &::after {
+        @include hairline;
+    }
+}
+
+.jing-hairline {
+    &,
+    &--top,
+    &--left,
+    &--right,
+    &--bottom,
+    &--surround,
+    &--top-bottom {
+        position: relative;
+    }
+
+    &--top::after {
+        border-top-width: $border-width-base;
+    }
+
+    &--left::after {
+        border-left-width: $border-width-base;
+    }
+
+    &--right::after {
+        border-right-width: $border-width-base;
+    }
+
+    &--bottom::after {
+        border-bottom-width: $border-width-base;
+    }
+
+    &,
+    &-unset {
+        &--top-bottom::after {
+            border-width: $border-width-base 0;
+        }
+    }
+
+    &--surround::after {
+        border-width: $border-width-base;
+    }
+}

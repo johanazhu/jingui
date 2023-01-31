@@ -1,0 +1,13 @@
+@import '../../Style/variable';
+
+// TabBar
+$tabbar-height: 50px;
+$tabbar-z-index: 1;
+$tabbar-backgrond-color: var(--bg-white);
+
+// TabBarItem
+$tabbar-item-font-size: var(--font-size-sm);
+$tabbar-item-text-color: var(--color-black-2);
+$tabbar-item-active-color: var(--primary-color);
+$tabbar-item-line-height: 1;
+$tabbar-item-margin-bittom: 4px;

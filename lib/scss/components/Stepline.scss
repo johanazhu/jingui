@@ -1,0 +1,55 @@
+.Stepline {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    min-height: 1px;
+    &-item {
+        position: relative;
+        min-height: 1px;
+        text-align: center;
+        &:first-child {
+            .Stepline-item__step {
+                left: 50%;
+            }
+        }
+        &:last-child {
+            .Stepline-item__step {
+                width: 50%;
+            }
+        }
+        &__step {
+            width: 100%;
+            height: 4px;
+            background: #ccc;
+            position: absolute;
+            top: 19px;
+            left: 0;
+        }
+        &__header {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            margin: 0;
+            padding: 0;
+            line-height: 35px;
+            text-align: center;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 18px;
+            background-color: #ccc;
+            position: relative;
+            top: 2px;
+        }
+
+        &__footer {
+            font-size: $am-sm;
+            color: #1496ff;
+            display: block;
+            margin: 0;
+            padding: 0;
+            line-height: 1.4em;
+            color: #323232;
+            margin-top: 15px;
+        }
+    }
+}

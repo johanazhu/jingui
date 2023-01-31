@@ -22,6 +22,19 @@ export default defineConfig({
         // assets: resolve(__dirname, 'src/assets/'),
         assets: '/src/assets',
     },
+    // extraBabelPlugins: [
+    //     [
+    //         'import',
+    //         {
+    //             libraryName: 'jingui',
+    //             camel2DashComponentName: false,
+    //             customStyleName: name => {
+    //                 return `./scss/index.less`; // 注意：这里 ./ 不可省略
+    //             },
+    //         },
+    //         'jingui',
+    //     ],
+    // ],
     themeConfig: {
         carrier: 'jingui',
         hd: {

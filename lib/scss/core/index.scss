@@ -1,0 +1,95 @@
+// 重置
+@import './reset.scss';
+
+// mixin
+@import './mixin.scss';
+@import './mixins/index.scss';
+@import './mixins/hairline.scss';
+@import './mixins/ellipsis.scss';
+
+// 动画
+@import './animation.scss';
+
+@import './normalize.scss';
+
+// @import './themes.scss';
+
+// 以下内容暂时放在这里，后续等base文件清空在转移
+.jing-safe-area-bottom {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.jing-iphonex-extra-height {
+    height: constant(safe-area-inset-bottom);
+    height: env(safe-area-inset-bottom);
+    //   height: 10px;
+}
+
+.iphonex-extra-height {
+    height: constant(safe-area-inset-bottom);
+    height: env(safe-area-inset-bottom);
+}
+
+.jing-ellipsis {
+    @include ellipsis;
+}
+
+.jing-multi-ellipsis--l2 {
+    @include multi-ellispsis(2);
+}
+
+.jing-multi-ellipsis--l3 {
+    @include multi-ellispsis(3);
+}
+
+[type='checkbox'],
+[type='radio'] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+[class*='jing-hairline'] {
+    &::after {
+        @include hairline;
+    }
+}
+
+.jing-hairline {
+    &,
+    &--top,
+    &--left,
+    &--right,
+    &--bottom,
+    &--surround,
+    &--top-bottom {
+        position: relative;
+    }
+
+    &--top::after {
+        border-top-width: var(--border-width-base);
+    }
+
+    &--left::after {
+        border-left-width: var(--border-width-base);
+    }
+
+    &--right::after {
+        border-right-width: var(--border-width-base);
+    }
+
+    &--bottom::after {
+        border-bottom-width: var(--border-width-base);
+    }
+
+    &,
+    &-unset {
+        &--top-bottom::after {
+            border-width: var(--border-width-base) 0;
+        }
+    }
+
+    &--surround::after {
+        border-width: var(--border-width-base);
+    }
+}

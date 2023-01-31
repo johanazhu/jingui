@@ -1,0 +1,21 @@
+@import './var.scss';
+
+:root {
+    --cardbox-header-font-size: #{$cardbox-header-font-size};
+    --cardbox-footer-font-size: #{$cardbox-footer-font-size};
+    --cardbox-footer-color: #{$cardbox-footer-color};
+}
+
+.jing-cardbox {
+    flex-direction: column;
+    // height: 40px;
+    line-height: inherit;
+    // text-align: center;
+    &__header {
+        font-size: var(--cardbox-header-font-size);
+    }
+    &__footer {
+        font-size: var(--cardbox-footer-font-size);
+        color: var(--cardbox-footer-color);
+    }
+}
