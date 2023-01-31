@@ -1,0 +1,63 @@
+@import './var.scss';
+
+:root {
+    --noticebar-height: #{$noticebar-height};
+    --noticebar-line-height: #{$noticebar-line-height};
+    --noticebar-padding: #{$noticebar-padding};
+    --noticebar-text-color: #{$noticebar-text-color};
+    --noticebar-font-size: #{$noticebar-font-size};
+    --noticebar-font-weight: #{$noticebar-font-weight};
+    --noticebar-bg: #{$noticebar-bg};
+    --noticebar-icon-min-width: #{$noticebar-icon-min-width};
+}
+
+.jing-notice-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: var(--noticebar-height);
+    color: var(--noticebar-text-color);
+    font-size: var(--noticebar-font-size);
+    line-height: var(--noticebar-line-height);
+    background-color: var(--noticebar-bg);
+    padding: 0 var(--noticebar-padding);
+
+    &__wrap {
+        position: relative;
+        flex: 1;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    &__content {
+        position: absolute;
+        white-space: nowrap;
+        transition-timing-function: linear;
+
+        &.jing-ellipsis {
+            max-width: 100%;
+        }
+    }
+
+    &__left,
+    &__close,
+    &__link {
+        min-width: var(--noticebar-icon-min-width);
+        // icon 设计不到位，视觉上偏移，手动调整
+        height: 25px;
+    }
+
+    &__close,
+    &__link {
+        text-align: right;
+        cursor: pointer;
+    }
+
+    &__normal {
+        width: 0;
+    }
+}

@@ -1,0 +1,37 @@
+@import './var.scss';
+
+:root {
+    --panel-bg: #{$panel-bg};
+    --panel-text-color: #{$panel-text-color};
+    --panel-font-size: #{$panel-font-size};
+    --panel-font-weight: #{$panel-font-weight};
+    --panel-title-font-size: #{$panel-title-font-size};
+    --panel-padding-v: #{$panel-padding-v};
+    --panel-padding-h: #{$panel-padding-h};
+    --panel-more-text-color: #{$panel-more-text-color};
+    --panel-body-bg: #{$panel-body-bg};
+}
+
+.jing-panel {
+    font-size: var(--panel-font-size);
+    color: var(--panel-text-color);
+    &__header {
+        display: flex;
+        align-items: center;
+        &-title {
+            flex: 1;
+            font-weight: var(--panel-font-weight);
+            padding: var(--panel-padding-v) 0 var(--panel-padding-h);
+        }
+        &-more {
+            padding: var(--panel-padding-v) 0 var(--panel-padding-h)
+                var(--panel-padding-h);
+            font-size: var(--panel-title-font-size);
+            color: var(--panel-more-text-color);
+        }
+    }
+    &__body {
+        position: relative;
+        background: var(--panel-body-bg);
+    }
+}

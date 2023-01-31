@@ -1,0 +1,17 @@
+@import '../../Style/variable';
+
+// Icon
+$icon-primary-color: var(--primary-color);
+$icon-grey-color: var(--color-black-4);
+$icon-blue-color: var(--primary-color);
+$icon-white-color: var(--color-white-1);
+$icon-black-color: var(--color-black);
+$icon-red-color: var(--color-red);
+$icon-orange-color: var(--color-orange);
+$icon-shy-blue-color: var(--color-sky-blue);
+$icon-fill-color: var($color-black-4);
+$icon-size-lg: 32px;
+$icon-size-md: 16px;
+$icon-size-sm: 12px;
+$icon-size-auto: 100%;
+$icon-loading-color: var(--primary-color);

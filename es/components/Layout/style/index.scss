@@ -1,0 +1,59 @@
+@use 'sass:math';
+.jing-layout {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.jing-row {
+    display: flex;
+    flex-wrap: wrap;
+    &--justify {
+        &-center {
+            justify-content: center;
+        }
+        &-end {
+            justify-content: end;
+        }
+        &-space-between {
+            justify-content: space-between;
+        }
+        &-space-around {
+            justify-content: space-around;
+        }
+    }
+    &--align {
+        &-top {
+            align-items: flex-start;
+        }
+        &-center {
+            align-items: center;
+        }
+        &-bottom {
+            align-items: flex-end;
+        }
+    }
+}
+
+.jing-col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    @for $i from 1 through 24 {
+        $item: math.div(100%, 24) * $i;
+        // $item: $i * (100% / 24);
+        &--#{$i} {
+            flex: $item;
+            max-width: $item;
+        }
+    }
+
+    &--offset {
+        @for $i from 1 through 24 {
+            $item: math.div(100%, 24) * $i;
+            &-#{$i} {
+                margin-left: $item;
+            }
+        }
+    }
+}

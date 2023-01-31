@@ -1,0 +1,14 @@
+.demo-jing-button-group {
+    padding-bottom: 100px !important;
+    .jing-button-group {
+        margin-bottom: 15px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+        &.jing-button-group--1,
+        &.jing-button-group--fixed-bottom {
+            margin-bottom: 0;
+        }
+    }
+}
