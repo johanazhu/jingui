@@ -27,8 +27,10 @@ var Button = function Button(props) {
     onClick = props.onClick;
   var _useContext = useContext(ButtonContext),
     parent = _useContext.parent;
-  console.log('props', props);
-  console.log('parent', parent);
+
+  // console.log('props', props);
+  // console.log('parent', parent);
+
   var _style = _objectSpread({}, style);
   if (color) {
     _style.color = plain ? color : WHITE;

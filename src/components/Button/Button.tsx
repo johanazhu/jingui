@@ -26,8 +26,8 @@ const Button: FC<ButtonProps> = (props) => {
 
     const { parent } = useContext(ButtonContext);
 
-    console.log('props', props);
-    console.log('parent', parent);
+    // console.log('props', props);
+    // console.log('parent', parent);
 
     const _style: Record<string, string | number> = { ...style };
 
