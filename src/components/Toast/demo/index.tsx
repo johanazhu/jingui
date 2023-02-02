@@ -74,6 +74,18 @@ export default () => {
             >
                 <Cell title="动态更新提示" isLink onClick={onDynicUpdate} />
             </DemoBlock>
+            <DemoBlock
+                title="清除"
+                padding=""
+                className="demo-jing-popup"
+            >
+                <Cell title="先出来" isLink onClick={() => {
+                    Toast('上不在高，有仙则灵');
+                }} />
+                <Cell title="清除" isLink onClick={() => {
+                    Toast.clear()
+                }} />
+            </DemoBlock>
         </>
     );
 };

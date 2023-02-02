@@ -70,5 +70,21 @@ export default (function () {
     title: "\u52A8\u6001\u66F4\u65B0\u63D0\u793A",
     isLink: true,
     onClick: onDynicUpdate
+  })), /*#__PURE__*/React.createElement(DemoBlock, {
+    title: "\u6E05\u9664",
+    padding: "",
+    className: "demo-jing-popup"
+  }, /*#__PURE__*/React.createElement(Cell, {
+    title: "\u5148\u51FA\u6765",
+    isLink: true,
+    onClick: function onClick() {
+      Toast('上不在高，有仙则灵');
+    }
+  }), /*#__PURE__*/React.createElement(Cell, {
+    title: "\u6E05\u9664",
+    isLink: true,
+    onClick: function onClick() {
+      Toast.clear();
+    }
   })));
 });

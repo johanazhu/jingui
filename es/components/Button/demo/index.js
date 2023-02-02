@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@jojobo/jing-ui';
+import { Button, IconCustomer } from '@jojobo/jing-ui';
 import { DemoBlock } from "../../../demo";
 import "./index.scss";
 export default (function () {
@@ -99,12 +99,25 @@ export default (function () {
     type: "primary"
   }, "\u6211\u662F\u6309\u94AE")), /*#__PURE__*/React.createElement(Button.Group, {
     type: "fixed-bottom"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: '2rem',
+      height: '2rem',
+      marginRight: '0.5rem'
+    }
+  }, /*#__PURE__*/React.createElement(IconCustomer, {
+    size: "auto",
+    color: "green"
+  })), /*#__PURE__*/React.createElement(Button.Group, {
+    style: {
+      flex: 1
+    }
   }, /*#__PURE__*/React.createElement(Button, {
     type: "primary",
-    disabled: true
+    plain: true
   }, "\u6211\u662F\u6309\u94AE"), /*#__PURE__*/React.createElement(Button, {
     type: "primary"
-  }, "\u6211\u662F\u6309\u94AE"))), /*#__PURE__*/React.createElement(DemoBlock, {
+  }, "\u6211\u662F\u6309\u94AE")))), /*#__PURE__*/React.createElement(DemoBlock, {
     title: "\u6309\u94AE\u7EC4\u5C3A\u5BF8",
     className: "demo-jing-button-group"
   }, /*#__PURE__*/React.createElement(Button.Group, {

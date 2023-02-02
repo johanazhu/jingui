@@ -43,7 +43,6 @@ export type ButtonGroupSize = 'large' | 'normal' | 'small' | 'mini';
  * @param {children} ReactNode                          // 组件中的内容
  **/
 export interface ButtonGroupProps extends BaseTypeProps {
-    className?: string;
     type?: ButtonGroupType;
     size?: ButtonGroupSize;
     children: ReactNode;

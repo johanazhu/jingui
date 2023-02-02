@@ -6,7 +6,7 @@ import { ButtonGroupProps } from './PropType';
 const prefixCls = 'jing-button-group';
 
 const ButtonGroup: FC<ButtonGroupProps> = (props) => {
-    const { className, type, size, children } = props;
+    const { style, className, type, size, children } = props;
 
     const count = Children.count(children);
 
@@ -27,7 +27,7 @@ const ButtonGroup: FC<ButtonGroupProps> = (props) => {
 
     if (type === 'fixed-bottom') {
         return (
-            <div className={classes}>
+            <div className={classes} style={style}>
                 <div className={`${prefixCls}__content`}>{items}</div>
                 <div className="iphonex-extra-height" />
             </div>
@@ -35,7 +35,7 @@ const ButtonGroup: FC<ButtonGroupProps> = (props) => {
     }
 
     return (
-        <div className={classes}>
+        <div className={classes} style={style}>
             <ButtonContext.Provider value={{ parent: props }}>
                 {items}
             </ButtonContext.Provider>

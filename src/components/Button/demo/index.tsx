@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@jojobo/jing-ui';
+import { Button, IconCustomer } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
 import './index.scss';
 
@@ -112,10 +112,21 @@ export default () => (
                 <Button type="primary">我是按钮</Button>
             </Button.Group>
             <Button.Group type="fixed-bottom">
-                <Button type="primary" disabled>
-                    我是按钮
-                </Button>
-                <Button type="primary">我是按钮</Button>
+                <div style={{
+                    width: '2rem',
+                    height: '2rem',
+                    marginRight: '0.5rem'
+                }}>
+                    <IconCustomer size="auto" color="green" />
+                </div>
+                <Button.Group style={{ flex: 1 }}>
+                    <Button type="primary" plain>
+                        我是按钮
+                    </Button>
+                    <Button type="primary">
+                        我是按钮
+                    </Button>
+                </Button.Group>
             </Button.Group>
         </DemoBlock>
         <DemoBlock title="按钮组尺寸" className="demo-jing-button-group">

@@ -10,7 +10,8 @@ import ButtonContext from "./Context";
 var prefixCls = 'jing-button-group';
 var ButtonGroup = function ButtonGroup(props) {
   var _classnames;
-  var className = props.className,
+  var style = props.style,
+    className = props.className,
     type = props.type,
     size = props.size,
     children = props.children;
@@ -25,7 +26,8 @@ var ButtonGroup = function ButtonGroup(props) {
   });
   if (type === 'fixed-bottom') {
     return /*#__PURE__*/React.createElement("div", {
-      className: classes
+      className: classes,
+      style: style
     }, /*#__PURE__*/React.createElement("div", {
       className: "".concat(prefixCls, "__content")
     }, items), /*#__PURE__*/React.createElement("div", {
@@ -33,7 +35,8 @@ var ButtonGroup = function ButtonGroup(props) {
     }));
   }
   return /*#__PURE__*/React.createElement("div", {
-    className: classes
+    className: classes,
+    style: style
   }, /*#__PURE__*/React.createElement(ButtonContext.Provider, {
     value: {
       parent: props
