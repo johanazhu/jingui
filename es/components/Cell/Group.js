@@ -6,18 +6,17 @@ import React from 'react';
 import classnames from 'classnames';
 var prefixCls = 'jing-cell-group';
 var CellGroup = function CellGroup(props) {
-  var _classnames;
   var className = props.className,
     children = props.children,
-    inset = props.inset,
-    shadow = props.shadow;
-  var classes = classnames(prefixCls, className, (_classnames = {}, _defineProperty(_classnames, "".concat(prefixCls, "--inset"), !!inset), _defineProperty(_classnames, "".concat(prefixCls, "--shadow"), !!shadow), _classnames));
+    shadow = props.shadow,
+    style = props.style;
+  var classes = classnames(prefixCls, className, _defineProperty({}, "".concat(prefixCls, "--shadow"), !!shadow));
   return /*#__PURE__*/React.createElement("div", {
-    className: classes
+    className: classes,
+    style: style
   }, children);
 };
 CellGroup.defaultProps = {
-  inset: false,
   shadow: true
 };
 export default CellGroup;

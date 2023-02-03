@@ -53,7 +53,9 @@ function changeValue(value) {
 }
 var KeyboardInput = function KeyboardInput(props) {
   var _classnames;
-  var value = props.value,
+  var groupClassName = props.groupClassName,
+    groupStyle = props.groupStyle,
+    value = props.value,
     placeholder = props.placeholder,
     active = props.active,
     maxLength = props.maxLength,
@@ -142,7 +144,8 @@ var KeyboardInput = function KeyboardInput(props) {
     onClearValue && onClearValue();
   }
   return /*#__PURE__*/React.createElement(Group, {
-    className: "".concat(prefixCls, "__group-keyboard")
+    className: classnames("".concat(prefixCls, "__group-keyboard"), groupClassName),
+    style: groupStyle
   }, /*#__PURE__*/React.createElement("div", {
     className: classnames("".concat(prefixCls, "__keyboard"), (_classnames = {}, _defineProperty(_classnames, "".concat(prefixCls, "__keyboard-active"), isFocus), _defineProperty(_classnames, "".concat(prefixCls, "__keyboard-small"), !visible), _classnames)),
     onClick: onFocusClick

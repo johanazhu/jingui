@@ -89,6 +89,8 @@ export interface CaptchaProps extends InputProps {
 
 /**
  *  Input.Keyboard
+ * @param {groupClassName} string                        // group 自定义 class 名
+ * @param {groupStyle} CSSProperties                     // 自定义 group 样式
  * @param {value} string                            // 值
  * @param {placeholder} string                      // 占位符
  * @param {active} boolean                          // 选中时
@@ -98,6 +100,8 @@ export interface CaptchaProps extends InputProps {
  * @param {onHandleFocus} function                  // 点击选中时的回调
  **/
 export interface KeyboardInputProps extends BaseTypeProps {
+    groupClassName?: string;
+    groupStyle?: CSSProperties;
     value: string;
     placeholder?: string;
     active?: boolean;

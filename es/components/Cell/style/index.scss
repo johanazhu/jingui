@@ -116,13 +116,8 @@
 
 .jing-cell-group {
     background-color: var(--cell-group-bg);
-
-    &--inset {
-        margin: 0 var(--cell-group-inset-margin);
-        overflow: hidden;
-        border-radius: var(--cell-group-border-radius);
-    }
-
+    overflow: hidden;
+    border-radius: var(--cell-group-border-radius);
     &--shadow {
         @include background-shadow();
     }

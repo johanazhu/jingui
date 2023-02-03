@@ -76,14 +76,15 @@ export default (function () {
     value: "\u5185\u5BB9"
   })), /*#__PURE__*/React.createElement(DemoBlock, {
     title: "\u7EC4\uFF1A\u5361\u7247\u98CE\u683C",
-    padding: "12px 0 12px",
+    padding: "0",
+    margin: "0 10px",
     background: ""
-  }, /*#__PURE__*/React.createElement(Cell.Group, {
-    inset: true
-  }, /*#__PURE__*/React.createElement(Cell, {
-    title: "\u5355\u5143\u683C",
-    value: "\u5185\u5BB9",
-    label: "\u63CF\u8FF0\u4FE1\u606F"
+  }, /*#__PURE__*/React.createElement(Cell.Group, null, /*#__PURE__*/React.createElement(Cell, {
+    title: "\u6211\u53EA\u6709\u6807\u9898 Normal",
+    value: "\u5185\u5BB9"
+  }), /*#__PURE__*/React.createElement(Cell, {
+    title: "\u6211\u6709\u6807\u9898\u548C\u94FE\u63A5",
+    isLink: true
   }), /*#__PURE__*/React.createElement(Cell, {
     title: "\u5355\u5143\u683C",
     value: "\u5185\u5BB9",
@@ -94,7 +95,6 @@ export default (function () {
     padding: "12px 0 12px",
     background: ""
   }, /*#__PURE__*/React.createElement(Cell.Group, {
-    inset: true,
     shadow: false
   }, /*#__PURE__*/React.createElement(Cell, {
     title: "\u5355\u5143\u683C1",

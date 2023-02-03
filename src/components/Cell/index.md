@@ -38,5 +38,4 @@ Cell 可以单独使用，也可以与 CellGroup 搭配使用，CellGroup 可以
 | 属性      | 说明             | 类型    | 默认值 |
 | --------- | ---------------- | ------- | ------ |
 | className | 自定义 Class 名  | string  | -      |
-| inset     | 是否使用卡片模式 | boolean | false  |
 | shadow    | 是否显示外阴影   | boolean | true   |

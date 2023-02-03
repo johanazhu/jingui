@@ -46,9 +46,10 @@ export default () => (
         <DemoBlock title="展示必填星号" padding="0">
             <Cell required title="单元格" value="内容" />
         </DemoBlock>
-        <DemoBlock title="组：卡片风格" padding="12px 0 12px" background="">
-            <Cell.Group inset>
-                <Cell title="单元格" value="内容" label="描述信息" />
+        <DemoBlock title="组：卡片风格" padding="0" margin="0 10px" background="">
+            <Cell.Group>
+                <Cell title="我只有标题 Normal" value="内容" />
+                <Cell title="我有标题和链接" isLink />
                 <Cell
                     title="单元格"
                     value="内容"
@@ -58,7 +59,7 @@ export default () => (
             </Cell.Group>
         </DemoBlock>
         <DemoBlock title="组：不带阴影功能" padding="12px 0 12px" background="">
-            <Cell.Group inset shadow={false}>
+            <Cell.Group shadow={false}>
                 <Cell title="单元格1" value="内容1" />
                 <Cell title="单元格2" value="内容2" />
             </Cell.Group>

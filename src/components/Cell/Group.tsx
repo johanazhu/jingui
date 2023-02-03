@@ -5,18 +5,16 @@ import { CellGroupProps } from './PropType';
 const prefixCls = 'jing-cell-group';
 
 const CellGroup: FC<CellGroupProps> = (props) => {
-    const { className, children, inset, shadow } = props;
+    const { className, children, shadow, style } = props;
 
     const classes = classnames(prefixCls, className, {
-        [`${prefixCls}--inset`]: !!inset,
         [`${prefixCls}--shadow`]: !!shadow,
     });
 
-    return <div className={classes}>{children}</div>;
+    return <div className={classes} style={style}>{children}</div>;
 };
 
 CellGroup.defaultProps = {
-    inset: false,
     shadow: true,
 };
 

@@ -6,6 +6,7 @@ export interface Props {
     className?: string;
     title?: string;
     padding?: string;
+    margin?: string;
     border?: string;
     background?: string;
     children?: ReactNode;
@@ -21,6 +22,7 @@ export const DemoBlock: FC<Props> = (props) => {
                 className="jing-demo__content"
                 style={{
                     padding: props.padding,
+                    margin: props.margin,
                     background: props.background,
                     border: props.border,
                 }}

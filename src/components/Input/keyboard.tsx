@@ -54,6 +54,8 @@ function changeValue(value: string) {
 
 const KeyboardInput: FC<KeyboardInputProps> = (props) => {
     const {
+        groupClassName,
+        groupStyle,
         value,
         placeholder,
         active,
@@ -144,7 +146,8 @@ const KeyboardInput: FC<KeyboardInputProps> = (props) => {
     }
 
     return (
-        <Group className={`${prefixCls}__group-keyboard`}>
+        <Group className={classnames(`${prefixCls}__group-keyboard`, groupClassName)}
+            style={groupStyle}>
             <div
                 className={classnames(`${prefixCls}__keyboard`, {
                     [`${prefixCls}__keyboard-active`]: isFocus,

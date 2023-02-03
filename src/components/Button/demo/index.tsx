@@ -8,7 +8,7 @@ export default () => (
         <DemoBlock
             title="类型"
             className="demo-jing-button"
-            padding="10px 16px 0"
+            padding="10px 10px 0"
         >
             <Button type="primary">主色按钮</Button>
             <Button type="second-primary">次色按钮</Button>
@@ -17,7 +17,7 @@ export default () => (
         <DemoBlock
             title="朴素按钮"
             className="demo-jing-button"
-            padding="10px 16px 0"
+            padding="10px 10px 0"
         >
             <Button plain type="primary">
                 朴素按钮
@@ -29,7 +29,7 @@ export default () => (
         <DemoBlock
             title="禁用状态"
             className="demo-jing-button"
-            padding="10px 16px 0"
+            padding="10px 10px 0"
         >
             <Button disabled type="primary">
                 禁用状态
@@ -41,7 +41,7 @@ export default () => (
         <DemoBlock
             title="加载状态"
             className="demo-jing-button"
-            padding="10px 16px 0"
+            padding="10px 10px 0"
         >
             <Button loading type="primary" />
             <Button loading type="second-primary">
@@ -51,7 +51,7 @@ export default () => (
         <DemoBlock
             title="按钮形状"
             className="demo-jing-button"
-            padding="10px 16px 0"
+            padding="10px 10px 0"
         >
             <Button round type="primary">
                 圆形按钮
@@ -60,7 +60,7 @@ export default () => (
         <DemoBlock
             title="按钮尺寸"
             className="demo-jing-button"
-            padding="10px 16px 0"
+            padding="10px 10px 0"
         >
             <Button type="primary" size="large">
                 大号按钮
@@ -78,7 +78,7 @@ export default () => (
         <DemoBlock
             title="块级元素"
             className="demo-jing-button"
-            padding="10px 16px 0"
+            padding="10px 10px 0"
         >
             <Button type="primary" block>
                 块级元素
@@ -87,7 +87,7 @@ export default () => (
         <DemoBlock
             title="自定义颜色"
             className="demo-jing-button"
-            padding="10px 16px 0"
+            padding="10px 10px 0"
         >
             <Button color="#7232dd">单色按钮</Button>
             <Button color="#7232dd" plain>
@@ -100,7 +100,7 @@ export default () => (
         <DemoBlock
             title="点击事件"
             className="demo-jing-button"
-            padding="10px 16px 0"
+            padding="10px 10px 0"
         >
             <Button type="primary" block onClick={() => alert('我错了')}>
                 有本事就来点我啊

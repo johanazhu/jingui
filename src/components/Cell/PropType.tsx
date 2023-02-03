@@ -8,7 +8,6 @@ import { BaseTypeProps } from '@/utils';
  * @param {shadow} boolean                               // 是否显示外阴影
  **/
 export interface CellGroupProps extends BaseTypeProps {
-    inset?: boolean;
     shadow?: boolean;
 }
 

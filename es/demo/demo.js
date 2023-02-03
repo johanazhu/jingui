@@ -10,6 +10,7 @@ export var DemoBlock = function DemoBlock(props) {
     className: "jing-demo__content",
     style: {
       padding: props.padding,
+      margin: props.margin,
       background: props.background,
       border: props.border
     }

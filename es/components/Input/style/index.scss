@@ -43,7 +43,7 @@ textarea::placeholder {
 .jing-input {
     @include cell;
     border: 1px solid transparent;
-
+    border-radius: var(--input-border-radius);
     &--error {
         border-color: var(--input-error-border-color);
 
@@ -67,6 +67,7 @@ textarea::placeholder {
     width: 100%;
     font-size: var(--input-font-size);
     background: var(--bg-white);
+    border-radius: var(--input-border-radius);
     .jing-input {
         flex: 1;
     }
