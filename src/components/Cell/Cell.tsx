@@ -10,6 +10,7 @@ const prefixCls = 'jing-cell';
 const Cell: FC<CellProps> = (props) => {
     const {
         className,
+        style,
         label,
         title,
         value,
@@ -28,7 +29,7 @@ const Cell: FC<CellProps> = (props) => {
     });
 
     return (
-        <div className={classnames(classes)} onClick={onClick}>
+        <div className={classnames(classes)} style={style} onClick={onClick}>
             {icon && <span className={`${prefixCls}__icon`}>{icon}</span>}
             {title && (
                 <div className={`${prefixCls}__title`}>

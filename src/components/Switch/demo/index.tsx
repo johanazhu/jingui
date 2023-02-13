@@ -14,7 +14,7 @@ export default () => {
                     value={
                         <Switch
                             checked={checked}
-                            onChange={(value) => value && setChecked(value)}
+                            onChange={(value: any) => value && setChecked(value)}
                         />
                     }
                 />

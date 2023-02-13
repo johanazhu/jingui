@@ -4,6 +4,7 @@ import React, {
     useRef,
     useMemo,
     useImperativeHandle,
+    CSSProperties,
 } from 'react';
 import classnames from 'classnames';
 import {
@@ -19,7 +20,9 @@ const prefixCls = 'jing-password-input';
 const PasswordInput = forwardRef<PasswordInputInstance, PasswordInputProps>(
     (props, ref) => {
         const {
+            style,
             className,
+            radius,
             value,
             type,
             mask,
@@ -53,6 +56,7 @@ const PasswordInput = forwardRef<PasswordInputInstance, PasswordInputProps>(
             () => state.code?.toString().split(''),
             [state.code],
         );
+
         const cursorIndex = useMemo(() => codeArr.length, [codeArr.length]);
 
         useEffect(() => {
@@ -135,16 +139,24 @@ const PasswordInput = forwardRef<PasswordInputInstance, PasswordInputProps>(
                 // console.log('state.focused', state.focused)
                 // console.log('cursorIndex', cursorIndex)
                 // console.log('showCursor', showCursor)
-                let style;
+                let _style;
                 if (i !== 0 && gutter) {
-                    style = { marginLeft: addUnit(gutter) };
+                    _style = { marginLeft: addUnit(gutter) };
+                }
+
+                if (isDef(radius)) {
+                    _style = {
+                        overflow: 'hidden',
+                        borderRadius: addUnit(radius),
+                        ..._style
+                    };
                 }
 
                 const liClass = classnames(`${prefixCls}__item`, {
                     'jing-hairline--left': showBorder,
                 });
                 Points.push(
-                    <li key={i} className={liClass} style={style}>
+                    <li key={i} className={liClass} style={_style}>
                         {mask ? (
                             <i
                                 style={{
@@ -165,7 +177,7 @@ const PasswordInput = forwardRef<PasswordInputInstance, PasswordInputProps>(
         };
 
         return (
-            <div className={classes}>
+            <div className={classes} style={style}>
                 <ul className={ulClass} onTouchStart={onHandleTouchStart}>
                     {renderPoints()}
                     {mode === 'normal' && (

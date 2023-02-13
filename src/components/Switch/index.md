@@ -8,7 +8,7 @@ group:
     order: 4
 ---
 
-# Swicth 开关
+# Switch 开关
 
 开关组件
 

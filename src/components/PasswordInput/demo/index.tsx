@@ -37,6 +37,13 @@ export default () => {
                 <PasswordInput gutter={10} onSubmit={onSubmit} />
             </DemoBlock>
             <DemoBlock
+                title="设置圆角大小"
+                padding=""
+                className="demo-jing-password-input"
+            >
+                <PasswordInput gutter={10} radius="4" onSubmit={onSubmit} />
+            </DemoBlock>
+            <DemoBlock
                 title="明文展示"
                 padding=""
                 className="demo-jing-password-input"

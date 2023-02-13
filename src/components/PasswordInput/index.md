@@ -28,6 +28,7 @@ import { PasswordInput } from '@jojobo/jing-ui';
 | --------- | ------------------------------------------------ | -------- | ------ |
 | value     | 密码值                                           | string   | -      |
 | length    | 密码最大长度                                     | number   | 6      |
+| radius    | 圆角大小，默认单位为 px                       | `number/string` | -      |
 | mask      | 是否隐藏密码内容                                 | boolean  | true   |
 | focused   | 是否已聚焦，聚焦时会显示光标                     | boolean  | -      |
 | type      | 类型 默认为 text，可选 number                    | string   | text   |

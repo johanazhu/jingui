@@ -4,6 +4,7 @@ import { BaseTypeProps } from '@/utils';
  * PasswordInput 密码输入框
  * @param {value} string 密码值
  * @param {length} number 密码最大长度
+ * @param {radius} number | string                          // 圆角大小，默认单位为px
  * @param {mask} boolean 是否隐藏密码内容
  * @param {focused} boolean 是否已聚焦，聚焦时会显示光标
  * @param {type} string 类型 默认为 text
@@ -18,6 +19,7 @@ import { BaseTypeProps } from '@/utils';
 export interface PasswordInputProps extends BaseTypeProps {
     value?: string;
     length?: number;
+    radius?: number | string;
     mask?: boolean;
     type?: string;
     autoFocus?: boolean;

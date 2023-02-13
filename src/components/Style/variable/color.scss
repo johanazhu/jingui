@@ -29,9 +29,16 @@ $background-color: #f7f8fa;
 $background-color-light: #fafafa;
 
 // 渐变色
-$gradient-primary: linear-gradient(to right, rgb(102, 204, 153), rgb(51, 204, 204));
-$gradient-second-primary: linear-gradient(to right, rgb(255, 135, 35), $color-orange);
-
+$gradient-primary: linear-gradient(
+    to right,
+    rgb(102, 204, 153),
+    rgb(51, 204, 204)
+);
+$gradient-second-primary: linear-gradient(
+    to right,
+    rgb(255, 135, 35),
+    $color-orange
+);
 
 $primary-color: var(--color-primary);
 $second-primary-color: var(--color-second-primary);
