@@ -10,6 +10,7 @@ var prefixCls = 'jing-cell';
 var Cell = function Cell(props) {
   var _classnames;
   var className = props.className,
+    style = props.style,
     label = props.label,
     title = props.title,
     value = props.value,
@@ -22,6 +23,7 @@ var Cell = function Cell(props) {
   var classes = classnames(prefixCls, className, (_classnames = {}, _defineProperty(_classnames, "".concat(prefixCls, "--center"), !!center), _defineProperty(_classnames, "".concat(prefixCls, "--clickable"), !!isLink), _defineProperty(_classnames, "".concat(prefixCls, "--required"), !!required), _classnames));
   return /*#__PURE__*/React.createElement("div", {
     className: classnames(classes),
+    style: style,
     onClick: onClick
   }, icon && /*#__PURE__*/React.createElement("span", {
     className: "".concat(prefixCls, "__icon")

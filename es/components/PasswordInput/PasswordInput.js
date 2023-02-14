@@ -1,3 +1,9 @@
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -10,7 +16,9 @@ import { useSetState, useUpdateEffect } from "../hooks";
 import { isDef, isFunction, formatNumber, addUnit } from "../../utils";
 var prefixCls = 'jing-password-input';
 var PasswordInput = /*#__PURE__*/forwardRef(function (props, ref) {
-  var className = props.className,
+  var style = props.style,
+    className = props.className,
+    radius = props.radius,
     value = props.value,
     type = props.type,
     mask = props.mask,
@@ -135,11 +143,17 @@ var PasswordInput = /*#__PURE__*/forwardRef(function (props, ref) {
       // console.log('state.focused', state.focused)
       // console.log('cursorIndex', cursorIndex)
       // console.log('showCursor', showCursor)
-      var style = void 0;
+      var _style = void 0;
       if (i !== 0 && gutter) {
-        style = {
+        _style = {
           marginLeft: addUnit(gutter)
         };
+      }
+      if (isDef(radius)) {
+        _style = _objectSpread({
+          overflow: 'hidden',
+          borderRadius: addUnit(radius)
+        }, _style);
       }
       var liClass = classnames("".concat(prefixCls, "__item"), {
         'jing-hairline--left': showBorder
@@ -147,7 +161,7 @@ var PasswordInput = /*#__PURE__*/forwardRef(function (props, ref) {
       Points.push( /*#__PURE__*/React.createElement("li", {
         key: i,
         className: liClass,
-        style: style
+        style: _style
       }, mask ? /*#__PURE__*/React.createElement("i", {
         style: {
           visibility: char ? 'visible' : 'hidden'
@@ -159,7 +173,8 @@ var PasswordInput = /*#__PURE__*/forwardRef(function (props, ref) {
     return Points;
   };
   return /*#__PURE__*/React.createElement("div", {
-    className: classes
+    className: classes,
+    style: style
   }, /*#__PURE__*/React.createElement("ul", {
     className: ulClass,
     onTouchStart: onHandleTouchStart

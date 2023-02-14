@@ -41,6 +41,14 @@ export default (function () {
     gutter: 10,
     onSubmit: onSubmit
   })), /*#__PURE__*/React.createElement(DemoBlock, {
+    title: "\u8BBE\u7F6E\u5706\u89D2\u5927\u5C0F",
+    padding: "",
+    className: "demo-jing-password-input"
+  }, /*#__PURE__*/React.createElement(PasswordInput, {
+    gutter: 10,
+    radius: "4",
+    onSubmit: onSubmit
+  })), /*#__PURE__*/React.createElement(DemoBlock, {
     title: "\u660E\u6587\u5C55\u793A",
     padding: "",
     className: "demo-jing-password-input"
