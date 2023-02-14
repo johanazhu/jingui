@@ -10,11 +10,11 @@ export default () => (
             </Result>
         </DemoBlock>
         <DemoBlock title="对齐方式">
-            <Result status="success" title="我是标题" place="left">
-                默认左对齐
+            <Result status="success" title="我是标题">
+                默认居中对齐
             </Result>
-            <Result status="success" title="我是标题" place="center">
-                居中对齐
+            <Result status="success" title="我是标题" place="left">
+                居左对齐
             </Result>
             <Result status="success" title="我是标题" place="right">
                 居右对齐

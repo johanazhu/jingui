@@ -12,13 +12,12 @@ export default (function () {
     title: "\u5BF9\u9F50\u65B9\u5F0F"
   }, /*#__PURE__*/React.createElement(Result, {
     status: "success",
-    title: "\u6211\u662F\u6807\u9898",
-    place: "left"
-  }, "\u9ED8\u8BA4\u5DE6\u5BF9\u9F50"), /*#__PURE__*/React.createElement(Result, {
+    title: "\u6211\u662F\u6807\u9898"
+  }, "\u9ED8\u8BA4\u5C45\u4E2D\u5BF9\u9F50"), /*#__PURE__*/React.createElement(Result, {
     status: "success",
     title: "\u6211\u662F\u6807\u9898",
-    place: "center"
-  }, "\u5C45\u4E2D\u5BF9\u9F50"), /*#__PURE__*/React.createElement(Result, {
+    place: "left"
+  }, "\u5C45\u5DE6\u5BF9\u9F50"), /*#__PURE__*/React.createElement(Result, {
     status: "success",
     title: "\u6211\u662F\u6807\u9898",
     place: "right"

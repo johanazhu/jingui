@@ -45,9 +45,9 @@ export type ResultPlace = 'left' | 'center' | 'right';
 
 /**
  * Result 结果
- * @param {className} string                        // 自定义 class 名
  * @param {title} string                            // 一级标题
  * @param {status} ResultStatus                     // 状态
+ * @param {place} ResultPlace                       // 内容对齐方式
  * @param {extra} ReactNode                         // 额外自定义区域
  * @param {children} ReactNode                      // 组件中的内容
  **/

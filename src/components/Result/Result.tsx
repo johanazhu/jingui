@@ -38,7 +38,7 @@ const Result = (props: ResultProps) => {
 
 Result.defaultProps = {
     status: 'empty',
-    place: 'left',
+    place: 'center',
 };
 
 export default Result;

@@ -36,6 +36,6 @@ var Result = function Result(props) {
 };
 Result.defaultProps = {
   status: 'empty',
-  place: 'left'
+  place: 'center'
 };
 export default Result;
