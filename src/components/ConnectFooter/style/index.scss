@@ -1,0 +1,13 @@
+@import './var.scss';
+
+:root {
+    --connectfooter-font-size: #{$connectfooter-font-size};
+    --connectfooter-text-color: #{$connectfooter-text-color};
+}
+
+.jing-connectfooter {
+    font-size: var(--connectfooter-font-size);
+    color: var(--connectfooter-text-color);
+    display: flex;
+    justify-content: space-between;
+}

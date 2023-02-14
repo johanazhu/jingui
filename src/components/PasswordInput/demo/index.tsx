@@ -20,7 +20,7 @@ export default () => {
                 padding=""
                 className="demo-jing-password-input"
             >
-                <PasswordInput onSubmit={onSubmit} />
+                <PasswordInput autoFocus={true} onSubmit={onSubmit} />
             </DemoBlock>
             <DemoBlock
                 title="自定义长度"

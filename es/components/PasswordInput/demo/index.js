@@ -25,6 +25,7 @@ export default (function () {
     padding: "",
     className: "demo-jing-password-input"
   }, /*#__PURE__*/React.createElement(PasswordInput, {
+    autoFocus: true,
     onSubmit: onSubmit
   })), /*#__PURE__*/React.createElement(DemoBlock, {
     title: "\u81EA\u5B9A\u4E49\u957F\u5EA6",
