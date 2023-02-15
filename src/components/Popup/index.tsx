@@ -1,10 +1,7 @@
 import './style/index.scss';
-import Popup from './Popup';
-import Portal from './Portal';
 
-export default Popup;
-
-export { Popup, Portal };
+export { default as Popup } from './Popup';
+export { default as Portal } from './Portal';
 
 export type {
     PopupProps,

@@ -1,6 +1,6 @@
 import React, { useEffect, memo } from 'react';
 import classnames from 'classnames';
-import Popup from "../Popup";
+import { Popup } from "../Popup";
 import Loading from "../Loading";
 import { IconRight, IconClose } from "../Icon";
 import { isDef } from "../../utils";

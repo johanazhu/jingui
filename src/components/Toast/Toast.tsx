@@ -1,7 +1,7 @@
 import React, { useEffect, FC, memo } from 'react';
 import classnames from 'classnames';
 import { ToastProps, ToastPrivateProps } from './PropType';
-import Popup from '../Popup';
+import { Popup } from '../Popup';
 import Loading from '../Loading';
 import { IconRight, IconClose } from '../Icon';
 import { isDef } from '@/utils';

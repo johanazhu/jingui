@@ -14,7 +14,7 @@ export { default as Result } from './components/Result';
 export { default as Input } from './components/Input';
 export { default as Switch } from './components/Switch';
 export { default as Overlay } from './components/Overlay';
-export { default as Popup } from './components/Popup';
+export { Popup, Portal } from './components/Popup';
 export { default as Toast } from './components/Toast';
 export { default as Timeline } from './components/Timeline';
 export { default as Typography } from './components/Typography';

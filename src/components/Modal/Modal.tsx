@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import classnames from 'classnames';
 import { ModalProps } from './PropType';
-import Popup from '../Popup';
+import { Popup } from '../Popup';
 import Button from '../Button';
 import { addUnit, noop, BORDER_TOP, BORDER_LEFT } from '@/utils';
 

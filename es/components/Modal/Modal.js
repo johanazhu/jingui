@@ -8,7 +8,7 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 import React from 'react';
 import classnames from 'classnames';
-import Popup from "../Popup";
+import { Popup } from "../Popup";
 import Button from "../Button";
 import { addUnit, noop, BORDER_TOP, BORDER_LEFT } from "../../utils";
 var prefixCls = 'jing-modal';
