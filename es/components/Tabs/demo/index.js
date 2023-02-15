@@ -100,7 +100,8 @@ export default (function () {
   }, /*#__PURE__*/React.createElement(Tabs, {
     value: value,
     type: "img",
-    onChange: function onChange(index) {
+    onChange: function onChange(index, item) {
+      console.log('item', item);
       index && setValue(index);
     }
   }, /*#__PURE__*/React.createElement(Tabs.Panel, {

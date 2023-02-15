@@ -90,7 +90,8 @@ export default () => {
                 <Tabs
                     value={value}
                     type="img"
-                    onChange={(index?: number) => {
+                    onChange={(index?: number, item?: any) => {
+                        console.log('item', item)
                         index && setValue(index);
                     }}
                 >

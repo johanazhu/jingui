@@ -74,7 +74,7 @@ var Tabs = function Tabs(props) {
       tabSwiper && tabSwiper.slideTo(index);
     }
     setCurrentIndex(index);
-    onChange && onChange(index, item);
+    onChange && onChange(index, item.props);
   };
   var onHandleSwiper = function onHandleSwiper(swiper, index) {
     setCurrentIndex(index);
