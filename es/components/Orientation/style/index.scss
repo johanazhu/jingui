@@ -3,6 +3,7 @@
 :root {
     --orientation-background-color: #{$orientation-background-color};
     --orientation-font-size: #{$orientation-font-size};
+    --orientation-icon-height: #{$orientation-icon-height};
 }
 
 .jing-orientation {
@@ -21,14 +22,14 @@
         text-align: center;
         &-icon {
             width: 100%;
-            height: 3rem;
-            margin-bottom: 2rem;
+            height: var(--orientation-icon-height);
+            margin-bottom: calc(var(--horizontal-gap) * 2);
         }
         &-desc {
             display: block;
             font-size: var(--font-size-lg);
-            font-weight: bold;
-            line-height: 1.4;
+            font-weight: var(--font-weight-bold);
+            line-height: var(--line-height-md);
         }
     }
 }

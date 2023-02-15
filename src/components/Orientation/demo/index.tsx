@@ -1,20 +1,13 @@
 import React from 'react';
-import { Tag } from '@jojobo/jing-ui';
+import { Orientation } from '@jojobo/jing-ui';
+import { DemoBlock } from 'demo';
 
 export default () => (
-    <div>
-        <Tag>标签</Tag>
-        <Tag type="primary">标签</Tag>
-        <Tag type="normal">标签</Tag>
-        <Tag type="disabled">标签</Tag>
-
-        <Tag>标签</Tag>
-        <Tag size="medium">标签</Tag>
-        <Tag size="large">标签</Tag>
-
-        <Tag active>标签</Tag>
-        <Tag type="primary" active>
-            标签
-        </Tag>
-    </div>
+    <DemoBlock
+        title="基本用法"
+        padding=""
+    // className="demo-jing-overlay"
+    >
+        <Orientation />
+    </DemoBlock>
 );
