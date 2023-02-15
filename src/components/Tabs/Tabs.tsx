@@ -81,7 +81,7 @@ const Tabs: TabsType = (props) => {
             tabSwiper && tabSwiper.slideTo(index);
         }
         setCurrentIndex(index);
-        onChange && onChange(index);
+        onChange && onChange(index, item);
     };
 
     const onHandleSwiper = (swiper: any, index: number) => {

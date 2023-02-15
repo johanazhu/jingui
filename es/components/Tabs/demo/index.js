@@ -105,19 +105,19 @@ export default (function () {
     }
   }, /*#__PURE__*/React.createElement(Tabs.Panel, {
     title: "\u6210\u4EBA\u4FDD\u9669",
-    img: "https://prd-public-oss-jingxb.oss-cn-shanghai-finance-1-pub.aliyuncs.com/product/tag/%E5%95%86%E5%9F%8Eicon-%E6%88%90%E4%BA%BA%E4%BF%9D%E9%99%A9.png"
+    img: "https://prd-public-oss-jingxb.oss-cn-shanghai-finance-1-pub.aliyuncs.com/product/tag/productTag-%E6%88%90%E4%BA%BA%E4%BF%9D%E9%99%A9-01648519947630.png"
   }, "\u6210\u4EBA\u4FDD\u9669"), /*#__PURE__*/React.createElement(Tabs.Panel, {
     title: "\u8001\u5E74\u4EBA\u4FDD\u9669",
-    img: "https://prd-public-oss-jingxb.oss-cn-shanghai-finance-1-pub.aliyuncs.com/product/tag/%E5%95%86%E5%9F%8Eicon-%E8%80%81%E5%B9%B4%E4%BA%BA%E4%BF%9D%E9%99%A9.png"
+    img: "https://prd-public-oss-jingxb.oss-cn-shanghai-finance-1-pub.aliyuncs.com/product/tag/productTag-\u8001\u5E74\u4EBA\u4FDD\u9669-01648519957686.png"
   }, "\u8001\u5E74\u4EBA\u4FDD\u9669"), /*#__PURE__*/React.createElement(Tabs.Panel, {
     title: "\u5C11\u513F\u4FDD\u9669",
-    img: "https://prd-public-oss-jingxb.oss-cn-shanghai-finance-1-pub.aliyuncs.com/product/tag/%E5%95%86%E5%9F%8Eicon-%E5%84%BF%E7%AB%A5%E4%BF%9D%E9%99%A9.png"
+    img: "https://prd-public-oss-jingxb.oss-cn-shanghai-finance-1-pub.aliyuncs.com/product/tag/productTag-\u5C11\u513F\u4FDD\u9669-01648519970577.png"
   }, "\u5C11\u513F\u4FDD\u9669"), /*#__PURE__*/React.createElement(Tabs.Panel, {
     title: "\u8D22\u5BCC\u4FDD\u9669",
-    img: "https://prd-public-oss-jingxb.oss-cn-shanghai-finance-1-pub.aliyuncs.com/product/tag/%E5%95%86%E5%9F%8Eicon-%E8%B4%A2%E5%AF%8C%E4%BF%9D%E9%99%A9.png"
+    img: "https://prd-public-oss-jingxb.oss-cn-shanghai-finance-1-pub.aliyuncs.com/product/tag/productTag-\u8D22\u5BCC\u4FDD\u9669-01648519998957.png"
   }, "\u8D22\u5BCC\u4FDD\u9669"), /*#__PURE__*/React.createElement(Tabs.Panel, {
     title: "\u573A\u666F\u4FDD\u9669",
-    img: "https://prd-public-oss-jingxb.oss-cn-shanghai-finance-1-pub.aliyuncs.com/product/tag/productTag-\u573A\u666F\u4FDD\u9669-01632380692238.png"
+    img: "https://prd-public-oss-jingxb.oss-cn-shanghai-finance-1-pub.aliyuncs.com/product/tag/productTag-\u573A\u666F\u4FDD\u9669-01648519980536.png"
   }, "\u573A\u666F\u4FDD\u9669"))), /*#__PURE__*/React.createElement(DemoBlock, {
     title: "\u6ED1\u52A8\u5207\u6362",
     padding: "0px",

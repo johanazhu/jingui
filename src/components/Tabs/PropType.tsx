@@ -46,8 +46,8 @@ export interface TabsPanelProps extends BaseTypeProps {
  * @param {duration} number                         // 动画时间，单位秒
  * @param {swipeThreshold} number                   // 滚动阈值，标签数量超过阈值且总宽度超过标签栏宽度时开始横向滚动
  * @param {children} ReactNode                      // 组件中的内容
- * @param {onChange} function                       // 当前激活的标签改变时触发
- * @param {onSwiper} function                       // 切换标签的回调函数
+ * @param {onChange} function                       // 切换标签的回调函数
+ * @param {onSwiper} function                       // 滑动panel的回调函数
  **/
 export interface TabsProps extends BaseTypeProps {
     value: number;
@@ -59,7 +59,7 @@ export interface TabsProps extends BaseTypeProps {
     duration?: number;
     swipeThreshold?: number;
     children?: ReactNode;
-    onChange?: (index?: number) => void;
+    onChange?: (index?: number, item?: any) => void;
     onSwiper?: (index?: number) => void;
 }
 

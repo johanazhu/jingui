@@ -27,8 +27,8 @@ group:
 | duration       | 动画时间，单位秒                                               | number    | `0.3`   |
 | swipeThreshold | 滚动阈值，标签数量超过阈值且总宽度超过标签栏宽度时开始横向滚动 | number    | `5`     |
 | children       | 组件中的内容                                                   | ReactNode | -       |
-| onClick        | 当前激活的标签改变时触发                                       | function  | -       |
-| onChange       | 切换标签的回调函数                                             | function  | -       |
+| onChange       | 切换标签的回调函数                                             | function  | `(index, item) => void`       |
+| onSwitch       | 滑动时的回调函数                                             | function  | `(index) => void`         |
 
 ### Tabs API
 

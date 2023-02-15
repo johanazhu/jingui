@@ -96,31 +96,31 @@ export default () => {
                 >
                     <Tabs.Panel
                         title="成人保险"
-                        img="https://prd-public-oss-jingxb.oss-cn-shanghai-finance-1-pub.aliyuncs.com/product/tag/%E5%95%86%E5%9F%8Eicon-%E6%88%90%E4%BA%BA%E4%BF%9D%E9%99%A9.png"
+                        img="https://prd-public-oss-jingxb.oss-cn-shanghai-finance-1-pub.aliyuncs.com/product/tag/productTag-%E6%88%90%E4%BA%BA%E4%BF%9D%E9%99%A9-01648519947630.png"
                     >
                         成人保险
                     </Tabs.Panel>
                     <Tabs.Panel
                         title="老年人保险"
-                        img="https://prd-public-oss-jingxb.oss-cn-shanghai-finance-1-pub.aliyuncs.com/product/tag/%E5%95%86%E5%9F%8Eicon-%E8%80%81%E5%B9%B4%E4%BA%BA%E4%BF%9D%E9%99%A9.png"
+                        img="https://prd-public-oss-jingxb.oss-cn-shanghai-finance-1-pub.aliyuncs.com/product/tag/productTag-老年人保险-01648519957686.png"
                     >
                         老年人保险
                     </Tabs.Panel>
                     <Tabs.Panel
                         title="少儿保险"
-                        img="https://prd-public-oss-jingxb.oss-cn-shanghai-finance-1-pub.aliyuncs.com/product/tag/%E5%95%86%E5%9F%8Eicon-%E5%84%BF%E7%AB%A5%E4%BF%9D%E9%99%A9.png"
+                        img="https://prd-public-oss-jingxb.oss-cn-shanghai-finance-1-pub.aliyuncs.com/product/tag/productTag-少儿保险-01648519970577.png"
                     >
                         少儿保险
                     </Tabs.Panel>
                     <Tabs.Panel
                         title="财富保险"
-                        img="https://prd-public-oss-jingxb.oss-cn-shanghai-finance-1-pub.aliyuncs.com/product/tag/%E5%95%86%E5%9F%8Eicon-%E8%B4%A2%E5%AF%8C%E4%BF%9D%E9%99%A9.png"
+                        img="https://prd-public-oss-jingxb.oss-cn-shanghai-finance-1-pub.aliyuncs.com/product/tag/productTag-财富保险-01648519998957.png"
                     >
                         财富保险
                     </Tabs.Panel>
                     <Tabs.Panel
                         title="场景保险"
-                        img="https://prd-public-oss-jingxb.oss-cn-shanghai-finance-1-pub.aliyuncs.com/product/tag/productTag-场景保险-01632380692238.png"
+                        img="https://prd-public-oss-jingxb.oss-cn-shanghai-finance-1-pub.aliyuncs.com/product/tag/productTag-场景保险-01648519980536.png"
                     >
                         场景保险
                     </Tabs.Panel>
