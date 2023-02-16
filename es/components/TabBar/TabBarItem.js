@@ -8,27 +8,26 @@ var prefixCls = 'jing-tabbar__item';
 var TabBarItem = function TabBarItem(props) {
   var itemKey = props.itemKey,
     style = props.style,
-    title = props.title,
+    pagePath = props.pagePath,
+    text = props.text,
     icon = props.icon,
-    _props$activeIcon = props.activeIcon,
-    activeIcon = _props$activeIcon === void 0 ? icon : _props$activeIcon,
+    selectedIcon = props.selectedIcon,
     selected = props.selected,
     onChange = props.onChange;
-  var change = function change(value) {
+  var change = function change() {
     if (typeof onChange === 'function') {
-      onChange(value);
+      onChange(pagePath);
     }
   };
   return /*#__PURE__*/React.createElement("div", {
     className: classnames("".concat(prefixCls), _defineProperty({}, "".concat(prefixCls, "--active"), selected)),
     style: style,
-    onClick: function onClick() {
-      return change(itemKey);
-    }
+    key: itemKey,
+    onClick: change
   }, icon && /*#__PURE__*/React.createElement("div", {
     className: "".concat(prefixCls, "--icon")
-  }, selected ? activeIcon : icon), title && /*#__PURE__*/React.createElement("div", {
+  }, selected ? selectedIcon : icon), /*#__PURE__*/React.createElement("div", {
     className: "".concat(prefixCls, "--title")
-  }, title));
+  }, text));
 };
 export default /*#__PURE__*/memo(TabBarItem);

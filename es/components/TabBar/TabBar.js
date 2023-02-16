@@ -11,20 +11,20 @@ var TabBar = function TabBar(props) {
     children = props.children,
     onChange = props.onChange,
     beforeChange = props.beforeChange;
-  var onChildChange = function onChildChange(value) {
+  var onPageChange = function onPageChange(value, pagePath) {
     if (isFunction(beforeChange)) {
       var canClick = beforeChange(value);
       if (canClick) {
         canClick.then(function () {
           if (typeof onChange === 'function') {
-            onChange(value);
+            onChange(value, pagePath);
           }
         });
       }
       return;
     }
     if (isFunction(onChange)) {
-      onChange(value);
+      onChange(value, pagePath);
     }
   };
   var getSelected = function getSelected(index, itemKey) {
@@ -44,15 +44,15 @@ var TabBar = function TabBar(props) {
     return /*#__PURE__*/React.cloneElement(element, {
       key: index,
       // @ts-ignore
-      title: element.props.title,
+      pagePath: element.props.pagePath,
+      text: element.props.text,
       icon: element.props.icon,
-      greyIcon: element.props.greyIcon,
-      itemKey: element.props.itemKey || index,
+      selectedIcon: element.props.selectedIcon,
       className: element.props.className,
       style: element.props.style,
       selected: getSelected(index, element.props.itemKey),
-      onChange: function onChange() {
-        return onChildChange(element.props.itemKey);
+      onChange: function onChange(pagePath) {
+        return onPageChange(element.props.itemKey, pagePath);
       }
     });
   });

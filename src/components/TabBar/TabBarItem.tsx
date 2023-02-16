@@ -8,16 +8,17 @@ const TabBarItem: FC<TabBarItemProps> = (props) => {
     const {
         itemKey,
         style,
-        title,
+        pagePath,
+        text,
         icon,
-        activeIcon = icon,
+        selectedIcon,
         selected,
         onChange,
     } = props;
 
-    const change = (value: string | number) => {
+    const change = () => {
         if (typeof onChange === 'function') {
-            onChange(value);
+            onChange(pagePath);
         }
     };
 
@@ -27,14 +28,15 @@ const TabBarItem: FC<TabBarItemProps> = (props) => {
                 [`${prefixCls}--active`]: selected,
             })}
             style={style}
-            onClick={() => change(itemKey)}
+            key={itemKey}
+            onClick={change}
         >
             {icon && (
                 <div className={`${prefixCls}--icon`}>
-                    {selected ? activeIcon : icon}
+                    {selected ? selectedIcon : icon}
                 </div>
             )}
-            {title && <div className={`${prefixCls}--title`}>{title}</div>}
+            <div className={`${prefixCls}--title`}>{text}</div>
         </div>
     );
 };

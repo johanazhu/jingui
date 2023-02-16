@@ -12,7 +12,6 @@
 }
 
 .jing-tabbar {
-    z-index: var(--tabbar-z-index);
     display: flex;
     width: 100%;
     height: var(--tabbar-height);
@@ -61,9 +60,10 @@
 }
 
 .jing-tabbar-container {
+    z-index: var(--tabbar-z-index);
     width: 100%;
+    max-width: 500px;
     position: fixed;
     bottom: 0;
-    left: 0;
     background-color: var(--tabbar-backgrond-color);
 }

@@ -4,20 +4,21 @@ import { BaseTypeProps } from '@/utils';
 /**
  * TabBar.Item
  * @param {itemKey} number | string                     // 唯一标识，对应activeKey，不设置则默认取 index 索引
- * @param {title} ReactNode                             // 标题文字
+ * @param {pagePath} string                             // 页面路径
+ * @param {text} string                                 // tab 上按钮文字
  * @param {icon} ReactNode                              // 图标
- * @param {activeIcon} ReactNode                        // 选中时图标，不设置等同 icon 属性的值
+ * @param {selectedIcon} ReactNode                      // 选中时的图标
  * @param {selected} boolean                            // 是否选中
  * @param {onChange} function                           // 值变化时触发的回调函数
  **/
 export interface TabBarItemProps extends BaseTypeProps {
     itemKey: number | string;
-    title?: ReactNode;
+    pagePath: string,
+    text: string;
     icon?: ReactNode;
-    greyIcon?: ReactNode;
-    activeIcon?: ReactNode;
+    selectedIcon?: ReactNode;
     selected?: boolean;
-    onChange?: (value?: number | string) => void;
+    onChange?: (pagePath?: string) => void;
 }
 
 /**
@@ -36,7 +37,7 @@ export interface TabBarProps extends BaseTypeProps {
     fixed?: boolean;
     safeAreaInsetBottom?: boolean;
     children: ReactNode;
-    onChange?: (value?: number | string) => void;
+    onChange?: (value?: number | string, pagePath?: string) => void;
     beforeChange?: (
         value?: number | string,
     ) => boolean | Promise<unknown> | any;

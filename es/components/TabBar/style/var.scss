@@ -2,7 +2,7 @@
 
 // TabBar
 $tabbar-height: 50px;
-$tabbar-z-index: 1;
+$tabbar-z-index: var(--zindex-overlay);
 $tabbar-backgrond-color: var(--bg-white);
 
 // TabBarItem

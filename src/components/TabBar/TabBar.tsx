@@ -18,13 +18,13 @@ const TabBar: FC<TabBarProps> = (props) => {
         beforeChange,
     } = props;
 
-    const onChildChange = (value: string | number) => {
+    const onPageChange = (value: string | number, pagePath?: string) => {
         if (isFunction(beforeChange)) {
             let canClick = beforeChange(value);
             if (canClick) {
                 canClick.then(() => {
                     if (typeof onChange === 'function') {
-                        onChange(value);
+                        onChange(value, pagePath);
                     }
                 });
             }
@@ -32,7 +32,7 @@ const TabBar: FC<TabBarProps> = (props) => {
         }
 
         if (isFunction(onChange)) {
-            onChange(value);
+            onChange(value, pagePath);
         }
     };
 
@@ -53,14 +53,14 @@ const TabBar: FC<TabBarProps> = (props) => {
         return React.cloneElement(element, {
             key: index,
             // @ts-ignore
-            title: element.props.title,
+            pagePath: element.props.pagePath,
+            text: element.props.text,
             icon: element.props.icon,
-            greyIcon: element.props.greyIcon,
-            itemKey: element.props.itemKey || index,
+            selectedIcon: element.props.selectedIcon,
             className: element.props.className,
             style: element.props.style,
             selected: getSelected(index, element.props.itemKey),
-            onChange: () => onChildChange(element.props.itemKey),
+            onChange: (pagePath: string) => onPageChange(element.props.itemKey, pagePath),
         });
     });
 
@@ -68,7 +68,7 @@ const TabBar: FC<TabBarProps> = (props) => {
         return (
             <div className={classnames(`${prefixCls}-container`)}>
                 <div className={classnames(prefixCls, className)}>{items}</div>
-                {/* 不知道用那种合适，再文档上体现不出效果 */}
+                {/* 不知道用那种合适，在文档上体现不出效果 */}
                 <div className="jing-iphonex-extra-height" />
                 {/* <div className="jing-safe-area-bottom" /> */}
             </div>

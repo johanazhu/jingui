@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import {
     TabBar,
-    IconHome,
-    IconFinancial,
-    IconUser,
+    Space,
     IconMall,
     IconMallBlack,
     IconFind,
@@ -15,72 +13,52 @@ import {
 import { DemoBlock } from 'demo';
 
 export default () => {
-    const [activeKey, setActiveKey] = useState('home');
     const [activeKey1, setActiveKey1] = useState('mall');
-    const [activeKey2, setActiveKey2] = useState('home');
+    const [activeKey2, setActiveKey2] = useState('mall');
 
     return (
         <>
-            <DemoBlock title="基本用法" padding="" className="demo-jing-tabbar">
-                <TabBar
-                    activeKey={activeKey}
-                    onChange={(key: any) => {
-                        setActiveKey(key);
-                    }}
-                >
-                    <TabBar.Item
-                        itemKey="home"
-                        title="主页"
-                        icon={<IconHome />}
-                    />
-                    <TabBar.Item
-                        itemKey="financial"
-                        title="理财"
-                        icon={<IconFinancial />}
-                    />
-                    <TabBar.Item
-                        itemKey="user"
-                        title="我的"
-                        icon={<IconUser />}
-                    />
-                </TabBar>
-            </DemoBlock>
-            <DemoBlock title="基本用法2" padding="" className="demo-jing-tabbar">
+            <DemoBlock text="基本用法" padding="" className="demo-jing-tabbar">
                 <TabBar
                     activeKey={activeKey1}
-                    onChange={(key: any) => {
+                    onChange={(key: string, pagePath: string) => {
+                        console.log('key', key, pagePath)
                         setActiveKey1(key);
                     }}
                 >
                     <TabBar.Item
                         itemKey="mall"
-                        title="鲸选保险"
-                        icon={<IconMall />}
-                        greyIcon={<IconMallBlack />}
+                        pagePath="/mall"
+                        text="鲸选保险"
+                        icon={<IconMallBlack />}
+                        selectedIcon={<IconMall />}
                     />
                     <TabBar.Item
                         itemKey="find"
-                        title="发现"
-                        icon={<IconFind />}
-                        greyIcon={<IconFindBlack />}
+                        pagePath="/find"
+                        text="发现"
+                        icon={<IconFindBlack />}
+                        selectedIcon={<IconFind />}
                     />
                     <TabBar.Item
                         itemKey="my"
-                        title="我的"
-                        icon={<IconMy />}
-                        greyIcon={<IconMyBlack />}
+                        pagePath="/my"
+                        text="我的"
+                        icon={<IconMyBlack />}
+                        selectedIcon={<IconMy />}
                     />
                 </TabBar>
             </DemoBlock>
+            <Space scale={2} />
             <DemoBlock
-                title="监听切换标签前的回调函数"
+                text="监听切换标签前的回调函数"
                 padding=""
                 className="demo-jing-tabbar"
             >
                 <TabBar
                     activeKey={activeKey2}
                     beforeChange={(value: any) => {
-                        if (value === 'user') {
+                        if (value === 'mall') {
                             console.log('点击我的不能打印');
                             return false;
                         } else {
@@ -92,24 +70,31 @@ export default () => {
                             });
                         }
                     }}
-                    onChange={(key: any) => {
+                    onChange={(key: string, pagePath: string) => {
+                        console.log('key2', key, pagePath)
                         setActiveKey2(key);
                     }}
                 >
                     <TabBar.Item
-                        itemKey="home"
-                        title="主页"
-                        icon={<IconHome />}
+                        itemKey="mall"
+                        pagePath="/mall"
+                        text="鲸选保险"
+                        icon={<IconMallBlack />}
+                        selectedIcon={<IconMall />}
                     />
                     <TabBar.Item
-                        itemKey="financial"
-                        title="理财"
-                        icon={<IconFinancial />}
+                        itemKey="find"
+                        pagePath="/find"
+                        text="发现"
+                        icon={<IconFindBlack />}
+                        selectedIcon={<IconFind />}
                     />
                     <TabBar.Item
-                        itemKey="user"
-                        title="我的"
-                        icon={<IconUser />}
+                        itemKey="my"
+                        pagePath="/my"
+                        text="我的"
+                        icon={<IconMyBlack />}
+                        selectedIcon={<IconMy />}
                     />
                 </TabBar>
             </DemoBlock>
