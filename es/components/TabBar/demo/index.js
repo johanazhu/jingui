@@ -29,7 +29,7 @@ export default (function () {
   }, /*#__PURE__*/React.createElement(TabBar.Item, {
     itemKey: "mall",
     pagePath: "/mall",
-    text: "\u9CB8\u9009\u4FDD\u9669",
+    text: "\u9996\u9875",
     icon: /*#__PURE__*/React.createElement(IconMallBlack, null),
     selectedIcon: /*#__PURE__*/React.createElement(IconMall, null)
   }), /*#__PURE__*/React.createElement(TabBar.Item, {
@@ -72,7 +72,7 @@ export default (function () {
   }, /*#__PURE__*/React.createElement(TabBar.Item, {
     itemKey: "mall",
     pagePath: "/mall",
-    text: "\u9CB8\u9009\u4FDD\u9669",
+    text: "\u9996\u9875",
     icon: /*#__PURE__*/React.createElement(IconMallBlack, null),
     selectedIcon: /*#__PURE__*/React.createElement(IconMall, null)
   }), /*#__PURE__*/React.createElement(TabBar.Item, {

@@ -29,7 +29,7 @@ export default () => {
                     <TabBar.Item
                         itemKey="mall"
                         pagePath="/mall"
-                        text="鲸选保险"
+                        text="首页"
                         icon={<IconMallBlack />}
                         selectedIcon={<IconMall />}
                     />
@@ -78,7 +78,7 @@ export default () => {
                     <TabBar.Item
                         itemKey="mall"
                         pagePath="/mall"
-                        text="鲸选保险"
+                        text="首页"
                         icon={<IconMallBlack />}
                         selectedIcon={<IconMall />}
                     />

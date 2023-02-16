@@ -37,3 +37,4 @@ export { default as PasswordInput } from "./components/PasswordInput";
 export { default as Modal } from "./components/Modal";
 export { default as FloatingAd } from "./components/FloatingAd";
 export { default as ConnectFooter } from "./components/ConnectFooter";
+export { default as PopupMiddle } from "./components/PopupMiddle";

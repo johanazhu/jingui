@@ -15,11 +15,11 @@ export default (function () {
   var _hooks$useSetState = hooks.useSetState({
       v1: false,
       v2: false,
-      v3: false
-      // v4: false,
-      // v5: false,
-      // v6: false,
-      // v7: false,
+      v3: false,
+      v4: false,
+      v5: false,
+      v6: false,
+      v7: false
     }),
     _hooks$useSetState2 = _slicedToArray(_hooks$useSetState, 2),
     state = _hooks$useSetState2[0],
@@ -50,6 +50,22 @@ export default (function () {
     onClick: function onClick() {
       return setState({
         v3: true
+      });
+    }
+  }), /*#__PURE__*/React.createElement(Cell, {
+    title: "\u6A21\u62DFAlert\u6548\u679C",
+    isLink: true,
+    onClick: function onClick() {
+      return setState({
+        v4: true
+      });
+    }
+  }), /*#__PURE__*/React.createElement(Cell, {
+    title: "\u6A21\u62DFConfirm\u6548\u679C",
+    isLink: true,
+    onClick: function onClick() {
+      return setState({
+        v5: true
       });
     }
   }), /*#__PURE__*/React.createElement(Modal, {
@@ -88,6 +104,28 @@ export default (function () {
     onCancel: function onCancel() {
       return setState({
         v3: false
+      });
+    }
+  }), /*#__PURE__*/React.createElement(Modal, {
+    visible: state.v4,
+    message: "\u5F39\u7A97\u6807\u9898\u4E00\u4E8C\u4E09\u56DB\u4E94\u516D\u5F39\u7A97\u6807\u9898\u4E00\u4E8C\u4E09\u56DB\u4E94\u516D\u5F39\u7A97\u6807\u9898\u4E00\u4E8C\u4E09\u56DB\u4E94\u516D",
+    onConfirm: function onConfirm() {
+      return setState({
+        v4: false
+      });
+    }
+  }), /*#__PURE__*/React.createElement(Modal, {
+    visible: state.v5,
+    showCancelButton: true,
+    message: "\u5F39\u7A97\u6807\u9898\u4E00\u4E8C\u4E09\u56DB\u4E94\u516D\u5F39\u7A97\u6807\u9898\u4E00\u4E8C\u4E09\u56DB\u4E94\u516D\u5F39\u7A97\u6807\u9898\u4E00\u4E8C\u4E09\u56DB\u4E94\u516D",
+    onConfirm: function onConfirm() {
+      return setState({
+        v5: false
+      });
+    },
+    onCancel: function onCancel() {
+      return setState({
+        v5: false
       });
     }
   })), /*#__PURE__*/React.createElement(DemoBlock, {

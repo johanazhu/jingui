@@ -4,7 +4,6 @@ import classnames from 'classnames';
 import { IconFZ } from "../Icon";
 var prefixCls = 'jing-orientation';
 var Orientation = function Orientation(props) {
-  console.log('props', props);
   var className = props.className,
     style = props.style;
   var classes = classnames(className, prefixCls);

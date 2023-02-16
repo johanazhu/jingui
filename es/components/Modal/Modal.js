@@ -70,7 +70,6 @@ var Modal = function Modal(props) {
     return /*#__PURE__*/React.createElement("div", {
       className: classnames("".concat(prefixCls, "__footer"), BORDER_TOP)
     }, showCancelButton && /*#__PURE__*/React.createElement(Button, {
-      size: "large",
       text: cancelButtonText || '取消',
       className: "".concat(prefixCls, "__cancel"),
       style: {
@@ -80,7 +79,6 @@ var Modal = function Modal(props) {
       disabled: (_props$cancelProps2 = props.cancelProps) === null || _props$cancelProps2 === void 0 ? void 0 : _props$cancelProps2.disabled,
       onClick: (_props$cancelProps3 = props.cancelProps) !== null && _props$cancelProps3 !== void 0 && _props$cancelProps3.loading ? noop : onCancel
     }), showConfirmButton && /*#__PURE__*/React.createElement(Button, {
-      size: "large",
       text: confirmButtonText || '确认',
       className: classnames("".concat(prefixCls, "__confirm"), BORDER_LEFT),
       style: {

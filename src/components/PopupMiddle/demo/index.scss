@@ -1,0 +1,31 @@
+.jing-popupmiddle {
+    .body {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .header {
+        border-bottom: 1px solid #948484;
+        padding: 1rem;
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+    .content {
+        flex: 1 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 2rem;
+        .p1 {
+            z-index: 2;
+            position: relative;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        .p2 {
+            color: var(--color-black-2);
+            text-align: justify;
+            margin: 0.5rem 0 1.25rem;
+        }
+    }
+}

@@ -7,10 +7,10 @@ export default () => {
         v1: false,
         v2: false,
         v3: false,
-        // v4: false,
-        // v5: false,
-        // v6: false,
-        // v7: false,
+        v4: false,
+        v5: false,
+        v6: false,
+        v7: false,
     });
 
     return (
@@ -33,7 +33,16 @@ export default () => {
                     isLink
                     onClick={() => setState({ v3: true })}
                 />
-
+                <Cell
+                    title="模拟Alert效果"
+                    isLink
+                    onClick={() => setState({ v4: true })}
+                />
+                <Cell
+                    title="模拟Confirm效果"
+                    isLink
+                    onClick={() => setState({ v5: true })}
+                />
                 <Modal
                     visible={state.v1}
                     title="标题"
@@ -54,6 +63,18 @@ export default () => {
                     showCancelButton
                     onConfirm={() => setState({ v3: false })}
                     onCancel={() => setState({ v3: false })}
+                />
+                <Modal
+                    visible={state.v4}
+                    message="弹窗标题一二三四五六弹窗标题一二三四五六弹窗标题一二三四五六"
+                    onConfirm={() => setState({ v4: false })}
+                />
+                <Modal
+                    visible={state.v5}
+                    showCancelButton
+                    message="弹窗标题一二三四五六弹窗标题一二三四五六弹窗标题一二三四五六"
+                    onConfirm={() => setState({ v5: false })}
+                    onCancel={() => setState({ v5: false })}
                 />
             </DemoBlock>
             <DemoBlock

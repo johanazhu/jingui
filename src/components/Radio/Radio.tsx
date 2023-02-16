@@ -9,7 +9,7 @@ const Radio: FC<RadioProps> = (props) => {
     return (
         <div
             className={classnames(className, {
-                [`jing-Radio-${scale}`]: scale,
+                [`${prefixCls}__${scale}`]: scale,
             })}
             style={style}
         />

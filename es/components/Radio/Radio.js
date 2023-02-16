@@ -10,7 +10,7 @@ var Radio = function Radio(props) {
     className = props.className,
     style = props.style;
   return /*#__PURE__*/React.createElement("div", {
-    className: classnames(className, _defineProperty({}, "jing-Radio-".concat(scale), scale)),
+    className: classnames(className, _defineProperty({}, "".concat(prefixCls, "__").concat(scale), scale)),
     style: style
   });
 };

@@ -1,0 +1,27 @@
+@import './var.scss';
+
+:root {
+    --popupmiddle-background-color: #{$popupmiddle-background-color};
+    --popupmiddle-border-radius: #{$popupmiddle-border-radius};
+}
+
+.jing-popupmiddle {
+    width: 100%;
+    height: 60vh;
+    background-color: var(--popupmiddle-background-color);
+    border-radius: var(--popupmiddle-border-radius);
+    margin: auto 0;
+    text-align: center;
+
+    &__close {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%);
+    }
+}

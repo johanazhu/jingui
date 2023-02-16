@@ -94,7 +94,6 @@ const Modal: FC<ModalProps> = (props) => {
             <div className={classnames(`${prefixCls}__footer`, BORDER_TOP)}>
                 {showCancelButton && (
                     <Button
-                        size="large"
                         text={cancelButtonText || '取消'}
                         className={`${prefixCls}__cancel`}
                         style={{ color: cancelButtonColor }}
@@ -109,7 +108,6 @@ const Modal: FC<ModalProps> = (props) => {
                 )}
                 {showConfirmButton && (
                     <Button
-                        size="large"
                         text={confirmButtonText || '确认'}
                         className={classnames(
                             `${prefixCls}__confirm`,

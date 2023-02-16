@@ -7,7 +7,6 @@ import { IconFZ } from '../Icon';
 const prefixCls = 'jing-orientation';
 
 const Orientation: FC = (props: any) => {
-    console.log('props', props)
     const { className, style } = props;
 
     const classes = classnames(className, prefixCls);
