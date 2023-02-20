@@ -1,7 +1,39 @@
 .jing-textarea {
-    display: block;
-    resize: none;
-    word-break: break-all;
-    word-wrap: break-word;
-    overflow: visible;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+
+    &__control {
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+        color: var(--input-text-color);
+        line-height: inherit;
+        text-align: inherit;
+        background-color: var(--input-background-color);
+        border: 0;
+        resize: none;
+        user-select: auto;
+    }
+
+    &::placeholder {
+        color: var(--input-placeholder-text-color);
+        font-size: var(--input-placeholder-text-font-size);
+    }
+
+    &:disabled {
+        color: var(--input-disabled-text-color);
+        cursor: not-allowed;
+        opacity: 1;
+        // fix disabled color in mobile safari
+        -webkit-text-fill-color: var(--input-disabled-text-color);
+    }
+
+    &:read-only {
+        cursor: default;
+    }
 }

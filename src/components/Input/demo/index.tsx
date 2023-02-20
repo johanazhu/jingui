@@ -21,9 +21,47 @@ export default () => {
         value: '',
     });
 
+    console.log('state1.visible', state1.visible)
 
     return (
         <>
+            <DemoBlock title="结合键盘的Input" padding="">
+                <Cell style={{ padding: 0 }}>
+                    <Input.KeyBoard
+                        value={state1.value}
+                        placeholder="请输入登录密码"
+                        active={isActive}
+                        onHandleFocus={() => {
+                            setIsActive(true);
+                            setState1({ visible: true });
+                            console.log('keyboard聚焦时');
+                        }}
+                        onClearValue={() => {
+                            setIsActive(false);
+                            console.log('点击清除图标时');
+                        }}
+                        maxLength={20}
+                    />
+                </Cell>
+                <KeyBoard
+                    value={state1.value}
+                    visible={state1.visible}
+                    maxLength={10}
+                    layoutName="default"
+                    onBlur={() => {
+                        // setState1({ visible: false });
+                    }}
+                    onInput={(value: string) => {
+                        setState1({ value });
+                    }}
+                    onSpaceCb={() => {
+                        Toast('空格不可用');
+                    }}
+                    onDoneCb={() => {
+                        Toast('点击完成');
+                    }}
+                />
+            </DemoBlock>
             <DemoBlock title="基础用法" padding="">
                 <Cell>
                     <Input
@@ -79,6 +117,7 @@ export default () => {
                     />
                 </Cell>
             </DemoBlock>
+
             <DemoBlock title="插入内容" padding="">
                 <Cell>
                     <Input
@@ -90,78 +129,11 @@ export default () => {
                     />
                 </Cell>
             </DemoBlock>
-            <DemoBlock title="结合键盘的Input" padding="">
+            <DemoBlock title="多行输入" padding="">
                 <Cell>
-                    <Input.KeyBoard
-                    // value={state1.value}
-                    // placeholder="请输入登录密码"
-                    // active={isActive}
-                    // onHandleFocus={() => {
-                    //     setIsActive(true);
-                    //     console.log('keyboard聚焦时');
-                    // }}
-                    // onClearValue={() => {
-                    //     setIsActive(false);
-                    //     console.log('点击清除图标时');
-                    // }}
-                    // maxLength={20}
-                    />
+                    <Input.TextArea placeholder="多行输入" />
                 </Cell>
-                <KeyBoard
-                    value={state1.value}
-                    visible={state1.visible}
-                    maxLength={10}
-                    layoutName="default"
-                    onBlur={() => {
-                        setState1({ visible: false });
-                    }}
-                    onInput={(value: string) => {
-                        setState1({ value });
-                    }}
-                    onSpaceCb={() => {
-                        Toast('空格不可用');
-                    }}
-                    onDoneCb={() => {
-                        Toast('点击完成');
-                    }}
-                />
             </DemoBlock>
-            {/* <DemoBlock title="带前缀的输入框" padding="">
-                <Input.Prefix
-                    value={value}
-                    placeholder="带前缀的输入框"
-                    icon={<IconUser />}
-                />
-            </DemoBlock>
-
-            <DemoBlock title="KeyBoard输入框" padding="">
-                <Input.KeyBoard
-                    value={value}
-                    placeholder="具体可去键盘组件查看demo"
-                    active={isActive}
-                    onHandleFocus={() => {
-                        setIsActive(true);
-                        console.log('keyboard聚焦时');
-                    }}
-                    onClearValue={() => {
-                        setIsActive(false);
-                        console.log('点击清除图标时');
-                    }}
-                    maxLength={20}
-                />
-            </DemoBlock>
-            <DemoBlock title="多行文本" padding="">
-                <Input.Textarea
-                    rows={3}
-                    placeholder="请输入"
-                    value={text}
-                    onChange={(value: any) => {
-                        setText(value);
-                        console.log(`onChange: ${value}`);
-                    }}
-                    onBlur={(value: any) => console.log(`onBlur: ${value}`)}
-                />
-            </DemoBlock> */}
         </>
     );
 };

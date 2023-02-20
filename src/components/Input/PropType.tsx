@@ -73,3 +73,11 @@ export interface KeyboardInputProps extends BaseTypeProps {
     onClearValue?: () => void;
     onHandleFocus?: () => void;
 }
+
+
+export type KeyboardInputInstance = {
+    focus: () => void
+    blur: () => void
+    clear: () => void
+    nativeElement: HTMLInputElement | null
+}

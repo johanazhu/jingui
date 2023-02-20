@@ -33,11 +33,11 @@ group:
 
 ### Input.Textarea API
 
-基于 base，base 有的参数它都有
+基于 Input, Input 有的参数它都有
 
 | 参数 | 说明     | 类型   | 默认值 |
 | ---- | -------- | ------ | ------ |
-| rows | 文本行数 | number | -      |
+| rows | 文本行数 | number | 2      |
 
 ### Input.Keyboard API
 

@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback, useRef, forwardRef, useImperativeHandle } from 'react';
 import classnames from 'classnames';
-import { TextAreaProps } from './PropType';
+import { TextAreaProps, TextAreaInstance } from './PropType';
+import { isDef, formatNumber, resetScroll } from '@/utils';
 
 const prefixCls = 'jing-textarea';
 
@@ -18,7 +19,8 @@ function useInputValue(initialValue: string) {
     return { value, onChange, updateValue };
 }
 
-function Textarea(props: TextAreaProps) {
+const TextArea = forwardRef<TextAreaInstance, TextAreaProps>((props, ref) => {
+
     const {
         placeholder,
         value = '',
@@ -27,13 +29,14 @@ function Textarea(props: TextAreaProps) {
         onChange,
         onFocus,
         onBlur,
+        readOnly,
         disabled,
         maxLength,
         minLength,
         rows,
     } = props;
 
-    const textareaRef = useRef(null);
+    const nativeTextAreaRef = useRef<HTMLTextAreaElement>()
 
     const oInput = useInputValue(value);
     const [isBan, setIsBan] = useState(disabled);
@@ -48,34 +51,80 @@ function Textarea(props: TextAreaProps) {
 
 
     useEffect(() => {
-        if (rows && textareaRef.current) {
+        if (rows && nativeTextAreaRef.current) {
             // @ts-ignore
-            textareaRef.current.style.height = `${
+            nativeTextAreaRef.current.style.height = `${
                 // @ts-ignore
-                textareaRef.current.scrollHeight * rows
+                nativeTextAreaRef.current.scrollHeight * rows
                 }px`;
         }
     }, [rows]);
 
+
+    const focus = () => {
+        if (nativeTextAreaRef?.current) {
+            nativeTextAreaRef.current.focus()
+        }
+    }
+
+    const blur = () => {
+        if (nativeTextAreaRef?.current) {
+            nativeTextAreaRef.current.blur()
+        }
+    }
+
+    useImperativeHandle(ref, () => ({
+        clear: () => {
+            oInput.onChange('')
+        },
+        focus,
+        blur,
+        // @ts-ignore
+        get nativeElement() {
+            return nativeTextAreaRef.current
+        },
+    }))
+
+    const handleFocus = (e: any) => {
+        onFocus?.(e)
+
+        // readOnly not work in legacy mobile safari
+        if (readOnly) {
+            blur()
+        }
+    }
+
+    const handleBulr = (e: any) => {
+        onBlur?.(e)
+        resetScroll()
+    }
+
+
     return (
-        <textarea
-            ref={textareaRef}
-            value={oInput.value}
-            style={style}
-            className={classnames(prefixCls, className)}
-            rows={rows}
-            disabled={isBan}
-            placeholder={placeholder}
-            maxLength={maxLength}
-            minLength={minLength}
-            onChange={(e) => {
-                oInput.onChange(e);
-                onChange && onChange(e.target.value);
-            }}
-            onFocus={onFocus}
-            onBlur={onBlur}
-        />
+        <div className={classnames(prefixCls, className)} style={style}>
+            <textarea
+                ref={nativeTextAreaRef as React.RefObject<HTMLTextAreaElement>}
+                className={`${prefixCls}__control`}
+                value={oInput.value}
+                rows={rows}
+                disabled={isBan}
+                readOnly={readOnly}
+                placeholder={placeholder || ''}
+                maxLength={maxLength}
+                minLength={minLength}
+                onChange={(e) => {
+                    oInput.onChange(e);
+                    onChange && onChange(e.target.value);
+                }}
+                onFocus={handleFocus}
+                onBlur={handleBulr}
+            />
+        </div>
     );
+})
+
+TextArea.defaultProps = {
+    rows: 2,
 }
 
-export default Textarea;
+export default TextArea;

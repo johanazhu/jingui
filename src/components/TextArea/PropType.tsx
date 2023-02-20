@@ -1,4 +1,3 @@
-import { ReactNode, CSSProperties } from 'react';
 import { InputProps } from '../Input';
 
 /**
@@ -7,4 +6,11 @@ import { InputProps } from '../Input';
  **/
 export interface TextAreaProps extends InputProps {
     rows?: number;
+}
+
+export type TextAreaInstance = {
+    focus: () => void
+    blur: () => void
+    clear: () => void
+    nativeElement: HTMLTextAreaElement | null
 }

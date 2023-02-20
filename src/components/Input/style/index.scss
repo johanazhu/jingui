@@ -8,7 +8,7 @@
     --input-border-color: #{$input-border-color};
     --input-background-color: #{$input-background-color};
     --input-active-border-color: #{$input-active-border-color};
-    --input-disbaled-text-color: #{$input-disbaled-text-color};
+    --input-disabled-text-color: #{$input-disabled-text-color};
     --input-disabled-bg: #{$input-disabled-bg};
     --input-placeholder-text-color: #{$input-placeholder-text-color};
     --input-placeholder-font-size: #{$input-placeholder-font-size};
@@ -105,16 +105,27 @@ textarea::placeholder {
 }
 
 .jing-keyboardinput {
+    display: flex;
+    align-items: center;
+    width: 100%;
     position: relative;
     &__control {
+        position: relative;
+        display: flex;
+        overflow: hidden;
         flex: 1;
         width: 100%;
         height: var(--input-keyboard-height);
+        line-height: var(--cell-line-height);
+        padding: var(--cell-horizontal-padding) var(--cell-vertical-padding);
+        color: var(--cell-text-color);
+        font-size: var(--cell-font-size);
+        background-color: var(--cell-bg);
         cursor: text;
-        position: relative;
         z-index: 2;
         background-color: rgba(255, 255, 255, 0);
         border: 1px solid transparent;
+
         &:after {
             visibility: hidden;
             content: '';
@@ -146,5 +157,15 @@ textarea::placeholder {
         line-height: 1em;
         font-size: var(--input-keyboard-sub-font-size);
         color: var(--input-keyboard-sub-text-color);
+    }
+
+    &__clear,
+    &__focus {
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        // width: var(--input-width);
+        @include flex-center();
+        @include jing-input-common();
     }
 }
