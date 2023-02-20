@@ -17,7 +17,6 @@ import {
 } from '../Icon';
 import Key from './Key';
 import { KeyboardProps, KeyType, LetterKeyboardKey } from './PropType';
-import Popup from '../Popup';
 import { useUpdateEffect, useRefs } from '../hooks';
 import { getRect as getElementRect } from '../hooks/useRect';
 import { stopPropagation, isObject } from '@/utils';

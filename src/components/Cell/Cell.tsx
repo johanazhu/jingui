@@ -19,42 +19,123 @@ const Cell: FC<CellProps> = (props) => {
         center,
         isLink,
         required,
+        titleStyle,
+        titleClass,
+        valueClass,
+        labelClass,
+        descClass,
+        linkClass,
+        children,
         onClick,
     } = props;
 
     const classes = classnames(prefixCls, className, {
         [`${prefixCls}--center`]: !!center,
         [`${prefixCls}--clickable`]: !!isLink,
-        [`${prefixCls}--required`]: !!required,
     });
+
+    const renderIcon = () => {
+        if (icon) {
+            return React.cloneElement(props.icon as React.ReactElement, {
+                className: `${prefixCls}__icon`,
+            })
+        }
+        return null
+    }
+
+    const renderLabel = () => {
+        const showLabel = isDef(label)
+
+        if (showLabel) {
+            return (
+                <div className={classnames(`${prefixCls}__label`, labelClass)}>
+                    {label}
+                </div>
+            )
+        }
+        return null
+    }
+
+    const renderRequire = () => {
+        if (required) {
+            return (
+                <span className={`${prefixCls}__required`}>
+                    *
+                </span>
+            )
+        }
+        return null
+    }
+
+    const renderTitle = () => {
+        if (isDef(title)) {
+            return (
+                <div
+                    className={classnames(`${prefixCls}__title`, titleClass)}
+                    style={titleStyle}
+                >
+                    <span>{title}{renderRequire()}</span>
+                    {renderLabel()}
+                </div>
+            )
+        }
+        return null
+    }
+
+    const renderDesc = () => {
+        const showDesc = isDef(desc)
+
+        if (showDesc) {
+            return (
+                <div className={classnames(`${prefixCls}__desc`, descClass)}>
+                    {desc}
+                </div>
+            )
+        }
+        return null
+    }
+
+    const renderValue = () => {
+        const hasTitle = isDef(title)
+        const hasValue = children || isDef(value)
+
+        if (hasValue) {
+            return (
+                <div
+                    className={classnames(`${prefixCls}__value`, valueClass, {
+                        [`${prefixCls}__value--alone`]: !hasTitle,
+                    })}
+                >
+                    {children ? children : (
+                        <>
+                            <span>{value}</span>
+                            {renderDesc()}
+                        </>
+                    )}
+                </div>
+            )
+        }
+        return null
+    }
+
+
+    const renderLink = () => {
+        if (isLink) {
+            return (
+                <span className={classnames(`${prefixCls}__link`, linkClass)}>
+                    <IconArrow size="sm" />
+                </span>
+            )
+        }
+        return null
+    }
 
     return (
         <div className={classnames(classes)} style={style} onClick={onClick}>
-            {icon && <span className={`${prefixCls}__icon`}>{icon}</span>}
-            {title && (
-                <div className={`${prefixCls}__title`}>
-                    <span>{title}</span>
-                    {label && (
-                        <div className={`${prefixCls}__label`}>{label}</div>
-                    )}
-                </div>
-            )}
-            {value && (
-                <div
-                    className={classnames(`${prefixCls}__value`, {
-                        [`${prefixCls}__value--alone`]:
-                            !isDef(title) && isDef(value),
-                    })}
-                >
-                    <span>{value}</span>
-                    {desc && <div className={`${prefixCls}__desc`}>{desc}</div>}
-                </div>
-            )}
-            {isLink && (
-                <span className={`${prefixCls}__link`}>
-                    <IconArrow size="sm" />
-                </span>
-            )}
+            {renderIcon()}
+            {renderTitle()}
+            {renderValue()}
+            {renderLink()}
         </div>
     );
 };

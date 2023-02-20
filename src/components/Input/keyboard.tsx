@@ -7,12 +7,11 @@ import React, {
     useRef,
 } from 'react';
 import classnames from 'classnames';
-import Group from './group';
 import { IconCircleDelete, IconEyeCloseTwo, IconEyeOpenTwo } from '../Icon';
 import { KeyboardInputProps } from './PropType';
 import { stopPropagation } from '@/utils';
 
-const prefixCls = 'jing-input';
+const prefixCls = 'jing-keyboardinput';
 
 function useInputValue(initialValue: string) {
     const [value, setValue] = useState(initialValue);
@@ -54,8 +53,8 @@ function changeValue(value: string) {
 
 const KeyboardInput: FC<KeyboardInputProps> = (props) => {
     const {
-        groupClassName,
-        groupStyle,
+        className,
+        style,
         value,
         placeholder,
         active,
@@ -64,94 +63,94 @@ const KeyboardInput: FC<KeyboardInputProps> = (props) => {
         onHandleFocus,
     } = props;
 
-    const [isShowClear, setIsShowClear] = useState(false);
-    const [isFocus, setIsFocus] = useState(active);
-    const [visible, setIsVisible] = useState(false);
-    const [placeHolderValue, setPlaceHolderValue] = useState(placeholder);
+    // const [isShowClear, setIsShowClear] = useState(false);
+    // const [isFocus, setIsFocus] = useState(active);
+    // const [visible, setIsVisible] = useState(false);
+    // const [placeHolderValue, setPlaceHolderValue] = useState(placeholder);
 
-    const oInput = useInputValue(value);
+    // const oInput = useInputValue(value);
 
-    useEffect(() => {
-        if (visible) {
-            if (maxLength) {
-                if (value.length >= maxLength) {
-                    oInput.updateValue(value.substring(0, maxLength));
-                } else {
-                    oInput.updateValue(value);
-                }
-            } else {
-                oInput.updateValue(value);
-            }
-        } else {
-            if (maxLength) {
-                if (value.length >= maxLength) {
-                    oInput.updateCacheValue(value.substring(0, maxLength));
-                    oInput.updateValue(
-                        changeValue(value.substring(0, maxLength)),
-                    );
-                } else {
-                    oInput.updateCacheValue(value);
-                    oInput.updateValue(changeValue(value));
-                }
-            } else {
-                oInput.updateCacheValue(value);
-                oInput.updateValue(changeValue(value));
-            }
-        }
-    }, [value]);
+    // useEffect(() => {
+    //     if (visible) {
+    //         if (maxLength) {
+    //             if (value.length >= maxLength) {
+    //                 oInput.updateValue(value.substring(0, maxLength));
+    //             } else {
+    //                 oInput.updateValue(value);
+    //             }
+    //         } else {
+    //             oInput.updateValue(value);
+    //         }
+    //     } else {
+    //         if (maxLength) {
+    //             if (value.length >= maxLength) {
+    //                 oInput.updateCacheValue(value.substring(0, maxLength));
+    //                 oInput.updateValue(
+    //                     changeValue(value.substring(0, maxLength)),
+    //                 );
+    //             } else {
+    //                 oInput.updateCacheValue(value);
+    //                 oInput.updateValue(changeValue(value));
+    //             }
+    //         } else {
+    //             oInput.updateCacheValue(value);
+    //             oInput.updateValue(changeValue(value));
+    //         }
+    //     }
+    // }, [value]);
 
-    useEffect(() => {
-        if (isFocus) {
-            setIsShowClear(true);
-        } else {
-            setIsShowClear(false);
-        }
-        if (oInput.value !== '') {
-            setPlaceHolderValue('');
-        } else {
-            setPlaceHolderValue(placeholder);
-        }
-    }, [oInput.value, isFocus]);
+    // useEffect(() => {
+    //     if (isFocus) {
+    //         setIsShowClear(true);
+    //     } else {
+    //         setIsShowClear(false);
+    //     }
+    //     if (oInput.value !== '') {
+    //         setPlaceHolderValue('');
+    //     } else {
+    //         setPlaceHolderValue(placeholder);
+    //     }
+    // }, [oInput.value, isFocus]);
 
-    useEffect(() => {
-        setIsFocus(active);
-    }, [active]);
+    // useEffect(() => {
+    //     setIsFocus(active);
+    // }, [active]);
 
-    function onFocusClick() {
-        setIsFocus(true);
-        onHandleFocus && onHandleFocus();
-    }
+    // function onFocusClick() {
+    //     setIsFocus(true);
+    //     onHandleFocus && onHandleFocus();
+    // }
 
-    function onEyeClick(e: any) {
-        // e.preventDefault()
-        stopPropagation(e);
+    // function onEyeClick(e: any) {
+    //     // e.preventDefault()
+    //     stopPropagation(e);
 
-        if (visible) {
-            oInput.updateCacheValue(oInput.value);
-            oInput.updateValue(changeValue(oInput.value));
-            setIsVisible(false);
-        } else {
-            oInput.updateValue(oInput.cacheValue);
-            setIsVisible(true);
-        }
-    }
+    //     if (visible) {
+    //         oInput.updateCacheValue(oInput.value);
+    //         oInput.updateValue(changeValue(oInput.value));
+    //         setIsVisible(false);
+    //     } else {
+    //         oInput.updateValue(oInput.cacheValue);
+    //         setIsVisible(true);
+    //     }
+    // }
 
-    function onClearClick(e: any) {
-        // e.preventDefault();
-        stopPropagation(e);
-        oInput.clearValue();
-        oInput.clearCacheValue();
-        setIsShowClear(false);
-        onClearValue && onClearValue();
-    }
+    // function onClearClick(e: any) {
+    //     // e.preventDefault();
+    //     stopPropagation(e);
+    //     oInput.clearValue();
+    //     oInput.clearCacheValue();
+    //     setIsShowClear(false);
+    //     onClearValue && onClearValue();
+    // }
 
     return (
-        <Group className={classnames(`${prefixCls}__group-keyboard`, groupClassName)}
-            style={groupStyle}>
-            <div
-                className={classnames(`${prefixCls}__keyboard`, {
-                    [`${prefixCls}__keyboard-active`]: isFocus,
-                    [`${prefixCls}__keyboard-small`]: !visible,
+        <div className={classnames(prefixCls, className)} style={style}>
+            222222
+            {/* <div
+                className={classnames(`${prefixCls}__control`, {
+                    [`${prefixCls}__control-active`]: isFocus,
+                    [`${prefixCls}__control-small`]: !visible,
                 })}
                 onClick={onFocusClick}
             >
@@ -175,8 +174,8 @@ const KeyboardInput: FC<KeyboardInputProps> = (props) => {
                         />
                     )}
                 </div>
-            )}
-        </Group>
+            )} */}
+        </div>
     );
 };
 

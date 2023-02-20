@@ -105,21 +105,19 @@ export default () => {
                         setState({ v7: true });
                     }}
                 />
-                <Input.Group>
-                    <Input.KeyBoard
-                        value={state1.value}
-                        placeholder="双向绑定"
-                        active={isActive}
-                        onHandleFocus={() => {
-                            setIsActive(true);
-                            setState1({ visible: true });
-                        }}
-                        onClearValue={() => {
-                            setState1({ value: '' });
-                        }}
-                        maxLength={20}
-                    />
-                </Input.Group>
+                <Input.KeyBoard
+                    value={state1.value}
+                    placeholder="双向绑定"
+                    active={isActive}
+                    onHandleFocus={() => {
+                        setIsActive(true);
+                        setState1({ visible: true });
+                    }}
+                    onClearValue={() => {
+                        setState1({ value: '' });
+                    }}
+                    maxLength={20}
+                />
                 <KeyBoard
                     visible={state.v1}
                     layoutName={layoutName}

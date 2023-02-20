@@ -1,5 +1,4 @@
-export const inBrowser = typeof window !== 'undefined';
-
+import { inBrowser } from './base'
 // @ts-ignore
 const root = inBrowser ? window : global;
 

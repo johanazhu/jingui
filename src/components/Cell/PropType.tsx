@@ -1,10 +1,8 @@
-import { FC, ReactNode, MouseEvent, TouchEvent } from 'react';
+import { FC, ReactNode, MouseEvent, TouchEvent, CSSProperties } from 'react';
 import { BaseTypeProps } from '@/utils';
 
 /**
  * CellGroup 列表组
- * @param {className} string                            // 自定义 class 名
- * @param {inset} boolean                               // 是否使用卡片模式
  * @param {shadow} boolean                               // 是否显示外阴影
  **/
 export interface CellGroupProps extends BaseTypeProps {
@@ -13,7 +11,6 @@ export interface CellGroupProps extends BaseTypeProps {
 
 /**
  * Cell 列表项
- * @param {className} string                            // 自定义 class 名
  * @param {title} number | string                       // 左侧标题
  * @param {value} number | string | ReactNode           // 右侧内容
  * @param {label} string                                // 标题下方的描述信息
@@ -33,7 +30,23 @@ export interface CellProps extends BaseTypeProps {
     center?: boolean;
     isLink?: boolean;
     required?: boolean;
+    titleStyle?: CSSProperties | any;
+    titleClass?: string;
+    valueClass?: string;
+    labelClass?: string;
+    descClass?: string;
+    linkClass?: string;
     onClick?: (
         event?: MouseEvent<HTMLElement> | TouchEvent<HTMLElement>,
     ) => void;
+}
+
+
+/**
+ * CellInputProps 输入列表
+ * @param {inset} boolean                               // 是否使用卡片模式
+ * @param {shadow} boolean                               // 是否显示外阴影
+ **/
+export interface CellInputProps extends BaseTypeProps {
+    value?: string;
 }

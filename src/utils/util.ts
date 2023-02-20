@@ -1,5 +1,6 @@
-export function isDef(val: unknown): boolean {
-    return val !== undefined && val !== null;
+
+export function isDef<T>(val: T): val is NonNullable<T> {
+    return val !== undefined && val !== null
 }
 
 export function isFunction(val: unknown): val is Function {

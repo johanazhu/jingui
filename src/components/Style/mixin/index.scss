@@ -98,15 +98,3 @@
     justify-content: center;
     align-items: center;
 }
-
-@mixin cell {
-    position: relative;
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-    padding: var(--cell-horizontal-padding) var(--cell-vertical-padding);
-    color: var(--cell-text-color);
-    font-size: var(--cell-font-size);
-    line-height: var(--cell-line-height);
-    background-color: var(--cell-bg);
-}

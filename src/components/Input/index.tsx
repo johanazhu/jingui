@@ -1,44 +1,14 @@
 import './style/index.scss';
-import Input from './input';
+import _Input from './Input';
+import TextArea from '../TextArea';
+import KeyBoard from '../KeyBoard';
+// import InputGroup from './Group';
 
-import Group from './group';
-import Verify from './verify';
-import Prefix from './prefix';
-import Suffix from './suffix';
-import Phone from './phone';
-import Password from './password';
-import Search from './search';
-import Clear from './clear';
-import Captcha from './captcha';
-import KeyBoard from './keyboard';
-import Textarea from './textarea';
-
-Input.Group = Group;
-Input.Verify = Verify;
-Input.Clear = Clear;
-Input.Password = Password;
-Input.Captcha = Captcha;
-Input.KeyBoard = KeyBoard;
-Input.Textarea = Textarea;
-
-Input.Prefix = Prefix;
-Input.Suffix = Suffix;
-Input.Phone = Phone;
-Input.Search = Search;
+const Input = Object.assign(_Input, { TextArea: TextArea, KeyBoard: KeyBoard });
 
 export default Input;
-
 export { Input };
 
-export type {
-    InputProps,
-    GroupProps,
-    ClearProps,
-    VerifyProps,
-    CaptchaProps,
-    KeyboardInputProps,
-    TextareaProps,
-    PhoneProps,
-    RegProps,
-    SearchProps,
-} from './PropType';
+export type { InputProps, InputInstance, KeyboardInputProps } from './PropType';
+
+// export type { TextAreaProps, TextAreaInstance } from '../TextArea/PropsType'

@@ -1,86 +1,139 @@
 import React, { useEffect, useState } from 'react';
-import { Input, Space, IconUser, IconArrow } from '@jojobo/jing-ui';
+import { Cell, Input, Button, KeyBoard, Toast, hooks } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
 
 export default () => {
-    const [title, setTitle] = useState('');
-    const [title2, setTitle2] = useState('');
-    const [iserror, setIsError] = useState(false);
-    const [text, setText] = useState('');
-    const [value, setValue] = useState('');
-    const [isActive, setIsActive] = useState(false);
 
-    useEffect(() => {
-        if (title2.length > 3) {
-            setIsError(true);
-        } else {
-            setIsError(false);
-        }
-    }, [title2]);
+    const [state, updateState] = hooks.useSetState({
+        text: '',
+        tel: '',
+        digit: '',
+        num: '',
+        password: '',
+    })
+
+    const [value, setValue] = useState('');
+    const [value1, setValue1] = useState('');
+
+    const [isActive, setIsActive] = useState(false);
+    const [state1, setState1] = hooks.useSetState({
+        visible: false,
+        value: '',
+    });
+
 
     return (
         <>
             <DemoBlock title="基础用法" padding="">
-                <Input
-                    placeholder="请输入"
-                    value={title}
-                    onChange={(value: string) => {
-                        setTitle(value);
+                <Cell>
+                    <Input
+                        value={state.text}
+                        onChange={(text: any) => updateState({ text })}
+                        placeholder='请输入文本'
+                    />
+                </Cell>
+                <Cell>
+                    <Input
+                        value={state.tel}
+                        type='tel'
+                        onChange={(tel: any) => updateState({ tel })}
+                        placeholder='请输入手机号'
+                    />
+                </Cell>
+                <Cell>
+                    <Input
+                        value={state.digit}
+                        type='digit'
+                        onChange={(digit: any) => updateState({ digit })}
+                        placeholder='请输入整数'
+                    />
+                </Cell>
+                <Cell>
+                    <Input
+                        value={state.num}
+                        type='number'
+                        onChange={(num: any) => updateState({ num })}
+                        placeholder='请输入数字'
+                    />
+                </Cell>
+
+                <Cell>
+                    <Input
+                        value={state.password}
+                        type='password'
+                        onChange={(password: any) => updateState({ password })}
+                        placeholder='请输入密码'
+                    />
+                </Cell>
+            </DemoBlock>
+            <DemoBlock title="清除按钮" padding="">
+                <Cell>
+                    <Input
+                        placeholder="请输入文本"
+                        value={value}
+                        onChange={setValue}
+                        clearable
+                        onClear={() => {
+                            setValue('')
+                        }}
+                    />
+                </Cell>
+            </DemoBlock>
+            <DemoBlock title="插入内容" padding="">
+                <Cell>
+                    <Input
+                        prefix="💁"
+                        suffix={<Button size="small" type="primary">发送</Button>}
+                        value={value1}
+                        onChange={setValue1}
+                        placeholder="请输入短信验证码"
+                    />
+                </Cell>
+            </DemoBlock>
+            <DemoBlock title="结合键盘的Input" padding="">
+                <Cell>
+                    <Input.KeyBoard
+                    // value={state1.value}
+                    // placeholder="请输入登录密码"
+                    // active={isActive}
+                    // onHandleFocus={() => {
+                    //     setIsActive(true);
+                    //     console.log('keyboard聚焦时');
+                    // }}
+                    // onClearValue={() => {
+                    //     setIsActive(false);
+                    //     console.log('点击清除图标时');
+                    // }}
+                    // maxLength={20}
+                    />
+                </Cell>
+                <KeyBoard
+                    value={state1.value}
+                    visible={state1.visible}
+                    maxLength={10}
+                    layoutName="default"
+                    onBlur={() => {
+                        setState1({ visible: false });
                     }}
-                    onBlur={(value: string) => console.log(`onBlur: ${value}`)}
-                />
-                <Space style={{ backgroundColor: 'grey' }} />
-                <Input
-                    placeholder="请输入超过3个字报错"
-                    value={title2}
-                    error={iserror}
-                    onChange={(value: any) => {
-                        setTitle2(value);
+                    onInput={(value: string) => {
+                        setState1({ value });
+                    }}
+                    onSpaceCb={() => {
+                        Toast('空格不可用');
+                    }}
+                    onDoneCb={() => {
+                        Toast('点击完成');
                     }}
                 />
             </DemoBlock>
-            <DemoBlock title="带前缀的输入框" padding="">
+            {/* <DemoBlock title="带前缀的输入框" padding="">
                 <Input.Prefix
                     value={value}
                     placeholder="带前缀的输入框"
                     icon={<IconUser />}
                 />
             </DemoBlock>
-            <DemoBlock title="带后缀的输入框" padding="">
-                <Input.Suffix
-                    value={value}
-                    placeholder="带后缀的输入框"
-                    icon={<IconArrow />}
-                />
-            </DemoBlock>
-            <DemoBlock title="带密码的输入框" padding="">
-                <Input.Password value={value} placeholder="带密码的输入框" />
-            </DemoBlock>
-            <DemoBlock title="带清除的输入框" padding="">
-                <Input.Clear value={value} placeholder="带清除的输入框" />
-                <Space style={{ backgroundColor: 'grey' }} />
-            </DemoBlock>
-            <DemoBlock title="带发送验证码的输入框" padding="">
-                <Input.Verify
-                    value={value}
-                    placeholder="带发送验证码的输入框"
-                    onHandleSendMessage={() => {
-                        console.log('调接口');
-                    }}
-                />
-            </DemoBlock>
-            {/* <DemoBlock title="带验证码的输入框" padding="">
-                <Input.Captcha
-                    type="text"
-                    maxLength={4}
-                    value={value}
-                    placeholder="带验证码的输入框"
-                    captcha={<img src={img} />}
-                    onHandleChangeCaptcha={() => {
-                        setImg(img + '?' + new Date().getTime());
-                    }}
-                />
-            </DemoBlock> */}
+
             <DemoBlock title="KeyBoard输入框" padding="">
                 <Input.KeyBoard
                     value={value}
@@ -108,7 +161,7 @@ export default () => {
                     }}
                     onBlur={(value: any) => console.log(`onBlur: ${value}`)}
                 />
-            </DemoBlock>
+            </DemoBlock> */}
         </>
     );
 };

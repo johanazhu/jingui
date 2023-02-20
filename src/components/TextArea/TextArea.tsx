@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import classnames from 'classnames';
-import { TextareaProps } from './PropType';
+import { TextAreaProps } from './PropType';
 
 const prefixCls = 'jing-textarea';
 
@@ -18,10 +18,9 @@ function useInputValue(initialValue: string) {
     return { value, onChange, updateValue };
 }
 
-function Textarea(props: TextareaProps) {
+function Textarea(props: TextAreaProps) {
     const {
         placeholder,
-        error,
         value = '',
         className,
         style,
@@ -38,7 +37,6 @@ function Textarea(props: TextareaProps) {
 
     const oInput = useInputValue(value);
     const [isBan, setIsBan] = useState(disabled);
-    const [isError, setIsError] = useState(error);
 
     useEffect(() => {
         oInput.updateValue(value);
@@ -48,9 +46,6 @@ function Textarea(props: TextareaProps) {
         setIsBan(disabled);
     }, [disabled]);
 
-    useEffect(() => {
-        setIsError(error);
-    }, [isError]);
 
     useEffect(() => {
         if (rows && textareaRef.current) {
@@ -58,7 +53,7 @@ function Textarea(props: TextareaProps) {
             textareaRef.current.style.height = `${
                 // @ts-ignore
                 textareaRef.current.scrollHeight * rows
-            }px`;
+                }px`;
         }
     }, [rows]);
 
@@ -67,9 +62,7 @@ function Textarea(props: TextareaProps) {
             ref={textareaRef}
             value={oInput.value}
             style={style}
-            className={classnames(prefixCls, className, {
-                [`${prefixCls}--error`]: isError,
-            })}
+            className={classnames(prefixCls, className)}
             rows={rows}
             disabled={isBan}
             placeholder={placeholder}
