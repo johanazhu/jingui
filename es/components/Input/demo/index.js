@@ -159,5 +159,18 @@ export default (function () {
     padding: ""
   }, /*#__PURE__*/React.createElement(Cell, null, /*#__PURE__*/React.createElement(Input.TextArea, {
     placeholder: "\u591A\u884C\u8F93\u5165"
+  }))), /*#__PURE__*/React.createElement(DemoBlock, {
+    title: "\u591A\u884C\u8F93\u5165",
+    padding: ""
+  }, /*#__PURE__*/React.createElement(Cell, null, /*#__PURE__*/React.createElement(Input, {
+    placeholder: "\u5185\u5BB9\u5C45\u4E2D",
+    value: value,
+    onChange: setValue,
+    align: "center"
+  })), /*#__PURE__*/React.createElement(Cell, null, /*#__PURE__*/React.createElement(Input, {
+    placeholder: "\u5185\u5BB9\u53F3\u5BF9\u9F50",
+    value: value,
+    onChange: setValue,
+    align: "right"
   }))));
 });

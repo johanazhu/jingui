@@ -5,7 +5,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i.return && (_r = _i.return(), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 import React, { useState } from 'react';
-import { Cell, IconZan, Switch } from '@jojobo/jing-ui';
+import { Cell, IconZan, Switch, Input, hooks } from '@jojobo/jing-ui';
 import { DemoBlock } from "../../../demo";
 export default (function () {
   var _useState = useState(false),
@@ -16,6 +16,13 @@ export default (function () {
     _useState4 = _slicedToArray(_useState3, 2),
     value = _useState4[0],
     setValue = _useState4[1];
+  var _hooks$useSetState = hooks.useSetState({
+      name: '',
+      idNo: ''
+    }),
+    _hooks$useSetState2 = _slicedToArray(_hooks$useSetState, 2),
+    state = _hooks$useSetState2[0],
+    updateState = _hooks$useSetState2[1];
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(DemoBlock, {
     title: "\u57FA\u672C\u7528\u6CD5",
     padding: "0"
@@ -139,5 +146,40 @@ export default (function () {
     value: "\u5185\u5BB9",
     label: "\u63CF\u8FF0\u4FE1\u606F",
     desc: "\u8BE6\u60C5\u4FE1\u606F"
+  }))), /*#__PURE__*/React.createElement(DemoBlock, {
+    title: "Input\u7684\u4F7F\u7528",
+    padding: "0",
+    margin: "0 10px",
+    background: ""
+  }, /*#__PURE__*/React.createElement(Cell.Group, null, /*#__PURE__*/React.createElement(Cell, {
+    title: "\u6210\u5458\u540D\u5B57",
+    value: /*#__PURE__*/React.createElement(Input, {
+      value: state.name,
+      onChange: function onChange(name) {
+        return updateState({
+          name: name
+        });
+      },
+      placeholder: "\u8BF7\u8F93\u5165",
+      align: "right"
+    }),
+    required: true
+  }), /*#__PURE__*/React.createElement(Cell, {
+    title: "\u4E0E\u672C\u4EBA\u5173\u7CFB",
+    value: "\u8BF7\u9009\u62E9",
+    required: true,
+    isLink: true
+  }), /*#__PURE__*/React.createElement(Cell, {
+    title: "\u6210\u5458\u540D\u5B57",
+    value: /*#__PURE__*/React.createElement(Input, {
+      value: state.idNo,
+      onChange: function onChange(idNo) {
+        return updateState({
+          idNo: idNo
+        });
+      },
+      placeholder: "\u9009\u586B",
+      align: "right"
+    })
   }))));
 });

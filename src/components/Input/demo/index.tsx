@@ -133,6 +133,14 @@ export default () => {
                     <Input.TextArea placeholder="多行输入" />
                 </Cell>
             </DemoBlock>
+            <DemoBlock title="多行输入" padding="">
+                <Cell>
+                    <Input placeholder="内容居中" value={value} onChange={setValue} align="center" />
+                </Cell>
+                <Cell>
+                    <Input placeholder="内容右对齐" value={value} onChange={setValue} align="right" />
+                </Cell>
+            </DemoBlock>
         </>
     );
 };

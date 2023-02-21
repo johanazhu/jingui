@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
-import { Cell, IconZan, Switch, Input, IconUser } from '@jojobo/jing-ui';
+import { Cell, IconZan, Switch, Input, hooks } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
 
 export default () => {
 
     const [checked, setChecked] = useState(false);
     const [value, setValue] = useState("")
+
+    const [state, updateState] = hooks.useSetState({
+        name: '',
+        idNo: '',
+    })
+
 
     return (
         <>
@@ -92,9 +98,28 @@ export default () => {
                     />
                 </Cell.Group>
             </DemoBlock>
-            {/* <DemoBlock title="Input的使用" padding="0" margin="0 10px" background="">
+            <DemoBlock title="Input的使用" padding="0" margin="0 10px" background="">
                 <Cell.Group>
-                    <Input
+                    <Cell title="成员名字" value={<Input
+                        value={state.name}
+                        onChange={(name: any) => updateState({ name })}
+                        placeholder='请输入'
+                        align="right"
+                    />}
+                        required />
+                    <Cell
+                        title="与本人关系"
+                        value="请选择"
+                        required
+                        isLink
+                    />
+                    <Cell title="成员名字" value={<Input
+                        value={state.idNo}
+                        onChange={(idNo: any) => updateState({ idNo })}
+                        placeholder='选填'
+                        align="right"
+                    />} />
+                    {/* <Input
                         clearable
                         icon={<IconUser />}
                         value={value}
@@ -107,9 +132,9 @@ export default () => {
                         value="内容"
                         label="描述信息"
                         desc="详情信息"
-                    />
+                    /> */}
                 </Cell.Group>
-            </DemoBlock> */}
+            </DemoBlock>
         </>
     )
 

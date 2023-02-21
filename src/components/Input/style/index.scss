@@ -47,6 +47,21 @@ textarea::placeholder {
     width: 100%;
     text-align: left;
 
+    &--center {
+        .jing-input__control {
+            text-align: center;
+        }
+    }
+
+    &--right {
+        .jing-input__control {
+            text-align: right;
+        }
+        .jing-input__clear {
+            padding-right: 0;
+        }
+    }
+
     &::-webkit-input-placeholder {
         color: var(--input-placeholder-text-color);
     }
@@ -63,6 +78,7 @@ textarea::placeholder {
         min-width: 0;
         margin: 0;
         padding: 0;
+        font-size: var(--input-font-size);
         color: var(--input-text-color);
         line-height: inherit;
         text-align: inherit;

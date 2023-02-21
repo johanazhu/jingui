@@ -20,15 +20,25 @@ group:
 
 | 参数        | 说明                                      | 类型       | 默认值  |
 | ----------- | ----------------------------------------- | ---------- | ------- |
-| type        | input 的类型                              | string     | -       |
+| type        | 输入框类型, 可选值为 tel digit number textarea password 等,对 Input.TextArea 无效     |string     | -       |
 | value       | input 的值                                | string     | -       |
-| placeholder | input 的占位符                            | string     | -       |
-| disabled    | 是否能点击                                | boolean    | -       |
 | minLength   | 最少长度                                  | number     | -       |
 | maxLength   | 最多长度                                  | number     | -       |
-| onChange    | input 中的 value 改变时触发               | function   | -       |
-| onFocus     | 获取焦点时的事件                          | function   | -       |
-| onBlur      | 失去焦点时的事件                          | function   | -       |
+| placeholder | input 的占位符                            | string     | -       |
+| disabled    | 是否能点击                                | boolean    | -       |
+| readOnly    | 是否只读                                  | boolean    | -       |
+| align       | 输入框对齐方式，可选值为 center right，对 Input.TextArea 无效      | string    | `left`       |
+| clearable   | 是否启用清除图标，点击清除图标后会清空输入框  | boolean    | `false`       |
+| clearIcon   | 自定义清除图标                             | ReactNode    | `<IconCircleDelete />`       |
+| autoFocus   | 是否自动聚焦，iOS 系统不支持该属性          | boolean    | `false`       |
+| prefix      | 插入前置内容， 对 Input.TextArea 无效      | ReactNode    | -       |
+| suffix      | 插入后置内容， 对 Input.TextArea 无效      | ReactNode    | -       |
+| onChange    | input 中的 value 改变时触发               | var:string   | -       |
+| onFocus     | 获取焦点时的事件                          | event: MouseEvent   | -       |
+| onBlur      | 失去焦点时的事件                          | event: MouseEvent   | -       |
+| onClear     | 点击清除按钮时触发                          | event: MouseEvent   | -       |
+| onOverlimit | 当输入值超出 maxLength 时触发               | function   | -       |
+| onClick     | 点击 Input 时触发                          | event: MouseEvent   | -       |
 
 
 ### Input.Textarea API

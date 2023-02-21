@@ -30,6 +30,7 @@ var Input = /*#__PURE__*/forwardRef(function (props, ref) {
   var type = props.type,
     style = props.style,
     value = props.value,
+    align = props.align,
     className = props.className,
     minLength = props.minLength,
     maxLength = props.maxLength,
@@ -192,7 +193,7 @@ var Input = /*#__PURE__*/forwardRef(function (props, ref) {
     return null;
   };
   return /*#__PURE__*/React.createElement("div", {
-    className: classnames(prefixCls, className),
+    className: classnames(prefixCls, className, "".concat(prefixCls, "--").concat(align)),
     style: style
   }, renderPrefix(), renderInput(), renderClear(), renderSuffix());
 });

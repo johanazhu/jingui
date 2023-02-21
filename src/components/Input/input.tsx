@@ -34,6 +34,7 @@ const Input = forwardRef<InputInstance, InputProps>((props, ref) => {
         type,
         style,
         value,
+        align,
         className,
         minLength,
         maxLength,
@@ -215,7 +216,7 @@ const Input = forwardRef<InputInstance, InputProps>((props, ref) => {
     }
 
     return (
-        <div className={classnames(prefixCls, className)} style={style}>
+        <div className={classnames(prefixCls, className, `${prefixCls}--${align}`)} style={style}>
             {renderPrefix()}
             {renderInput()}
             {renderClear()}
@@ -228,7 +229,7 @@ Input.defaultProps = {
     disabled: false,
     readOnly: false,
     clearable: false,
-    clearIcon: <IconCircleDelete />
+    clearIcon: <IconCircleDelete />,
 };
 
 export default memo(Input);

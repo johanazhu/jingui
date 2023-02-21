@@ -43,7 +43,7 @@
     background-color: var(--cell-bg);
 
     &::after {
-        // left: var(--cell-vertical-padding) !important;
+        left: var(--cell-vertical-padding) !important;
         @include hairline-bottom(var(--cell-border-color), 0, 0);
     }
 
