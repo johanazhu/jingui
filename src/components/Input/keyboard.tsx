@@ -66,6 +66,7 @@ const KeyboardInput = forwardRef<KeyboardInputInstance, KeyboardInputProps>((pro
         maxLength,
         onClearValue,
         onHandleFocus,
+        onClick,
     } = props;
 
     const [isShowClear, setIsShowClear] = useState(false);
@@ -73,7 +74,8 @@ const KeyboardInput = forwardRef<KeyboardInputInstance, KeyboardInputProps>((pro
     const [visible, setIsVisible] = useState(false);
     const [placeHolderValue, setPlaceHolderValue] = useState(placeholder);
 
-    const keyboardRef = useRef<HTMLDivElement>()
+    const clearRef = useRef<any>()
+    const focusRef = useRef<any>()
 
     const oInput = useInputValue(value);
 
@@ -124,27 +126,15 @@ const KeyboardInput = forwardRef<KeyboardInputInstance, KeyboardInputProps>((pro
     }, [active]);
 
 
-    const focus = () => {
-        if (keyboardRef?.current) {
-            keyboardRef.current.focus()
-        }
-    }
-
-    const blur = () => {
-        if (keyboardRef?.current) {
-            keyboardRef.current.blur()
-        }
-    }
 
     useImperativeHandle(ref, () => ({
-        clear: () => {
-            // oInput.onChange('')
-        },
-        focus,
-        blur,
         // @ts-ignore
-        get nativeElement() {
-            return keyboardRef.current
+        get clearElement() {
+            return clearRef.current
+        },
+        // @ts-ignore
+        get focusElement() {
+            return focusRef.current
         },
     }))
 
@@ -180,7 +170,7 @@ const KeyboardInput = forwardRef<KeyboardInputInstance, KeyboardInputProps>((pro
     const renderClear = () => {
         if (isShowClear) {
             return (
-                <div className={`${prefixCls}__clear`} onClick={onClearClick}>
+                <div className={`${prefixCls}__clear`} onClick={onClearClick} ref={clearRef}>
                     <IconCircleDelete />
                 </div>
             )
@@ -191,7 +181,7 @@ const KeyboardInput = forwardRef<KeyboardInputInstance, KeyboardInputProps>((pro
     const renderFocus = () => {
         if (isFocus) {
             return (
-                <div className={`${prefixCls}__focus`} onClick={onEyeClick}>
+                <div className={`${prefixCls}__focus`} onClick={onEyeClick} ref={focusRef}>
                     {visible ? (
                         <IconEyeOpenTwo
                             className={`${prefixCls}__focus-open`}
@@ -208,7 +198,7 @@ const KeyboardInput = forwardRef<KeyboardInputInstance, KeyboardInputProps>((pro
     }
 
     return (
-        <div className={classnames(prefixCls, className)} style={style}>
+        <div className={classnames(prefixCls, className)} style={style} onClick={onClick}>
             <div
                 className={classnames(`${prefixCls}__control`, {
                     [`${prefixCls}__control-active`]: isFocus,

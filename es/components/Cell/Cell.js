@@ -19,27 +19,83 @@ var Cell = function Cell(props) {
     center = props.center,
     isLink = props.isLink,
     required = props.required,
+    titleStyle = props.titleStyle,
+    titleClass = props.titleClass,
+    valueClass = props.valueClass,
+    labelClass = props.labelClass,
+    descClass = props.descClass,
+    linkClass = props.linkClass,
+    children = props.children,
     onClick = props.onClick;
-  var classes = classnames(prefixCls, className, (_classnames = {}, _defineProperty(_classnames, "".concat(prefixCls, "--center"), !!center), _defineProperty(_classnames, "".concat(prefixCls, "--clickable"), !!isLink), _defineProperty(_classnames, "".concat(prefixCls, "--required"), !!required), _classnames));
+  var classes = classnames(prefixCls, className, (_classnames = {}, _defineProperty(_classnames, "".concat(prefixCls, "--center"), !!center), _defineProperty(_classnames, "".concat(prefixCls, "--clickable"), !!isLink), _classnames));
+  var renderIcon = function renderIcon() {
+    if (icon) {
+      return /*#__PURE__*/React.cloneElement(props.icon, {
+        className: "".concat(prefixCls, "__icon")
+      });
+    }
+    return null;
+  };
+  var renderLabel = function renderLabel() {
+    var showLabel = isDef(label);
+    if (showLabel) {
+      return /*#__PURE__*/React.createElement("div", {
+        className: classnames("".concat(prefixCls, "__label"), labelClass)
+      }, label);
+    }
+    return null;
+  };
+  var renderRequire = function renderRequire() {
+    if (required) {
+      return /*#__PURE__*/React.createElement("span", {
+        className: "".concat(prefixCls, "__required")
+      }, "*");
+    }
+    return null;
+  };
+  var renderTitle = function renderTitle() {
+    if (isDef(title)) {
+      return /*#__PURE__*/React.createElement("div", {
+        className: classnames("".concat(prefixCls, "__title"), titleClass),
+        style: titleStyle
+      }, /*#__PURE__*/React.createElement("span", null, title, renderRequire()), renderLabel());
+    }
+    return null;
+  };
+  var renderDesc = function renderDesc() {
+    var showDesc = isDef(desc);
+    if (showDesc) {
+      return /*#__PURE__*/React.createElement("div", {
+        className: classnames("".concat(prefixCls, "__desc"), descClass)
+      }, desc);
+    }
+    return null;
+  };
+  var renderValue = function renderValue() {
+    var hasTitle = isDef(title);
+    var hasValue = children || isDef(value);
+    if (hasValue) {
+      return /*#__PURE__*/React.createElement("div", {
+        className: classnames("".concat(prefixCls, "__value"), valueClass, _defineProperty({}, "".concat(prefixCls, "__value--alone"), !hasTitle))
+      }, children ? children : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", null, value), renderDesc()));
+    }
+    return null;
+  };
+  var renderLink = function renderLink() {
+    if (isLink) {
+      return /*#__PURE__*/React.createElement("span", {
+        className: classnames("".concat(prefixCls, "__link"), linkClass)
+      }, /*#__PURE__*/React.createElement(IconArrow, {
+        size: "sm"
+      }));
+    }
+    return null;
+  };
   return /*#__PURE__*/React.createElement("div", {
     className: classnames(classes),
     style: style,
     onClick: onClick
-  }, icon && /*#__PURE__*/React.createElement("span", {
-    className: "".concat(prefixCls, "__icon")
-  }, icon), title && /*#__PURE__*/React.createElement("div", {
-    className: "".concat(prefixCls, "__title")
-  }, /*#__PURE__*/React.createElement("span", null, title), label && /*#__PURE__*/React.createElement("div", {
-    className: "".concat(prefixCls, "__label")
-  }, label)), value && /*#__PURE__*/React.createElement("div", {
-    className: classnames("".concat(prefixCls, "__value"), _defineProperty({}, "".concat(prefixCls, "__value--alone"), !isDef(title) && isDef(value)))
-  }, /*#__PURE__*/React.createElement("span", null, value), desc && /*#__PURE__*/React.createElement("div", {
-    className: "".concat(prefixCls, "__desc")
-  }, desc)), isLink && /*#__PURE__*/React.createElement("span", {
-    className: "".concat(prefixCls, "__link")
-  }, /*#__PURE__*/React.createElement(IconArrow, {
-    size: "sm"
-  })));
+  }, renderIcon(), renderTitle(), renderValue(), renderLink());
 };
 Cell.defaultProps = {
   center: false,

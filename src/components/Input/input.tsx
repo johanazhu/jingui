@@ -50,6 +50,7 @@ const Input = forwardRef<InputInstance, InputProps>((props, ref) => {
         onChange,
         onOverlimit,
         onClear,
+        onClick,
     } = props;
 
     const oInput = useInputValue(value || '');
@@ -175,6 +176,7 @@ const Input = forwardRef<InputInstance, InputProps>((props, ref) => {
                 onBlur={handleBulr}
                 onFocus={handleFocus}
                 onChange={handleChange}
+                onClick={onClick}
             />
         )
     }

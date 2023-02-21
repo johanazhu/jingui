@@ -31,10 +31,19 @@
 }
 
 .jing-cell {
-    @include cell;
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    padding: var(--cell-horizontal-padding) var(--cell-vertical-padding);
+    color: var(--cell-text-color);
+    font-size: var(--cell-font-size);
+    line-height: var(--cell-line-height);
+    background-color: var(--cell-bg);
 
     &::after {
-        left: var(--cell-vertical-padding) !important;
+        // left: var(--cell-vertical-padding) !important;
         @include hairline-bottom(var(--cell-border-color), 0, 0);
     }
 
@@ -53,22 +62,28 @@
         }
     }
 
-    &--required {
-        overflow: visible;
-        &::before {
-            position: absolute;
-            left: 4px;
-            color: var(--cell-required-color);
-            font-size: var(--cell-font-size);
-            content: '*';
-        }
+    &__required {
+        color: var(--cell-required-color);
+        font-size: var(--cell-font-size);
+        margin-left: 4px;
     }
 
     &__title {
         flex: 1;
         min-width: 30vw;
     }
-    //   &__value { flex : 1}
+
+    &__label {
+        margin-top: var(--cell-label-margin-top);
+        color: var(--cell-icon-color);
+        font-size: var(--cell-label-font-size);
+        line-height: var(--cell-label-line-height);
+    }
+
+    &__title,
+    &__value {
+        flex: 1;
+    }
 
     &__value {
         position: relative;
@@ -85,23 +100,18 @@
         }
     }
 
-    &__label {
-        margin-top: var(--cell-label-margin-top);
-        color: var(--cell-icon-color);
-        font-size: var(--cell-label-font-size);
-        line-height: var(--cell-label-line-height);
-    }
-
     &__desc {
         font-size: var(--cell-desc-color-size);
     }
 
     &__icon,
     &__link {
-        min-width: 1em;
         height: var(--cell-height);
         font-size: var(--cell-icon-size);
         line-height: var(cell-line-height);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
     }
 
     &__icon {

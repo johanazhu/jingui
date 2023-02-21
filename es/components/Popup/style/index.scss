@@ -72,13 +72,6 @@
         }
     }
 
-    //     &__close-icon {
-    //       position: absolute;
-    //       z-index: var(--rv-popup-close-icon-z-index);
-    //       color: var(--rv-popup-close-icon-color);
-    //       font-size: var(--rv-popup-close-icon-size);
-    //       cursor: pointer;
-
     &-slide-top-enter,
     &-slide-top-exit-active {
         transform: translate3d(0, -100%, 0);

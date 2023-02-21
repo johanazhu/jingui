@@ -24,6 +24,7 @@ export type InputSizes = 'small' | 'default' | 'large';
  * @param {onBlur} function                         // 失去焦点时的事件
  * @param {onClear} function                        // 点击清除按钮时触发
  * @param {onOverlimit} function                    // 当输入值超出 maxLength 时触发
+ * @param {onClick} function                    // 当输入值超出 maxLength 时触发
  **/
 export interface InputProps extends BaseTypeProps {
     type?: string;
@@ -45,6 +46,7 @@ export interface InputProps extends BaseTypeProps {
     onBlur?: (e: MouseEvent) => void;
     onClear?: (e: MouseEvent) => void;
     onOverlimit?: () => void;
+    onClick?: (e: any) => void;
 }
 
 export type InputInstance = {
@@ -72,12 +74,11 @@ export interface KeyboardInputProps extends BaseTypeProps {
     onChange?: (val: string) => void;
     onClearValue?: () => void;
     onHandleFocus?: () => void;
+    onClick?: (e: any) => void;
 }
 
 
 export type KeyboardInputInstance = {
-    focus: () => void
-    blur: () => void
-    clear: () => void
-    nativeElement: HTMLInputElement | null
+    clearElement: HTMLDivElement | null
+    focusElement: HTMLDivElement | null
 }

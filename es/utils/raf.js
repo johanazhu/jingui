@@ -1,5 +1,4 @@
-export var inBrowser = typeof window !== 'undefined';
-
+import { inBrowser } from "./base";
 // @ts-ignore
 var root = inBrowser ? window : global;
 var prev = Date.now();

@@ -119,7 +119,7 @@ export default (function () {
         v7: true
       });
     }
-  }), /*#__PURE__*/React.createElement(Input.Group, null, /*#__PURE__*/React.createElement(Input.KeyBoard, {
+  }), /*#__PURE__*/React.createElement(Input.KeyBoard, {
     value: state1.value,
     placeholder: "\u53CC\u5411\u7ED1\u5B9A",
     active: isActive,
@@ -135,7 +135,7 @@ export default (function () {
       });
     },
     maxLength: 20
-  })), /*#__PURE__*/React.createElement(KeyBoard, {
+  }), /*#__PURE__*/React.createElement(KeyBoard, {
     visible: state.v1,
     layoutName: layoutName,
     onBlur: function onBlur() {

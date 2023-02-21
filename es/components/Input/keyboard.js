@@ -8,12 +8,11 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i.return && (_r = _i.return(), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-import React, { useState, useEffect, memo } from 'react';
+import React, { useState, useEffect, memo, forwardRef, useImperativeHandle, useRef } from 'react';
 import classnames from 'classnames';
-import Group from "./group";
 import { IconCircleDelete, IconEyeCloseTwo, IconEyeOpenTwo } from "../Icon";
 import { stopPropagation } from "../../utils";
-var prefixCls = 'jing-input';
+var prefixCls = 'jing-keyboardinput';
 function useInputValue(initialValue) {
   var _useState = useState(initialValue),
     _useState2 = _slicedToArray(_useState, 2),
@@ -51,16 +50,17 @@ function changeValue(value) {
   }
   return tempVal;
 }
-var KeyboardInput = function KeyboardInput(props) {
+var KeyboardInput = /*#__PURE__*/forwardRef(function (props, ref) {
   var _classnames;
-  var groupClassName = props.groupClassName,
-    groupStyle = props.groupStyle,
+  var className = props.className,
+    style = props.style,
     value = props.value,
     placeholder = props.placeholder,
     active = props.active,
     maxLength = props.maxLength,
     onClearValue = props.onClearValue,
-    onHandleFocus = props.onHandleFocus;
+    onHandleFocus = props.onHandleFocus,
+    onClick = props.onClick;
   var _useState5 = useState(false),
     _useState6 = _slicedToArray(_useState5, 2),
     isShowClear = _useState6[0],
@@ -77,6 +77,8 @@ var KeyboardInput = function KeyboardInput(props) {
     _useState12 = _slicedToArray(_useState11, 2),
     placeHolderValue = _useState12[0],
     setPlaceHolderValue = _useState12[1];
+  var clearRef = useRef();
+  var focusRef = useRef();
   var oInput = useInputValue(value);
   useEffect(function () {
     if (visible) {
@@ -119,9 +121,22 @@ var KeyboardInput = function KeyboardInput(props) {
   useEffect(function () {
     setIsFocus(active);
   }, [active]);
+  useImperativeHandle(ref, function () {
+    return {
+      // @ts-ignore
+      get clearElement() {
+        return clearRef.current;
+      },
+      // @ts-ignore
+      get focusElement() {
+        return focusRef.current;
+      }
+    };
+  });
   function onFocusClick() {
+    console.log('点击1', isFocus);
     setIsFocus(true);
-    onHandleFocus && onHandleFocus();
+    onHandleFocus === null || onHandleFocus === void 0 ? void 0 : onHandleFocus();
   }
   function onEyeClick(e) {
     // e.preventDefault()
@@ -141,24 +156,39 @@ var KeyboardInput = function KeyboardInput(props) {
     oInput.clearValue();
     oInput.clearCacheValue();
     setIsShowClear(false);
-    onClearValue && onClearValue();
+    onClearValue === null || onClearValue === void 0 ? void 0 : onClearValue();
   }
-  return /*#__PURE__*/React.createElement(Group, {
-    className: classnames("".concat(prefixCls, "__group-keyboard"), groupClassName),
-    style: groupStyle
+  var renderClear = function renderClear() {
+    if (isShowClear) {
+      return /*#__PURE__*/React.createElement("div", {
+        className: "".concat(prefixCls, "__clear"),
+        onClick: onClearClick,
+        ref: clearRef
+      }, /*#__PURE__*/React.createElement(IconCircleDelete, null));
+    }
+    return null;
+  };
+  var renderFocus = function renderFocus() {
+    if (isFocus) {
+      return /*#__PURE__*/React.createElement("div", {
+        className: "".concat(prefixCls, "__focus"),
+        onClick: onEyeClick,
+        ref: focusRef
+      }, visible ? /*#__PURE__*/React.createElement(IconEyeOpenTwo, {
+        className: "".concat(prefixCls, "__focus-open")
+      }) : /*#__PURE__*/React.createElement(IconEyeCloseTwo, {
+        className: "".concat(prefixCls, "__focus-close")
+      }));
+    }
+    return null;
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    className: classnames(prefixCls, className),
+    style: style,
+    onClick: onClick
   }, /*#__PURE__*/React.createElement("div", {
-    className: classnames("".concat(prefixCls, "__keyboard"), (_classnames = {}, _defineProperty(_classnames, "".concat(prefixCls, "__keyboard-active"), isFocus), _defineProperty(_classnames, "".concat(prefixCls, "__keyboard-small"), !visible), _classnames)),
+    className: classnames("".concat(prefixCls, "__control"), (_classnames = {}, _defineProperty(_classnames, "".concat(prefixCls, "__control-active"), isFocus), _defineProperty(_classnames, "".concat(prefixCls, "__control-small"), !visible), _classnames)),
     onClick: onFocusClick
-  }, oInput.value), /*#__PURE__*/React.createElement("sub", null, placeHolderValue), isShowClear && /*#__PURE__*/React.createElement("div", {
-    className: "".concat(prefixCls, "--clear"),
-    onClick: onClearClick
-  }, /*#__PURE__*/React.createElement(IconCircleDelete, null)), isFocus && /*#__PURE__*/React.createElement("div", {
-    className: "".concat(prefixCls, "--focus"),
-    onClick: onEyeClick
-  }, visible ? /*#__PURE__*/React.createElement(IconEyeOpenTwo, {
-    className: "".concat(prefixCls, "--focus-open")
-  }) : /*#__PURE__*/React.createElement(IconEyeCloseTwo, {
-    className: "".concat(prefixCls, "--focus-close")
-  })));
-};
+  }, oInput.value), /*#__PURE__*/React.createElement("sub", null, placeHolderValue), renderClear(), renderFocus());
+});
 export default /*#__PURE__*/memo(KeyboardInput);

@@ -12,6 +12,10 @@ export default (function () {
     _useState2 = _slicedToArray(_useState, 2),
     checked = _useState2[0],
     setChecked = _useState2[1];
+  var _useState3 = useState(""),
+    _useState4 = _slicedToArray(_useState3, 2),
+    value = _useState4[0],
+    setValue = _useState4[1];
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(DemoBlock, {
     title: "\u57FA\u672C\u7528\u6CD5",
     padding: "0"
@@ -58,6 +62,7 @@ export default (function () {
     isLink: true,
     value: "\u5185\u5BB9"
   }), /*#__PURE__*/React.createElement(Cell, {
+    center: true,
     title: "\u6211\u662F\u6807\u9898\u5F88\u957F\u5F88\u957F\u53EF\u4EE5\u6362\u884C\u6362\u884C\u6362\u884C\u6362\u884C\u6362\u884C\u6362\u884C\u6362\u884C\uFF0C\u6CA1\u6709\u94FE\u63A5",
     isLink: true
   })), /*#__PURE__*/React.createElement(DemoBlock, {
@@ -94,14 +99,14 @@ export default (function () {
     isLink: true,
     center: true
   })), /*#__PURE__*/React.createElement(DemoBlock, {
-    title: "\u5C55\u793A\u5FC5\u586B\u661F\u53F7",
+    title: "\u5FC5\u586B",
     padding: "0"
   }, /*#__PURE__*/React.createElement(Cell, {
     required: true,
     title: "\u5355\u5143\u683C",
     value: "\u5185\u5BB9"
   })), /*#__PURE__*/React.createElement(DemoBlock, {
-    title: "\u7EC4\uFF1A\u5361\u7247\u98CE\u683C",
+    title: "\u7EC4\uFF1A\u9ED8\u8BA4\u5E26\u9634\u5F71",
     padding: "0",
     margin: "0 10px",
     background: ""
@@ -119,6 +124,7 @@ export default (function () {
   }))), /*#__PURE__*/React.createElement(DemoBlock, {
     title: "\u7EC4\uFF1A\u4E0D\u5E26\u9634\u5F71\u529F\u80FD",
     padding: "12px 0 12px",
+    margin: "0 10px",
     background: ""
   }, /*#__PURE__*/React.createElement(Cell.Group, {
     shadow: false
@@ -128,5 +134,10 @@ export default (function () {
   }), /*#__PURE__*/React.createElement(Cell, {
     title: "\u5355\u5143\u683C2",
     value: "\u5185\u5BB92"
+  }), /*#__PURE__*/React.createElement(Cell, {
+    title: "\u5355\u5143\u683C",
+    value: "\u5185\u5BB9",
+    label: "\u63CF\u8FF0\u4FE1\u606F",
+    desc: "\u8BE6\u60C5\u4FE1\u606F"
   }))));
 });

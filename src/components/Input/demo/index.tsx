@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Cell, Input, Button, KeyBoard, Toast, hooks } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
 
@@ -21,8 +21,6 @@ export default () => {
         value: '',
     });
 
-    console.log('state1.visible', state1.visible)
-
     return (
         <>
             <DemoBlock title="结合键盘的Input" padding="">
@@ -37,7 +35,8 @@ export default () => {
                             console.log('keyboard聚焦时');
                         }}
                         onClearValue={() => {
-                            setIsActive(false);
+                            // setIsActive(false);
+                            setState1({ value: '' });
                             console.log('点击清除图标时');
                         }}
                         maxLength={20}
@@ -49,7 +48,7 @@ export default () => {
                     maxLength={10}
                     layoutName="default"
                     onBlur={() => {
-                        // setState1({ visible: false });
+                        setState1({ visible: false });
                     }}
                     onInput={(value: string) => {
                         setState1({ value });
