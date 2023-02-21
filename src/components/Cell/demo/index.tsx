@@ -113,26 +113,18 @@ export default () => {
                         required
                         isLink
                     />
+                    <Cell
+                        title="真实姓名"
+                        value="待完成"
+                        valueStyle={{ color: `var(--color-orange)` }}
+                        isLink
+                    />
                     <Cell title="成员名字" value={<Input
                         value={state.idNo}
                         onChange={(idNo: any) => updateState({ idNo })}
                         placeholder='选填'
                         align="right"
                     />} />
-                    {/* <Input
-                        clearable
-                        icon={<IconUser />}
-                        value={value}
-                        placeholder="带清除的输入框" />
-                    <Input value={value} placeholder="带清除的输入框" prefix={<IconUser />} />
-                    <Cell.Input title="我只有标题 Normal" value="内容" />
-                    <Cell title="我有标题和链接" isLink />
-                    <Cell
-                        title="单元格"
-                        value="内容"
-                        label="描述信息"
-                        desc="详情信息"
-                    /> */}
                 </Cell.Group>
             </DemoBlock>
         </>

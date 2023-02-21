@@ -216,7 +216,10 @@ const Input = forwardRef<InputInstance, InputProps>((props, ref) => {
     }
 
     return (
-        <div className={classnames(prefixCls, className, `${prefixCls}--${align}`)} style={style}>
+        <div
+            className={classnames(prefixCls, className, {
+                [`${prefixCls}--${align}`]: !!align
+            })} style={style}>
             {renderPrefix()}
             {renderInput()}
             {renderClear()}

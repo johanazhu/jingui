@@ -19,7 +19,7 @@ group:
 | 属性            | 说明                          | 类型        | 默认值 |
 | --------------- | ----------------------------- | ----------- | ------ |
 | size            | 大小，可选值 sm、md、lg、auto | string      | 'md'   |
-| color           | 颜色                          | string      | 主题色 |
+| color           | 颜色，可选值 grey、blue、white、black、red、orange、green、shy-blue                          | string      | 主题色 |
 | icon            | svg 文件                      | any         | -      |
 | keepOriginColor | 是否保持原有颜色              | boolean     | false  |
 | onClick         | 点击图标后的回调              | (e) => void | -      |

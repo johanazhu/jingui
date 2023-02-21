@@ -142,6 +142,9 @@ export default () => {
                                 <IconUser color="red" />
                             </Col>
                             <Col span={6}>
+                                <IconUser color="green" />
+                            </Col>
+                            <Col span={6}>
                                 <IconUser color="orange" />
                             </Col>
                             <Col span={6}>

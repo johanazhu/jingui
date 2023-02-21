@@ -64,6 +64,10 @@ export default (function () {
   })), /*#__PURE__*/React.createElement(Col, {
     span: 6
   }, /*#__PURE__*/React.createElement(IconUser, {
+    color: "green"
+  })), /*#__PURE__*/React.createElement(Col, {
+    span: 6
+  }, /*#__PURE__*/React.createElement(IconUser, {
     color: "orange"
   })), /*#__PURE__*/React.createElement(Col, {
     span: 6

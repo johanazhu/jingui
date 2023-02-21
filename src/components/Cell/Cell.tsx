@@ -21,9 +21,13 @@ const Cell: FC<CellProps> = (props) => {
         required,
         titleStyle,
         titleClass,
+        valueStyle,
         valueClass,
+        labelStyle,
         labelClass,
+        descStyle,
         descClass,
+        linkStyle,
         linkClass,
         children,
         onClick,
@@ -48,7 +52,7 @@ const Cell: FC<CellProps> = (props) => {
 
         if (showLabel) {
             return (
-                <div className={classnames(`${prefixCls}__label`, labelClass)}>
+                <div className={classnames(`${prefixCls}__label`, labelClass)} style={labelStyle}>
                     {label}
                 </div>
             )
@@ -87,7 +91,7 @@ const Cell: FC<CellProps> = (props) => {
 
         if (showDesc) {
             return (
-                <div className={classnames(`${prefixCls}__desc`, descClass)}>
+                <div className={classnames(`${prefixCls}__desc`, descClass)} style={descStyle}>
                     {desc}
                 </div>
             )
@@ -105,6 +109,7 @@ const Cell: FC<CellProps> = (props) => {
                     className={classnames(`${prefixCls}__value`, valueClass, {
                         [`${prefixCls}__value--alone`]: !hasTitle,
                     })}
+                    style={valueStyle}
                 >
                     {children ? children : (
                         <>
@@ -122,7 +127,7 @@ const Cell: FC<CellProps> = (props) => {
     const renderLink = () => {
         if (isLink) {
             return (
-                <span className={classnames(`${prefixCls}__link`, linkClass)}>
+                <span className={classnames(`${prefixCls}__link`, linkClass)} style={linkStyle}>
                     <IconArrow size="sm" />
                 </span>
             )

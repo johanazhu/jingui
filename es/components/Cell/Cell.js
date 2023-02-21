@@ -21,9 +21,13 @@ var Cell = function Cell(props) {
     required = props.required,
     titleStyle = props.titleStyle,
     titleClass = props.titleClass,
+    valueStyle = props.valueStyle,
     valueClass = props.valueClass,
+    labelStyle = props.labelStyle,
     labelClass = props.labelClass,
+    descStyle = props.descStyle,
     descClass = props.descClass,
+    linkStyle = props.linkStyle,
     linkClass = props.linkClass,
     children = props.children,
     onClick = props.onClick;
@@ -40,7 +44,8 @@ var Cell = function Cell(props) {
     var showLabel = isDef(label);
     if (showLabel) {
       return /*#__PURE__*/React.createElement("div", {
-        className: classnames("".concat(prefixCls, "__label"), labelClass)
+        className: classnames("".concat(prefixCls, "__label"), labelClass),
+        style: labelStyle
       }, label);
     }
     return null;
@@ -66,7 +71,8 @@ var Cell = function Cell(props) {
     var showDesc = isDef(desc);
     if (showDesc) {
       return /*#__PURE__*/React.createElement("div", {
-        className: classnames("".concat(prefixCls, "__desc"), descClass)
+        className: classnames("".concat(prefixCls, "__desc"), descClass),
+        style: descStyle
       }, desc);
     }
     return null;
@@ -76,7 +82,8 @@ var Cell = function Cell(props) {
     var hasValue = children || isDef(value);
     if (hasValue) {
       return /*#__PURE__*/React.createElement("div", {
-        className: classnames("".concat(prefixCls, "__value"), valueClass, _defineProperty({}, "".concat(prefixCls, "__value--alone"), !hasTitle))
+        className: classnames("".concat(prefixCls, "__value"), valueClass, _defineProperty({}, "".concat(prefixCls, "__value--alone"), !hasTitle)),
+        style: valueStyle
       }, children ? children : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", null, value), renderDesc()));
     }
     return null;
@@ -84,7 +91,8 @@ var Cell = function Cell(props) {
   var renderLink = function renderLink() {
     if (isLink) {
       return /*#__PURE__*/React.createElement("span", {
-        className: classnames("".concat(prefixCls, "__link"), linkClass)
+        className: classnames("".concat(prefixCls, "__link"), linkClass),
+        style: linkStyle
       }, /*#__PURE__*/React.createElement(IconArrow, {
         size: "sm"
       }));

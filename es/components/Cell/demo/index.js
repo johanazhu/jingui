@@ -170,6 +170,13 @@ export default (function () {
     required: true,
     isLink: true
   }), /*#__PURE__*/React.createElement(Cell, {
+    title: "\u771F\u5B9E\u59D3\u540D",
+    value: "\u5F85\u5B8C\u6210",
+    valueStyle: {
+      color: "var(--color-orange)"
+    },
+    isLink: true
+  }), /*#__PURE__*/React.createElement(Cell, {
     title: "\u6210\u5458\u540D\u5B57",
     value: /*#__PURE__*/React.createElement(Input, {
       value: state.idNo,

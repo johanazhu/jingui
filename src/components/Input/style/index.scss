@@ -13,7 +13,6 @@
     --input-placeholder-text-color: #{$input-placeholder-text-color};
     --input-placeholder-font-size: #{$input-placeholder-font-size};
     --input-keyboard-height: #{$input-keyboard-height};
-    --input-keyboard-small-font-size: #{$input-keyboard-small-font-size};
     --input-keyboard-sub-font-size: #{$input-keyboard-sub-font-size};
     --input-keyboard-sub-text-color: #{$input-keyboard-sub-text-color};
     --input-keyboard-cursor-height: #{$input-keyboard-cursor-height};
@@ -157,9 +156,6 @@ textarea::placeholder {
             &:after {
                 visibility: visible;
             }
-        }
-        &-small {
-            font-size: var(--input-keyboard-small-font-size);
         }
     }
     sub {

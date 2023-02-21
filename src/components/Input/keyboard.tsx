@@ -202,7 +202,6 @@ const KeyboardInput = forwardRef<KeyboardInputInstance, KeyboardInputProps>((pro
             <div
                 className={classnames(`${prefixCls}__control`, {
                     [`${prefixCls}__control-active`]: isFocus,
-                    [`${prefixCls}__control-small`]: !visible,
                 })}
                 onClick={onFocusClick}
             >

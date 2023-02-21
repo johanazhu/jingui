@@ -51,7 +51,6 @@ function changeValue(value) {
   return tempVal;
 }
 var KeyboardInput = /*#__PURE__*/forwardRef(function (props, ref) {
-  var _classnames;
   var className = props.className,
     style = props.style,
     value = props.value,
@@ -187,7 +186,7 @@ var KeyboardInput = /*#__PURE__*/forwardRef(function (props, ref) {
     style: style,
     onClick: onClick
   }, /*#__PURE__*/React.createElement("div", {
-    className: classnames("".concat(prefixCls, "__control"), (_classnames = {}, _defineProperty(_classnames, "".concat(prefixCls, "__control-active"), isFocus), _defineProperty(_classnames, "".concat(prefixCls, "__control-small"), !visible), _classnames)),
+    className: classnames("".concat(prefixCls, "__control"), _defineProperty({}, "".concat(prefixCls, "__control-active"), isFocus)),
     onClick: onFocusClick
   }, oInput.value), /*#__PURE__*/React.createElement("sub", null, placeHolderValue), renderClear(), renderFocus());
 });

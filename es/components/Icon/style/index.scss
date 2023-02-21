@@ -9,6 +9,7 @@
     --icon-black-color: #{$icon-black-color};
     --icon-red-color: #{$icon-red-color};
     --icon-orange-color: #{$icon-orange-color};
+    --icon-green-color: #{$icon-green-color};
     --icon-shy-blue-color: #{$icon-shy-blue-color};
     --icon-fill-color: #{$icon-fill-color};
     --icon-size-lg: #{$icon-size-lg};
@@ -59,6 +60,10 @@
 
     &--orange svg {
         @include iconColorFn(var(--icon-orange-color));
+    }
+
+    &--green svg {
+        @include iconColorFn(var(--icon-green-color));
     }
 
     &--shy-blue svg {
