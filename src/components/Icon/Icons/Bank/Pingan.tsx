@@ -7,7 +7,6 @@ import pingan from '../../svg/bank/PA.svg';
 const PA = (props: JqbIconProps) => {
     return (
         <JqbIcon
-            keepOriginColor={props.keepOriginColor || true}
             icon={pingan}
             {...props}
         />

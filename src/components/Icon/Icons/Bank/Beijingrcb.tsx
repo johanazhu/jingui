@@ -7,7 +7,6 @@ import beijingrcb from '../../svg/bank/BJRCB.svg';
 const BJRCB = (props: JqbIconProps) => {
     return (
         <JqbIcon
-            keepOriginColor={props.keepOriginColor || true}
             icon={beijingrcb}
             {...props}
         />

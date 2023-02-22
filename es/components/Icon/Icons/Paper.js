@@ -4,7 +4,8 @@ import JqbIcon from "../JqbIcon";
 import paper from "../svg/paper.svg";
 var Paper = function Paper(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: paper
+    icon: paper,
+    fill: "#26a4a4"
   }, props));
 };
 export default Paper;

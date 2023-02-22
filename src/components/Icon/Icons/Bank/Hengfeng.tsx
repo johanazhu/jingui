@@ -7,7 +7,6 @@ import hengfeng from '../../svg/bank/HF.svg';
 const HF = (props: JqbIconProps) => {
     return (
         <JqbIcon
-            keepOriginColor={props.keepOriginColor || true}
             icon={hengfeng}
             {...props}
         />

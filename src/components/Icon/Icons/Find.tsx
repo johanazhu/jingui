@@ -4,7 +4,7 @@ import { JqbIconProps } from '../PropType';
 import find from '../svg/find.svg';
 
 const Find = (props: JqbIconProps) => {
-    return <JqbIcon icon={find} keepOriginColor {...props} />;
+    return <JqbIcon icon={find} {...props} />;
 };
 
 export default Find;

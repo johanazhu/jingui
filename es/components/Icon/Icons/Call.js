@@ -4,7 +4,8 @@ import JqbIcon from "../JqbIcon";
 import call from "../svg/call.svg";
 var Call = function Call(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: call
+    icon: call,
+    fill: "#26a4a4"
   }, props));
 };
 export default Call;

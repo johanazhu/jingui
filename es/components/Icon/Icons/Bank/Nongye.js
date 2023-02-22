@@ -6,7 +6,6 @@ import nongye from "../../svg/bank/NY.svg";
 // 农业
 var NY = function NY(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    keepOriginColor: props.keepOriginColor || true,
     icon: nongye
   }, props));
 };

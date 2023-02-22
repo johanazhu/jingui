@@ -4,8 +4,7 @@ import JqbIcon from "../JqbIcon";
 import rmb from "../svg/rmb.svg";
 var Rmb = function Rmb(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: rmb,
-    color: ""
+    icon: rmb
   }, props));
 };
 export default Rmb;

@@ -7,7 +7,6 @@ import shanghai from '../../svg/bank/SH.svg';
 const SH = (props: JqbIconProps) => {
     return (
         <JqbIcon
-            keepOriginColor={props.keepOriginColor || true}
             icon={shanghai}
             {...props}
         />

@@ -4,7 +4,8 @@ import JqbIcon from "../JqbIcon";
 import right from "../svg/right.svg";
 var Right = function Right(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: right
+    icon: right,
+    fill: "#26a4a4"
   }, props));
 };
 export default Right;

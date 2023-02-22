@@ -6,7 +6,6 @@ import zhaoshang from "../../svg/bank/ZS.svg";
 // 招商
 var ZS = function ZS(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    keepOriginColor: props.keepOriginColor || true,
     icon: zhaoshang
   }, props));
 };

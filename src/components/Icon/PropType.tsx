@@ -24,12 +24,10 @@ export interface IconbaseProps extends BaseTypeProps {
 /**
  * Icon 图标
  * @param {size} IconSize                       // 大小，可选值 sm、md、lg、auto
- * @param {keepOriginColor}  boolean            // 是否保持原有颜色
  * @param {onClick}  MouseEventHandler          // 点击图标后的回调
  **/
 export interface JqbIconProps extends IconbaseProps {
     size?: IconSize;
-    keepOriginColor?: boolean;
     onClick?: (
         event?: MouseEvent<HTMLElement> | TouchEvent<HTMLElement>,
     ) => void;

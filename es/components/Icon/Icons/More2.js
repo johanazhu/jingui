@@ -4,8 +4,7 @@ import JqbIcon from "../JqbIcon";
 import more2 from "../svg/more2.svg";
 var More2 = function More2(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: more2,
-    color: ""
+    icon: more2
   }, props));
 };
 export default More2;

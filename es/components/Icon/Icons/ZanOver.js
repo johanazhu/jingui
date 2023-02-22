@@ -5,7 +5,7 @@ import zanover from "../svg/zanover.svg";
 var ZanOver = function ZanOver(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
     icon: zanover,
-    color: ""
+    fill: "#de3813"
   }, props));
 };
 export default ZanOver;

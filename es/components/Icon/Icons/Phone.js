@@ -4,7 +4,8 @@ import JqbIcon from "../JqbIcon";
 import phone from "../svg/phone.svg";
 var Phone = function Phone(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: phone
+    icon: phone,
+    fill: "#26a4a4"
   }, props));
 };
 export default Phone;

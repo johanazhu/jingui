@@ -7,7 +7,6 @@ import guangdongnongxin from '../../svg/bank/GDNX.svg';
 const GDNX = (props: JqbIconProps) => {
     return (
         <JqbIcon
-            keepOriginColor={props.keepOriginColor || true}
             icon={guangdongnongxin}
             {...props}
         />

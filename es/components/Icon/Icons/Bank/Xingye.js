@@ -6,7 +6,6 @@ import xingye from "../../svg/bank/XY.svg";
 // 兴业
 var XY = function XY(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    keepOriginColor: props.keepOriginColor || true,
     icon: xingye
   }, props));
 };

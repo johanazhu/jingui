@@ -5,7 +5,7 @@ import ittype from "../svg/ittype.svg";
 var Ittype = function Ittype(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
     icon: ittype,
-    color: ""
+    fill: "#26a4a4"
   }, props));
 };
 export default Ittype;

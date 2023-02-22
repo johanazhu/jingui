@@ -4,7 +4,8 @@ import JqbIcon from "../JqbIcon";
 import money from "../svg/money.svg";
 var Money = function Money(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: money
+    icon: money,
+    fill: "#26a4a4"
   }, props));
 };
 export default Money;

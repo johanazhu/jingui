@@ -4,7 +4,8 @@ import JqbIcon from "../JqbIcon";
 import notice from "../svg/notice.svg";
 var Notice = function Notice(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: notice
+    icon: notice,
+    fill: "#de3813"
   }, props));
 };
 export default Notice;

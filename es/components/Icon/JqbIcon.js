@@ -13,8 +13,8 @@ var JqbIcon = function JqbIcon(props) {
     size = props.size,
     icon = props.icon,
     style = props.style,
-    keepOriginColor = props.keepOriginColor;
-  var classes = classnames(prefixCls, className, (_classnames = {}, _defineProperty(_classnames, "".concat(prefixCls, "--").concat(color), Boolean(color) && !Boolean(keepOriginColor)), _defineProperty(_classnames, "".concat(prefixCls, "--").concat(size), Boolean(size)), _classnames));
+    fill = props.fill;
+  var classes = classnames(prefixCls, className, (_classnames = {}, _defineProperty(_classnames, "".concat(prefixCls, "--").concat(color), !!color), _defineProperty(_classnames, "".concat(prefixCls, "--").concat(size), !!size), _classnames));
   var onClick = function onClick(event) {
     var _props$onClick;
     (_props$onClick = props.onClick) === null || _props$onClick === void 0 ? void 0 : _props$onClick.call(props, event);
@@ -28,7 +28,6 @@ var JqbIcon = function JqbIcon(props) {
   }, /*#__PURE__*/React.createElement(IconBase, props));
 };
 JqbIcon.defaultProps = {
-  size: 'md',
-  keepOriginColor: false
+  size: 'md'
 };
 export default JqbIcon;

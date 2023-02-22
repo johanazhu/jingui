@@ -6,7 +6,6 @@ import jiaotong from "../../svg/bank/JT.svg";
 // 江苏
 var JT = function JT(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    keepOriginColor: props.keepOriginColor || true,
     icon: jiaotong
   }, props));
 };

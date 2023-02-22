@@ -4,7 +4,7 @@ import { JqbIconProps } from '../PropType';
 import paper from '../svg/paper.svg';
 
 const Paper = (props: JqbIconProps) => {
-    return <JqbIcon icon={paper} {...props} />;
+    return <JqbIcon icon={paper} fill="#26a4a4" {...props} />;
 };
 
 export default Paper;

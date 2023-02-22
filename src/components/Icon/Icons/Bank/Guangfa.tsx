@@ -7,7 +7,6 @@ import guangfa from '../../svg/bank/GF.svg';
 const GF = (props: JqbIconProps) => {
     return (
         <JqbIcon
-            keepOriginColor={props.keepOriginColor || true}
             icon={guangfa}
             {...props}
         />

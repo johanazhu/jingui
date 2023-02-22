@@ -6,7 +6,6 @@ import minsheng from "../../svg/bank/MS.svg";
 // 民生
 var MS = function MS(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    keepOriginColor: props.keepOriginColor || true,
     icon: minsheng
   }, props));
 };

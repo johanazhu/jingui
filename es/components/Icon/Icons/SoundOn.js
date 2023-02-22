@@ -4,7 +4,8 @@ import JqbIcon from "../JqbIcon";
 import soundon from "../svg/soundon.svg";
 var SoundOn = function SoundOn(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: soundon
+    icon: soundon,
+    fill: "#26a4a4"
   }, props));
 };
 export default SoundOn;

@@ -4,7 +4,8 @@ import JqbIcon from "../JqbIcon";
 import id from "../svg/id.svg";
 var Id = function Id(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: id
+    icon: id,
+    fill: "#26a4a4"
   }, props));
 };
 export default Id;

@@ -7,7 +7,6 @@ import minsheng from '../../svg/bank/MS.svg';
 const MS = (props: JqbIconProps) => {
     return (
         <JqbIcon
-            keepOriginColor={props.keepOriginColor || true}
             icon={minsheng}
             {...props}
         />

@@ -7,7 +7,6 @@ import zhongguo from '../../svg/bank/ZG.svg';
 const ZG = (props: JqbIconProps) => {
     return (
         <JqbIcon
-            keepOriginColor={props.keepOriginColor || true}
             icon={zhongguo}
             {...props}
         />

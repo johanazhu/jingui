@@ -6,7 +6,6 @@ import pufa from "../../svg/bank/PF.svg";
 // 浦发
 var PF = function PF(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    keepOriginColor: props.keepOriginColor || true,
     icon: pufa
   }, props));
 };

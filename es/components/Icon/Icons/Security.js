@@ -4,7 +4,8 @@ import JqbIcon from "../JqbIcon";
 import security from "../svg/security.svg";
 var Security = function Security(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: security
+    icon: security,
+    color: "green"
   }, props));
 };
 export default Security;

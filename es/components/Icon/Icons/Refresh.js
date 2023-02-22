@@ -4,7 +4,8 @@ import JqbIcon from "../JqbIcon";
 import refresh from "../svg/refresh.svg";
 var Refresh = function Refresh(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: refresh
+    icon: refresh,
+    fill: "#26a4a4"
   }, props));
 };
 export default Refresh;

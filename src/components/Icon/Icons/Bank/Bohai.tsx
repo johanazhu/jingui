@@ -7,7 +7,6 @@ import bohai from '../../svg/bank/BH.svg';
 const BH = (props: JqbIconProps) => {
     return (
         <JqbIcon
-            keepOriginColor={props.keepOriginColor || true}
             icon={bohai}
             {...props}
         />

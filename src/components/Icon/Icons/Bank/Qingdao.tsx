@@ -7,7 +7,6 @@ import qingdao from '../../svg/bank/QD.svg';
 const QD = (props: JqbIconProps) => {
     return (
         <JqbIcon
-            keepOriginColor={props.keepOriginColor || true}
             icon={qingdao}
             {...props}
         />

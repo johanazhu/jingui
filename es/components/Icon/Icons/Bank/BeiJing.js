@@ -6,7 +6,6 @@ import beijing from "../../svg/bank/BJ.svg";
 // 北京
 var BJ = function BJ(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    keepOriginColor: props.keepOriginColor || true,
     icon: beijing
   }, props));
 };

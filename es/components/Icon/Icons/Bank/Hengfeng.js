@@ -6,7 +6,6 @@ import hengfeng from "../../svg/bank/HF.svg";
 // 恒丰银行
 var HF = function HF(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    keepOriginColor: props.keepOriginColor || true,
     icon: hengfeng
   }, props));
 };

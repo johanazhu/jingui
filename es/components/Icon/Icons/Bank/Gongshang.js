@@ -6,7 +6,6 @@ import gongshang from "../../svg/bank/GS.svg";
 // 工商
 var GS = function GS(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    keepOriginColor: props.keepOriginColor || true,
     icon: gongshang
   }, props));
 };

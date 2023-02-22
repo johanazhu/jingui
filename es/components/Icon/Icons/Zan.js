@@ -5,7 +5,7 @@ import zan from "../svg/zan.svg";
 var Zan = function Zan(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
     icon: zan,
-    color: ""
+    fill: "#de3813"
   }, props));
 };
 export default Zan;

@@ -7,7 +7,6 @@ import jiaotong from '../../svg/bank/JT.svg';
 const JT = (props: JqbIconProps) => {
     return (
         <JqbIcon
-            keepOriginColor={props.keepOriginColor || true}
             icon={jiaotong}
             {...props}
         />

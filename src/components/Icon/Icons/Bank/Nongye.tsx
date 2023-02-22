@@ -7,7 +7,6 @@ import nongye from '../../svg/bank/NY.svg';
 const NY = (props: JqbIconProps) => {
     return (
         <JqbIcon
-            keepOriginColor={props.keepOriginColor || true}
             icon={nongye}
             {...props}
         />

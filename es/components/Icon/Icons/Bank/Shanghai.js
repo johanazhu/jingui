@@ -6,7 +6,6 @@ import shanghai from "../../svg/bank/SH.svg";
 // 上海
 var SH = function SH(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    keepOriginColor: props.keepOriginColor || true,
     icon: shanghai
   }, props));
 };

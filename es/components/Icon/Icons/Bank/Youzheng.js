@@ -6,7 +6,6 @@ import youzheng from "../../svg/bank/YZ.svg";
 // 邮政储蓄
 var YZ = function YZ(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    keepOriginColor: props.keepOriginColor || true,
     icon: youzheng
   }, props));
 };

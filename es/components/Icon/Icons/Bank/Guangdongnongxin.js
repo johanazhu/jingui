@@ -6,7 +6,6 @@ import guangdongnongxin from "../../svg/bank/GDNX.svg";
 // 广东省农村信用社联合社
 var GDNX = function GDNX(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    keepOriginColor: props.keepOriginColor || true,
     icon: guangdongnongxin
   }, props));
 };

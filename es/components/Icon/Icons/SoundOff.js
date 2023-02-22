@@ -4,7 +4,8 @@ import JqbIcon from "../JqbIcon";
 import soundoff from "../svg/soundoff.svg";
 var SoundOff = function SoundOff(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: soundoff
+    icon: soundoff,
+    fill: "#26a4a4"
   }, props));
 };
 export default SoundOff;

@@ -5,7 +5,7 @@ import xiaojinguang from "../svg/xiaojinguang.svg";
 var Xiaojinguang = function Xiaojinguang(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
     icon: xiaojinguang,
-    color: ""
+    fill: "#26a4a4"
   }, props));
 };
 export default Xiaojinguang;

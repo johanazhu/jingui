@@ -4,7 +4,8 @@ import JqbIcon from "../JqbIcon";
 import medal from "../svg/medal.svg";
 var Medal = function Medal(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: medal
+    icon: medal,
+    fill: "#26a4a4"
   }, props));
 };
 export default Medal;

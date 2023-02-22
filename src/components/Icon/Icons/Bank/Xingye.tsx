@@ -7,7 +7,6 @@ import xingye from '../../svg/bank/XY.svg';
 const XY = (props: JqbIconProps) => {
     return (
         <JqbIcon
-            keepOriginColor={props.keepOriginColor || true}
             icon={xingye}
             {...props}
         />

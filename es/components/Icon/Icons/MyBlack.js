@@ -4,8 +4,7 @@ import JqbIcon from "../JqbIcon";
 import myblack from "../svg/my_black.svg";
 var MyBlack = function MyBlack(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: myblack,
-    keepOriginColor: true
+    icon: myblack
   }, props));
 };
 export default MyBlack;

@@ -7,7 +7,6 @@ import pufa from '../../svg/bank/PF.svg';
 const PF = (props: JqbIconProps) => {
     return (
         <JqbIcon
-            keepOriginColor={props.keepOriginColor || true}
             icon={pufa}
             {...props}
         />

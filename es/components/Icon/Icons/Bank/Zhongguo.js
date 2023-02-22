@@ -6,7 +6,6 @@ import zhongguo from "../../svg/bank/ZG.svg";
 // 中国
 var ZG = function ZG(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    keepOriginColor: props.keepOriginColor || true,
     icon: zhongguo
   }, props));
 };

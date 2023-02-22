@@ -4,7 +4,7 @@ import { JqbIconProps } from '../PropType';
 import rmb from '../svg/rmb.svg';
 
 const Rmb = (props: JqbIconProps) => {
-    return <JqbIcon icon={rmb} color="" {...props} />;
+    return <JqbIcon icon={rmb}  {...props} />;
 };
 
 export default Rmb;

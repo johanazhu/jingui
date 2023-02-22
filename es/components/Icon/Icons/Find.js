@@ -4,8 +4,7 @@ import JqbIcon from "../JqbIcon";
 import find from "../svg/find.svg";
 var Find = function Find(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: find,
-    keepOriginColor: true
+    icon: find
   }, props));
 };
 export default Find;

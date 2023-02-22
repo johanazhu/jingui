@@ -4,8 +4,7 @@ import JqbIcon from "../../JqbIcon";
 import filterDown from "../../svg/filter-down.svg";
 var FilterDown = function FilterDown(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: filterDown,
-    color: ""
+    icon: filterDown
   }, props));
 };
 export default FilterDown;

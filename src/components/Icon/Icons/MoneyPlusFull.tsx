@@ -4,7 +4,7 @@ import { JqbIconProps } from '../PropType';
 import moneyPlusFull from '../svg/money_plus_full.svg';
 
 const MoneyPlusFull = (props: JqbIconProps) => {
-    return <JqbIcon icon={moneyPlusFull} color="" {...props} />;
+    return <JqbIcon icon={moneyPlusFull}  {...props} />;
 };
 
 export default MoneyPlusFull;

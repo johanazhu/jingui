@@ -4,8 +4,7 @@ import JqbIcon from "../JqbIcon";
 import mallblack from "../svg/mall_black.svg";
 var MallBlack = function MallBlack(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: mallblack,
-    keepOriginColor: true
+    icon: mallblack
   }, props));
 };
 export default MallBlack;

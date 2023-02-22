@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path
+<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 1024 1024"
+    fill="currentColor"><path
     d="M598.94,511.52,1006,104.81a61.23,61.23,0,0,0-86.71-86.47L511.13,426.13,104.48,18.68a61.19,61.19,0,0,0-86.56,86.51l406.17,407-406.17,407a61.19,61.19,0,0,0,86.56,86.52l407.29-408.1L919.33,1004.7A61.23,61.23,0,0,0,1006,918.22Z"
-    style="fill:#00cfcd;fill-rule:evenodd"
+   fill-rule="evenodd"
   /></svg>

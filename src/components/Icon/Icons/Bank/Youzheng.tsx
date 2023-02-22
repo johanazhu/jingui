@@ -7,7 +7,6 @@ import youzheng from '../../svg/bank/YZ.svg';
 const YZ = (props: JqbIconProps) => {
     return (
         <JqbIcon
-            keepOriginColor={props.keepOriginColor || true}
             icon={youzheng}
             {...props}
         />

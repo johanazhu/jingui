@@ -6,7 +6,6 @@ import huaxia from "../../svg/bank/HX.svg";
 // 华夏
 var HX = function HX(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    keepOriginColor: props.keepOriginColor || true,
     icon: huaxia
   }, props));
 };

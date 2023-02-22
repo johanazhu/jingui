@@ -4,7 +4,7 @@ import { JqbIconProps } from '../PropType';
 import refresh from '../svg/refresh.svg';
 
 const Refresh = (props: JqbIconProps) => {
-    return <JqbIcon icon={refresh} {...props} />;
+    return <JqbIcon icon={refresh} fill="#26a4a4" {...props} />;
 };
 
 export default Refresh;

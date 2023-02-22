@@ -4,7 +4,8 @@ import JqbIcon from "../JqbIcon";
 import trash from "../svg/trash.svg";
 var Trash = function Trash(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: trash
+    icon: trash,
+    fill: "#26a4a4"
   }, props));
 };
 export default Trash;

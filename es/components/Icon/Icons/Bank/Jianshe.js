@@ -6,7 +6,6 @@ import jianshe from "../../svg/bank/JSH.svg";
 // 建设
 var JSH = function JSH(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    keepOriginColor: props.keepOriginColor || true,
     icon: jianshe
   }, props));
 };

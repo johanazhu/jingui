@@ -6,11 +6,12 @@ import { JqbIconProps } from './PropType';
 const prefixCls = 'jing-icon';
 
 const JqbIcon: FC<JqbIconProps> = (props) => {
-    const { className, color, size, icon, style, keepOriginColor } = props;
+    const { className, color, size, icon, style, fill } = props;
+
 
     const classes = classnames(prefixCls, className, {
-        [`${prefixCls}--${color}`]: Boolean(color) && !Boolean(keepOriginColor),
-        [`${prefixCls}--${size}`]: Boolean(size),
+        [`${prefixCls}--${color}`]: !!color,
+        [`${prefixCls}--${size}`]: !!size,
     });
 
     const onClick = (
@@ -34,7 +35,6 @@ const JqbIcon: FC<JqbIconProps> = (props) => {
 
 JqbIcon.defaultProps = {
     size: 'md',
-    keepOriginColor: false,
 };
 
 export default JqbIcon;

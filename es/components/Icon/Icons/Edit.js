@@ -4,7 +4,8 @@ import JqbIcon from "../JqbIcon";
 import edit from "../svg/edit.svg";
 var Edit = function Edit(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: edit
+    icon: edit,
+    fill: "#26a4a4"
   }, props));
 };
 export default Edit;

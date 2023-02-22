@@ -248,7 +248,7 @@ var Keyboard = function Keyboard(props) {
         if (buttonDisplayName === 'emty') {
           return /*#__PURE__*/React.createElement(Key, {
             ref: setRefs(keyIndex),
-            key: "{keyIndex}",
+            key: keyIndex,
             text: "",
             type: "emty"
           });

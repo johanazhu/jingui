@@ -6,7 +6,6 @@ import zhongxin from "../../svg/bank/ZX.svg";
 // 中信
 var ZX = function ZX(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    keepOriginColor: props.keepOriginColor || true,
     icon: zhongxin
   }, props));
 };

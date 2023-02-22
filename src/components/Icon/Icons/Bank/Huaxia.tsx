@@ -7,7 +7,6 @@ import huaxia from '../../svg/bank/HX.svg';
 const HX = (props: JqbIconProps) => {
     return (
         <JqbIcon
-            keepOriginColor={props.keepOriginColor || true}
             icon={huaxia}
             {...props}
         />

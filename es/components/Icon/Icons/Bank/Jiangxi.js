@@ -6,7 +6,6 @@ import jiangxi from "../../svg/bank/JX.svg";
 // 江西
 var JX = function JX(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    keepOriginColor: props.keepOriginColor || true,
     icon: jiangxi
   }, props));
 };

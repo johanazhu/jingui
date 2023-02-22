@@ -4,7 +4,7 @@ import { JqbIconProps } from '../PropType';
 import right from '../svg/right.svg';
 
 const Right = (props: JqbIconProps) => {
-    return <JqbIcon icon={right} {...props} />;
+    return <JqbIcon icon={right} fill="#26a4a4" {...props} />;
 };
 
 export default Right;

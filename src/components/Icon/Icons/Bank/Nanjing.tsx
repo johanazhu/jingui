@@ -7,7 +7,6 @@ import nanjing from '../../svg/bank/NJ.svg';
 const NJ = (props: JqbIconProps) => {
     return (
         <JqbIcon
-            keepOriginColor={props.keepOriginColor || true}
             icon={nanjing}
             {...props}
         />

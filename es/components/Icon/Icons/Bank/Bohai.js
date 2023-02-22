@@ -6,7 +6,6 @@ import bohai from "../../svg/bank/BH.svg";
 // 渤海
 var BH = function BH(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    keepOriginColor: props.keepOriginColor || true,
     icon: bohai
   }, props));
 };

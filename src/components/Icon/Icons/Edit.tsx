@@ -4,7 +4,7 @@ import { JqbIconProps } from '../PropType';
 import edit from '../svg/edit.svg';
 
 const Edit = (props: JqbIconProps) => {
-    return <JqbIcon icon={edit} {...props} />;
+    return <JqbIcon icon={edit} fill="#26a4a4" {...props} />;
 };
 
 export default Edit;

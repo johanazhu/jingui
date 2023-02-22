@@ -4,8 +4,7 @@ import JqbIcon from "../JqbIcon";
 import my from "../svg/my.svg";
 var My = function My(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: my,
-    keepOriginColor: true
+    icon: my
   }, props));
 };
 export default My;

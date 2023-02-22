@@ -7,7 +7,6 @@ import jianshe from '../../svg/bank/JSH.svg';
 const JSH = (props: JqbIconProps) => {
     return (
         <JqbIcon
-            keepOriginColor={props.keepOriginColor || true}
             icon={jianshe}
             {...props}
         />

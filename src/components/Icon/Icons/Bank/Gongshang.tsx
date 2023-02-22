@@ -7,7 +7,6 @@ import gongshang from '../../svg/bank/GS.svg';
 const GS = (props: JqbIconProps) => {
     return (
         <JqbIcon
-            keepOriginColor={props.keepOriginColor || true}
             icon={gongshang}
             {...props}
         />

@@ -6,7 +6,6 @@ import ningbo from "../../svg/bank/NB.svg";
 // 宁波
 var NB = function NB(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    keepOriginColor: props.keepOriginColor || true,
     icon: ningbo
   }, props));
 };

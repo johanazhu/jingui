@@ -4,7 +4,8 @@ import JqbIcon from "../JqbIcon";
 import share from "../svg/share.svg";
 var Share = function Share(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: share
+    icon: share,
+    fill: "#26a4a4"
   }, props));
 };
 export default Share;

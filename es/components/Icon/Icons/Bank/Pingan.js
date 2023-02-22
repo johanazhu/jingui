@@ -6,7 +6,6 @@ import pingan from "../../svg/bank/PA.svg";
 // 平安
 var PA = function PA(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    keepOriginColor: props.keepOriginColor || true,
     icon: pingan
   }, props));
 };

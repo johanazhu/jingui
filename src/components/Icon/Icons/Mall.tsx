@@ -4,7 +4,7 @@ import { JqbIconProps } from '../PropType';
 import mall from '../svg/mall.svg';
 
 const Mall = (props: JqbIconProps) => {
-    return <JqbIcon icon={mall} keepOriginColor  {...props} />;
+    return <JqbIcon icon={mall}   {...props} />;
 };
 
 export default Mall;

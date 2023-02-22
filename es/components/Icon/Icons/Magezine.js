@@ -4,7 +4,8 @@ import JqbIcon from "../JqbIcon";
 import magezine from "../svg/magezine.svg";
 var Magezine = function Magezine(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: magezine
+    icon: magezine,
+    fill: "#26a4a4"
   }, props));
 };
 export default Magezine;

@@ -79,6 +79,7 @@ import {
     IconShare,
     IconPhoto,
     IconPhotoFail,
+    IconId,
     IconHome,
     IconFinancial,
     IconUser2,
@@ -244,6 +245,10 @@ export default () => {
                             <Col span={6}>
                                 <IconPassword />
                                 <span>密码</span>
+                            </Col>
+                            <Col span={6}>
+                                <IconId />
+                                <span>身份证</span>
                             </Col>
                             <Col span={6}>
                                 <IconCall />

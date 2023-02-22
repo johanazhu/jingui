@@ -4,7 +4,8 @@ import JqbIcon from "../JqbIcon";
 import waiting from "../svg/waiting.svg";
 var Waiting = function Waiting(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: waiting
+    icon: waiting,
+    fill: "#26a4a4"
   }, props));
 };
 export default Waiting;

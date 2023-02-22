@@ -7,7 +7,6 @@ import ningbo from '../../svg/bank/NB.svg';
 const NB = (props: JqbIconProps) => {
     return (
         <JqbIcon
-            keepOriginColor={props.keepOriginColor || true}
             icon={ningbo}
             {...props}
         />

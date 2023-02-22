@@ -4,7 +4,7 @@ import { JqbIconProps } from '../PropType';
 import waiting from '../svg/waiting.svg';
 
 const Waiting = (props: JqbIconProps) => {
-    return <JqbIcon icon={waiting} {...props} />;
+    return <JqbIcon icon={waiting} fill="#26a4a4" {...props} />;
 };
 
 export default Waiting;

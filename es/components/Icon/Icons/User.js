@@ -4,7 +4,8 @@ import JqbIcon from "../JqbIcon";
 import user from "../svg/user.svg";
 var User = function User(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: user
+    icon: user,
+    fill: "#26a4a4"
   }, props));
 };
 export default User;

@@ -6,7 +6,6 @@ import guangfa from "../../svg/bank/GF.svg";
 // 广发
 var GF = function GF(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    keepOriginColor: props.keepOriginColor || true,
     icon: guangfa
   }, props));
 };

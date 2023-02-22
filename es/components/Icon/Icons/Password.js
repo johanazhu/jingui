@@ -4,7 +4,8 @@ import JqbIcon from "../JqbIcon";
 import password from "../svg/password.svg";
 var Password = function Password(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: password
+    icon: password,
+    fill: "#26a4a4"
   }, props));
 };
 export default Password;

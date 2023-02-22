@@ -4,7 +4,7 @@ import { JqbIconProps } from '../../PropType';
 import filterDown from '../../svg/filter-down.svg';
 
 const FilterDown = (props: JqbIconProps) => {
-    return <JqbIcon icon={filterDown} color="" {...props} />;
+    return <JqbIcon icon={filterDown} {...props} />;
 };
 
 export default FilterDown;

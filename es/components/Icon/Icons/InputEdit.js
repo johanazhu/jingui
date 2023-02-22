@@ -4,7 +4,8 @@ import JqbIcon from "../JqbIcon";
 import inputedit from "../svg/inputedit.svg";
 var InputEdit = function InputEdit(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: inputedit
+    icon: inputedit,
+    fill: "#26a4a4"
   }, props));
 };
 export default InputEdit;

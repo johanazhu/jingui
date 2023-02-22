@@ -6,7 +6,6 @@ import guangzhourcb from "../../svg/bank/GZRCB.svg";
 // 广州农村商业银行
 var GZRCB = function GZRCB(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    keepOriginColor: props.keepOriginColor || true,
     icon: guangzhourcb
   }, props));
 };

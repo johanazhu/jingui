@@ -4,7 +4,7 @@ import { JqbIconProps } from '../PropType';
 import myblack from '../svg/my_black.svg';
 
 const MyBlack = (props: JqbIconProps) => {
-    return <JqbIcon icon={myblack} keepOriginColor {...props} />;
+    return <JqbIcon icon={myblack}  {...props} />;
 };
 
 export default MyBlack;

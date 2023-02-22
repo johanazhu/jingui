@@ -4,7 +4,8 @@ import JqbIcon from "../JqbIcon";
 import radiook from "../svg/radiook.svg";
 var RadioOk = function RadioOk(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: radiook
+    icon: radiook,
+    fill: "#26a4a4"
   }, props));
 };
 export default RadioOk;

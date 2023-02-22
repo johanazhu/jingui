@@ -4,8 +4,7 @@ import JqbIcon from "../JqbIcon";
 import mall from "../svg/mall.svg";
 var Mall = function Mall(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: mall,
-    keepOriginColor: true
+    icon: mall
   }, props));
 };
 export default Mall;

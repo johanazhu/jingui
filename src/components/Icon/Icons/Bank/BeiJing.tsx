@@ -7,7 +7,6 @@ import beijing from '../../svg/bank/BJ.svg';
 const BJ = (props: JqbIconProps) => {
     return (
         <JqbIcon
-            keepOriginColor={props.keepOriginColor || true}
             icon={beijing}
             {...props}
         />

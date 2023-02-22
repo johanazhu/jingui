@@ -4,7 +4,8 @@ import JqbIcon from "../JqbIcon";
 import idcard from "../svg/idcard.svg";
 var IdCard = function IdCard(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: idcard
+    icon: idcard,
+    fill: "#26a4a4"
   }, props));
 };
 export default IdCard;

@@ -4,7 +4,8 @@ import JqbIcon from "../JqbIcon";
 import email from "../svg/email.svg";
 var Email = function Email(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: email
+    icon: email,
+    fill: "#26a4a4"
   }, props));
 };
 export default Email;

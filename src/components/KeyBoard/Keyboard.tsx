@@ -305,7 +305,7 @@ const Keyboard: FC<KeyboardProps> = (props) => {
                             return (
                                 <Key
                                     ref={setRefs(keyIndex)}
-                                    key="{keyIndex}"
+                                    key={keyIndex}
                                     text=""
                                     type="emty"
                                 />

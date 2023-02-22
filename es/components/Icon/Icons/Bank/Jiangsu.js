@@ -6,7 +6,6 @@ import jiangsu from "../../svg/bank/JSU.svg";
 // 江苏
 var JSU = function JSU(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    keepOriginColor: props.keepOriginColor || true,
     icon: jiangsu
   }, props));
 };

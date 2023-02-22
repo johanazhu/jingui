@@ -6,7 +6,6 @@ import beijingrcb from "../../svg/bank/BJRCB.svg";
 // 北京农村商业银行
 var BJRCB = function BJRCB(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    keepOriginColor: props.keepOriginColor || true,
     icon: beijingrcb
   }, props));
 };

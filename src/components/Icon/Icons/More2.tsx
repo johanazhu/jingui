@@ -4,7 +4,7 @@ import { JqbIconProps } from '../PropType';
 import more2 from '../svg/more2.svg';
 
 const More2 = (props: JqbIconProps) => {
-    return <JqbIcon icon={more2} color="" {...props} />;
+    return <JqbIcon icon={more2}  {...props} />;
 };
 
 export default More2;

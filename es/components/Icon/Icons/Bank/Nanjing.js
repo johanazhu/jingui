@@ -6,7 +6,6 @@ import nanjing from "../../svg/bank/NJ.svg";
 // 南京
 var NJ = function NJ(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    keepOriginColor: props.keepOriginColor || true,
     icon: nanjing
   }, props));
 };

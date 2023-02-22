@@ -7,7 +7,6 @@ import jiangsu from '../../svg/bank/JSU.svg';
 const JSU = (props: JqbIconProps) => {
     return (
         <JqbIcon
-            keepOriginColor={props.keepOriginColor || true}
             icon={jiangsu}
             {...props}
         />

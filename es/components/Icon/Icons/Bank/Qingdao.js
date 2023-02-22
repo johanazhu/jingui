@@ -6,7 +6,6 @@ import qingdao from "../../svg/bank/QD.svg";
 // 浦发
 var QD = function QD(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    keepOriginColor: props.keepOriginColor || true,
     icon: qingdao
   }, props));
 };

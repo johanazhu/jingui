@@ -91,7 +91,6 @@ export { default as IconToastWrong } from './ToastWrong';
 // 底部导航条
 export { default as IconHome } from './Home';
 export { default as IconFinancial } from './Financial';
-export { default as IconUser2 } from './User2';
 export { default as IconMall } from './Mall';
 export { default as IconMallBlack } from './MallBlack';
 export { default as IconFind } from './Find';
@@ -113,12 +112,7 @@ export { default as IconFilterEmty } from './Filter/Emty';
 export { default as IconFilter } from './Filter';
 
 
-// 理财页导航
-export { default as IconLoanMenu } from './ShortCutMenu/Loan';
-export { default as IconMoneyPlusMenu } from './ShortCutMenu/moneyPlus';
-export { default as IcontransferMenu } from './ShortCutMenu/transfer';
-
 // 数字符号
 export { default as IconAddition } from './Symbol/Addition';
-export { default as IconSubtraction } from './Symbol/Subtraction';
+// export { default as IconSubtraction } from './Symbol/Subtraction';
 export { default as IconCalculation } from './Symbol/Calculation';

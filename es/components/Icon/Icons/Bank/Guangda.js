@@ -6,7 +6,6 @@ import guangda from "../../svg/bank/GD.svg";
 // 光大银行
 var GD = function GD(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    keepOriginColor: props.keepOriginColor || true,
     icon: guangda
   }, props));
 };
