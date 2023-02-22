@@ -6,7 +6,7 @@ import { JqbIconProps } from './PropType';
 const prefixCls = 'jing-icon';
 
 const JqbIcon: FC<JqbIconProps> = (props) => {
-    const { className, color, size, icon, style, fill } = props;
+    const { className, color, size, icon, style } = props;
 
 
     const classes = classnames(prefixCls, className, {

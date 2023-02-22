@@ -16,7 +16,7 @@ import { debounce } from '@/utils';
 
 const TIME_BOUNCE = 800;
 const TIME_STOP = 600;
-const prefixCls = 'jing-button';
+const prefixCls = 'jing-scroll';
 
 const BetterScroll = forwardRef((props: ScrollProps, ref) => {
     const {

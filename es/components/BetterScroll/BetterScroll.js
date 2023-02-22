@@ -15,7 +15,7 @@ import IconLoadingImg from "../../assets/icon-loading.png";
 import { debounce } from "../../utils";
 var TIME_BOUNCE = 800;
 var TIME_STOP = 600;
-var prefixCls = 'jing-button';
+var prefixCls = 'jing-scroll';
 var BetterScroll = /*#__PURE__*/forwardRef(function (props, ref) {
   var pullUpLoading = props.pullUpLoading,
     pullUpCb = props.pullUpCb,

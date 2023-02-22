@@ -38,6 +38,10 @@
         // @include iconColorFn(var(--icon-primary-color));
     }
 
+    &--default svg {
+        @include iconColorFn(var(--icon-primary-color));
+    }
+
     &--grey svg {
         @include iconColorFn(var(--icon-grey-color));
     }

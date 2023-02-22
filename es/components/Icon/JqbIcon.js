@@ -12,8 +12,7 @@ var JqbIcon = function JqbIcon(props) {
     color = props.color,
     size = props.size,
     icon = props.icon,
-    style = props.style,
-    fill = props.fill;
+    style = props.style;
   var classes = classnames(prefixCls, className, (_classnames = {}, _defineProperty(_classnames, "".concat(prefixCls, "--").concat(color), !!color), _defineProperty(_classnames, "".concat(prefixCls, "--").concat(size), !!size), _classnames));
   var onClick = function onClick(event) {
     var _props$onClick;
