@@ -139,7 +139,11 @@ var Tabs = function Tabs(props) {
   return /*#__PURE__*/React.createElement("div", {
     className: classes,
     style: style
-  }, sticky ? /*#__PURE__*/React.createElement(Sticky, null, " ", Wrap, " ") : Wrap, /*#__PURE__*/React.createElement("div", {
+  }, sticky ? /*#__PURE__*/React.createElement(Sticky, {
+    style: {
+      background: "var(--bg-white)"
+    }
+  }, " ", Wrap, " ") : Wrap, /*#__PURE__*/React.createElement("div", {
     className: classnames("".concat(prefixCls, "__content"))
   }, contentRender));
 };

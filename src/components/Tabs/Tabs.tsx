@@ -171,7 +171,7 @@ const Tabs: TabsType = (props) => {
 
     return (
         <div className={classes} style={style}>
-            {sticky ? <Sticky> {Wrap} </Sticky> : Wrap}
+            {sticky ? <Sticky style={{ background: `var(--bg-white)` }}> {Wrap} </Sticky> : Wrap}
             <div className={classnames(`${prefixCls}__content`)}>
                 {contentRender}
             </div>
