@@ -11,13 +11,20 @@ export default () => {
                     提交后2个工作日内，业务经理会与您联系，请注意来电。
                 </ConnectFooter>
             </DemoBlock>
-            <DemoBlock title="左边">
+            <DemoBlock title="左边:前提是只有left">
                 <ConnectFooter
                     left="账号密码登录"
                     style={{ color: `var(--color-primary)` }}
                     onClickLeft={() => {
                         Toast('点击了账号密码登录')
                     }}
+                />
+            </DemoBlock>
+            <DemoBlock title="右边：前提是只有right">
+                <ConnectFooter
+                    position="right"
+                    right="账号密码登录"
+                    style={{ color: `var(--color-second-primary)` }}
                 />
             </DemoBlock>
             <DemoBlock title="左边右边都有">

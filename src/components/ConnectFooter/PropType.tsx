@@ -1,6 +1,8 @@
 import { ReactNode } from 'react';
 import { BaseTypeProps } from '@/utils';
 
+export type ConnectFooterAlign = 'left' | 'center' | 'right'
+
 /**
  * ConnectFooter 页面尾部提示
  * @param {left} ReactNode 左边的内容
@@ -11,6 +13,7 @@ import { BaseTypeProps } from '@/utils';
 export interface ConnectFooterProps extends BaseTypeProps {
     left?: ReactNode;
     right?: ReactNode;
+    position?: ConnectFooterAlign;
     onClickLeft?: () => void;
     onClickRight?: () => void;
 }

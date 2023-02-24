@@ -10,4 +10,13 @@
     color: var(--connectfooter-text-color);
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+    &--left {
+        justify-content: flex-start;
+    }
+
+    &--right {
+        justify-content: flex-end;
+    }
 }

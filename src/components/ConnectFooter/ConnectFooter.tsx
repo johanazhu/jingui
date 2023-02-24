@@ -6,9 +6,11 @@ import { ConnectFooterProps } from './PropType';
 const prefixCls = 'jing-connectfooter';
 
 const ConnectFooter: FC<ConnectFooterProps> = (props) => {
-    const { left, right, className, children, style, onClickLeft, onClickRight } = props;
+    const { left, right, position, className, children, style, onClickLeft, onClickRight } = props;
 
-    const classes = classnames(className, prefixCls);
+    const classes = classnames(className, prefixCls, {
+        [`${prefixCls}--${position}`]: !!position,
+    });
 
     const leftContent = () => left && <div className={`${prefixCls}__left`} onClick={onClickLeft}>{left}</div>
     const rightContent = () => right && <div className={`${prefixCls}__right`} onClick={onClickRight}>{right}</div>
