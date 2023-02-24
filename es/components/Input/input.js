@@ -153,6 +153,9 @@ var Input = /*#__PURE__*/forwardRef(function (props, ref) {
       // @ts-ignore
       ref: inputRef,
       type: inputType
+      // 写死，ios 端小写
+      ,
+      autoComplete: "off"
       // @ts-ignore
       ,
       inputMode: inputMode,

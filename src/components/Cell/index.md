@@ -30,6 +30,7 @@ Cell 可以单独使用，也可以与 CellGroup 搭配使用，CellGroup 可以
 | center    | 是否使内容垂直居中   | boolean                        | false  |
 | isLink    | 是否显示箭头         | boolean                        | false  |
 | required  | 是否显示表单必填星号 | boolean                        | false  |
+| border  | 是否显示内边框 | boolean                        | true  |
 | titleClass  | title 的 class | string                             | -  |
 | titleStyle  | title 的样式 | CSSProperties                        | -  |
 | valueClass  | value 的 class | string                             | -  |

@@ -22,6 +22,7 @@ group:
 | type           | 样式风格类型，可选值为 img                                     | string    | `line`  |
 | swipeable      | 是否开启手势滑动切换                                           | boolean   | `false` |
 | sticky         | 是否使用粘性定位布局                                           | boolean   | `false` |
+| stickyStyle    | 粘性组件的样式                                                | CSSProperties   | - |
 | ellipsis       | 是否省略过长的标题文字                                         | boolean   | `true`  |
 | disabled       | 是否禁用标签                                                   | boolean   | `false` |
 | duration       | 动画时间，单位秒                                               | number    | `0.3`   |

@@ -24,7 +24,7 @@ export default () => {
     return (
         <>
             <DemoBlock title="结合键盘的Input" padding="">
-                <Cell style={{ padding: 0 }}>
+                <Cell style={{ padding: 0 }} border={false}>
                     <Input.KeyBoard
                         value={state1.value}
                         placeholder="请输入登录密码"

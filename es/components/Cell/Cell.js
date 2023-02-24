@@ -19,6 +19,7 @@ var Cell = function Cell(props) {
     center = props.center,
     isLink = props.isLink,
     required = props.required,
+    border = props.border,
     titleStyle = props.titleStyle,
     titleClass = props.titleClass,
     valueStyle = props.valueStyle,
@@ -31,7 +32,7 @@ var Cell = function Cell(props) {
     linkClass = props.linkClass,
     children = props.children,
     onClick = props.onClick;
-  var classes = classnames(prefixCls, className, (_classnames = {}, _defineProperty(_classnames, "".concat(prefixCls, "--center"), !!center), _defineProperty(_classnames, "".concat(prefixCls, "--clickable"), !!isLink), _classnames));
+  var classes = classnames(prefixCls, className, (_classnames = {}, _defineProperty(_classnames, "".concat(prefixCls, "--center"), !!center), _defineProperty(_classnames, "".concat(prefixCls, "--clickable"), !!isLink), _defineProperty(_classnames, "".concat(prefixCls, "--borderless"), !border), _classnames));
   var renderIcon = function renderIcon() {
     if (icon) {
       return /*#__PURE__*/React.cloneElement(props.icon, {
@@ -108,6 +109,7 @@ var Cell = function Cell(props) {
 Cell.defaultProps = {
   center: false,
   isLink: false,
-  required: false
+  required: false,
+  border: true
 };
 export default Cell;

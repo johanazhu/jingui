@@ -19,6 +19,7 @@ export interface CellGroupProps extends BaseTypeProps {
  * @param {center} boolean                              // 是否使内容垂直居中
  * @param {isLink} boolean                              // 是否显示箭头
  * @param {required} boolean                            // 是否显示表单必填星号
+ * @param {border} boolean                              // 是否显示内边框
  * @param {titleClass} string                           // title 的 class
  * @param {titleStyle} CSSProperties                    // title 的样式
  * @param {valueClass} string                           // value 的 class
@@ -40,6 +41,7 @@ export interface CellProps extends BaseTypeProps {
     center?: boolean;
     isLink?: boolean;
     required?: boolean;
+    border?: boolean;
     titleClass?: string;
     titleStyle?: CSSProperties;
     valueClass?: string;

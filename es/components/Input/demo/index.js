@@ -43,7 +43,8 @@ export default (function () {
   }, /*#__PURE__*/React.createElement(Cell, {
     style: {
       padding: 0
-    }
+    },
+    border: false
   }, /*#__PURE__*/React.createElement(Input.KeyBoard, {
     value: state1.value,
     placeholder: "\u8BF7\u8F93\u5165\u767B\u5F55\u5BC6\u7801",

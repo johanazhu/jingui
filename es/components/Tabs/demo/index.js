@@ -84,7 +84,10 @@ export default (function () {
     className: "demo-jing-tabs"
   }, /*#__PURE__*/React.createElement(Tabs, {
     value: value,
-    sticky: true
+    sticky: true,
+    style: {
+      background: "var(--bg-white)"
+    }
   }, /*#__PURE__*/React.createElement(Tabs.Panel, {
     title: "\u6807\u7B7E1"
   }, "\u5185\u5BB9 1"), /*#__PURE__*/React.createElement(Tabs.Panel, {

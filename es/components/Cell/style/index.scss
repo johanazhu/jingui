@@ -47,7 +47,8 @@
         @include hairline-bottom(var(--cell-border-color), 0, 0);
     }
 
-    &:last-child::after {
+    &:last-child::after,
+    &--borderless::after {
         display: none;
     }
 

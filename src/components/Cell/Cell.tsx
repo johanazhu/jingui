@@ -19,6 +19,7 @@ const Cell: FC<CellProps> = (props) => {
         center,
         isLink,
         required,
+        border,
         titleStyle,
         titleClass,
         valueStyle,
@@ -36,6 +37,7 @@ const Cell: FC<CellProps> = (props) => {
     const classes = classnames(prefixCls, className, {
         [`${prefixCls}--center`]: !!center,
         [`${prefixCls}--clickable`]: !!isLink,
+        [`${prefixCls}--borderless`]: !border,
     });
 
     const renderIcon = () => {
@@ -149,6 +151,7 @@ Cell.defaultProps = {
     center: false,
     isLink: false,
     required: false,
+    border: true
 };
 
 export default Cell;

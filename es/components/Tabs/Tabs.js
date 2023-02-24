@@ -20,6 +20,7 @@ var prefixCls = 'jing-tabs';
 var Tabs = function Tabs(props) {
   var className = props.className,
     style = props.style,
+    stickyStyle = props.stickyStyle,
     value = props.value,
     type = props.type,
     swipeable = props.swipeable,
@@ -140,9 +141,7 @@ var Tabs = function Tabs(props) {
     className: classes,
     style: style
   }, sticky ? /*#__PURE__*/React.createElement(Sticky, {
-    style: {
-      background: "var(--bg-white)"
-    }
+    style: stickyStyle
   }, " ", Wrap, " ") : Wrap, /*#__PURE__*/React.createElement("div", {
     className: classnames("".concat(prefixCls, "__content"))
   }, contentRender));
