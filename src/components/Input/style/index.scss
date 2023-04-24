@@ -101,7 +101,8 @@ textarea::placeholder {
     &__clear {
         flex-shrink: 0;
         color: var(--input-clear-icon-color);
-        margin-right: calc(var(--padding-xs) * -1);
+        // margin-right: calc(var(--padding-xs) * -1); 打包报错
+        margin-right: -8px;
         padding: 0 var(--padding-xs);
         box-sizing: content-box;
         cursor: pointer;

@@ -20,6 +20,6 @@ var Tag = function Tag(props) {
   }, children);
 };
 Tag.defaultProps = {
-  type: 'default'
+  type: 'primary'
 };
 export default /*#__PURE__*/memo(Tag);

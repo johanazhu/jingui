@@ -15,14 +15,14 @@ export default (function () {
     style: {
       padding: '1rem',
       marginBottom: '0.5rem',
-      background: 'linear-gradient(to right,rgb(80, 135, 245),rgb(50, 100, 200))'
+      background: 'white'
     }
   }, /*#__PURE__*/React.createElement(Tag, {
-    type: "primary"
+    type: "second"
   }, "\u6807\u7B7E"), /*#__PURE__*/React.createElement(Tag, {
-    type: "primary"
+    type: "second"
   }, "\u6807\u7B7E"), /*#__PURE__*/React.createElement(Tag, {
-    type: "primary"
+    type: "second"
   }, "\u6807\u7B7E")), /*#__PURE__*/React.createElement("div", {
     style: {
       padding: '1rem',
@@ -70,16 +70,16 @@ export default (function () {
   }, "\u6807\u7B7E")), /*#__PURE__*/React.createElement("div", {
     style: {
       padding: '1rem',
-      background: 'linear-gradient(to right,rgb(80, 135, 245),rgb(50, 100, 200))'
+      background: 'white'
     }
   }, /*#__PURE__*/React.createElement(Tag, {
-    type: "primary",
+    type: "second",
     active: true
   }, "\u6807\u7B7E"), /*#__PURE__*/React.createElement(Tag, {
-    type: "primary",
+    type: "second",
     active: true
   }, "\u6807\u7B7E"), /*#__PURE__*/React.createElement(Tag, {
-    type: "primary",
+    type: "second",
     active: true
   }, "\u6807\u7B7E"))));
 });
