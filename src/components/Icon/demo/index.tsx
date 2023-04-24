@@ -80,6 +80,7 @@ import {
     IconPhoto,
     IconPhotoFail,
     IconId,
+    IconHistory,
     IconHome,
     IconFinancial,
     IconUser2,
@@ -405,6 +406,10 @@ export default () => {
                             <Col span={6}>
                                 <IconShare />
                                 <span>分享</span>
+                            </Col>
+                            <Col span={6}>
+                                <IconHistory />
+                                <span>历史</span>
                             </Col>
                         </Row>
                     </DemoBlock>

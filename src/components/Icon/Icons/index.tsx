@@ -82,6 +82,7 @@ export { default as IconPhotoFail } from './PhotoFail';
 export { default as IconShare } from './Share';
 export { default as IconId } from './Id';
 export { default as IconInputEdit } from './InputEdit';
+export { default as IconHistory } from './History';
 
 // 提示框
 export { default as IconToastRight } from './ToastRight';
@@ -110,7 +111,6 @@ export { default as IconFilterDown } from './Filter/Down';
 export { default as IconFilterUp } from './Filter/Up';
 export { default as IconFilterEmty } from './Filter/Emty';
 export { default as IconFilter } from './Filter';
-
 
 // 数字符号
 export { default as IconAddition } from './Symbol/Addition';
