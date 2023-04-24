@@ -7,10 +7,10 @@
     --tag-font-size: #{$tag-font-size};
     --tag-line-height: #{$tag-line-height};
     --tag-border-radius: #{$tag-border-radius};
-    --tag-default-color: #{$tag-default-color};
-    --tag-default-bg: #{$tag-default-bg};
     --tag-primary-color: #{$tag-primary-color};
     --tag-primary-bg: #{$tag-primary-bg};
+    --tag-second-color: #{$tag-second-color};
+    --tag-second-bg: #{$tag-second-bg};
     --tag-normal-color: #{$tag-normal-color};
     --tag-normal-border: #{$tag-normal-border};
     --tag-normal-bg: #{$tag-normal-bg};
@@ -20,10 +20,10 @@
     --tag-large-padding: #{$tag-large-padding};
     --tag-large-border-radius: #{$tag-large-border-radius};
     --tag-large-font-size: #{$tag-large-font-size};
-    --tag-default-active-color: #{$tag-default-active-color};
-    --tag-default-active-bg: #{$tag-default-active-bg};
     --tag-primary-active-color: #{$tag-primary-active-color};
     --tag-primary-active-bg: #{$tag-primary-active-bg};
+    --tag-second-active-color: #{$tag-second-active-color};
+    --tag-second-active-bg: #{$tag-second-active-bg};
 }
 
 .jing-tag {
@@ -38,16 +38,6 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 
-    &--default {
-        color: var(--tag-default-color);
-        background-color: var(--tag-default-bg);
-
-        &.jing-tag--active {
-            color: var(--tag-default-active-color);
-            background: var(--tag-default-active-bg);
-        }
-    }
-
     &--primary {
         color: var(--tag-primary-color);
         background-color: var(--tag-primary-bg);
@@ -55,6 +45,16 @@
         &.jing-tag--active {
             color: var(--tag-primary-active-color);
             background-color: var(--tag-primary-active-bg);
+        }
+    }
+
+    &--second {
+        color: var(--tag-second-color);
+        background-color: var(--tag-second-bg);
+
+        &.jing-tag--active {
+            color: var(--tag-second-active-color);
+            background: var(--tag-second-active-bg);
         }
     }
 

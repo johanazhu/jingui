@@ -1,7 +1,7 @@
 import { ReactNode, MouseEventHandler } from 'react';
 import { BaseTypeProps } from '@/utils';
 
-export type TagType = 'default' | 'primary' | 'normal' | 'disabled';
+export type TagType = 'primary' | 'normal' | 'disabled' | 'second';
 export type TagSize = 'medium' | 'large';
 
 /**

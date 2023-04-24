@@ -77,7 +77,8 @@
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-transition-group": "^4.4.5"
+    "react-transition-group": "^4.4.5",
+    "swiper": "^9.2.4"
   },
   "devDependencies": {
     "@svgr/webpack": "^5.5.0",
@@ -103,7 +104,6 @@
   },
   "peerDependencies": {
     "react": ">=16.14.0",
-    "react-dom": ">=16.14.0",
-    "swiper": "^8.4.3"
+    "react-dom": ">=16.14.0"
   }
 }

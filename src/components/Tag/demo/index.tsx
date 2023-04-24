@@ -20,13 +20,12 @@ export default () => (
                 style={{
                     padding: '1rem',
                     marginBottom: '0.5rem',
-                    background:
-                        'linear-gradient(to right,rgb(80, 135, 245),rgb(50, 100, 200))',
+                    background: 'white',
                 }}
             >
-                <Tag type="primary">标签</Tag>
-                <Tag type="primary">标签</Tag>
-                <Tag type="primary">标签</Tag>
+                <Tag type="second">标签</Tag>
+                <Tag type="second">标签</Tag>
+                <Tag type="second">标签</Tag>
             </div>
             <div
                 style={{
@@ -65,17 +64,16 @@ export default () => (
             <div
                 style={{
                     padding: '1rem',
-                    background:
-                        'linear-gradient(to right,rgb(80, 135, 245),rgb(50, 100, 200))',
+                    background: 'white',
                 }}
             >
-                <Tag type="primary" active>
+                <Tag type="second" active>
                     标签
                 </Tag>
-                <Tag type="primary" active>
+                <Tag type="second" active>
                     标签
                 </Tag>
-                <Tag type="primary" active>
+                <Tag type="second" active>
                     标签
                 </Tag>
             </div>

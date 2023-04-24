@@ -16,10 +16,10 @@ group:
 
 ### API
 
-| 属性     | 说明             | 类型                                                | 默认值  |
-| -------- | ---------------- | --------------------------------------------------- | ------- |
-| type     | 类型             | 类型，可选值为 `default、primary、normal、disabled` | default |
-| size     | 颜色             | 大小, 可选值为 `large medium`                       | -       |
-| active   | 是否选中         | boolean                                             | -       |
-| children | 组件中的内容     | ReactNode                                           | -       |
-| onClick  | 点击后的回调事件 | MouseEventHandler                                   | -       |
+| 属性     | 说明             | 类型                                               | 默认值  |
+| -------- | ---------------- | -------------------------------------------------- | ------- |
+| type     | 类型             | 类型，可选值为 `primary、normal、disabled、second` | primary |
+| size     | 颜色             | 大小, 可选值为 `large medium`                      | -       |
+| active   | 是否选中         | boolean                                            | -       |
+| children | 组件中的内容     | ReactNode                                          | -       |
+| onClick  | 点击后的回调事件 | MouseEventHandler                                  | -       |

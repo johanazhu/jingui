@@ -26,7 +26,7 @@ specifiers:
   react: ^18.2.0
   react-dom: ^18.2.0
   react-transition-group: ^4.4.5
-  swiper: ^8.4.3
+  swiper: ^9.2.4
   typescript: ^4.8.4
   yorkie: ^2.0.0
 
@@ -38,7 +38,7 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-transition-group: 4.4.5_biqbaboplfbrettd7655fr4n2y
-  swiper: 8.4.7
+  swiper: 9.2.4
 
 devDependencies:
   '@svgr/webpack': 5.5.0
@@ -4696,12 +4696,6 @@ packages:
       domhandler: 4.3.1
       entities: 2.2.0
     dev: true
-
-  /dom7/4.0.4:
-    resolution: {integrity: sha512-DSSgBzQ4rJWQp1u6o+3FVwMNnT5bzQbMb+o31TjYYeRi05uAcpF8koxdfzeoe5ElzPmua7W7N28YJhF7iEKqIw==}
-    dependencies:
-      ssr-window: 4.0.2
-    dev: false
 
   /domain-browser/1.2.0:
     resolution: {integrity: sha512-jnjyiM6eRyZl2H+W8Q/zLMA481hzi0eszAaBUzIVnmYVDBbnLxVNnfu1HgEBvCbL+71FrxMl3E6lpKH7Ge3OXA==}
@@ -10596,12 +10590,10 @@ packages:
       stable: 0.1.8
     dev: true
 
-  /swiper/8.4.7:
-    resolution: {integrity: sha512-VwO/KU3i9IV2Sf+W2NqyzwWob4yX9Qdedq6vBtS0rFqJ6Fa5iLUJwxQkuD4I38w0WDJwmFl8ojkdcRFPHWD+2g==}
+  /swiper/9.2.4:
+    resolution: {integrity: sha512-L7y3K/iiMXNYQ94FbfcJn7jex4QPnS4+voXGupTdC+UHW4XrR40QDdm4c9hXJ+Br0Il7PP0vP1W3goM9/Ly6Sg==}
     engines: {node: '>= 4.7.0'}
-    requiresBuild: true
     dependencies:
-      dom7: 4.0.4
       ssr-window: 4.0.2
     dev: false
 

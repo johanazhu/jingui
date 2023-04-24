@@ -21,7 +21,7 @@ const Tag: FC<TagProps> = (props) => {
 };
 
 Tag.defaultProps = {
-    type: 'default',
+    type: 'primary',
 };
 
 export default memo(Tag);
