@@ -133,12 +133,21 @@ const Tabs: TabsType = (props) => {
                         onHandleSwiper(swiper, swiper.realIndex);
                     }
                 }}
+                onSwiper={onSwiper}
             >
-                {React.Children.map(children, (item: any, index: number) => (
-                    <SwiperSlide key={+index}>
-                        {item.props.children}
-                    </SwiperSlide>
-                ))}
+                {React.Children.map(children, (item: any, index: number) => {
+                    return (
+                        item.props.children && (
+                            <SwiperSlide>
+                                <TabPanel
+                                    {...item.props}
+                                    key={+index}
+                                    selected={Number(currentIndex) === index}
+                                />
+                            </SwiperSlide>
+                        )
+                    );
+                })}
             </Swiper>
         );
     } else {

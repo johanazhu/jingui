@@ -9,7 +9,7 @@ import { Tabs } from '@jojobo/jing-ui';
 import { DemoBlock } from "../../../demo";
 import "./index.scss";
 export default (function () {
-  var _useState = useState(0),
+  var _useState = useState(1),
     _useState2 = _slicedToArray(_useState, 2),
     value = _useState2[0],
     setValue = _useState2[1];
@@ -91,8 +91,7 @@ export default (function () {
     sticky: true,
     isChangeColor: true,
     style: {
-      background: "var(--bg-white)",
-      height: '150vh'
+      background: "var(--bg-white)"
     }
   }, /*#__PURE__*/React.createElement(Tabs.Panel, {
     title: "\u6807\u7B7E1"
@@ -110,7 +109,7 @@ export default (function () {
     value: value,
     type: "img",
     onChange: function onChange(index, item) {
-      console.log('item', item);
+      // console.log('item', item);
       index && setValue(index);
     }
   }, /*#__PURE__*/React.createElement(Tabs.Panel, {
@@ -135,6 +134,10 @@ export default (function () {
   }, /*#__PURE__*/React.createElement(Tabs, {
     value: value,
     swipeable: true
+    // onSwiper={(index: number) => {
+    //     console.log('index', index);
+    //     setValue(index);
+    // }}
   }, /*#__PURE__*/React.createElement(Tabs.Panel, {
     title: "\u6807\u7B7E1"
   }, "\u5185\u5BB9 1"), /*#__PURE__*/React.createElement(Tabs.Panel, {

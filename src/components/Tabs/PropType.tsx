@@ -64,7 +64,7 @@ export interface TabsProps extends BaseTypeProps {
     swipeThreshold?: number;
     children?: ReactNode;
     onChange?: (index?: number, item?: any) => void;
-    onSwiper?: (index?: number) => void;
+    onSwiper?: any;
 }
 
 export interface TabsType extends FC<TabsProps> {

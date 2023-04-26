@@ -4,7 +4,7 @@ import { DemoBlock } from 'demo';
 import './index.scss';
 
 export default () => {
-    const [value, setValue] = useState(0);
+    const [value, setValue] = useState(1);
 
     return (
         <>
@@ -81,7 +81,7 @@ export default () => {
                     value={value}
                     sticky
                     isChangeColor={true}
-                    style={{ background: `var(--bg-white)`, height: '150vh' }}
+                    style={{ background: `var(--bg-white)` }}
                 >
                     <Tabs.Panel title="标签1">内容 1</Tabs.Panel>
                     <Tabs.Panel title="标签2">内容 2</Tabs.Panel>
@@ -98,7 +98,7 @@ export default () => {
                     value={value}
                     type="img"
                     onChange={(index?: number, item?: any) => {
-                        console.log('item', item);
+                        // console.log('item', item);
                         index && setValue(index);
                     }}
                 >
@@ -139,7 +139,14 @@ export default () => {
                 padding="0px"
                 className="demo-jing-tabs"
             >
-                <Tabs value={value} swipeable>
+                <Tabs
+                    value={value}
+                    swipeable
+                    // onSwiper={(index: number) => {
+                    //     console.log('index', index);
+                    //     setValue(index);
+                    // }}
+                >
                     <Tabs.Panel title="标签1">内容 1</Tabs.Panel>
                     <Tabs.Panel title="标签2">内容 2</Tabs.Panel>
                     <Tabs.Panel title="标签3">内容 3</Tabs.Panel>

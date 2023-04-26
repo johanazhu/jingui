@@ -112,11 +112,13 @@ var Tabs = function Tabs(props) {
         if (swipeable) {
           onHandleSwiper(swiper, swiper.realIndex);
         }
-      }
+      },
+      onSwiper: onSwiper
     }, React.Children.map(children, function (item, index) {
-      return /*#__PURE__*/React.createElement(SwiperSlide, {
-        key: +index
-      }, item.props.children);
+      return item.props.children && /*#__PURE__*/React.createElement(SwiperSlide, null, /*#__PURE__*/React.createElement(TabPanel, _extends({}, item.props, {
+        key: +index,
+        selected: Number(currentIndex) === index
+      })));
     }));
   } else {
     contentRender = React.Children.map(children, function (item, index) {
