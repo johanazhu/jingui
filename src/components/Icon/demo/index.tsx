@@ -81,6 +81,7 @@ import {
     IconPhotoFail,
     IconId,
     IconHistory,
+    IconMobile,
     IconHome,
     IconFinancial,
     IconUser2,
@@ -103,6 +104,7 @@ export default () => {
             <Tabs
                 value={value}
                 sticky
+                stickyStyle={{ background: '#fff' }}
                 onChange={(index: any) => {
                     index && setValue(index);
                 }}
@@ -410,6 +412,10 @@ export default () => {
                             <Col span={6}>
                                 <IconHistory />
                                 <span>历史</span>
+                            </Col>
+                            <Col span={6}>
+                                <IconMobile />
+                                <span>手机号码</span>
                             </Col>
                         </Row>
                     </DemoBlock>

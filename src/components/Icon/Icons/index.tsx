@@ -83,6 +83,7 @@ export { default as IconShare } from './Share';
 export { default as IconId } from './Id';
 export { default as IconInputEdit } from './InputEdit';
 export { default as IconHistory } from './History';
+export { default as IconMobile } from './Mobile';
 
 // 提示框
 export { default as IconToastRight } from './ToastRight';

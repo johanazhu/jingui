@@ -5,7 +5,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i.return && (_r = _i.return(), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 import React, { useState } from 'react';
-import { IconBJBank, IconBJRCBBank, IconBHBank, IconGSBank, IconGDBank, IconGDNXBank, IconGFBank, IconGZRCBBank, IconHFBank, IconHXBank, IconJSUBank, IconJXBank, IconJSHBank, IconJTBank, IconMSBank, IconNJBank, IconNBBank, IconNYBank, IconPABank, IconPFBank, IconQDBank, IconSHBank, IconXYBank, IconYZBank, IconZSBank, IconZGBank, IconZXBank, IconUser, IconEyeClose, IconEyeOpen, IconEyeCloseTwo, IconEyeOpenTwo, IconCircleDelete, IconRadioEmpty, IconRadioOk, IconPhone, IconEmail, IconMedal, IconEdit, IconPassword, IconCall, IconArrow, IconRight, IconClose, IconCircleOk, IconRmb, IconAuthen, IconBack, IconCalendar, IconCallcenter, IconCoin2, IconTrash, IconHelp, IconSoundOn, IconSoundOff, IconIdCard, IconIttype, IconMagezine, IconMoney, IconMore, IconMore2, IconPaper, IconRefresh, IconSecurity, IconWaiting, IconCheckboxEmpty, IconCheckboxOk, IconMoneyPlus, IconMoneyPlusFull, IconExclamation, IconCustomer, IconNotice, IconFZ, IconXiaojinguang, IconZan, IconZanOver, IconShare, IconPhoto, IconPhotoFail, IconId, Row, Col, Tabs } from '@jojobo/jing-ui';
+import { IconBJBank, IconBJRCBBank, IconBHBank, IconGSBank, IconGDBank, IconGDNXBank, IconGFBank, IconGZRCBBank, IconHFBank, IconHXBank, IconJSUBank, IconJXBank, IconJSHBank, IconJTBank, IconMSBank, IconNJBank, IconNBBank, IconNYBank, IconPABank, IconPFBank, IconQDBank, IconSHBank, IconXYBank, IconYZBank, IconZSBank, IconZGBank, IconZXBank, IconUser, IconEyeClose, IconEyeOpen, IconEyeCloseTwo, IconEyeOpenTwo, IconCircleDelete, IconRadioEmpty, IconRadioOk, IconPhone, IconEmail, IconMedal, IconEdit, IconPassword, IconCall, IconArrow, IconRight, IconClose, IconCircleOk, IconRmb, IconAuthen, IconBack, IconCalendar, IconCallcenter, IconCoin2, IconTrash, IconHelp, IconSoundOn, IconSoundOff, IconIdCard, IconIttype, IconMagezine, IconMoney, IconMore, IconMore2, IconPaper, IconRefresh, IconSecurity, IconWaiting, IconCheckboxEmpty, IconCheckboxOk, IconMoneyPlus, IconMoneyPlusFull, IconExclamation, IconCustomer, IconNotice, IconFZ, IconXiaojinguang, IconZan, IconZanOver, IconShare, IconPhoto, IconPhotoFail, IconId, IconHistory, IconMobile, Row, Col, Tabs } from '@jojobo/jing-ui';
 import { DemoBlock } from "../../../demo";
 export default (function () {
   var _useState = useState(0),
@@ -15,6 +15,9 @@ export default (function () {
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Tabs, {
     value: value,
     sticky: true,
+    stickyStyle: {
+      background: '#fff'
+    },
     onChange: function onChange(index) {
       index && setValue(index);
     }
@@ -224,7 +227,11 @@ export default (function () {
     span: 6
   }, /*#__PURE__*/React.createElement(IconPhotoFail, null), /*#__PURE__*/React.createElement("span", null, "\u56FE\u7247\u88C2\u5F00")), /*#__PURE__*/React.createElement(Col, {
     span: 6
-  }, /*#__PURE__*/React.createElement(IconShare, null), /*#__PURE__*/React.createElement("span", null, "\u5206\u4EAB"))))), /*#__PURE__*/React.createElement(Tabs.Panel, {
+  }, /*#__PURE__*/React.createElement(IconShare, null), /*#__PURE__*/React.createElement("span", null, "\u5206\u4EAB")), /*#__PURE__*/React.createElement(Col, {
+    span: 6
+  }, /*#__PURE__*/React.createElement(IconHistory, null), /*#__PURE__*/React.createElement("span", null, "\u5386\u53F2")), /*#__PURE__*/React.createElement(Col, {
+    span: 6
+  }, /*#__PURE__*/React.createElement(IconMobile, null), /*#__PURE__*/React.createElement("span", null, "\u624B\u673A\u53F7\u7801"))))), /*#__PURE__*/React.createElement(Tabs.Panel, {
     title: "\u94F6\u884C\u5361"
   }, /*#__PURE__*/React.createElement(DemoBlock, {
     className: "demo-jing-icon",

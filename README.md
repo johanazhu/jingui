@@ -2,7 +2,11 @@
 
 ## 先打包
 
-`npm run deploy`
+`npm run build`
+
+### 发布文档
+
+`pnpm run deploy`
 
 ## 再 publish
 
