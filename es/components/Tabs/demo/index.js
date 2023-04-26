@@ -7,6 +7,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 import React, { useState } from 'react';
 import { Tabs } from '@jojobo/jing-ui';
 import { DemoBlock } from "../../../demo";
+import "./index.scss";
 export default (function () {
   var _useState = useState(0),
     _useState2 = _slicedToArray(_useState, 2),
@@ -70,6 +71,9 @@ export default (function () {
     value: value,
     onChange: function onChange(index) {
       index && setValue(index);
+    },
+    style: {
+      height: '50vh'
     }
   }, /*#__PURE__*/React.createElement(Tabs.Panel, {
     title: "\u6807\u7B7E1"
@@ -85,8 +89,10 @@ export default (function () {
   }, /*#__PURE__*/React.createElement(Tabs, {
     value: value,
     sticky: true,
+    isChangeColor: true,
     style: {
-      background: "var(--bg-white)"
+      background: "var(--bg-white)",
+      height: '150vh'
     }
   }, /*#__PURE__*/React.createElement(Tabs.Panel, {
     title: "\u6807\u7B7E1"

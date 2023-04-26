@@ -42,6 +42,7 @@ export interface TabsPanelProps extends BaseTypeProps {
  * @param {swipeable} boolean                       // 是否开启手势滑动切换
  * @param {sticky} boolean                          // 是否使用粘性定位布局
  * @param {stickyStyle} CSSProperties               // 粘性组件的样式
+ * @param {isChangeColor} boolean                   // 滑动到置顶时是否变成白底
  * @param {ellipsis} boolean                        // 是否省略过长的标题文字
  * @param {disabled} boolean                        // 是否禁用标签
  * @param {duration} number                         // 动画时间，单位秒
@@ -56,6 +57,7 @@ export interface TabsProps extends BaseTypeProps {
     swipeable?: boolean;
     sticky?: boolean;
     stickyStyle?: CSSProperties;
+    isChangeColor?: boolean;
     ellipsis?: boolean;
     disabled?: boolean;
     duration?: number;

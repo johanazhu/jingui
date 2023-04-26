@@ -30,6 +30,7 @@ var Tabs = function Tabs(props) {
     disabled = props.disabled,
     swipeThreshold = props.swipeThreshold,
     children = props.children,
+    isChangeColor = props.isChangeColor,
     onChange = props.onChange,
     onSwiper = props.onSwiper;
   var tabsNavRef = useRef(null);
@@ -65,6 +66,22 @@ var Tabs = function Tabs(props) {
     };
     setLineStyle(lineStyle);
   }, [currentIndex]);
+  useEffect(function () {
+    isChangeColor && window.addEventListener('scroll', handleScroll);
+    return function () {
+      isChangeColor && window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isChangeColor]);
+  var handleScroll = function handleScroll(event) {
+    var navDom = tabsNavRef.current;
+    var navRefTop = navDom.getBoundingClientRect().top;
+    var scrollTop = (event.srcElement ? event.srcElement.documentElement.scrollTop : false) || window.pageYOffset || (event.srcElement ? event.srcElement.body.scrollTop : 0);
+    if (navRefTop < scrollTop) {
+      navDom.style.backgroundColor = '#fff';
+    } else {
+      navDom.style.backgroundColor = '';
+    }
+  };
   var classes = classnames(prefixCls, className, "".concat(prefixCls, "--").concat(type));
   var onHandleClick = function onHandleClick(item, index) {
     if (disabled || item.props.disabled) {

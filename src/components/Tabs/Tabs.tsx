@@ -32,6 +32,7 @@ const Tabs: TabsType = (props) => {
         disabled,
         swipeThreshold,
         children,
+        isChangeColor,
         onChange,
         onSwiper,
     } = props;
@@ -69,6 +70,32 @@ const Tabs: TabsType = (props) => {
 
         setLineStyle(lineStyle);
     }, [currentIndex]);
+
+    useEffect(() => {
+        isChangeColor && window.addEventListener('scroll', handleScroll);
+        return () => {
+            isChangeColor && window.removeEventListener('scroll', handleScroll);
+        };
+    }, [isChangeColor]);
+
+    const handleScroll = (event: any) => {
+        const navDom = tabsNavRef.current;
+
+        const navRefTop = navDom.getBoundingClientRect().top;
+
+        const scrollTop =
+            (event.srcElement
+                ? event.srcElement.documentElement.scrollTop
+                : false) ||
+            window.pageYOffset ||
+            (event.srcElement ? event.srcElement.body.scrollTop : 0);
+
+        if (navRefTop < scrollTop) {
+            navDom.style.backgroundColor = '#fff';
+        } else {
+            navDom.style.backgroundColor = '';
+        }
+    };
 
     const classes = classnames(prefixCls, className, `${prefixCls}--${type}`);
 

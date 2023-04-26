@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Tabs } from '@jojobo/jing-ui';
 import { DemoBlock } from 'demo';
+import './index.scss';
 
 export default () => {
     const [value, setValue] = useState(0);
@@ -62,6 +63,7 @@ export default () => {
                     onChange={(index?: number) => {
                         index && setValue(index);
                     }}
+                    style={{ height: '50vh' }}
                 >
                     <Tabs.Panel title="标签1">内容 1</Tabs.Panel>
                     <Tabs.Panel title="标签2" disabled>
@@ -75,7 +77,12 @@ export default () => {
                 padding="0px"
                 className="demo-jing-tabs"
             >
-                <Tabs value={value} sticky style={{ background: `var(--bg-white)` }}>
+                <Tabs
+                    value={value}
+                    sticky
+                    isChangeColor={true}
+                    style={{ background: `var(--bg-white)`, height: '150vh' }}
+                >
                     <Tabs.Panel title="标签1">内容 1</Tabs.Panel>
                     <Tabs.Panel title="标签2">内容 2</Tabs.Panel>
                     <Tabs.Panel title="标签3">内容 3</Tabs.Panel>
@@ -91,7 +98,7 @@ export default () => {
                     value={value}
                     type="img"
                     onChange={(index?: number, item?: any) => {
-                        console.log('item', item)
+                        console.log('item', item);
                         index && setValue(index);
                     }}
                 >
@@ -163,14 +170,29 @@ export default () => {
             >
                 <Tabs
                     value={value}
-                    onChange={(index) => {
+                    onChange={(index: any) => {
                         index && setValue(index);
                         alert(index);
                     }}
                 >
-                    <Tabs.Panel title="标签1" img="https://prd-public-oss-jingxb.oss-cn-shanghai-finance-1-pub.aliyuncs.com/product/tag/%E5%95%86%E5%9F%8Eicon-%E6%88%90%E4%BA%BA%E4%BF%9D%E9%99%A9.png">内容 1</Tabs.Panel>
-                    <Tabs.Panel title="标签2" img="https://prd-public-oss-jingxb.oss-cn-shanghai-finance-1-pub.aliyuncs.com/product/tag/%E5%95%86%E5%9F%8Eicon-%E6%88%90%E4%BA%BA%E4%BF%9D%E9%99%A9.png">内容 2</Tabs.Panel>
-                    <Tabs.Panel title="标签3" img="https://prd-public-oss-jingxb.oss-cn-shanghai-finance-1-pub.aliyuncs.com/product/tag/%E5%95%86%E5%9F%8Eicon-%E6%88%90%E4%BA%BA%E4%BF%9D%E9%99%A9.png">内容 3</Tabs.Panel>
+                    <Tabs.Panel
+                        title="标签1"
+                        img="https://prd-public-oss-jingxb.oss-cn-shanghai-finance-1-pub.aliyuncs.com/product/tag/%E5%95%86%E5%9F%8Eicon-%E6%88%90%E4%BA%BA%E4%BF%9D%E9%99%A9.png"
+                    >
+                        内容 1
+                    </Tabs.Panel>
+                    <Tabs.Panel
+                        title="标签2"
+                        img="https://prd-public-oss-jingxb.oss-cn-shanghai-finance-1-pub.aliyuncs.com/product/tag/%E5%95%86%E5%9F%8Eicon-%E6%88%90%E4%BA%BA%E4%BF%9D%E9%99%A9.png"
+                    >
+                        内容 2
+                    </Tabs.Panel>
+                    <Tabs.Panel
+                        title="标签3"
+                        img="https://prd-public-oss-jingxb.oss-cn-shanghai-finance-1-pub.aliyuncs.com/product/tag/%E5%95%86%E5%9F%8Eicon-%E6%88%90%E4%BA%BA%E4%BF%9D%E9%99%A9.png"
+                    >
+                        内容 3
+                    </Tabs.Panel>
                 </Tabs>
             </DemoBlock> */}
         </>
