@@ -11,3 +11,7 @@
 ## 再 publish
 
 `npm publish`
+
+## 发网站包
+
+`npm run deploy`
