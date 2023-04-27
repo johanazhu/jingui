@@ -31,7 +31,7 @@ export default () => (
                 style={{
                     padding: '1rem',
                     marginBottom: '0.5rem',
-                    background: 'white',
+                    background: 'linear-gradient(0deg,#6c9,#3cc)',
                 }}
             >
                 <Tag type="normal">标签</Tag>
@@ -64,6 +64,7 @@ export default () => (
             <div
                 style={{
                     padding: '1rem',
+                    marginBottom: '0.5rem',
                     background: 'white',
                 }}
             >
@@ -74,6 +75,22 @@ export default () => (
                     标签
                 </Tag>
                 <Tag type="second" active>
+                    标签
+                </Tag>
+            </div>
+            <div
+                style={{
+                    padding: '1rem',
+                    background: 'linear-gradient(0deg,#6c9,#3cc)',
+                }}
+            >
+                <Tag type="normal" active>
+                    标签
+                </Tag>
+                <Tag type="normal" active>
+                    标签
+                </Tag>
+                <Tag type="normal" active>
                     标签
                 </Tag>
             </div>

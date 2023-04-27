@@ -134,10 +134,6 @@ export default (function () {
   }, /*#__PURE__*/React.createElement(Tabs, {
     value: value,
     swipeable: true
-    // onSwiper={(index: number) => {
-    //     console.log('index', index);
-    //     setValue(index);
-    // }}
   }, /*#__PURE__*/React.createElement(Tabs.Panel, {
     title: "\u6807\u7B7E1"
   }, "\u5185\u5BB9 1"), /*#__PURE__*/React.createElement(Tabs.Panel, {

@@ -12,7 +12,6 @@
     --tag-second-color: #{$tag-second-color};
     --tag-second-bg: #{$tag-second-bg};
     --tag-normal-color: #{$tag-normal-color};
-    --tag-normal-border: #{$tag-normal-border};
     --tag-normal-bg: #{$tag-normal-bg};
     --tag-disabled-color: #{$tag-disabled-color};
     --tag-disabled-bg: #{$tag-disabled-bg};
@@ -24,6 +23,8 @@
     --tag-primary-active-bg: #{$tag-primary-active-bg};
     --tag-second-active-color: #{$tag-second-active-color};
     --tag-second-active-bg: #{$tag-second-active-bg};
+    --tag-normal-active-color: #{$tag-normal-active-color};
+    --tag-normal-active-bg: #{$tag-normal-active-bg};
 }
 
 .jing-tag {
@@ -62,18 +63,23 @@
         color: var(--tag-normal-color);
         background-color: var(--tag-normal-bg);
 
-        &::before {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            border: 1px solid;
-            border-color: inherit;
-            border-radius: inherit;
-            content: '';
-            pointer-events: none;
+        &.jing-tag--active {
+            color: var(--tag-normal-active-color);
+            background: var(--tag-normal-active-bg);
         }
+
+        // &::before {
+        //     position: absolute;
+        //     top: 0;
+        //     right: 0;
+        //     bottom: 0;
+        //     left: 0;
+        //     border: 1px solid;
+        //     border-color: inherit;
+        //     border-radius: inherit;
+        //     content: '';
+        //     pointer-events: none;
+        // }
     }
 
     &--disabled {

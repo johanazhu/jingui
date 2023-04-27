@@ -27,7 +27,7 @@ export default (function () {
     style: {
       padding: '1rem',
       marginBottom: '0.5rem',
-      background: 'white'
+      background: 'linear-gradient(0deg,#6c9,#3cc)'
     }
   }, /*#__PURE__*/React.createElement(Tag, {
     type: "normal"
@@ -70,6 +70,7 @@ export default (function () {
   }, "\u6807\u7B7E")), /*#__PURE__*/React.createElement("div", {
     style: {
       padding: '1rem',
+      marginBottom: '0.5rem',
       background: 'white'
     }
   }, /*#__PURE__*/React.createElement(Tag, {
@@ -80,6 +81,20 @@ export default (function () {
     active: true
   }, "\u6807\u7B7E"), /*#__PURE__*/React.createElement(Tag, {
     type: "second",
+    active: true
+  }, "\u6807\u7B7E")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: '1rem',
+      background: 'linear-gradient(0deg,#6c9,#3cc)'
+    }
+  }, /*#__PURE__*/React.createElement(Tag, {
+    type: "normal",
+    active: true
+  }, "\u6807\u7B7E"), /*#__PURE__*/React.createElement(Tag, {
+    type: "normal",
+    active: true
+  }, "\u6807\u7B7E"), /*#__PURE__*/React.createElement(Tag, {
+    type: "normal",
     active: true
   }, "\u6807\u7B7E"))));
 });
