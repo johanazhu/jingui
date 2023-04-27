@@ -139,14 +139,7 @@ export default () => {
                 padding="0px"
                 className="demo-jing-tabs"
             >
-                <Tabs
-                    value={value}
-                    swipeable
-                    // onSwiper={(index: number) => {
-                    //     console.log('index', index);
-                    //     setValue(index);
-                    // }}
-                >
+                <Tabs value={value} swipeable>
                     <Tabs.Panel title="标签1">内容 1</Tabs.Panel>
                     <Tabs.Panel title="标签2">内容 2</Tabs.Panel>
                     <Tabs.Panel title="标签3">内容 3</Tabs.Panel>

@@ -4,70 +4,40 @@ import { DemoBlock } from 'demo';
 import './index.scss';
 
 export default () => {
-    const [state, setState] = hooks.useSetState({
-        v1: false,
-        v2: false,
-        v3: false,
-        // v4: false,
-        // v5: false,
-        // v6: false,
-        // v7: false,
-    });
-
     const scrollRef = useRef<any>(null);
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState(new Array(30).fill(1));
+    const [isShowPullUpLoading, setIsShowPullUpLoading] = useState(true);
 
-    const onPullingUp = () => {};
+    // 模拟请求接口
+    const fetchData = async () => {
+        await setTimeout(() => {
+            setItems([...items, ...new Array(30).fill(1)]);
+        }, 3000);
+    };
 
-    const onPullingDown = () => {};
+    // 上拉加载
+    const handlePullUp = async () => {
+        await fetchData();
+    };
 
     return (
         <>
             <DemoBlock title="基本用法" padding="" className="demo-jing-scroll">
-                <Scroll>
-                    <ul>
-                        {new Array(20).fill(1).map((item, index) => (
-                            <li className="item">{index}</li>
+                <Scroll
+                    ref={scrollRef}
+                    top={60}
+                    bottom={60}
+                    pullUpLoading={isShowPullUpLoading}
+                    pullUpCb={handlePullUp}
+                >
+                    <ul style={{ textAlign: 'center' }}>
+                        {items.map((item, index) => (
+                            <li className="item" key={index}>
+                                {index}
+                            </li>
                         ))}
                     </ul>
                 </Scroll>
-                {/* <Scroll
-                    ref={scrollRef}
-                    onPullingUp={onPullingUp}
-                    onPullingDown={onPullingDown}
-                    pullUpLoading={isShowPullUpLoading}
-                    pullUpCb={handlePullUp}
-                    pullingUpStatus={isStatusForPullingUp}
-                >
-                    <ul>
-                        {items.map((item, index) => (
-                            <li className="item">{index}</li>
-                        ))}
-                    </ul>
-                </Scroll> */}
-            </DemoBlock>
-            <DemoBlock title="基本用法" padding="" className="demo-jing-scroll">
-                <Scroll>
-                    <ul>
-                        {new Array(20).fill(1).map((item, index) => (
-                            <li className="item">{index}</li>
-                        ))}
-                    </ul>
-                </Scroll>
-                {/* <Scroll
-                    ref={scrollRef}
-                    onPullingUp={onPullingUp}
-                    onPullingDown={onPullingDown}
-                    pullUpLoading={isShowPullUpLoading}
-                    pullUpCb={handlePullUp}
-                    pullingUpStatus={isStatusForPullingUp}
-                >
-                    <ul>
-                        {items.map((item, index) => (
-                            <li className="item">{index}</li>
-                        ))}
-                    </ul>
-                </Scroll> */}
             </DemoBlock>
         </>
     );
