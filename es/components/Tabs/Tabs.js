@@ -53,18 +53,20 @@ var Tabs = function Tabs(props) {
     scrollable = count > swipeThreshold || !ellipsis;
   }
   useEffect(function () {
-    var _tabsTitleRef$current = tabsTitleRef.current[currentIndex],
-      offsetLeft = _tabsTitleRef$current.offsetLeft,
-      offsetWidth = _tabsTitleRef$current.offsetWidth;
-    var navDom = tabsNavRef.current;
-    var left = offsetLeft + offsetWidth / 2;
-    var to = offsetLeft - (navDom.offsetWidth - offsetWidth) / 2;
-    duration && scrollLeftTo(navDom, to, duration);
-    var lineStyle = {
-      transform: "translateX(".concat(left, "px) translateX(-50%)"),
-      transitionDuration: "".concat(duration, "s")
-    };
-    setLineStyle(lineStyle);
+    if (tabsTitleRef && tabsTitleRef.current) {
+      var _tabsTitleRef$current = tabsTitleRef.current[currentIndex],
+        offsetLeft = _tabsTitleRef$current.offsetLeft,
+        offsetWidth = _tabsTitleRef$current.offsetWidth;
+      var navDom = tabsNavRef.current;
+      var left = offsetLeft + offsetWidth / 2;
+      var to = offsetLeft - (navDom.offsetWidth - offsetWidth) / 2;
+      duration && scrollLeftTo(navDom, to, duration);
+      var _lineStyle = {
+        transform: "translateX(".concat(left, "px) translateX(-50%)"),
+        transitionDuration: "".concat(duration, "s")
+      };
+      setLineStyle(_lineStyle);
+    }
   }, [currentIndex]);
   useEffect(function () {
     isChangeColor && window.addEventListener('scroll', handleScroll);

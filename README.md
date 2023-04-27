@@ -15,3 +15,5 @@
 ## 发网站包
 
 `npm run deploy`
+
+发网站包的时候需要去掉 sideEffect

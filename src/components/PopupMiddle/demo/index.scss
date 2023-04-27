@@ -1,4 +1,4 @@
-.jing-popupmiddle {
+.popupmiddle-demo1 {
     .body {
         display: flex;
         flex-direction: column;
@@ -7,7 +7,7 @@
     .header {
         border-bottom: 1px solid #948484;
         padding: 1rem;
-        font-size: 1.25rem;
+        font-size: 1rem;
         font-weight: 700;
     }
     .content {
@@ -19,7 +19,7 @@
         .p1 {
             z-index: 2;
             position: relative;
-            font-size: 1.25rem;
+            font-size: 1rem;
             font-weight: 700;
         }
         .p2 {
@@ -27,5 +27,20 @@
             text-align: justify;
             margin: 0.5rem 0 1.25rem;
         }
+    }
+}
+
+.popupmiddle-demo2 {
+    &-content {
+        width: 100%;
+    }
+    &-close {
+        position: absolute;
+        left: 50%;
+        top: 80%;
+        -webkit-transform: translate(-50%, -50%) scale(1, 1);
+        transform: translate(-50%, -50%) scale(1, 1);
+        width: 2rem;
+        height: 2rem;
     }
 }

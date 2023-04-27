@@ -53,22 +53,25 @@ const Tabs: TabsType = (props) => {
     }
 
     useEffect(() => {
-        const { offsetLeft, offsetWidth } = tabsTitleRef.current[currentIndex];
+        if (tabsTitleRef && tabsTitleRef.current) {
+            const { offsetLeft, offsetWidth } =
+                tabsTitleRef.current[currentIndex];
 
-        const navDom = tabsNavRef.current;
+            const navDom = tabsNavRef.current;
 
-        const left = offsetLeft + offsetWidth / 2;
+            const left = offsetLeft + offsetWidth / 2;
 
-        const to = offsetLeft - (navDom.offsetWidth - offsetWidth) / 2;
+            const to = offsetLeft - (navDom.offsetWidth - offsetWidth) / 2;
 
-        duration && scrollLeftTo(navDom, to, duration);
+            duration && scrollLeftTo(navDom, to, duration);
 
-        const lineStyle: CSSProperties = {
-            transform: `translateX(${left}px) translateX(-50%)`,
-            transitionDuration: `${duration}s`,
-        };
+            const lineStyle: CSSProperties = {
+                transform: `translateX(${left}px) translateX(-50%)`,
+                transitionDuration: `${duration}s`,
+            };
 
-        setLineStyle(lineStyle);
+            setLineStyle(lineStyle);
+        }
     }, [currentIndex]);
 
     useEffect(() => {
