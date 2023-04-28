@@ -1,10 +1,11 @@
 import React, { useState, useEffect, FC } from 'react';
 import classnames from 'classnames';
-import { AreaHeaderArea, AreaTabSourceProps } from './PropType';
+import { ActionSheetHeaderProps, ActionSheetTabSourceProps } from './PropType';
 
-const Header: FC<AreaHeaderArea> = (props) => {
+const prefixCls = 'jing-actionsheet';
+
+const Header: FC<ActionSheetHeaderProps> = (props) => {
     const { tabSource, onClick } = props;
-    // console.log('props tabSource---------------', tabSource)
 
     const [currentValue, setCurrentValue] = useState('请选择');
     useEffect(() => {
@@ -12,7 +13,6 @@ const Header: FC<AreaHeaderArea> = (props) => {
             const filterResult = tabSource.filter((item) => {
                 return item.value === currentValue;
             });
-            // console.log('header的useEffect渲染', filterResult)
             if (filterResult.length === 0) {
                 setCurrentValue('请选择');
             }
@@ -20,12 +20,12 @@ const Header: FC<AreaHeaderArea> = (props) => {
     }, [tabSource]);
 
     return (
-        <div className={classnames('Area__Header')}>
+        <div className={`${prefixCls}__Header`}>
             {tabSource &&
-                tabSource.map((item: AreaTabSourceProps) => {
+                tabSource.map((item: ActionSheetTabSourceProps) => {
                     return (
                         <div
-                            className={classnames('Area__Header-item', {
+                            className={classnames(`${prefixCls}__Header-item`, {
                                 on: currentValue === item.value,
                             })}
                             key={item.value}
@@ -39,7 +39,7 @@ const Header: FC<AreaHeaderArea> = (props) => {
                     );
                 })}
             <div
-                className={classnames('Area__Header-item', {
+                className={classnames(`${prefixCls}__Header-item`, {
                     on: currentValue === '请选择',
                 })}
                 onClick={() => {

@@ -1,0 +1,60 @@
+@import './var.scss';
+
+:root {
+    --divider-margin: #{$divider-margin};
+    --divider-text-color: #{$divider-text-color};
+    --divider-font-size: #{$divider-font-size};
+    --divider-line-height: #{$divider-line-height};
+    --divider-border-color: #{$divider-border-color};
+    --divider-border-width: #{$divider-border-width};
+    --divider-content-padding: #{$divider-content-padding};
+    --divider-content-left-width: #{$divider-content-left-width};
+    --divider-content-right-width: #{$divider-content-right-width};
+}
+
+.jing-actionsheet {
+    height: 60vh;
+    border-radius: 1rem 1rem 0 0;
+    background-color: #fff;
+    // transition: all 0.3s ease-out;
+    &__Header {
+        min-width: 45px;
+        margin-right: 10px;
+        height: 45px;
+        line-height: 45px;
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: #646464;
+        &.on {
+            color: #26a4a4;
+        }
+        &-item {
+            position: relative;
+            display: inline-block;
+            height: 42px;
+            line-height: 42px;
+        }
+    }
+
+    &__Column {
+        width: 100%;
+        font-size: 14px;
+        -webkit-overflow-scrolling: touch;
+        overflow: scroll;
+        padding: 5px 0;
+        height: 300px;
+        position: fixed;
+        top: 88px;
+        text-align: left;
+        &-item {
+            position: relative;
+            padding: 10px 0 10px 20px;
+            border-bottom: 1px solid #ebebeb;
+            &.on {
+                color: #26a4a4;
+            }
+        }
+    }
+}

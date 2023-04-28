@@ -1,20 +1,25 @@
 import React, { useState, FC } from 'react';
 import classnames from 'classnames';
 import { IconRight } from '../Icon';
-import { AreaColumn, AreaColumnRangeProps } from './PropType';
+import {
+    ActionSheetColumnProps,
+    ActionSheetColumnRangeProps,
+} from './PropType';
 
-const Column: FC<AreaColumn> = (props) => {
+const prefixCls = 'jing-actionsheet';
+
+const Column: FC<ActionSheetColumnProps> = (props) => {
     const { columnSource, tabSource, onClick } = props;
     const headerSource = tabSource && tabSource.map((item: any) => item.value);
 
     const [currentItem, setCurrentItem] = useState('');
 
     return (
-        <div className="Area__Column scroller" id="canmove">
-            {columnSource.map((item: AreaColumnRangeProps, key: any) => {
+        <div className={`${prefixCls}__Column`}>
+            {columnSource.map((item: ActionSheetColumnRangeProps, key: any) => {
                 return (
                     <div
-                        className={classnames('Area__Column-item', {
+                        className={classnames(`${prefixCls}__Column-item`, {
                             on:
                                 currentItem === item.value ||
                                 (headerSource &&
@@ -30,7 +35,7 @@ const Column: FC<AreaColumn> = (props) => {
                         {(currentItem === item.value ||
                             (headerSource &&
                                 headerSource.indexOf(item.value) > -1)) && (
-                            <span className="checkout">
+                            <span>
                                 <IconRight size="sm" />
                             </span>
                         )}

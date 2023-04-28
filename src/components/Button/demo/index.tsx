@@ -17,13 +17,21 @@ export default () => (
         <DemoBlock
             title="朴素按钮"
             className="demo-jing-button"
-            padding="10px 10px 0"
+            padding="10px 8px 0"
+            background="#f2f6f9"
         >
             <Button plain type="primary">
-                朴素按钮
+                主色按钮
             </Button>
             <Button plain type="second-primary">
-                朴素按钮
+                次色按钮
+            </Button>
+            <Button plain>朴素按钮</Button>
+            <Button plain style={{ color: `var(--primary-color)` }}>
+                变色按钮
+            </Button>
+            <Button plain style={{ color: `var(--second-primary-color)` }}>
+                变色按钮
             </Button>
         </DemoBlock>
         <DemoBlock
@@ -75,11 +83,7 @@ export default () => (
                 迷你
             </Button>
         </DemoBlock>
-        <DemoBlock
-            title="块级元素"
-            className="demo-jing-button"
-            padding="10px 10px 0"
-        >
+        <DemoBlock title="块级元素" className="demo-jing-button">
             <Button type="primary" block>
                 块级元素
             </Button>
@@ -87,7 +91,7 @@ export default () => (
         <DemoBlock
             title="自定义颜色"
             className="demo-jing-button"
-            padding="10px 10px 0"
+            padding="10px 8px 0"
         >
             <Button color="#7232dd">单色按钮</Button>
             <Button color="#7232dd" plain>
@@ -97,35 +101,31 @@ export default () => (
                 渐变按钮
             </Button>
         </DemoBlock>
-        <DemoBlock
-            title="点击事件"
-            className="demo-jing-button"
-            padding="10px 10px 0"
-        >
+        <DemoBlock title="点击事件" className="demo-jing-button">
             <Button type="primary" block onClick={() => alert('我错了')}>
                 有本事就来点我啊
             </Button>
         </DemoBlock>
 
-        <DemoBlock title="选项状态">
+        <DemoBlock title="按钮组">
             <Button.Group>
-                <Button type="primary">我是按钮</Button>
+                <Button type="primary">占位置</Button>
             </Button.Group>
             <Button.Group type="fixed-bottom">
-                <div style={{
-                    width: '2rem',
-                    height: '2rem',
-                    marginRight: '0.5rem'
-                }}>
-                    <IconCustomer size="auto" color="green" />
+                <div
+                    style={{
+                        width: '2rem',
+                        height: '2rem',
+                        marginRight: '0.5rem',
+                    }}
+                >
+                    <IconCustomer size="auto" color="default" />
                 </div>
                 <Button.Group style={{ flex: 1 }}>
                     <Button type="primary" plain>
                         我是按钮
                     </Button>
-                    <Button type="primary">
-                        我是按钮
-                    </Button>
+                    <Button type="primary">我是按钮</Button>
                 </Button.Group>
             </Button.Group>
         </DemoBlock>

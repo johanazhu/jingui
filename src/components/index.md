@@ -65,8 +65,8 @@ group:
 
 ## 业务组件
 
--   [ ] [Area 地址](./components/work/area)
--   [ ] [Orientation 方向](./components/work/orientation)
+-   [x] [ActionSheet 地址](./components/work/ActionSheet)
+-   [x] [Orientation 方向](./components/work/orientation)
 -   [x] [SortBar 排序栏](./components/work/sort-bar)
 -   [x] [Timeline 时间线](./components/work/timeline)
 -   [x] [Floatingad 悬浮广告](./components/work/floatingad)
@@ -74,4 +74,3 @@ group:
 ## 其他
 
 -   [ ] [configprovider 全局配置](./components/config/config-provider)
-
