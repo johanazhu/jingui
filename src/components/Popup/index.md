@@ -28,6 +28,8 @@ group:
 | duration            | 动画执行时间（单位：毫秒）                                         | number                          | 300       |
 | overlay             | 是否展示遮罩层                                                     | boolean                         | true      |
 | overlayType         | 遮罩层的类型，可选值 transparent, normal                           | string                          | normal    |
+| round               | 是否显示圆角                                                       | boolean                         | false     |
+| title               | 弹出层标题                                                         | string                          | -         |
 | lockScroll          | 是否锁定背景滚动                                                   | boolean                         | true      |
 | safeAreaInsetBottom | 是否开启底部安全区适配                                             | boolean                         | false     |
 | closeOnClickOverlay | 是否在点击遮罩层后关闭                                             | boolean                         | true      |

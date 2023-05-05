@@ -15,6 +15,8 @@ export type PopupCloseIconPosition =
  * @param {duration} number                         // 动画执行时间（单位：毫秒）
  * @param {overlay} boolean                         // 是否展示遮罩层
  * @param {overlayType} string                      // 遮罩层的类型，可选值 transparent, normal
+ * @param {round} boolean                           // 是否显示圆角
+ * @param {title} string                           // 弹出层标题
  * @param {lockScroll} boolean                      // 是否锁定背景滚动
  * @param {safeAreaInsetBottom} boolean             // 是否开启底部安全区适配
  * @param {closeOnClickOverlay} boolean             // 是否在点击遮罩层后关闭
@@ -38,6 +40,8 @@ export interface PopupProps extends BaseTypeProps {
     duration?: number;
     overlay?: boolean;
     overlayType?: 'normal' | 'transparent';
+    round?: boolean;
+    title?: string;
     lockScroll?: boolean;
     safeAreaInsetBottom?: boolean;
     closeOnClickOverlay?: boolean;
@@ -63,3 +67,7 @@ export interface PortalProps {
     mountContainer?: GetContainer;
     children: ReactElement;
 }
+
+export type PopupInstanceType = {
+    popupRef: React.MutableRefObject<HTMLDivElement>;
+};

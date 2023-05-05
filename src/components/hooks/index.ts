@@ -10,6 +10,7 @@ import useRefs from './useRefs';
 import useHeight from './useHeight';
 import useUpdateEffect from './useUpdateEffect';
 import useEventListener from './useEventListener';
+import useIsomorphicLayoutEffect from './use-isomorphic-layout-effect';
 
 export {
     // useRect,
@@ -24,6 +25,7 @@ export {
     useHeight,
     useUpdateEffect,
     useEventListener,
+    useIsomorphicLayoutEffect,
 };
 
 export default {
@@ -39,4 +41,5 @@ export default {
     useHeight,
     useUpdateEffect,
     useEventListener,
+    useIsomorphicLayoutEffect,
 };

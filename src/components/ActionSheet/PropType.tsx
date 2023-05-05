@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { BaseTypeProps } from '@/utils';
 
 export interface ActionSheetTabSourceProps {
     value: string;
@@ -16,8 +17,7 @@ export interface ActionSheetColumnRangeProps {
  * @param {rangeKey} string
  * @param {onClick} function
  **/
-
-export interface ActionSheetHeaderProps {
+export interface ActionSheetHeaderProps extends BaseTypeProps {
     tabSource?: Array<ActionSheetTabSourceProps>;
     onClick?: (item: ActionSheetTabSourceProps) => void;
 }
@@ -30,7 +30,7 @@ export interface ActionSheetHeaderProps {
  * @param {onClick} function 回调函数
  **/
 
-export interface ActionSheetColumnProps {
+export interface ActionSheetColumnProps extends BaseTypeProps {
     columnSource: Array<ActionSheetColumnRangeProps>;
     tabSource?: Array<ActionSheetTabSourceProps>;
     rangeKey?: string;
@@ -45,14 +45,16 @@ export interface ActionSheetColumnProps {
  * @param {onColumnItemClick} 选择器中的点击回调
  * @param {show} 是否显示
  * @param {title} 标题
+ * @param {closeable} 是否显示关闭图标
  * @param {onCancel} 点击空白处回调
  */
-export interface ActionSheetProps {
+export interface ActionSheetProps extends BaseTypeProps {
     tabSource?: Array<ActionSheetTabSourceProps>;
     columns: Array<ActionSheetColumnRangeProps>;
     onHeaderItemClick?: (item: ActionSheetTabSourceProps) => void;
     onColumnItemClick: (item: ActionSheetColumnRangeProps) => void;
     visible: boolean;
     title: string;
+    closeable: boolean;
     onCancel?: () => void;
 }

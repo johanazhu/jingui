@@ -17,6 +17,20 @@
     border-radius: 1rem 1rem 0 0;
     background-color: #fff;
     // transition: all 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+    // max-height: var(--rv-action-sheet-max-height);
+    // overflow: hidden;
+    // color: var(--rv-action-sheet-item-text-color);
+
+    &__header {
+        flex-shrink: 0;
+        // font-weight: var(--rv-font-weight-bold);
+        // font-size: var(--rv-action-sheet-header-font-size);
+        // line-height: var(--rv-action-sheet-header-height);
+        text-align: center;
+    }
+
     &__Header {
         min-width: 45px;
         margin-right: 10px;
@@ -45,7 +59,7 @@
         overflow: scroll;
         padding: 5px 0;
         height: 300px;
-        position: fixed;
+        // position: fixed;
         top: 88px;
         text-align: left;
         &-item {

@@ -58,6 +58,7 @@ const Overlay: FC<OverlayProps> = (props: any) => {
     const renderOverlay = () => {
         const _style: CSSProperties = {
             zIndex: zIndex !== undefined ? +zIndex : undefined,
+            touchAction: props.lockScroll && 'none',
             ...style,
             ...customStyle,
         };
@@ -76,7 +77,11 @@ const Overlay: FC<OverlayProps> = (props: any) => {
                 ref={nodeRef}
                 style={_style}
                 className={classes}
-                onClick={onClick}
+                onClick={(e) => {
+                    if (e.target === e.currentTarget) {
+                        onClick?.(e);
+                    }
+                }}
                 onTouchMove={props.lockScroll ? preventTouchMove : noop}
             >
                 {props.children}

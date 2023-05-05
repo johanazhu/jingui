@@ -14,6 +14,8 @@ export default () => {
     const [showPopup8, setShowPopup8] = useState(false);
     const [showPopup9, setShowPopup9] = useState(false);
     const [showPopup10, setShowPopup10] = useState(false);
+    const [showPopup11, setShowPopup11] = useState(false);
+    const [showPopup12, setShowPopup12] = useState(false);
     const popupRef = useRef();
 
     return (
@@ -178,6 +180,37 @@ export default () => {
                     closeIconPosition="bottom-right"
                     onClose={() => setShowPopup10(false)}
                 />
+            </DemoBlock>
+            <DemoBlock title="圆角弹窗" padding="" className="demo-jing-popup">
+                <Cell
+                    title="圆角弹窗"
+                    isLink
+                    onClick={() => setShowPopup11(true)}
+                />
+                <Popup
+                    visible={showPopup11}
+                    closeable
+                    style={{ height: '30%' }}
+                    position="bottom"
+                    round
+                    onClose={() => setShowPopup11(false)}
+                ></Popup>
+            </DemoBlock>
+            <DemoBlock title="标题弹窗" padding="" className="demo-jing-popup">
+                <Cell
+                    title="标题弹窗"
+                    isLink
+                    onClick={() => setShowPopup12(true)}
+                />
+                <Popup
+                    visible={showPopup12}
+                    closeable
+                    style={{ height: '60%' }}
+                    position="bottom"
+                    round
+                    title="我是标题之王"
+                    onClose={() => setShowPopup12(false)}
+                ></Popup>
             </DemoBlock>
         </>
     );

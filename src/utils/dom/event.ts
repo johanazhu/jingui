@@ -1,4 +1,4 @@
-import { TouchEvent } from 'react';
+import React, { ReactElement, TouchEvent } from 'react';
 
 export type EventHandler = (event: Event) => void;
 

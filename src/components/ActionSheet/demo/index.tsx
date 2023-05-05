@@ -11,7 +11,7 @@ const familyMemberList = [
 ];
 
 export default () => {
-    const [isShow, setIsShow] = useState(false);
+    const [visible, setIsVisible] = useState(false);
 
     return (
         <>
@@ -21,17 +21,20 @@ export default () => {
                 padding="0"
             >
                 <Cell
-                    title="弹窗提示"
+                    title="基础用法"
                     isLink
                     onClick={() => {
-                        setIsShow(true);
+                        setIsVisible(true);
                     }}
                 />
                 <ActionSheet
-                    show={isShow}
+                    visible={visible}
                     title="添加成员"
                     tabSource={[]}
                     columns={familyMemberList}
+                    onCancel={() => {
+                        setIsVisible(false);
+                    }}
                     onColumnItemClick={(current: any) => {
                         console.log('current', current);
                         // setRelationship(current.label);

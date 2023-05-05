@@ -25,7 +25,7 @@ specifiers:
   prettier: ^2.7.1
   react: ^18.2.0
   react-dom: ^18.2.0
-  react-transition-group: ^4.4.5
+  react-transition-group: 4.4.2
   swiper: ^9.2.4
   typescript: ^4.8.4
   yorkie: ^2.0.0
@@ -37,7 +37,7 @@ dependencies:
   lodash: 4.17.21
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
-  react-transition-group: 4.4.5_biqbaboplfbrettd7655fr4n2y
+  react-transition-group: 4.4.2_biqbaboplfbrettd7655fr4n2y
   swiper: 9.2.4
 
 devDependencies:
@@ -9520,8 +9520,8 @@ packages:
       tiny-warning: 1.0.3
     dev: true
 
-  /react-transition-group/4.4.5_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g==}
+  /react-transition-group/4.4.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-/RNYfRAMlZwDSr6z4zNKV6xu53/e2BuaBbGhbyYIXTrmgu/bGHzmqOs7mJSJBHy9Ud+ApHx3QjrkKSp1pxvlFg==}
     peerDependencies:
       react: '>=16.6.0'
       react-dom: '>=16.6.0'

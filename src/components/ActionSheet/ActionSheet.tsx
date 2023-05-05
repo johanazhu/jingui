@@ -1,20 +1,26 @@
 import React, { useState, useEffect, FC } from 'react';
+import classnames from 'classnames';
 import { Popup } from '../Popup';
 import Picker from '../Picker';
 import Column from './Column';
 import Header from './Header';
 import { ActionSheetProps } from './PropType';
+import { IconClose } from '../Icon';
+import classNames from 'classnames';
 
 const prefixCls = 'jing-actionsheet';
 
 const ActionSheet: FC<ActionSheetProps> = (props) => {
     const {
+        style,
+        className,
         tabSource,
         columns,
         onHeaderItemClick,
         onColumnItemClick,
         visible,
         title,
+        closeable,
         onCancel,
     } = props;
     const [isShow, setIsShow] = useState(visible);
@@ -23,41 +29,35 @@ const ActionSheet: FC<ActionSheetProps> = (props) => {
         setIsShow(visible);
     }, [visible]);
 
-    return (
-        // <Popup
-        //             visible={showPopup8}
-        //             closeable
-        //             style={{ height: '30%' }}
-        //             position="bottom"
-        //             onClose={() => setShowPopup8(false)}
-        //         />
-        // <Popup
-        //     visible={visible}
-        //     position="bottom"
-        //     onClose={() => setIsShow(false)}
-        //     style={{ height: '60vh' }}
-        // >
+    const classes = classnames(prefixCls, className);
 
-        // </Popup>
-        // popup={{
-        //     round: true,
-        //   }}
-        //   value={value}
-        //   title='标题'
-        //   columns={columns}
-        //   onConfirm={setValue}
-        <Picker
-            title={title}
-            columns={columns}
-            // columns={normalColumns}
-            // onConfirm={() => setShowPopup(false)}
-            // onCancel={() => setShowPopup(false)}
-            // onChange={(value: any, index: any) => {
-            //     console.log('value', value);
-            //     setCity(value);
-            // }}
+    // const renderHeader = () => {
+    //     if (!title) return null;
+    //     return (
+    //         <div className={`${prefixCls}__header`}>
+    //             {title}
+    //             {closeable && (
+    //                 <IconClose
+    //                     className={`${prefixCls}__clear`}
+    //                     onClick={onCancel}
+    //                 />
+    //             )}
+    //         </div>
+    //     );
+    // };
+
+    return (
+        <Popup
+            // visible={visible}
+            className={`${prefixCls}__wrapper`}
+            position="bottom"
+            // {...pick(props, sharedPopupProps)}
+            onClose={onCancel}
+            round
+            {...props}
         >
-            <div className={prefixCls}>
+            <div className={classes} style={style}>
+                {/* {renderHeader()} */}
                 {tabSource && (
                     <Header
                         tabSource={tabSource}
@@ -75,12 +75,13 @@ const ActionSheet: FC<ActionSheetProps> = (props) => {
                     }}
                 />
             </div>
-        </Picker>
+        </Popup>
     );
 };
 
 ActionSheet.defaultProps = {
     visible: true,
+    closeable: true,
 };
 
 export default ActionSheet;
