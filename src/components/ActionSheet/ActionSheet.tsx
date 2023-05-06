@@ -22,11 +22,11 @@ const ActionSheet: FC<ActionSheetProps> = (props) => {
         defaultCurrent,
         onCancel,
     } = props;
-    const [isShow, setIsShow] = useState(visible);
+    // const [isShow, setIsShow] = useState(visible);
 
-    useEffect(() => {
-        setIsShow(visible);
-    }, [visible]);
+    // useEffect(() => {
+    //     setIsShow(visible);
+    // }, [visible]);
 
     const classes = classnames(prefixCls, className);
 

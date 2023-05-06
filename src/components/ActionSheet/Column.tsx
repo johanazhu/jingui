@@ -10,20 +10,20 @@ const prefixCls = 'jing-actionsheet__column';
 
 const Column: FC<ActionSheetColumnProps> = (props) => {
     const columnRef = useRef<any>([]);
-    const { columnSource, tabSource, onClick } = props;
+    const { defaultCurrent, columnSource, tabSource, onClick } = props;
     const headerSource = tabSource && tabSource.map((item: any) => item.value);
 
     const [currentItem, setCurrentItem] = useState('');
 
     useEffect(() => {
-        if (columnRef?.current) {
-            if (columnRef?.current.scroll) {
-                columnRef?.current.scroll({
-                    top: columnRef?.current.scrollHeight / 2 - 150,
-                });
-            }
-        }
+        columnRef?.current?.scroll({
+            top: columnRef?.current.scrollHeight / 2 - 150,
+        });
     }, []);
+
+    useEffect(() => {
+        defaultCurrent && setCurrentItem(defaultCurrent);
+    }, [defaultCurrent]);
 
     return (
         <div className={`${prefixCls}`} ref={columnRef}>
@@ -38,7 +38,7 @@ const Column: FC<ActionSheetColumnProps> = (props) => {
                         })}
                         key={item.value + key}
                         onClick={() => {
-                            columnRef?.current.scroll({ top: 0 });
+                            // columnRef?.current.scroll({ top: 0 });
                             setCurrentItem(item.value);
                             onClick(item);
                         }}
