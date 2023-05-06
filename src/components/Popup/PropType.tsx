@@ -16,7 +16,8 @@ export type PopupCloseIconPosition =
  * @param {overlay} boolean                         // 是否展示遮罩层
  * @param {overlayType} string                      // 遮罩层的类型，可选值 transparent, normal
  * @param {round} boolean                           // 是否显示圆角
- * @param {title} string                           // 弹出层标题
+ * @param {title} string                            // 弹出层标题
+ * @param {destroyOnClose} boolean                  // 关闭时销毁 Popup 里的子元素
  * @param {lockScroll} boolean                      // 是否锁定背景滚动
  * @param {safeAreaInsetBottom} boolean             // 是否开启底部安全区适配
  * @param {closeOnClickOverlay} boolean             // 是否在点击遮罩层后关闭
@@ -42,6 +43,7 @@ export interface PopupProps extends BaseTypeProps {
     overlayType?: 'normal' | 'transparent';
     round?: boolean;
     title?: string;
+    destroyOnClose?: boolean;
     lockScroll?: boolean;
     safeAreaInsetBottom?: boolean;
     closeOnClickOverlay?: boolean;

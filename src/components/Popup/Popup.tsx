@@ -32,6 +32,7 @@ const Popup = forwardRef<PopupInstanceType, PopupProps>((props, ref) => {
         duration,
         round,
         title,
+        destroyOnClose,
         lockScroll,
         safeAreaInsetBottom,
         closeable,
@@ -183,7 +184,7 @@ const Popup = forwardRef<PopupInstanceType, PopupProps>((props, ref) => {
                 timeout={duration || 300}
                 classNames={name}
                 mountOnEnter
-                unmountOnExit
+                unmountOnExit={destroyOnClose}
                 onEnter={open}
                 onEntered={onOpened}
                 onExited={() => {
@@ -193,6 +194,25 @@ const Popup = forwardRef<PopupInstanceType, PopupProps>((props, ref) => {
             >
                 {renderPopup()}
             </CSSTransition>
+            //     <CSSTransition
+            //     in={visible}
+            //     /**
+            //      * https://github.com/reactjs/react-transition-group/pull/559
+            //      */
+            //     nodeRef={popupRef}
+            //     timeout={duration}
+            //     classNames={transition || name}
+            //     mountOnEnter={!forceRender}
+            //     unmountOnExit={destroyOnClose}
+            //     onEnter={open}
+            //     onEntered={props.onOpened}
+            //     onExited={() => {
+            //       setAnimatedVisible(false)
+            //       props.onClosed?.()
+            //     }}
+            //   >
+            //     {renderPopup()}
+            //   </CSSTransition>
         );
     };
 
@@ -219,6 +239,7 @@ Popup.defaultProps = {
     mountContainer: document.body,
     closeOnClickOverlay: true,
     safeAreaInsetBottom: false,
+    destroyOnClose: false,
     lockScroll: true,
     overlayType: 'normal',
     closeIconPosition: 'top-right',

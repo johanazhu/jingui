@@ -30,6 +30,7 @@ group:
 | overlayType         | 遮罩层的类型，可选值 transparent, normal                           | string                          | normal    |
 | round               | 是否显示圆角                                                       | boolean                         | false     |
 | title               | 弹出层标题                                                         | string                          | -         |
+| destroyOnClose      | 关闭时销毁 Popup 里的子元素                                        | boolean                         | false     |
 | lockScroll          | 是否锁定背景滚动                                                   | boolean                         | true      |
 | safeAreaInsetBottom | 是否开启底部安全区适配                                             | boolean                         | false     |
 | closeOnClickOverlay | 是否在点击遮罩层后关闭                                             | boolean                         | true      |
