@@ -1,73 +1,93 @@
 @import './var.scss';
 
 :root {
-    --divider-margin: #{$divider-margin};
-    --divider-text-color: #{$divider-text-color};
-    --divider-font-size: #{$divider-font-size};
-    --divider-line-height: #{$divider-line-height};
-    --divider-border-color: #{$divider-border-color};
-    --divider-border-width: #{$divider-border-width};
-    --divider-content-padding: #{$divider-content-padding};
-    --divider-content-left-width: #{$divider-content-left-width};
-    --divider-content-right-width: #{$divider-content-right-width};
+    --actionsheet-height: #{$actionsheet-height};
+    --actionsheet-header-height: #{$actionsheet-header-height};
+    --actionsheet-header-span-height: #{$actionsheet-header-span-height};
+    --actionsheet-header-span-font-size: #{$actionsheet-header-span-font-size};
+    --actionsheet-active-color: #{$actionsheet-active-color};
+    --actionsheet-column-font-size: #{$actionsheet-column-font-size};
+    --actionsheet-column-height: #{$actionsheet-column-height};
 }
 
 .jing-actionsheet {
-    height: 60vh;
-    border-radius: 1rem 1rem 0 0;
-    background-color: #fff;
-    // transition: all 0.3s ease-out;
+    height: var(--actionsheet-height);
     display: flex;
     flex-direction: column;
-    // max-height: var(--rv-action-sheet-max-height);
-    // overflow: hidden;
-    // color: var(--rv-action-sheet-item-text-color);
+    overflow: hidden;
 
     &__header {
-        flex-shrink: 0;
-        // font-weight: var(--rv-font-weight-bold);
-        // font-size: var(--rv-action-sheet-header-font-size);
-        // line-height: var(--rv-action-sheet-header-height);
-        text-align: center;
-    }
-
-    &__Header {
-        min-width: 45px;
-        margin-right: 10px;
-        height: 45px;
-        line-height: 45px;
-        text-align: center;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        color: #646464;
-        &.on {
-            color: #26a4a4;
-        }
+        display: flex;
+        min-height: var(--actionsheet-header-span-height);
+        padding: 0 var(--horizontal-gap) 0 calc(var(--horizontal-gap) * 2);
+        top: var(--actionsheet-header-height);
         &-item {
-            position: relative;
-            display: inline-block;
-            height: 42px;
-            line-height: 42px;
+            min-width: var(--actionsheet-header-height);
+            margin-right: var(--horizontal-gap);
+            height: var(--actionsheet-header-height);
+            line-height: var(--actionsheet-header-height);
+            text-align: center;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: var(--color-black-2);
+            span {
+                position: relative;
+                display: inline-block;
+                height: var(--actionsheet-header-span-height);
+                line-height: var(--actionsheet-header-span-height);
+                font-size: var(--actionsheet-header-span-font-size);
+            }
+            &.on {
+                color: var(--actionsheet-active-color);
+                span {
+                    &:after {
+                        content: '';
+                        display: block;
+                        width: 100%;
+                        height: 3px;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        background: var(--actionsheet-active-color);
+                        z-index: 2;
+                        border-radius: var(--border-radius-lg);
+                    }
+                }
+            }
         }
     }
 
-    &__Column {
+    &__column {
         width: 100%;
         font-size: 14px;
         -webkit-overflow-scrolling: touch;
-        overflow: scroll;
+        overflow-y: scroll;
         padding: 5px 0;
-        height: 300px;
-        // position: fixed;
+        height: var(--actionsheet-column-height);
         top: 88px;
         text-align: left;
         &-item {
             position: relative;
-            padding: 10px 0 10px 20px;
-            border-bottom: 1px solid #ebebeb;
+            padding: var(--horizontal-gap) 0 var(--horizontal-gap)
+                calc(var(--horizontal-gap) * 2);
+            border-bottom: 1px solid var(--border-color);
             &.on {
-                color: #26a4a4;
+                color: var(--actionsheet-active-color);
+                .checkout {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    right: 1rem;
+                    top: 50%;
+                    margin-top: -10px;
+                }
+            }
+            &:last-child {
+                margin-bottom: 30px;
             }
         }
     }

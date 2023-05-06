@@ -19,8 +19,7 @@ const ActionSheet: FC<ActionSheetProps> = (props) => {
         onHeaderItemClick,
         onColumnItemClick,
         visible,
-        title,
-        closeable,
+        defaultCurrent,
         onCancel,
     } = props;
     const [isShow, setIsShow] = useState(visible);
@@ -31,33 +30,15 @@ const ActionSheet: FC<ActionSheetProps> = (props) => {
 
     const classes = classnames(prefixCls, className);
 
-    // const renderHeader = () => {
-    //     if (!title) return null;
-    //     return (
-    //         <div className={`${prefixCls}__header`}>
-    //             {title}
-    //             {closeable && (
-    //                 <IconClose
-    //                     className={`${prefixCls}__clear`}
-    //                     onClick={onCancel}
-    //                 />
-    //             )}
-    //         </div>
-    //     );
-    // };
-
     return (
         <Popup
-            // visible={visible}
             className={`${prefixCls}__wrapper`}
             position="bottom"
-            // {...pick(props, sharedPopupProps)}
             onClose={onCancel}
             round
             {...props}
         >
             <div className={classes} style={style}>
-                {/* {renderHeader()} */}
                 {tabSource && (
                     <Header
                         tabSource={tabSource}
@@ -68,6 +49,7 @@ const ActionSheet: FC<ActionSheetProps> = (props) => {
                     />
                 )}
                 <Column
+                    defaultCurrent={defaultCurrent}
                     tabSource={tabSource}
                     columnSource={columns}
                     onClick={(currentItem) => {

@@ -1,12 +1,10 @@
 @import '../../Style/variable';
 
 // Divider
-$divider-margin: var(--padding-md) 0;
-$divider-text-color: var(--color-black-4);
-$divider-font-size: var(--font-size-md);
-$divider-line-height: 24px;
-$divider-border-color: var(--border-color);
-$divider-border-width: var(--border-width-base);
-$divider-content-padding: var(--padding-md);
-$divider-content-left-width: 10%;
-$divider-content-right-width: 10%;
+$actionsheet-height: 60vh;
+$actionsheet-header-height: 45px;
+$actionsheet-header-span-height: 42px;
+$actionsheet-header-span-font-size: var(--font-size-md);
+$actionsheet-active-color: var(--primary-color);
+$actionsheet-column-font-size: var(--font-size-md);
+$actionsheet-column-height: 300px;

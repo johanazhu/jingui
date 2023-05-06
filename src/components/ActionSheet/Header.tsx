@@ -2,7 +2,7 @@ import React, { useState, useEffect, FC } from 'react';
 import classnames from 'classnames';
 import { ActionSheetHeaderProps, ActionSheetTabSourceProps } from './PropType';
 
-const prefixCls = 'jing-actionsheet';
+const prefixCls = 'jing-actionsheet__header';
 
 const Header: FC<ActionSheetHeaderProps> = (props) => {
     const { tabSource, onClick } = props;
@@ -20,12 +20,12 @@ const Header: FC<ActionSheetHeaderProps> = (props) => {
     }, [tabSource]);
 
     return (
-        <div className={`${prefixCls}__Header`}>
+        <div className={`${prefixCls}`}>
             {tabSource &&
                 tabSource.map((item: ActionSheetTabSourceProps) => {
                     return (
                         <div
-                            className={classnames(`${prefixCls}__Header-item`, {
+                            className={classnames(`${prefixCls}-item`, {
                                 on: currentValue === item.value,
                             })}
                             key={item.value}
@@ -39,7 +39,7 @@ const Header: FC<ActionSheetHeaderProps> = (props) => {
                     );
                 })}
             <div
-                className={classnames(`${prefixCls}__Header-item`, {
+                className={classnames(`${prefixCls}-item`, {
                     on: currentValue === '请选择',
                 })}
                 onClick={() => {

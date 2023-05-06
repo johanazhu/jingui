@@ -28,9 +28,11 @@ export interface ActionSheetHeaderProps extends BaseTypeProps {
  * @param {tabSource} Array<header的数据源>;
  * @param {rangeKey} string 单个选择器的key
  * @param {onClick} function 回调函数
+ * @param {defaultCurrent} string 默认选择
  **/
 
 export interface ActionSheetColumnProps extends BaseTypeProps {
+    defaultCurrent?: string;
     columnSource: Array<ActionSheetColumnRangeProps>;
     tabSource?: Array<ActionSheetTabSourceProps>;
     rangeKey?: string;
@@ -39,6 +41,7 @@ export interface ActionSheetColumnProps extends BaseTypeProps {
 
 /**
  * 从底部弹起的滚动选择器（高仿京东地址选择器）
+ * @param {defaultCurrent} string 默认选择
  * @param {tabSource} Array 头部的数据源
  * @param {columnSource} Array 选择器的数据
  * @param {onHeaderItemClick} 头部中的点击回调
@@ -49,6 +52,7 @@ export interface ActionSheetColumnProps extends BaseTypeProps {
  * @param {onCancel} 点击空白处回调
  */
 export interface ActionSheetProps extends BaseTypeProps {
+    defaultCurrent?: string;
     tabSource?: Array<ActionSheetTabSourceProps>;
     columns: Array<ActionSheetColumnRangeProps>;
     onHeaderItemClick?: (item: ActionSheetTabSourceProps) => void;
