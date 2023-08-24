@@ -22,6 +22,10 @@
 .jing-tabs {
     position: relative;
 
+    &__content {
+        overflow: hidden;
+    }
+
     &__wrap {
         height: var(--tabs-line-height);
         overflow: hidden;
