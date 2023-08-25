@@ -1,10 +1,12 @@
 @import './var.scss';
+@import '../../Style/mixin/index.scss';
 
 :root {
     --popup-background-color: #{$popup-background-color};
     --popup-transition: 1000ms;
     --popup-close-icon-z-index: #{$popup-close-icon-z-index};
-    --popup-close-icon-margin: #{$popup-close-icon-margin};
+    --popup-close-icon-margin-vertical: #{$popup-close-icon-margin-vertical};
+    --popup-close-icon-margin-horizontal: #{$popup-close-icon-margin-horizontal};
     --popup-round-border-radius: #{$popup-round-border-radius};
 
     --popup-title-color: 'inherit';
@@ -116,32 +118,39 @@
         cursor: pointer;
 
         &--top-left {
-            top: var(--popup-close-icon-margin);
-            left: var(--popup-close-icon-margin);
+            top: var(--popup-close-icon-margin-horizontal);
+            left: var(--popup-close-icon-margin-vertical);
         }
 
         &--top-right {
-            top: var(--popup-close-icon-margin);
-            right: var(--popup-close-icon-margin);
+            top: var(--popup-close-icon-margin-horizontal);
+            right: var(--popup-close-icon-margin-vertical);
         }
 
         &--bottom-left {
-            bottom: var(--popup-close-icon-margin);
-            left: var(--popup-close-icon-margin);
+            bottom: var(--popup-close-icon-margin-horizontal);
+            left: var(--popup-close-icon-margin-vertical);
         }
 
         &--bottom-right {
-            bottom: var(--popup-close-icon-margin);
-            right: var(--popup-close-icon-margin);
+            bottom: var(--popup-close-icon-margin-horizontal);
+            right: var(--popup-close-icon-margin-vertical);
         }
     }
 
     &__title {
-        margin: 20px 12px;
+        position: relative;
+        margin: 0 16px;
+        padding: 14px 0;
         font-weight: 500;
         color: var(--popup-title-color);
         font-size: var(--popup-title-font-size);
         line-height: var(--popup-title-font-size);
         text-align: center;
+        &::after {
+            // var(--border-color)
+            // left: var(--cell-vertical-padding) !important;
+            @include hairline-bottom(var(--border-color), 0, 0);
+        }
     }
 }

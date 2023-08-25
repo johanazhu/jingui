@@ -19,6 +19,7 @@ group:
 | 属性     | 说明                                                                                    | 类型      | 默认值 |
 | -------- | --------------------------------------------------------------------------------------- | --------- | ------ |
 | title    | 一级标题                                                                                | string    | -      |
+| subTitle | 二级标题                                                                                | string    | -      |
 | status   | 状态，可选 `success、fail、empty、cancel、network、right、waiting、countdown、404、500` | string    | -      |
 | place    | 状态，可选 `left/center/right`                                                          | string    | center |
 | extra    | 额外自定义区域                                                                          | ReactNode | -      |

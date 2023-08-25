@@ -27,7 +27,7 @@ var Overlay = function Overlay(props) {
     visible = props.visible,
     style = props.style,
     customStyle = props.customStyle,
-    onClick = props.onClick;
+    _onClick = props.onClick;
   var _useLockScroll = useLockScroll(function () {
       return props.lockScroll;
     }),
@@ -58,7 +58,8 @@ var Overlay = function Overlay(props) {
   }, []);
   var renderOverlay = function renderOverlay() {
     var _style = _objectSpread(_objectSpread({
-      zIndex: zIndex !== undefined ? +zIndex : undefined
+      zIndex: zIndex !== undefined ? +zIndex : undefined,
+      touchAction: props.lockScroll && 'none'
     }, style), customStyle);
     var classes = classnames(className, prefixCls, _defineProperty({}, "".concat(prefixCls, "--").concat(type), !!type));
     if (isDef(duration)) {
@@ -69,7 +70,11 @@ var Overlay = function Overlay(props) {
       ref: nodeRef,
       style: _style,
       className: classes,
-      onClick: onClick,
+      onClick: function onClick(e) {
+        if (e.target === e.currentTarget) {
+          _onClick === null || _onClick === void 0 ? void 0 : _onClick(e);
+        }
+      },
       onTouchMove: props.lockScroll ? preventTouchMove : noop
     }, props.children);
   };

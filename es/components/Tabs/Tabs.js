@@ -53,10 +53,14 @@ var Tabs = function Tabs(props) {
     scrollable = count > swipeThreshold || !ellipsis;
   }
   useEffect(function () {
-    if (tabsTitleRef && tabsTitleRef.current) {
+    if (tabsTitleRef && tabsTitleRef.current && currentIndex) {
+      console.log(' tabsTitleRef.current', tabsTitleRef.current);
+      console.log('currentIndex', tabsTitleRef.current[currentIndex]);
       var _tabsTitleRef$current = tabsTitleRef.current[currentIndex],
-        offsetLeft = _tabsTitleRef$current.offsetLeft,
-        offsetWidth = _tabsTitleRef$current.offsetWidth;
+        _tabsTitleRef$current2 = _tabsTitleRef$current.offsetLeft,
+        offsetLeft = _tabsTitleRef$current2 === void 0 ? 0 : _tabsTitleRef$current2,
+        _tabsTitleRef$current3 = _tabsTitleRef$current.offsetWidth,
+        offsetWidth = _tabsTitleRef$current3 === void 0 ? 0 : _tabsTitleRef$current3;
       var navDom = tabsNavRef.current;
       var left = offsetLeft + offsetWidth / 2;
       var to = offsetLeft - (navDom.offsetWidth - offsetWidth) / 2;

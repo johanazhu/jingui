@@ -10,9 +10,10 @@ import useRefs from "./useRefs";
 import useHeight from "./useHeight";
 import useUpdateEffect from "./useUpdateEffect";
 import useEventListener from "./useEventListener";
+import useIsomorphicLayoutEffect from "./use-isomorphic-layout-effect";
 export {
 // useRect,
-useDebounce, useDebounceFn, useThrottle, useThrottleFn, useTouch, useRefState, useSetState, useRefs, useHeight, useUpdateEffect, useEventListener };
+useDebounce, useDebounceFn, useThrottle, useThrottleFn, useTouch, useRefState, useSetState, useRefs, useHeight, useUpdateEffect, useEventListener, useIsomorphicLayoutEffect };
 export default {
   // useRect,
   useDebounce: useDebounce,
@@ -25,5 +26,6 @@ export default {
   useRefs: useRefs,
   useHeight: useHeight,
   useUpdateEffect: useUpdateEffect,
-  useEventListener: useEventListener
+  useEventListener: useEventListener,
+  useIsomorphicLayoutEffect: useIsomorphicLayoutEffect
 };

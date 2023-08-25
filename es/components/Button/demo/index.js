@@ -14,14 +14,27 @@ export default (function () {
   }, "\u6B21\u8272\u6309\u94AE"), /*#__PURE__*/React.createElement(Button, null, "\u9ED8\u8BA4\u6309\u94AE")), /*#__PURE__*/React.createElement(DemoBlock, {
     title: "\u6734\u7D20\u6309\u94AE",
     className: "demo-jing-button",
-    padding: "10px 10px 0"
+    padding: "10px 8px 0",
+    background: "#f2f6f9"
   }, /*#__PURE__*/React.createElement(Button, {
     plain: true,
     type: "primary"
-  }, "\u6734\u7D20\u6309\u94AE"), /*#__PURE__*/React.createElement(Button, {
+  }, "\u4E3B\u8272\u6309\u94AE"), /*#__PURE__*/React.createElement(Button, {
     plain: true,
     type: "second-primary"
-  }, "\u6734\u7D20\u6309\u94AE")), /*#__PURE__*/React.createElement(DemoBlock, {
+  }, "\u6B21\u8272\u6309\u94AE"), /*#__PURE__*/React.createElement(Button, {
+    plain: true
+  }, "\u6734\u7D20\u6309\u94AE"), /*#__PURE__*/React.createElement(Button, {
+    plain: true,
+    style: {
+      color: "var(--primary-color)"
+    }
+  }, "\u53D8\u8272\u6309\u94AE"), /*#__PURE__*/React.createElement(Button, {
+    plain: true,
+    style: {
+      color: "var(--second-primary-color)"
+    }
+  }, "\u53D8\u8272\u6309\u94AE")), /*#__PURE__*/React.createElement(DemoBlock, {
     title: "\u7981\u7528\u72B6\u6001",
     className: "demo-jing-button",
     padding: "10px 10px 0"
@@ -67,15 +80,14 @@ export default (function () {
     round: true
   }, "\u8FF7\u4F60")), /*#__PURE__*/React.createElement(DemoBlock, {
     title: "\u5757\u7EA7\u5143\u7D20",
-    className: "demo-jing-button",
-    padding: "10px 10px 0"
+    className: "demo-jing-button"
   }, /*#__PURE__*/React.createElement(Button, {
     type: "primary",
     block: true
   }, "\u5757\u7EA7\u5143\u7D20")), /*#__PURE__*/React.createElement(DemoBlock, {
     title: "\u81EA\u5B9A\u4E49\u989C\u8272",
     className: "demo-jing-button",
-    padding: "10px 10px 0"
+    padding: "10px 8px 0"
   }, /*#__PURE__*/React.createElement(Button, {
     color: "#7232dd"
   }, "\u5355\u8272\u6309\u94AE"), /*#__PURE__*/React.createElement(Button, {
@@ -85,8 +97,7 @@ export default (function () {
     color: "linear-gradient(to right, #ff6034, #ee0a24)"
   }, "\u6E10\u53D8\u6309\u94AE")), /*#__PURE__*/React.createElement(DemoBlock, {
     title: "\u70B9\u51FB\u4E8B\u4EF6",
-    className: "demo-jing-button",
-    padding: "10px 10px 0"
+    className: "demo-jing-button"
   }, /*#__PURE__*/React.createElement(Button, {
     type: "primary",
     block: true,
@@ -94,10 +105,10 @@ export default (function () {
       return alert('我错了');
     }
   }, "\u6709\u672C\u4E8B\u5C31\u6765\u70B9\u6211\u554A")), /*#__PURE__*/React.createElement(DemoBlock, {
-    title: "\u9009\u9879\u72B6\u6001"
+    title: "\u6309\u94AE\u7EC4"
   }, /*#__PURE__*/React.createElement(Button.Group, null, /*#__PURE__*/React.createElement(Button, {
     type: "primary"
-  }, "\u6211\u662F\u6309\u94AE")), /*#__PURE__*/React.createElement(Button.Group, {
+  }, "\u5360\u4F4D\u7F6E")), /*#__PURE__*/React.createElement(Button.Group, {
     type: "fixed-bottom"
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -107,7 +118,7 @@ export default (function () {
     }
   }, /*#__PURE__*/React.createElement(IconCustomer, {
     size: "auto",
-    color: "green"
+    color: "default"
   })), /*#__PURE__*/React.createElement(Button.Group, {
     style: {
       flex: 1

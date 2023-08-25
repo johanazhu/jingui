@@ -11,10 +11,14 @@
 }
 
 .jing-actionsheet {
-    height: var(--actionsheet-height);
     display: flex;
     flex-direction: column;
     overflow: hidden;
+
+    &__wrapper {
+        height: var(--actionsheet-height);
+        overflow: hidden;
+    }
 
     &__header {
         display: flex;

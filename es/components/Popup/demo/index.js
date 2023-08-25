@@ -52,6 +52,14 @@ export default (function () {
     _useState22 = _slicedToArray(_useState21, 2),
     showPopup10 = _useState22[0],
     setShowPopup10 = _useState22[1];
+  var _useState23 = useState(false),
+    _useState24 = _slicedToArray(_useState23, 2),
+    showPopup11 = _useState24[0],
+    setShowPopup11 = _useState24[1];
+  var _useState25 = useState(false),
+    _useState26 = _slicedToArray(_useState25, 2),
+    showPopup12 = _useState26[0],
+    setShowPopup12 = _useState26[1];
   var popupRef = useRef();
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(DemoBlock, {
     title: "\u57FA\u672C\u7528\u6CD5",
@@ -280,6 +288,49 @@ export default (function () {
     closeIconPosition: "bottom-right",
     onClose: function onClose() {
       return setShowPopup10(false);
+    }
+  })), /*#__PURE__*/React.createElement(DemoBlock, {
+    title: "\u5706\u89D2\u5F39\u7A97",
+    padding: "",
+    className: "demo-jing-popup"
+  }, /*#__PURE__*/React.createElement(Cell, {
+    title: "\u5706\u89D2\u5F39\u7A97",
+    isLink: true,
+    onClick: function onClick() {
+      return setShowPopup11(true);
+    }
+  }), /*#__PURE__*/React.createElement(Popup, {
+    visible: showPopup11,
+    closeable: true,
+    style: {
+      height: '30%'
+    },
+    position: "bottom",
+    round: true,
+    onClose: function onClose() {
+      return setShowPopup11(false);
+    }
+  })), /*#__PURE__*/React.createElement(DemoBlock, {
+    title: "\u6807\u9898\u5F39\u7A97",
+    padding: "",
+    className: "demo-jing-popup"
+  }, /*#__PURE__*/React.createElement(Cell, {
+    title: "\u6807\u9898\u5F39\u7A97",
+    isLink: true,
+    onClick: function onClick() {
+      return setShowPopup12(true);
+    }
+  }), /*#__PURE__*/React.createElement(Popup, {
+    visible: showPopup12,
+    closeable: true,
+    style: {
+      height: '60%'
+    },
+    position: "bottom",
+    round: true,
+    title: "\u6211\u662F\u6807\u9898\u4E4B\u738B",
+    onClose: function onClose() {
+      return setShowPopup12(false);
     }
   })));
 });

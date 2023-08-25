@@ -203,3 +203,9 @@ body {
     margin: 0;
     font-family: var(--base-font-family);
 }
+
+// 隐藏滚动条
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}

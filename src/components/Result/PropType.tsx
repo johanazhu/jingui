@@ -10,6 +10,7 @@ import {
     JqbRight,
     JqbWaiting,
     JqbCountdown,
+    JqbAddress,
     JqbError404,
     JqbError500,
 } from './resultStatus';
@@ -23,6 +24,7 @@ export type ResultStatus =
     | 'right'
     | 'waiting'
     | 'countdown'
+    | 'address'
     | '404'
     | '500';
 
@@ -35,6 +37,7 @@ export const ExceptionMap = {
     right: JqbRight,
     waiting: JqbWaiting,
     countdown: JqbCountdown,
+    address: JqbAddress,
     '404': JqbError404,
     '500': JqbError500,
 };
@@ -46,6 +49,7 @@ export type ResultPlace = 'left' | 'center' | 'right';
 /**
  * Result 结果
  * @param {title} string                            // 一级标题
+ * @param {subTitle} string                         // 二级标题
  * @param {status} ResultStatus                     // 状态
  * @param {place} ResultPlace                       // 内容对齐方式
  * @param {extra} ReactNode                         // 额外自定义区域
@@ -53,6 +57,7 @@ export type ResultPlace = 'left' | 'center' | 'right';
  **/
 export interface ResultProps extends BaseTypeProps {
     title?: string;
+    subTitle?: string;
     status?: ResultStatus;
     place?: ResultPlace;
     extra?: ReactNode;

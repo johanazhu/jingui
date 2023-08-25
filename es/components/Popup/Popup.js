@@ -10,24 +10,27 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i.return && (_r = _i.return(), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-import React, { useState, useEffect, useMemo, useRef, memo } from 'react';
+import React, { useState, useMemo, useRef, forwardRef, memo } from 'react';
 import classnames from 'classnames';
 import { CSSTransition } from 'react-transition-group';
 import Overlay from "../Overlay";
 import Portal from "./Portal";
 import { IconClose } from "../Icon";
 import { isDef } from "../../utils";
+import { useIsomorphicLayoutEffect } from "../hooks";
 var prefixCls = 'jing-popup';
 var globalZIndex = 2000;
-var Popup = function Popup(props) {
+var Popup = /*#__PURE__*/forwardRef(function (props, ref) {
   var _props$zIndex;
   var className = props.className,
     style = props.style,
-    visible = props.visible,
     position = props.position,
     overlay = props.overlay,
     overlayType = props.overlayType,
     duration = props.duration,
+    round = props.round,
+    title = props.title,
+    destroyOnClose = props.destroyOnClose,
     lockScroll = props.lockScroll,
     safeAreaInsetBottom = props.safeAreaInsetBottom,
     closeable = props.closeable,
@@ -41,17 +44,25 @@ var Popup = function Popup(props) {
     onClick = props.onClick,
     onClickCloseIcon = props.onClickCloseIcon,
     mountContainer = props.mountContainer;
+  var opened = useRef(false);
   var popupRef = useRef(null);
   var zIndex = useRef((_props$zIndex = props.zIndex) !== null && _props$zIndex !== void 0 ? _props$zIndex : globalZIndex);
-  var _useState = useState(visible),
+  var _useState = useState(props.visible),
     _useState2 = _slicedToArray(_useState, 2),
-    animatedVisible = _useState2[0],
-    setAnimatedVisible = _useState2[1];
-  useEffect(function () {
+    visible = _useState2[0],
+    setVisible = _useState2[1];
+  var _useState3 = useState(visible),
+    _useState4 = _slicedToArray(_useState3, 2),
+    animatedVisible = _useState4[0],
+    setAnimatedVisible = _useState4[1];
+  useIsomorphicLayoutEffect(function () {
     if (visible) {
       setAnimatedVisible(true);
     }
   }, [visible]);
+  useIsomorphicLayoutEffect(function () {
+    setVisible(props.visible);
+  }, [props.visible]);
   var _style = useMemo(function () {
     var initStyle = _objectSpread({
       zIndex: zIndex.current
@@ -61,23 +72,33 @@ var Popup = function Popup(props) {
       initStyle[key] = "".concat(duration, "ms");
     }
     return initStyle;
-  }, [zIndex.current, style, duration]);
+  }, [zIndex.current, position, style, duration]);
+  var renderTitle = function renderTitle() {
+    if (title) {
+      return /*#__PURE__*/React.createElement("div", {
+        className: classnames("".concat(prefixCls, "__title"))
+      }, title);
+    }
+    return null;
+  };
   var open = function open() {
     if (props.zIndex !== undefined) {
       zIndex.current = +props.zIndex;
     } else {
       zIndex.current = globalZIndex++;
     }
+    opened.current = true;
     onOpen === null || onOpen === void 0 ? void 0 : onOpen();
   };
   var onClickOverlay = function onClickOverlay(event) {
     var _props$onClickOverlay;
     (_props$onClickOverlay = props.onClickOverlay) === null || _props$onClickOverlay === void 0 ? void 0 : _props$onClickOverlay.call(props, event);
     if (closeOnClickOverlay) {
+      opened.current = false;
       onClose === null || onClose === void 0 ? void 0 : onClose();
     }
   };
-  var OverlayRender = function OverlayRender() {
+  var renderOverlay = function renderOverlay() {
     if (overlay) {
       return /*#__PURE__*/React.createElement(Overlay, {
         visible: visible,
@@ -107,7 +128,7 @@ var Popup = function Popup(props) {
   };
   var renderPopup = function renderPopup() {
     var _classnames;
-    var classes = classnames(className, prefixCls, (_classnames = {}, _defineProperty(_classnames, "".concat(prefixCls, "--").concat(position), position), _defineProperty(_classnames, 'iphonex-extra-height', safeAreaInsetBottom), _classnames));
+    var classes = classnames(className, prefixCls, (_classnames = {}, _defineProperty(_classnames, "".concat(prefixCls, "--").concat(position), position), _defineProperty(_classnames, "".concat(prefixCls, "--round"), round), _defineProperty(_classnames, 'iphonex-extra-height', safeAreaInsetBottom), _classnames));
     return /*#__PURE__*/React.createElement("div", {
       ref: popupRef,
       style: _objectSpread(_objectSpread({}, _style), {}, {
@@ -115,42 +136,65 @@ var Popup = function Popup(props) {
       }),
       className: classes,
       onClick: onClick
-    }, children, renderCloseIcon());
+    }, renderTitle(), children, renderCloseIcon());
   };
   var renderTransition = function renderTransition() {
-    var classname = position === 'center' ? 'jing-fade' : "jing-popup-slide-".concat(position);
+    var name = position === 'center' ? 'jing-fade' : "jing-popup-slide-".concat(position);
     return /*#__PURE__*/React.createElement(CSSTransition, {
       in: visible,
       nodeRef: popupRef,
-      timeout: duration,
-      classNames: classname,
+      timeout: duration || 300,
+      classNames: name,
       mountOnEnter: true,
-      unmountOnExit: true,
+      unmountOnExit: destroyOnClose,
       onEnter: open,
       onEntered: onOpened,
       onExited: function onExited() {
         setAnimatedVisible(false);
         onClosed === null || onClosed === void 0 ? void 0 : onClosed();
       }
-    }, renderPopup());
+    }, renderPopup())
+    //     <CSSTransition
+    //     in={visible}
+    //     /**
+    //      * https://github.com/reactjs/react-transition-group/pull/559
+    //      */
+    //     nodeRef={popupRef}
+    //     timeout={duration}
+    //     classNames={transition || name}
+    //     mountOnEnter={!forceRender}
+    //     unmountOnExit={destroyOnClose}
+    //     onEnter={open}
+    //     onEntered={props.onOpened}
+    //     onExited={() => {
+    //       setAnimatedVisible(false)
+    //       props.onClosed?.()
+    //     }}
+    //   >
+    //     {renderPopup()}
+    //   </CSSTransition>
+    ;
   };
+
   var getComponent = function getComponent() {
     if (!overlay) {
       return renderTransition();
     }
-    return /*#__PURE__*/React.createElement(React.Fragment, null, OverlayRender(), renderTransition());
+    return /*#__PURE__*/React.createElement(React.Fragment, null, renderOverlay(), renderTransition());
   };
   return /*#__PURE__*/React.createElement(Portal, {
     mountContainer: mountContainer
   }, getComponent());
-};
+});
 Popup.defaultProps = {
   duration: 300,
   overlay: true,
   position: 'center',
+  round: false,
   mountContainer: document.body,
   closeOnClickOverlay: true,
   safeAreaInsetBottom: false,
+  destroyOnClose: false,
   lockScroll: true,
   overlayType: 'normal',
   closeIconPosition: 'top-right'
