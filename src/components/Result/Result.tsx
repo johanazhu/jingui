@@ -18,7 +18,7 @@ const renderIcon = ({ status }: ResultProps) => {
 const prefixCls = 'jing-result';
 
 const Result = (props: ResultProps) => {
-    const { title, subTitle, extra, place, className, children } = props;
+    const { title, subTitle, extra, place, className, style, children } = props;
 
     const _classes = classnames(prefixCls, className);
 
@@ -27,7 +27,7 @@ const Result = (props: ResultProps) => {
     });
 
     return (
-        <div className={_classes}>
+        <div className={_classes} style={style}>
             {renderIcon(props)}
             {title && <div className={`${prefixCls}__title`}>{title}</div>}
             {subTitle && (

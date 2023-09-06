@@ -1,6 +1,7 @@
-import React, { memo, FC, useState } from 'react';
+import React, { memo, FC, useState, CSSProperties } from 'react';
 import classnames from 'classnames';
 import { SwitchProps } from './PropType';
+import { addUnit } from '@/utils';
 
 const prefixCls = 'jing-switch';
 
@@ -15,7 +16,7 @@ const getChecked = (props: SwitchProps, defaultChecked: boolean) => {
 };
 
 const Switch: FC<SwitchProps> = (props) => {
-    const { disabled, onChange, style, className } = props;
+    const { disabled, onChange, className, size } = props;
 
     const [status, setStatus] = useState<boolean>(getChecked(props, false));
 
@@ -31,9 +32,16 @@ const Switch: FC<SwitchProps> = (props) => {
         [`${prefixCls}--disabled`]: disabled,
     });
 
+    const style: CSSProperties = {
+        fontSize: addUnit(size),
+        // backgroundColor: isChecked ? activeColor : inactiveColor,
+        ...props.style,
+    };
+
     return (
-        <span className={classes} style={style}>
+        <div role="switch" tabIndex={0} className={classes}>
             <input
+                style={style}
                 type="checkbox"
                 disabled={disabled}
                 checked={status}
@@ -41,7 +49,7 @@ const Switch: FC<SwitchProps> = (props) => {
                 value={status ? 'on' : 'off'}
                 onChange={handleChange}
             />
-        </span>
+        </div>
     );
 };
 

@@ -4,7 +4,8 @@ import JqbIcon from "../JqbIcon";
 import checkboxok from "../svg/checkboxok.svg";
 var CheckboxOk = function CheckboxOk(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: checkboxok
+    icon: checkboxok,
+    fill: "#26a4a4"
   }, props));
 };
 export default CheckboxOk;

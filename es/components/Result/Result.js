@@ -22,11 +22,13 @@ var Result = function Result(props) {
     extra = props.extra,
     place = props.place,
     className = props.className,
+    style = props.style,
     children = props.children;
   var _classes = classnames(prefixCls, className);
   var contentclass = classnames("".concat(prefixCls, "__content"), _defineProperty({}, "".concat(prefixCls, "__content--").concat(place), !!place));
   return /*#__PURE__*/React.createElement("div", {
-    className: _classes
+    className: _classes,
+    style: style
   }, renderIcon(props), title && /*#__PURE__*/React.createElement("div", {
     className: "".concat(prefixCls, "__title")
   }, title), subTitle && /*#__PURE__*/React.createElement("div", {

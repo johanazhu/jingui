@@ -4,7 +4,8 @@ import JqbIcon from "../JqbIcon";
 import exclamation from "../svg/exclamation.svg";
 var Exclamation = function Exclamation(props) {
   return /*#__PURE__*/React.createElement(JqbIcon, _extends({
-    icon: exclamation
+    icon: exclamation,
+    fill: "#26a4a4"
   }, props));
 };
 export default Exclamation;

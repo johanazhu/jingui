@@ -1,6 +1,7 @@
 @import './var.scss';
 
 :root {
+    --switch-size: #{$switch-size};
     --switch-width: #{$switch-width};
     --switch-height: #{$switch-height};
     --switch-handle-size: #{$switch-handle-size};
@@ -15,6 +16,7 @@
         position: relative;
         width: var(--switch-width);
         height: var(--switch-height);
+        font-size: var(--switch-size);
         border: calc((var(--switch-height) - var(--switch-handle-size)) / 2)
             solid var(--switch-border-color);
         border-radius: var(--switch-radius-round);
@@ -22,6 +24,7 @@
         vertical-align: middle;
         transition: background-color 0.1s, border 0.1s;
         outline: 0;
+        cursor: pointer;
         -webkit-appearance: none;
 
         &:before,

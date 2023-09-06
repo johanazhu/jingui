@@ -7,7 +7,7 @@
 
 .jing-popupmiddle {
     width: 100%;
-    height: 60vh;
+    min-height: 60vh;
     background-color: var(--popupmiddle-background-color);
     border-radius: var(--popupmiddle-border-radius);
     margin: auto 0;

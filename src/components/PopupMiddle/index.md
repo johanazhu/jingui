@@ -20,6 +20,8 @@ group:
 | ------------------- | ------------------------------------------------------------------ | ------------------------------- | --------- |
 | className           | 自定义 class 名                                                    | string                          | -         |
 | style               | 自定义样式                                                         | CSSProperties                   | -         |
+| width               | 中间弹框的宽                                                       | number                          | 80%       |
+| height              | 中间弹框的高                                                       | number                          | 70vh      |
 | zIndex              | z-index 值                                                         | number                          | -         |
 | visible             | 是否显示                                                           | boolean                         | -         |
 | hideClose           | 是否隐藏关闭按钮                                                   | boolean                         | false     |

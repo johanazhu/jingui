@@ -14,7 +14,9 @@ export default () => {
                     value={
                         <Switch
                             checked={checked}
-                            onChange={(value: any) => value && setChecked(value)}
+                            onChange={(value: any) =>
+                                value && setChecked(value)
+                            }
                         />
                     }
                 />
@@ -28,6 +30,21 @@ export default () => {
                     center
                     title="禁用的开关（默认开）"
                     value={<Switch defaultChecked disabled />}
+                />
+            </DemoBlock>
+            <DemoBlock className="demo-switch" padding="" title="自定义尺寸">
+                <Cell
+                    center
+                    title="自定义尺寸"
+                    value={
+                        <Switch
+                            size={24}
+                            checked={checked}
+                            onChange={(value: any) =>
+                                value && setChecked(value)
+                            }
+                        />
+                    }
                 />
             </DemoBlock>
         </>

@@ -6,14 +6,23 @@ import { IconClose } from '../Icon';
 const prefixCls = 'jing-popupmiddle';
 
 const PopupMiddle: FC = (props: any) => {
-    const { className, style, visible, hideClose, onClose, children } = props;
+    const {
+        className,
+        style,
+        visible,
+        width,
+        height,
+        hideClose,
+        onClose,
+        children,
+    } = props;
 
     const classes = classnames(className, prefixCls);
 
     return (
         <Popup
             visible={visible}
-            style={{ width: '80%', height: '70vh', background: 'transparent' }}
+            style={{ width, height, background: 'transparent' }}
         >
             <div className={classes} style={style}>
                 {children}
@@ -28,6 +37,8 @@ const PopupMiddle: FC = (props: any) => {
 };
 
 PopupMiddle.defaultProps = {
+    width: '80%',
+    height: '70vh',
     hideClose: false,
 };
 

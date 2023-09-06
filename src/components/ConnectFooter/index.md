@@ -18,9 +18,10 @@ group:
 
 ### API
 
-| 属性 | 说明 | 类型 | 默认值 |
-| ---- | ---- | ---- | ------ |
-| left            | 组件中的内容 | ReactNode      | -   |
-| right            | 组件中的内容 | ReactNode      | -   |
-| onClickLeft         | 点击左边回调              | () => void | -      |
-| onClickRight         | 点击右边回调              | () => void | -      |
+| 属性         | 说明         | 类型                | 默认值 |
+| ------------ | ------------ | ------------------- | ------ |
+| left         | 组件中的内容 | ReactNode           | -      |
+| right        | 组件中的内容 | ReactNode           | -      |
+| position     | 位置定位     | `left\center\right` | -      |
+| onClickLeft  | 点击左边回调 | () => void          | -      |
+| onClickRight | 点击右边回调 | () => void          | -      |

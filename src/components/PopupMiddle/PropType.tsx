@@ -12,6 +12,8 @@ export type PopupCloseIconPosition =
  * @param {zIndex} number                           // z-index值
  * @param {visible} boolean                         // 是否显示
  * @param {hideClose} boolean                       // 是否隐藏关闭按钮
+ * @param {width} number                            // 中间弹框的宽
+ * @param {height} number                           // 中间弹框的高
  * @param {position} string                         // 弹出方向，可选值 top, bottom, left, right, center
  * @param {duration} number                         // 动画执行时间（单位：毫秒）
  * @param {overlay} boolean                         // 是否展示遮罩层
@@ -34,6 +36,8 @@ export type PopupCloseIconPosition =
 export interface PopupMiddleProps extends BaseTypeProps {
     visible?: boolean;
     hideClose?: boolean;
+    width?: number;
+    height?: number;
     onClose?: () => void;
     onOpened?: () => void;
     onClosed?: () => void;

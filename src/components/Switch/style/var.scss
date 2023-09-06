@@ -1,9 +1,10 @@
 @import '../../Style/variable';
 
-//   Switch
-$switch-width: 53px;
-$switch-height: 32px;
-$switch-handle-size: 26px;
+//  Switch
+$switch-size: 32px;
+$switch-width: 1.65em;
+$switch-height: 1em;
+$switch-handle-size: 0.8125em;
 $switch-handle-bg: var(--color-white-1);
 $switch-border-color: var(--color-black-5);
 $switch-radius-round: var(--border-radius-max);

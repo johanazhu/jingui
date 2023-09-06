@@ -44,5 +44,19 @@ export default (function () {
       defaultChecked: true,
       disabled: true
     })
+  })), /*#__PURE__*/React.createElement(DemoBlock, {
+    className: "demo-switch",
+    padding: "",
+    title: "\u81EA\u5B9A\u4E49\u5C3A\u5BF8"
+  }, /*#__PURE__*/React.createElement(Cell, {
+    center: true,
+    title: "\u81EA\u5B9A\u4E49\u5C3A\u5BF8",
+    value: /*#__PURE__*/React.createElement(Switch, {
+      size: 24,
+      checked: checked,
+      onChange: function onChange(value) {
+        return value && setChecked(value);
+      }
+    })
   })));
 });

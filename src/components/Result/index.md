@@ -16,11 +16,13 @@ group:
 
 ### API
 
-| 属性     | 说明                                                                                    | 类型      | 默认值 |
-| -------- | --------------------------------------------------------------------------------------- | --------- | ------ |
-| title    | 一级标题                                                                                | string    | -      |
-| subTitle | 二级标题                                                                                | string    | -      |
-| status   | 状态，可选 `success、fail、empty、cancel、network、right、waiting、countdown、404、500` | string    | -      |
-| place    | 状态，可选 `left/center/right`                                                          | string    | center |
-| extra    | 额外自定义区域                                                                          | ReactNode | -      |
-| children | 组件中的内容                                                                            | ReactNode | -      |
+| 属性      | 说明                                                                                    | 类型          | 默认值 |
+| --------- | --------------------------------------------------------------------------------------- | ------------- | ------ |
+| className | 自定义 class 名                                                                         | string        | -      |
+| style     | 自定义样式                                                                              | CSSProperties | -      |
+| title     | 一级标题                                                                                | string        | -      |
+| subTitle  | 二级标题                                                                                | string        | -      |
+| status    | 状态，可选 `success、fail、empty、cancel、network、right、waiting、countdown、404、500` | string        | -      |
+| place     | 状态，可选 `left/center/right`                                                          | string        | center |
+| extra     | 额外自定义区域                                                                          | ReactNode     | -      |
+| children  | 组件中的内容                                                                            | ReactNode     | -      |

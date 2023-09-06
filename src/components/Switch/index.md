@@ -18,9 +18,10 @@ group:
 
 ## API
 
-| 属性           | 说明                   | 类型                        | 默认值 |
-| -------------- | ---------------------- | --------------------------- | ------ |
-| checked        | 值                     | boolean                     | -      |
-| defaultChecked | 初始值                 | boolean                     | -      |
-| disabled       | 是否禁用               | boolean                     | false  |
-| onChange       | 值变化时触发的回调函数 | `(value?: boolean) => void` | -      |
+| 属性           | 说明                    | 类型                        | 默认值 |
+| -------------- | ----------------------- | --------------------------- | ------ |
+| checked        | 值                      | boolean                     | -      |
+| defaultChecked | 初始值                  | boolean                     | -      |
+| disabled       | 是否禁用                | boolean                     | false  |
+| size           | 开关尺寸，默认单位为 px | number/string               | 30px   |
+| onChange       | 值变化时触发的回调函数  | `(value?: boolean) => void` | -      |

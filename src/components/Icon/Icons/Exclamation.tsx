@@ -4,7 +4,7 @@ import { JqbIconProps } from '../PropType';
 import exclamation from '../svg/exclamation.svg';
 
 const Exclamation = (props: JqbIconProps) => {
-    return <JqbIcon icon={exclamation} {...props} />;
+    return <JqbIcon icon={exclamation} fill="#26a4a4" {...props} />;
 };
 
 export default Exclamation;
