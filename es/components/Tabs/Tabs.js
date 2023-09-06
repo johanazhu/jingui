@@ -53,9 +53,9 @@ var Tabs = function Tabs(props) {
     scrollable = count > swipeThreshold || !ellipsis;
   }
   useEffect(function () {
-    if (tabsTitleRef && tabsTitleRef.current && currentIndex) {
-      console.log(' tabsTitleRef.current', tabsTitleRef.current);
-      console.log('currentIndex', tabsTitleRef.current[currentIndex]);
+    if (tabsTitleRef && tabsTitleRef.current) {
+      // console.log(' tabsTitleRef.current', tabsTitleRef.current);
+      // console.log('currentIndex', tabsTitleRef.current[currentIndex]);
       var _tabsTitleRef$current = tabsTitleRef.current[currentIndex],
         _tabsTitleRef$current2 = _tabsTitleRef$current.offsetLeft,
         offsetLeft = _tabsTitleRef$current2 === void 0 ? 0 : _tabsTitleRef$current2,

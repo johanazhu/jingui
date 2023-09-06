@@ -53,9 +53,9 @@ const Tabs: TabsType = (props) => {
     }
 
     useEffect(() => {
-        if (tabsTitleRef && tabsTitleRef.current && currentIndex) {
-            console.log(' tabsTitleRef.current', tabsTitleRef.current);
-            console.log('currentIndex', tabsTitleRef.current[currentIndex]);
+        if (tabsTitleRef && tabsTitleRef.current) {
+            // console.log(' tabsTitleRef.current', tabsTitleRef.current);
+            // console.log('currentIndex', tabsTitleRef.current[currentIndex]);
             const { offsetLeft = 0, offsetWidth = 0 } =
                 tabsTitleRef.current[currentIndex];
 

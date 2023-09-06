@@ -4,7 +4,7 @@ import { DemoBlock } from 'demo';
 import './index.scss';
 
 export default () => {
-    const [value, setValue] = useState(1);
+    const [value, setValue] = useState(0);
 
     return (
         <>
@@ -98,7 +98,7 @@ export default () => {
                     value={value}
                     type="img"
                     onChange={(index?: number, item?: any) => {
-                        // console.log('item', item);
+                        console.log('item', item);
                         index && setValue(index);
                     }}
                 >

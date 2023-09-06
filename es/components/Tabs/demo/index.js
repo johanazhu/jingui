@@ -9,7 +9,7 @@ import { Tabs } from '@jojobo/jing-ui';
 import { DemoBlock } from "../../../demo";
 import "./index.scss";
 export default (function () {
-  var _useState = useState(1),
+  var _useState = useState(0),
     _useState2 = _slicedToArray(_useState, 2),
     value = _useState2[0],
     setValue = _useState2[1];
@@ -109,7 +109,7 @@ export default (function () {
     value: value,
     type: "img",
     onChange: function onChange(index, item) {
-      // console.log('item', item);
+      console.log('item', item);
       index && setValue(index);
     }
   }, /*#__PURE__*/React.createElement(Tabs.Panel, {

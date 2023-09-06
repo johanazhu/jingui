@@ -4,15 +4,15 @@
     --result-width: #{$result-width};
     --result-height: #{$result-height};
     --result-margin: #{$result-margin};
-    --result-paddding: #{$result-paddding};
+    --result-padding: #{$result-padding};
     --result-font-size: #{$result-font-size};
     --result-text-color: #{$result-text-color};
+    --result-line-height: #{$result-line-height};
     --result-title-font-size: #{$result-title-font-size};
     --result-title-font-weight: #{$result-title-font-weight};
     --result-title-margin: #{$result-title-margin};
     --result-content-font-size: #{$result-content-font-size};
     --result-content-color: #{$result-content-color};
-    --result-content-line-height: #{$result-content-line-height};
     --result-content-margin: #{$result-content-margin};
 }
 
@@ -40,8 +40,16 @@
         margin-top: var(--result-title-margin);
     }
 
+    &__subTitle {
+        line-height: var(--result-line-height);
+        margin-top: var(--result-padding);
+        font-size: var(--result-font-size);
+        color: var(--result-content-color);
+        text-align: center;
+    }
+
     &__content {
-        line-height: var(--result-content-line-height);
+        line-height: var(--result-line-height);
         margin-top: var(--result-content-margin);
         font-size: var(--result-content-font-size);
         color: var(--result-content-color);
@@ -67,6 +75,6 @@
 @media screen and (max-width: 320px) and (max-height: 480px) {
     .jing-result {
         margin-bottom: var(--result-margin);
-        padding-top: var(--result-paddding);
+        padding-top: var(--result-padding);
     }
 }

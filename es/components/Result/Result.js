@@ -18,6 +18,7 @@ var renderIcon = function renderIcon(_ref) {
 var prefixCls = 'jing-result';
 var Result = function Result(props) {
   var title = props.title,
+    subTitle = props.subTitle,
     extra = props.extra,
     place = props.place,
     className = props.className,
@@ -28,7 +29,9 @@ var Result = function Result(props) {
     className: _classes
   }, renderIcon(props), title && /*#__PURE__*/React.createElement("div", {
     className: "".concat(prefixCls, "__title")
-  }, title), children && /*#__PURE__*/React.createElement("div", {
+  }, title), subTitle && /*#__PURE__*/React.createElement("div", {
+    className: "".concat(prefixCls, "__subTitle")
+  }, subTitle), children && /*#__PURE__*/React.createElement("div", {
     className: contentclass
   }, children), extra && /*#__PURE__*/React.createElement("div", {
     className: "".concat(prefixCls, "__extra")

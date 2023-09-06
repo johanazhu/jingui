@@ -1,4 +1,4 @@
-import { JqbSuccess, JqbFail, JqbEmpty, JqbCancel, JqbNetwork, JqbRight, JqbWaiting, JqbCountdown, JqbError404, JqbError500 } from "./resultStatus";
+import { JqbSuccess, JqbFail, JqbEmpty, JqbCancel, JqbNetwork, JqbRight, JqbWaiting, JqbCountdown, JqbAddress, JqbError404, JqbError500 } from "./resultStatus";
 export var ExceptionMap = {
   success: JqbSuccess,
   fail: JqbFail,
@@ -8,6 +8,7 @@ export var ExceptionMap = {
   right: JqbRight,
   waiting: JqbWaiting,
   countdown: JqbCountdown,
+  address: JqbAddress,
   '404': JqbError404,
   '500': JqbError500
 };
