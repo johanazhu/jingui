@@ -36,6 +36,7 @@ var Popup = /*#__PURE__*/forwardRef(function (props, ref) {
     closeable = props.closeable,
     closeIconPosition = props.closeIconPosition,
     children = props.children,
+    customHeader = props.customHeader,
     onOpen = props.onOpen,
     onClose = props.onClose,
     onOpened = props.onOpened,
@@ -74,6 +75,9 @@ var Popup = /*#__PURE__*/forwardRef(function (props, ref) {
     return initStyle;
   }, [zIndex.current, position, style, duration]);
   var renderTitle = function renderTitle() {
+    if (customHeader) {
+      return customHeader;
+    }
     if (title) {
       return /*#__PURE__*/React.createElement("div", {
         className: classnames("".concat(prefixCls, "__title"))

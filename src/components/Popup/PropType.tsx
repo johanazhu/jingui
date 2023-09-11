@@ -1,4 +1,4 @@
-import { ReactElement, MouseEvent } from 'react';
+import { ReactElement, MouseEvent, ReactNode } from 'react';
 import { BaseTypeProps, GetContainer } from '@/utils';
 
 export type PopupCloseIconPosition =
@@ -17,6 +17,7 @@ export type PopupCloseIconPosition =
  * @param {overlayType} string                      // 遮罩层的类型，可选值 transparent, normal
  * @param {round} boolean                           // 是否显示圆角
  * @param {title} string                            // 弹出层标题
+ * @param {customHeader} children                   // 自定义header
  * @param {destroyOnClose} boolean                  // 关闭时销毁 Popup 里的子元素
  * @param {lockScroll} boolean                      // 是否锁定背景滚动
  * @param {safeAreaInsetBottom} boolean             // 是否开启底部安全区适配
@@ -43,13 +44,14 @@ export interface PopupProps extends BaseTypeProps {
     overlayType?: 'normal' | 'transparent';
     round?: boolean;
     title?: string;
+    customHeader?: ReactNode;
     destroyOnClose?: boolean;
     lockScroll?: boolean;
     safeAreaInsetBottom?: boolean;
     closeOnClickOverlay?: boolean;
     closeable?: boolean;
     closeIconPosition?: PopupCloseIconPosition;
-    children?: any;
+    children?: ReactNode;
     onOpen?: () => void;
     onClose?: () => void;
     onOpened?: () => void;

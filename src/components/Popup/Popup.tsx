@@ -38,6 +38,7 @@ const Popup = forwardRef<PopupInstanceType, PopupProps>((props, ref) => {
         closeable,
         closeIconPosition,
         children,
+        customHeader,
         onOpen,
         onClose,
         onOpened,
@@ -81,6 +82,9 @@ const Popup = forwardRef<PopupInstanceType, PopupProps>((props, ref) => {
     }, [zIndex.current, position, style, duration]);
 
     const renderTitle = () => {
+        if (customHeader) {
+            return customHeader;
+        }
         if (title) {
             return (
                 <div className={classnames(`${prefixCls}__title`)}>{title}</div>
