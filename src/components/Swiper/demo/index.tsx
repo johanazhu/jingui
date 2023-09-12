@@ -1,6 +1,6 @@
 import React from 'react';
-// import { Swiper, SwiperSlide } from '@jojobo/jing-ui';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from '@jojobo/jing-ui';
+// import { Swiper, SwiperSlide } from 'swiper/react';
 import { DemoBlock } from 'demo';
 import './index.scss';
 
